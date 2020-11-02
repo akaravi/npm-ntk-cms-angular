@@ -1,0 +1,68 @@
+
+=========================================
+ng new npm-ntk-cms-angular --create-application=false
+cd npm-ntk-cms-angular
+ng generate library ntk-cms-api
+ng generate library ntk-cms-module
+=========================================
+ng build ntk-cms-api
+ng test ntk-cms-api
+ng lint ntk-cms-api
+=========================================
+npm adduser
+npm login
+npm publish
+========================================= For New Ver
+ng build ntk-cms-api --prod
+cd dist/ntk-cms-api
+npm publish
+=========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm run build
+npm run lint
+npm run format
+npm test
+
+--------------------------
+--------------------------
+git add -A && git commit -m "Setup Package"
+git push
+npm adduser
+npm login
+npm publish
+
+
+
+--------------------------
+// Step 1: Use `publishConfig` option in your package.json
+"publishConfig": { "registry": "https://npm.pkg.github.com/" }
+// Step 2: Authenticate
+$ npm login --registry=https://npm.pkg.github.com/
+
+// Step 3: Publish
+$ npm publish
+
+
+
+--------------------------
+
+npm uninstall -g @angular/cli
+npm cache clean
+npm cache verify
+
+npm install -g angular-cli@1.0.0-beta.32
+--------------------------
+npm audit fix
