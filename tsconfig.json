@@ -23,7 +23,11 @@
       "ntk-cms-module": [
         "dist/ntk-cms-module/ntk-cms-module",
         "dist/ntk-cms-module"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
       ]
+
     }
   }
 }
