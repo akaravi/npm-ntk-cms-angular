@@ -1,17 +1,17 @@
 
-=========================================
+=========================================First Time Proje
 ng new npm-ntk-cms-angular --create-application=false
 cd npm-ntk-cms-angular
 ng generate library ntk-cms-api
 ng generate library ntk-cms-module
+=========================================First Time npm
+npm adduser
+npm login
+npm publish
 =========================================
 ng build ntk-cms-api
 ng test ntk-cms-api
 ng lint ntk-cms-api
-=========================================
-npm adduser
-npm login
-npm publish
 ========================================= For New Ver
 ng build ntk-cms-api --prod
 cd dist/ntk-cms-api
