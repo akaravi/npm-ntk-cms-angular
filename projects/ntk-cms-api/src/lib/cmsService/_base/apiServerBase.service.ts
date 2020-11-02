@@ -1,9 +1,11 @@
 
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExcptionResult } from '../../cmsModels/base/errorExcptionResult';
 import { ErrorExcptionResultBase } from '../../cmsModels/base/errorExcptionResultBase';
 
+@Injectable()
 export class ApiServerBase {
   public baseUrl = 'https://apicms.ir/api/v1/';
   public userToken = '';
@@ -21,8 +23,7 @@ export class ApiServerBase {
   childConstructor(): any {
     // test
   }
-  getBaseUrl()
-  {
+  getBaseUrl() {
     const BaseUrl = localStorage.getItem('baseUrl');
     if (BaseUrl && BaseUrl.length > 0) {
       return BaseUrl;
@@ -37,7 +38,7 @@ export class ApiServerBase {
 
     return headers;
   }
- 
+
   getUserToken(): string | null {
     if (this.userToken && this.userToken.length > 0) return this.userToken;
     const token = localStorage.getItem('userToken');
