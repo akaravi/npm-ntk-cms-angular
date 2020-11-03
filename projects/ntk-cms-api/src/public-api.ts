@@ -1,71 +1,35 @@
 /*
  * Public API Surface of ntk-cms-api
  */
-
 export * from './lib/ntk-cms-api.service';
 export * from './lib/ntk-cms-api.component';
 export * from './lib/ntk-cms-api.module';
-// Enums
-export * from './lib/cmsModels/Enums/_export';
-// Enums
 // base
-export * from './lib/cmsModels/base/_export';
+export * from './lib/models/Enums/_export';
+export * from './lib/models/base/_export';
 // base
 // core Serve
-export * from './lib/cmsService/core/_export';
-
+export * from './lib/service/core/_export';
+export * from './lib/models/core/_export';
+export * from './lib/dtoModels/core/_export';
 // core Serve
-// core model
-export * from './lib/cmsModels/core/_export';
-
-// core model
-// core DTO model
-export * from './lib/cmsDtoModels/core/_export';
-
-// core DTO model
 // linkManagement Service
-export * from './lib/cmsService/linkManagement/_export';
-
+export * from './lib/service/linkManagement/_export';
+export * from './lib/dtoModels/linkManagement/_export';
 // linkManagement Service
-// linkManagement model
-
-// linkManagement model
-// linkManagement DTO model
-export * from './lib/cmsDtoModels/linkManagement/_export';
-
-// linkManagement DTO model
-
 // news Service
-export * from './lib/cmsService/news/_export';
+export * from './lib/service/news/_export';
+export * from './lib/models/news/_export';
 // news Service
-// news model
-export * from './lib/cmsModels/news/_export';
-
-// news model
-// news DTO model
-
 // bankPayment Service
-export * from './lib/cmsService/bankPayment/_export';
-
-// bankPayment Service
-
-// bankPayment model
-export * from './lib/cmsModels/bankPayment/_export';
-
-// bankPayment model
-
+export * from './lib/service/bankPayment/_export';
+export * from './lib/models/bankPayment/_export';
+export * from './lib/dtoModels/bankPayment/_export';
 // bankPayment Dto
-export * from './lib/cmsDtoModels/bankPayment/_export';
-// bankPayment Dto
-
 // sms
-export * from './lib/cmsModels/sms/_export';
-export * from './lib/cmsService/sms/_export';
+export * from './lib/models/sms/_export';
+export * from './lib/service/sms/_export';
 // sms
-
-
-
 // news DTO model
 // export class CoreUser extends DataFieldInfoModel {
-
 // }
