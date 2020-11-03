@@ -1,4 +1,4 @@
-import { BankPaymentTransactionModel } from '../../models/BankPayment/bankPaymentTransactionModel';
+import { BankPaymentTransactionModel } from '../../models/bankPayment/bankPaymentTransactionModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 export class BankPaymentTransactionService

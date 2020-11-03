@@ -11,7 +11,7 @@ export class CoreEnumService extends ApiServerBase {
 
   ServiceEnumRecordStatus(): Observable<ErrorExcptionResult<EnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumRecordStatus', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumRecordStatus', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -24,7 +24,7 @@ export class CoreEnumService extends ApiServerBase {
 
   ServiceEnumLocationType(): Observable<ErrorExcptionResult<EnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumLocationType', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumLocationType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class CoreEnumService extends ApiServerBase {
   }
   ServiceEnumUserLanguage(): Observable<ErrorExcptionResult<EnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUserLanguage', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumUserLanguage', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -51,7 +51,7 @@ export class CoreEnumService extends ApiServerBase {
   ////
   ServiceEnumGender(): Observable<ErrorExcptionResult<EnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumGender', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumGender', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -63,7 +63,7 @@ export class CoreEnumService extends ApiServerBase {
   }
   ServiceEnumMenuPlaceType(): Observable<ErrorExcptionResult<EnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumMenuPlaceType', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumMenuPlaceType', {
         headers: this.getHeaders(),
       })
       .pipe(

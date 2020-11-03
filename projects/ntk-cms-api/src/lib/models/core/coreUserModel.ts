@@ -1,5 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
-import { EnumGenderType } from '../Enums/enumGenderType';
+import { EnumGenderType } from '../enums/enumGenderType';
 
 export class CoreUserModel extends BaseEntity<number> {
   Username: string;

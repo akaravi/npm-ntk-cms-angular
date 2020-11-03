@@ -1,5 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
-import { EnumMenuPlaceType } from '../Enums/enumMenuPlaceType';
+import { EnumMenuPlaceType } from '../enums/enumMenuPlaceType';
 
 export class CoreCpMainMenuModel extends BaseEntity<number> {
   Title: string;

@@ -1,5 +1,5 @@
-import { EnumFilterDataModelSearchTypes } from '../Enums/enumFilterDataModelSearchTypes';
-import { EnumClauseType } from '../Enums/enumClauseType';
+import { EnumFilterDataModelSearchTypes } from '../enums/enumFilterDataModelSearchTypes';
+import { EnumClauseType } from '../enums/enumClauseType';
 
 
 export class FilterDataModel {

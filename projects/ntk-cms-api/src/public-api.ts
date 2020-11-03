@@ -5,7 +5,7 @@ export * from './lib/ntk-cms-api.service';
 export * from './lib/ntk-cms-api.component';
 export * from './lib/ntk-cms-api.module';
 // base
-export * from './lib/models/Enums/_export';
+export * from './lib/models/enums/_export';
 export * from './lib/models/base/_export';
 // base
 // core Serve

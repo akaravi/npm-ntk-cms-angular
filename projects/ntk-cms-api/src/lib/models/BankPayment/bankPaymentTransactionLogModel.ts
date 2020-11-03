@@ -1,5 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
-import { EnumTransactionRecordStatus } from '../Enums/enumTransactionRecordStatus';
+import { EnumTransactionRecordStatus } from '../enums/enumTransactionRecordStatus';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 
 export class BankPaymentTransactionLogModel extends BaseEntity<number> {

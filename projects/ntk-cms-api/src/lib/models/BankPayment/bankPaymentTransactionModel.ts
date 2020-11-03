@@ -3,8 +3,8 @@ import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel
 
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
 import { BankPaymentTransactionLogModel } from './bankPaymentTransactionLogModel';
-import { EnumTransactionBankStatus } from '../Enums/enumTransactionBankStatus';
-import { EnumTransactionRecordStatus } from '../Enums/enumTransactionRecordStatus';
+import { EnumTransactionBankStatus } from '../enums/enumTransactionBankStatus';
+import { EnumTransactionRecordStatus } from '../enums/enumTransactionRecordStatus';
 
 export class BankPaymentTransactionModel extends BaseEntity<number> {
   TransactionStatus: EnumTransactionRecordStatus;

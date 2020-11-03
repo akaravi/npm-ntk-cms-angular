@@ -1,6 +1,6 @@
 import { FilterDataModel } from './filterDataModel';
 import { ExportFileModel } from './exportFileModel';
-import { EnumSortType } from '../Enums/enumSortType';
+import { EnumSortType } from '../enums/enumSortType';
 
 export class FilterModel {
   Filters: FilterDataModel[] = new Array<FilterDataModel>();
