@@ -22,7 +22,7 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   viewCount: number;
   favorited: boolean;
   mainImageSrc: string;
-  ExpireDate: string;
+  ExpireDate: Date;
   ModuleCoreCreatedBy: string;
   ModuleCoreUpdatedBy: string;
   Source: string;
