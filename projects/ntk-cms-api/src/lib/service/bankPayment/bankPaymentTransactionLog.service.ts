@@ -1,5 +1,5 @@
+import { BankPaymentTransactionLogModel } from '../../models/entity/bankPayment/bankPaymentTransactionLogModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BankPaymentTransactionLogModel } from '../../models/bankPayment/bankPaymentTransactionLogModel';
 
 export class BankPaymentTransactionLogService
   extends ApiCmsServerBase<BankPaymentTransactionLogModel, number>

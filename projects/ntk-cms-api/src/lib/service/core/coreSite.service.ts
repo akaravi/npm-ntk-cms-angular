@@ -1,10 +1,10 @@
 import {  Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { FilterModel } from '../../models/base/filterModel';
-import { CoreSiteAddFirstSiteDtoModel } from '../../dtoModels/core/coreSiteAddFirstSiteDtoModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core/coreSiteAddFirstSiteDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreSiteSearchModel } from '../../dtoModels/core/coreSiteSearchModel';
+import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
 
 export class CoreSiteService extends ApiCmsServerBase<any, number>  {
 

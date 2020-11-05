@@ -1,8 +1,9 @@
 import {  Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { NewsCategoryModel } from '../../models/news/newsCategoryModel';
+import { NewsCategoryModel } from '../../models/entity/news/newsCategoryModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+
 
 
 export class NewsCategoryService extends ApiCmsServerBase<NewsCategoryModel, number>  {

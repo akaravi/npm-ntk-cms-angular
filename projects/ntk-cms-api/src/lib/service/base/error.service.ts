@@ -1,7 +1,7 @@
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApiServerBase } from './apiServerBase.service';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 
 
 export class ErrorService extends ApiServerBase  {

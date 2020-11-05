@@ -1,4 +1,4 @@
-import { SmsMainCustomerNumberModel } from '../../models/sms/smsMainCustomerNumberModel';
+import { SmsMainCustomerNumberModel } from '../../models/entity/sms/smsMainCustomerNumberModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 

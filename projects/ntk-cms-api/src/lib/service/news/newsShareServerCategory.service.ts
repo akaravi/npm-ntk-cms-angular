@@ -1,7 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/base/filterModel';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 
 

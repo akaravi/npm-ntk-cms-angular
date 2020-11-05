@@ -1,4 +1,4 @@
-import { ErrorExcptionResult } from '../models/base/errorExcptionResult';
+import { ErrorExcptionResult } from '../models/entity/base/errorExcptionResult';
 
 export class AccessHelper {
   AccessDeleteRow(model: ErrorExcptionResult<any>): boolean {

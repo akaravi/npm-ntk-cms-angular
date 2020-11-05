@@ -1,21 +1,21 @@
 import { catchError, map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
-import { TokenInfoModel } from '../../models/base/tokenInfoModel';
-import { FilterModel } from '../../models/base/filterModel';
+import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
-import { CaptchaModel } from '../../models/base/captchaModel';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/base/errorExcptionResultBase';
-import { AuthUserSignInModel } from '../../dtoModels/core/authUserSignInModel';
+import { CaptchaModel } from '../../models/entity/base/captchaModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { AuthUserSignInModel } from '../../models/dto/core/authUserSignInModel';
 
-import { TokenDeviceClientInfoDtoModel } from '../../dtoModels/core/tokenDeviceClientInfoDtoModel';
-import { CoreUserModel as CoreUserModel } from '../../models/core/coreUserModel';
-import { AuthUserSignUpModel } from '../../dtoModels/core/authUserSignUpModel';
-import { AuthRenewTokenModel } from '../../dtoModels/core/authRenewTokenModel';
-import { AuthUserChangePasswordModel } from '../../dtoModels/core/authUserChangePasswordModel';
-import { AuthUserSignOutModel } from '../../dtoModels/core/authUserSignOutModel';
-import { AuthUserForgetPasswordModel } from '../../dtoModels/core/authUserForgetPasswordModel';
+import { TokenDeviceClientInfoDtoModel } from '../../models/dto/core/tokenDeviceClientInfoDtoModel';
+import { AuthUserSignUpModel } from '../../models/dto/core/authUserSignUpModel';
+import { AuthRenewTokenModel } from '../../models/dto/core/authRenewTokenModel';
+import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChangePasswordModel';
+import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
+import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
+import { CoreUserModel } from '../../models/entity/core/coreUserModel';
 
 export class CoreAuthService extends ApiServerBase {
   CorrectTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
@@ -25,16 +25,13 @@ export class CoreAuthService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'auth';
   }
-
-
   SetCorrectTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       localStorage.removeItem('token');
       localStorage.removeItem('refreshToken');
       return;
     }
-    this.setToken(model.Token, model.DeviceToken, model.RefreshToken)
-
+    this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
     this.CorrectTokenInfoBS.next(model);
   }
   CorrectTokenInfoBSRenew(): any {

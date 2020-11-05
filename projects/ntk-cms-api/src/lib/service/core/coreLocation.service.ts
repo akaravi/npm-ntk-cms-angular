@@ -1,8 +1,8 @@
 import {  Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { FilterModel } from '../../models/base/filterModel';
-import { CoreLocationModel } from '../../models/core/coreLocationModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreLocationModel } from '../../models/entity/core/coreLocationModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, number>  {

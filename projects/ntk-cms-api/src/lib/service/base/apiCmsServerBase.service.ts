@@ -1,9 +1,9 @@
 import { map } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
 import { retry, catchError } from 'rxjs/operators';
 import { ApiServerBase } from './apiServerBase.service';
-import { FilterModel } from '../../models/base/filterModel';
 import { Observable } from 'rxjs';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {

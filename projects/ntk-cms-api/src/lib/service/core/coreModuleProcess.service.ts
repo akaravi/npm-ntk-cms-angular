@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { FilterModel } from '../../models/base/filterModel';
-import { CoreModuleProcessModel } from '../../models/core/coreModuleProcessModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreModuleProcessModel } from '../../models/entity/core/coreModuleProcessModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcessModel, number>  {

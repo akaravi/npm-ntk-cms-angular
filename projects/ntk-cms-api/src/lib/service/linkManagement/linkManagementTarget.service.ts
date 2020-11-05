@@ -1,11 +1,11 @@
 
 import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { LinkManagementTargetShortLinkGetDtoModel } from '../../dtoModels/linkManagement/linkManagementTargetShortLinkGetDtoModel';
-import { LinkManagementTargetShortLinkGetResponceModel } from '../../dtoModels/linkManagement/linkManagementTargetShortLinkGetResponceModel';
-import { LinkManagementTargetShortLinkSetDtoModel } from '../../dtoModels/linkManagement/linkManagementTargetShortLinkSetDtoModel';
-import { LinkManagementTargetShortLinkSetResponceModel } from '../../dtoModels/linkManagement/linkManagementTargetShortLinkSetResponceModel';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
+import { LinkManagementTargetShortLinkGetDtoModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkGetDtoModel';
+import { LinkManagementTargetShortLinkGetResponceModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkGetResponceModel';
+import { LinkManagementTargetShortLinkSetDtoModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkSetDtoModel';
+import { LinkManagementTargetShortLinkSetResponceModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkSetResponceModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  {

@@ -1,8 +1,8 @@
 import {  Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { FilterModel } from '../../models/base/filterModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 export class CoreModuleSiteService extends ApiCmsServerBase<any, number>  {
 

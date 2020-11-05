@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
-import { BankPaymentTransactionMakerDtoModel } from '../../dtoModels/bankPayment/bankPaymentTransactionMakerDtoModel';
-import { BankPaymentTransactionCheckResponceModel } from '../../dtoModels/bankPayment/bankPaymentTransactionCheckResponceModel';
+import { BankPaymentTransactionCheckResponceModel } from '../../models/dto/bankPayment/bankPaymentTransactionCheckResponceModel';
+import { BankPaymentTransactionMakerDtoModel } from '../../models/dto/bankPayment/bankPaymentTransactionMakerDtoModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 
 export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, number>  {
   getModuleCotrolerUrl(): string {

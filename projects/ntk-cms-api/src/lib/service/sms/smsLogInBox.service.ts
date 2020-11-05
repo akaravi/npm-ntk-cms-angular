@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { SmsLogInBoxModel } from '../../models/sms/smsLogInBoxModel';
+import { SmsLogInBoxModel } from '../../models/entity/sms/smsLogInBoxModel';
 
 export class SmsLogInBoxService extends ApiCmsServerBase<SmsLogInBoxModel, number> {
   getModuleCotrolerUrl(): string {

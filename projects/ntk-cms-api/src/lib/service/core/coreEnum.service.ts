@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { EnumModel } from '../../models/base/enumModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { EnumModel } from '../../models/entity/base/enumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
 export class CoreEnumService extends ApiServerBase {

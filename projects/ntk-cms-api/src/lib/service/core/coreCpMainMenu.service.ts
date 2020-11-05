@@ -1,10 +1,10 @@
 
 import { Observable, BehaviorSubject } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/base/errorExcptionResultBase';
-import { FilterModel } from '../../models/base/filterModel';
-import { CoreCpMainMenuModel } from '../../models/core/coreCpMainMenuModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreCpMainMenuModel } from '../../models/entity/core/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 

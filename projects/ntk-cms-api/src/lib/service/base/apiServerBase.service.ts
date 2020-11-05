@@ -2,8 +2,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/base/errorExcptionResultBase';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+
 
 @Injectable()
 export class ApiServerBase {
@@ -11,7 +12,7 @@ export class ApiServerBase {
   public userToken = '';
   public deviceToken = '';
   public configApiRetry = 1;
-  setConfig(url: string, apiRetry = 1) {
+  setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
     localStorage.setItem('baseUrl', url);
     this.configApiRetry = apiRetry;
@@ -23,7 +24,7 @@ export class ApiServerBase {
   childConstructor(): any {
     // test
   }
-  getBaseUrl() {
+  getBaseUrl(): string {
     const BaseUrl = localStorage.getItem('baseUrl');
     if (BaseUrl && BaseUrl.length > 0) {
       return BaseUrl;
@@ -40,7 +41,7 @@ export class ApiServerBase {
   }
 
   getUserToken(): string | null {
-    if (this.userToken && this.userToken.length > 0) return this.userToken;
+    if (this.userToken && this.userToken.length > 0) { return this.userToken; }
     const token = localStorage.getItem('userToken');
     if (token && token.length > 0) {
       return token;
@@ -51,7 +52,7 @@ export class ApiServerBase {
     return '';
   }
   getDeviceToken(): string | null {
-    if (this.deviceToken && this.deviceToken.length > 0) return this.deviceToken;
+    if (this.deviceToken && this.deviceToken.length > 0) { return this.deviceToken; }
     const token = localStorage.getItem('deviceToken');
     if (token && token.length > 0) {
       return token;
@@ -60,7 +61,7 @@ export class ApiServerBase {
   }
   setToken(userToken: string, deviceToken: string, refreshToken: string): void {
     localStorage.setItem('userToken', userToken);
-    if (deviceToken && deviceToken.length > 0) localStorage.setItem('deviceToken', deviceToken);
+    if (deviceToken && deviceToken.length > 0) { localStorage.setItem('deviceToken', deviceToken); }
     localStorage.setItem('refreshToken', refreshToken);
   }
   errorExcptionResultCheck(model: ErrorExcptionResult<any>): ErrorExcptionResult<any> {

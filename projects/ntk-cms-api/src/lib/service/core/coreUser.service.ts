@@ -2,9 +2,9 @@
 import {  Observable, BehaviorSubject } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
-import { FilterModel } from '../../models/base/filterModel';
-import { CoreUserModel } from '../../models/core/coreUserModel';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core/coreUserModel';
 
 
 export class CoreUserService extends ApiCmsServerBase<any, number>  {

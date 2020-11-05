@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { SmsMainApiPathCompanyModel } from '../../models/sms/smsMainApiCompanyModel';
+import { SmsMainApiPathCompanyModel } from '../../models/entity/sms/smsMainApiCompanyModel';
 
 export class SmsMainApiPathCompanyService extends ApiCmsServerBase<SmsMainApiPathCompanyModel, number> {
   getModuleCotrolerUrl(): string {

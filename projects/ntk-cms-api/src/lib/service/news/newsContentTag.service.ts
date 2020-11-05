@@ -1,8 +1,8 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/base/errorExcptionResult';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
-import { SearchTagModel } from '../../models/base/searchModel';
-import { NewsContentTagModel } from '../../models/news/newsContentTagModel';
+import { SearchTagModel } from '../../models/entity/base/searchModel';
+import { NewsContentTagModel } from '../../models/entity/news/newsContentTagModel';
 import { Observable } from 'rxjs';
 
 
