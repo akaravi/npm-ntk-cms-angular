@@ -7,11 +7,9 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   appKey: string;
   expireDate?: string;
   linkFileIdIcon?: number;
-  icon: FileContentModel;
-  linkFileIdLogo?: number;
-  logo: FileContentModel;
-  linkFileIdSplashScreen?: number;
-  splashScreen: FileContentModel;
+    linkFileIdLogo?: number;
+    linkFileIdSplashScreen?: number;
+
   title: string;
   appVersion: number;
   isPublished: boolean;
