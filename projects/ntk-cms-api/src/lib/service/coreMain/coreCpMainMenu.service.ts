@@ -1,10 +1,10 @@
 
-import { CoreCpMainMenuModel } from 'dist/ntk-cms-api/lib/cmsModels/core/coreCpMainMenuModel';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreCpMainMenuModel } from '../../models/entity/coreMain/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
