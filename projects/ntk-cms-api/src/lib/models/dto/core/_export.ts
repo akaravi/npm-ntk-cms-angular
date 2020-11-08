@@ -7,4 +7,5 @@ export * from './authUserSignUpModel';
 export * from './coreSiteAddFirstSiteDtoModel';
 export * from './tokenDeviceClientInfoDtoModel';
 export * from './coreSiteSearchModel';
+export * from './domainModel';
 
