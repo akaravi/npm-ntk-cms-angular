@@ -4,7 +4,7 @@ import { CoreModuleProcessCustomizeModel } from './coreModuleProcessCustomizeMod
 
 export class CoreModuleProcessModel extends BaseEntity<number>  {
   TitleML: string;
-  title: string;
+  Title: string;
   titleResourceLanguage: string;
   titleEn: string;
   processName: string;

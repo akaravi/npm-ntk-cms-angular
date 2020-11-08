@@ -5,7 +5,7 @@ import { ApplicationSourceModel } from './applicationSourceModel';
 
 export class ApplicationThemeConfigModel extends BaseModuleEntity<number>  {
 
-    title: string;
+    Title: string;
     typeId: string;
     linkMainImageId?: number;
     linkSourceId?: number;

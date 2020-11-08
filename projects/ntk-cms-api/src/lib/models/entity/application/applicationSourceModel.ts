@@ -3,7 +3,7 @@ import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationLayoutModel } from './applicationLayoutModel';
 
 export class ApplicationSourceModel extends BaseModuleEntity<number>  {
-    title: string;
+    Title: string;
     linkMainImageId?: number;
     defaultAppId?: number;
     className: string;

@@ -7,7 +7,7 @@ import { TicketingFaqModel } from './ticketingFaqModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
-    title: string;
+    Title: string;
     defaultAnswerBody: string;
     priority: EnumTicketingDepartemenPriority;
     accessToChangeType: EnumTicketAccessStatus;

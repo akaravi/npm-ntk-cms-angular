@@ -5,7 +5,7 @@ import { BaseEntity } from '../base/baseEntity';
 export class CoreModuleSiteModel extends BaseEntity<number>  {
   expireDate?: string;
   linkSiteId: number;
-  title: string;
+  Title: string;
   linkModuleId: number;
   renewDate?: string;
   hasBuyed: boolean;

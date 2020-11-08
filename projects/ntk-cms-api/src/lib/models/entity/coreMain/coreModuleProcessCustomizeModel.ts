@@ -2,7 +2,7 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleProcessModel } from './coreModuleProcessModel';
 
 export class CoreModuleProcessCustomizeModel extends BaseEntity<number> {
-  title: string;
+  Title: string;
   titleEn: string;
   description: string;
   linkModuleProcessId?: number;

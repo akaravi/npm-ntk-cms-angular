@@ -25,7 +25,7 @@ export class PollingContentModel extends BaseModuleEntity<number> {
   linkMainImageId?: number;
   scoreClick: number;
   scoreSumPercent: number;
-  title: string;
+  Title: string;
   viewCount: number;
   favorited: boolean;
   mainImageSrc: string;

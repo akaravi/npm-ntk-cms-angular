@@ -6,7 +6,7 @@ import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 
 export class TicketingTaskModel extends BaseModuleEntity<number>  {
   expireDate?: string;
-  title: string;
+  Title: string;
   htmlBody: string;
   priority: EnumTicketingDepartemenPriority;
   linkCmsUserId?: number;

@@ -2,7 +2,7 @@ import { BaseEntity } from '../base/baseEntity';
 
 
 export class CoreGuideModel  extends BaseEntity<number> {
-     title: string;
+     Title: string;
     bodyFa: string;
     bodyEn: string;
     bodyAr: string;

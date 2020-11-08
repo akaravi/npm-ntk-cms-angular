@@ -15,7 +15,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_ParentCreator: CoreSiteModel;
   parentCreator: CoreSiteModel;
-  title: string;
+  Title: string;
   ownerSiteSetStatus: EnumSiteStatus;
   userLanguage: number;
   subDomain: string;

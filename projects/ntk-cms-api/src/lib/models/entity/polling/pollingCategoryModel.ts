@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class PollingCategoryModel extends BaseModuleEntity<number>  {
 
-  title: string;
+  Title: string;
   currencyUnitRatioByShop: number;
   maxTransactionAmount: number;
   minTransactionAmount: number;

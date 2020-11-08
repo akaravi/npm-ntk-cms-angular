@@ -6,7 +6,7 @@ export class CoreUserGroupModel  extends BaseEntity<number>  {
 
     TitleML: string;
 
-    title: string;
+    Title: string;
     titleResourceLanguage: string;
     description: string;
     userType: EnumManageUserAccessControllerTypes;

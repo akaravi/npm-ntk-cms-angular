@@ -2,7 +2,7 @@ import { EnumLocationType } from '../../Enums/enumLocationType';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreLocationModel extends BaseEntity<number> {
-  title: string;
+  Title: string;
   linkParentId?: number;
   linkParentIdNode: string;
   geoLocationLatitude: string;

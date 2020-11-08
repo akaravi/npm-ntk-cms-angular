@@ -9,7 +9,7 @@ export class ApplicationLogNotificationModel extends BaseModuleEntity<number>  {
     memberInfo: ApplicationMemberInfoModel;
     linkApplicationId?: number;
     application: ApplicationAppModel;
-    title: string;
+    Title: string;
     content: string;
     contentType: EnumNotificationType;
     contentJson: string;
