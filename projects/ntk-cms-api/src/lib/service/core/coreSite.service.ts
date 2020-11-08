@@ -5,6 +5,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core/coreSiteAddFirstSiteDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
+import { DomainModel } from '../../models/dto/core/domainModel';
 
 export class CoreSiteService extends ApiCmsServerBase<any, number>  {
 
@@ -116,7 +117,7 @@ export class CoreSiteService extends ApiCmsServerBase<any, number>  {
         }),
       );
   }
-  ServiceDomains(id: number): Observable<ErrorExcptionResult<any>> {
+  ServiceDomains(id: number): Observable<ErrorExcptionResult<DomainModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domains/' + id, {
         headers: this.getHeaders(),
@@ -124,7 +125,7 @@ export class CoreSiteService extends ApiCmsServerBase<any, number>  {
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-        map((ret: ErrorExcptionResult<any>) => {
+        map((ret: ErrorExcptionResult<DomainModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
       );
