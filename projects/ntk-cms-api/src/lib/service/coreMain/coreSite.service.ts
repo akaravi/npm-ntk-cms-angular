@@ -1,15 +1,12 @@
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core/coreSiteAddFirstSiteDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
-<<<<<<< HEAD:projects/ntk-cms-api/src/lib/service/core/coreSite.service.ts
 import { DomainModel } from '../../models/dto/core/domainModel';
-=======
 import { CoreSiteModel } from '../../models/entity/coreMain/coreSiteModel';
->>>>>>> 52fe6a082e2800b230e04a0c2a12d04f7d6ee539:projects/ntk-cms-api/src/lib/service/coreMain/coreSite.service.ts
 
 export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
 
@@ -121,11 +118,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
         }),
       );
   }
-<<<<<<< HEAD:projects/ntk-cms-api/src/lib/service/core/coreSite.service.ts
   ServiceDomains(id: number): Observable<ErrorExcptionResult<DomainModel>> {
-=======
-  ServiceDomains(id: number): Observable<ErrorExcptionResult<CoreSiteModel>> {
->>>>>>> 52fe6a082e2800b230e04a0c2a12d04f7d6ee539:projects/ntk-cms-api/src/lib/service/coreMain/coreSite.service.ts
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domains/' + id, {
         headers: this.getHeaders(),
@@ -133,11 +126,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-<<<<<<< HEAD:projects/ntk-cms-api/src/lib/service/core/coreSite.service.ts
         map((ret: ErrorExcptionResult<DomainModel>) => {
-=======
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
->>>>>>> 52fe6a082e2800b230e04a0c2a12d04f7d6ee539:projects/ntk-cms-api/src/lib/service/coreMain/coreSite.service.ts
           return this.errorExcptionResultCheck(ret);
         }),
       );
