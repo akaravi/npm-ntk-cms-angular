@@ -1,5 +1,4 @@
 export * from './newsCategory.service';
-export * from './newsCategoryTag.service';
 export * from './newsComment.service';
 export * from './newsConfiguration.service';
 export * from './newsContent.service';
@@ -12,5 +11,4 @@ export * from './newsContentTag.service';
 export * from './newsShareMainAdminSetting.service';
 export * from './newsShareReciverCategory.service';
 export * from './newsShareServerCategory.service';
-export * from './newsTag.service';
 
