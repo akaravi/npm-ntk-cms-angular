@@ -1,4 +1,6 @@
-export class CoreLogScoreModel {
+import { BaseModuleEntity } from '../base/baseModuleEntity';
+
+export class CoreModuleLogScoreModel extends BaseModuleEntity<string> {
 
     moduleName: string;
     moduleEntityName: string;

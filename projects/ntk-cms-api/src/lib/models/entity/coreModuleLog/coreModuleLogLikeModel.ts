@@ -1,4 +1,6 @@
-export class CoreLogLikeModel {
+import { BaseModuleEntity } from '../base/baseModuleEntity';
+
+export class CoreModuleLogLikeModel  extends BaseModuleEntity<string> {
 
 
     moduleName: string;

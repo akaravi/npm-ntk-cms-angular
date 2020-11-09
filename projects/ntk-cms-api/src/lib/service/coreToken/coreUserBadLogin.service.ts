@@ -2,9 +2,9 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreTokenUserBadLoginModel } from '../../models/entity/coreToken/coreTokenUserBadLoginModel';
 
-export class CoreUserBadLoginService extends ApiCmsServerBase<CoreTokenUserBadLoginModel, number>  {
+export class CoreTokenUserBadLoginService extends ApiCmsServerBase<CoreTokenUserBadLoginModel, string>  {
 
   getModuleCotrolerUrl(): string {
-    return 'CoreUserBadLogin';
+    return 'CoreTokenUserBadLogin';
   }
 }

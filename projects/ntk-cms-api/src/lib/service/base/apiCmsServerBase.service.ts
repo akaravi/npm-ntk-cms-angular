@@ -4,6 +4,7 @@ import { ApiServerBase } from './apiServerBase.service';
 import { Observable } from 'rxjs';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 
 
 export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
@@ -60,7 +61,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceGetCount(model: FilterModel): Observable<ErrorExcptionResult<TOut>> {
+  ServiceGetCount(model: FilterModel): Observable<ErrorExcptionResultBase> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -73,8 +74,27 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExcptionResultBase) => {
+          return this.errorExcptionResultBaseCheck(ret);
+        }),
+      );
+  }
+
+  ServiceGetExist(model: FilterModel): Observable<ErrorExcptionResultBase> {
+    // this.loadingStatus=true;
+    if (model == null) {
+      model = new FilterModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/exist', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        catchError(this.handleError),
+        map((ret: ErrorExcptionResultBase) => {
+          return this.errorExcptionResultBaseCheck(ret);
         }),
       );
   }

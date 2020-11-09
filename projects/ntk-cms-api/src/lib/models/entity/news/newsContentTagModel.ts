@@ -6,7 +6,5 @@ export class NewsContentTagModel extends BaseModuleEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_ModuleContent?: any;
   moduleContent?: any;
-  // tslint:disable-next-line: variable-name
-  virtual_ModuleTag?: any;
-  moduleTag?: any;
+
 }

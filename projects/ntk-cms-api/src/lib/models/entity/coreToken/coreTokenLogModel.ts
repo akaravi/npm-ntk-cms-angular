@@ -2,8 +2,6 @@ import { EnumManageUserAccessAreaTypes } from '../../Enums/enumManageUserAccessA
 import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserAccessControllerTypes';
 import { BaseEntity } from '../base/baseEntity';
 export class CoreTokenLogModel  extends BaseEntity<string>  {
-
-
     description: string;
     linkUserId: number;
     linkMemberUserId: number;

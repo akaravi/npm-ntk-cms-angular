@@ -1,3 +1,4 @@
 
-export * from './coreUserBadLogin.service';
+export * from './coreLogAvoidDuplicateDataEntry.service';
+export * from './coreLogError.service';
 
