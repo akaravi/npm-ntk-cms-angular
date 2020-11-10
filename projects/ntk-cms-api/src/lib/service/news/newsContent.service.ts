@@ -5,6 +5,7 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { NewsContentModel } from '../../models/entity/news/newsContentModel';
 import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 
 export class NewsContentService extends ApiCmsServerBase<NewsContentModel, number>  {
 
@@ -63,7 +64,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       );
   }
 
-  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExcptionResult<NewsContentModel>> {
+  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExcptionResultBase> {
     if (model == null) {
       model = new ScoreClickDtoModel();
     }
@@ -74,13 +75,13 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-        map((ret: ErrorExcptionResult<NewsContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExcptionResultBase) => {
+          return this.errorExcptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteAdd(Id: number): Observable<ErrorExcptionResult<NewsContentModel>> {
+  ServiceFavoriteAdd(Id: number): Observable<ErrorExcptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
@@ -89,13 +90,13 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-        map((ret: ErrorExcptionResult<NewsContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExcptionResultBase) => {
+          return this.errorExcptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteRemove(Id: number): Observable<ErrorExcptionResult<NewsContentModel>> {
+  ServiceFavoriteRemove(Id: number): Observable<ErrorExcptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
@@ -104,8 +105,8 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         catchError(this.handleError),
-        map((ret: ErrorExcptionResult<NewsContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExcptionResultBase) => {
+          return this.errorExcptionResultBaseCheck(ret);
         }),
       );
   }
