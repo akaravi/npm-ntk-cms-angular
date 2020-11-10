@@ -5,7 +5,6 @@ export * from './fieldInfo/fieldInputDataSourceModel';
 export * from './fieldInfo/getPropertiesInfoModel';
 export * from './accessModel';
 export * from './baseEntity';
-export * from './baseEntityCategory';
 export * from './baseModuleEntity';
 export * from './captchaModel';
 export * from './enumModel';

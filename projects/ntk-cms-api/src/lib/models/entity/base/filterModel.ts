@@ -4,7 +4,10 @@ import { EnumSortType } from '../../enums/enumSortType';
 
 
 export class FilterModel {
-  Filters: FilterDataModel[] = new Array<FilterDataModel>();
+  constructor() {
+    this.Filters = new Array<FilterDataModel>();
+  }
+  Filters: FilterDataModel[];
   CountLoad = false;
   AccessLoad = false;
   TotalRowData: number;

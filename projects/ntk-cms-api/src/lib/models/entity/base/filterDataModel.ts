@@ -4,7 +4,10 @@ import { EnumFilterDataModelSearchTypes } from '../../enums/enumFilterDataModelS
 
 
 export class FilterDataModel {
-  Filters: FilterDataModel[] = new Array<FilterDataModel>();
+  constructor() {
+    this.Filters = new Array<FilterDataModel>();
+  }
+  Filters: FilterDataModel[];
   value: any;
   StringForceNullSearch: boolean;
   DecimalForceNullSearch: boolean;

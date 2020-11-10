@@ -3,6 +3,7 @@ import { NewsCategoryModel } from './newsCategoryModel';
 import { NewsContentTagModel } from './newsContentTagModel';
 import { NewsContentSimilar } from './newsContentSimilar';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { NewsCommentModel } from './newsCommentModel';
 
 export class NewsContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -26,7 +27,7 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   ModuleCoreCreatedBy: string;
   ModuleCoreUpdatedBy: string;
   Source: string;
-  Comments: string;
+  Comments: NewsCommentModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: NewsCategoryModel;
   Category: NewsCategoryModel;

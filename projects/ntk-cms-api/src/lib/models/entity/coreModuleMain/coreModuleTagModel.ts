@@ -5,7 +5,7 @@ import { CoreModuleTagCategoryModel } from './coreModuleTagCategoryModel';
 
 export class CoreModuleTagModel extends BaseModuleEntity<number> {
   Title: string;
-  LinkCategoryId: string;
+  LinkCategoryId: number;
   Category: CoreModuleTagCategoryModel;
 
 }
