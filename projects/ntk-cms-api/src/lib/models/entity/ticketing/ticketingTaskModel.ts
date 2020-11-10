@@ -8,6 +8,9 @@ export class TicketingTaskModel extends BaseModuleEntity<number>  {
   expireDate?: string;
   Title: string;
   htmlBody: string;
+  FullName: string;
+  PhoneNo: string;
+  Email: string;
   priority: EnumTicketingDepartemenPriority;
   linkCmsUserId?: number;
   linkMemberUserId?: number;
