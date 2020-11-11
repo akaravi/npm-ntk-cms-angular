@@ -28,7 +28,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<LinkManagementTargetShortLinkSetResponceModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -47,7 +47,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<LinkManagementTargetShortLinkGetResponceModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

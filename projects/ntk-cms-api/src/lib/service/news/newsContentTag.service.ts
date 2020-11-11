@@ -20,7 +20,7 @@ export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<NewsContentTagModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

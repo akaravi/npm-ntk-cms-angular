@@ -15,7 +15,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -39,7 +39,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         // delay(200),
 
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -54,7 +54,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -73,7 +73,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResultBase) => {
           return this.errorExcptionResultBaseCheck(ret);
         }),
@@ -92,7 +92,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResultBase) => {
           return this.errorExcptionResultBaseCheck(ret);
         }),
@@ -110,7 +110,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -124,7 +124,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -139,7 +139,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -154,7 +154,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -168,7 +168,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),

@@ -15,7 +15,7 @@ export class CoreEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<EnumModel>) => {
           return ret;
         }),
@@ -28,7 +28,7 @@ export class CoreEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<EnumModel>) => {
           return ret;
         }),
@@ -40,7 +40,7 @@ export class CoreEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<EnumModel>) => {
           return ret;
         }),
@@ -55,7 +55,7 @@ export class CoreEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<EnumModel>) => {
           return ret;
         }),
@@ -67,7 +67,7 @@ export class CoreEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<EnumModel>) => {
           return ret;
         }),

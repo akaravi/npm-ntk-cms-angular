@@ -22,7 +22,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -35,7 +35,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -52,7 +52,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -69,7 +69,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -86,7 +86,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -99,7 +99,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -112,7 +112,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreSiteModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -125,7 +125,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<DomainModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

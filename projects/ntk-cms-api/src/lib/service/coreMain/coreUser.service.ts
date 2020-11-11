@@ -28,7 +28,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreUserModel>) => {
           this.SetCorrectUser(ret.Item);
           return this.errorExcptionResultCheck(ret);
@@ -46,7 +46,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreUserModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

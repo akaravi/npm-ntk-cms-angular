@@ -19,7 +19,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -32,7 +32,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -49,7 +49,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -62,7 +62,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -79,7 +79,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -99,7 +99,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreModuleModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

@@ -24,7 +24,7 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
       )
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<ApplicationLayoutModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -43,7 +43,7 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
       )
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<ApplicationLayoutModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

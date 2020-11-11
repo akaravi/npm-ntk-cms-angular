@@ -24,7 +24,7 @@ export class NewsCategoryService extends ApiCmsServerBase<NewsCategoryModel, num
       )
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<NewsCategoryModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

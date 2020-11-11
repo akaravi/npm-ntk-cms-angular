@@ -20,7 +20,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -34,7 +34,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -48,7 +48,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -62,7 +62,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -76,7 +76,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -90,7 +90,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -104,7 +104,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -118,7 +118,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -132,7 +132,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -146,7 +146,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -160,7 +160,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -174,7 +174,7 @@ export class ApiServerConfigSiteBase extends ApiServerBase  {
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TOut>) => {
           return this.errorExcptionResultCheck(ret);
         }),

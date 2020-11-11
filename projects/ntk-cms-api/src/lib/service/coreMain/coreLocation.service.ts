@@ -24,7 +24,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreLocationModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -41,7 +41,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreLocationModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),
@@ -58,7 +58,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreLocationModel>) => {
           return this.errorExcptionResultCheck(ret);
         }),

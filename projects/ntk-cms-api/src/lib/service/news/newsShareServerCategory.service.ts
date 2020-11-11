@@ -23,7 +23,7 @@ export class NewsShareServerCategoryService extends ApiCmsServerBase<any, number
       })
       .pipe(
         retry(this.configApiRetry),
-        catchError(this.handleError),
+        // catchError(this.handleError)
         map((ret: ErrorExcptionResult<any>) => {
           return this.errorExcptionResultCheck(ret);
         }),
