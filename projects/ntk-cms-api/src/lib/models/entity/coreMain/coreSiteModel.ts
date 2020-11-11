@@ -10,38 +10,35 @@ export class CoreSiteModel extends BaseEntity<number> {
   CurrentSiteDomainUrl: string;
   MainImageSrc: string;
 
-  expireDate?: string;
+  ExpireDate?: Date;
   linkCreatedBySiteId?: number;
   // tslint:disable-next-line: variable-name
   virtual_ParentCreator: CoreSiteModel;
-  parentCreator: CoreSiteModel;
+  ParentCreator: CoreSiteModel;
   Title: string;
-  ownerSiteSetStatus: EnumSiteStatus;
-  userLanguage: number;
-  subDomain: string;
-  domain: string;
-  redirect: string;
-  keyword: string;
-  description: string;
-  linkFavIconId?: number;
-  linkSiteCategoryId: number;
+  OwnerSiteSetStatus: EnumSiteStatus;
+  UserLanguage: number;
+  SubDomain: string;
+  Domain: string;
+  Redirect: string;
+  Keyword: string;
+  Description: string;
+  LinkFavIconId?: number;
+  LinkSiteCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSiteCategory: CoreSiteCategoryModel;
-  cmsSiteCategory: CoreSiteCategoryModel;
-  hasAccountingForm: boolean;
-  viewInCmsSiteLIst: boolean;
-  accountingFormNo: number;
-  accountingFormCreatedDate?: string;
-  accountingFormUpdatedDate?: string;
-  siteUsers: CoreSiteUserModel[];
-  moduleSites: CoreModuleSiteModel[];
-  domainAliases: CoreSiteDomainAliasModel[];
-  childernCreateds: CoreSiteModel[];
-  devices: CoreDeviceModel[];
-  copyright: string;
-  webMasterEmail: string;
-  webEditorEmail: string;
-
+  CmsSiteCategory: CoreSiteCategoryModel;
+  HasAccountingForm: boolean;
+  ViewInCmsSiteLIst: boolean;
+  AccountingFormNo: number;
+  AccountingFormCreatedDate?: string;
+  AccountingFormUpdatedDate?: string;
+  SiteUsers: CoreSiteUserModel[];
+  ModuleSites: CoreModuleSiteModel[];
+  DomainAliases: CoreSiteDomainAliasModel[];
+  ChildernCreateds: CoreSiteModel[];
+  Devices: CoreDeviceModel[];
+  Copyright: string;
 
 }
 
