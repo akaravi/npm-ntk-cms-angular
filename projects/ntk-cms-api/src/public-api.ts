@@ -59,6 +59,7 @@ export * from './lib/models/entity/polling/_export';
 // polling
 export * from './lib/service/ticketing/_export';
 export * from './lib/models/entity/ticketing/_export';
+export * from './lib/models/dto/ticketing/_export';
 // polling
 
 
