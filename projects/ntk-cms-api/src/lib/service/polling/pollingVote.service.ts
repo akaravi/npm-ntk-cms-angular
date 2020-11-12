@@ -8,11 +8,9 @@ export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, numbe
   getModuleCotrolerUrl(): string {
     return 'PollingVote';
   }
-  ServiceAddBatch(
-    model: PollingVoteModel,
-  ): Observable<ErrorExcptionResult<PollingVoteModel>> {
+  ServiceAddBatch(model: PollingVoteModel[]): Observable<ErrorExcptionResult<PollingVoteModel>> {
     if (model == null) {
-      model = new PollingVoteModel();
+      model = [];
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
