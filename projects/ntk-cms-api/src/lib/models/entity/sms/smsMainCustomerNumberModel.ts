@@ -1,10 +1,10 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class SmsMainCustomerNumberModel extends BaseModuleEntity<number> {
-  status: boolean;
-  firstSubmit: string;
-  usanceDate: string;
+  Status: boolean;
+  FirstSubmit: string;
+  UsanceDate: string;
   Salestatus: boolean;
-  linkPathAndCustomerNumber?: any;
-  apiPathAndCustomerNumbers?: any;
+  LinkPathAndCustomerNumber?: any;
+  ApiPathAndCustomerNumbers?: any;
 }

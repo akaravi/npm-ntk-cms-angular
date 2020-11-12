@@ -1,9 +1,8 @@
 export class CoreLogAvoidDuplicateDataEntryModel {
-
-    moduleName: string;
-    moduleEntityName: string;
-    linkUserId?: number;
-    linkMemberUserId?: number;
-    entityId: number;
+    ModuleName: string;
+    ModuleEntityName: string;
+    LinkUserId?: number;
+    LinkMemberUserId?: number;
+    EntityId: number;
 }
 

@@ -1,21 +1,21 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class SmsLogOutBoxDetailModel extends BaseModuleEntity<number> {
-  recordDetailStatus: number;
-  linkOutBoxId?: any;
-  receiverNumber?: any;
-  credit: number;
-  senderNumber?: any;
-  isSended: boolean;
-  getApiOnSendInfo?: any;
-  getApiOnSendIdentity?: any;
-  getApiDeliveryStatus?: any;
-  getApiOnDeliveryInfo?: any;
-  userDelete?: any;
+  RecordDetailStatus: number;
+  LinkOutBoxId?: any;
+  ReceiverNumber?: any;
+  Credit: number;
+  SenderNumber?: any;
+  IsSended: boolean;
+  GetApiOnSendInfo?: any;
+  GetApiOnSendIdentity?: any;
+  GetApiDeliveryStatus?: any;
+  GetApiOnDeliveryInfo?: any;
+  UserDelete?: any;
   AdminuserDelete?: any;
-  apiNumber: number;
+  ApiNumber: number;
   // tslint:disable-next-line: variable-name
   virtual_OutBox?: any;
-  outBox?: any;
-  outBoxDetailLocks?: any;
+  OutBox?: any;
+  OutBoxDetailLocks?: any;
 }

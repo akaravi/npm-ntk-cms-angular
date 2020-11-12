@@ -5,18 +5,18 @@ import { ApplicationMemberInfoModel } from './applicationMemberInfoModel';
 
 export class ApplicationLogNotificationModel extends BaseModuleEntity<number>  {
 
-    linkApplicationMemberId: string;
-    memberInfo: ApplicationMemberInfoModel;
-    linkApplicationId?: number;
-    application: ApplicationAppModel;
+    LinkApplicationMemberId: string;
+    MemberInfo: ApplicationMemberInfoModel;
+    LinkApplicationId?: number;
+    Application: ApplicationAppModel;
     Title: string;
-    content: string;
-    contentType: EnumNotificationType;
-    contentJson: string;
-    contentJsonClass: string;
-    smallImageId: number;
-    bigImageId: number;
-    smallImageIdSrc: string;
-    bigImageIdSrc: string;
+    Content: string;
+    ContentType: EnumNotificationType;
+    ContentJson: string;
+    ContentJsonClass: string;
+    SmallImageId: number;
+    BigImageId: number;
+    SmallImageIdSrc: string;
+    BigImageIdSrc: string;
 
 }

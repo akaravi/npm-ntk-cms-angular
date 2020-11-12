@@ -6,8 +6,8 @@ export class CoreSiteCategoryModel extends BaseEntity<number>  {
     TitleML: string;
 
     Title: string;
-    titleResourceLanguage: string;
-    description: string;
-    sites: CoreSiteModel[];
+    TitleResourceLanguage: string;
+    Description: string;
+    Sites: CoreSiteModel[];
 
 }

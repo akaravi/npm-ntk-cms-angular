@@ -3,10 +3,10 @@ import { CoreSiteModel } from './coreSiteModel';
 
 export class CoreSiteDomainAliasModel extends BaseEntity<number>  {
   CmsSite: CoreSiteModel;
-  subDomain: string;
-  domain: string;
-  redirect: string;
-  linkCmsSiteId?: number;
+  SubDomain: string;
+  Domain: string;
+  Redirect: string;
+  LinkCmsSiteId?: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSite: CoreSiteModel;
 }

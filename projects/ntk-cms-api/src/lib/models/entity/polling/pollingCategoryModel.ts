@@ -3,20 +3,18 @@ import { BankPaymentTransactionModel } from '../bankPayment/bankPaymentTransacti
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class PollingCategoryModel extends BaseModuleEntity<number>  {
-
   Title: string;
-  currencyUnitRatioByShop: number;
-  maxTransactionAmount: number;
-  minTransactionAmount: number;
-  fixFeeTransactionAmount: number;
-  percentFeeTransactionAmount: number;
-  linkPublicConfigId?: number;
+  CurrencyUnitRatioByShop: number;
+  MaxTransactionAmount: number;
+  MinTransactionAmount: number;
+  FixFeeTransactionAmount: number;
+  PercentFeeTransactionAmount: number;
+  LinkPublicConfigId?: number;
   // tslint:disable-next-line: variable-name
   virtual_PublicConfig: BankPaymentPublicConfigModel;
-  publicConfig: BankPaymentPublicConfigModel;
-  privateConfigJsonValues: string;
-  memo: string;
-  transactions: BankPaymentTransactionModel[];
-  linkModuleFileLogoIdSrc: string;
-
+  PublicConfig: BankPaymentPublicConfigModel;
+  PrivateConfigJsonValues: string;
+  Memo: string;
+  Transactions: BankPaymentTransactionModel[];
+  LinkModuleFileLogoIdSrc: string;
 }

@@ -1,6 +1,6 @@
 export class CoreSiteAddFirstSiteDtoModel {
-  captchaKey: string;
-  captchaText: string;
+  CaptchaKey: string;
+  CaptchaText: string;
   Domain: string;
   Description: string;
   SubDomain: string;

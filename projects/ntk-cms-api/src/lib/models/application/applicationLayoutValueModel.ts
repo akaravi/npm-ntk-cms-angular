@@ -3,13 +3,13 @@ import { ApplicationAppModel } from '../entity/application/applicationAppModel';
 import { BaseModuleEntity } from '../entity/base/baseModuleEntity';
 
 export class ApplicationLayoutValueModel extends BaseModuleEntity<number>  {
-  linkApplicationId?: number;
+  LinkApplicationId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Application: ApplicationAppModel;
-  application: ApplicationAppModel;
-  linkLayoutId?: number;
+  Application: ApplicationAppModel;
+  LinkLayoutId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Layout: ApplicationLayoutModel;
-  layout: ApplicationLayoutModel;
-  jsonFormValues: string;
+  Layout: ApplicationLayoutModel;
+  JsonFormValues: string;
 }

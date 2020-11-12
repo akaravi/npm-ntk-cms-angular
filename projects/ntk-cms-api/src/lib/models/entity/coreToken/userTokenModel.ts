@@ -2,21 +2,18 @@ import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserA
 import { EnumManageUserAccessAreaTypes } from '../../Enums/enumManageUserAccessAreaTypes';
 import { BaseEntity } from '../base/baseEntity';
 export class UserTokenModel extends BaseEntity<string>   {
-
-    linkUserId: number;
-    linkMemberUserId: number;
-    linkSiteId: number;
-    deviceClientMAC: string;
-    linkDeviceId: number;
-    token: string;
-    expireDate: string;
-    userAccessAreaType: EnumManageUserAccessAreaTypes;
-    userType: EnumManageUserAccessControllerTypes;
-    userAccessAdminAllowToAllData: boolean;
-    userAccessAdminAllowToProfessionalData: boolean;
-    rememberOnDevice: boolean;
-    browserLanguage: string;
-    userLanguage: number;
-
-
+    LinkUserId: number;
+    LinkMemberUserId: number;
+    LinkSiteId: number;
+    DeviceClientMAC: string;
+    LinkDeviceId: number;
+    Token: string;
+    ExpireDate: string;
+    UserAccessAreaType: EnumManageUserAccessAreaTypes;
+    UserType: EnumManageUserAccessControllerTypes;
+    UserAccessAdminAllowToAllData: boolean;
+    UserAccessAdminAllowToProfessionalData: boolean;
+    RememberOnDevice: boolean;
+    BrowserLanguage: string;
+    UserLanguage: number;
 }

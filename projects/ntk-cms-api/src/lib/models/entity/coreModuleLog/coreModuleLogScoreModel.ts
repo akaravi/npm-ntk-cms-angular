@@ -1,13 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class CoreModuleLogScoreModel extends BaseModuleEntity<string> {
-
-    moduleName: string;
-    moduleEntityName: string;
-    linkUserId?: number;
-    linkMemberUserId?: number;
-    entityId: number;
-    scorePercent: number;
-
+    ModuleName: string;
+    ModuleEntityName: string;
+    LinkUserId?: number;
+    LinkMemberUserId?: number;
+    EntityId: number;
+    ScorePercent: number;
 }
 

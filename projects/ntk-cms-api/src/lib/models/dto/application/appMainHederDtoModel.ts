@@ -2,20 +2,20 @@ import { EnumDeviceStatus } from '../../enums/enumDeviceStatus';
 
 export class AppMainHederDtoModel {
 
-    deviceId: string;
-    deviceBrand: string;
-    notificationId: string;
-    deviceIP: string;
-    locationLong: string;
-    locationLat: string;
-    country: string;
-    deviceStatus: EnumDeviceStatus;
-    simCard: string;
-    language: string;
-    appSourceVer: string;
-    appBuildVer: number;
-    packageName: string;
-    layout: string;
-    token: string;
+    DeviceId: string;
+    DeviceBrand: string;
+    NotificationId: string;
+    DeviceIP: string;
+    LocationLong: string;
+    LocationLat: string;
+    Country: string;
+    DeviceStatus: EnumDeviceStatus;
+    SimCard: string;
+    Language: string;
+    AppSourceVer: string;
+    AppBuildVer: number;
+    PackageName: string;
+    Layout: string;
+    Token: string;
 }
 
