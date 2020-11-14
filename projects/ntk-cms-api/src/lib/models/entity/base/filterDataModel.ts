@@ -8,7 +8,7 @@ export class FilterDataModel {
     this.Filters = new Array<FilterDataModel>();
   }
   Filters: FilterDataModel[];
-  value: any;
+  Value: any;
   StringForceNullSearch: boolean;
   DecimalForceNullSearch: boolean;
   LatitudeLongitudeForceNullSearch: boolean;

@@ -7,13 +7,13 @@ export class CoreUserGroupModel  extends BaseEntity<number>  {
     TitleML: string;
 
     Title: string;
-    titleResourceLanguage: string;
-    description: string;
-    userType: EnumManageUserAccessControllerTypes;
-    userTypeTitle: string;
-    userTypeDescription: string;
-    cmsSiteUsers: CoreSiteUserModel[];
-    cmsCpMainMenuCmsUserGroup: CoreCpMainMenuCmsUserGroupModel[];
+    TitleResourceLanguage: string;
+    Description: string;
+    UserType: EnumManageUserAccessControllerTypes;
+    UserTypeTitle: string;
+    UserTypeDescription: string;
+    CmsSiteUsers: CoreSiteUserModel[];
+    CmsCpMainMenuCmsUserGroup: CoreCpMainMenuCmsUserGroupModel[];
 }
 
 

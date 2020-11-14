@@ -1,12 +1,12 @@
 export class AuthUserSignUpModel {
-  captchaKey: string;
-  captchaText: string;
-  email: string;
-  mobile: string;
+  CaptchaKey: string;
+  CaptchaText: string;
+  Email: string;
+  Mobile: string;
   Password: string;
-  rePassword: string;
-  name: string;
-  family: string;
+  RePassword: string;
+  Name: string;
+  Family: string;
   SiteId: number;
-  roulaccespt: boolean;
+  Roulaccespt: boolean;
 }

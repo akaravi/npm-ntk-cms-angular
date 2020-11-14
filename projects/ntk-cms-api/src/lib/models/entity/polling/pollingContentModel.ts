@@ -3,37 +3,35 @@ import { PollingCategoryModel } from './PollingCategoryModel';
 import { PollingOptionModel } from './PollingOptionModel';
 
 export class PollingContentModel extends BaseModuleEntity<number> {
-
   Source: string;
-
-  expireDate?: string;
-  viewStatisticsBeforeVote: boolean;
-  viewStatisticsAfterVote: boolean;
+  ExpireDate?: Date;
+  ViewStatisticsBeforeVote: boolean;
+  ViewStatisticsAfterVote: boolean;
   // tslint:disable-next-line: variable-name
   virtual_Category: PollingCategoryModel;
-  category: PollingCategoryModel;
-  body: string;
-  description: string;
-  fromDate?: string;
-  geolocationlatitude?: number;
-  geolocationlongitude?: number;
-  keyword: string;
-  linkCategoryId?: number;
-  linkFileIds: string;
-  linkFilePodcastId?: number;
-  linkFileMovieId?: number;
-  linkMainImageId?: number;
-  scoreClick: number;
-  scoreSumPercent: number;
+  Category: PollingCategoryModel;
+  Body: string;
+  Description: string;
+  FromDate?: string;
+  Geolocationlatitude?: number;
+  Geolocationlongitude?: number;
+  Keyword: string;
+  LinkCategoryId?: number;
+  LinkFileIds: string;
+  LinkFilePodcastId?: number;
+  LinkFileMovieId?: number;
+  LinkMainImageId?: number;
+  ScoreClick: number;
+  ScoreSumPercent: number;
   Title: string;
-  viewCount: number;
-  favorited: boolean;
-  mainImageSrc: string;
-  linkFilePodcastIdSrc: string;
-  linkFileMovieIdSrc: string;
-  linkFileIdsSrc: string[];
-  question: string;
-  maxVoteForThisContent: number;
-  maxVoteForEachOption: number;
-  options: PollingOptionModel[];
+  ViewCount: number;
+  Favorited: boolean;
+  MainImageSrc: string;
+  LinkFilePodcastIdSrc: string;
+  LinkFileMovieIdSrc: string;
+  LinkFileIdsSrc: string[];
+  Question: string;
+  MaxVoteForThisContent: number;
+  MaxVoteForEachOption: number;
+  Options: PollingOptionModel[];
 }

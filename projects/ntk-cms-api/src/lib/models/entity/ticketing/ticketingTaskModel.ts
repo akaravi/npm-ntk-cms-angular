@@ -5,26 +5,26 @@ import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 
 export class TicketingTaskModel extends BaseModuleEntity<number>  {
-  expireDate?: string;
+  ExpireDate?: Date;
   Title: string;
-  htmlBody: string;
+  HtmlBody: string;
   FullName: string;
   PhoneNo: string;
   Email: string;
   priority: EnumTicketingDepartemenPriority;
-  linkCmsUserId?: number;
-  linkMemberUserId?: number;
-  linkTicketingDepartemenId?: number;
-  ticketStatus: EnumTicketStatus;
-  userIpAddress: string;
-  deviceInformation: string;
+  LinkCmsUserId?: number;
+  LinkMemberUserId?: number;
+  LinkTicketingDepartemenId?: number;
+  TicketStatus: EnumTicketStatus;
+  UserIpAddress: string;
+  DeviceInformation: string;
   // tslint:disable-next-line: variable-name
   virtual_Departemen: TicketingDepartemenModel;
-  departemen: TicketingDepartemenModel;
-  linkOperatorId?: number;
-  answers: TicketingAnswerModel[];
-  ticketingDepartemenDefaultAnswerBody: string;
-  linkFileIds: string;
-  linkFileIdsSrc: string[];
+  Departemen: TicketingDepartemenModel;
+  LinkOperatorId?: number;
+  Answers: TicketingAnswerModel[];
+  TicketingDepartemenDefaultAnswerBody: string;
+  LinkFileIds: string;
+  LinkFileIdsSrc: string[];
 }
 

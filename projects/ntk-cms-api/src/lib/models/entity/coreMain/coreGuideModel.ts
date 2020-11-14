@@ -3,14 +3,14 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreGuideModel  extends BaseEntity<number> {
      Title: string;
-    bodyFa: string;
-    bodyEn: string;
-    bodyAr: string;
-    linkFileIds: string;
-    linkParentId?: number;
+    BodyFa: string;
+    BodyEn: string;
+    BodyAr: string;
+    LinkFileIds: string;
+    LinkParentId?: number;
     // tslint:disable-next-line: variable-name
     virtual_Parent: CoreGuideModel;
-    parent: CoreGuideModel;
-    children: CoreGuideModel[];
+    Parent: CoreGuideModel;
+    Children: CoreGuideModel[];
 }
 

@@ -4,20 +4,19 @@ import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorM
 import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingAnswerModel  extends BaseModuleEntity<number> {
-
-    linkTicketId: number;
-    htmlBody: string;
+    LinkTicketId: number;
+    HtmlBody: string;
     // tslint:disable-next-line: variable-name
     virtual_Ticket: TicketingTaskModel;
-    ticket: TicketingTaskModel;
-    linkTicketingDepartemenId?: number;
+    Ticket: TicketingTaskModel;
+    LinkTicketingDepartemenId?: number;
     // tslint:disable-next-line: variable-name
     virtual_Departemen: TicketingDepartemenModel;
-    departemen: TicketingDepartemenModel;
-    linkTypeOperatorId?: number;
+    Departemen: TicketingDepartemenModel;
+    LinkTypeOperatorId?: number;
     // tslint:disable-next-line: variable-name
     virtual_DepartemenOperator: TicketingDepartemenOperatorModel;
-    departemenOperator: TicketingDepartemenOperatorModel;
-    linkFileIds: string;
-    linkFileIdsSrc: string[];
+    DepartemenOperator: TicketingDepartemenOperatorModel;
+    LinkFileIds: string;
+    LinkFileIdsSrc: string[];
 }

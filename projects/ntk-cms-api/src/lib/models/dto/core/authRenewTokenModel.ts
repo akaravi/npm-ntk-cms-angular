@@ -3,5 +3,5 @@ export class AuthRenewTokenModel {
   UserId: number;
   UserAccessAdminAllowToAllData: boolean;
   UserAccessAdminAllowToProfessionalData: boolean;
-  lang: string;
+  Lang: string;
 }

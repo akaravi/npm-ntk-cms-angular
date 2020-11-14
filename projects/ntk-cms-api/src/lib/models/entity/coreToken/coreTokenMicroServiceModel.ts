@@ -4,17 +4,15 @@ import { EnumMicroServiceConnectionType } from '../../Enums/enumMicroServiceConn
 import { EnumMicroServiceConnectionStatus } from '../../Enums/enumMicroServiceConnectionStatus';
 import { BaseEntity } from '../base/baseEntity';
 export class CoreTokenMicroServiceModel extends BaseEntity<string>   {
-
-
-    linkUserId?: number;
-    linkSiteId?: number;
-    deviceId: string;
-    deviceType: EnumMicroServiceType;
-    userType: EnumManageUserAccessControllerTypes;
-    deviceConnectionType: EnumMicroServiceConnectionType;
-    deviceConnectionState: EnumMicroServiceConnectionStatus;
-    requestDate: string;
-    usedUsername: string;
-    iP: string;
-    description: string;
+    LinkUserId?: number;
+    LinkSiteId?: number;
+    DeviceId: string;
+    DeviceType: EnumMicroServiceType;
+    UserType: EnumManageUserAccessControllerTypes;
+    DeviceConnectionType: EnumMicroServiceConnectionType;
+    DeviceConnectionState: EnumMicroServiceConnectionStatus;
+    RequestDate: string;
+    UsedUsername: string;
+    IP: string;
+    Description: string;
 }
