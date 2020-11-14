@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsContentModel } from './newsContentModel';
 
 export class NewsCommentModel extends BaseModuleEntity<number> {
-  LinkContentid: number;
+  LinkContentId: number;
   LinkParentId: number;
   Writer: string;
   Comment: string;
