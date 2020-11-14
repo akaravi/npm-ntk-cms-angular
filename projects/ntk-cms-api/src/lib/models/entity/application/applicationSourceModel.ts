@@ -38,7 +38,5 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
     updateSourceByGit: boolean;
     isAbilityGradleBuild: boolean;
     filePathOnServer: string;
-
-
-
+    LinkMainImageIdSrc: string;
 }

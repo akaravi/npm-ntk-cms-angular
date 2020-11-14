@@ -14,4 +14,5 @@ export class ApplicationLayoutModel extends BaseModuleEntity<number>  {
   JsonFormAdminSystemValue: string;
   LinkModuleFilePreviewImageId ?: number;
   LayoutValues: ApplicationLayoutValueModel[];
+  LinkMainImageIdSrc: string;
 }

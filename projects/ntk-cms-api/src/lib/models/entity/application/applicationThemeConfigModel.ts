@@ -18,5 +18,5 @@ export class ApplicationThemeConfigModel extends BaseModuleEntity<number>  {
     themeConfigJsonValues: string;
     themeConfigLayouts: ThemeConfigLayoutModel[];
     applications: ApplicationAppModel[];
-
+    LinkMainImageIdSrc: string;
 }

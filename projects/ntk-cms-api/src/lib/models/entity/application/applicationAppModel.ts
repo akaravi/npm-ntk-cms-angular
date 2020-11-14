@@ -62,5 +62,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   DownloadLinksrc: string;
   DownloadLinksrcByDomain: string;
   FilePathOnServer: string;
-
+  LinkFileIdIconSrc: string;
+  LinkFileIdLogoSrc: string;
+  LinkFileIdSplashScreenSrc: string;
 }

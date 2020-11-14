@@ -9,4 +9,5 @@ export class ApplicationIntroModel extends BaseModuleEntity<number>  {
     LinkApplicationId: number;
     Application: ApplicationAppModel;
     MainImageSrc: string;
+    LinkMainImageIdSrc: string;
 }
