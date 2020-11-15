@@ -6,7 +6,6 @@ import { ApplicationSourceModel } from './applicationSourceModel';
 import { ApplicationThemeConfigModel } from './applicationThemeConfigModel';
 
 export class ApplicationAppModel extends BaseModuleEntity<number>  {
-  LinkSiteId: number;
   AppKey: string;
   ExpireDate?: string;
   LinkFileIdIcon?: number;
