@@ -6,4 +6,5 @@ export class PollingVoteModel extends BaseModuleEntity<number> {
   OptionScore: number;
   DeviceUserSerial: string;
   OtherInfo: string;
+
 }

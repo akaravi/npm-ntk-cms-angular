@@ -26,7 +26,7 @@ export class PollingContentModel extends BaseModuleEntity<number> {
   Title: string;
   ViewCount: number;
   Favorited: boolean;
-  MainImageSrc: string;
+  LinkMainImageIdSrc: string;
   LinkFilePodcastIdSrc: string;
   LinkFileMovieIdSrc: string;
   LinkFileIdsSrc: string[];

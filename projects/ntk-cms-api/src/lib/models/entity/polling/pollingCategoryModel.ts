@@ -17,4 +17,7 @@ export class PollingCategoryModel extends BaseModuleEntity<number>  {
   Memo: string;
   Transactions: BankPaymentTransactionModel[];
   LinkModuleFileLogoIdSrc: string;
+
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }
