@@ -13,4 +13,12 @@ export class NewsCategoryModel extends BaseModuleEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_Category: NewsCategoryModel;
   Contents: NewsContentModel[];
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
+
+
+
+
+
+
 }

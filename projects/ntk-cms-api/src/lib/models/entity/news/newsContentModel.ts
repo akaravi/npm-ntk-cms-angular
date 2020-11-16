@@ -22,7 +22,7 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   ScoreSumPercent: number;
   ViewCount: number;
   Favorited: boolean;
-  MainImageSrc: string;
+
   ExpireDate: Date;
   ModuleCoreCreatedBy: string;
   ModuleCoreUpdatedBy: string;
@@ -35,6 +35,7 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   Similars: NewsContentSimilar[];
   OtherInfos: string;
   ContentAndParameterValues: any;
+  LinkMainImageIdSrc: string;
   LinkFilePodcastIdSrc: string;
   LinkFileMovieIdSrc: string;
   LinkFileIdsSrc: string[];
