@@ -9,4 +9,5 @@ export * from './tokenDeviceClientInfoDtoModel';
 export * from './coreSiteSearchModel';
 export * from './domainModel';
 export * from './scoreClickDtoModel';
+export * from './tokenDeviceClientMemberInfoDtoModel';
 

@@ -16,6 +16,7 @@ import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChang
 import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
 import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
+import { TokenDeviceClientMemberInfoDtoModel } from '../../models/dto/core/tokenDeviceClientMemberInfoDtoModel';
 
 
 export class CoreAuthService extends ApiServerBase {
@@ -69,6 +70,17 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDevice/', model).pipe(
+      // catchError(this.handleError)
+      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+        if (ret.IsSuccess) {
+          this.SetCorrectTokenInfo(ret.Item);
+        }
+        return ret;
+      }),
+    );
+  }
+  ServiceGetTokenDeviceMember(model: TokenDeviceClientMemberInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDeviceMember/', model).pipe(
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
