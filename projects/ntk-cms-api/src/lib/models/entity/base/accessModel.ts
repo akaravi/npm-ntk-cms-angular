@@ -14,25 +14,4 @@ export class AccessModel {
   AccessDeleteRowOtherCreatedBy = false;
   FieldsInfo: DataFieldInfoModel[];
 
-
-
-
-    get CheckAccessAddField(): [] {
-        return this._bar;
-    }
-    set bar(value: boolean) {
-        this._bar = value;
-    }
-
-  CheckAccessField(nameField: string): DataFieldInfoModel {
-    if (!this.FieldsInfo) {
-      return new DataFieldInfoModel();
-    }
-    this.FieldsInfo.filter((item) => {
-      if (nameField.toLowerCase() === item.FieldName.toLowerCase()) {
-        return item;
-      }
-    });
-    return new DataFieldInfoModel();
-  }
 }
