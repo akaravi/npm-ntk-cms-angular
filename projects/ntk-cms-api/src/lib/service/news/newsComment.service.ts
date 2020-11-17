@@ -1,8 +1,8 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { NewsCommentModel } from '../../models/entity/news/newsCommentModel';
-import { ErrorExcptionResultBase } from 'ntk-cms-api';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 
 
 export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, number>  {

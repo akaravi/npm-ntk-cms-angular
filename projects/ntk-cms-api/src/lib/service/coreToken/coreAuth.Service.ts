@@ -1,4 +1,4 @@
-import { catchError, map } from 'rxjs/operators';
+import {  map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
@@ -16,7 +16,6 @@ import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChang
 import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
 import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
-import { TokenDeviceClientMemberInfoDtoModel } from '../../models/dto/core/tokenDeviceClientMemberInfoDtoModel';
 
 
 export class CoreAuthService extends ApiServerBase {
@@ -79,17 +78,17 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-  ServiceGetTokenDeviceMember(model: TokenDeviceClientMemberInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDeviceMember/', model).pipe(
-      // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
-        if (ret.IsSuccess) {
-          this.SetCorrectTokenInfo(ret.Item);
-        }
-        return ret;
-      }),
-    );
-  }
+  // ServiceGetTokenDeviceMember(model: TokenDeviceClientMemberInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  //   return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDeviceMember/', model).pipe(
+  //     // catchError(this.handleError)
+  //     map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+  //       if (ret.IsSuccess) {
+  //         this.SetCorrectTokenInfo(ret.Item);
+  //       }
+  //       return ret;
+  //     }),
+  //   );
+  // }
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExcptionResult<CoreUserModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)

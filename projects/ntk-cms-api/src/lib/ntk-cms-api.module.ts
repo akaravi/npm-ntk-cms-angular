@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NtkCmsApiComponent } from './ntk-cms-api.component';
+import { NtkCmsApiComponent } from '../public-api';
 
 
 
