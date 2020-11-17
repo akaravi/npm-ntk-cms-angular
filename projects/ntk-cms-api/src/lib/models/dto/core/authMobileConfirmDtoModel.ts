@@ -2,6 +2,6 @@ export class AuthMobileConfirmDtoModel {
   CaptchaKey: string;
   CaptchaText: string;
   LinkUserId: number;
-  Email: string;
+  Mobile: string;
   Code: string;
 }
