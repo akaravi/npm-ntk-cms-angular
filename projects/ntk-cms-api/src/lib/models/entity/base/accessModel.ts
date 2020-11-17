@@ -1,3 +1,4 @@
+import { AccessHelper } from '../../../common/accessHelper';
 import { DataFieldInfoModel } from './fieldInfo/dataFieldInfoModel';
 
 export class AccessModel {
@@ -13,4 +14,5 @@ export class AccessModel {
   AccessEditRowOtherCreatedBy = false;
   AccessDeleteRowOtherCreatedBy = false;
   FieldsInfo: DataFieldInfoModel[];
+  AccessHelper = new AccessHelper(this);
 }

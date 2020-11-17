@@ -1,54 +1,26 @@
 import { AccessModel } from '../models/entity/base/accessModel';
 
 export class AccessHelper {
-  AccessAddFields: {};
-  AccessEditFields: {};
-  AccessFieldsSet(Access: AccessModel): void {
+
+  Access: AccessModel;
+  AccessAddFields: any;
+  AccessEditFields: any;
+  AccessWatchFields: any;
+  AccessSearchFields: any;
+  constructor(access: AccessModel) {
+    this.AccessFieldsSet(access);
+  }
+  AccessFieldsSet(access: AccessModel): void {
+    this.Access = access;
+    this.AccessAddFields = {};
     this.AccessEditFields = {};
-    Access.FieldsInfo.filter((item) => {
+    this.AccessWatchFields = {};
+    this.AccessSearchFields = {};
+    access.FieldsInfo.filter((item) => {
       this.AccessAddFields[item.FieldName] = item.AccessAddField;
       this.AccessEditFields[item.FieldName] = item.AccessEditField;
+      this.AccessWatchFields[item.FieldName] = item.AccessWatchField;
+      this.AccessSearchFields[item.FieldName] = item.AccessSearchField;
     });
-  }
-  AccessDeleteRow(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessDeleteRow;
-  }
-
-  AccessEditRow(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessEditRow;
-  }
-  AccessAddRow(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessAddRow;
-  }
-  AccessRowInPanelDemo(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessRowInPanelDemo;
-  }
-  AccessRowWatchInSharingCategory(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessRowWatchInSharingCategory;
-  }
-  AccessWatchRowOtherSiteId(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessWatchRowOtherSiteId;
-  }
-  AccessWatchRowOtherCreatedBy(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessWatchRowOtherCreatedBy;
-  }
-  AccessEditRowOtherSiteId(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessEditRowOtherSiteId;
-  }
-  AccessEditRowOtherCreatedBy(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessEditRowOtherCreatedBy;
-  }
-  AccessDeleteRowOtherCreatedBy(Access: AccessModel): boolean {
-    if (!Access) { return false; }
-    return Access.AccessDeleteRowOtherCreatedBy;
   }
 }

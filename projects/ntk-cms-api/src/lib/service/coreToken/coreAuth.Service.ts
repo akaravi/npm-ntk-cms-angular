@@ -1,3 +1,5 @@
+import { AuthEmailConfirmDtoModel } from './../../models/dto/core/authEmailConfirmDtoModel';
+import { AuthMobileConfirmDtoModel } from './../../models/dto/core/authMobileConfirmDtoModel';
 import {  map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
@@ -170,6 +172,38 @@ export class CoreAuthService extends ApiServerBase {
 
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/existToken', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: ErrorExcptionResultBase) => {
+          return ret;
+        }),
+      );
+  }
+  ServiceMobileConfirm(model: AuthMobileConfirmDtoModel): Observable<ErrorExcptionResultBase> {
+    if (model == null) {
+      model = new AuthMobileConfirmDtoModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/mobileConfirm', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: ErrorExcptionResultBase) => {
+          return ret;
+        }),
+      );
+  }
+  ServiceEmailConfirm(model: AuthEmailConfirmDtoModel): Observable<ErrorExcptionResultBase> {
+    if (model == null) {
+      model = new AuthEmailConfirmDtoModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/emailConfirm', model, {
         headers: this.getHeaders(),
       })
       .pipe(

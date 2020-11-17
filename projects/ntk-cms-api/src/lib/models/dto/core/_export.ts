@@ -10,4 +10,6 @@ export * from './coreSiteSearchModel';
 export * from './domainModel';
 export * from './scoreClickDtoModel';
 export * from './tokenDeviceClientMemberInfoDtoModel';
+export * from './authEmailConfirmDtoModel';
+export * from './authMobileConfirmDtoModel';
 

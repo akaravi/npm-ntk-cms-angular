@@ -1,11 +1,11 @@
 /*
  * Public API Surface of ntk-cms-api
  */
-export * from './lib/common/_export';
 export * from './lib/ntk-cms-api.service';
 export * from './lib/ntk-cms-api.component';
 export * from './lib/ntk-cms-api.module';
 // base
+export * from './lib/common/_export';
 export * from './lib/models/enums/_export';
 export * from './lib/models/entity/base/_export';
 // base
