@@ -7,9 +7,7 @@ export class AccessHelper {
   AccessEditFields: any;
   AccessWatchFields: any;
   AccessSearchFields: any;
-  constructor(access: AccessModel) {
-    this.AccessFieldsSet(access);
-  }
+
   AccessFieldsSet(access: AccessModel): void {
     this.Access = access;
     this.AccessAddFields = {};
