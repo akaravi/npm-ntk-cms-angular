@@ -1,59 +1,54 @@
-import { ErrorExcptionResult } from '../models/entity/base/errorExcptionResult';
+import { AccessModel } from '../models/entity/base/accessModel';
 
 export class AccessHelper {
-  AccessDeleteRow(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessDeleteRow;
+  AccessAddFields: {};
+  AccessEditFields: {};
+  AccessFieldsSet(Access: AccessModel): void {
+    this.AccessEditFields = {};
+    Access.FieldsInfo.filter((item) => {
+      this.AccessAddFields[item.FieldName] = item.AccessAddField;
+      this.AccessEditFields[item.FieldName] = item.AccessEditField;
+    });
   }
-  AccessWatchRow(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return false; // return model?.Access?.AccessWatchRow;
+  AccessDeleteRow(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessDeleteRow;
   }
-  AccessEditRow(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessEditRow;
+
+  AccessEditRow(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessEditRow;
   }
-  AccessAddRow(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessAddRow;
+  AccessAddRow(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessAddRow;
   }
-  AccessRowInPanelDemo(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessRowInPanelDemo;
+  AccessRowInPanelDemo(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessRowInPanelDemo;
   }
-  AccessRowWatchInSharingCategory(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessRowWatchInSharingCategory;
+  AccessRowWatchInSharingCategory(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessRowWatchInSharingCategory;
   }
-  AccessWatchRowOtherSiteId(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return false;
+  AccessWatchRowOtherSiteId(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessWatchRowOtherSiteId;
   }
-  AccessWatchRowOtherCreatedBy(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessWatchRowOtherCreatedBy;
+  AccessWatchRowOtherCreatedBy(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessWatchRowOtherCreatedBy;
   }
-  AccessEditRowOtherSiteId(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessEditRowOtherSiteId;
+  AccessEditRowOtherSiteId(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessEditRowOtherSiteId;
   }
-  AccessEditRowOtherCreatedBy(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessEditRowOtherCreatedBy;
+  AccessEditRowOtherCreatedBy(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessEditRowOtherCreatedBy;
   }
-  AccessDeleteRowOtherCreatedBy(model: ErrorExcptionResult<any>): boolean {
-    if (!model) { return false; }
-    if (!model.Access) { return false; }
-    return model.Access.AccessDeleteRowOtherCreatedBy;
+  AccessDeleteRowOtherCreatedBy(Access: AccessModel): boolean {
+    if (!Access) { return false; }
+    return Access.AccessDeleteRowOtherCreatedBy;
   }
 }

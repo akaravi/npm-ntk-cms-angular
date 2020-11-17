@@ -13,5 +13,4 @@ export class AccessModel {
   AccessEditRowOtherCreatedBy = false;
   AccessDeleteRowOtherCreatedBy = false;
   FieldsInfo: DataFieldInfoModel[];
-
 }
