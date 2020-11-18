@@ -4,9 +4,10 @@ import { ApplicationLayoutModel } from '../../models/entity/application/Applicat
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { Injectable } from '@angular/core';
 
 
-
+@Injectable()
 export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayoutModel, number>  {
 
 

@@ -18,8 +18,9 @@ import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChang
 import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
 import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class CoreAuthService extends ApiServerBase {
   CorrectTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
   CorrectTokenInfoBSObs = this.CorrectTokenInfoBS.asObservable();

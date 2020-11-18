@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApplicationSourceModel } from '../../models/entity/application/ApplicationSourceModel';
@@ -5,7 +6,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 
 
-
+@Injectable()
 export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number>  {
 
 

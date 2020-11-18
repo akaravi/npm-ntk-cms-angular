@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { SendNotificationModel } from '../../models/dto/application/sendNotificationModel';
@@ -6,7 +7,7 @@ import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResul
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-
+@Injectable()
 export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, number>  {
 
 

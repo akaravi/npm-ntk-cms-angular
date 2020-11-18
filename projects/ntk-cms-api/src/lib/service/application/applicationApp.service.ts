@@ -4,9 +4,10 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
 
-
+@Injectable()
 export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationApp';
