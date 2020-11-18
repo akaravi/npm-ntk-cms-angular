@@ -4,7 +4,10 @@ import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResul
 import { TicketingTaskModel } from '../../models/entity/ticketing/TicketingTaskModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'TicketingTask';

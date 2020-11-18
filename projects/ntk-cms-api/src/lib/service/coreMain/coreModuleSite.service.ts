@@ -4,7 +4,10 @@ import { map, catchError, retry } from 'rxjs/operators';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSiteModel } from '../../models/entity/coreMain/coreModuleSiteModel';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number>  {
 
 

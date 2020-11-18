@@ -1,10 +1,13 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
-import { catchError, map, retry } from 'rxjs/operators';
+import {  map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class NewsShareServerCategoryService extends ApiCmsServerBase<any, number>  {
 
 

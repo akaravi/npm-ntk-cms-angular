@@ -7,7 +7,10 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreCpMainMenuModel } from '../../models/entity/coreMain/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
   coreCpMainMenu = new BehaviorSubject<CoreCpMainMenuModel[]>(new Array<CoreCpMainMenuModel>());
   coreCpMainMenuObs = this.coreCpMainMenu.asObservable();

@@ -5,7 +5,10 @@ import { NewsCategoryModel } from '../../models/entity/news/newsCategoryModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class NewsCategoryService extends ApiCmsServerBase<NewsCategoryModel, number>  {
 
 

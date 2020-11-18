@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'NewsComment';

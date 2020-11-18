@@ -5,7 +5,10 @@ import { SearchTagModel } from '../../models/entity/base/searchModel';
 import { NewsContentTagModel } from '../../models/entity/news/newsContentTagModel';
 import { Observable } from 'rxjs';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel, number>  {
 
 

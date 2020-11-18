@@ -4,7 +4,10 @@ import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResul
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleModel } from '../../models/entity/coreMain/coreModuleModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>  {
 
 

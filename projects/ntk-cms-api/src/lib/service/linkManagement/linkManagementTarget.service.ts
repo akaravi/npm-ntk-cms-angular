@@ -7,7 +7,10 @@ import { LinkManagementTargetShortLinkSetDtoModel } from '../../models/dto/linkM
 import { LinkManagementTargetShortLinkSetResponceModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkSetResponceModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  {
 
 

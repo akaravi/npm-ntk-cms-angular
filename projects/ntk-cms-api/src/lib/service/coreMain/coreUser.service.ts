@@ -6,7 +6,10 @@ import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResul
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
   CorrectUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
   CorrectUserObs = this.CorrectUser.asObservable();

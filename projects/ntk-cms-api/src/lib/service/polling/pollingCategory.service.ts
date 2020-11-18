@@ -1,9 +1,9 @@
-import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { retry, catchError, map } from 'rxjs/operators';
 import { PollingCategoryModel } from '../../models/entity/polling/PollingCategoryModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number>  {
 
 

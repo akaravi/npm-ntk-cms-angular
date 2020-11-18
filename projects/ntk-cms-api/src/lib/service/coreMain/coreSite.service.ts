@@ -7,7 +7,10 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
 import { DomainModel } from '../../models/dto/core/domainModel';
 import { CoreSiteModel } from '../../models/entity/coreMain/coreSiteModel';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
 
 

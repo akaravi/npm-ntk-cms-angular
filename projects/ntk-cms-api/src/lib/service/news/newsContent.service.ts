@@ -6,7 +6,10 @@ import { NewsContentModel } from '../../models/entity/news/newsContentModel';
 import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
 import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class NewsContentService extends ApiCmsServerBase<NewsContentModel, number>  {
 
 

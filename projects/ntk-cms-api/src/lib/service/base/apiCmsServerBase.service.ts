@@ -6,7 +6,10 @@ import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResul
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
 
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
   ServiceViewModel(): Observable<ErrorExcptionResult<TOut>> {
     // this.loadingStatus=true;

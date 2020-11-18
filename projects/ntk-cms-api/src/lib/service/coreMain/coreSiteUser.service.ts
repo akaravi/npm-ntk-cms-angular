@@ -4,7 +4,10 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreSiteUserModel } from '../../models/entity/coreMain/coreSiteUserModel';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {
 
   getModuleCotrolerUrl(): string {

@@ -4,7 +4,10 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { BankPaymentTransactionCheckResponceModel } from '../../models/dto/bankPayment/bankPaymentTransactionCheckResponceModel';
 import { BankPaymentTransactionMakerDtoModel } from '../../models/dto/bankPayment/bankPaymentTransactionMakerDtoModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, number>  {
   getModuleCotrolerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';

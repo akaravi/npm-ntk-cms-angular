@@ -3,7 +3,10 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { PollingVoteModel } from '../../models/entity/polling/PollingVoteModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'PollingVote';

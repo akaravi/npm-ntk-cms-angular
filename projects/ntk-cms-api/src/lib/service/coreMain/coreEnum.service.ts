@@ -3,7 +3,10 @@ import { Observable } from 'rxjs';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { EnumModel } from '../../models/entity/base/enumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreEnumService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'CoreEnum';

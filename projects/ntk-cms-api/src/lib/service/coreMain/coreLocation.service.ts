@@ -5,7 +5,10 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreLocationModel } from '../../models/entity/coreMain/coreLocationModel';
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, number>  {
 
 
