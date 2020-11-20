@@ -1,4 +1,4 @@
-import { TicketingTemplateModel } from '../../models/entity/ticketing/TicketingTemplateModel';
+import { TicketingTemplateModel } from '../../models/entity/ticketing/ticketingTemplateModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 

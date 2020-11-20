@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { SendNotificationModel } from '../../models/dto/application/sendNotificationModel';
-import { ApplicationLogNotificationModel } from '../../models/entity/application/ApplicationLogNotificationModel';
+import { ApplicationLogNotificationModel } from '../../models/entity/application/applicationLogNotificationModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApplicationLayoutValueModel } from '../../models/entity/application/ApplicationLayoutValueModel';
+import { ApplicationLayoutValueModel } from '../../models/entity/application/applicationLayoutValueModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 

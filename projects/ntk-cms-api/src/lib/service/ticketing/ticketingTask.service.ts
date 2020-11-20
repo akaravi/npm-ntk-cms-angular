@@ -1,7 +1,7 @@
 import { TicketingTaskDtoModel } from './../../models/dto/ticketing/ticketingTaskDtoModel';
 import { Observable } from 'rxjs';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
-import { TicketingTaskModel } from '../../models/entity/ticketing/TicketingTaskModel';
+import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';

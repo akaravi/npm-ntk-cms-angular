@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { PollingCategoryModel } from '../../models/entity/polling/PollingCategoryModel';
+import { PollingCategoryModel } from '../../models/entity/polling/pollingCategoryModel';
 import { Injectable } from '@angular/core';
 
 

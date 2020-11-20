@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
-import { PollingVoteModel } from '../../models/entity/polling/PollingVoteModel';
+import { PollingVoteModel } from '../../models/entity/polling/pollingVoteModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { Injectable } from '@angular/core';
 

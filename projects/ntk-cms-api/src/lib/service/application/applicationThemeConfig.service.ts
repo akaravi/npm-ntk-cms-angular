@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApplicationThemeConfigModel } from '../../models/entity/application/ApplicationThemeConfigModel';
+import { ApplicationThemeConfigModel } from '../../models/entity/application/applicationThemeConfigModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 

@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { PollingCategoryModel } from './PollingCategoryModel';
-import { PollingOptionModel } from './PollingOptionModel';
+import { PollingCategoryModel } from './pollingCategoryModel';
+import { PollingOptionModel } from './pollingOptionModel';
 
 export class PollingContentModel extends BaseModuleEntity<number> {
   Source: string;
