@@ -19,6 +19,7 @@ import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel
 import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
 import { Injectable } from '@angular/core';
+import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignInBySmsDtoModel';
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
@@ -81,17 +82,7 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-  // ServiceGetTokenDeviceMember(model: TokenDeviceClientMemberInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
-  //   return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDeviceMember/', model).pipe(
-  //     // catchError(this.handleError)
-  //     map((ret: ErrorExcptionResult<TokenInfoModel>) => {
-  //       if (ret.IsSuccess) {
-  //         this.SetCorrectTokenInfo(ret.Item);
-  //       }
-  //       return ret;
-  //     }),
-  //   );
-  // }
+
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExcptionResult<CoreUserModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
@@ -103,6 +94,18 @@ export class CoreAuthService extends ApiServerBase {
 
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signin', model).pipe(
+      // catchError(this.handleError)
+      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+        if (ret.IsSuccess) {
+          this.SetCorrectTokenInfo(ret.Item);
+        }
+        return ret;
+      }),
+    );
+  }
+
+  ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signInBySms', model).pipe(
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
