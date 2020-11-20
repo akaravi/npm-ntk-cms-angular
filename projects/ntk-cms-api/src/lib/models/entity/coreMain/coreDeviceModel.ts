@@ -1,5 +1,5 @@
-import { EnumOperatingSystemType } from '../../Enums/enumOperatingSystemType';
-import { EnumDeviceType } from '../../Enums/enumDeviceType';
+import { EnumOperatingSystemType } from '../../enums/enumOperatingSystemType';
+import { EnumDeviceType } from '../../enums/enumDeviceType';
 import { CoreSiteModel } from './coreSiteModel';
 import { BaseEntity } from '../base/baseEntity';
 

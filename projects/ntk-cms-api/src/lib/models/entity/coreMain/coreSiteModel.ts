@@ -4,7 +4,7 @@ import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreModuleSiteModel } from './coreModuleSiteModel';
 import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
 import { CoreDeviceModel } from './coreDeviceModel';
-import { EnumSiteStatus } from '../../Enums/enumSiteStatus';
+import { EnumSiteStatus } from '../../enums/enumSiteStatus';
 
 export class CoreSiteModel extends BaseEntity<number> {
   CurrentSiteDomainUrl: string;

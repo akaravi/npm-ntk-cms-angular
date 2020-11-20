@@ -1,4 +1,4 @@
-import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
 import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
 import { BaseEntity } from '../base/baseEntity';

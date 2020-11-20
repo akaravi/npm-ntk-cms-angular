@@ -1,7 +1,7 @@
-import { EnumMicroServiceType } from '../../Enums/enumMicroServiceType';
-import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserAccessControllerTypes';
-import { EnumMicroServiceConnectionType } from '../../Enums/enumMicroServiceConnectionType';
-import { EnumMicroServiceConnectionStatus } from '../../Enums/enumMicroServiceConnectionStatus';
+import { EnumMicroServiceType } from '../../enums/enumMicroServiceType';
+import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
+import { EnumMicroServiceConnectionType } from '../../enums/enumMicroServiceConnectionType';
+import { EnumMicroServiceConnectionStatus } from '../../enums/enumMicroServiceConnectionStatus';
 import { BaseEntity } from '../base/baseEntity';
 export class CoreTokenMicroServiceModel extends BaseEntity<string>   {
     LinkUserId?: number;

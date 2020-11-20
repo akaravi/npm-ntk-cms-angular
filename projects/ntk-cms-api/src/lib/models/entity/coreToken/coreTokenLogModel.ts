@@ -1,5 +1,5 @@
-import { EnumManageUserAccessAreaTypes } from '../../Enums/enumManageUserAccessAreaTypes';
-import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
+import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
 import { BaseEntity } from '../base/baseEntity';
 export class CoreTokenLogModel  extends BaseEntity<string>  {
     Description: string;

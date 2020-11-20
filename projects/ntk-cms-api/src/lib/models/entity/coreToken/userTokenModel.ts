@@ -1,5 +1,5 @@
-import { EnumManageUserAccessControllerTypes } from '../../Enums/enumManageUserAccessControllerTypes';
-import { EnumManageUserAccessAreaTypes } from '../../Enums/enumManageUserAccessAreaTypes';
+import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
 import { BaseEntity } from '../base/baseEntity';
 export class UserTokenModel extends BaseEntity<string>   {
     LinkUserId: number;
