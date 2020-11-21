@@ -57,12 +57,17 @@ export * from './lib/service/polling/_export';
 export * from './lib/models/entity/polling/_export';
 // polling
 
-// polling
+// ticketing
 export * from './lib/service/ticketing/_export';
 export * from './lib/models/entity/ticketing/_export';
 export * from './lib/models/dto/ticketing/_export';
-// polling
+// ticketing
 
+// hypershop
+export * from './lib/service/hypershop/_export';
+export * from './lib/models/entity/hypershop/_export';
+export * from './lib/models/dto/hypershop/_export';
+// hypershop
 
 // news DTO model
 // export class CoreUser extends DataFieldInfoModel {
