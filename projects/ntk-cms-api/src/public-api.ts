@@ -64,9 +64,9 @@ export * from './lib/models/dto/ticketing/_export';
 // ticketing
 
 // hypershop
-export * from './lib/service/hypershop/_export';
-export * from './lib/models/entity/hypershop/_export';
-export * from './lib/models/dto/hypershop/_export';
+export * from './lib/service/hyperShop/_export';
+export * from './lib/models/entity/hyperShop/_export';
+export * from './lib/models/dto/hyperShop/_export';
 // hypershop
 
 // news DTO model
