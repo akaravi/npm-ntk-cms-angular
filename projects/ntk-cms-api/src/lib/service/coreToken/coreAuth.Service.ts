@@ -83,10 +83,10 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
 
-  ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExcptionResult<CoreUserModel>> {
+  ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<CoreUserModel>) => {
+      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         return ret;
       }),
     );
