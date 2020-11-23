@@ -42,9 +42,9 @@ export class CoreAuthService extends ApiServerBase {
   CorrectTokenInfoBSRenew(): any {
     const token = this.getUserToken();
 
-    if (!token || token === 'null') {
-      return;
-    }
+    // if (!token || token === 'null') {
+    //   return;
+    // }
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken', {
         headers: this.getHeaders(),
