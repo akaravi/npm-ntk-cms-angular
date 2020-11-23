@@ -45,24 +45,42 @@ export class CoreAuthService extends ApiServerBase {
     // if (!token || token === 'null') {
     //   return;
     // }
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TokenInfoModel>) => {
-          if (ret) {
-            if (ret.IsSuccess) {
-              this.SetCorrectTokenInfo(ret.Item);
-            }
-            return ret;
-          }
-        }),
-      )
-      .toPromise();
+    this.ServiceCorrectToken().subscribe(
+      (next) => {
+        this.SetCorrectTokenInfo(next.Item);
+      },
+      (error) => {
+   
+
+      }
+    );
+    // return this.http
+    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken', {
+    //     headers: this.getHeaders(),
+    //   })
+    //   .pipe(
+    //     // catchError(this.handleError)
+    //     map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+    //       if (ret) {
+    //         if (ret.IsSuccess) {
+    //           this.SetCorrectTokenInfo(ret.Item);
+    //         }
+    //         return ret;
+    //       }
+    //     }),
+    //   )
+    //   .toPromise();
   }
 
+  ServiceCorrectToken(): Observable<ErrorExcptionResult<TokenInfoModel>> {
+    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken').pipe(
+      // catchError(this.handleError)
+      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+        return ret;
+      }),
+    );
+  }
+  
   ServiceCaptcha(): Observable<ErrorExcptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
