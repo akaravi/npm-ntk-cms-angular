@@ -33,7 +33,7 @@ export class HyperShopCategoryService extends ApiServerBase {
   ServiceGetOne(id: string): Observable<ErrorExcptionResult<HyperShopCategoryModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOne/' + id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
