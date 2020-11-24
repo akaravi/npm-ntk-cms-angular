@@ -1,7 +1,8 @@
 export class HyperShopContentModel {
   Code: string;
   Name: string;
-  Cat: string;
+  CategoryId?: string;
+  Category?: string;
   Status: boolean;
   Image: string;
   Memo: string;
@@ -14,7 +15,6 @@ export class HyperShopContentModel {
   NewPro?: boolean;
   Brand?: string;
   Sale?: boolean;
-  Category?: string;
   Tags?: string[];
   Colors?: string[];
 }
