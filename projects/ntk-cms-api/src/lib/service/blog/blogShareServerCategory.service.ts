@@ -1,0 +1,35 @@
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import {  map, retry } from 'rxjs/operators';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { Observable } from 'rxjs';
+
+import { Injectable } from '@angular/core';
+
+
+@Injectable()
+export class BlogShareServerCategoryService extends ApiCmsServerBase<any, number>  {
+
+
+  getModuleCotrolerUrl(): string {
+    return 'BlogShareServerCategory';
+  }
+
+  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExcptionResult<any>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllOtherSite/', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: ErrorExcptionResult<any>) => {
+          return this.errorExcptionResultCheck(ret);
+        }),
+      );
+  }
+}

@@ -36,6 +36,10 @@ export * from './lib/models/dto/linkManagement/_export';
 export * from './lib/service/news/_export';
 export * from './lib/models/entity/news/_export';
 // news Service
+// blog Service
+export * from './lib/service/blog/_export';
+export * from './lib/models/entity/blog/_export';
+// blog Service
 // bankPayment Service
 export * from './lib/service/bankPayment/_export';
 export * from './lib/models/entity/bankPayment/_export';
