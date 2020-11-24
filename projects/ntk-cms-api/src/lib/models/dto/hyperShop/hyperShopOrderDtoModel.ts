@@ -3,10 +3,10 @@ import { HyperShopOrderContentDtoModel } from './hyperShopOrderContentDtoModel';
 export class HyperShopOrderDtoModel {
   OrderId: string;
   AcceptSystem: boolean;
-  name: string;
-  family: string;
-  mobile: string;
-  address: string;
-  amount: number;
+  Name: string;
+  Family: string;
+  Mobile: string;
+  Address: string;
+  Amount: number;
   Products: HyperShopOrderContentDtoModel[];
 }

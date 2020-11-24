@@ -1,7 +1,7 @@
 export class HyperShopOrderContentDtoModel {
-  code: string;
-  name: string;
-  memo: string;
-  price: number;
-  count: number;
+  Code: string;
+  Name: string;
+  Memo: string;
+  Price: number;
+  Count: number;
 }

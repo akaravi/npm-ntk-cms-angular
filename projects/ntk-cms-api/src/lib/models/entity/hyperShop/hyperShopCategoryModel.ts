@@ -1,6 +1,6 @@
 export class HyperShopCategoryModel {
-  code: string;
-  name: string;
-  image: string;
-  memo: string;
+  Code: string;
+  Name: string;
+  Image: string;
+  Memo: string;
 }
