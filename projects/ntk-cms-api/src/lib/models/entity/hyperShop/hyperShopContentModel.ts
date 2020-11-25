@@ -1,7 +1,7 @@
 export class HyperShopContentModel {
   Code: string;
   Name: string;
-  CategoryId?: string;
+  CategoryCode?: string;
   Category?: string;
   Status: boolean;
   Image: string;
