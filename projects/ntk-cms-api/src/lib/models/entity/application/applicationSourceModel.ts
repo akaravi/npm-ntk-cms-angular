@@ -18,6 +18,8 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
     Layouts: ApplicationLayoutModel[];
     Applications: ApplicationAppModel[];
     FireBaseServerKey: string;
+    Extension: string;
+    ExtensionUpdateFile: string;
     DefaultConfigBuilderAdminJsonValues: string;
     DefaultConfigRuntimeAdminJsonValues: string;
     DefaultConfigBuilderSiteJsonValues: string;

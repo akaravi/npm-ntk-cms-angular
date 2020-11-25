@@ -58,8 +58,10 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   BuildKey5String: string;
   BuildKey5Value: string;
   DownloadLinkSrcCustomize: string;
-  DownloadLinksrc: string;
-  DownloadLinksrcByDomain: string;
+  DownloadLinkSrc: string;
+  DownloadLinkSrcByDomain: string;
+  DownloadLinkUpdateSrc: string;
+  DownloadLinkUpdateSrcByDomain: string;
   FilePathOnServer: string;
   LinkFileIdIconSrc: string;
   LinkFileIdLogoSrc: string;
