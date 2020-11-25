@@ -11,29 +11,29 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
-  CorrectUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
-  CorrectUserObs = this.CorrectUser.asObservable();
+  CorrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
+  CorrentUserObs = this.CorrentUser.asObservable();
 
   getModuleCotrolerUrl(): string {
     return 'CoreUser';
   }
 
-  SetCorrectUser(model: CoreUserModel): any {
+  SetCorrentUser(model: CoreUserModel): any {
     if (model == null) {
       model = new CoreUserModel();
     }
-    this.CorrectUser.next(model);
+    this.CorrentUser.next(model);
   }
   ServiceCurrectUser(): Observable<ErrorExcptionResult<CoreUserModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrectUser', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentUser', {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: ErrorExcptionResult<CoreUserModel>) => {
-          this.SetCorrectUser(ret.Item);
+          this.SetCorrentUser(ret.Item);
           return this.errorExcptionResultCheck(ret);
         }),
       );

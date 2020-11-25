@@ -1,6 +1,6 @@
 import { AuthEmailConfirmDtoModel } from './../../models/dto/core/authEmailConfirmDtoModel';
 import { AuthMobileConfirmDtoModel } from './../../models/dto/core/authMobileConfirmDtoModel';
-import {  map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
@@ -23,39 +23,37 @@ import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignI
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
-  CorrectTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
-  CorrectTokenInfoBSObs = this.CorrectTokenInfoBS.asObservable();
+  CorrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
+  CorrentTokenInfoBSObs = this.CorrentTokenInfoBS.asObservable();
   userRoles: string[] = [];
   userName = '';
   getModuleCotrolerUrl(): string {
     return 'auth';
   }
-  SetCorrectTokenInfo(model: TokenInfoModel | null): any {
+  SetCorrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       localStorage.removeItem('token');
       localStorage.removeItem('refreshToken');
       return;
     }
     this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
-    this.CorrectTokenInfoBS.next(model);
+    this.CorrentTokenInfoBS.next(model);
   }
-  CorrectTokenInfoBSRenew(): any {
+  CorrentTokenInfoBSRenew(): any {
     const token = this.getUserToken();
 
     // if (!token || token === 'null') {
     //   return;
     // }
-    this.ServiceCorrectToken().subscribe(
+    this.ServiceCorrentToken().subscribe(
       (next) => {
-        this.SetCorrectTokenInfo(next.Item);
+        this.SetCorrentTokenInfo(next.Item);
       },
       (error) => {
-   
-
       }
     );
     // return this.http
-    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken', {
+    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentToken', {
     //     headers: this.getHeaders(),
     //   })
     //   .pipe(
@@ -63,7 +61,7 @@ export class CoreAuthService extends ApiServerBase {
     //     map((ret: ErrorExcptionResult<TokenInfoModel>) => {
     //       if (ret) {
     //         if (ret.IsSuccess) {
-    //           this.SetCorrectTokenInfo(ret.Item);
+    //           this.SetCorrentTokenInfo(ret.Item);
     //         }
     //         return ret;
     //       }
@@ -72,15 +70,15 @@ export class CoreAuthService extends ApiServerBase {
     //   .toPromise();
   }
 
-  ServiceCorrectToken(): Observable<ErrorExcptionResult<TokenInfoModel>> {
-    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrectToken').pipe(
+  ServiceCorrentToken(): Observable<ErrorExcptionResult<TokenInfoModel>> {
+    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentToken').pipe(
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         return ret;
       }),
     );
   }
-  
+
   ServiceCaptcha(): Observable<ErrorExcptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
@@ -94,7 +92,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrectTokenInfo(ret.Item);
+          this.SetCorrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -115,7 +113,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrectTokenInfo(ret.Item);
+          this.SetCorrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -127,7 +125,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExcptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrectTokenInfo(ret.Item);
+          this.SetCorrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -146,7 +144,7 @@ export class CoreAuthService extends ApiServerBase {
         // catchError(this.handleError)
         map((ret: ErrorExcptionResult<TokenInfoModel>) => {
           if (ret.IsSuccess) {
-            this.SetCorrectTokenInfo(ret.Item);
+            this.SetCorrentTokenInfo(ret.Item);
           }
           return ret;
         }),
@@ -180,7 +178,7 @@ export class CoreAuthService extends ApiServerBase {
       .pipe(
         // catchError(this.handleError)
         map((ret: ErrorExcptionResultBase) => {
-          this.SetCorrectTokenInfo(null);
+          this.SetCorrentTokenInfo(null);
 
           return ret;
         }),
