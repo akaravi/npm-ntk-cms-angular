@@ -28,6 +28,12 @@ export * from './lib/models/entity/coreModuleMain/_export';
 export * from './lib/models/entity/coreModuleLog/_export';
 // core Module Serve
 
+// core Module Serve
+export * from './lib/service/file/_export';
+export * from './lib/models/entity/file/_export';
+export * from './lib/models/dto/file/_export';
+// core Module Serve
+
 // linkManagement Service
 export * from './lib/service/linkManagement/_export';
 export * from './lib/models/dto/linkManagement/_export';
