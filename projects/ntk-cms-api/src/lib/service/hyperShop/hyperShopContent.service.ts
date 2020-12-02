@@ -5,9 +5,10 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { Injectable } from '@angular/core';
 import { HyperShopContentModel } from '../../models/entity/hyperShop/hyperShopContentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class HyperShopContentService extends ApiServerBase {
+export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string> {
   getModuleCotrolerUrl(): string {
     return 'HyperShopContent';
   }
