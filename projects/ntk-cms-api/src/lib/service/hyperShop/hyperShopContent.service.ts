@@ -34,7 +34,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   ServiceGetOne(id: string): Observable<ErrorExcptionResult<HyperShopContentModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'GetOneMicroService/' + id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneMicroService/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
