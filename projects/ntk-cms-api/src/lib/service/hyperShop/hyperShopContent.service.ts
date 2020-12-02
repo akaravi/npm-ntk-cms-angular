@@ -14,7 +14,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   }
 
 
-  ServiceGetAll(model: FilterModel): Observable<ErrorExcptionResult<HyperShopContentModel>> {
+  ServiceGetAllMicroService(model: FilterModel): Observable<ErrorExcptionResult<HyperShopContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -31,7 +31,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
       );
   }
 
-  ServiceGetOne(id: string): Observable<ErrorExcptionResult<HyperShopContentModel>> {
+  ServiceGetOneMicroService(id: string): Observable<ErrorExcptionResult<HyperShopContentModel>> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneMicroService/' + id, {
