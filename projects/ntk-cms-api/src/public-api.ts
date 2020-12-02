@@ -79,6 +79,17 @@ export * from './lib/models/entity/hyperShop/_export';
 export * from './lib/models/dto/hyperShop/_export';
 // hypershop
 
+// biography
+export * from './lib/service/biography/_export';
+export * from './lib/models/entity/biography/_export';
+export * from './lib/models/dto/biography/_export';
+// biography
+
+// article
+export * from './lib/service/article/_export';
+export * from './lib/models/entity/article/_export';
+// article
+
 // news DTO model
 // export class CoreUser extends DataFieldInfoModel {
 // }
