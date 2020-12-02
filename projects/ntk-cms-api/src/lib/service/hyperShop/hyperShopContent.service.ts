@@ -19,7 +19,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAll/', model, {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllMicroService/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -34,7 +34,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   ServiceGetOne(id: string): Observable<ErrorExcptionResult<HyperShopContentModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'GetOneMicroService/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
