@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core/coreSiteAddFirstSiteDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
@@ -18,7 +18,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
     return 'CoreSite';
   }
 
-  ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/WebScreenshot', model, {
         headers: this.getHeaders(),
@@ -26,12 +26,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceAddFirstSite(model: CoreSiteAddFirstSiteDtoModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceAddFirstSite(model: CoreSiteAddFirstSiteDtoModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddFirstSite', model, {
         headers: this.getHeaders(),
@@ -39,12 +39,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithAlias(model: FilterModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceGetAllWithAlias(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -56,12 +56,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllChildWithAlias(model: FilterModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceGetAllChildWithAlias(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -73,12 +73,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceSearchNew(model: FilterModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceSearchNew(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -90,12 +90,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceSearch(model: CoreSiteSearchModel): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceSearch(model: CoreSiteSearchModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Search', model, {
         headers: this.getHeaders(),
@@ -103,12 +103,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceDomain(): Observable<ErrorExcptionResult<CoreSiteModel>> {
+  ServiceDomain(): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domain', {
         headers: this.getHeaders(),
@@ -116,12 +116,12 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceDomains(id: number): Observable<ErrorExcptionResult<DomainModel>> {
+  ServiceDomains(id: number): Observable<ErrorExceptionResult<DomainModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domains/' + id, {
         headers: this.getHeaders(),
@@ -129,8 +129,8 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<DomainModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<DomainModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

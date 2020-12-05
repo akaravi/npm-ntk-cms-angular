@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { SendNotificationModel } from '../../models/dto/application/sendNotificationModel';
 import { ApplicationLogNotificationModel } from '../../models/entity/application/applicationLogNotificationModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
@@ -15,7 +15,7 @@ export class ApplicationLogNotificationService extends ApiCmsServerBase<Applicat
     return 'ApplicationLogNotification';
   }
 
-  ServiceSendNotification(model: SendNotificationModel): Observable<ErrorExcptionResult<ApplicationLogNotificationModel>> {
+  ServiceSendNotification(model: SendNotificationModel): Observable<ErrorExceptionResult<ApplicationLogNotificationModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SendNotification',
@@ -27,8 +27,8 @@ export class ApplicationLogNotificationService extends ApiCmsServerBase<Applicat
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationLogNotificationModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationLogNotificationModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

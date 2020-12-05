@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import {  map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ export class BlogShareServerCategoryService extends ApiCmsServerBase<any, number
     return 'BlogShareServerCategory';
   }
 
-  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExcptionResult<any>> {
+  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExceptionResult<any>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -27,8 +27,8 @@ export class BlogShareServerCategoryService extends ApiCmsServerBase<any, number
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<any>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<any>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

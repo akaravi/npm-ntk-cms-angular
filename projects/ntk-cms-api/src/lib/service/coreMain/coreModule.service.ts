@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleModel } from '../../models/entity/coreMain/coreModuleModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
@@ -15,7 +15,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
     return 'CoreModule';
   }
 
-  ServiceAutoAdd(): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
@@ -23,12 +23,12 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceConfig(MoudleClassName: string): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ServiceConfig(MoudleClassName: string): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Config/', MoudleClassName, {
         headers: this.getHeaders(),
@@ -36,12 +36,12 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetOneWithModuleConfig(model: FilterModel): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ServiceGetOneWithModuleConfig(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -53,12 +53,12 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetViewModelWithModuleConfig(id: number): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ServiceGetViewModelWithModuleConfig(id: number): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetViewModelWithModuleConfig/' + id, {
         headers: this.getHeaders(),
@@ -66,12 +66,12 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllModuleName(model: FilterModel): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ServiceGetAllModuleName(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -83,15 +83,15 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
   ServiceGetAllByCategorySiteId(
     CategorySiteId: number,
     model: FilterModel,
-  ): Observable<ErrorExcptionResult<CoreModuleModel>> {
+  ): Observable<ErrorExceptionResult<CoreModuleModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -103,8 +103,8 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreModuleModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreModuleModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

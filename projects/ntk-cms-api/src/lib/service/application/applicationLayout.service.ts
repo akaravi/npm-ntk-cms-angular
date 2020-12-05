@@ -1,7 +1,7 @@
 import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApplicationLayoutModel } from '../../models/entity/application/applicationLayoutModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Injectable } from '@angular/core';
@@ -14,7 +14,7 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
   getModuleCotrolerUrl(): string {
     return 'ApplicationLayout';
   }
-  ServiceGetOneWithJsonFormat(model: FilterModel): Observable<ErrorExcptionResult<ApplicationLayoutModel>> {
+  ServiceGetOneWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormat',
@@ -26,14 +26,14 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationLayoutModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationLayoutModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
 
-  ServiceGetAllWithJsonFormat(model: FilterModel): Observable<ErrorExcptionResult<ApplicationLayoutModel>> {
+  ServiceGetAllWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithJsonFormat',
@@ -45,8 +45,8 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationLayoutModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationLayoutModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

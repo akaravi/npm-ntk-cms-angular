@@ -2,7 +2,7 @@ import {  Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { ArticleCategoryModel } from '../../models/entity/article/articleCategoryModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
 import { Injectable } from '@angular/core';
@@ -16,7 +16,7 @@ export class ArticleCategoryService extends ApiCmsServerBase<ArticleCategoryMode
     return 'ArticleCategory';
   }
 
-  ServiceMove(OldId: number, NewId: number): Observable<ErrorExcptionResult<ArticleCategoryModel>> {
+  ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<ArticleCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
@@ -28,8 +28,8 @@ export class ArticleCategoryService extends ApiCmsServerBase<ArticleCategoryMode
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ArticleCategoryModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ArticleCategoryModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

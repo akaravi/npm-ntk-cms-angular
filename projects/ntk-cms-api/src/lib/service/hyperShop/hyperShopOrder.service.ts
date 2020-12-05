@@ -4,7 +4,7 @@ import { map, retry } from 'rxjs/operators';
 import { BankPaymentOnlineTransactionModel } from '../../models/dto/bankPayment/bankPaymentOnlineTransactionModel';
 import { HyperShopOrderDtoModel } from '../../models/dto/hyperShop/hyperShopOrderDtoModel';
 import { HyperShopOrderPaymentDtoModel } from '../../models/dto/hyperShop/hyperShopOrderPaymentDtoModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { HyperShopOrderModel } from '../../models/entity/hyperShop/hyperShopOrderModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
@@ -14,9 +14,9 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
   getModuleCotrolerUrl(): string {
     return 'HyperShopOrder';
   }
-  ServiceOrderAdd( model: HyperShopOrderDtoModel): Observable<ErrorExcptionResult<HyperShopOrderDtoModel>> {
+  ServiceOrderAdd( model: HyperShopOrderModel): Observable<ErrorExceptionResult<HyperShopOrderModel>> {
     if (model == null) {
-      model = new HyperShopOrderDtoModel();
+      model = new HyperShopOrderModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderAdd/' , model, {
@@ -25,12 +25,12 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<HyperShopOrderDtoModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<HyperShopOrderModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceOrderPayment( model: HyperShopOrderPaymentDtoModel): Observable<ErrorExcptionResult<BankPaymentOnlineTransactionModel>> {
+  ServiceOrderPayment( model: HyperShopOrderPaymentDtoModel): Observable<ErrorExceptionResult<BankPaymentOnlineTransactionModel>> {
     if (model == null) {
       model = new HyperShopOrderPaymentDtoModel();
     }
@@ -41,8 +41,8 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BankPaymentOnlineTransactionModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BankPaymentOnlineTransactionModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

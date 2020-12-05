@@ -2,7 +2,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { BlogCommentModel } from '../../models/entity/blog/blogCommentModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, numbe
   }
 
 
-  ServiceLikeClick(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/LikeClick/' + Id, {
@@ -23,13 +23,13 @@ export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceDisLikeClick(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceDisLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DisLikeClick/' + Id, {
@@ -38,8 +38,8 @@ export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }

@@ -1,11 +1,11 @@
 import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApiServerBase } from './apiServerBase.service';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
 export class ErrorService extends ApiServerBase  {
-  ServiceErrorApi<TOut>(model: any): Observable<ErrorExcptionResult<any>> {
+  ServiceErrorApi<TOut>(model: any): Observable<ErrorExceptionResult<any>> {
     return this.http
       .post(this.getBaseUrl() + '/Add', {
         headers: this.getHeaders(),
@@ -13,12 +13,12 @@ export class ErrorService extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  errorExcptionResultCheck<TOut>(model: ErrorExcptionResult<TOut>): ErrorExcptionResult<TOut> {
+  errorExceptionResultCheck<TOut>(model: ErrorExceptionResult<TOut>): ErrorExceptionResult<TOut> {
     if (model) {
       // tslint:disable-next-line: no-empty
       if (model.IsSuccess) {

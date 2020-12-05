@@ -2,7 +2,7 @@ import {  Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { BiographyCategoryModel } from '../../models/entity/biography/biographyCategoryModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
 import { Injectable } from '@angular/core';
@@ -16,7 +16,7 @@ export class BiographyCategoryService extends ApiCmsServerBase<BiographyCategory
     return 'BiographyCategory';
   }
 
-  ServiceMove(OldId: number, NewId: number): Observable<ErrorExcptionResult<BiographyCategoryModel>> {
+  ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<BiographyCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
@@ -28,8 +28,8 @@ export class BiographyCategoryService extends ApiCmsServerBase<BiographyCategory
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyCategoryModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyCategoryModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

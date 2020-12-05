@@ -1,7 +1,7 @@
 import {  Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreSiteUserModel } from '../../models/entity/coreMain/coreSiteUserModel';
 import { Injectable } from '@angular/core';
@@ -14,7 +14,7 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
     return 'CoreSiteUser';
   }
 
-  ServiceGetAllSiteUser(model: FilterModel): Observable<ErrorExcptionResult<CoreSiteUserModel>> {
+  ServiceGetAllSiteUser(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -26,12 +26,12 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteUserModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteUserModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetCurrentSiteUsers(): Observable<ErrorExcptionResult<CoreSiteUserModel>> {
+  ServiceGetCurrentSiteUsers(): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrentSiteUsers', {
         headers: this.getHeaders(),
@@ -39,8 +39,8 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreSiteUserModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreSiteUserModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

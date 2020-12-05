@@ -1,11 +1,11 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
 import { FileContentModel } from '../../models/entity/file/fileContentModel';
 import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 import { FileUploadByUrlDtoModel } from '../../models/dto/file/fileUploadByUrlDtoModel';
 import { FileCopyCutDtoModel } from '../../models/dto/file/fileCopyCutDtoModel';
@@ -20,7 +20,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
     return 'FileContent';
   }
 
-  ServiceUploadByUrl(model: FileUploadByUrlDtoModel): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceUploadByUrl(model: FileUploadByUrlDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UploadByUrl/', model, {
         headers: this.getHeaders(),
@@ -28,13 +28,13 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceCopyCutFile(model: FileCopyCutDtoModel): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceCopyCutFile(model: FileCopyCutDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CopyCutFile/', model, {
         headers: this.getHeaders(),
@@ -42,12 +42,12 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceCopyCutFileRootToRootFolder(): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceCopyCutFileRootToRootFolder(): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CopyCutFileRootToRootFolder/', {
         headers: this.getHeaders(),
@@ -55,12 +55,12 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceCopy(model: FileContentModel): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceCopy(model: FileContentModel): Observable<ErrorExceptionResult<FileContentModel>> {
     if (model == null) {
       model = new FileContentModel();
     }
@@ -71,13 +71,13 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetFilesInCategoryId(categoryId: number): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceGetFilesInCategoryId(categoryId: number): Observable<ErrorExceptionResult<FileContentModel>> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetFilesInCategoryId/' + categoryId, {
@@ -86,13 +86,13 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceSearchFilesInCategory(model: FilterModel): Observable<ErrorExcptionResultBase> {
+  ServiceSearchFilesInCategory(model: FilterModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -103,13 +103,13 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceDownloadFile(model: FileDownloadDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceDownloadFile(model: FileDownloadDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FileDownloadDtoModel();
     }
@@ -120,12 +120,12 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
-  ServiceUpdateFileSizes(fileId: number): Observable<ErrorExcptionResultBase> {
+  ServiceUpdateFileSizes(fileId: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UpdateFileSizes/' + fileId, {
@@ -134,13 +134,13 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceUpdateSumSizeUpload(fileId: number): Observable<ErrorExcptionResultBase> {
+  ServiceUpdateSumSizeUpload(fileId: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UpdateSumSizeUpload/' + fileId, {
@@ -149,14 +149,14 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
 
-  ServiceImageFileEdit(model: FileDownloadDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceImageFileEdit(model: FileDownloadDtoModel): Observable<ErrorExceptionResultBase> {
 
     if (model == null) {
       model = new FileDownloadDtoModel();
@@ -168,12 +168,12 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
-  ServiceReplace(model: FileContentModel): Observable<ErrorExcptionResult<FileContentModel>> {
+  ServiceReplace(model: FileContentModel): Observable<ErrorExceptionResult<FileContentModel>> {
     if (model == null) {
       model = new FileContentModel();
     }
@@ -184,8 +184,8 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<FileContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<FileContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

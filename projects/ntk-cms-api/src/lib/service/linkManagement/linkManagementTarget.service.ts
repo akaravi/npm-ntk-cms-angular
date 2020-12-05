@@ -5,7 +5,7 @@ import { LinkManagementTargetShortLinkGetDtoModel } from '../../models/dto/linkM
 import { LinkManagementTargetShortLinkGetResponceModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkGetResponceModel';
 import { LinkManagementTargetShortLinkSetDtoModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkSetDtoModel';
 import { LinkManagementTargetShortLinkSetResponceModel } from '../../models/dto/linkManagement/linkManagementTargetShortLinkSetResponceModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -20,7 +20,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  
 
   ServiceShortLinkSet(
     model: LinkManagementTargetShortLinkSetDtoModel,
-  ): Observable<ErrorExcptionResult<LinkManagementTargetShortLinkSetResponceModel>> {
+  ): Observable<ErrorExceptionResult<LinkManagementTargetShortLinkSetResponceModel>> {
     if (model == null) {
       model = new LinkManagementTargetShortLinkSetDtoModel();
     }
@@ -32,14 +32,14 @@ export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<LinkManagementTargetShortLinkSetResponceModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<LinkManagementTargetShortLinkSetResponceModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
   ServiceShortLinkGet(
     model: LinkManagementTargetShortLinkGetDtoModel,
-  ): Observable<ErrorExcptionResult<LinkManagementTargetShortLinkGetResponceModel>> {
+  ): Observable<ErrorExceptionResult<LinkManagementTargetShortLinkGetResponceModel>> {
     if (model == null) {
       model = new LinkManagementTargetShortLinkGetDtoModel();
     }
@@ -51,8 +51,8 @@ export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<LinkManagementTargetShortLinkGetResponceModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<LinkManagementTargetShortLinkGetResponceModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

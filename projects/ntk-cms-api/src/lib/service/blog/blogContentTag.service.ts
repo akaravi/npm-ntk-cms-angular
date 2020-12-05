@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
 import { SearchTagModel } from '../../models/entity/base/searchModel';
 import { BlogContentTagModel } from '../../models/entity/blog/blogContentTagModel';
@@ -16,7 +16,7 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
     return 'BlogContentTag';
   }
 
-  ServiceSearchTag(model: SearchTagModel): Observable<ErrorExcptionResult<BlogContentTagModel>> {
+  ServiceSearchTag(model: SearchTagModel): Observable<ErrorExceptionResult<BlogContentTagModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchTag/', model, {
         headers: this.getHeaders(),
@@ -24,8 +24,8 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BlogContentTagModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BlogContentTagModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

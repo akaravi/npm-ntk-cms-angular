@@ -3,7 +3,7 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApplicationSourceModel } from '../../models/entity/application/applicationSourceModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
 @Injectable()
@@ -14,7 +14,7 @@ export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSource
     return 'ApplicationSource';
   }
 
-  ServiceBuildApp(Id: number): Observable<ErrorExcptionResult<ApplicationSourceModel>> {
+  ServiceBuildApp(Id: number): Observable<ErrorExceptionResult<ApplicationSourceModel>> {
     return this.http
       .get(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/buildApp/' + Id,
@@ -25,8 +25,8 @@ export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSource
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationSourceModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationSourceModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

@@ -1,11 +1,11 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
 import { ArticleContentModel } from '../../models/entity/article/articleContentModel';
 import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 
 
@@ -17,7 +17,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
     return 'ArticleContent';
   }
 
-  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<ArticleContentModel>> {
+  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -28,13 +28,13 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ArticleContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ArticleContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<ArticleContentModel>> {
+  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -45,12 +45,12 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ArticleContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ArticleContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<ArticleContentModel>> {
+  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -61,13 +61,13 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ArticleContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ArticleContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ScoreClickDtoModel();
     }
@@ -78,13 +78,13 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteAdd(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
@@ -93,13 +93,13 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteRemove(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
@@ -108,12 +108,12 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
-  ServiceFavoriteList(model: FilterModel): Observable<ErrorExcptionResult<ArticleContentModel>> {
+  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -124,8 +124,8 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ArticleContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ArticleContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
