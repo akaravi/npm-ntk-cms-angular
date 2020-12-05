@@ -5,10 +5,11 @@ import { BankPaymentTransactionCheckResponceModel } from '../../models/dto/bankP
 import { BankPaymentTransactionMakerDtoModel } from '../../models/dto/bankPayment/bankPaymentTransactionMakerDtoModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { Injectable } from '@angular/core';
+import { BankPaymentPrivateSiteConfigModel } from '../../models/entity/bankPayment/bankPaymentPrivateSiteConfigModel';
 
 
 @Injectable()
-export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, number>  {
+export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
