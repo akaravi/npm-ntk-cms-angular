@@ -1,12 +1,12 @@
 import { BiographyContentWithSimilarLocationPeriodDtoModel } from './../../models/dto/biography/biographyContentWithSimilarLocationPeriodDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { catchError, map, retry } from 'rxjs/operators';
 import { BiographyContentModel } from '../../models/entity/biography/biographyContentModel';
 import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 import { BiographyContentWithDatePeriodEndDtoModel } from '../../models/dto/biography/biographyContentWithDatePeriodEndDtoModel';
 import { BiographyContentWithSimilarDatePeriodEndDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodEndDtoModel';
@@ -24,7 +24,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
     return 'BiographyContent';
   }
 
-  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -35,13 +35,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -52,12 +52,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -68,13 +68,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ScoreClickDtoModel();
     }
@@ -85,13 +85,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteAdd(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
@@ -100,13 +100,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceFavoriteRemove(Id: number): Observable<ErrorExcptionResultBase> {
+  ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
@@ -115,12 +115,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
-  ServiceFavoriteList(model: FilterModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -131,13 +131,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
@@ -148,12 +148,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithSimilarLocationPeriodEnd(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodEnd(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
@@ -164,12 +164,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel();
     }
@@ -180,12 +180,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStart(model: BiographyContentWithSimilarDatePeriodStartDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStart(model: BiographyContentWithSimilarDatePeriodStartDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDtoModel();
     }
@@ -196,12 +196,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel();
     }
@@ -212,12 +212,12 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel();
     }
@@ -228,14 +228,14 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
 
-  ServiceGetAllGetAllWithSimilarDatePeriodEnd(model: BiographyContentWithSimilarDatePeriodEndDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithSimilarDatePeriodEnd(model: BiographyContentWithSimilarDatePeriodEndDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodEndDtoModel();
     }
@@ -246,13 +246,13 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAllGetAllWithDatePeriodEnd(model: BiographyContentWithDatePeriodEndDtoModel): Observable<ErrorExcptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithDatePeriodEnd(model: BiographyContentWithDatePeriodEndDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithDatePeriodEndDtoModel();
     }
@@ -263,8 +263,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BiographyContentModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

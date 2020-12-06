@@ -1,7 +1,7 @@
 import { AccessModel } from './accessModel';
-import { ErrorExcptionResultBase } from './errorExcptionResultBase';
+import { ErrorExceptionResultBase } from './errorExceptionResultBase';
 
-export class ErrorExcptionResult<T> extends ErrorExcptionResultBase {
+export class ErrorExceptionResult<T> extends ErrorExceptionResultBase {
   ListItems: T[];
   Item: T;
   CurrentPageNumber: number;

@@ -2,20 +2,21 @@ import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
 import { BankPaymentTransactionCheckResponceModel } from '../../models/dto/bankPayment/bankPaymentTransactionCheckResponceModel';
-import { BankPaymentOnlineTransactionDtoModel } from '../../models/dto/bankPayment/bankPaymentOnlineTransactionDtoModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { BankPaymentTransactionMakerDtoModel } from '../../models/dto/bankPayment/bankPaymentTransactionMakerDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
+import { BankPaymentPrivateSiteConfigModel } from '../../models/entity/bankPayment/bankPaymentPrivateSiteConfigModel';
 
 
 @Injectable()
-export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, number>  {
+export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
 
   ServiceTestPay(
-    model: BankPaymentOnlineTransactionDtoModel,
-  ): Observable<ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>> {
+    model: BankPaymentTransactionMakerDtoModel,
+  ): Observable<ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>> {
     if (model == null) {
       model = new BankPaymentOnlineTransactionDtoModel();
     }
@@ -27,15 +28,15 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, n
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
   ServiceGoToBankPaymentWebSite(
-    model: BankPaymentOnlineTransactionDtoModel,
-  ): Observable<ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>> {
+    model: BankPaymentTransactionMakerDtoModel,
+  ): Observable<ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>> {
     if (model == null) {
       model = new BankPaymentOnlineTransactionDtoModel();
     }
@@ -47,8 +48,8 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, n
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

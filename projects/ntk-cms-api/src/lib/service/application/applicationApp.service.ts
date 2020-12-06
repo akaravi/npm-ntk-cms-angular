@@ -1,11 +1,11 @@
 import { ApplicationScoreDtoModel } from '../../models/dto/application/applicationScoreDtoModel';
 import { ApplicationAppModel } from '../../models/entity/application/applicationAppModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { BuilderInfoStatusDtoModel } from '../../models/dto/application/builderInfoStatusDtoModel';
 import { UploadApplictionDtoModel } from '../../models/dto/application/uploadApplictionDtoModel';
 
@@ -16,7 +16,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
     return 'ApplicationApp';
   }
 
-  ServiceScoreClick(model: ApplicationScoreDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceScoreClick(model: ApplicationScoreDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ApplicationScoreDtoModel();
     }
@@ -27,14 +27,14 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
 
-  ServiceCorrentDevice(): Observable<ErrorExcptionResult<ApplicationAppModel>> {
+  ServiceCorrentDevice(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentDevice', {
@@ -43,14 +43,14 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationAppModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationAppModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
 
-  ServiceBuild(id: number): Observable<ErrorExcptionResult<ApplicationAppModel>> {
+  ServiceBuild(id: number): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id, {
@@ -59,13 +59,13 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationAppModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationAppModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceBuildInfo(id: number, key: string): Observable<ErrorExcptionResult<ApplicationAppModel>> {
+  ServiceBuildInfo(id: number, key: string): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id + "/" + key, {
@@ -74,14 +74,14 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationAppModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationAppModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
 
-  ServiceBuildInfoSet(model: BuilderInfoStatusDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceBuildInfoSet(model: BuilderInfoStatusDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new BuilderInfoStatusDtoModel();
     }
@@ -92,14 +92,14 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
 
-  ServiceUploadUpdate(model: UploadApplictionDtoModel): Observable<ErrorExcptionResult<ApplicationAppModel>> {
+  ServiceUploadUpdate(model: UploadApplictionDtoModel): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     if (model == null) {
       model = new UploadApplictionDtoModel();
     }
@@ -110,14 +110,14 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationAppModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationAppModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
 
-  ServiceUpload(model: UploadApplictionDtoModel): Observable<ErrorExcptionResult<ApplicationAppModel>> {
+  ServiceUpload(model: UploadApplictionDtoModel): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     if (model == null) {
       model = new UploadApplictionDtoModel();
     }
@@ -128,8 +128,8 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<ApplicationAppModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<ApplicationAppModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

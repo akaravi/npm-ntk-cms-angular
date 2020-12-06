@@ -7,8 +7,8 @@ import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
 
 import { CaptchaModel } from '../../models/entity/base/captchaModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { AuthUserSignInModel } from '../../models/dto/core/authUserSignInModel';
 
 import { TokenDeviceClientInfoDtoModel } from '../../models/dto/core/tokenDeviceClientInfoDtoModel';
@@ -58,7 +58,7 @@ export class CoreAuthService extends ApiServerBase {
     //   })
     //   .pipe(
     //     // catchError(this.handleError)
-    //     map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+    //     map((ret: ErrorExceptionResult<TokenInfoModel>) => {
     //       if (ret) {
     //         if (ret.IsSuccess) {
     //           this.SetCorrentTokenInfo(ret.Item);
@@ -70,27 +70,27 @@ export class CoreAuthService extends ApiServerBase {
     //   .toPromise();
   }
 
-  ServiceCorrentToken(): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceCorrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentToken').pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         return ret;
       }),
     );
   }
 
-  ServiceCaptcha(): Observable<ErrorExcptionResult<CaptchaModel>> {
+  ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<CaptchaModel>) => {
+      map((ret: ErrorExceptionResult<CaptchaModel>) => {
         return ret;
       }),
     );
   }
-  ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
           this.SetCorrentTokenInfo(ret.Item);
         }
@@ -99,19 +99,19 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
 
-  ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         return ret;
       }),
     );
   }
 
-  ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signin', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
           this.SetCorrentTokenInfo(ret.Item);
         }
@@ -120,10 +120,10 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
 
-  ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signInBySms', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
           this.SetCorrentTokenInfo(ret.Item);
         }
@@ -132,7 +132,7 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
 
-  ServiceRenewToken(model: AuthRenewTokenModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceRenewToken(model: AuthRenewTokenModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     if (model == null) {
       model = new AuthRenewTokenModel();
     }
@@ -142,7 +142,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+        map((ret: ErrorExceptionResult<TokenInfoModel>) => {
           if (ret.IsSuccess) {
             this.SetCorrentTokenInfo(ret.Item);
           }
@@ -150,34 +150,34 @@ export class CoreAuthService extends ApiServerBase {
         }),
       );
   }
-  ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/changePassword', model, {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+        map((ret: ErrorExceptionResult<TokenInfoModel>) => {
           return ret;
         }),
       );
   }
-  ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExcptionResult<TokenInfoModel>> {
+  ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExcptionResult<TokenInfoModel>) => {
+      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         return ret;
       }),
     );
   }
-  ServiceLogout(model: AuthUserSignOutModel = new AuthUserSignOutModel()): Observable<ErrorExcptionResultBase> {
+  ServiceLogout(model: AuthUserSignOutModel = new AuthUserSignOutModel()): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signOut', model, {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
+        map((ret: ErrorExceptionResultBase) => {
           this.SetCorrentTokenInfo(null);
 
           return ret;
@@ -185,7 +185,7 @@ export class CoreAuthService extends ApiServerBase {
       );
   }
 
-  ServiceExistToken(model: FilterModel): Observable<ErrorExcptionResultBase> {
+  ServiceExistToken(model: FilterModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -196,12 +196,12 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
+        map((ret: ErrorExceptionResultBase) => {
           return ret;
         }),
       );
   }
-  ServiceMobileConfirm(model: AuthMobileConfirmDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceMobileConfirm(model: AuthMobileConfirmDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new AuthMobileConfirmDtoModel();
     }
@@ -212,12 +212,12 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
+        map((ret: ErrorExceptionResultBase) => {
           return ret;
         }),
       );
   }
-  ServiceEmailConfirm(model: AuthEmailConfirmDtoModel): Observable<ErrorExcptionResultBase> {
+  ServiceEmailConfirm(model: AuthEmailConfirmDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new AuthEmailConfirmDtoModel();
     }
@@ -228,7 +228,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
+        map((ret: ErrorExceptionResultBase) => {
           return ret;
         }),
       );

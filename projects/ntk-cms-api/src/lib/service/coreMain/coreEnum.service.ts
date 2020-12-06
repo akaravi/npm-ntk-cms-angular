@@ -1,6 +1,6 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { EnumModel } from '../../models/entity/base/enumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
@@ -12,39 +12,39 @@ export class CoreEnumService extends ApiServerBase {
     return 'CoreEnum';
   }
 
-  ServiceEnumRecordStatus(): Observable<ErrorExcptionResult<EnumModel>> {
+  ServiceEnumRecordStatus(): Observable<ErrorExceptionResult<EnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumRecordStatus', {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<EnumModel>) => {
+        map((ret: ErrorExceptionResult<EnumModel>) => {
           return ret;
         }),
       );
   }
 
-  ServiceEnumLocationType(): Observable<ErrorExcptionResult<EnumModel>> {
+  ServiceEnumLocationType(): Observable<ErrorExceptionResult<EnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumLocationType', {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<EnumModel>) => {
+        map((ret: ErrorExceptionResult<EnumModel>) => {
           return ret;
         }),
       );
   }
-  ServiceEnumUserLanguage(): Observable<ErrorExcptionResult<EnumModel>> {
+  ServiceEnumUserLanguage(): Observable<ErrorExceptionResult<EnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumUserLanguage', {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<EnumModel>) => {
+        map((ret: ErrorExceptionResult<EnumModel>) => {
           return ret;
         }),
       );
@@ -52,26 +52,26 @@ export class CoreEnumService extends ApiServerBase {
   ////
   // EnumUserLanguage
   ////
-  ServiceEnumGender(): Observable<ErrorExcptionResult<EnumModel>> {
+  ServiceEnumGender(): Observable<ErrorExceptionResult<EnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumGender', {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<EnumModel>) => {
+        map((ret: ErrorExceptionResult<EnumModel>) => {
           return ret;
         }),
       );
   }
-  ServiceEnumMenuPlaceType(): Observable<ErrorExcptionResult<EnumModel>> {
+  ServiceEnumMenuPlaceType(): Observable<ErrorExceptionResult<EnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumMenuPlaceType', {
         headers: this.getHeaders(),
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<EnumModel>) => {
+        map((ret: ErrorExceptionResult<EnumModel>) => {
           return ret;
         }),
       );

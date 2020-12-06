@@ -2,16 +2,16 @@ import { map } from 'rxjs/operators';
 import { retry, catchError } from 'rxjs/operators';
 import { ApiServerBase } from './apiServerBase.service';
 import { Observable } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 import { Injectable } from '@angular/core';
 
 
 @Injectable()
 export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
-  ServiceViewModel(): Observable<ErrorExcptionResult<TOut>> {
+  ServiceViewModel(): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ViewModel', {
@@ -19,13 +19,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAll(model: FilterModel): Observable<ErrorExcptionResult<TOut>> {
+  ServiceGetAll(model: FilterModel): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -43,13 +43,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
 
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetOneById(id: TKey): Observable<ErrorExcptionResult<TOut>> {
+  ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
@@ -58,13 +58,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetCount(model: FilterModel): Observable<ErrorExcptionResultBase> {
+  ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -77,13 +77,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
 
-  ServiceGetExist(model: FilterModel): Observable<ErrorExcptionResultBase> {
+  ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -96,12 +96,12 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
-  ServiceExportFile(model: FilterModel): Observable<ErrorExcptionResult<TOut>> {
+  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -114,12 +114,12 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceAdd(model: any): Observable<ErrorExcptionResult<TOut>> {
+  ServiceAdd(model: any): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
@@ -128,13 +128,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceEdit(model: any): Observable<ErrorExcptionResult<TOut>> {
+  ServiceEdit(model: any): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
@@ -143,13 +143,13 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceDelete(id: TKey): Observable<ErrorExcptionResult<TOut>> {
+  ServiceDelete(id: TKey): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .delete(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
@@ -158,12 +158,12 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceDeleteList(ids: TKey[]): Observable<ErrorExcptionResult<TOut>> {
+  ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResult<TOut>> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteList', ids, {
@@ -172,8 +172,8 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TOut>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TOut>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

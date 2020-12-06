@@ -2,7 +2,7 @@
 import {  Observable, BehaviorSubject } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
 
@@ -24,7 +24,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
     }
     this.CorrentUser.next(model);
   }
-  ServiceCurrectUser(): Observable<ErrorExcptionResult<CoreUserModel>> {
+  ServiceCurrectUser(): Observable<ErrorExceptionResult<CoreUserModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentUser', {
         headers: this.getHeaders(),
@@ -32,13 +32,13 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreUserModel>) => {
+        map((ret: ErrorExceptionResult<CoreUserModel>) => {
           this.SetCorrentUser(ret.Item);
-          return this.errorExcptionResultCheck(ret);
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetGlobalToken(model: FilterModel): Observable<ErrorExcptionResult<CoreUserModel>> {
+  ServiceGetGlobalToken(model: FilterModel): Observable<ErrorExceptionResult<CoreUserModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -50,8 +50,8 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreUserModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreUserModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

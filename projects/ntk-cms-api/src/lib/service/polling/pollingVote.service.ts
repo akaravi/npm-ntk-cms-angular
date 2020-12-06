@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { PollingVoteModel } from '../../models/entity/polling/pollingVoteModel';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
 
 
@@ -11,7 +11,7 @@ export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, numbe
   getModuleCotrolerUrl(): string {
     return 'PollingVote';
   }
-  ServiceAddBatch(model: PollingVoteModel[]): Observable<ErrorExcptionResult<PollingVoteModel>> {
+  ServiceAddBatch(model: PollingVoteModel[]): Observable<ErrorExceptionResult<PollingVoteModel>> {
     if (model == null) {
       model = [];
     }
@@ -22,8 +22,8 @@ export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<PollingVoteModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<PollingVoteModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

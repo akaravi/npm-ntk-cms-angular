@@ -1,6 +1,6 @@
 import { TicketingTaskDtoModel } from './../../models/dto/ticketing/ticketingTaskDtoModel';
 import { Observable } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
     return 'TicketingTask';
   }
 
-  ServiceContactUS(model: TicketingTaskDtoModel): Observable<ErrorExcptionResult<TicketingTaskModel>> {
+  ServiceContactUS(model: TicketingTaskDtoModel): Observable<ErrorExceptionResult<TicketingTaskModel>> {
     if (model == null) {
       model = new TicketingTaskDtoModel();
     }
@@ -24,8 +24,8 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<TicketingTaskModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<TicketingTaskModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

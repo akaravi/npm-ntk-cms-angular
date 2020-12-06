@@ -1,8 +1,8 @@
 
 import { Observable, BehaviorSubject } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreCpMainMenuModel } from '../../models/entity/coreMain/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
@@ -24,7 +24,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
   //   this.coreCpMainMenu.next(model);
   // }
 
-  ServiceGetAllMenu(model: FilterModel): Observable<ErrorExcptionResult<CoreCpMainMenuModel>> {
+  ServiceGetAllMenu(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -36,15 +36,15 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreCpMainMenuModel>) => {
+        map((ret: ErrorExceptionResult<CoreCpMainMenuModel>) => {
           if (ret.Item != null) {
             this.coreCpMainMenu.next(ret.ListItems);
           }
-          return this.errorExcptionResultCheck(ret);
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceEditStep(model: any): Observable<ErrorExcptionResultBase> {
+  ServiceEditStep(model: any): Observable<ErrorExceptionResultBase> {
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
@@ -52,8 +52,8 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResultBase) => {
-          return this.errorExcptionResultBaseCheck(ret);
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }

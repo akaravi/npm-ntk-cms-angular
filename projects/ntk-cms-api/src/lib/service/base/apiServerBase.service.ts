@@ -2,8 +2,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
-import { ErrorExcptionResultBase } from '../../models/entity/base/errorExcptionResultBase';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
@@ -64,7 +64,7 @@ export class ApiServerBase {
     if (deviceToken && deviceToken.length > 0) { localStorage.setItem('deviceToken', deviceToken); }
     localStorage.setItem('refreshToken', refreshToken);
   }
-  errorExcptionResultCheck(model: ErrorExcptionResult<any>): ErrorExcptionResult<any> {
+  errorExceptionResultCheck(model: ErrorExceptionResult<any>): ErrorExceptionResult<any> {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
@@ -73,7 +73,7 @@ export class ApiServerBase {
     }
     return model;
   }
-  errorExcptionResultBaseCheck(model: ErrorExcptionResultBase): ErrorExcptionResultBase {
+  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase): ErrorExceptionResultBase {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';

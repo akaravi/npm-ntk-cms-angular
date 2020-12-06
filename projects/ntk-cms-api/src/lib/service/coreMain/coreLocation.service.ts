@@ -1,6 +1,6 @@
 import {  Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreLocationModel } from '../../models/entity/coreMain/coreLocationModel';
 
@@ -16,7 +16,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
     return 'CoreLocation';
   }
 
-  ServiceGetAllProvinces(model: FilterModel): Observable<ErrorExcptionResult<CoreLocationModel>> {
+  ServiceGetAllProvinces(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -28,12 +28,12 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreLocationModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreLocationModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllCities(model: FilterModel): Observable<ErrorExcptionResult<CoreLocationModel>> {
+  ServiceGetAllCities(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -45,12 +45,12 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreLocationModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreLocationModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceGetAllNeighbourhoods(model: FilterModel): Observable<ErrorExcptionResult<CoreLocationModel>> {
+  ServiceGetAllNeighbourhoods(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -62,8 +62,8 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExcptionResult<CoreLocationModel>) => {
-          return this.errorExcptionResultCheck(ret);
+        map((ret: ErrorExceptionResult<CoreLocationModel>) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
