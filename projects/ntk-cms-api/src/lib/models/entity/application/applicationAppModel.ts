@@ -66,4 +66,15 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   LinkFileIdIconSrc: string;
   LinkFileIdLogoSrc: string;
   LinkFileIdSplashScreenSrc: string;
+  AboutUsTitle: string;
+  AboutUsDescription: string;
+  AboutUsTel: string;
+  AboutUsFax: string;
+  AboutUsEmail: string;
+  AboutUsAddress: string;
+  AboutUsLinkImageId: string;
+  AboutUsLinkImageIdSrc: string;
+  AboutUsGeolocationlatitude: number;
+  AboutUsGeolocationlongitude: number;
+
 }

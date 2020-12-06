@@ -40,5 +40,18 @@ export class CoreSiteModel extends BaseEntity<number> {
   Devices: CoreDeviceModel[];
   Copyright: string;
 
+
+   AboutUsTitle: string;
+   AboutUsDescription: string;
+   AboutUsTel: string;
+   AboutUsFax: string;
+   AboutUsEmail: string;
+   AboutUsAddress: string;
+   AboutUsLinkImageId: string;
+   AboutUsLinkImageIdSrc: string;
+   AboutUsGeolocationlatitude: number;
+   AboutUsGeolocationlongitude: number;
+
+
 }
 
