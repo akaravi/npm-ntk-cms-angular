@@ -6,6 +6,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Injectable } from '@angular/core';
 import { HyperShopContentModel } from '../../models/entity/hyperShop/hyperShopContentModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 @Injectable()
 export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string> {
@@ -46,4 +47,49 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
       );
   }
 
+  ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
+
+  ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: ErrorExceptionResultBase) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
+  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<HyperShopContentModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteList', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: ErrorExceptionResult<HyperShopContentModel>) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
