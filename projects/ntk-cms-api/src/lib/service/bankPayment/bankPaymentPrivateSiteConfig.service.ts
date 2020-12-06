@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
 import { BankPaymentTransactionCheckResponceModel } from '../../models/dto/bankPayment/bankPaymentTransactionCheckResponceModel';
-import { BankPaymentTransactionMakerDtoModel } from '../../models/dto/bankPayment/bankPaymentTransactionMakerDtoModel';
+import { BankPaymentOnlineTransactionDtoModel } from '../../models/dto/bankPayment/bankPaymentOnlineTransactionDtoModel';
 import { ErrorExcptionResult } from '../../models/entity/base/errorExcptionResult';
 import { Injectable } from '@angular/core';
 
@@ -14,10 +14,10 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, n
   }
 
   ServiceTestPay(
-    model: BankPaymentTransactionMakerDtoModel,
+    model: BankPaymentOnlineTransactionDtoModel,
   ): Observable<ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>> {
     if (model == null) {
-      model = new BankPaymentTransactionMakerDtoModel();
+      model = new BankPaymentOnlineTransactionDtoModel();
     }
 
     return this.http
@@ -34,10 +34,10 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<any, n
   }
 
   ServiceGoToBankPaymentWebSite(
-    model: BankPaymentTransactionMakerDtoModel,
+    model: BankPaymentOnlineTransactionDtoModel,
   ): Observable<ErrorExcptionResult<BankPaymentTransactionCheckResponceModel>> {
     if (model == null) {
-      model = new BankPaymentTransactionMakerDtoModel();
+      model = new BankPaymentOnlineTransactionDtoModel();
     }
 
     return this.http
