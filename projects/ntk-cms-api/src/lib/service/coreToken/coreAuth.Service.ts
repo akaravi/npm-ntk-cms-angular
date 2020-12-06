@@ -23,37 +23,37 @@ import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignI
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
-  CorrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
-  CorrentTokenInfoBSObs = this.CorrentTokenInfoBS.asObservable();
+  CurrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
+  CurrentTokenInfoBSObs = this.CurrentTokenInfoBS.asObservable();
   userRoles: string[] = [];
   userName = '';
   getModuleCotrolerUrl(): string {
     return 'auth';
   }
-  SetCorrentTokenInfo(model: TokenInfoModel | null): any {
+  SetCurrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       localStorage.removeItem('token');
       localStorage.removeItem('refreshToken');
       return;
     }
     this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
-    this.CorrentTokenInfoBS.next(model);
+    this.CurrentTokenInfoBS.next(model);
   }
-  CorrentTokenInfoBSRenew(): any {
+  CurrentTokenInfoBSRenew(): any {
     const token = this.getUserToken();
 
     // if (!token || token === 'null') {
     //   return;
     // }
-    this.ServiceCorrentToken().subscribe(
+    this.ServiceCurrentToken().subscribe(
       (next) => {
-        this.SetCorrentTokenInfo(next.Item);
+        this.SetCurrentTokenInfo(next.Item);
       },
       (error) => {
       }
     );
     // return this.http
-    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentToken', {
+    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken', {
     //     headers: this.getHeaders(),
     //   })
     //   .pipe(
@@ -61,7 +61,7 @@ export class CoreAuthService extends ApiServerBase {
     //     map((ret: ErrorExceptionResult<TokenInfoModel>) => {
     //       if (ret) {
     //         if (ret.IsSuccess) {
-    //           this.SetCorrentTokenInfo(ret.Item);
+    //           this.SetCurrentTokenInfo(ret.Item);
     //         }
     //         return ret;
     //       }
@@ -70,8 +70,8 @@ export class CoreAuthService extends ApiServerBase {
     //   .toPromise();
   }
 
-  ServiceCorrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CorrentToken').pipe(
+  ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
+    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken').pipe(
       // catchError(this.handleError)
       map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         return ret;
@@ -92,7 +92,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrentTokenInfo(ret.Item);
+          this.SetCurrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -113,7 +113,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrentTokenInfo(ret.Item);
+          this.SetCurrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -125,7 +125,7 @@ export class CoreAuthService extends ApiServerBase {
       // catchError(this.handleError)
       map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         if (ret.IsSuccess) {
-          this.SetCorrentTokenInfo(ret.Item);
+          this.SetCurrentTokenInfo(ret.Item);
         }
         return ret;
       }),
@@ -144,7 +144,7 @@ export class CoreAuthService extends ApiServerBase {
         // catchError(this.handleError)
         map((ret: ErrorExceptionResult<TokenInfoModel>) => {
           if (ret.IsSuccess) {
-            this.SetCorrentTokenInfo(ret.Item);
+            this.SetCurrentTokenInfo(ret.Item);
           }
           return ret;
         }),
@@ -178,7 +178,7 @@ export class CoreAuthService extends ApiServerBase {
       .pipe(
         // catchError(this.handleError)
         map((ret: ErrorExceptionResultBase) => {
-          this.SetCorrentTokenInfo(null);
+          this.SetCurrentTokenInfo(null);
 
           return ret;
         }),
