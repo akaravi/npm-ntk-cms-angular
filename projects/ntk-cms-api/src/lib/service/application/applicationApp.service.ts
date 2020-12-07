@@ -34,10 +34,10 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
   }
 
 
-  ServiceCurrentDevice(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
+  ServiceCurrentApp(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentDevice', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentApp', {
         headers: this.getHeaders(),
       })
       .pipe(
