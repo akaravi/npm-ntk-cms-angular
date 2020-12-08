@@ -27,4 +27,7 @@ export * from './enumTicketingDepartemenPriority';
 export * from './enumTicketAccessStatus';
 export * from './eminUserActivateTypes';
 export * from './enumHyperShopPaymentType';
+export * from './enumCmsSiteMenuAreaType';
+export * from './enumPageAbilityType';
+export * from './enumCmsPageUtilityToolsAction';
 

@@ -85,6 +85,12 @@ export * from './lib/models/entity/biography/_export';
 export * from './lib/models/dto/biography/_export';
 // biography
 
+// webDesigner
+export * from './lib/service/webDesigner/_export';
+export * from './lib/models/entity/webDesigner/_export';
+export * from './lib/models/dto/webDesigner/_export';
+// webDesigner
+
 // article
 export * from './lib/service/article/_export';
 export * from './lib/models/entity/article/_export';
