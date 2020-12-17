@@ -19,4 +19,5 @@ export class TicketingAnswerModel  extends BaseModuleEntity<number> {
     DepartemenOperator: TicketingDepartemenOperatorModel;
     LinkFileIds: string;
     LinkFileIdsSrc: string[];
+    UploadFileGUID: string[];
 }

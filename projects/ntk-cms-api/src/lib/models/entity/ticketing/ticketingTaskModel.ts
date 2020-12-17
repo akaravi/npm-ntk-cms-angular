@@ -26,5 +26,6 @@ export class TicketingTaskModel extends BaseModuleEntity<number>  {
   TicketingDepartemenDefaultAnswerBody: string;
   LinkFileIds: string;
   LinkFileIdsSrc: string[];
+  UploadFileGUID: string[];
 }
 
