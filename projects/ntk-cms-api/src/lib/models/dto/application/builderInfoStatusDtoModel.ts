@@ -6,6 +6,6 @@ export class BuilderInfoStatusDtoModel {
     BuildStatusType: EnumBuildStatusType;
     ErrorMessage: string;
     BuildAppKey: string;
-    UploadFileKey: string;
+    UploadFileGUID: string;
 
 }
