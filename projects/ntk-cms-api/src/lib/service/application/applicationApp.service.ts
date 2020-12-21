@@ -8,6 +8,8 @@ import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { BuilderInfoStatusDtoModel } from '../../models/dto/application/builderInfoStatusDtoModel';
 import { UploadApplictionDtoModel } from '../../models/dto/application/uploadApplictionDtoModel';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfoModel';
 
 
 @Injectable()
@@ -32,7 +34,22 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
         }),
       );
   }
-
+  ServiceScoreClickList(model: FilterModel): Observable<ErrorExceptionResult<ScoreClickInfoModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ScoreClickList', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: ErrorExceptionResult<ScoreClickInfoModel>) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
   ServiceCurrentApp(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
