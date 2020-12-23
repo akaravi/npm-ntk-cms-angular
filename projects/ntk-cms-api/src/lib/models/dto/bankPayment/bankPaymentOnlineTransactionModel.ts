@@ -3,7 +3,7 @@ export class BankPaymentOnlineTransactionModel {
     UrlToPay: string;
     TransactionId: number;
     Amount: number;
-    TransportCost:number;
+    FeeTransport:number;
     Fee: number;
     AmountPure: number;
 
