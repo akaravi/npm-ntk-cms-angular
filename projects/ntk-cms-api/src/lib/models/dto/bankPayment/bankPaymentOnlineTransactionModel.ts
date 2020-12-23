@@ -2,8 +2,9 @@ export class BankPaymentOnlineTransactionModel {
 
     UrlToPay: string;
     TransactionId: number;
-    OutHtml: string;
-    LastUrlAddressInUse: string;
+    Amount: number;
+    Fee: number;
+    AmountPure: number;
 
 
 }

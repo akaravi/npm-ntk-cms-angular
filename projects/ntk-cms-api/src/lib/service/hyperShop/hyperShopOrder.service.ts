@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { BankPaymentOnlineTransactionModel } from '../../models/dto/bankPayment/bankPaymentOnlineTransactionModel';
-import { HyperShopOrderDtoModel } from '../../models/dto/hyperShop/hyperShopOrderDtoModel';
 import { HyperShopOrderPaymentDtoModel } from '../../models/dto/hyperShop/hyperShopOrderPaymentDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { HyperShopOrderModel } from '../../models/entity/hyperShop/hyperShopOrderModel';

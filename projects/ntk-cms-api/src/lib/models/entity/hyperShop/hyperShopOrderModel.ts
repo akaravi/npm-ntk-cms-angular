@@ -14,6 +14,8 @@ export class HyperShopOrderModel extends BaseModuleEntity<number>{
   Name: string;
   Family: string;
   Mobile: string;
+  GeoLocationLatitude: string;
+  GeoLocationLongitude: string;
   Address: string;
   Amount: number;
   Products: HyperShopOrderContentModel[];
