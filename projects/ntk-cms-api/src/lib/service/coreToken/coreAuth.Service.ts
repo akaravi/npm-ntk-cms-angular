@@ -71,7 +71,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken').pipe(
+    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
       map((ret: ErrorExceptionResult<TokenInfoModel>) => {
         return ret;
