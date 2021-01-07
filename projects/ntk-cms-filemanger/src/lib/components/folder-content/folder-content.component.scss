@@ -1,0 +1,9 @@
+.item-holder {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: wrap;
+
+  .new {
+    display: inline;
+  }
+}

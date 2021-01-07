@@ -1,0 +1,22 @@
+<div class="item-holder" *ngIf="nodes">
+  <ng-container *ngIf="nodes.id !== 0">
+    <app-node [node]=nodes id="{{nodes.pathToNode}}">
+      <ng-container [ngTemplateOutletContext]="{$implicit: nodes}"
+                    [ngTemplateOutlet]="folderContentBackTemplate">
+      </ng-container>
+    </app-node>
+  </ng-container>
+
+  <ng-container *ngFor="let node of obj.keys(nodes.children)">
+    <app-node [node]="nodes.children[node]"
+              id="fc_{{nodes.children[node].pathToNode}}">
+      <ng-container [ngTemplateOutletContext]="{$implicit: nodes.children[node]}"
+                    [ngTemplateOutlet]="folderContentTemplate">
+      </ng-container>
+    </app-node>
+  </ng-container>
+
+  <div class="new" (click)="newClickedAction()">
+    <ng-container [ngTemplateOutlet]="folderContentNewTemplate"></ng-container>
+  </div>
+</div>

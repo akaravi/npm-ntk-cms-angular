@@ -1,0 +1,23 @@
+<div class="side-view" *ngIf="node">
+  <div class="side-view-preview">
+    <i (click)="onClick($event, 'closeSideView')" class="fas fa-times side-view-close"></i>
+
+    <div class="side-view-preview-title">{{node.name}}</div>
+
+    <div class="side-view-preview-content">
+      <ng-container
+        [ngTemplateOutletContext]="{$implicit: node}"
+        [ngTemplateOutlet]="sideViewTemplate">
+      </ng-container>
+    </div>
+
+    <div class="side-view-buttons">
+      <button (click)="onClick($event, 'download')" class="button"
+              [disabled]="isDisabled()">
+        {{'filemanager.download' | translate }}
+      </button>
+      <button (click)="onClick($event, 'renameConfirm')" class="button">{{'filemanager.rename' | translate }}</button>
+      <button (click)="onClick($event, 'removeAsk')" class="button">{{'filemanager.delete' | translate }}</button>
+    </div>
+  </div>
+</div>

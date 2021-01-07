@@ -1,0 +1,26 @@
+{
+  "name": "ntk-cms-filemanger",
+  "version": "1.0.1",
+  "description": "Ntk Cms Api And Model For Typscript",
+  "author": "Alireza-Karavi",
+  "license": "ISC",
+  "keywords": [
+    "NTK",
+    "KARAVI",
+    "SMS",
+    "news",
+    "api"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^9.1.9",
+    "@angular/core": "^9.1.9",
+    "rxjs": "^6.5.5"
+  },
+  "dependencies": {
+    "@biesbjerg/ngx-translate-extract": "^7.0.3",
+    "@ngx-translate/core": "^10.0.2",
+    "@ngx-translate/http-loader": "^3.0.1",
+    "fine-uploader": "5.16.2",
+    "ngx-smart-modal": "^7.4.1"
+  }
+}

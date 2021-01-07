@@ -1,0 +1,19 @@
+.node-lister-flist {
+  margin: 0 0 0 1em;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.node-lister-list-item {
+  list-style: none none;
+  line-height: 1.2em;
+  font-size: 1em;
+  display: inline;
+
+  .node-lister-app-node.deselected + .node-lister {
+    ul {
+      display: none;
+    }
+  }
+}

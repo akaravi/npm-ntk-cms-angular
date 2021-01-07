@@ -26,8 +26,11 @@
       ],
       "@angular/*": [
         "./node_modules/@angular/*"
+      ],
+      "ntk-cms-filemanger": [
+        "dist/ntk-cms-filemanger/ntk-cms-filemanger",
+        "dist/ntk-cms-filemanger"
       ]
-
     }
   }
 }
