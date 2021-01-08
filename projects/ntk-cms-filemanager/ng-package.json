@@ -7,5 +7,5 @@
   "whitelistedNonPeerDependencies": [
     "."
   ],
-  "assets": ["src/styles.scss"]
+  "assets": ["src/assets/*"]
 }

@@ -32,7 +32,8 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]}
+        deps: [HttpClient]
+      }
     })
   ],
   declarations: [
@@ -53,7 +54,7 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [
     FileManagerComponent,
     LoadingOverlayComponent,
-	  SideViewComponent
+    SideViewComponent
   ],
   providers: [TranslateService]
 

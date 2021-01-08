@@ -22,14 +22,14 @@ export class FileManagerComponent implements OnInit {
   @Input() sideViewTemplate: TemplateRef<any>;
 
   @Input() tree: TreeModel;
-  @Input() isPopup: boolean = false;
+  @Input() isPopup = false;
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
 
 
   openFilemanagerButtonLabel: string;
-  private _language: string = 'en';
+  private _language = 'en';
   @Input() set language(value: string) {
     this._language = value;
     this.translate.use(this.language);
@@ -96,7 +96,7 @@ export class FileManagerComponent implements OnInit {
     this.itemClicked.emit(event);
   }
 
-  searchClicked(data: any) {
+  searchClicked(data: any): void {
     // console.log(data);
 
     const node = this.nodeService.findNodeById(data.id);
@@ -104,7 +104,7 @@ export class FileManagerComponent implements OnInit {
     this.store.dispatch({type: SET_SELECTED_NODE, payload: node});
   }
 
-  handleFileManagerClickEvent(event: any) {
+  handleFileManagerClickEvent(event: any): any {
     switch (event.type) {
       case 'closeSideView' :
         return this.nodeClickHandler(event.node, true);
@@ -147,13 +147,13 @@ export class FileManagerComponent implements OnInit {
         this.nodeClickedService.createFolder(parentId, event.payload);
         return this.onItemClicked({
           type: event.type,
-          parentId: parentId,
+          parentId,
           newDirName: event.payload
         });
     }
   }
 
-  nodeClickHandler(node: NodeInterface, closing?: boolean) {
+  nodeClickHandler(node: NodeInterface, closing?: boolean): any{
     if (node.name === 'root') {
       return;
     }
@@ -163,14 +163,18 @@ export class FileManagerComponent implements OnInit {
       this.store.dispatch({type: SET_SELECTED_NODE, payload: parentNode});
       this.sideMenuClosed = true;
     } else {
-      if (this.selectedNode === node && this.sideMenuClosed)
+      if (this.selectedNode === node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
-      else if (this.selectedNode === node && !this.sideMenuClosed)
+      }
+      else if (this.selectedNode === node && !this.sideMenuClosed) {
         this.sideMenuClosed = true;
-      else if (this.selectedNode !== node && this.sideMenuClosed)
+ }
+      else if (this.selectedNode !== node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
-      else if (this.selectedNode !== node && !this.sideMenuClosed)
+ }
+      else if (this.selectedNode !== node && !this.sideMenuClosed) {
         this.sideMenuClosed = false;
+ }
     }
 
     this.selectedNode = node;
@@ -188,7 +192,7 @@ export class FileManagerComponent implements OnInit {
   }
 
   // todo stay DRY!
-  highlightSelected(node: NodeInterface) {
+  highlightSelected(node: NodeInterface): void {
     let pathToNode = node.pathToNode;
 
     if (pathToNode.length === 0) {
@@ -231,7 +235,7 @@ export class FileManagerComponent implements OnInit {
     this.highilghtChildElement(parentElement);
   }
 
-  private highilghtChildElement(el: HTMLElement, light: boolean = false) {
+  private highilghtChildElement(el: HTMLElement, light: boolean = false): void {
     el.children[0] // appnode div wrapper
       .children[0] // ng template first item
       .classList.add('highlighted');
@@ -248,31 +252,31 @@ export class FileManagerComponent implements OnInit {
     return document.getElementById(fullId);
   }
 
-  private removeClass(className: string) {
+  private removeClass(className: string): void {
     Array.from(document.getElementsByClassName(className))
       .map((el: any) => el.classList.remove(className));
   }
 
-  fmShowHide() {
+  fmShowHide(): void {
     this.fmOpen = !this.fmOpen;
   }
 
-  backdropClicked() {
+  backdropClicked(): void {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
     this.store.dispatch({type: SET_LOADING_STATE, payload: false});
   }
 
-  handleUploadDialog(event: any) {
+  handleUploadDialog(event: any): void {
     this.newDialog = event;
   }
 
-  confirmSelection() {
+  confirmSelection(): void {
     this.fmOpen = false;
     this.itemSelected.emit(this.selectedNode);
   }
 
-  cancelSelection() {
+  cancelSelection(): void {
     this.fmOpen = false;
   }
 }
