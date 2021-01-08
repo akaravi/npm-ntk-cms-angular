@@ -4,7 +4,13 @@
   "description": "Ntk Cms Api And Model For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
-  "keywords": ["NTK","KARAVI","SMS","news","api"],
+  "keywords": [
+    "NTK",
+    "KARAVI",
+    "SMS",
+    "news",
+    "api"
+  ],
   "peerDependencies": {
     "@angular/common": ">=9.1.9",
     "@angular/core": ">=9.1.9"
