@@ -45,7 +45,7 @@ export class NodeClickedService {
     );
   }
 
-  public createFolder(currentParent: number, newDirName: string) : void{
+  public createFolder(currentParent: number, newDirName: string): void{
     this.sideEffectHelper(
       'Create Folder',
       (() => {
@@ -75,7 +75,7 @@ export class NodeClickedService {
   private sideEffectHelper(name: string, parameters: HttpParams, httpMethod: string, apiURL: string,
                            successMethod = (a: any) => this.actionSuccess(a),
                            failMethod = (a: any, b: any) => this.actionFailed(a, b)
-  ) : void{
+  ): void{
     this.ngxSmartModalService.getModal('waitModal').open();
 
     this.reachServer(httpMethod, apiURL, parameters)
@@ -85,7 +85,7 @@ export class NodeClickedService {
       );
   }
 
-  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<Object> | null {
+  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<any> | null {
     switch (method.toLowerCase()) {
       case 'get':
         return this.http.get(this.tree.config.baseURL + apiUrl, {params: parameters});
@@ -102,12 +102,12 @@ export class NodeClickedService {
     }
   }
 
-  private successWithSideViewClose() {
+  private successWithSideViewClose(): void {
     this.actionSuccess();
     document.getElementById('side-view').classList.remove('selected');
   }
 
-  private searchSuccess(input: string, data: any) {
+  private searchSuccess(input: string, data: any): void {
     const obj = {
       searchString: input,
       response: data
@@ -119,7 +119,7 @@ export class NodeClickedService {
     this.ngxSmartModalService.getModal('searchModal').open();
   }
 
-  private actionSuccess(response: string = '') {
+  private actionSuccess(response: string = ''): void {
     document.body.classList.remove('dialog-open');
 
     this.nodeService.refreshCurrentPath();
@@ -129,7 +129,7 @@ export class NodeClickedService {
     modal.close();
   }
 
-  private actionFailed(name: string, error: any) {
+  private actionFailed(name: string, error: any): void {
     document.body.classList.remove('dialog-open');
 
     this.ngxSmartModalService.getModal('waitModal').close();

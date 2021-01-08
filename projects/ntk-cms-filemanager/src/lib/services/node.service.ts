@@ -71,7 +71,7 @@ export class NodeService {
 
     const cachedNode = this.findNodeByPath(node.path);
 
-    return <NodeInterface>{
+    return  {
       id: node.id,
       isFolder: node.dir,
       isExpanded: cachedNode ? cachedNode.isExpanded : false,
@@ -79,7 +79,7 @@ export class NodeService {
       pathToParent: this.getParentPath(node.path),
       name: node.name || node.id,
       children: cachedNode ? cachedNode.children : {}
-    };
+    } as NodeInterface;
   }
 
   private getNodesFromServer = (path: string) => {
@@ -90,13 +90,13 @@ export class NodeService {
       this.tree.config.baseURL + this.tree.config.api.listFile,
       {params: new HttpParams().set('parentPath', folderId)}
     );
-  };
+  }
 
   public findNodeByPath(nodePath: string): NodeInterface {
     const ids = nodePath.split('/');
     ids.splice(0, 1);
 
-    return ids.length === 0 ? this.tree.nodes : ids.reduce((value, index) => value['children'][index], this.tree.nodes);
+    return ids.length === 0 ? this.tree.nodes : ids.reduce((value, index) => value.children[index], this.tree.nodes);
   }
 
   public findNodeById(id: number): NodeInterface {
@@ -129,7 +129,7 @@ export class NodeService {
     return null;
   }
 
-  public foldRecursively(node: NodeInterface) {
+  public foldRecursively(node: NodeInterface): void {
     // console.log('folding ', node);
     const children = node.children;
 
@@ -139,13 +139,13 @@ export class NodeService {
       }
 
       this.foldRecursively(children[child]);
-      //todo put this getElById into one func (curr inside node.component.ts + fm.component.ts) - this won't be maintainable
+      // todo put this getElById into one func (curr inside node.component.ts + fm.component.ts) - this won't be maintainable
       document.getElementById('tree_' + children[child].pathToNode).classList.add('deselected');
       children[child].isExpanded = false;
     });
   }
 
-  public foldAll() {
+  public foldAll(): void {
     this.foldRecursively(this.tree.nodes);
   }
 
