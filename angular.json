@@ -247,5 +247,8 @@
       }
     }
   },
-  "defaultProject": "npm-ntk-cms-angular"
+  "defaultProject": "npm-ntk-cms-angular",
+  "cli": {
+    "analytics": "00b8b454-f9a5-41e6-8b2c-cdeb1e0c8179"
+  }
 }

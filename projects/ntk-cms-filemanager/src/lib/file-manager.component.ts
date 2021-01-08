@@ -57,7 +57,7 @@ export class FileManagerComponent implements OnInit {
     translate.use('en');
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.nodeService.tree = this.tree;
     this.nodeClickedService.tree = this.tree;
 

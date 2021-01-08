@@ -8,7 +8,7 @@ import {NodeInterface} from '../../../interfaces/node.interface';
 })
 export class NodeListerComponent implements OnInit {
   @ContentChild(TemplateRef, {static: false}) templateRef: TemplateRef<any>;
-  @Input() nodes: NodeInterface;
+  @Input() nodes: NodeInterface|any;
   @Input() showFiles: boolean;
 
   obj = Object;
@@ -16,6 +16,6 @@ export class NodeListerComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }

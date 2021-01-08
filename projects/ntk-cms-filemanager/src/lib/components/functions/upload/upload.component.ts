@@ -18,7 +18,7 @@ import { NodeService } from '../../../services/node.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class UploadComponent implements OnInit, AfterViewInit {
-  @Input() openDialog = new EventEmitter();
+  @Input() openDialog : any;
 
   @Output() closeDialog = new EventEmitter();
   @Output() createDir = new EventEmitter();
