@@ -1,10 +1,10 @@
 /*
- * Public API Surface of ntk-cms-filemanger
+ * Public API Surface of ntk-cms-filemanager
  */
 
-// export * from './lib/ntk-cms-filemanger.service';
-// export * from './lib/ntk-cms-filemanger.component';
-// export * from './lib/ntk-cms-filemanger.module';
+// export * from './lib/ntk-cms-filemanager.service';
+// export * from './lib/ntk-cms-filemanager.component';
+// export * from './lib/ntk-cms-filemanager.module';
 export * from './lib/components/side-view/side-view.component';
 export * from './lib/components/functions/loading-overlay/loading-overlay.component';
 

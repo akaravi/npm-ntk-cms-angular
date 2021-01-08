@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NtkCmsFilemangerComponent } from './ntk-cms-filemanger.component';
+import { NtkCmsFileuploaderComponent } from './ntk-cms-fileuploader.component';
 
-describe('NtkCmsFilemangerComponent', () => {
-  let component: NtkCmsFilemangerComponent;
-  let fixture: ComponentFixture<NtkCmsFilemangerComponent>;
+describe('NtkCmsFileuploaderComponent', () => {
+  let component: NtkCmsFileuploaderComponent;
+  let fixture: ComponentFixture<NtkCmsFileuploaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NtkCmsFilemangerComponent ]
+      declarations: [ NtkCmsFileuploaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NtkCmsFilemangerComponent);
+    fixture = TestBed.createComponent(NtkCmsFileuploaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

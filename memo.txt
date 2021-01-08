@@ -6,7 +6,8 @@
 ng new npm-ntk-cms-angular --create-application=false
 cd npm-ntk-cms-angular
 ng generate library ntk-cms-api
-ng generate library ntk-cms-filemanger
+ng generate library ntk-cms-filemanager
+ng generate library ntk-cms-fileuploader
 ng generate library ntk-cms-module
 =========================================First Time npm
 npm adduser
@@ -17,9 +18,9 @@ ng build ntk-cms-api
 ng test ntk-cms-api
 ng lint ntk-cms-api
 =========================================
-ng build ntk-cms-filemanger
-ng test ntk-cms-filemanger
-ng lint ntk-cms-filemanger
+ng build ntk-cms-filemanager
+ng test ntk-cms-filemanager
+ng lint ntk-cms-filemanager
 ========================================= For New Ver
 ========================================= For New Ver
 ========================================= For New Ver
@@ -27,8 +28,8 @@ ng build ntk-cms-api --prod
 cd dist/ntk-cms-api
 npm publish
 =========================================
-ng build ntk-cms-filemanger --prod
-cd dist/ntk-cms-filemanger
+ng build ntk-cms-filemanager --prod
+cd dist/ntk-cms-filemanager
 npm publish
 =========================================
 

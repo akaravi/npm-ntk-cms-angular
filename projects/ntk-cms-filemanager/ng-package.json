@@ -1,10 +1,11 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ntk-cms-filemanger",
+  "dest": "../../dist/ntk-cms-filemanager",
   "lib": {
     "entryFile": "src/public-api.ts"
   },
   "whitelistedNonPeerDependencies": [
     "."
-  ]
+  ],
+  "assets": ["src/styles.scss"]
 }

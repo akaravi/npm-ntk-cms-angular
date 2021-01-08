@@ -8,7 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE} from './services/file-manager-store.service';
 
 @Component({
-  selector: 'fm-file-manager',
+  selector: 'cms-file-manager',
   templateUrl: './file-manager.component.html',
   styleUrls: ['./file-manager.component.scss'],
   encapsulation: ViewEncapsulation.None

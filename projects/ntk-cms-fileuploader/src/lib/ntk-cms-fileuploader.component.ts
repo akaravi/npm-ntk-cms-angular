@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ntk-cms-filemanger',
+  selector: 'lib-ntk-cms-fileuploader',
   template: `
     <p>
-      ntk-cms-filemanger works!
+      ntk-cms-fileuploader works!
     </p>
   `,
   styles: [
   ]
 })
-export class NtkCmsFilemangerComponent implements OnInit {
+export class NtkCmsFileuploaderComponent implements OnInit {
 
   constructor() { }
 

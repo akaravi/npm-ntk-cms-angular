@@ -15,19 +15,34 @@ import {UploadComponent} from './components/functions/upload/upload.component';
 import {NewFolderComponent} from './components/functions/upload/new-folder/new-folder.component';
 import {SideViewComponent} from './components/side-view/side-view.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
-import {NgxSmartModalModule} from 'ngx-smart-modal';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { NodeClickedService } from './services/node-clicked.service';
 
 export function createTranslateLoader(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
-
+// Factory Function
+// export function NgxSmartModalModuleFactory() {
+//   var hc = NgxSmartModalModule.forRoot();
+//   return hc;
+// }
+// Factory Function
+// export function TranslateModuleFactory() {
+//   var hc = TranslateModule.forRoot({
+//     loader:{
+//       provide: TranslateLoader,
+//       useFactory: (createTranslateLoader),
+//       deps: [HttpClient]}
+//   });
+//   return hc;
+// }
 @NgModule({
   imports: [
     HttpClientModule,
     CommonModule,
-    NgxSmartModalModule.forRoot(),
+    NgxSmartModalModule .forRoot(),
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,
@@ -55,7 +70,16 @@ export function createTranslateLoader(http: HttpClient): TranslateLoader {
     LoadingOverlayComponent,
 	  SideViewComponent
   ],
-  providers: [TranslateService]
+  providers: [TranslateService,
+    // {
+    //   provide: NgxSmartModalModule,
+    //   useFactory: NgxSmartModalModuleFactory
+    // },
+    // {
+    //   provide: TranslateModule,
+    //   useFactory: TranslateModuleFactory
+    // }
+  ]
 
 })
 export class FileManagerModule {

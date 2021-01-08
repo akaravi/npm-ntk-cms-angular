@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "libapi": "ng build ntk-cms-api --prod",
+    "libfilemanager": "ng build ntk-cms-filemanager --prod"
   },
   "private": true,
   "dependencies": {
