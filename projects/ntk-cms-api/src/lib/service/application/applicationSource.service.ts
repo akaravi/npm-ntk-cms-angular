@@ -25,7 +25,7 @@ export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSource
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<ApplicationSourceModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

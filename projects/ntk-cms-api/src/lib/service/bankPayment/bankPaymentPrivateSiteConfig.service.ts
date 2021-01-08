@@ -28,7 +28,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -48,7 +48,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BankPaymentTransactionCheckResponceModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

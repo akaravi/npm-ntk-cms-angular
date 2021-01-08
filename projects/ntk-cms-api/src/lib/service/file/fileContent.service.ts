@@ -28,7 +28,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -42,7 +42,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -55,7 +55,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -71,7 +71,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -86,7 +86,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -103,7 +103,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -120,7 +120,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -134,7 +134,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -149,7 +149,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -168,7 +168,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -184,7 +184,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<FileContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

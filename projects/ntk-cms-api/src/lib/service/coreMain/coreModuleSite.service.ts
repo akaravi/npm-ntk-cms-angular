@@ -23,7 +23,7 @@ export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleSiteModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -36,7 +36,7 @@ export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleSiteModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -53,7 +53,7 @@ export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel,
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleSiteModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

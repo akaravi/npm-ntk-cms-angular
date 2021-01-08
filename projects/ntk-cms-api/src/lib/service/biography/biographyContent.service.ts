@@ -35,7 +35,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -52,7 +52,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -68,7 +68,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -85,7 +85,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -100,7 +100,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -115,7 +115,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -131,13 +131,14 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
   }
 
-  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel): 
+  Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
@@ -148,7 +149,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -164,7 +165,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -180,7 +181,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -196,7 +197,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -212,7 +213,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -228,7 +229,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -246,7 +247,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -263,7 +264,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

@@ -23,7 +23,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleProcessModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -40,7 +40,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleProcessModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -58,7 +58,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<CoreModuleProcessModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

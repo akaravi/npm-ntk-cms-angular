@@ -27,7 +27,7 @@ export class ArticleShareServerCategoryService extends ApiCmsServerBase<any, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<any>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

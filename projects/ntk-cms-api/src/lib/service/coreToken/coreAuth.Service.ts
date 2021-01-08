@@ -52,28 +52,13 @@ export class CoreAuthService extends ApiServerBase {
       (error) => {
       }
     );
-    // return this.http
-    //   .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken', {
-    //     headers: this.getHeaders(),
-    //   })
-    //   .pipe(
-    //     // catchError(this.handleError)
-    //     map((ret: ErrorExceptionResult<TokenInfoModel>) => {
-    //       if (ret) {
-    //         if (ret.IsSuccess) {
-    //           this.SetCurrentTokenInfo(ret.Item);
-    //         }
-    //         return ret;
-    //       }
-    //     }),
-    //   )
-    //   .toPromise();
+
   }
 
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret: any) => {
         return ret;
       }),
     );
@@ -82,7 +67,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<CaptchaModel>) => {
+      map((ret:any) => {
         return ret;
       }),
     );
@@ -90,7 +75,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret: any) => {
         if (ret.IsSuccess) {
           this.SetCurrentTokenInfo(ret.Item);
         }
@@ -102,7 +87,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret:any) => {
         return ret;
       }),
     );
@@ -111,7 +96,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signin', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret:any) => {
         if (ret.IsSuccess) {
           this.SetCurrentTokenInfo(ret.Item);
         }
@@ -123,7 +108,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signInBySms', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret: any) => {
         if (ret.IsSuccess) {
           this.SetCurrentTokenInfo(ret.Item);
         }
@@ -142,7 +127,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+        map((ret: any) => {
           if (ret.IsSuccess) {
             this.SetCurrentTokenInfo(ret.Item);
           }
@@ -157,7 +142,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+        map((ret: any) => {
           return ret;
         }),
       );
@@ -165,7 +150,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
       // catchError(this.handleError)
-      map((ret: ErrorExceptionResult<TokenInfoModel>) => {
+      map((ret: any) => {
         return ret;
       }),
     );
@@ -177,7 +162,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           this.SetCurrentTokenInfo(null);
 
           return ret;
@@ -196,7 +181,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return ret;
         }),
       );
@@ -212,7 +197,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return ret;
         }),
       );
@@ -228,7 +213,7 @@ export class CoreAuthService extends ApiServerBase {
       })
       .pipe(
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return ret;
         }),
       );

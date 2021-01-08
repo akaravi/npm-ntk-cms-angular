@@ -24,7 +24,7 @@ export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTag
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<ArticleContentTagModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

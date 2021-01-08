@@ -23,7 +23,7 @@ export class ApplicationThemeConfigService extends ApiCmsServerBase<ApplicationT
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<ApplicationThemeConfigModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

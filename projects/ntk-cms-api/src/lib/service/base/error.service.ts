@@ -13,7 +13,7 @@ export class ErrorService extends ApiServerBase  {
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<TOut>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

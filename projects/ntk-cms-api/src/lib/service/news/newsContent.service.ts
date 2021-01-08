@@ -28,7 +28,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<NewsContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -45,7 +45,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<NewsContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -61,7 +61,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<NewsContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -78,7 +78,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -93,7 +93,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -108,7 +108,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );
@@ -124,7 +124,7 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<NewsContentModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

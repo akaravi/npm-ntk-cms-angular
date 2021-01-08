@@ -1,0 +1,16 @@
+<p>apiTest works!</p>
+<img
+  src="{{ captchaModel.Image }}"
+  (click)="onCaptchaOrder()"
+  class="mb-3"
+  alt=""
+/>
+<br>
+<input
+  [(ngModel)]="modelData.CaptchaText"
+  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+  type="text"
+  placeholder="CAPTCHA CODE"
+  name="captcha"
+  autocomplete="off"
+/>

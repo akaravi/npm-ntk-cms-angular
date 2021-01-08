@@ -27,7 +27,7 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
       )
       .pipe(
         retry(this.configApiRetry),
-        map((ret: ErrorExceptionResult<FileCategoryModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -41,7 +41,7 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
       )
       .pipe(
         retry(this.configApiRetry),
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );

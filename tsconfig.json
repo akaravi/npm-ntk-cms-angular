@@ -3,10 +3,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization":false,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
@@ -21,13 +25,6 @@
         "dist/ntk-cms-api/ntk-cms-api",
         "dist/ntk-cms-api"
       ],
-      "ntk-cms-module": [
-        "dist/ntk-cms-module/ntk-cms-module",
-        "dist/ntk-cms-module"
-      ],
-      "@angular/*": [
-        "./node_modules/@angular/*"
-      ],
       "ntk-cms-filemanager": [
         "dist/ntk-cms-filemanager/ntk-cms-filemanager",
         "dist/ntk-cms-filemanager"
@@ -37,5 +34,10 @@
         "dist/ntk-cms-fileuploader"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
   }
 }

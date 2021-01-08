@@ -24,7 +24,7 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<TicketingTaskModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

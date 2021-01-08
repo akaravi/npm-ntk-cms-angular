@@ -22,7 +22,7 @@ export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResultBase) => {
+        map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
       );

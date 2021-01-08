@@ -24,7 +24,7 @@ export class BiographyContentTagService extends ApiCmsServerBase<BiographyConten
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<BiographyContentTagModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

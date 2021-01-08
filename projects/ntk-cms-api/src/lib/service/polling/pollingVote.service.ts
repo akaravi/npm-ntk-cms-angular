@@ -22,7 +22,7 @@ export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, numbe
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: ErrorExceptionResult<PollingVoteModel>) => {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
