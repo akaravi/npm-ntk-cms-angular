@@ -73,8 +73,8 @@ export class NodeClickedService {
   }
 
   private sideEffectHelper(name: string, parameters: HttpParams, httpMethod: string, apiURL: string,
-                           successMethod = (a) => this.actionSuccess(a),
-                           failMethod = (a, b) => this.actionFailed(a, b)
+                           successMethod = (a: any) => this.actionSuccess(a),
+                           failMethod = (a: any, b: any) => this.actionFailed(a, b)
   ) : void{
     this.ngxSmartModalService.getModal('waitModal').open();
 
@@ -85,7 +85,7 @@ export class NodeClickedService {
       );
   }
 
-  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<Object> {
+  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<Object> | null {
     switch (method.toLowerCase()) {
       case 'get':
         return this.http.get(this.tree.config.baseURL + apiUrl, {params: parameters});

@@ -1,5 +1,5 @@
-import {NodeInterface} from '../interfaces/node.interface';
-import {ConfigInterface} from '../interfaces/config.interface';
+import { NodeInterface } from '../interfaces/node.interface';
+import { ConfigInterface } from '../interfaces/config.interface';
 
 export class TreeModel {
   private _currentPath: string;
@@ -12,16 +12,16 @@ export class TreeModel {
     this._currentPath = '';
     this.config = config;
 
-    this.nodes = <NodeInterface>{
+    this.nodes = {
       id: 0,
       pathToNode: '',
-      pathToParent: null,
+      pathToParent: '',
       isFolder: true,
       isExpanded: true,
       stayOpen: true,
       name: 'root',
       children: {},
-      isRoot: true
+      isRoot: true,
     };
   }
 

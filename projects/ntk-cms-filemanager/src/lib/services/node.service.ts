@@ -37,7 +37,7 @@ export class NodeService {
           this.findNodeByPath(parentPath).children[data[i].name] = data[i];
         }
 
-        resolve();
+        // resolve(); // doto: karavi
       });
     }));
   }
@@ -50,14 +50,14 @@ export class NodeService {
 
   private parseNodes(path: string): Observable<NodeInterface[]> {
     return new Observable(observer => {
-      this.getNodesFromServer(path).subscribe((data: Array<any>) => {
-        observer.next(data.map(node => this.createNode(path, node)));
+      this.getNodesFromServer(path).subscribe((data) => {
+        observer.next((data as Array<any>).map(node => this.createNode(path, node)));
         this.store.dispatch({type: SET_LOADING_STATE, payload: false});
       });
     });
   }
 
-  private createNode(path, node): NodeInterface {
+  private createNode(path: any, node: any): NodeInterface {
     if (node.path[0] !== '/') {
       console.warn('[Node Service] Server should return initial path with "/"');
       node.path = '/' + node.path;

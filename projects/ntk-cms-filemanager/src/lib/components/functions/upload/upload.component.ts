@@ -18,7 +18,7 @@ import { NodeService } from '../../../services/node.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class UploadComponent implements OnInit, AfterViewInit {
-  @Input() openDialog;
+  @Input() openDialog = new EventEmitter();
 
   @Output() closeDialog = new EventEmitter();
   @Output() createDir = new EventEmitter();
@@ -30,13 +30,11 @@ export class UploadComponent implements OnInit, AfterViewInit {
   constructor(private http: HttpClient, private nodeService: NodeService) {}
 
   ngAfterViewInit() {
-    const  fineuploader= document.getElementById('fine-uploader')
-
     this.uploader = new FineUploader({
       debug: false,
       autoUpload: false,
       maxConnections: 1, // todo configurable
-      element: fineuploader,
+      element:  document.getElementById('fine-uploader'),
       template: document.getElementById('fine-uploader-template'),
       request: {
         endpoint:

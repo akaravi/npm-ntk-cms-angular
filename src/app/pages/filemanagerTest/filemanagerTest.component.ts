@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 //   NodeInterface,
 //   TreeModel,
 // } from 'projects/ntk-cms-filemanager/src/public-api';
-// import {TreeModel, NodeInterface, ConfigInterface, DownloadModeEnum} from 'ng6-file-man';
+
 // import {ConfigInterface, NodeInterface, TreeModel} from '../../projects/file-manager/src/public_api';
 // import {DownloadModeEnum} from '../../projects/file-manager/src/file-manager/enums/download-mode.enum';
 

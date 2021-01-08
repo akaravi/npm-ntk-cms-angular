@@ -66,7 +66,7 @@ export class FileManagerComponent implements OnInit {
     //   this.store.dispatch({type: SET_SELECTED_NODE, payload: });
     // });
 
-    this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation) => {
+    this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation: any) => {
       this.openFilemanagerButtonLabel = translation;
     });
 
@@ -243,14 +243,14 @@ export class FileManagerComponent implements OnInit {
     }
   }
 
-  private getElementById(id: string, prefix: string = ''): HTMLElement {
+  private getElementById(id: string, prefix: string = ''): HTMLElement | null {
     const fullId = prefix + id;
     return document.getElementById(fullId);
   }
 
   private removeClass(className: string) {
     Array.from(document.getElementsByClassName(className))
-      .map((el: HTMLElement) => el.classList.remove(className));
+      .map((el: any) => el.classList.remove(className));
   }
 
   fmShowHide() {
