@@ -5,12 +5,13 @@ import {TreeModel} from '../models/tree.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {NgxSmartModalService} from 'ngx-smart-modal';
-import {first} from 'rxjs/operators';
+import {first, map} from 'rxjs/operators';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NodeClickedService {
+export class NodeClickedService extends BaseService {
   public tree: TreeModel;
 
   constructor(
@@ -18,6 +19,7 @@ export class NodeClickedService {
     private nodeService: NodeService,
     private http: HttpClient
   ) {
+    super();
   }
 
   public startDownload(node: NodeInterface): void {
@@ -46,6 +48,18 @@ export class NodeClickedService {
   }
 
   public createFolder(currentParent: number, newDirName: string): void{
+    const model={
+
+
+    };
+     this.http.post(this.tree.config.baseURL + this.tree.config.api.createFolder,model, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      map((ret: any) => {
+      }),
+    );
+
     this.sideEffectHelper(
       'Create Folder',
       (() => {

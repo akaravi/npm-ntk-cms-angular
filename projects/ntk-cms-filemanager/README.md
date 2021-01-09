@@ -76,15 +76,15 @@ Create `config in constructor`
 // app.component.ts
   
 const treeConfig: ConfigInterface = {
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'https://apicms.ir/api/v1/',
   api: {
-    listFile: 'api/file/list',
-    uploadFile: 'api/file/upload',
+    listFile: 'ContentFile/Getall',
+    uploadFile: 'upload',
     downloadFile: 'api/file/download',
     deleteFile: 'api/file/remove',
     createFolder: 'api/file/directory',
     renameFile: 'api/file/rename',
-    searchFiles: 'api/file/search'
+    searchFiles: 'ContentFile/Getall'
   },
   options: {
     allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES, //alternatively DOWNLOAD_DISABLED,DOWNLOAD_ALL

@@ -24,7 +24,7 @@ export class FolderContentComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.nodes = this.nodeService.tree.nodes;
 
     this.store
@@ -34,7 +34,7 @@ export class FolderContentComponent implements OnInit {
       });
   }
 
-  newClickedAction() {
+  newClickedAction(): void {
     this.openUploadDialog.emit(true);
   }
 }

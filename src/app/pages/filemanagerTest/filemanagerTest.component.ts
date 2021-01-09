@@ -21,9 +21,9 @@ export class FileManagerTestComponent {
 
   constructor() {
     const treeConfig: ConfigInterface = {
-      baseURL: 'http://localhost:8080/',
+      baseURL: 'https://apicms.ir/api/v1/',
       api: {
-        listFile: 'api/list',
+        listFile: 'filecontent/getall',
         uploadFile: 'api/upload',
         downloadFile: 'api/download',
         deleteFile: 'api/remove',

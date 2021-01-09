@@ -1,4 +1,21 @@
 <p>apiTest works!</p>
+
+<input
+  [(ngModel)]="modelData.Email"
+  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+  type="text"
+  placeholder="Email"
+  name="email"
+/>
+<br>
+<input
+  [(ngModel)]="modelData.Password"
+  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+  type="password"
+  placeholder="Password"
+  name="password"
+/>
+<br>
 <img
   src="{{ captchaModel.Image }}"
   (click)="onCaptchaOrder()"
@@ -14,3 +31,12 @@
   name="captcha"
   autocomplete="off"
 />
+<br>
+<p>{{message}}</p>
+<button type="button" (click)="onActionLogin()">login</button>
+<button type="button" (click)="onActionLogout()">logout</button>
+<button type="button" (click)="onActionCheckToken()">CheckToken</button>
+<div *ngIf="TokenInfoResult?.IsSuccess">
+  Token Id Valid
+</div>
+
