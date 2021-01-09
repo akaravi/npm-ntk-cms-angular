@@ -16,6 +16,14 @@
   name="password"
 />
 <br>
+<input
+  [(ngModel)]="modelData.SiteId"
+  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+  type="text"
+  placeholder="SiteId"
+  name="SiteId"
+/>
+<br>
 <img
   src="{{ captchaModel.Image }}"
   (click)="onCaptchaOrder()"

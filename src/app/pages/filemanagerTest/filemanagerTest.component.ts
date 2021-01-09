@@ -17,7 +17,7 @@ import {
 export class FileManagerTestComponent {
   tree: TreeModel;
   node: NodeInterface;
-  appLanguage = 'sk';
+  appLanguage = 'fa';
 
   constructor() {
     const treeConfig: ConfigInterface = {

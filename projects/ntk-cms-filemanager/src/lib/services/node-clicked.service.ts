@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import {first, map} from 'rxjs/operators';
 import { BaseService } from './base.service';
+import { FileCategoryModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileCategoryModel';
 
 @Injectable({
   providedIn: 'root'
@@ -48,17 +49,21 @@ export class NodeClickedService extends BaseService {
   }
 
   public createFolder(currentParent: number, newDirName: string): void{
-    const model={
 
+    const model = new FileCategoryModel();
+    model.Title=newDirName;
+    if(currentParent>0){
+    model.LinkParentId=currentParent;
+    }
+     this.http.post(this.tree.config.baseURL + this.tree.config.api.createFolder, model, {
+            headers: this.getHeaders(),
+        })
+        .pipe(
+            map((ret) => {
+                const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
 
-    };
-     this.http.post(this.tree.config.baseURL + this.tree.config.api.createFolder,model, {
-      headers: this.getHeaders(),
-    })
-    .pipe(
-      map((ret: any) => {
-      }),
-    );
+            }),
+        ).toPromise();
 
     this.sideEffectHelper(
       'Create Folder',

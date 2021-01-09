@@ -7,7 +7,7 @@ import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
 import { FileContentModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileContentModel';
-import { ErrorExceptionResult, FilterModel } from 'ntk-cms-api';
+import { ErrorExceptionResult, FileCategoryModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
 
 @Injectable({
     providedIn: 'root'
@@ -34,9 +34,18 @@ export class NodeService extends BaseService {
         });
     }
 
-    getNodes(path: string)  {
+    getNodes(path: string) {
         return new Promise((resolve => {
-            this.parseNodes(path).subscribe((data: Array < NodeInterface > ) => {
+
+          this.parseNodesFolder(path).subscribe((data: Array < NodeInterface > ) => {
+            for (let i = 0; i < data.length; i++) {
+                const parentPath = this.getParentPath(data[i].pathToNode);
+                this.findNodeByPath(parentPath).children[data[i].name] = data[i];
+            }
+
+            // resolve(); // doto: karavi
+        });
+          this.parseNodesFiles(path).subscribe((data: Array < NodeInterface > ) => {
                 for (let i = 0; i < data.length; i++) {
                     const parentPath = this.getParentPath(data[i].pathToNode);
                     this.findNodeByPath(parentPath).children[data[i].name] = data[i];
@@ -44,6 +53,7 @@ export class NodeService extends BaseService {
 
                 // resolve(); // doto: karavi
             });
+
         }));
     }
 
@@ -53,17 +63,25 @@ export class NodeService extends BaseService {
         return parentPath.join('/');
     }
 
-    private parseNodes(path: string): Observable < NodeInterface[] > {
+    private parseNodesFiles(path: string): Observable < NodeInterface[] > {
         return new Observable(observer => {
-            this.getNodesFromServer(path).subscribe((data) => {
+            this.getNodesFilesFromServer(path).subscribe((data) => {
                 observer.next((data as unknown as Array < any > ).map(node => this.createNode(path, node)));
                 this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
             });
         });
     }
+    private parseNodesFolder(path: string): Observable < NodeInterface[] > {
+      return new Observable(observer => {
+          this.getNodesFoldersFromServer(path).subscribe((data) => {
+              observer.next((data as unknown as Array < any > ).map(node => this.createNode(path, node)));
+              this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+          });
+      });
+  }
 
     private createNode(path: any, node: any): NodeInterface {
-        if (node.path[0] !== '/') {
+        if (!node || !path || node.path[0] !== '/') {
             console.warn('[Node Service] Server should return initial path with "/"');
             node.path = '/' + node.path;
         }
@@ -84,45 +102,103 @@ export class NodeService extends BaseService {
             pathToParent: this.getParentPath(node.path),
             name: node.name || node.id,
             children: cachedNode ? cachedNode.children : {}
-        }as NodeInterface;
+        } as NodeInterface;
     }
-
-    private getNodesFromServer = (path: string) => {
+    private getNodesFromServerNormal = (path: string) => {
         let folderId: any = this.findNodeByPath(path).id;
         folderId = folderId === 0 ? '' : folderId;
 
 
         const filterModel = new FilterModel();
+        const retOut: any[] = [];
+
+        return this.http.post(
+            this.tree.config.baseURL + this.tree.config.api.listFile, { params: new HttpParams().set('parentPath', folderId) }
+        );
+    }
+    private getNodesFilesFromServer = (path: string) => {
+        let folderId: any = this.findNodeByPath(path).id;
+        folderId = folderId === 0 ? '' : folderId;
+
+
+        const filterModel = new FilterModel();
+        filterModel.Filters = [];
+        const filter = new FilterDataModel();
+        filter.PropertyName = 'LinkCategoryId';
+        filter.Value = folderId;
+        filterModel.Filters.push(filter);
+
         return this.http.post(this.tree.config.baseURL + this.tree.config.api.listFile, filterModel, {
                 headers: this.getHeaders(),
             })
             .pipe(
                 map((ret) => {
-                    const retExc = this.errorExceptionResultCheck<FileContentModel>(ret);
-                    let retOut: NodeInterface[] = [];
+                    const retExc = this.errorExceptionResultCheck < FileContentModel > (ret);
+                    debugger;
+                    const retOut: any[] = [];
+
                     if (retExc.IsSuccess) {
-                      retExc.ListItems.forEach(x  => {
-                        const row: NodeInterface = {
-                          isRoot: false,
-                          id: x.Id,
-                          pathToNode: x.LinkCategoryId + '',
-                          pathToParent: x.LinkCategoryId + '',
-                          isFolder: false,
-                          isExpanded: false,
-                          stayOpen: false,
-                          name: x.Title,
-                          children: null
-                        };
-                        retOut.push(row);
+                        retExc.ListItems.forEach(x => {
+                            const row = {
+                                size: 1,
+                                url: '',
+                                id: x.Id,
+                                dir: false,
+                                path: x.LinkCategoryId,
+                                name: x.Title
+                            };
+                            retOut.push(row);
                         });
                     }
-                    return retOut ;
+                    return retOut;
                 }),
             );
+
 
         // return this.http.post(
         //     this.tree.config.baseURL + this.tree.config.api.listFile, { params: new HttpParams().set('parentPath', folderId) }
         // );
+    }
+
+    private getNodesFoldersFromServer = (path: string) => {
+        let folderId: any = this.findNodeByPath(path).id;
+        folderId = folderId === 0 ? '' : folderId;
+
+
+
+        const filterModel = new FilterModel();
+        filterModel.Filters = [];
+        const filter = new FilterDataModel();
+        filter.PropertyName = 'LinkParentId';
+        filter.Value = folderId;
+        filterModel.Filters.push(filter);
+        // Category
+        return this.http.post(this.tree.config.baseURL + 'FileCategory/Getall', filterModel, {
+                headers: this.getHeaders(),
+            })
+            .pipe(
+                map((ret) => {
+                    const retExc = this.errorExceptionResultCheck < FileCategoryModel > (ret);
+                    const retOut: any[] = [];
+                    if (retExc.IsSuccess) {
+                        retExc.ListItems.forEach(x => {
+                            const row = {
+                                size: 0,
+                                url: '',
+                                id: x.Id,
+                                dir: true,
+                                path: x.LinkParentId,
+                                name: x.Title
+                            };
+                            retOut.push(row);
+                        });
+                    }
+                    // retOut
+                    return retOut;
+                    // retOut
+                }),
+            );
+
     }
 
     public findNodeByPath(nodePath: string): NodeInterface {

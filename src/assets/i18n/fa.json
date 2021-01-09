@@ -1,0 +1,42 @@
+{
+  "filemanager": {
+    "Cancel": "لغو",
+    "Close": "بستن",
+    "Confirm": "تایید",
+    "Create new folder": "فولدر جدید",
+    "Delete": "حذف",
+    "Download": "دانلود",
+    "File name": "نام فایل",
+    "Folder name": "نام فولد",
+    "New name": "نام جدید",
+    "No": "خیر",
+    "No data available for this file": "اطلاعاتی برای این فایل موجود نیست",
+    "No data available for this folder": "اطلاعاتی برای این فولدر موحود نیست",
+    "No results found for": "نتیجه ای یافت نشد",
+    "Ok": "تایید",
+    "Old name": "نام قدیم",
+    "Open file manager": "بازکردن مدیریت فایل",
+    "Processing dropped files": "فرایند حذف فایل",
+    "Processing request": "فرایند درخواستی ",
+    "Rename": "تغییر نام",
+    "Rename file": "تغییر نام فایل",
+    "Retry": "تلاش مجدد",
+    "Search": "جستجو",
+    "Search results for": "نتایج جستجو برای",
+    "Size": "سایز",
+    "Something went wrong with your request": "موردی اشتباه است در درخواست شما",
+    "Troubles with loading? Click anywhere to cancel loading": "مشکل لود اطلاعات",
+    "Type new folder name": "",
+    "Upload": "بارگزاری",
+    "Upload a file": "بارگزاری فایل",
+    "Yes": "بله",
+    "Yes, delete this": "بله.حذف  این",
+    "You are trying to delete following": "شما تسلاش کنید برای حذف",
+    "file": "فایل",
+    "folder": "فولد",
+    "open_file_manager": "open in popup"
+  },
+  "hello": {
+    "test": "open me!"
+  }
+}
