@@ -24,6 +24,11 @@ export class NodeClickedService extends BaseService {
   }
 
   public startDownload(node: NodeInterface): void {
+    window.open(node.downloadLinksrc, '_blank');
+
+
+  }
+  public startDownload_orginal(node: NodeInterface): void {
     const parameters = new HttpParams().append('path', node.id + '');
     this.reachServer('download', this.tree.config.api.downloadFile, parameters);
   }

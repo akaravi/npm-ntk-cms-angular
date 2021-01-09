@@ -34,7 +34,7 @@ export class NodeComponent implements OnInit {
   }
 
   // todo event.preventDefault for double click
-  public method2CallForDblClick(event: any) : void{
+  public method2CallForDblClick(event: any): void{
     event.preventDefault();
 
     this.isSingleClick = false;
@@ -45,6 +45,7 @@ export class NodeComponent implements OnInit {
   }
 
   private open(): void{
+    debugger
     if (!this.node.isFolder) {
       if (this.nodeService?.tree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
         this.isSingleClick = true;
@@ -61,14 +62,16 @@ export class NodeComponent implements OnInit {
         this.nodeService.foldAll();
       }
 
-      this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
+      //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
+      this.store.dispatch({type: SET_PATH, payload: this.node.id + ''});
       return;
     }
 
     this.toggleNodeExpanded();
 
     if (this.node.isExpanded) {
-      this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
+      //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
+      this.store.dispatch({type: SET_PATH, payload: this.node.id + ''});
     }
 
     this.setNodeSelectedState();

@@ -25,6 +25,6 @@
     "@ngx-translate/http-loader": "^3.0.1",
     "fine-uploader": "5.16.2",
     "ngx-smart-modal": "^7.4.1",
-    "ntk-cms-api": "^1.0.105"
+    "ntk-cms-api": "^1.0.106"
   }
 }

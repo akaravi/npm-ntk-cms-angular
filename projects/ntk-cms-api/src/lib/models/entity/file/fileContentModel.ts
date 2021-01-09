@@ -29,5 +29,12 @@ export class FileContentModel extends BaseModuleEntity<number> {
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;
-
+  DownloadLinksrc: string;
+  DownloadLinksrcByDomain: string;
+  Extension: string;
+  FileExist: boolean;
+  FileExistChecked: Date;
+  FileLastUseed: Date;
+  FileSrc: string;
+  RenderOrderImagePlace: number;
 }

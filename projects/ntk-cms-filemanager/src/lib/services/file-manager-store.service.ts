@@ -28,7 +28,7 @@ export class FileManagerStoreService {
     window.getInfo = () => this.state;
   }
 
-  dispatch(param: Actions) {
+  dispatch(param: Actions): void {
     Object.assign(this.state.fileManagerState, stateReducer(this.state.fileManagerState, param));
     this.sub.next(this.state);
     // if (isDevMode()) console.warn('[FileManagerStoreService] dispatch', param, JSON.parse(JSON.stringify(this.state)));

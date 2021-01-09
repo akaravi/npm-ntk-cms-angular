@@ -23,16 +23,19 @@ export class FileManagerTestComponent {
     const treeConfig: ConfigInterface = {
       baseURL: 'https://apicms.ir/api/v1/',
       api: {
-        listFile: 'filecontent/getall',
-        uploadFile: 'api/upload',
-        downloadFile: 'api/download',
-        deleteFile: 'api/remove',
-        createFolder: 'api/directory',
-        renameFile: 'api/rename',
-        searchFiles: 'api/search',
+        listFile: 'FileContent/GetAll',
+        listFolder: 'FileCategory/GetAll',
+        uploadFile: 'upload',
+        downloadFile: 'download',
+        deleteFile: 'FileContent/',
+        deleteFolder: 'FileCategory/',
+        createFolder: 'FileCategory',
+        renameFile: 'FileContent',
+        renameFolder: 'FileCategory',
+        searchFiles: 'FileCategory/GetAll',
       },
       options: {
-        allowFolderDownload: DownloadModeEnum.DOWNLOAD_DISABLED,
+        allowFolderDownload: DownloadModeEnum.DOWNLOAD_ALL,
         showFilesInsideTree: false,
       },
     };

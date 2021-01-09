@@ -6,11 +6,14 @@ export interface ConfigInterface {
   // offlineMode: boolean; // todo implement
   api: {
     listFile: string;
+    listFolder: string;
     uploadFile: string;
     downloadFile: string;
     deleteFile: string;
+    deleteFolder: string;
     createFolder: string;
     renameFile: string;
+    renameFolder: string;
     searchFiles: string;
   };
   options: {

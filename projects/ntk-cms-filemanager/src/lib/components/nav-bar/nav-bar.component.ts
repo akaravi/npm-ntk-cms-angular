@@ -16,7 +16,7 @@ export class NavBarComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store
       .getState(state => state.fileManagerState.path)
       .subscribe((data: string) => {
@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit {
       });
   }
 
-  onClick(path: string[], index: number) {
+  onClick(path: string[], index: number): void {
     const newPath = path.slice(0, index + 1).join('/');
     this.store.dispatch({type: SET_PATH, payload: newPath});
   }

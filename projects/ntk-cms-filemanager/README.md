@@ -78,7 +78,8 @@ Create `config in constructor`
 const treeConfig: ConfigInterface = {
   baseURL: 'https://apicms.ir/api/v1/',
   api: {
-    listFile: 'ContentFile/Getall',
+    listFile: 'api/file/Getall',
+    listFolder: 'api/file/Getall',
     uploadFile: 'upload',
     downloadFile: 'api/file/download',
     deleteFile: 'api/file/remove',
