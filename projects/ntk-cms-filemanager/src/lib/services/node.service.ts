@@ -6,8 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './file-manager-store.service';
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
-import { FileContentModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileContentModel';
-import { ErrorExceptionResult, FileCategoryModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
+import { ErrorExceptionResult, FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
 
 @Injectable({
     providedIn: 'root'
@@ -141,11 +140,10 @@ export class NodeService extends BaseService {
                         retExc.ListItems.forEach(x => {
                             const row = {
                                 size: 1,
-                                url: '',
                                 id: x.Id,
                                 dir: false,
                                 path: x.LinkCategoryId,
-                                name: x.Title
+                                name: x.FileName
                             };
                             retOut.push(row);
                         });
@@ -184,7 +182,6 @@ export class NodeService extends BaseService {
                         retExc.ListItems.forEach(x => {
                             const row = {
                                 size: 0,
-                                url: '',
                                 id: x.Id,
                                 dir: true,
                                 path: x.LinkParentId,

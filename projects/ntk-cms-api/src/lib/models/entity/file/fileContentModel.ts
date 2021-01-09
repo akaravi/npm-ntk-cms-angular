@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class FileContentModel extends BaseModuleEntity<number> {
   LinkCategoryId: number;
-  Title: string;
+  FileName: string;
   Description: string;
   Body: string;
   FromDate: Date;
@@ -18,7 +18,7 @@ export class FileContentModel extends BaseModuleEntity<number> {
   ScoreSumPercent: number;
   ViewCount: number;
   Favorited: boolean;
-
+  FileSize: number;
   ExpireDate: Date;
   ModuleCoreCreatedBy: string;
   ModuleCoreUpdatedBy: string;
