@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
     this.store
       .getState((state) => state.fileManagerState.parentId)
       .subscribe((data: number) => {
+        // debugger;
         this.nodeService.currentParentId = data;
         // todo : karavi
         // this.currentPath = data.split('/');

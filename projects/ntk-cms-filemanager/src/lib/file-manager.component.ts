@@ -83,6 +83,8 @@ export class FileManagerComponent implements OnInit {
           return;
         }
 
+
+        // debugger;
         // fixed highlighting error when closing node but not changing path
         if (selectedNode.isExpanded && selectedNode.id !== this.nodeService.currentParentId && !selectedNode.stayOpen) {
           return;
@@ -105,7 +107,6 @@ export class FileManagerComponent implements OnInit {
   }
 
   handleFileManagerClickEvent(event: any): any {
-    // debugger;
     switch (event.type) {
       case 'closeSideView':
         return this.nodeClickHandler(event.node, true);
@@ -155,6 +156,7 @@ export class FileManagerComponent implements OnInit {
   }
 
   nodeClickHandler(node: NodeInterface, closing?: boolean): any {
+       // debugger;
     if (node.id === 0) {
       return;
     }

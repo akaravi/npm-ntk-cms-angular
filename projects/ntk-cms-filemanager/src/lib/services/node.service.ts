@@ -38,13 +38,13 @@ export class NodeService extends BaseService {
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
       this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
-      this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+      this.getNodesFile(this.currentParentId).then(() => {
+        // debugger;
+        this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
+        this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+      });
     });
-    this.getNodesFile(this.currentParentId).then(() => {
-      // debugger;
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
-      this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
-    });
+
   }
 
   getNodesFolder(parentId: number): any {
@@ -178,7 +178,7 @@ export class NodeService extends BaseService {
   //   return result;
   // }
   public findFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
-    debugger;
+    // debugger;
     const result = this.findFolderByIdHelper(parentid);
 
     if (result === null) {
@@ -186,11 +186,13 @@ export class NodeService extends BaseService {
       return this.tree.nodes;
     }
     if (result.id === 0|| !loadChild) {
+      console.log(result);
       return result;
     }
     if (reLoadChild || !result.children || result.children.length === 0) {
       this.refreshCurrentPath();
     }
+    console.log(result);
     return result;
   }
   public findFolderByIdHelper(id: number, node: NodeInterface = this.tree.nodes): NodeInterface {

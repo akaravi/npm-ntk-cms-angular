@@ -27,19 +27,20 @@ export class TreeComponent implements AfterViewInit, OnInit {
     this.store
       .getState((state) => state.fileManagerState.parentId)
       .subscribe((parentId: number) => {
-        this.nodeService.findFolderById(parentId,true);
+        // debugger;
+        this.nodeService.findFolderById(parentId, true);
         this.currentTreeLevel = this.treeModel.currentPath;
-        return (this.treeModel.currentPath = parentId);
+        this.treeModel.currentPath = parentId;
       });
   }
 
   ngAfterViewInit(): void {
-    this.store
-      .getState((state) => state.fileManagerState.parentId)
-      .pipe(first())
-      .subscribe((parentId: number) => {
-        const nodes = this.nodeService.findFolderById(parentId);
-        this.store.dispatch({ type: SET_SELECTED_NODE, payload: nodes });
-      });
+    // this.store
+    //   .getState((state) => state.fileManagerState.parentId)
+    //   .pipe(first())
+    //   .subscribe((parentId: number) => {
+    //     const nodes = this.nodeService.findFolderById(parentId);
+    //     this.store.dispatch({ type: SET_SELECTED_NODE, payload: nodes });
+    //   });
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, TemplateRef} from '@angular/core';
-//  import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+// import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import {timer} from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ import {timer} from 'rxjs';
   // todo unsubscribe from 'list' event - now we are only dismissing this component
   ngOnInit(): void {
     timer(2000).subscribe(() => {
-      //  this.timeoutMessage = _('filemanager.loading_troubles');
+       // this.timeoutMessage = _('filemanager.loading_troubles');
        this.timeoutMessage = ('filemanager.loading_troubles');
     });
   }

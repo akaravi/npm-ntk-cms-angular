@@ -30,7 +30,7 @@ export class NodeComponent implements OnInit {
       if (this.isSingleClick) {
         this.showMenu();
       }
-    }, 200);
+    }, 500);
   }
 
   // todo event.preventDefault for double click
@@ -63,7 +63,6 @@ export class NodeComponent implements OnInit {
          this.nodeService.foldAll();
       }
 
-      //this.store.dispatch({type: SET_PARENT, payload: this.node.pathToNode});
       this.store.dispatch({type: SET_PARENT, payload: this.node.id });
       return;
     }
@@ -71,7 +70,6 @@ export class NodeComponent implements OnInit {
     this.toggleNodeExpanded();
 
     if (this.node.isExpanded) {
-      //this.store.dispatch({type: SET_PARENT, payload: this.node.pathToNode});
       this.store.dispatch({type: SET_PARENT, payload: this.node.id });
     }
 
