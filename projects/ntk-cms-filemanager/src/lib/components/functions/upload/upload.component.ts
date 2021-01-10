@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewEncapsulation,
-} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FineUploader } from 'fine-uploader';
 import { NodeService } from '../../../services/node.service';
@@ -19,7 +11,7 @@ import { VoidExpression } from 'typescript';
   encapsulation: ViewEncapsulation.None,
 })
 export class UploadComponent implements OnInit, AfterViewInit {
-  @Input() openDialog : any;
+  @Input() openDialog: any;
 
   @Output() closeDialog = new EventEmitter();
   @Output() createDir = new EventEmitter();
@@ -35,12 +27,10 @@ export class UploadComponent implements OnInit, AfterViewInit {
       debug: false,
       autoUpload: false,
       maxConnections: 1, // todo configurable
-      element:  document.getElementById('fine-uploader'),
+      element: document.getElementById('fine-uploader'),
       template: document.getElementById('fine-uploader-template'),
       request: {
-        endpoint:
-          this.nodeService.tree.config.baseURL +
-          this.nodeService.tree.config.api.uploadFile,
+        endpoint: this.nodeService.tree.config.baseURL + this.nodeService.tree.config.api.uploadFile,
         // forceMultipart: false,
         paramsInBody: false,
         params: {
@@ -68,13 +58,11 @@ export class UploadComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   get getCurrentPath(): number {
-    const parentPath = this.nodeService.findNodeById(
-      this.nodeService.currentParentId
-    ).id;
+    const parentPath = this.nodeService.findFolderById(this.nodeService.currentParentId).id;
     return parentPath === 0 ? 0 : parentPath;
   }
 
-  uploadFiles(): void  {
+  uploadFiles(): void {
     this.uploader.uploadStoredFiles();
   }
 

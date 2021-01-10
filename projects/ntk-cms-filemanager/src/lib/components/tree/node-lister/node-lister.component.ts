@@ -8,7 +8,7 @@ import {NodeInterface} from '../../../interfaces/node.interface';
 })
 export class NodeListerComponent implements OnInit {
   @ContentChild(TemplateRef, {static: false}) templateRef: TemplateRef<any>;
-  @Input() nodes: NodeInterface|any;
+  @Input() nodes: NodeInterface[];
   @Input() showFiles: boolean;
 
   obj = Object;

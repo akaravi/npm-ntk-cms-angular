@@ -99,7 +99,7 @@ export class FileManagerComponent implements OnInit {
   searchClicked(data: any): void {
     // console.log(data);
 
-    const node = this.nodeService.findNodeById(data.id);
+    const node = this.nodeService.findFolderById(data.id);
     this.ngxSmartModalService.getModal('searchModal').close();
     this.store.dispatch({ type: SET_SELECTED_NODE, payload: node });
   }
@@ -143,7 +143,7 @@ export class FileManagerComponent implements OnInit {
         });
 
       case 'createFolder':
-        const parentId = this.nodeService.findNodeById(this.nodeService.currentParentId).id;
+        const parentId = this.nodeService.findFolderById(this.nodeService.currentParentId).id;
 
         this.nodeClickedService.createFolder(parentId, event.payload);
         return this.onItemClicked({
@@ -160,7 +160,7 @@ export class FileManagerComponent implements OnInit {
     }
 
     if (closing) {
-      const parentNode = this.nodeService.findNodeById(this.nodeService.currentParentId);
+      const parentNode = this.nodeService.findFolderById(this.nodeService.currentParentId);
       this.store.dispatch({ type: SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
     } else {

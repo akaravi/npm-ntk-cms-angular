@@ -31,7 +31,7 @@ export class NodeService extends BaseService {
   }
 
   public refreshCurrentPath(): any {
-    this.findNodeById(this.currentParentId).children = [];
+    this.findFolderById(this.currentParentId).children = [];
     // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
@@ -50,7 +50,7 @@ export class NodeService extends BaseService {
   getNodesFolder(parentId: number): any {
     return new Promise((resolve) => {
       return this.getNodesFoldersFromServer(parentId).subscribe((data: Array<NodeInterface>) => {
-        const parent = this.findNodeById(parentId);
+        const parent = this.findFolderById(parentId);
         data.forEach((x) => parent.children.push(x));
         resolve(null);
       });
@@ -59,7 +59,7 @@ export class NodeService extends BaseService {
   getNodesFile(parentId: number): any {
     return new Promise((resolve) => {
       return this.getNodesFilesFromServer(parentId).subscribe((data: Array<NodeInterface>) => {
-        const parent = this.findNodeById(parentId);
+        const parent = this.findFolderById(parentId);
         data.forEach((x) => parent.children.push(x));
         resolve(null);
       });
@@ -73,7 +73,7 @@ export class NodeService extends BaseService {
   }
 
   private getNodesFromServerNormal(parentId: number): any {
-    let folderId: any = this.findNodeById(parentId).id;
+    let folderId: any = this.findFolderById(parentId).id;
     folderId = folderId === 0 ? '' : folderId;
 
     return this.http.post(this.tree.config.baseURL + this.tree.config.api.listFile, {
@@ -167,25 +167,28 @@ export class NodeService extends BaseService {
   //   return ids.length === 0 ? this.tree.nodes : {}; // ids.reduce((value, index ) => value.children[index ], this.tree.nodes);
   // }
 
-  public findNodeById(parentid: number): NodeInterface {
-    // debugger;
+  // public findNodeById(parentid: number): NodeInterface {
+  //   // debugger;
+  //   const result = this.findFolderByIdHelper(parentid);
+
+  //   if (result === null) {
+  //     console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
+  //     return this.tree.nodes;
+  //   }
+  //   return result;
+  // }
+  public findFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
+    debugger;
     const result = this.findFolderByIdHelper(parentid);
 
     if (result === null) {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.tree.nodes;
     }
-    return result;
-  }
-  public findFolderById(parentid: number): NodeInterface {
-    // debugger;
-    const result = this.findFolderByIdHelper(parentid);
-
-    if (result === null) {
-      console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
-      return this.tree.nodes;
+    if (result.id === 0|| !loadChild) {
+      return result;
     }
-    if (result.id > 0 && result.children && result.children.length === 0) {
+    if (reLoadChild || !result.children || result.children.length === 0) {
       this.refreshCurrentPath();
     }
     return result;

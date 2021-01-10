@@ -5,12 +5,10 @@
       </ng-container>
     </app-node>
   </ng-container>
+
   <ng-container *ngFor="let node of nodes.children">
-    <app-node [node]="node" id="fc_{{ node.id}}">
-      <ng-container
-        [ngTemplateOutletContext]="{ $implicit: node }"
-        [ngTemplateOutlet]="folderContentTemplate"
-      >
+    <app-node [node]="node" id="fc_{{ node.id }}">
+      <ng-container [ngTemplateOutletContext]="{ $implicit: node }" [ngTemplateOutlet]="folderContentTemplate">
       </ng-container>
     </app-node>
   </ng-container>
