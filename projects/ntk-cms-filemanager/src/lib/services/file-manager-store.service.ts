@@ -49,7 +49,7 @@ export class FileManagerStoreService {
 // REDUCERS
 export function stateReducer(state: StateInterface = initialState, action: Actions): StateInterface {
   switch (action.type) {
-    case SET_PATH :
+    case SET_PARENT :
       // debugger;
       if (state.parentId === action.payload) {
         return state;
@@ -71,12 +71,12 @@ export interface ActionInterface {
   payload?: any;
 }
 
-export const SET_PATH = 'SET_PATH';
+export const SET_PARENT = 'SET_PARENT';
 export const SET_LOADING_STATE = 'SET_LOADING_STATE';
 export const SET_SELECTED_NODE = 'SET_SELECTED_NODE';
 
 export class SetPath implements ActionInterface {
-  readonly type = SET_PATH;
+  readonly type = SET_PARENT;
   payload: number;
 }
 

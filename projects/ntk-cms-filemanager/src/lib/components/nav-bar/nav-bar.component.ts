@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../../services/node.service';
-import { FileManagerStoreService, SET_PATH } from '../../services/file-manager-store.service';
+import { FileManagerStoreService, SET_PARENT } from '../../services/file-manager-store.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -27,6 +27,6 @@ export class NavBarComponent implements OnInit {
 
     let parentId = 0;
     Number.parseInt(newPath, parentId);
-    this.store.dispatch({ type: SET_PATH, payload: parentId });
+    this.store.dispatch({ type: SET_PARENT, payload: parentId });
   }
 }

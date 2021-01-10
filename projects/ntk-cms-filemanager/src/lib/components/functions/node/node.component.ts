@@ -3,7 +3,7 @@ import {NodeInterface} from '../../../interfaces/node.interface';
 
 import {NodeService} from '../../../services/node.service';
 import {NodeClickedService} from '../../../services/node-clicked.service';
-import {FileManagerStoreService, SET_PATH, SET_SELECTED_NODE} from '../../../services/file-manager-store.service';
+import {FileManagerStoreService, SET_PARENT, SET_SELECTED_NODE} from '../../../services/file-manager-store.service';
 import {DownloadModeEnum} from '../../../enums/download-mode.enum';
 
 @Component({
@@ -63,16 +63,16 @@ export class NodeComponent implements OnInit {
          this.nodeService.foldAll();
       }
 
-      //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
-      this.store.dispatch({type: SET_PATH, payload: this.node.id });
+      //this.store.dispatch({type: SET_PARENT, payload: this.node.pathToNode});
+      this.store.dispatch({type: SET_PARENT, payload: this.node.id });
       return;
     }
 
     this.toggleNodeExpanded();
 
     if (this.node.isExpanded) {
-      //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
-      this.store.dispatch({type: SET_PATH, payload: this.node.id });
+      //this.store.dispatch({type: SET_PARENT, payload: this.node.pathToNode});
+      this.store.dispatch({type: SET_PARENT, payload: this.node.id });
     }
 
     this.setNodeSelectedState();
@@ -93,7 +93,7 @@ export class NodeComponent implements OnInit {
 
       this.nodeService.foldRecursively(this.node);
 
-      this.store.dispatch({type: SET_PATH, payload: this.node.id});
+      this.store.dispatch({type: SET_PARENT, payload: this.node.id});
     } else {
       document.getElementById('tree_' + this.node.id).classList.remove('deselected');
     }

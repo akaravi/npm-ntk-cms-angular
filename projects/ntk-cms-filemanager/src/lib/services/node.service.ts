@@ -3,7 +3,7 @@ import { NodeInterface } from '../interfaces/node.interface';
 import { Observable } from 'rxjs';
 import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './file-manager-store.service';
+import { FileManagerStoreService, SET_LOADING_STATE, SET_PARENT, SET_SELECTED_NODE } from './file-manager-store.service';
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
 import { ErrorExceptionResult, FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
@@ -32,17 +32,17 @@ export class NodeService extends BaseService {
 
   public refreshCurrentPath(): any {
     this.findFolderById(this.currentParentId).children = [];
+    this.store.dispatch({ type: SET_PARENT, payload: this.currentParentId });
+    this.store.dispatch({ type: SET_LOADING_STATE, payload: true });
     // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
       this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
-      this.store.dispatch({ type: SET_PATH, payload: this.currentParentId });
       this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
     });
     this.getNodesFile(this.currentParentId).then(() => {
       // debugger;
       this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
-      this.store.dispatch({ type: SET_PATH, payload: this.currentParentId });
       this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
     });
   }
