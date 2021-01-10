@@ -45,7 +45,7 @@ export class NodeComponent implements OnInit {
   }
 
   private open(): void{
-    debugger
+    // debugger;
     if (!this.node.isFolder) {
       if (this.nodeService?.tree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
         this.isSingleClick = true;
@@ -58,12 +58,12 @@ export class NodeComponent implements OnInit {
     }
 
     if (this.node.stayOpen) {
-      if (this.node.name === 'root') {
-        this.nodeService.foldAll();
+      if (this.node.id === 0) {
+         this.nodeService.foldAll();
       }
 
       //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
-      this.store.dispatch({type: SET_PATH, payload: this.node.id + ''});
+      this.store.dispatch({type: SET_PATH, payload: this.node.id });
       return;
     }
 
@@ -71,7 +71,7 @@ export class NodeComponent implements OnInit {
 
     if (this.node.isExpanded) {
       //this.store.dispatch({type: SET_PATH, payload: this.node.pathToNode});
-      this.store.dispatch({type: SET_PATH, payload: this.node.id + ''});
+      this.store.dispatch({type: SET_PATH, payload: this.node.id });
     }
 
     this.setNodeSelectedState();
@@ -86,14 +86,15 @@ export class NodeComponent implements OnInit {
   }
 
   private setNodeSelectedState(): void {
+    // debugger;
     if (!this.node.isExpanded) {
-      document.getElementById('tree_' + this.node.pathToNode).classList.add('deselected');
+      document.getElementById('tree_' + this.node.id).classList.add('deselected');
 
       this.nodeService.foldRecursively(this.node);
 
-      this.store.dispatch({type: SET_PATH, payload: this.node.pathToParent});
+      this.store.dispatch({type: SET_PATH, payload: this.node.id});
     } else {
-      document.getElementById('tree_' + this.node.pathToNode).classList.remove('deselected');
+      document.getElementById('tree_' + this.node.id).classList.remove('deselected');
     }
   }
 }

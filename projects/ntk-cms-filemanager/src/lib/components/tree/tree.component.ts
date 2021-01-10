@@ -16,7 +16,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
   @Input() treeModel: TreeModel;
 
   nodes: NodeInterface;
-  currentTreeLevel = '';
+  currentTreeLevel = 0;
 
   constructor(
     private nodeService: NodeService,
@@ -24,27 +24,24 @@ export class TreeComponent implements AfterViewInit, OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.nodes = this.treeModel.nodes;
 
-    //todo move this store to proper place
-    this.store
-      .getState(state => state.fileManagerState.path)
-      .subscribe((path: string) => {
-        this.nodeService.getNodes(path);
-
+    // todo move this store to proper place
+    this.store.getState(state => state.fileManagerState.parentId).subscribe((parentId: number) => {
+        // this.nodeService.getNodesFolder(parentId);// todo: karavi
+        this.nodeService.findFolderById(parentId);
         this.currentTreeLevel = this.treeModel.currentPath;
-
-        return this.treeModel.currentPath = path;
+        return this.treeModel.currentPath = parentId;
       });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.store
-      .getState(state => state.fileManagerState.path)
+      .getState(state => state.fileManagerState.parentId)
       .pipe(first())
-      .subscribe((path: string) => {
-        const nodes = this.nodeService.findNodeByPath(path);
+      .subscribe((parentId: number) => {
+        const nodes = this.nodeService.findFolderById(parentId);
         this.store.dispatch({type: SET_SELECTED_NODE, payload: nodes});
       });
   }

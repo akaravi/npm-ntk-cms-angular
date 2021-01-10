@@ -2,34 +2,34 @@ import { NodeInterface } from '../interfaces/node.interface';
 import { ConfigInterface } from '../interfaces/config.interface';
 
 export class TreeModel {
-  private _currentPath: string;
+  private _currentPath: number;
   private _nodes: NodeInterface;
   private _selectedNodeId: string;
   public config: ConfigInterface;
 
   constructor(config: ConfigInterface) {
     // this._currentPath = config.startingFolder; // todo implement (config.interfce.ts)
-    this._currentPath = '';
+    this._currentPath = 0;
     this.config = config;
 
     this.nodes = {
       id: 0,
-      pathToNode: '',
-      pathToParent: '',
+      // pathToNode: '',
+      // pathToParent: '',
       isFolder: true,
       isExpanded: true,
       stayOpen: true,
-      name: 'root',
-      children: {},
+      name: '...',
+      children: [],
       isRoot: true,
     };
   }
 
-  get currentPath(): string {
+  get currentPath(): number {
     return this._currentPath;
   }
 
-  set currentPath(value: string) {
+  set currentPath(value: number) {
     this._currentPath = value;
   }
 

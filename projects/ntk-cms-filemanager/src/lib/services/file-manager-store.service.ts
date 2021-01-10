@@ -6,7 +6,7 @@ import {StateInterface} from '../interfaces/state.interface';
 import {distinctUntilChanged, map} from 'rxjs/operators';
 
 const initialState: StateInterface = {
-  path: '',
+  parentId: 0,
   isLoading: true,
   selectedNode: null
 };
@@ -50,10 +50,11 @@ export class FileManagerStoreService {
 export function stateReducer(state: StateInterface = initialState, action: Actions): StateInterface {
   switch (action.type) {
     case SET_PATH :
-      if (state.path === action.payload) {
+      // debugger;
+      if (state.parentId === action.payload) {
         return state;
       }
-      return {...state, path: action.payload, isLoading: true};
+      return {...state, parentId: action.payload, isLoading: true};
     case SET_LOADING_STATE :
       return {...state, isLoading: action.payload};
     case SET_SELECTED_NODE :
@@ -76,7 +77,7 @@ export const SET_SELECTED_NODE = 'SET_SELECTED_NODE';
 
 export class SetPath implements ActionInterface {
   readonly type = SET_PATH;
-  payload: string;
+  payload: number;
 }
 
 export class SetLoadingState implements ActionInterface {

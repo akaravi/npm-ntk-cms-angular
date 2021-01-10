@@ -23,7 +23,7 @@ export class SideViewComponent implements OnInit {
   }
 
   onClick(event: any, type: string): void {
-    this.clickEvent.emit({type: type, event: event, node: this.node});
+    this.clickEvent.emit({type, event, node: this.node});
   }
 
   isDisabled(): boolean {

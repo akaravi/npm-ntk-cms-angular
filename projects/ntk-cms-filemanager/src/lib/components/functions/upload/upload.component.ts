@@ -10,6 +10,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { FineUploader } from 'fine-uploader';
 import { NodeService } from '../../../services/node.service';
+import { VoidExpression } from 'typescript';
 
 @Component({
   selector: 'app-upload',
@@ -29,7 +30,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient, private nodeService: NodeService) {}
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.uploader = new FineUploader({
       debug: false,
       autoUpload: false,
@@ -64,20 +65,20 @@ export class UploadComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  get getCurrentPath() {
-    const parentPath = this.nodeService.findNodeByPath(
-      this.nodeService.currentPath
+  get getCurrentPath(): number {
+    const parentPath = this.nodeService.findNodeById(
+      this.nodeService.currentParentId
     ).id;
-    return parentPath === 0 ? '' : parentPath;
+    return parentPath === 0 ? 0 : parentPath;
   }
 
-  uploadFiles() {
+  uploadFiles(): void  {
     this.uploader.uploadStoredFiles();
   }
 
-  createNewFolder(input?: string) {
+  createNewFolder(input?: string): void {
     if (!this.newFolder) {
       this.newFolder = true;
     } else {
@@ -90,7 +91,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
     }
   }
 
-  newClickedAction() {
+  newClickedAction(): void {
     this.uploader.cancelAll();
     this.closeDialog.emit();
   }

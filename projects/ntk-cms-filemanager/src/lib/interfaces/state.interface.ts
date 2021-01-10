@@ -1,7 +1,7 @@
 import {NodeInterface} from './node.interface';
 
 export interface StateInterface {
-  path: string;
+  parentId: number;
   selectedNode: NodeInterface;
   isLoading: boolean;
 }

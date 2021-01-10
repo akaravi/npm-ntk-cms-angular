@@ -25,12 +25,10 @@ export class FolderContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // debugger;
     this.nodes = this.nodeService.tree.nodes;
-
-    this.store
-      .getState(state => state.fileManagerState.path)
-      .subscribe((path: string) => {
-        this.nodes = this.nodeService.findNodeByPath(path);
+    this.store.getState(state => state.fileManagerState.parentId).subscribe((parentId: number) => {
+        this.nodes = this.nodeService.findFolderById(parentId);
       });
   }
 

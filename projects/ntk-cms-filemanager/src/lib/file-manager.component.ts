@@ -1,17 +1,18 @@
-import {Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation} from '@angular/core';
-import {TreeModel} from './models/tree.model';
-import {NodeService} from './services/node.service';
-import {NodeInterface} from './interfaces/node.interface';
-import {NgxSmartModalService} from 'ngx-smart-modal';
-import {NodeClickedService} from './services/node-clicked.service';
-import {TranslateService} from '@ngx-translate/core';
-import {FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE} from './services/file-manager-store.service';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { TreeModel } from './models/tree.model';
+import { NodeService } from './services/node.service';
+import { NodeInterface } from './interfaces/node.interface';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+import { NodeClickedService } from './services/node-clicked.service';
+import { TranslateService } from '@ngx-translate/core';
+import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'cms-file-manager',
   templateUrl: './file-manager.component.html',
   styleUrls: ['./file-manager.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class FileManagerComponent implements OnInit {
   @Input() iconTemplate: TemplateRef<any>;
@@ -26,7 +27,6 @@ export class FileManagerComponent implements OnInit {
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
-
 
   openFilemanagerButtonLabel: string;
   private _language = 'en';
@@ -51,10 +51,10 @@ export class FileManagerComponent implements OnInit {
     private nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
     public ngxSmartModalService: NgxSmartModalService,
-    public translate: TranslateService
+    public translate: TranslateService,
   ) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+    translate.setDefaultLang('fa');
+    translate.use('fa');
   }
 
   ngOnInit(): void {
@@ -71,24 +71,24 @@ export class FileManagerComponent implements OnInit {
     });
 
     this.store
-      .getState(state => state.fileManagerState.isLoading)
+      .getState((state) => state.fileManagerState.isLoading)
       .subscribe((isLoading: boolean) => {
         this.loading = isLoading;
       });
 
     this.store
-      .getState(state => state.fileManagerState.selectedNode)
+      .getState((state) => state.fileManagerState.selectedNode)
       .subscribe((selectedNode: NodeInterface) => {
         if (!selectedNode) {
           return;
         }
 
         // fixed highlighting error when closing node but not changing path
-        if ((selectedNode.isExpanded && selectedNode.pathToNode !== this.nodeService.currentPath) && !selectedNode.stayOpen) {
+        if (selectedNode.isExpanded && selectedNode.id !== this.nodeService.currentParentId && !selectedNode.stayOpen) {
           return;
         }
 
-        this.handleFileManagerClickEvent({type: 'select', node: selectedNode});
+        this.handleFileManagerClickEvent({ type: 'select', node: selectedNode });
       });
   }
 
@@ -101,33 +101,34 @@ export class FileManagerComponent implements OnInit {
 
     const node = this.nodeService.findNodeById(data.id);
     this.ngxSmartModalService.getModal('searchModal').close();
-    this.store.dispatch({type: SET_SELECTED_NODE, payload: node});
+    this.store.dispatch({ type: SET_SELECTED_NODE, payload: node });
   }
 
   handleFileManagerClickEvent(event: any): any {
+    // debugger;
     switch (event.type) {
-      case 'closeSideView' :
+      case 'closeSideView':
         return this.nodeClickHandler(event.node, true);
 
-      case 'select' :
+      case 'select':
         this.onItemClicked(event);
         this.highlightSelected(event.node);
         return this.nodeClickHandler(event.node);
 
-      case 'download' :
+      case 'download':
         this.nodeClickedService.startDownload(event.node);
         return this.onItemClicked(event);
 
-      case 'renameConfirm' :
+      case 'renameConfirm':
         return this.ngxSmartModalService.getModal('renameModal').open();
-      case 'rename' :
+      case 'rename':
         this.ngxSmartModalService.getModal('renameModal').close();
 
         this.nodeClickedService.rename(this.selectedNode.id, event.value);
         return this.onItemClicked({
           type: event.type,
           node: this.selectedNode,
-          newName: event.value
+          newName: event.value,
         });
 
       case 'removeAsk':
@@ -138,43 +139,40 @@ export class FileManagerComponent implements OnInit {
         this.nodeClickedService.initDelete(this.selectedNode);
         return this.onItemClicked({
           type: event.type,
-          node: this.selectedNode
+          node: this.selectedNode,
         });
 
-      case 'createFolder' :
-        const parentId = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
+      case 'createFolder':
+        const parentId = this.nodeService.findNodeById(this.nodeService.currentParentId).id;
 
         this.nodeClickedService.createFolder(parentId, event.payload);
         return this.onItemClicked({
           type: event.type,
           parentId,
-          newDirName: event.payload
+          newDirName: event.payload,
         });
     }
   }
 
-  nodeClickHandler(node: NodeInterface, closing?: boolean): any{
-    if (node.name === 'root') {
+  nodeClickHandler(node: NodeInterface, closing?: boolean): any {
+    if (node.id === 0) {
       return;
     }
 
     if (closing) {
-      const parentNode = this.nodeService.findNodeByPath(this.nodeService.currentPath);
-      this.store.dispatch({type: SET_SELECTED_NODE, payload: parentNode});
+      const parentNode = this.nodeService.findNodeById(this.nodeService.currentParentId);
+      this.store.dispatch({ type: SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
     } else {
       if (this.selectedNode === node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
-      }
-      else if (this.selectedNode === node && !this.sideMenuClosed) {
+      } else if (this.selectedNode === node && !this.sideMenuClosed) {
         this.sideMenuClosed = true;
- }
-      else if (this.selectedNode !== node && this.sideMenuClosed) {
+      } else if (this.selectedNode !== node && this.sideMenuClosed) {
         this.sideMenuClosed = false;
- }
-      else if (this.selectedNode !== node && !this.sideMenuClosed) {
+      } else if (this.selectedNode !== node && !this.sideMenuClosed) {
         this.sideMenuClosed = false;
- }
+      }
     }
 
     this.selectedNode = node;
@@ -193,14 +191,20 @@ export class FileManagerComponent implements OnInit {
 
   // todo stay DRY!
   highlightSelected(node: NodeInterface): void {
-    let pathToNode = node.pathToNode;
+    // debugger;
 
-    if (pathToNode.length === 0) {
-      pathToNode = 'root';
+    let pathToNode = node.id;
+
+    if (!pathToNode || pathToNode === 0) {
+      pathToNode = 0;
     }
 
     const treeElement = this.getElementById(pathToNode, 'tree_');
     const fcElement = this.getElementById(pathToNode, 'fc_');
+
+    if (!treeElement && !fcElement && pathToNode === 0) {
+      return;
+    }
     if (!treeElement && !fcElement) {
       console.warn('[File Manager] failed to find requested node for path:', pathToNode);
       return;
@@ -217,13 +221,13 @@ export class FileManagerComponent implements OnInit {
     }
 
     // parent node highlight
-    let pathToParent = node.pathToParent;
-    if (pathToParent === null || node.pathToNode === this.nodeService.currentPath) {
+    let pathToParent = node.id;
+    if (pathToParent === this.nodeService.currentParentId) {
       return;
     }
 
-    if (pathToParent.length === 0) {
-      pathToParent = 'root';
+    if (pathToParent === 0) {
+      pathToParent = 0;
     }
 
     const parentElement = this.getElementById(pathToParent, 'tree_');
@@ -236,25 +240,21 @@ export class FileManagerComponent implements OnInit {
   }
 
   private highilghtChildElement(el: HTMLElement, light: boolean = false): void {
-    el.children[0] // appnode div wrapper
-      .children[0] // ng template first item
-      .classList.add('highlighted');
+    el.children[0].children[0].classList // appnode div wrapper // ng template first item
+      .add('highlighted');
 
     if (light) {
-      el.children[0]
-        .children[0]
-        .classList.add('light');
+      el.children[0].children[0].classList.add('light');
     }
   }
 
-  private getElementById(id: string, prefix: string = ''): HTMLElement | null {
+  private getElementById(id: number, prefix: string = ''): HTMLElement | null {
     const fullId = prefix + id;
     return document.getElementById(fullId);
   }
 
   private removeClass(className: string): void {
-    Array.from(document.getElementsByClassName(className))
-      .map((el: any) => el.classList.remove(className));
+    Array.from(document.getElementsByClassName(className)).map((el: any) => el.classList.remove(className));
   }
 
   fmShowHide(): void {
@@ -264,7 +264,7 @@ export class FileManagerComponent implements OnInit {
   backdropClicked(): void {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
-    this.store.dispatch({type: SET_LOADING_STATE, payload: false});
+    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
   }
 
   handleUploadDialog(event: any): void {
