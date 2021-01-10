@@ -50,10 +50,6 @@ export class NodeService extends BaseService {
   getNodesFolder(parentId: number): any {
     return new Promise((resolve) => {
       return this.getNodesFoldersFromServer(parentId).subscribe((data: Array<NodeInterface>) => {
-        // debugger;
-        // for (let i = 0; i < data.length; i++) {
-        //   this.findNodeById(parentId).children[data[i].id] = data[i];
-        // }
         const parent = this.findNodeById(parentId);
         data.forEach((x) => parent.children.push(x));
         resolve(null);
@@ -63,10 +59,6 @@ export class NodeService extends BaseService {
   getNodesFile(parentId: number): any {
     return new Promise((resolve) => {
       return this.getNodesFilesFromServer(parentId).subscribe((data: Array<NodeInterface>) => {
-        // debugger;
-        // for (let i = 0; i < data.length; i++) {
-        //   this.findNodeById(parentId).children[data[i].id] = data[i];
-        // }
         const parent = this.findNodeById(parentId);
         data.forEach((x) => parent.children.push(x));
         resolve(null);
@@ -220,29 +212,17 @@ export class NodeService extends BaseService {
   public foldRecursively(node: NodeInterface): void {
     // debugger;
     // console.log('folding ', node);
-    if (node.children && node.children.length > 0) {
-      node.children.forEach((child) => {
-        if (!child.children || !child.children.find((x) => x.isExpanded)) {
-          return null;
-        }
-        this.foldRecursively(child);
-        document.getElementById('tree_' + child.id).classList.add('deselected');
-        child.isExpanded = false;
-      });
-    } else {
+    if (!node.children || node.children.length === 0) {
+      return null;
     }
-
-    // const children = node.children;
-    // Object.keys(children).map((child: NodeInterface) => {
-    //   if (!children. || !children.find(x=>x.isExpanded)) {
-    //     return null;
-    //   }
-
-    //   this.foldRecursively(children);
-    //   // todo put this getElById into one func (curr inside node.component.ts + fm.component.ts) - this won't be maintainable
-    //   document.getElementById('tree_' + children.id).classList.add('deselected');
-    //   children[child].isExpanded = false;
-    // });
+    node.children.forEach((child) => {
+      if (!child.children || !child.children.find((x) => x.isExpanded)) {
+        return null;
+      }
+      this.foldRecursively(child);
+      document.getElementById('tree_' + child.id).classList.add('deselected');
+      child.isExpanded = false;
+    });
   }
 
   public foldAll(): void {

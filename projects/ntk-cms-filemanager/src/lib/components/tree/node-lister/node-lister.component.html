@@ -3,7 +3,7 @@
   <ng-container *ngFor="let node of nodes.children">
     <li class="node-lister-list-item" *ngIf="node.isFolder || showFiles">
       <app-node class="node-lister-app-node" [node]="node" id="tree_{{ node.isRoot ? '0' : node.id }}">
-        <ng-container [ngTemplateOutletContext]="{ $implicit: nodes[node] }" [ngTemplateOutlet]="templateRef">
+        <ng-container [ngTemplateOutletContext]="{ $implicit: node }" [ngTemplateOutlet]="templateRef">
         </ng-container>
       </app-node>
 

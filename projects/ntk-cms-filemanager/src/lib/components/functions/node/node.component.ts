@@ -58,6 +58,7 @@ export class NodeComponent implements OnInit {
     }
 
     if (this.node.stayOpen) {
+
       if (this.node.id === 0) {
          this.nodeService.foldAll();
       }
