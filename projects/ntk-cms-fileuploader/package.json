@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.2.4",
-    "@angular/core": "^10.2.4"
+    "@angular/core": "^10.2.4",
+    "@flowjs/flow.js": "^2.14.1",
+    "@flowjs/ngx-flow": "^0.4.5"
   },
   "dependencies": {
     "tslib": "^2.0.0"

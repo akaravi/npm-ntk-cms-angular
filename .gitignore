@@ -45,8 +45,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/projects/ntk-cms-filemanager/node_modules
 package-lock.json
-/package-lock.json
-/package-lock.json
-/projects/ntk-cms-api/node_modules/
+/projects/ntk-cms-api/node_modules
+/projects/ntk-cms-filemanager/node_modules
+/projects/ntk-cms-fileuploader/node_modules
+/projects/ntk-cms-api/package-lock.json
+/projects/ntk-cms-filemanager/package-lock.json
+/projects/ntk-cms-fileuploader/package-lock.json

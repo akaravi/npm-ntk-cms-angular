@@ -10,11 +10,11 @@ import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from '.
 @Component({
   // tslint:disable-next-line: component-selector
   selector: 'cms-file-manager',
-  templateUrl: './file-manager.component.html',
-  styleUrls: ['./file-manager.component.scss'],
+  templateUrl: './cms-filemanager.component.html',
+  styleUrls: ['./cms-filemanager.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class FileManagerComponent implements OnInit {
+export class CmsFileManagerComponent implements OnInit {
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
   @Input() folderContentBackTemplate: TemplateRef<any>;

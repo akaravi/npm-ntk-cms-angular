@@ -1,7 +1,7 @@
 // import {ModuleWithProviders, NgModule} from '@angular/core';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FileManagerComponent} from './file-manager.component';
+import {CmsFileManagerComponent} from './cms-filemanager.component';
 import {FolderContentComponent} from './components/folder-content/folder-content.component';
 import {TreeComponent} from './components/tree/tree.component';
 import {NodeListerComponent} from './components/tree/node-lister/node-lister.component';
@@ -37,7 +37,7 @@ export function createTranslateLoader(http: HttpClient) {
     })
   ],
   declarations: [
-    FileManagerComponent,
+    CmsFileManagerComponent,
     FolderContentComponent,
     NodeComponent,
     TreeComponent,
@@ -52,14 +52,14 @@ export function createTranslateLoader(http: HttpClient) {
     NavigationComponent
   ],
   exports: [
-    FileManagerComponent,
+    CmsFileManagerComponent,
     LoadingOverlayComponent,
     SideViewComponent
   ],
   providers: [TranslateService]
 
 })
-export class FileManagerModule {
+export class CmsFileManagerModule {
   // static forRoot(): ModuleWithProviders {
   //   return {
   //     ngModule: FileManagerModule,

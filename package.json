@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "@flowjs/flow.js": "^2.14.1",
+    "@flowjs/ngx-flow": "^0.4.5",
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@ngrx/store": "^9.2.0",
     "@ngx-translate/core": "^10.0.2",
