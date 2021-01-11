@@ -36,11 +36,6 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         headers: this.getHeaders(),
       })
       .pipe(
-        // tap(_ => console.log("tap:1")),
-        // debounceTime(200),
-        // //switchMap(() => this._search()),
-        // delay(200),
-
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {

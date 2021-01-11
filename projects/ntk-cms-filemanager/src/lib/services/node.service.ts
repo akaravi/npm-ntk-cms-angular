@@ -3,7 +3,12 @@ import { NodeInterface } from '../interfaces/node.interface';
 import { Observable } from 'rxjs';
 import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_PARENT, SET_SELECTED_NODE } from './file-manager-store.service';
+import {
+  FileManagerStoreService,
+  SET_LOADING_STATE,
+  SET_PARENT,
+  SET_SELECTED_NODE,
+} from './file-manager-store.service';
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
 import { ErrorExceptionResult, FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
@@ -44,7 +49,6 @@ export class NodeService extends BaseService {
         this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
       });
     });
-
   }
 
   getNodesFolder(parentId: number): any {
@@ -160,24 +164,7 @@ export class NodeService extends BaseService {
         }),
       );
   }
-
-  // public findNodeByPath(nodePath: string): NodeInterface {
-  //   const ids = nodePath.split('/');
-  //   ids.splice(0, 1);
-  //   return ids.length === 0 ? this.tree.nodes : {}; // ids.reduce((value, index ) => value.children[index ], this.tree.nodes);
-  // }
-
-  // public findNodeById(parentid: number): NodeInterface {
-  //   // debugger;
-  //   const result = this.findFolderByIdHelper(parentid);
-
-  //   if (result === null) {
-  //     console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
-  //     return this.tree.nodes;
-  //   }
-  //   return result;
-  // }
-  public findFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
+  public SelectFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
     // debugger;
     const result = this.findFolderByIdHelper(parentid);
 
@@ -185,14 +172,23 @@ export class NodeService extends BaseService {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.tree.nodes;
     }
-    if (result.id === 0|| !loadChild) {
-      console.log(result);
+    if (result.id === 0 || !loadChild) {
       return result;
     }
+    result.children = [];
     if (reLoadChild || !result.children || result.children.length === 0) {
       this.refreshCurrentPath();
     }
-    console.log(result);
+    return result;
+  }
+  public findFolderById(parentid: number): NodeInterface {
+    // debugger;
+    const result = this.findFolderByIdHelper(parentid);
+
+    if (result === null) {
+      console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
+      return this.tree.nodes;
+    }
     return result;
   }
   public findFolderByIdHelper(id: number, node: NodeInterface = this.tree.nodes): NodeInterface {
@@ -216,7 +212,6 @@ export class NodeService extends BaseService {
 
   public foldRecursively(node: NodeInterface): void {
     // debugger;
-    // console.log('folding ', node);
     if (!node.children || node.children.length === 0) {
       return null;
     }
