@@ -245,6 +245,87 @@
           }
         }
       }
+    },
+    "ntk-smart-modal": {
+      "projectType": "library",
+      "root": "projects/ntk-smart-modal",
+      "sourceRoot": "projects/ntk-smart-modal/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ntk-smart-modal/tsconfig.lib.json",
+            "project": "projects/ntk-smart-modal/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ntk-smart-modal/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ntk-smart-modal/src/test.ts",
+            "tsConfig": "projects/ntk-smart-modal/tsconfig.spec.json",
+            "karmaConfig": "projects/ntk-smart-modal/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ntk-smart-modal/tsconfig.lib.json",
+              "projects/ntk-smart-modal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+
+    "ntk-flowjs-uploder": {
+      "projectType": "library",
+      "root": "projects/ntk-flowjs-uploder",
+      "sourceRoot": "projects/ntk-flowjs-uploder/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ntk-flowjs-uploder/tsconfig.lib.json",
+            "project": "projects/ntk-flowjs-uploder/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ntk-flowjs-uploder/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ntk-flowjs-uploder/src/test.ts",
+            "tsConfig": "projects/ntk-flowjs-uploder/tsconfig.spec.json",
+            "karmaConfig": "projects/ntk-flowjs-uploder/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ntk-flowjs-uploder/tsconfig.lib.json",
+              "projects/ntk-flowjs-uploder/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "npm-ntk-cms-angular",

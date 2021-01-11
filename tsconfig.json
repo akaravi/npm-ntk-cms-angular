@@ -4,7 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strictPropertyInitialization":false,
+    "strictPropertyInitialization": false,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -13,8 +13,7 @@
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-
-    "strictNullChecks":false,
+    "strictNullChecks": false,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
@@ -35,12 +34,21 @@
       "ntk-cms-fileuploader": [
         "dist/ntk-cms-fileuploader/ntk-cms-fileuploader",
         "dist/ntk-cms-fileuploader"
+      ],
+      "ntk-smart-modal": [
+        "dist/ntk-smart-modal/ntk-smart-modal",
+        "dist/ntk-smart-modal"
+      ],
+    
+      "ntk-flowjs-uploder": [
+        "dist/ntk-flowjs-uploder/ntk-flowjs-uploder",
+        "dist/ntk-flowjs-uploder"
       ]
     }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true,
+    "strictTemplates": true
   }
 }

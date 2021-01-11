@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncaps
 import { TreeModel } from './models/tree.model';
 import { NodeService } from './services/node.service';
 import { NodeInterface } from './interfaces/node.interface';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
+import { NtkSmartModalService } from 'projects/ntk-smart-modal/src/public-api';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -50,7 +50,7 @@ export class CmsFileManagerComponent implements OnInit {
     private store: FileManagerStoreService,
     private nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
-    public ngxSmartModalService: NgxSmartModalService,
+    public ngxSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
   ) {
     translate.setDefaultLang('fa');

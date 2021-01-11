@@ -4,11 +4,12 @@ import { NodeService } from './node.service';
 import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { NgxSmartModalService } from 'ngx-smart-modal';
+
 import { first, map } from 'rxjs/operators';
 import { BaseService } from './base.service';
 import { FileCategoryModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileCategoryModel';
 import { ErrorExceptionResult, FileContentModel } from 'ntk-cms-api';
+import { NtkSmartModalService } from 'projects/ntk-smart-modal/src/public-api';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class NodeClickedService extends BaseService {
   public tree: TreeModel;
 
   constructor(
-    public ngxSmartModalService: NgxSmartModalService,
+    public ngxSmartModalService: NtkSmartModalService,
     private nodeService: NodeService,
     private http: HttpClient,
   ) {
@@ -221,7 +222,9 @@ export class NodeClickedService extends BaseService {
     this.nodeService.refreshCurrentPath();
 
     const modal = this.ngxSmartModalService.getModal('waitModal');
-    modal.onOpenFinished.pipe(first()).subscribe(() => modal.close());
+    // modal.onOpenFinished.pipe(first()).subscribe(() => modal.close());  //todo : karavi old ver
+    modal.onCloseFinished.pipe(first()).subscribe(() => modal.close());
+
     modal.close();
   }
 

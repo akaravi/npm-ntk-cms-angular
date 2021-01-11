@@ -16,14 +16,14 @@
   },
   "peerDependencies": {
     "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0"
+    "@angular/core": ">=8.0.0",
+    "rxjs": ">=6.6.0"
   },
   "dependencies": {
     "@biesbjerg/ngx-translate-extract": "^7.0.3",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "fine-uploader": "5.16.2",
-    "ngx-smart-modal": "^7.4.1",
     "ntk-cms-api": "^1.0.106"
   }
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NtkSmartModalModule } from 'projects/ntk-smart-modal/src/public-api';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxSmartModalModule.forRoot(),
+    NtkSmartModalModule.forRoot(),
     // TranslateModule.forRoot({
     //   loader: {
     //     provide: TranslateLoader,

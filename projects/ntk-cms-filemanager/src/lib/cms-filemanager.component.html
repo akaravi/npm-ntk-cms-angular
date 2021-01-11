@@ -132,7 +132,7 @@
   </div>
 </ng-template>
 
-<ngx-smart-modal identifier="renameModal" [dismissable]="false" [closable]="false" *ngIf="selectedNode" #renameModal>
+<ntk-smart-modal identifier="renameModal" [dismissable]="false" [closable]="false" *ngIf="selectedNode" #renameModal>
   <h2 class="modal-title">
     {{'filemanager.rename_file' | translate}}
   </h2>
@@ -158,8 +158,8 @@
     </button>
   </div>
 
-</ngx-smart-modal>
-<ngx-smart-modal *ngIf="selectedNode" identifier="confirmDeleteModal" #deleteModal
+</ntk-smart-modal>
+<ntk-smart-modal *ngIf="selectedNode" identifier="confirmDeleteModal" #deleteModal
                  [dismissable]="false" [closable]="false">
   <h2 class="modal-title">
     <span>{{'filemanager.file_delete_confirm' | translate}}</span>
@@ -179,8 +179,8 @@
       {{'filemanager.cancel'|translate}}
     </button>
   </div>
-</ngx-smart-modal>
-<ngx-smart-modal identifier="searchModal" #searchModal [closable]="true">
+</ntk-smart-modal>
+<ntk-smart-modal identifier="searchModal" #searchModal [closable]="true">
   <h2 class="modal-title" style="margin-bottom: 2px"
       *ngIf="searchModal.hasData() && searchModal.getData().response.length !== 0">
     {{'filemanager.search_results_for' | translate}}
@@ -211,8 +211,8 @@
       </tr>
     </table>
   </div>
-</ngx-smart-modal>
-<ngx-smart-modal identifier="waitModal" [closable]="false" [dismissable]="false" [escapable]="false">
+</ntk-smart-modal>
+<ntk-smart-modal identifier="waitModal" [closable]="false" [dismissable]="false" [escapable]="false">
   <div style="overflow-y: hidden">
     <h2 class="modal-title" style="margin-top: 20px">
       {{'filemanager.processing_request' | translate}}...
@@ -222,9 +222,9 @@
       <i class="fas fa-spinner fa-spin fa-4x"></i>
     </div>
   </div>
-</ngx-smart-modal>
-<ngx-smart-modal identifier="errorModal" [closable]="true">
+</ntk-smart-modal>
+<ntk-smart-modal identifier="errorModal" [closable]="true">
   <h2 class="modal-title" style="margin-top: 20px">
     {{'filemanager.something_went_wrong_with_your_request' | translate}}...
   </h2>
-</ngx-smart-modal>
+</ntk-smart-modal>

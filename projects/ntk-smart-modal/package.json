@@ -1,7 +1,7 @@
 {
-  "name": "ntk-cms-api",
-  "version": "1.0.107",
-  "description": "Ntk Cms Api And Model For Typscript",
+  "name": "ntk-smart-modal",
+  "version": "1.0.1",
+  "description": "Ntk Cms Modal ",
   "author": "Alireza-Karavi",
   "license": "ISC",
   "keywords": [
@@ -13,8 +13,7 @@
   ],
   "peerDependencies": {
     "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0",
-    "rxjs": ">=6.6.0"
+    "@angular/core": ">=8.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"

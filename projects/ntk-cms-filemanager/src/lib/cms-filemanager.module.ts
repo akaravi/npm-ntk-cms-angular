@@ -15,7 +15,7 @@ import {UploadComponent} from './components/functions/upload/upload.component';
 import {NewFolderComponent} from './components/functions/upload/new-folder/new-folder.component';
 import {SideViewComponent} from './components/side-view/side-view.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
-import {NgxSmartModalModule} from 'ngx-smart-modal';
+import {NtkSmartModalModule} from 'projects/ntk-smart-modal/src/public-api';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -27,7 +27,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     HttpClientModule,
     CommonModule,
-    NgxSmartModalModule.forRoot(),
+    NtkSmartModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

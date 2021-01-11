@@ -10,7 +10,7 @@ $hasAnimations: true !default;
   $transition-duration: 0ms;
 }
 
-@import "~ngx-smart-modal/ngx-smart-modal";
+@import "../../../ntk-smart-modal/src/assets/styles.scss";
 
 ////////////
 // mixins //
@@ -514,7 +514,7 @@ i {
 }
 
 /////////////////////
-// ngx-smart-modal //
+// ntk-smart-modal //
 /////////////////////
 .nsm-content {
   @extend .nsm-content;

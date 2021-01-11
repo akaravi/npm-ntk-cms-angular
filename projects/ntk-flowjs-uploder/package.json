@@ -1,7 +1,7 @@
 {
-  "name": "ntk-cms-api",
-  "version": "1.0.107",
-  "description": "Ntk Cms Api And Model For Typscript",
+  "name": "ntk-flowjs-uploder",
+  "version": "1.0.1",
+  "description": "Ntk Cms Upload Flow js ",
   "author": "Alireza-Karavi",
   "license": "ISC",
   "keywords": [
@@ -14,9 +14,10 @@
   "peerDependencies": {
     "@angular/common": ">=8.0.0",
     "@angular/core": ">=8.0.0",
-    "rxjs": ">=6.6.0"
+    "@flowjs/flow.js": "^2.14.1"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "@types/flowjs": "2.13.3"
   }
 }
