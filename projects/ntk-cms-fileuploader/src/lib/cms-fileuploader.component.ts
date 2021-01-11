@@ -11,7 +11,6 @@ import {
 import { FlowDirective, Transfer } from '@flowjs/ngx-flow';
 import { ErrorExceptionResult, FileUploadedModel } from 'ntk-cms-api';
 import { Subscription } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { ComponentUploaderOptionModel } from './models/ComponentUploaderOptionModel';
 
 @Component({
