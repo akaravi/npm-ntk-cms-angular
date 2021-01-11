@@ -8,7 +8,7 @@
     <div class="fmModalInside">
       <div *ngIf="fmOpen; then showContent"></div>
       <div class="buttons-panel">
-        <button class="button big" (click)="confirmSelection()" [disabled]="!selectedNode">{{'filemanager.confirm_selection' | translate}}</button>
+        <button class="button big" (click)="confirmSelection()" [disabled]="!selectedNode || (selectedNode.isFolder && !tree.config.options.showSelectFolder ) || (!selectedNode.isFolder && !tree.config.options.showSelectFile)">{{'filemanager.confirm_selection' | translate}}</button>
         <button class="button big" (click)="cancelSelection()">{{'filemanager.cancel_selection' | translate}}</button>
       </div>
     </div>

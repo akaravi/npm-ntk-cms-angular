@@ -37,4 +37,5 @@ export class FileContentModel extends BaseModuleEntity<number> {
   FileLastUseed: Date;
   FileSrc: string;
   RenderOrderImagePlace: number;
+  UploadFileGUID: string;
 }

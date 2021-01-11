@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { FineUploader } from 'fine-uploader';
 import { NodeService } from '../../../services/node.service';
 import { VoidExpression } from 'typescript';
+import { NodeClickedService } from '../../../services/node-clicked.service';
+import { FileContentModel, FileUpload, ErrorExceptionResult } from 'ntk-cms-api';
 
 @Component({
   selector: 'app-upload',
@@ -20,7 +22,11 @@ export class UploadComponent implements OnInit, AfterViewInit {
   newFolder = false;
   counter = 0;
 
-  constructor(private http: HttpClient, private nodeService: NodeService) {}
+  constructor(
+    private http: HttpClient,
+    private nodeService: NodeService,
+    private nodeClickedService: NodeClickedService,
+  ) {}
 
   ngAfterViewInit(): void {
     this.uploader = new FineUploader({
@@ -40,8 +46,29 @@ export class UploadComponent implements OnInit, AfterViewInit {
       retry: {
         enableAuto: false,
       },
+      
       callbacks: {
-        onSubmitted: () => this.counter++,
+        onSubmitted: (ret) => {
+          this.counter++;
+        },
+        onComplete: (id: number, name: string, responseJSON: ErrorExceptionResult<FileUpload>, xhr: XMLHttpRequest) => {
+          debugger;
+          if (!responseJSON.IsSuccess) {
+            console.log(responseJSON);
+            return;
+          }
+          if (!responseJSON.Item.FileKey || responseJSON.Item.FileKey.length === 0) {
+            console.log(responseJSON);
+            return;
+          }
+          let model = new FileContentModel();
+          model.UploadFileGUID = responseJSON.Item.FileKey;
+          model.FileName = name;
+          if (this.getCurrentPath > 0) {
+            model.LinkCategoryId = this.getCurrentPath;
+          }
+          this.nodeClickedService.actionCreateFile(model);
+        },
         onCancel: () => {
           this.counter < 0 ? console.warn('wtf?') : this.counter--;
         },

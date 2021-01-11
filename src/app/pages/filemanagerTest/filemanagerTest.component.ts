@@ -31,6 +31,7 @@ export class FileManagerTestComponent {
         deleteFile: 'FileContent/',
         deleteFolder: 'FileCategory/',
         createFolder: 'FileCategory',
+        createFile: 'FileContent',
         getOneFile: 'FileContent',
         getOneFolder: 'FileCategory',
         renameFile: 'FileContent',
@@ -40,15 +41,18 @@ export class FileManagerTestComponent {
       options: {
         allowFolderDownload: DownloadModeEnum.DOWNLOAD_ALL,
         showFilesInsideTree: false,
+        showSelectFile: true,
+        showSelectFolder: false,
       },
     };
 
     this.tree = new TreeModel(treeConfig);
     this.node = this.tree.nodes;
   }
-
+  selected: any;
   // noinspection JSUnusedLocalSymbols
   itemSelected(event: any): void {
     console.log(event);
+    this.selected = event;
   }
 }

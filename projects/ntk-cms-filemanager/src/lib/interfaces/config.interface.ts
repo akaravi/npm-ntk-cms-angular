@@ -13,6 +13,7 @@ export interface ConfigInterface {
     deleteFile: string;
     deleteFolder: string;
     createFolder: string;
+    createFile: string;
     getOneFile: string;
     getOneFolder: string;
     renameFile: string;
@@ -22,5 +23,7 @@ export interface ConfigInterface {
   options: {
     allowFolderDownload: DownloadModeEnum;
     showFilesInsideTree: boolean;
+    showSelectFile: boolean;
+    showSelectFolder: boolean;
   }
 }

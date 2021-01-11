@@ -1,4 +1,3 @@
-import { FileContentModel } from './../../../../ntk-cms-api/src/lib/models/entity/file/fileContentModel';
 import { Injectable } from '@angular/core';
 import { NodeInterface } from '../interfaces/node.interface';
 import { NodeService } from './node.service';
@@ -9,7 +8,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { first, map } from 'rxjs/operators';
 import { BaseService } from './base.service';
 import { FileCategoryModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileCategoryModel';
-import { ErrorExceptionResult } from 'ntk-cms-api';
+import { ErrorExceptionResult, FileContentModel } from 'ntk-cms-api';
 
 @Injectable({
   providedIn: 'root',
@@ -184,6 +183,20 @@ export class NodeClickedService extends BaseService {
             (err) => this.actionFailed('actionRenameFile', err),
           );
       });
+  }
+  public actionCreateFile(model: FileContentModel): void {
+    this.http
+    .post(this.tree.config.baseURL + this.tree.config.api.createFile, model, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      map((ret) => {
+        const retExc = this.errorExceptionResultCheck<FileContentModel>(ret);
+      }),
+    ).subscribe(
+      (a) => {},
+      (err) => this.actionFailed('actionCreateFolder', err),
+    );
   }
 
   private successWithSideViewClose(): void {
