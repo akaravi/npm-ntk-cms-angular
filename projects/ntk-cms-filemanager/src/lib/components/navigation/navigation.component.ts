@@ -18,6 +18,6 @@ export class NavigationComponent implements OnInit {
   }
 
   onClick(input: string) {
-    this.nodeClickedService.searchForString(input);
+    this.nodeClickedService.actionSearchForString(input);
   }
 }

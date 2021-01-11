@@ -1,3 +1,4 @@
+import { FileContentModel } from './../../../../ntk-cms-api/src/lib/models/entity/file/fileContentModel';
 import { Injectable } from '@angular/core';
 import { NodeInterface } from '../interfaces/node.interface';
 import { NodeService } from './node.service';
@@ -8,6 +9,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { first, map } from 'rxjs/operators';
 import { BaseService } from './base.service';
 import { FileCategoryModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileCategoryModel';
+import { ErrorExceptionResult } from 'ntk-cms-api';
 
 @Injectable({
   providedIn: 'root',
@@ -26,32 +28,64 @@ export class NodeClickedService extends BaseService {
   public startDownload(node: NodeInterface): void {
     window.open(node.downloadLinksrc, '_blank');
   }
-  public startDownload_orginal(node: NodeInterface): void {
-    const parameters = new HttpParams().append('path', node.id + '');
-    this.reachServer('download', this.tree.config.api.downloadFile, parameters);
+
+  public actionDeleteFolder(node: NodeInterface): void {
+    this.http
+      .delete(this.tree.config.baseURL + this.tree.config.api.deleteFolder + '/' + node.id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        map((ret) => {
+          const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
+        }),
+      )
+      .subscribe(
+        (a) => this.successWithSideViewClose(),
+        (err) => this.actionFailed('actionDeleteFolder', err),
+      );
+
+    // this.sideEffectHelper(
+    //   'Delete',
+    //   new HttpParams().append('path', node.id + ''),
+    //   'delete',
+    //   this.tree.config.api.deleteFile,
+    //   () => this.successWithSideViewClose(),
+    // );
+  }
+  public actionDeleteFile(node: NodeInterface): void {
+    this.http
+      .delete(this.tree.config.baseURL + this.tree.config.api.deleteFile + '/' + node.id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        map((ret) => {
+          const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
+        }),
+      ).subscribe(
+        (a) => this.successWithSideViewClose(),
+        (err) => this.actionFailed('actionDeleteFile', err),
+      );
+
+    // this.sideEffectHelper(
+    //   'Delete',
+    //   new HttpParams().append('path', node.id + ''),
+    //   'delete',
+    //   this.tree.config.api.deleteFile,
+    //   () => this.successWithSideViewClose(),
+    // );
   }
 
-  public initDelete(node: NodeInterface): void {
-    this.sideEffectHelper(
-      'Delete',
-      new HttpParams().append('path', node.id + ''),
-      'delete',
-      this.tree.config.api.deleteFile,
-      () => this.successWithSideViewClose(),
-    );
+  public actionSearchForString(input: string): void {
+    // this.sideEffectHelper(
+    //   'Search',
+    //   new HttpParams().append('query', input),
+    //   'get',
+    //   this.tree.config.api.searchFiles,
+    //   (res) => this.searchSuccess(input, res),
+    // );
   }
 
-  public searchForString(input: string): void {
-    this.sideEffectHelper(
-      'Search',
-      new HttpParams().append('query', input),
-      'get',
-      this.tree.config.api.searchFiles,
-      (res) => this.searchSuccess(input, res),
-    );
-  }
-
-  public createFolder(currentParent: number, newDirName: string): void {
+  public actionCreateFolder(currentParent: number, newDirName: string): void {
     const model = new FileCategoryModel();
     model.Title = newDirName;
     if (currentParent > 0) {
@@ -65,66 +99,91 @@ export class NodeClickedService extends BaseService {
         map((ret) => {
           const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
         }),
-      )
-      .toPromise();
+      ).subscribe(
+        (a) => this.successWithSideViewClose(),
+        (err) => this.actionFailed('actionCreateFolder', err),
+      );
 
-    this.sideEffectHelper(
-      'Create Folder',
-      (() => {
-        let httpParams = new HttpParams().append('dirName', newDirName);
-        if (currentParent !== 0) {
-          httpParams = httpParams.append('parentPath', currentParent + '');
+
+    // this.sideEffectHelper(
+    //   'Create Folder',
+    //   (() => {
+    //     let httpParams = new HttpParams().append('dirName', newDirName);
+    //     if (currentParent !== 0) {
+    //       httpParams = httpParams.append('parentPath', currentParent + '');
+    //     }
+
+    //     console.log(currentParent, httpParams.get('dirName'), httpParams.get('parentPath'));
+    //     return httpParams;
+    //   })(),
+    //   'post',
+    //   this.tree.config.api.createFolder,
+    // );
+  }
+
+  public actionRenameFolder(id: number, newName: string): void {
+    this.http
+      .get(this.tree.config.baseURL + this.tree.config.api.getOneFolder + '/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        map((ret) => {
+          return this.errorExceptionResultCheck<FileCategoryModel>(ret);
+        }),
+      )
+      .toPromise()
+      .then((retExc) => {
+        if (!retExc.IsSuccess) {
+           this.actionFailed('actionRenameFolder', retExc.ErrorMessage);
+          return;
         }
 
-        console.log(currentParent, httpParams.get('dirName'), httpParams.get('parentPath'));
-        return httpParams;
-      })(),
-      'post',
-      this.tree.config.api.createFolder,
-    );
+        retExc.Item.Title = newName;
+        this.http
+          .put(this.tree.config.baseURL + this.tree.config.api.renameFolder, retExc.Item, {
+            headers: this.getHeaders(),
+          })
+          .pipe(
+            map((ret) => {
+              return this.errorExceptionResultCheck<FileCategoryModel>(ret);
+            }),
+          ).subscribe(
+            (a) => this.successWithSideViewClose(),
+            (err) => this.actionFailed('actionRenameFolder', err),
+          );
+      });
   }
+  public actionRenameFile(id: number, newName: string): void {
+    this.http
+      .get(this.tree.config.baseURL + this.tree.config.api.getOneFile + '/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        map((ret) => {
+          return this.errorExceptionResultCheck<FileContentModel>(ret);
+        }),
+      )
+      .toPromise()
+      .then((retExc) => {
+        if (!retExc.IsSuccess) {
+          this.actionFailed('actionRenameFile', retExc.ErrorMessage);
+          return;
+        }
 
-  public rename(id: number, newName: string): void {
-    this.sideEffectHelper(
-      'Rename',
-      new HttpParams().append('path', id + '').append('newName', newName),
-      'post',
-      this.tree.config.api.renameFile,
-      () => this.successWithSideViewClose(),
-    );
-  }
-
-  private sideEffectHelper(
-    name: string,
-    parameters: HttpParams,
-    httpMethod: string,
-    apiURL: string,
-    successMethod = (a: any) => this.actionSuccess(a),
-    failMethod = (a: any, b: any) => this.actionFailed(a, b),
-  ): void {
-    this.ngxSmartModalService.getModal('waitModal').open();
-
-    this.reachServer(httpMethod, apiURL, parameters).subscribe(
-      (a) => successMethod(a),
-      (err) => failMethod(name, err),
-    );
-  }
-
-  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<any> | null {
-    switch (method.toLowerCase()) {
-      case 'get':
-        return this.http.get(this.tree.config.baseURL + apiUrl, { params: parameters });
-      case 'post':
-        return this.http.post(this.tree.config.baseURL + apiUrl, data, { params: parameters });
-      case 'delete':
-        return this.http.delete(this.tree.config.baseURL + apiUrl, { params: parameters });
-      case 'download':
-        window.open(this.tree.config.baseURL + apiUrl + '?path=' + parameters.get('path'), '_blank');
-        return null;
-      default:
-        console.warn('[NodeClickedService] Incorrect params for this side-effect');
-        return null;
-    }
+        retExc.Item.FileName = newName;
+        this.http
+          .put(this.tree.config.baseURL + this.tree.config.api.renameFile, retExc.Item, {
+            headers: this.getHeaders(),
+          })
+          .pipe(
+            map((ret) => {
+              return this.errorExceptionResultCheck<FileContentModel>(ret);
+            }),
+          ).subscribe(
+            (a) => this.successWithSideViewClose(),
+            (err) => this.actionFailed('actionRenameFile', err),
+          );
+      });
   }
 
   private successWithSideViewClose(): void {

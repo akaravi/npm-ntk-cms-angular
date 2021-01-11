@@ -83,7 +83,6 @@ export class FileManagerComponent implements OnInit {
           return;
         }
 
-
         // debugger;
         // fixed highlighting error when closing node but not changing path
         if (selectedNode.isExpanded && selectedNode.id !== this.nodeService.currentParentId && !selectedNode.stayOpen) {
@@ -122,8 +121,12 @@ export class FileManagerComponent implements OnInit {
         return this.ngxSmartModalService.getModal('renameModal').open();
       case 'rename':
         this.ngxSmartModalService.getModal('renameModal').close();
+        if (this.selectedNode.isFolder) {
+          this.nodeClickedService.actionRenameFolder(this.selectedNode.id, event.value);
+        } else {
+          this.nodeClickedService.actionRenameFile(this.selectedNode.id, event.value);
+        }
 
-        this.nodeClickedService.rename(this.selectedNode.id, event.value);
         return this.onItemClicked({
           type: event.type,
           node: this.selectedNode,
@@ -134,8 +137,12 @@ export class FileManagerComponent implements OnInit {
         return this.ngxSmartModalService.getModal('confirmDeleteModal').open();
       case 'remove':
         this.ngxSmartModalService.getModal('confirmDeleteModal').close();
+        if (this.selectedNode.isFolder) {
+          this.nodeClickedService.actionDeleteFolder(this.selectedNode);
+        } else {
+          this.nodeClickedService.actionDeleteFile(this.selectedNode);
+        }
 
-        this.nodeClickedService.initDelete(this.selectedNode);
         return this.onItemClicked({
           type: event.type,
           node: this.selectedNode,
@@ -144,7 +151,7 @@ export class FileManagerComponent implements OnInit {
       case 'createFolder':
         const parentId = this.nodeService.findFolderById(this.nodeService.currentParentId).id;
 
-        this.nodeClickedService.createFolder(parentId, event.payload);
+        this.nodeClickedService.actionCreateFolder(parentId, event.payload);
         return this.onItemClicked({
           type: event.type,
           parentId,
@@ -154,7 +161,7 @@ export class FileManagerComponent implements OnInit {
   }
 
   nodeClickHandler(node: NodeInterface, closing?: boolean): any {
-       // debugger;
+    // debugger;
     if (node.id === 0) {
       return;
     }

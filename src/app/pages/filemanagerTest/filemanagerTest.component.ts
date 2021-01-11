@@ -22,6 +22,7 @@ export class FileManagerTestComponent {
   constructor() {
     const treeConfig: ConfigInterface = {
       baseURL: 'https://apicms.ir/api/v1/',
+      baseUploadURL: 'https://apifile.ir/api/v1/',
       api: {
         listFile: 'FileContent/GetAll',
         listFolder: 'FileCategory/GetAll',
@@ -30,6 +31,8 @@ export class FileManagerTestComponent {
         deleteFile: 'FileContent/',
         deleteFolder: 'FileCategory/',
         createFolder: 'FileCategory',
+        getOneFile: 'FileContent',
+        getOneFolder: 'FileCategory',
         renameFile: 'FileContent',
         renameFolder: 'FileCategory',
         searchFiles: 'FileCategory/GetAll',

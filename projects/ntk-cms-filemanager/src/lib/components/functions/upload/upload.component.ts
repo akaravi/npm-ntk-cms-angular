@@ -30,7 +30,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
       element: document.getElementById('fine-uploader'),
       template: document.getElementById('fine-uploader-template'),
       request: {
-        endpoint: this.nodeService.tree.config.baseURL + this.nodeService.tree.config.api.uploadFile,
+        endpoint: this.nodeService.tree.config.baseUploadURL + this.nodeService.tree.config.api.uploadFile,
         // forceMultipart: false,
         paramsInBody: false,
         params: {
