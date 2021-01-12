@@ -51,7 +51,7 @@ export class FileManagerTestComponent {
   }
   selected: any;
   // noinspection JSUnusedLocalSymbols
-  itemSelected(event: any): void {
+  onActionFileSelect(event: any): void {
     console.log(event);
     this.selected = event;
   }
