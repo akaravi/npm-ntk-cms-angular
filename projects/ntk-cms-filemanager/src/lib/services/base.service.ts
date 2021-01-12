@@ -54,7 +54,7 @@ export class BaseService {
   //   successMethod = (a: any) => this.actionSuccess(a),
   //   failMethod = (a: any, b: any) => this.actionFailed(a, b),
   // ): void {
-  //   this.ngxSmartModalService.getModal('waitModal').open();
+  //   this.ntkSmartModalService.getModal('waitModal').open();
 
   //   this.reachServer(httpMethod, apiURL, parameters).subscribe(
   //     (a) => successMethod(a),

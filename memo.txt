@@ -9,8 +9,8 @@ ng generate library ntk-cms-api
 ng generate library ntk-cms-filemanager
 ng generate library ntk-cms-fileuploader
 ng generate library ntk-cms-module
-ng generate library ntk-smart-modal
-ng generate library ntk-flowjs-uploder
+ng generate library ngx-ntk-smart-module
+
 =========================================First Time npm
 npm adduser
 npm login
@@ -38,16 +38,20 @@ ng build ntk-cms-fileuploader --prod
 cd dist/ntk-cms-fileuploader
 npm publish
 =========================================
-ng build ntk-smart-modal --prod
-cd dist/ntk-smart-modal
+ng build ntk-cms-module --prod
+cd dist/ntk-cms-module
+npm publish
+=========================================
+ng build ngx-ntk-smart-module --prod
+cd dist/ngx-ntk-smart-module
 npm publish
 =========================================
 Test All
 ng build ntk-cms-api --prod
 ng build ntk-cms-filemanager --prod
 ng build ntk-cms-fileuploader --prod
-ng build ntk-smart-modal --prod
-ng build ntk-flowjs-uploder --prod
+ng build ntk-cms-module --prod
+ng build ngx-ntk-smart-module --prod
 
 
 

@@ -5,7 +5,7 @@ import { NodeInterface } from './interfaces/node.interface';
 import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
-import { NtkSmartModalService } from 'projects/ntk-smart-modal/src/public-api';
+import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -51,7 +51,7 @@ export class CmsFileManagerComponent implements OnInit {
     private store: FileManagerStoreService,
     private nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
-    public ngxSmartModalService: NtkSmartModalService,
+    public ntkSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
   ) {
     translate.setDefaultLang('fa');
@@ -100,7 +100,7 @@ export class CmsFileManagerComponent implements OnInit {
 
   searchClicked(data: any): void {
     const node = this.nodeService.findFolderById(data.id);
-    this.ngxSmartModalService.getModal('searchModal').close();
+    this.ntkSmartModalService.getModal('searchModal').close();
     this.store.dispatch({ type: SET_SELECTED_NODE, payload: node });
   }
 
@@ -119,9 +119,9 @@ export class CmsFileManagerComponent implements OnInit {
         return this.onItemClicked(event);
 
       case 'renameConfirm':
-        return this.ngxSmartModalService.getModal('renameModal').open();
+        return this.ntkSmartModalService.getModal('renameModal').open();
       case 'rename':
-        this.ngxSmartModalService.getModal('renameModal').close();
+        this.ntkSmartModalService.getModal('renameModal').close();
         if (this.selectedNode.isFolder) {
           this.nodeClickedService.actionRenameFolder(this.selectedNode.id, event.value);
         } else {
@@ -135,9 +135,9 @@ export class CmsFileManagerComponent implements OnInit {
         });
 
       case 'removeAsk':
-        return this.ngxSmartModalService.getModal('confirmDeleteModal').open();
+        return this.ntkSmartModalService.getModal('confirmDeleteModal').open();
       case 'remove':
-        this.ngxSmartModalService.getModal('confirmDeleteModal').close();
+        this.ntkSmartModalService.getModal('confirmDeleteModal').close();
         if (this.selectedNode.isFolder) {
           this.nodeClickedService.actionDeleteFolder(this.selectedNode);
         } else {

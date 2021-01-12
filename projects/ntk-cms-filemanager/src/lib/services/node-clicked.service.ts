@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { NodeInterface } from '../interfaces/node.interface';
 import { NodeService } from './node.service';
@@ -7,9 +8,8 @@ import { Observable } from 'rxjs';
 
 import { first, map } from 'rxjs/operators';
 import { BaseService } from './base.service';
-import { FileCategoryModel } from '../../../../ntk-cms-api/src/lib/models/entity/file/fileCategoryModel';
-import { ErrorExceptionResult, FileContentModel } from 'ntk-cms-api';
-import { NtkSmartModalService } from 'projects/ntk-smart-modal/src/public-api';
+import { ErrorExceptionResult, FileContentModel, FileCategoryModel } from 'ntk-cms-api';
+import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class NodeClickedService extends BaseService {
   public tree: TreeModel;
 
   constructor(
-    public ngxSmartModalService: NtkSmartModalService,
+    public ntkSmartModalService: NtkSmartModalService,
     private nodeService: NodeService,
     private http: HttpClient,
   ) {
@@ -213,15 +213,15 @@ export class NodeClickedService extends BaseService {
 
     this.actionSuccess();
 
-    this.ngxSmartModalService.setModalData(obj, 'searchModal', true);
-    this.ngxSmartModalService.getModal('searchModal').open();
+    this.ntkSmartModalService.setModalData(obj, 'searchModal', true);
+    this.ntkSmartModalService.getModal('searchModal').open();
   }
 
   private actionSuccess(response: string = ''): void {
     document.body.classList.remove('dialog-open');
     this.nodeService.refreshCurrentPath();
 
-    const modal = this.ngxSmartModalService.getModal('waitModal');
+    const modal = this.ntkSmartModalService.getModal('waitModal');
     // modal.onOpenFinished.pipe(first()).subscribe(() => modal.close());  //todo : karavi old ver
     modal.onCloseFinished.pipe(first()).subscribe(() => modal.close());
 
@@ -231,8 +231,8 @@ export class NodeClickedService extends BaseService {
   private actionFailed(name: string, error: any): void {
     document.body.classList.remove('dialog-open');
 
-    this.ngxSmartModalService.getModal('waitModal').close();
-    this.ngxSmartModalService.getModal('errorModal').open();
+    this.ntkSmartModalService.getModal('waitModal').close();
+    this.ntkSmartModalService.getModal('errorModal').open();
     console.warn('[NodeClickedService] Action "' + name + '" failed', error);
   }
 }

@@ -46,11 +46,16 @@ testem.log
 Thumbs.db
 
 package-lock.json
+node_modules
 /projects/ntk-cms-api/node_modules
 /projects/ntk-cms-filemanager/node_modules
 /projects/ntk-cms-fileuploader/node_modules
+/projects/ntk-cms-module/node_modules
+/projects/ngx-ntk-smart-module/node_modules
+
+
 /projects/ntk-cms-api/package-lock.json
-/projects/ntk-smart-modal/package-lock.json
 /projects/ntk-cms-filemanager/package-lock.json
 /projects/ntk-cms-fileuploader/package-lock.json
-/projects/ntk-smart-modal/package-lock.json
+/projects/ntk-cms-module/package-lock.json
+/projects/ngx-ntk-smart-module/package-lock.json

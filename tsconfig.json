@@ -35,14 +35,13 @@
         "dist/ntk-cms-fileuploader/ntk-cms-fileuploader",
         "dist/ntk-cms-fileuploader"
       ],
-      "ntk-smart-modal": [
-        "dist/ntk-smart-modal/ntk-smart-modal",
-        "dist/ntk-smart-modal"
+      "ngx-ntk-smart-module": [
+        "dist/ngx-ntk-smart-module/ngx-ntk-smart-module",
+        "dist/ngx-ntk-smart-module"
       ],
-    
-      "ntk-flowjs-uploder": [
-        "dist/ntk-flowjs-uploder/ntk-flowjs-uploder",
-        "dist/ntk-flowjs-uploder"
+      "ntk-cms-module": [
+        "dist/ntk-cms-module/ntk-cms-module",
+        "dist/ntk-cms-module"
       ]
     }
   },
