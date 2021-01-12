@@ -5,6 +5,12 @@
       </ng-container>
     </app-node>
   </ng-container>
+  <ng-container *ngIf="nodes.id === 0">
+    <app-node [node]="nodes" id="{{ nodes.id }}" (click)="onActionRefresh(nodes)" >
+      <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="folderContentReloadTemplate">
+      </ng-container>
+    </app-node>
+  </ng-container>
 
   <ng-container *ngFor="let node of nodes.children">
     <app-node [node]="node" id="fc_{{ node.id }}">

@@ -18,6 +18,7 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
   @Input() folderContentBackTemplate: TemplateRef<any>;
+  @Input() folderContentReloadTemplate: TemplateRef<any>;
   @Input() folderContentNewTemplate: TemplateRef<any>;
   @Input() loadingOverlayTemplate: TemplateRef<any>;
   @Input() sideViewTemplate: TemplateRef<any>;

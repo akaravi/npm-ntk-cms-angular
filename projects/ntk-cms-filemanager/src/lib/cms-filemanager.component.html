@@ -47,6 +47,7 @@
           (openUploadDialog)="handleUploadDialog($event)"
           [folderContentTemplate]="folderContentTemplate ? folderContentTemplate : defaultFolderContentTemplate"
           [folderContentNewTemplate]="folderContentNewTemplate ? folderContentNewTemplate : defaultFolderContentNewTemplate"
+          [folderContentReloadTemplate]="folderContentReloadTemplate ? folderContentReloadTemplate : defaultFolderContentReloadTemplate"
           [folderContentBackTemplate]="folderContentBackTemplate ? folderContentBackTemplate : defaultFolderContentBackTemplate">
         </app-folder-content>
       </div>
@@ -116,6 +117,14 @@
     <div class="file-preview" style="width: 100%; height:100%">
       <i class="fas fa-2x fa-ellipsis-h" style="line-height: 5"></i>
       ...
+    </div>
+  </div>
+</ng-template>
+<ng-template let-node #defaultFolderContentReloadTemplate>
+  <div class="file-manager-item">
+    <div class="file-preview" style="width: 100%; height:100%">
+      <i class="fas fa-2x fa-ellipsis-h" style="line-height: 5"></i>
+      ~
     </div>
   </div>
 </ng-template>

@@ -165,7 +165,6 @@ export class NodeService extends BaseService {
       );
   }
   public SelectFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
-    // debugger;
     const result = this.findFolderByIdHelper(parentid);
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
 
@@ -173,7 +172,7 @@ export class NodeService extends BaseService {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.tree.nodes;
     }
-    if (result.id === 0 || !loadChild) {
+    if ( !loadChild) {
       return result;
     }
     if (reLoadChild) {
