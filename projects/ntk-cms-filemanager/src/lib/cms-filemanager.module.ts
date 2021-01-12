@@ -18,6 +18,7 @@ import {NavigationComponent} from './components/navigation/navigation.component'
 import {NtkSmartModalModule} from 'projects/ntk-smart-modal/src/public-api';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FilePickerModule } from 'ngx-awesome-uploader';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -34,7 +35,9 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    HttpClientModule,
+    FilePickerModule
   ],
   declarations: [
     CmsFileManagerComponent,

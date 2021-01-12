@@ -1,3 +1,7 @@
 <p>
   fileuploader works!
 </p>
+  <div class="uploader-wrapper">
+    <ngx-awesome-uploader [adapter]="adapter" [enableCropper]="true" (uploadSuccess)="uploadSuccess($event)">
+    </ngx-awesome-uploader>
+  </div>

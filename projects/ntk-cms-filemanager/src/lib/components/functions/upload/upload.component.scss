@@ -1,17 +1,9 @@
-.upload-content {
-  text-align: center;
-  max-height: 25vh;
-  overflow: auto;
-  margin: 10px auto;
+ngx-awesome-uploader  {
+  display: inline-table!important;
 }
-
-.fa-times:before {
-  content: "\f00d";
+.file-drop-wrapper {
+  max-width:max-content!important;
 }
-
-.buttons {
-  background: #fff;
-  padding: 5px;
-  margin: 10px 0;
+.custom-drag {
+  max-width:max-content!important;
 }
-

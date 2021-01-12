@@ -1,24 +1,24 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FineUploader } from 'fine-uploader';
 import { NodeService } from '../../../services/node.service';
 import { VoidExpression } from 'typescript';
 import { NodeClickedService } from '../../../services/node-clicked.service';
 import { FileContentModel, FileUpload, ErrorExceptionResult } from 'ntk-cms-api';
+import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
+import { FilePreviewModel } from 'ngx-awesome-uploader';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss', './fine-uploader/fine-uploader.scss'],
+  styleUrls: ['./upload.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class UploadComponent implements OnInit, AfterViewInit {
+export class UploadComponent implements OnInit {
   @Input() openDialog: any;
 
   @Output() closeDialog = new EventEmitter();
   @Output() createDir = new EventEmitter();
 
-  uploader: FineUploader;
   newFolder = false;
   counter = 0;
 
@@ -28,61 +28,13 @@ export class UploadComponent implements OnInit, AfterViewInit {
     private nodeClickedService: NodeClickedService,
   ) {}
 
-  ngAfterViewInit(): void {
-    this.uploader = new FineUploader({
-      debug: false,
-      autoUpload: false,
-      maxConnections: 1, // todo configurable
-      element: document.getElementById('fine-uploader'),
-      template: document.getElementById('fine-uploader-template'),
-      request: {
-        endpoint: this.nodeService.tree.config.baseUploadURL + this.nodeService.tree.config.api.uploadFile,
-        // forceMultipart: false,
-        paramsInBody: false,
-        params: {
-          parentPath: this.getCurrentPath,
-        },
-      },
-      retry: {
-        enableAuto: false,
-      },
-      
-      callbacks: {
-        onSubmitted: (ret) => {
-          this.counter++;
-        },
-        onComplete: (id: number, name: string, responseJSON: ErrorExceptionResult<FileUpload>, xhr: XMLHttpRequest) => {
-          debugger;
-          if (!responseJSON.IsSuccess) {
-            console.log(responseJSON);
-            return;
-          }
-          if (!responseJSON.Item.FileKey || responseJSON.Item.FileKey.length === 0) {
-            console.log(responseJSON);
-            return;
-          }
-          let model = new FileContentModel();
-          model.UploadFileGUID = responseJSON.Item.FileKey;
-          model.FileName = name;
-          if (this.getCurrentPath > 0) {
-            model.LinkCategoryId = this.getCurrentPath;
-          }
-          this.nodeClickedService.actionCreateFile(model);
-        },
-        onCancel: () => {
-          this.counter < 0 ? console.warn('wtf?') : this.counter--;
-        },
-        onAllComplete: (succ: any, fail: any) => {
-          if (succ.length > 0) {
-            this.counter = 0;
-            this.nodeService.refreshCurrentPath();
-          }
-        },
-      },
-    });
-  }
+  adapter = new FileUploaderPickerAdapter(this.http);
 
   ngOnInit(): void {}
+
+  uploadSuccess(event: any): void {
+    console.log(event);
+  }
 
   get getCurrentPath(): number {
     const parentPath = this.nodeService.findFolderById(this.nodeService.currentParentId).id;
@@ -90,9 +42,26 @@ export class UploadComponent implements OnInit, AfterViewInit {
   }
 
   uploadFiles(): void {
-    this.uploader.uploadStoredFiles();
+    // this.uploader.uploadStoredFiles();
   }
-
+  onFileAdded(model: FilePreviewModel): void {
+    console.log('onFileAdded', model);
+  }
+  onUploadSuccess(model: FilePreviewModel): void {
+    console.log('onUploadSuccess', model);
+    if (!model.uploadResponse) {
+    }
+    const ret = model.uploadResponse as ErrorExceptionResult<FileUpload>;
+    if (!ret.IsSuccess) {
+    }
+    const fileModel = new FileContentModel();
+    fileModel.FileName = model.fileName;
+    fileModel.UploadFileGUID = ret.Item.FileKey;
+    if (this.nodeService.currentParentId > 0) {
+      fileModel.LinkCategoryId = this.nodeService.currentParentId;
+    }
+    this.nodeClickedService.actionCreateFile(fileModel);
+  }
   createNewFolder(input?: string): void {
     if (!this.newFolder) {
       this.newFolder = true;
@@ -107,7 +76,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
   }
 
   newClickedAction(): void {
-    this.uploader.cancelAll();
+    // this.uploader.cancelAll();
     this.closeDialog.emit();
   }
 }

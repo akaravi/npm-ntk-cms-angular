@@ -24,8 +24,8 @@
     "@ngrx/store": "^9.2.0",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
-    "fine-uploader": "^5.16.2",
     "ng-packagr": "^11.0.3",
+    "ngx-awesome-uploader": "^10.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
