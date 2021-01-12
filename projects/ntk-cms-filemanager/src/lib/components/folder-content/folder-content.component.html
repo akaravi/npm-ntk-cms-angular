@@ -1,6 +1,6 @@
 <div class="item-holder" *ngIf="nodes">
   <ng-container *ngIf="nodes.id !== 0">
-    <app-node [node]="nodes" id="{{ nodes.id }}">
+    <app-node [node]="nodes" id="{{ nodes.id }}" (click)="onActionBack(nodes)" >
       <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="folderContentBackTemplate">
       </ng-container>
     </app-node>

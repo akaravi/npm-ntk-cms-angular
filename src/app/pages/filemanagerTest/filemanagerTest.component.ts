@@ -39,7 +39,7 @@ export class FileManagerTestComponent {
         searchFiles: 'FileCategory/GetAll',
       },
       options: {
-        allowFolderDownload: DownloadModeEnum.DOWNLOAD_ALL,
+        allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,

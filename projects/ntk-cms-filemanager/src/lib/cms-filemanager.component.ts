@@ -275,6 +275,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   handleUploadDialog(event: any): void {
+
     this.newDialog = event;
   }
 

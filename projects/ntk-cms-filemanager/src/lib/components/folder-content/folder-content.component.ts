@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 import {NodeService} from '../../services/node.service';
 import {NodeInterface} from '../../interfaces/node.interface';
-import {FileManagerStoreService} from '../../services/file-manager-store.service';
+import {FileManagerStoreService, SET_PARENT} from '../../services/file-manager-store.service';
 
 @Component({
   selector: 'app-folder-content',
@@ -30,6 +30,11 @@ export class FolderContentComponent implements OnInit {
       // debugger;
       this.nodes = this.nodeService.findFolderById(parentId);
       });
+  }
+
+  onActionBack(node : NodeInterface): void {
+    this.store.dispatch({type: SET_PARENT, payload: node.parentId });
+
   }
 
   newClickedAction(): void {
