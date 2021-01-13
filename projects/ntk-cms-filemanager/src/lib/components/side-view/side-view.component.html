@@ -3,7 +3,9 @@
     <i (click)="onClick($event, 'closeSideView')" class="fas fa-times side-view-close"></i>
 
     <div class="side-view-preview-title">{{node.name}}</div>
-
+    <div *ngIf="AllowViewImage(node)" class="side-view-preview-content">
+      <img src="{{node.downloadLinksrc}}" loading="lazy" alt="..."  class="mb-3" style="max-width: -webkit-fill-available">
+    </div>
     <div class="side-view-preview-content">
       <ng-container
         [ngTemplateOutletContext]="{$implicit: node}"

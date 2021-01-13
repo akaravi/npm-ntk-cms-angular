@@ -11,7 +11,7 @@ import {
 } from './file-manager-store.service';
 import { BaseService } from './base.service';
 import { map } from 'rxjs/operators';
-import { ErrorExceptionResult, FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
+import { FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } from 'ntk-cms-api';
 
 @Injectable({
   providedIn: 'root',
@@ -107,16 +107,28 @@ export class NodeService extends BaseService {
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
             data.ListItems.forEach((x) => {
-              const row = {
-                id: x.Id,
-                parentId: x.LinkCategoryId,
-                isFolder: false,
-                isExpanded: false,
-                name: x.FileName || x.Id,
-                downloadLinksrc: x.DownloadLinksrc,
-                children: [],
-              } as NodeInterface;
-              retOut.push(row);
+              if (
+                !x.Extension ||
+                x.Extension.length === 0 ||
+                !this.tree.config.options.showSelectFileType ||
+                this.tree.config.options.showSelectFileType.length === 0 ||
+                this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === x.Extension.toLowerCase())
+              ) {
+                const row = {
+                  id: x.Id,
+                  parentId: x.LinkCategoryId,
+                  CreatedDate: x.CreatedDate,
+                  UpdatedDate: x.UpdatedDate,
+                  isFolder: false,
+                  isExpanded: false,
+                  name: x.FileName || x.Id,
+                  downloadLinksrc: x.DownloadLinksrc,
+                  children: [],
+                  type: x.Extension,
+                  size: x.FileSize,
+                } as NodeInterface;
+                retOut.push(row);
+              }
             });
           }
           return retOut;
@@ -151,6 +163,8 @@ export class NodeService extends BaseService {
               const row = {
                 id: x.Id,
                 parentId: x.LinkParentId,
+                CreatedDate: x.CreatedDate,
+                UpdatedDate: x.UpdatedDate,
                 isFolder: true,
                 isExpanded: false,
                 name: x.Title || x.Id,
@@ -172,7 +186,7 @@ export class NodeService extends BaseService {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.tree.nodes;
     }
-    if ( !loadChild) {
+    if (!loadChild) {
       return result;
     }
     if (reLoadChild) {

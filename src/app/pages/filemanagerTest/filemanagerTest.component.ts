@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import {
+  ComponentOptionModel,
   ConfigInterface,
   DownloadModeEnum,
   NodeInterface,
   TreeModel,
 } from 'projects/ntk-cms-filemanager/src/public-api';
-
-// import {ConfigInterface, NodeInterface, TreeModel} from '../../projects/file-manager/src/public_api';
-// import {DownloadModeEnum} from '../../projects/file-manager/src/file-manager/enums/download-mode.enum';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +13,9 @@ import {
   styleUrls: ['./filemanagerTest.component.scss'],
 })
 export class FileManagerTestComponent {
-  tree: TreeModel;
-  node: NodeInterface;
+  tree1: TreeModel;
+  tree2: TreeModel;
+  // node: NodeInterface;
   appLanguage = 'fa';
 
   constructor() {
@@ -43,16 +42,31 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
+        showSelectFileType: []
       },
     };
 
-    this.tree = new TreeModel(treeConfig);
-    this.node = this.tree.nodes;
+    this.tree1 = new TreeModel(treeConfig);
+    this.tree2 = new TreeModel();
+    this.tree2.config.options.showSelectFileType = ['png', 'jpg'];
+    // this.node = this.tree.nodes;
   }
-  selected: any;
+  optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
+
+  selected1: any;
+  selected2: any;
   // noinspection JSUnusedLocalSymbols
-  onActionFileSelect(event: any): void {
+  onActionFileSelect1(event: any): void {
     console.log(event);
-    this.selected = event;
+    this.selected1 = event;
+  }
+  onActionFileSelect2(event: any): void {
+    console.log(event);
+    this.selected2 = event;
+  }
+  onActionOpen(status: boolean): void {
+    if (this.optionsFileManager.childMethods) {
+      this.optionsFileManager.childMethods.ActionOpen(status);
+    }
   }
 }

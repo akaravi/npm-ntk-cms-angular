@@ -134,9 +134,31 @@
   </div>
 </ng-template>
 <ng-template let-node #defaultSideViewTemplate>
-  <div style="position: absolute; bottom: 0; width: 100%; margin: 5px auto">
-    <span *ngIf="node.isFolder">{{'filemanager.no_data' | translate}}</span>
-    <span *ngIf="!node.isFolder">{{'filemanager.no_data' | translate}}</span>
+  <div *ngIf="node.isFolder" style="position: absolute; bottom: 0; width: 100%; margin: 5px auto">
+    <span>
+      {{'filemanager.created_date' | translate}}: {{node.CreatedDate}}
+    </span>
+    <br/>
+    <span *ngIf="node.UpdatedDate">
+      {{'filemanager.updated_date' | translate}}: {{node.UpdatedDate}}
+    </span>
+  </div>
+  <div *ngIf="!node.isFolder" style="position: absolute; bottom: 0; width: 100%; margin: 5px auto">
+    <span>
+      {{'filemanager.created_date' | translate}}: {{node.CreatedDate}}
+    </span>
+    <br/>
+    <span *ngIf="node.UpdatedDate">
+      {{'filemanager.updated_date' | translate}}: {{node.UpdatedDate}}
+    </span>
+    <br/>
+    <span>
+      {{'filemanager.type' | translate}}: {{node.type}}
+    </span>
+    <br/>
+    <span>
+      {{'filemanager.size' | translate}}: {{node.size}}
+    </span>
   </div>
 </ng-template>
 

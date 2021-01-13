@@ -6,6 +6,7 @@ import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
+import { ComponentOptionModel } from './models/componentOptionModel';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -28,6 +29,22 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
+
+  private optionsData: ComponentOptionModel = new ComponentOptionModel();
+  @Output() optionsChange: EventEmitter<ComponentOptionModel> = new EventEmitter<ComponentOptionModel>();
+  @Input() set options(model: ComponentOptionModel) {
+    if (!model) {
+      model = new ComponentOptionModel();
+    }
+    this.optionsData = model;
+    this.optionsData.childMethods = {
+      ActionOpen: (status: boolean) => this.onActionOpen(status),
+    };
+    this.optionsChange.emit(model);
+  }
+  get options(): ComponentOptionModel {
+    return this.optionsData;
+  }
 
   openFilemanagerButtonLabel: string;
   private _language = 'en';
@@ -57,7 +74,9 @@ export class CmsFileManagerComponent implements OnInit {
     translate.setDefaultLang('fa');
     translate.use('fa');
   }
-
+  onActionOpen(status: boolean): void {
+    this.fmOpen = status;
+  }
   ngOnInit(): void {
     this.nodeService.tree = this.tree;
     this.nodeClickedService.tree = this.tree;
@@ -276,7 +295,6 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   handleUploadDialog(event: any): void {
-
     this.newDialog = event;
   }
 

@@ -1,4 +1,10 @@
 test file manager
-<cms-file-manager (itemSelected)="onActionFileSelect($event)" [language]="appLanguage" [isPopup]="true" [tree]="tree"
+<cms-file-manager (itemSelected)="onActionFileSelect1($event)" [language]="appLanguage" [isPopup]="true" [tree]="tree1"
 [openFilemanagerButtonLabelKey]="'hello.test'"></cms-file-manager>
-{{selected|json}}
+{{selected1|json}}
+
+<cms-file-manager (itemSelected)="onActionFileSelect2($event)" [(options)]="optionsFileManager" [language]="appLanguage" [isPopup]="true" [tree]="tree2"
+[openFilemanagerButtonLabelKey]="'Select 2'"></cms-file-manager>
+{{selected2|json}}
+<button (click)="onActionOpen(true)"> test Button </button>
+{{optionsFileManager|json}}
