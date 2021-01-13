@@ -8,7 +8,7 @@
     <div class="fmModalInside">
       <div *ngIf="fmOpen; then showContent"></div>
       <div class="buttons-panel">
-        <button class="button big" (click)="confirmSelection()" [disabled]="!selectedNode || (selectedNode.isFolder && !tree.config.options.showSelectFolder ) || (!selectedNode.isFolder && !tree.config.options.showSelectFile)">{{'filemanager.confirm_selection' | translate}}</button>
+        <button class="button big" (click)="confirmSelection()" [disabled]="!allowConfirmSelection(selectedNode)" >{{'filemanager.confirm_selection' | translate}}</button>
         <button class="button big" (click)="cancelSelection()">{{'filemanager.cancel_selection' | translate}}</button>
       </div>
     </div>
@@ -159,6 +159,10 @@
     <span>
       {{'filemanager.size' | translate}}: {{node.size}}
     </span>
+    <br/>
+    <span *ngIf="!nodeService.AllowFileView(selectedNode)" style="color:red;">
+      Only Select : {{tree.config.options.showSelectFileType.join(' - ')}}
+    </span>
   </div>
 </ng-template>
 
@@ -173,9 +177,10 @@
   <p class="rename-name">
     {{'filemanager.new_name' | translate}}
   </p>
-  <input type="text" class="rename-input" [value]="selectedNode.name" #renameInput
+   <input type="text" class="rename-input" [value]="selectedNode.name" #renameInput
          (keyup.enter)="handleFileManagerClickEvent({type: 'rename', value: renameInput.value})">
   <br>
+
 
   <div class="rename-button">
     <button class="button big"

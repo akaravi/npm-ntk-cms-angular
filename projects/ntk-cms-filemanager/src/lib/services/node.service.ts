@@ -84,6 +84,20 @@ export class NodeService extends BaseService {
       params: new HttpParams().set('parentPath', folderId),
     });
   }
+  AllowFileView(model: NodeInterface): boolean {
+    if (
+      !model ||
+      model.isFolder ||
+      !model.type ||
+      model.type.length === 0 ||
+      !this.tree.config.options.showSelectFileType ||
+      this.tree.config.options.showSelectFileType.length === 0 ||
+      this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
+    ) {
+      return true;
+    }
+    return false;
+  }
   private getNodesFilesFromServer(folderId: number): Observable<NodeInterface[]> {
     const filterModel = new FilterModel();
     filterModel.RowPerPage = 100;
@@ -107,28 +121,20 @@ export class NodeService extends BaseService {
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
             data.ListItems.forEach((x) => {
-              if (
-                !x.Extension ||
-                x.Extension.length === 0 ||
-                !this.tree.config.options.showSelectFileType ||
-                this.tree.config.options.showSelectFileType.length === 0 ||
-                this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === x.Extension.toLowerCase())
-              ) {
-                const row = {
-                  id: x.Id,
-                  parentId: x.LinkCategoryId,
-                  CreatedDate: x.CreatedDate,
-                  UpdatedDate: x.UpdatedDate,
-                  isFolder: false,
-                  isExpanded: false,
-                  name: x.FileName || x.Id,
-                  downloadLinksrc: x.DownloadLinksrc,
-                  children: [],
-                  type: x.Extension,
-                  size: x.FileSize,
-                } as NodeInterface;
-                retOut.push(row);
-              }
+              const row = {
+                id: x.Id,
+                parentId: x.LinkCategoryId,
+                CreatedDate: x.CreatedDate,
+                UpdatedDate: x.UpdatedDate,
+                isFolder: false,
+                isExpanded: false,
+                name: x.FileName || x.Id,
+                downloadLinksrc: x.DownloadLinksrc,
+                children: [],
+                type: x.Extension,
+                size: x.FileSize,
+              } as NodeInterface;
+              retOut.push(row);
             });
           }
           return retOut;

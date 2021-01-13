@@ -30,7 +30,7 @@ export class NodeComponent implements OnInit {
       if (this.isSingleClick) {
         this.showMenu();
       }
-    }, 500);
+    }, 200);
   }
 
   // todo event.preventDefault for double click

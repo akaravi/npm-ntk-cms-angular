@@ -66,7 +66,7 @@ export class CmsFileManagerComponent implements OnInit {
 
   constructor(
     private store: FileManagerStoreService,
-    private nodeService: NodeService,
+    public nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
     public ntkSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
@@ -301,6 +301,20 @@ export class CmsFileManagerComponent implements OnInit {
   confirmSelection(): void {
     this.fmOpen = false;
     this.itemSelected.emit(this.selectedNode);
+  }
+  allowConfirmSelection(selectedNode: NodeInterface): boolean {
+    if (
+      !selectedNode ||
+      (selectedNode.isFolder && !this.tree.config.options.showSelectFolder) ||
+      (!selectedNode.isFolder && !this.tree.config.options.showSelectFile)
+    ) {
+      return false;
+    }
+    if (!selectedNode.isFolder && !this.nodeService.AllowFileView(selectedNode)) {
+      return false;
+    }
+
+    return true;
   }
 
   cancelSelection(): void {
