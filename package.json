@@ -24,6 +24,7 @@
     "@ngrx/store": "^9.2.0",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
+    "bootstrap": "^4.5.3",
     "ng-packagr": "^11.0.3",
     "ngx-awesome-uploader": "^10.0.2",
     "ngx-ntk-smart-module": "^1.0.1",

@@ -1,4 +1,4 @@
-import { NtkSmartLoaderComponent } from './ngx-smart-loader.component';
+import { NtkSmartLoaderComponent } from './ntk-smart-loader.component';
 
 export class LoaderInstance {
   public id: string;

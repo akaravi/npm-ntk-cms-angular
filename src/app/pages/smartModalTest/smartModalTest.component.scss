@@ -1,0 +1,30 @@
+.container {
+  > h3 {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+
+.small-p {
+  font-size: .85em;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  a {
+    color: #fff;
+  }
+}
+
+#biig-link {
+  display: block;
+  opacity: .5;
+  margin-top: 10px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
+}

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { NtkSmartLoaderService } from './ngx-smart-loader.service';
-import { NtkSmartLoaderComponent } from './ngx-smart-loader.component';
+import { NtkSmartLoaderService } from './ntk-smart-loader.service';
+import { NtkSmartLoaderComponent } from './ntk-smart-loader.component';
 
 @NgModule({
   declarations: [NtkSmartLoaderComponent],

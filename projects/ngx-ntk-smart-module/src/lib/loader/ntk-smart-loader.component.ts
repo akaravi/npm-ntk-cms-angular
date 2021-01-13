@@ -9,10 +9,10 @@ import {
 } from '@angular/core';
 
 import { LoaderInstance } from './loader-instance';
-import { NtkSmartLoaderService } from './ngx-smart-loader.service';
+import { NtkSmartLoaderService } from './ntk-smart-loader.service';
 
 @Component({
-  selector: 'ngx-smart-loader',
+  selector: 'ntk-smart-loader',
   template: `
     <div class="loader-container {{customClass}}" [ngClass]="{'active': loading}"
          [style.z-index]="layerPosition - 1" *ngIf="visible">

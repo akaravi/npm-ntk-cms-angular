@@ -1,0 +1,69 @@
+<div class="top">
+  <h3>
+    Loading ? : <strong>{{ loader.isLoading(['myLoaderMulti1', 'myLoaderMulti2', 'myLoaderMulti3']) ? 'Yes!' : 'Nope.' }}</strong>
+  </h3>
+</div>
+
+<div class="container">
+  <div class="item">
+    <h3>Loading ? : <strong>{{ loader.isLoading('myLoaderMulti1') ? 'Yes!' : 'Nope.' }}</strong></h3>
+    <ntk-smart-loader identifier="myLoaderMulti1" [delayIn]="2000" [delayOut]="200">
+      <div class="loader">
+        <div class="circle"></div>
+      </div>
+    </ntk-smart-loader>
+  </div>
+
+  <div class="item">
+    <h3>Loading ? : <strong>{{ loader.isLoading('myLoaderMulti2') ? 'Yes!' : 'Nope.' }}</strong></h3>
+    <ntk-smart-loader identifier="myLoaderMulti2" [delayOut]="200">
+      <div class="loader">
+        <div class="circle"></div>
+      </div>
+    </ntk-smart-loader>
+  </div>
+
+  <div class="item">
+    <h3>Loading ? : <strong>{{ loader.isLoading('myLoaderMulti3') ? 'Yes!' : 'Nope.' }}</strong></h3>
+    <ntk-smart-loader identifier="myLoaderMulti3" [delayOut]="200">
+      <div class="loader">
+        <div class="circle"></div>
+      </div>
+    </ntk-smart-loader>
+  </div>
+</div>
+
+<div class="container">
+  <div class="item item-blank">
+    <div class="code-snippet">
+      <pre>
+        <code>{{ code.one }}</code>
+      </pre>
+    </div>
+  </div>
+
+  <div class="item item-blank">
+    <div class="code-snippet">
+      <pre>
+        <code>{{ code.two }}</code>
+      </pre>
+    </div>
+  </div>
+
+  <div class="item item-blank">
+    <div class="code-snippet">
+      <pre>
+        <code>{{ code.three }}</code>
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div class="btn-container">
+  <button (click)="loader.start(['myLoaderMulti1', 'myLoaderMulti2', 'myLoaderMulti3'])">
+    Loading start (actionDelay:0ms)
+  </button>
+  <button (click)="loader.stop(['myLoaderMulti1', 'myLoaderMulti2', 'myLoaderMulti3'])">
+    Loading stop (actionDelay: 0ms,hideDelay: 200ms)
+  </button>
+</div>

@@ -373,41 +373,21 @@
   <h2>Pages</h2>
   <p>Test npm:</p>
 
-  <div class="card-container" style="background-color: #888; width: fit-content">
-    <router-outlet></router-outlet>
-  </div>
 
   <div class="card-container">
-    <a class="card" rel="noopener" routerLink="filemanager">
+    <a *ngFor="let item of items" class="card" rel="noopener" routerLink="{{item.link}}">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
       </svg>
 
-      <span>File Manager Test</span>
+      <span>{{item.title}}</span>
     </a>
-    <a class="card" rel="noopener" routerLink="fileuploader">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-      </svg>
 
-      <span>File Uploader Test</span>
-    </a>
-    <a class="card" rel="noopener" routerLink="apitest">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-      </svg>
-
-      <span>Api Test</span>
-    </a>
-    <a class="card" rel="noopener" routerLink="test">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-      </svg>
-
-      <span>Test</span>
-    </a>
   </div>
 
+  <div class="card-container" style="background-color: #888; width: max-content">
+    <router-outlet></router-outlet>
+  </div>
   <!-- Footer -->
   <footer>
     Love Angular?&nbsp;

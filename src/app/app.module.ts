@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-modal/src/public-api';
+import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 
 @NgModule({
   declarations: [
