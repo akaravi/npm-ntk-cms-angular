@@ -48,7 +48,6 @@ export class UploadComponent implements OnInit {
     console.log('onFileAdded', model);
   }
   onUploadSuccess(model: FilePreviewModel): void {
-    console.log('onUploadSuccess', model);
     if (!model.uploadResponse) {
     }
     const ret = model.uploadResponse as ErrorExceptionResult<FileUpload>;

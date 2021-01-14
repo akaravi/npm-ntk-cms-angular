@@ -19,7 +19,9 @@
   <div class="content">
     <div class="file-manager-navbar">
       <div class="path">
-        <app-nav-bar></app-nav-bar>
+        <app-nav-bar></app-nav-bar>{{nodeService.tree.config.options.title}}
+
+        ----{{nodeService.tree.config.options.showSelectFileType.join(",")}}
       </div>
 
       <div class="navigation">

@@ -26,6 +26,7 @@ export class TreeModel {
       searchFiles: 'FileCategory/GetAll',
     },
     options: {
+      title: 'Select File',
       allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
       showFilesInsideTree: false,
       showSelectFile: true,
@@ -34,7 +35,6 @@ export class TreeModel {
     },
   };
   constructor(config: ConfigInterface = null) {
-    // this._currentPath = config.startingFolder; // todo implement (config.interfce.ts)
     this._currentPath = 0;
     this.config = config;
     if (!this.config || this.config == null) {
@@ -90,13 +90,4 @@ export class TreeModel {
     this._selectedNodeId = value;
   }
 
-
-  // todo implement (config.interfce.ts)
-  // get isCache(): boolean {
-  //   return this.config.offlineMode;
-  // }
-  //
-  // set isCache(value: boolean) {
-  //   this.config.offlineMode = value;
-  // }
 }

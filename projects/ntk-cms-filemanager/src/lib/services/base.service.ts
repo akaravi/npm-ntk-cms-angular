@@ -2,9 +2,6 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from 'ntk-cms-api';
 
-@Injectable({
-  providedIn: 'root',
-})
 export class BaseService {
   deviceToken = '';
   userToken = '';

@@ -19,7 +19,7 @@ export class FileManagerTestComponent {
   appLanguage = 'fa';
 
   constructor() {
-    const treeConfig: ConfigInterface = {
+    const treeConfig1: ConfigInterface = {
       baseURL: 'https://apicms.ir/api/v1/',
       baseUploadURL: 'https://apifile.ir/api/v1/',
       api: {
@@ -38,18 +38,45 @@ export class FileManagerTestComponent {
         searchFiles: 'FileCategory/GetAll',
       },
       options: {
+        title: 'Hello World 1',
         allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
-        showSelectFileType: []
+        showSelectFileType: ['png'],
+      },
+    };
+    const treeConfig2: ConfigInterface = {
+      baseURL: 'https://apicms.ir/api/v1/',
+      baseUploadURL: 'https://apifile.ir/api/v1/',
+      api: {
+        listFile: 'FileContent/GetAll',
+        listFolder: 'FileCategory/GetAll',
+        uploadFile: 'upload',
+        downloadFile: 'download',
+        deleteFile: 'FileContent',
+        deleteFolder: 'FileCategory',
+        createFolder: 'FileCategory',
+        createFile: 'FileContent',
+        getOneFile: 'FileContent',
+        getOneFolder: 'FileCategory',
+        renameFile: 'FileContent',
+        renameFolder: 'FileCategory',
+        searchFiles: 'FileCategory/GetAll',
+      },
+      options: {
+        title: 'Hello World 2',
+        allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
+        showFilesInsideTree: false,
+        showSelectFile: true,
+        showSelectFolder: false,
+        showSelectFileType: ['jpg'],
       },
     };
 
-    this.tree1 = new TreeModel(treeConfig);
-    this.tree2 = new TreeModel();
-    this.tree2.config.options.showSelectFileType = ['png', 'jpg'];
-    // this.node = this.tree.nodes;
+    this.tree1 = new TreeModel(treeConfig1);
+    this.tree2 = new TreeModel(treeConfig2);
+
   }
   optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
 

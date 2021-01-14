@@ -9,7 +9,6 @@ import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { ComponentOptionModel } from './models/componentOptionModel';
 
 @Component({
-  // tslint:disable-next-line: component-selector
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],

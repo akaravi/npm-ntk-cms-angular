@@ -5,6 +5,7 @@ import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {
   FileManagerStoreService,
+  SET_LOADING_LIST_ID,
   SET_LOADING_STATE,
   SET_PARENT,
   SET_SELECTED_NODE,
@@ -17,17 +18,23 @@ import { FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } fro
   providedIn: 'root',
 })
 export class NodeService extends BaseService {
-  public tree: TreeModel;
-  private privateParentId: number;
   get currentParentId(): number {
     return this.privateParentId;
   }
+
   set currentParentId(value: number) {
     this.privateParentId = value;
   }
+
   constructor(private http: HttpClient, private store: FileManagerStoreService) {
     super();
+    this.loadingListIdLive();
   }
+
+  public tree: TreeModel;
+  private privateParentId: number;
+
+  loadingListId: number[];
 
   // todo ask server to get parent structure
   public startManagerAt(parentId: number): void {
@@ -36,9 +43,18 @@ export class NodeService extends BaseService {
   }
 
   public refreshCurrentPath(): any {
-    this.findFolderById(this.currentParentId).children = [];
+    // debugger;
     this.store.dispatch({ type: SET_PARENT, payload: this.currentParentId });
     this.store.dispatch({ type: SET_LOADING_STATE, payload: true });
+    const children = this.findFolderById(this.currentParentId).children;
+
+    if (!this.loadingListIdCheckAllowRunApi(this.currentParentId)) {
+      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
+      this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+      return;
+    }
+    this.LoadingListIdAdd(this.currentParentId);
+
     // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
@@ -47,8 +63,49 @@ export class NodeService extends BaseService {
         // debugger;
         this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
         this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+        this.loadingListIdRemove(this.currentParentId);
       });
     });
+  }
+
+  LoadingListIdAdd(id: number): void {
+    if (!this.loadingListId) {
+      this.loadingListId = [];
+    }
+    this.loadingListId.push(id);
+    this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+  }
+
+  loadingListIdRemove(id: number): void {
+    if (!this.loadingListId) {
+      this.loadingListId = [];
+      this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+      return;
+    }
+    const index = this.loadingListId.indexOf(id);
+    if (index >= 0) {
+      this.loadingListId = this.loadingListId.splice(index, 0);
+    }
+    this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+  }
+
+  loadingListIdCheckAllowRunApi(id: number): boolean {
+    if (!this.loadingListId || this.loadingListId.length === 0) {
+      return true;
+    }
+    const index = this.loadingListId.indexOf(id);
+    if (index >= 0) {
+      return false;
+    }
+    return true;
+  }
+
+  loadingListIdLive(): void {
+    this.store
+      .getState((state) => state.fileManagerState.loadingListId)
+      .subscribe((data: number[]) => {
+        this.loadingListId = data;
+      });
   }
 
   getNodesFolder(parentId: number): any {
@@ -60,6 +117,7 @@ export class NodeService extends BaseService {
       });
     });
   }
+
   getNodesFile(parentId: number): any {
     return new Promise((resolve) => {
       return this.getNodesFilesFromServer(parentId).subscribe((data: Array<NodeInterface>) => {
@@ -84,6 +142,7 @@ export class NodeService extends BaseService {
       params: new HttpParams().set('parentPath', folderId),
     });
   }
+
   AllowFileView(model: NodeInterface): boolean {
     if (
       !model ||
@@ -98,6 +157,7 @@ export class NodeService extends BaseService {
     }
     return false;
   }
+
   private getNodesFilesFromServer(folderId: number): Observable<NodeInterface[]> {
     const filterModel = new FilterModel();
     filterModel.RowPerPage = 100;
@@ -184,6 +244,7 @@ export class NodeService extends BaseService {
         }),
       );
   }
+
   public SelectFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
     const result = this.findFolderByIdHelper(parentid);
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
@@ -203,7 +264,9 @@ export class NodeService extends BaseService {
     }
     return result;
   }
+
   public findFolderById(parentid: number): NodeInterface {
+    console.log('config', this.tree.config.options.showSelectFileType);
     // debugger;
     const result = this.findFolderByIdHelper(parentid);
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
@@ -215,6 +278,7 @@ export class NodeService extends BaseService {
 
     return result;
   }
+
   public findFolderByIdHelper(id: number, node: NodeInterface = this.tree.nodes): NodeInterface {
     if (node.id === id) {
       return node;

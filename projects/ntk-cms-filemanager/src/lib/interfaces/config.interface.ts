@@ -21,6 +21,7 @@ export interface ConfigInterface {
     searchFiles: string;
   };
   options: {
+    title: string;
     allowFolderDownload: DownloadModeEnum;
     showFilesInsideTree: boolean;
     showSelectFile: boolean;
