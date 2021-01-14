@@ -1,5 +1,5 @@
-<app-node-lister [showFiles]="treeModel.config.options.showFilesInsideTree"
-                 [nodes]="nodes.children">
+<app-node-lister [showFiles]="config?.options?.showFilesInsideTree"
+                 [nodes]="nodes?.children">
   <ng-template let-nodes>
     <ng-container [ngTemplateOutletContext]="{$implicit: nodes}" [ngTemplateOutlet]="templateRef"></ng-container>
   </ng-template>

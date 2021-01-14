@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { NodeInterface } from '../interfaces/node.interface';
 import { NodeService } from './node.service';
@@ -15,7 +14,7 @@ import { NtkSmartModalService } from 'ngx-ntk-smart-module';
   providedIn: 'root',
 })
 export class NodeClickedService extends BaseService {
-  public tree: TreeModel;
+  public serviceTree: TreeModel;
 
   constructor(
     public ntkSmartModalService: NtkSmartModalService,
@@ -31,7 +30,7 @@ export class NodeClickedService extends BaseService {
 
   public actionDeleteFolder(node: NodeInterface): void {
     this.http
-      .delete(this.tree.config.baseURL + this.tree.config.api.deleteFolder + '/' + node.id, {
+      .delete(this.serviceTree.config.baseURL + this.serviceTree.config.api.deleteFolder + '/' + node.id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -48,20 +47,21 @@ export class NodeClickedService extends BaseService {
     //   'Delete',
     //   new HttpParams().append('path', node.id + ''),
     //   'delete',
-    //   this.tree.config.api.deleteFile,
+    //   this.serviceTree.config.api.deleteFile,
     //   () => this.successWithSideViewClose(),
     // );
   }
   public actionDeleteFile(node: NodeInterface): void {
     this.http
-      .delete(this.tree.config.baseURL + this.tree.config.api.deleteFile + '/' + node.id, {
+      .delete(this.serviceTree.config.baseURL + this.serviceTree.config.api.deleteFile + '/' + node.id, {
         headers: this.getHeaders(),
       })
       .pipe(
         map((ret) => {
           const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
         }),
-      ).subscribe(
+      )
+      .subscribe(
         (a) => this.successWithSideViewClose(),
         (err) => this.actionFailed('actionDeleteFile', err),
       );
@@ -70,7 +70,7 @@ export class NodeClickedService extends BaseService {
     //   'Delete',
     //   new HttpParams().append('path', node.id + ''),
     //   'delete',
-    //   this.tree.config.api.deleteFile,
+    //   this.serviceTree.config.api.deleteFile,
     //   () => this.successWithSideViewClose(),
     // );
   }
@@ -80,7 +80,7 @@ export class NodeClickedService extends BaseService {
     //   'Search',
     //   new HttpParams().append('query', input),
     //   'get',
-    //   this.tree.config.api.searchFiles,
+    //   this.serviceTree.config.api.searchFiles,
     //   (res) => this.searchSuccess(input, res),
     // );
   }
@@ -92,18 +92,18 @@ export class NodeClickedService extends BaseService {
       model.LinkParentId = currentParent;
     }
     this.http
-      .post(this.tree.config.baseURL + this.tree.config.api.createFolder, model, {
+      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.createFolder, model, {
         headers: this.getHeaders(),
       })
       .pipe(
         map((ret) => {
           const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
         }),
-      ).subscribe(
+      )
+      .subscribe(
         (a) => this.successWithSideViewClose(),
         (err) => this.actionFailed('actionCreateFolder', err),
       );
-
 
     // this.sideEffectHelper(
     //   'Create Folder',
@@ -117,13 +117,13 @@ export class NodeClickedService extends BaseService {
     //     return httpParams;
     //   })(),
     //   'post',
-    //   this.tree.config.api.createFolder,
+    //   this.serviceTree.config.api.createFolder,
     // );
   }
 
   public actionRenameFolder(id: number, newName: string): void {
     this.http
-      .get(this.tree.config.baseURL + this.tree.config.api.getOneFolder + '/' + id, {
+      .get(this.serviceTree.config.baseURL + this.serviceTree.config.api.getOneFolder + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -134,20 +134,21 @@ export class NodeClickedService extends BaseService {
       .toPromise()
       .then((retExc) => {
         if (!retExc.IsSuccess) {
-           this.actionFailed('actionRenameFolder', retExc.ErrorMessage);
+          this.actionFailed('actionRenameFolder', retExc.ErrorMessage);
           return;
         }
 
         retExc.Item.Title = newName;
         this.http
-          .put(this.tree.config.baseURL + this.tree.config.api.renameFolder, retExc.Item, {
+          .put(this.serviceTree.config.baseURL + this.serviceTree.config.api.renameFolder, retExc.Item, {
             headers: this.getHeaders(),
           })
           .pipe(
             map((ret) => {
               return this.errorExceptionResultCheck<FileCategoryModel>(ret);
             }),
-          ).subscribe(
+          )
+          .subscribe(
             (a) => this.successWithSideViewClose(),
             (err) => this.actionFailed('actionRenameFolder', err),
           );
@@ -155,7 +156,7 @@ export class NodeClickedService extends BaseService {
   }
   public actionRenameFile(id: number, newName: string): void {
     this.http
-      .get(this.tree.config.baseURL + this.tree.config.api.getOneFile + '/' + id, {
+      .get(this.serviceTree.config.baseURL + this.serviceTree.config.api.getOneFile + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -172,14 +173,15 @@ export class NodeClickedService extends BaseService {
 
         retExc.Item.FileName = newName;
         this.http
-          .put(this.tree.config.baseURL + this.tree.config.api.renameFile, retExc.Item, {
+          .put(this.serviceTree.config.baseURL + this.serviceTree.config.api.renameFile, retExc.Item, {
             headers: this.getHeaders(),
           })
           .pipe(
             map((ret) => {
               return this.errorExceptionResultCheck<FileContentModel>(ret);
             }),
-          ).subscribe(
+          )
+          .subscribe(
             (a) => this.successWithSideViewClose(),
             (err) => this.actionFailed('actionRenameFile', err),
           );
@@ -187,17 +189,18 @@ export class NodeClickedService extends BaseService {
   }
   public actionCreateFile(model: FileContentModel): void {
     this.http
-    .post(this.tree.config.baseURL + this.tree.config.api.createFile, model, {
-      headers: this.getHeaders(),
-    })
-    .pipe(
-      map((ret) => {
-        const retExc = this.errorExceptionResultCheck<FileContentModel>(ret);
-      }),
-    ).subscribe(
-      (a) => {},
-      (err) => this.actionFailed('actionCreateFolder', err),
-    );
+      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.createFile, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        map((ret) => {
+          const retExc = this.errorExceptionResultCheck<FileContentModel>(ret);
+        }),
+      )
+      .subscribe(
+        (a) => {},
+        (err) => this.actionFailed('actionCreateFolder', err),
+      );
   }
 
   private successWithSideViewClose(): void {
@@ -214,15 +217,23 @@ export class NodeClickedService extends BaseService {
     this.actionSuccess();
 
     this.ntkSmartModalService.setModalData(obj, 'searchModal', true);
-    this.ntkSmartModalService.getModal('searchModal').open();
+    const mod = this.ntkSmartModalService.getModal('searchModal');
+    if (!mod) {
+      return;
+    }
+    mod.open();
   }
 
   private actionSuccess(response: string = ''): void {
+    this.nodeService.SelectFolderById(this.nodeService.currentParentId, true, true);
     document.body.classList.remove('dialog-open');
     this.nodeService.refreshCurrentPath();
 
     const modal = this.ntkSmartModalService.getModal('waitModal');
-    // modal.onOpenFinished.pipe(first()).subscribe(() => modal.close());  //todo : karavi old ver
+    if (!modal) {
+      return;
+    }
+
     modal.onCloseFinished.pipe(first()).subscribe(() => modal.close());
 
     modal.close();

@@ -18,6 +18,14 @@ import { FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } fro
   providedIn: 'root',
 })
 export class NodeService extends BaseService {
+  private S4(): string {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  }
+  newGuid() {
+    const isString = `${this.S4()}${this.S4()}-${this.S4()}-${this.S4()}-${this.S4()}-${this.S4()}${this.S4()}${this.S4()}`;
+
+    return isString;
+  }
   get currentParentId(): number {
     return this.privateParentId;
   }
@@ -25,13 +33,16 @@ export class NodeService extends BaseService {
   set currentParentId(value: number) {
     this.privateParentId = value;
   }
-
+  private guid = '';
   constructor(private http: HttpClient, private store: FileManagerStoreService) {
     super();
     this.loadingListIdLive();
+    this.guid = this.newGuid();
+    // console.log('constructor', this.guid);
+
   }
 
-  public tree: TreeModel;
+  public serviceTree: TreeModel;
   private privateParentId: number;
 
   loadingListId: number[];
@@ -49,7 +60,7 @@ export class NodeService extends BaseService {
     const children = this.findFolderById(this.currentParentId).children;
 
     if (!this.loadingListIdCheckAllowRunApi(this.currentParentId)) {
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
+      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
       this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
       return;
     }
@@ -58,10 +69,10 @@ export class NodeService extends BaseService {
     // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
+      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
       this.getNodesFile(this.currentParentId).then(() => {
         // debugger;
-        this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.tree.nodes });
+        this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
         this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
         this.loadingListIdRemove(this.currentParentId);
       });
@@ -138,25 +149,11 @@ export class NodeService extends BaseService {
     let folderId: any = this.findFolderById(parentId).id;
     folderId = folderId === 0 ? '' : folderId;
 
-    return this.http.post(this.tree.config.baseURL + this.tree.config.api.listFile, {
+    return this.http.post(this.serviceTree.config.baseURL + this.serviceTree.config.api.listFile, {
       params: new HttpParams().set('parentPath', folderId),
     });
   }
 
-  AllowFileView(model: NodeInterface): boolean {
-    if (
-      !model ||
-      model.isFolder ||
-      !model.type ||
-      model.type.length === 0 ||
-      !this.tree.config.options.showSelectFileType ||
-      this.tree.config.options.showSelectFileType.length === 0 ||
-      this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
-    ) {
-      return true;
-    }
-    return false;
-  }
 
   private getNodesFilesFromServer(folderId: number): Observable<NodeInterface[]> {
     const filterModel = new FilterModel();
@@ -172,7 +169,7 @@ export class NodeService extends BaseService {
     filterModel.Filters.push(filter);
 
     return this.http
-      .post(this.tree.config.baseURL + this.tree.config.api.listFile, filterModel, {
+      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.listFile, filterModel, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -216,7 +213,7 @@ export class NodeService extends BaseService {
     filterModel.Filters.push(filter);
     // Category
     return this.http
-      .post(this.tree.config.baseURL + this.tree.config.api.listFolder, filterModel, {
+      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.listFolder, filterModel, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -251,7 +248,7 @@ export class NodeService extends BaseService {
 
     if (result === null) {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
-      return this.tree.nodes;
+      return this.serviceTree.nodes;
     }
     if (!loadChild) {
       return result;
@@ -266,20 +263,19 @@ export class NodeService extends BaseService {
   }
 
   public findFolderById(parentid: number): NodeInterface {
-    console.log('config', this.tree.config.options.showSelectFileType);
     // debugger;
     const result = this.findFolderByIdHelper(parentid);
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
 
     if (result === null) {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
-      return this.tree.nodes;
+      return this.serviceTree.nodes;
     }
 
     return result;
   }
 
-  public findFolderByIdHelper(id: number, node: NodeInterface = this.tree.nodes): NodeInterface {
+  public findFolderByIdHelper(id: number, node: NodeInterface = this.serviceTree.nodes): NodeInterface {
     if (node.id === id) {
       return node;
     }
@@ -315,6 +311,6 @@ export class NodeService extends BaseService {
   }
 
   public foldAll(): void {
-    this.foldRecursively(this.tree.nodes);
+    this.foldRecursively(this.serviceTree.nodes);
   }
 }

@@ -5,7 +5,7 @@ import { DownloadModeEnum } from '../enums/download-mode.enum';
 export class TreeModel {
   private _currentPath: number;
   private _nodes: NodeInterface;
-  private _selectedNodeId: string;
+  private _selectedNodeId: number;
   public config: ConfigInterface;
   private configDefault: ConfigInterface = {
     baseURL: 'https://apicms.ir/api/v1/',
@@ -82,11 +82,11 @@ export class TreeModel {
     this._nodes = value;
   }
 
-  get selectedNodeId(): string {
+  get selectedNodeId(): number {
     return this._selectedNodeId;
   }
 
-  set selectedNodeId(value: string) {
+  set selectedNodeId(value: number) {
     this._selectedNodeId = value;
   }
 

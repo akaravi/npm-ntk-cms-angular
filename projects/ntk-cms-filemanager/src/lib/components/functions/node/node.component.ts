@@ -47,7 +47,7 @@ export class NodeComponent implements OnInit {
   private open(): void {
     // debugger;
     if (!this.node.isFolder) {
-      if (this.nodeService?.tree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
+      if (this.nodeService?.serviceTree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
         this.isSingleClick = true;
         this.showMenu();
         return;

@@ -19,9 +19,9 @@
   <div class="content">
     <div class="file-manager-navbar">
       <div class="path">
-        <app-nav-bar></app-nav-bar>{{nodeService.tree.config.options.title}}
+        <app-nav-bar></app-nav-bar>{{tree.config.options.title}}
 
-        ----{{nodeService.tree.config.options.showSelectFileType.join(",")}}
+         {{tree.config.options.showSelectFileType.join(",")}}
       </div>
 
       <div class="navigation">
@@ -35,7 +35,7 @@
 
     <div class="holder">
       <div class="file-manager-left">
-        <app-tree [treeModel]="tree">
+        <app-tree [treeModel]="nodeService.serviceTree" [config]="tree.config">
           <ng-template let-nodes>
             <ng-container [ngTemplateOutletContext]="{$implicit: nodes}"
                           [ngTemplateOutlet]="iconTemplate ? iconTemplate : defaultIconTemplate">
@@ -162,7 +162,7 @@
       {{'filemanager.size' | translate}}: {{node.size}}
     </span>
     <br/>
-    <span *ngIf="!nodeService.AllowFileView(selectedNode)" style="color:red;">
+    <span *ngIf="!AllowFileView(selectedNode)" style="color:red;">
       Only Select : {{tree.config.options.showSelectFileType.join(' - ')}}
     </span>
   </div>

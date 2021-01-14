@@ -72,13 +72,15 @@ export class CmsFileManagerComponent implements OnInit {
   ) {
     translate.setDefaultLang('fa');
     translate.use('fa');
+    // console.log('CmsFileManagerComponent', this.nodeService.newGuid());
+
   }
   onActionOpen(status: boolean): void {
     this.fmOpen = status;
   }
   ngOnInit(): void {
-    this.nodeService.tree = this.tree;
-    this.nodeClickedService.tree = this.tree;
+    this.nodeService.serviceTree = this.tree;
+    this.nodeClickedService.serviceTree = this.tree;
 
     this.nodeService.startManagerAt(this.tree.currentPath);
     // this.nodeService.getNodes(this.tree.currentPath).then(() => {
@@ -258,7 +260,7 @@ export class CmsFileManagerComponent implements OnInit {
 
     const parentElement = this.getElementById(pathToParent, 'tree_');
     if (!parentElement) {
-      console.warn('[File Manager] failed to find requested parent node for path:', pathToParent);
+      // console.warn('[File Manager] failed to find requested parent node for path:', pathToParent);
       return;
     }
 
@@ -309,7 +311,7 @@ export class CmsFileManagerComponent implements OnInit {
     ) {
       return false;
     }
-    if (!selectedNode.isFolder && !this.nodeService.AllowFileView(selectedNode)) {
+    if (!selectedNode.isFolder && !this.AllowFileView(selectedNode)) {
       return false;
     }
 
@@ -318,5 +320,20 @@ export class CmsFileManagerComponent implements OnInit {
 
   cancelSelection(): void {
     this.fmOpen = false;
+  }
+
+  AllowFileView(model: NodeInterface): boolean {
+    if (
+      !model ||
+      model.isFolder ||
+      !model.type ||
+      model.type.length === 0 ||
+      !this.tree.config.options.showSelectFileType ||
+      this.tree.config.options.showSelectFileType.length === 0 ||
+      this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
+    ) {
+      return true;
+    }
+    return false;
   }
 }

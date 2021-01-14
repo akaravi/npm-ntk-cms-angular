@@ -10,7 +10,7 @@
         class="node-lister"
         *ngIf="node?.children?.length > 0"
         [showFiles]="showFiles"
-        [nodes]="node.children"
+        [nodes]="node?.children"
       >
         <ng-template let-nodes>
           <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="templateRef">

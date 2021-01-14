@@ -22,7 +22,7 @@ export class FolderContentComponent implements OnInit {
   constructor(private nodeService: NodeService, private store: FileManagerStoreService) {}
 
   ngOnInit(): void {
-    this.nodes = this.nodeService.tree.nodes;
+    this.nodes = this.nodeService.serviceTree.nodes;
     this.store
       .getState((state) => state.fileManagerState.parentId)
       .subscribe((parentId: number) => {

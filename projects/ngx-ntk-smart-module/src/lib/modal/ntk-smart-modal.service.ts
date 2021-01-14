@@ -35,10 +35,17 @@ export class NtkSmartModalService {
    *
    * @param id The modal identifier used at creation time.
    */
-  public getModal(id: string): NtkSmartModalComponent {
-    return this.modalStack.filter((o: any) => {
+  public getModal(id: string): NtkSmartModalComponent | null {
+    if (!this.modalStack || this.modalStack.length === 0) {
+      return null;
+    }
+    const ret = this.modalStack.filter((o: any) => {
       return o.id === id;
-    })[0].modal;
+    })[0];
+    if (!ret) {
+      return null;
+    }
+    return ret.modal;
   }
 
   /**

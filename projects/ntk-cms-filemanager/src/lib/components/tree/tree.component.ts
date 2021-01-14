@@ -4,6 +4,7 @@ import { TreeModel } from '../../models/tree.model';
 import { NodeService } from '../../services/node.service';
 import { first } from 'rxjs/operators';
 import { FileManagerStoreService, SET_SELECTED_NODE } from '../../services/file-manager-store.service';
+import { ConfigInterface } from 'projects/ntk-cms-filemanager/src/public-api';
 
 @Component({
   selector: 'app-tree',
@@ -14,6 +15,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
   @ContentChild(TemplateRef, { static: false }) templateRef: TemplateRef<any>;
 
   @Input() treeModel: TreeModel;
+  @Input() config: ConfigInterface;
 
   nodes: NodeInterface;
   currentTreeLevel = 0;
@@ -22,12 +24,10 @@ export class TreeComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.nodes = this.treeModel.nodes;
-
     // todo move this store to proper place
     this.store
       .getState((state) => state.fileManagerState.parentId)
       .subscribe((parentId: number) => {
-        // debugger;
         this.nodeService.SelectFolderById(parentId, true);
         this.currentTreeLevel = this.treeModel.currentPath;
         this.treeModel.currentPath = parentId;
