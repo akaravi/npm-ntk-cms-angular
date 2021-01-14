@@ -1,7 +1,3 @@
-export * from './lib/components/side-view/side-view.component';
-export * from './lib/components/functions/loading-overlay/loading-overlay.component';
-
-
 export * from './lib/models/_export';
 export * from './lib/interfaces/_export';
 export * from './lib/enums/download-mode.enum';
