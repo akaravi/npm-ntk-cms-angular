@@ -4,7 +4,6 @@ import { NodeService } from './node.service';
 import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { first, map } from 'rxjs/operators';
 import { BaseService } from './base.service';
 import { ErrorExceptionResult, FileContentModel, FileCategoryModel } from 'ntk-cms-api';

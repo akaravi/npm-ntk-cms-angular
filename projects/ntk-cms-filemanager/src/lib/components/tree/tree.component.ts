@@ -1,10 +1,10 @@
+import { ConfigInterface } from './../../interfaces/config.interface';
 import { AfterViewInit, Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
 import { NodeInterface } from '../../interfaces/node.interface';
 import { TreeModel } from '../../models/tree.model';
 import { NodeService } from '../../services/node.service';
 import { first } from 'rxjs/operators';
 import { FileManagerStoreService, SET_SELECTED_NODE } from '../../services/file-manager-store.service';
-import { ConfigInterface } from 'projects/ntk-cms-filemanager/src/public-api';
 
 @Component({
   selector: 'app-tree',
