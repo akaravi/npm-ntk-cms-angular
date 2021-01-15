@@ -1,12 +1,12 @@
 <ng-container *ngIf="isPopup; then itIsPopup else showContent"></ng-container>
 
 <ng-template #itIsPopup>
-  <div *ngIf="!fmOpen">
+  <div *ngIf="!openForm">
     <button class="button big" (click)="fmShowHide()">{{openFilemanagerButtonLabel}}</button>
   </div>
-  <div class="file-manager-backdrop" *ngIf="fmOpen">
+  <div class="file-manager-backdrop" *ngIf="openForm">
     <div class="fmModalInside">
-      <div *ngIf="fmOpen; then showContent"></div>
+      <div *ngIf="openForm; then showContent"></div>
       <div class="buttons-panel">
         <button class="button big" (click)="confirmSelection()" [disabled]="!allowConfirmSelection(selectedNode)" >{{'filemanager.confirm_selection' | translate}}</button>
         <button class="button big" (click)="cancelSelection()">{{'filemanager.cancel_selection' | translate}}</button>

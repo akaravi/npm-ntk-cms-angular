@@ -25,9 +25,21 @@ export class CmsFileManagerComponent implements OnInit {
 
   @Input() tree: TreeModel;
   @Input() isPopup = false;
+
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
+
+  private privateOpenForm = false;
+  @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Input() set openForm(model: boolean) {
+    this.privateOpenForm = model;
+    this.openFormChange.emit(model);
+  }
+  get openForm(): boolean {
+    return this.privateOpenForm;
+  }
 
   private optionsData: ComponentOptionModel = new ComponentOptionModel();
   @Output() optionsChange: EventEmitter<ComponentOptionModel> = new EventEmitter<ComponentOptionModel>();
@@ -59,7 +71,7 @@ export class CmsFileManagerComponent implements OnInit {
   selectedNode: NodeInterface;
   sideMenuClosed = true;
 
-  fmOpen = false;
+  // fmOpen = false;
   loading: boolean;
   newDialog = false;
 
@@ -73,10 +85,9 @@ export class CmsFileManagerComponent implements OnInit {
     translate.setDefaultLang('fa');
     translate.use('fa');
     // console.log('CmsFileManagerComponent', this.nodeService.newGuid());
-
   }
   onActionOpen(status: boolean): void {
-    this.fmOpen = status;
+    this.openForm = status;
   }
   ngOnInit(): void {
     this.nodeService.serviceTree = this.tree;
@@ -286,7 +297,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   fmShowHide(): void {
-    this.fmOpen = !this.fmOpen;
+    this.openForm = !this.openForm;
   }
 
   backdropClicked(): void {
@@ -300,7 +311,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   confirmSelection(): void {
-    this.fmOpen = false;
+    this.openForm = false;
     this.itemSelected.emit(this.selectedNode);
   }
   allowConfirmSelection(selectedNode: NodeInterface): boolean {
@@ -319,7 +330,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   cancelSelection(): void {
-    this.fmOpen = false;
+    this.openForm = false;
   }
 
   AllowFileView(model: NodeInterface): boolean {

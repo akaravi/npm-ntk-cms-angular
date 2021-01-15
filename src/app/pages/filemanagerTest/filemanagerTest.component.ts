@@ -76,18 +76,17 @@ export class FileManagerTestComponent {
 
     this.tree1 = new TreeModel(treeConfig1);
     this.tree2 = new TreeModel(treeConfig2);
-
   }
   optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
-
-  selected1: any;
-  selected2: any;
+  openForm = false;
+  selected1: NodeInterface;
+  selected2: NodeInterface;
   // noinspection JSUnusedLocalSymbols
-  onActionFileSelect1(event: any): void {
+  onActionFileSelect1(event: NodeInterface): void {
     console.log(event);
     this.selected1 = event;
   }
-  onActionFileSelect2(event: any): void {
+  onActionFileSelect2(event: NodeInterface): void {
     console.log(event);
     this.selected2 = event;
   }
@@ -95,5 +94,8 @@ export class FileManagerTestComponent {
     if (this.optionsFileManager.childMethods) {
       this.optionsFileManager.childMethods.ActionOpen(status);
     }
+  }
+  onActionTest() {
+    this.openForm = true;
   }
 }
