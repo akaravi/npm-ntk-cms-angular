@@ -96,6 +96,12 @@ export * from './lib/service/article/_export';
 export * from './lib/models/entity/article/_export';
 // article
 
+
+// member
+export * from './lib/service/member/_export';
+export * from './lib/models/entity/member/_export';
+// member
+
 // news DTO model
 // export class CoreUser extends DataFieldInfoModel {
 // }
