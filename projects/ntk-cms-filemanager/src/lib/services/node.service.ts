@@ -177,7 +177,7 @@ export class NodeService extends BaseService {
           const data = this.errorExceptionResultCheck<FileContentModel>(ret);
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
-            data.ListItems.forEach((x) => {
+            data.ListItems.forEach((x:FileContentModel) => {
               const row = {
                 id: x.Id,
                 parentId: x.LinkCategoryId,
@@ -222,7 +222,7 @@ export class NodeService extends BaseService {
 
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
-            data.ListItems.forEach((x) => {
+            data.ListItems.forEach((x:FileCategoryModel) => {
               const row = {
                 id: x.Id,
                 parentId: x.LinkParentId,
