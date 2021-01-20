@@ -27,6 +27,7 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() isPopup = false;
 
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
+  @Input() openFilemanagerButtonView = true;
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
 

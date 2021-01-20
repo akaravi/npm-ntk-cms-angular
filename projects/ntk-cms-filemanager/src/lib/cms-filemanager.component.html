@@ -2,7 +2,7 @@
 
 <ng-template #itIsPopup>
   <div *ngIf="!openForm">
-    <button class="button big" (click)="fmShowHide()">{{openFilemanagerButtonLabel}}</button>
+    <button class="button big" (click)="fmShowHide()" *ngIf="openFilemanagerButtonView">{{openFilemanagerButtonLabel}}</button>
   </div>
   <div class="file-manager-backdrop" *ngIf="openForm">
     <div class="fmModalInside">
