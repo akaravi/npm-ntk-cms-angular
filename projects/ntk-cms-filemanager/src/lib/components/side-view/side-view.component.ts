@@ -33,6 +33,21 @@ export class SideViewComponent implements OnInit {
 
     return false;
   }
+  AllowPlayMP3(node: NodeInterface): boolean {
+    if (
+      node.isFolder ||
+      !node.type ||
+      node.type.length === 0 ||
+      !node.downloadLinksrc ||
+      node.downloadLinksrc.length === 0
+    ) {
+      return false;
+    }
+    if (node.type.toLowerCase() === 'mp3' ) {
+      return true;
+    }
+    return false;
+  }
   AllowViewImage(node: NodeInterface): boolean {
     if (
       node.isFolder ||
