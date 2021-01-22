@@ -21,7 +21,7 @@
       <div class="path">
         <app-nav-bar></app-nav-bar>{{tree.config.options.title}}
 
-         {{tree.config.options.showSelectFileType.join(",")}}
+         {{selectFileType.join(",")}}
       </div>
 
       <div class="navigation">
@@ -163,7 +163,7 @@
     </span>
     <br/>
     <span *ngIf="!AllowFileView(selectedNode)" style="color:red;">
-      Only Select : {{tree.config.options.showSelectFileType.join(' - ')}}
+      Only Select : {{selectFileType.join(' - ')}}
     </span>
   </div>
 </ng-template>

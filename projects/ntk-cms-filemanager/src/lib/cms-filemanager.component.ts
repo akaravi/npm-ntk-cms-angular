@@ -22,6 +22,7 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() folderContentNewTemplate: TemplateRef<any>;
   @Input() loadingOverlayTemplate: TemplateRef<any>;
   @Input() sideViewTemplate: TemplateRef<any>;
+  @Input() selectFileType: Array<string>;
 
   @Input() tree: TreeModel;
   @Input() isPopup = false;
@@ -340,9 +341,9 @@ export class CmsFileManagerComponent implements OnInit {
       model.isFolder ||
       !model.type ||
       model.type.length === 0 ||
-      !this.tree.config.options.showSelectFileType ||
-      this.tree.config.options.showSelectFileType.length === 0 ||
-      this.tree.config.options.showSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
+      !this.selectFileType ||
+      this.selectFileType.length === 0 ||
+      this.selectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
     ) {
       return true;
     }

@@ -8,7 +8,7 @@ import {
   Input,
   OnDestroy,
 } from '@angular/core';
-import { FlowDirective, Transfer } from '@flowjs/ngx-flow';
+import { AnyARecord } from 'dns';
 import { ErrorExceptionResult, FileUploadedModel } from 'ntk-cms-api';
 import { Subscription } from 'rxjs';
 import { ComponentUploaderOptionModel } from './models/ComponentUploaderOptionModel';
@@ -32,7 +32,6 @@ export class CmsFileUploaderComponent implements OnInit, OnDestroy, AfterViewIni
   private dateOption: ComponentUploaderOptionModel = new ComponentUploaderOptionModel();
 
   @ViewChild('flow', { static: false })
-  flow: FlowDirective;
   autoUploadSubscription: Subscription;
   flowOption: flowjs.FlowOptions;
   uploadViewImage = false;
@@ -40,35 +39,13 @@ export class CmsFileUploaderComponent implements OnInit, OnDestroy, AfterViewIni
     this.flowOption = {
       target: this.dateOption.data.PathApiUpload,
       // tslint:disable-next-line: typedef
-      query(flowFile, flowChunk) {
-        if (flowFile.myparams) {
-          return flowFile.myparams;
-        }
-        // console.log(flowChunk.offset)
 
-        // generate some values
-        flowFile.myparams = {
-          Filename: flowChunk.fileObj.name,
-          Identifier: flowChunk.fileObj.uniqueIdentifier,
-          TotalChunks: flowChunk.fileObj.chunks.length,
-        };
-        return flowFile.myparams;
-      },
       allowDuplicateUploads: false,
     };
   }
 
   ngAfterViewInit(): void {
-    this.autoUploadSubscription = this.flow.events$.subscribe((event) => {
-      switch (event.type) {
-        case 'filesSubmitted':
-          return this.flow.upload();
-        case 'fileSuccess':
-          return this.fileSuccess(event);
-        case 'newFlowJsInstance':
-          return this.cd.detectChanges();
-      }
-    });
+
   }
   fileSuccess(event: any): void {
     if (event && event.event) {
@@ -77,7 +54,6 @@ export class CmsFileUploaderComponent implements OnInit, OnDestroy, AfterViewIni
           fileName: event.event[0].name,
           fileKey: event.event[1],
         };
-        debugger;
         const retUpload = JSON.parse(event.event[1]) as ErrorExceptionResult<FileUploadedModel>;
         retUpload.Item.FileName = event.event[0].name;
         this.dateOption.onActions.onActionSelect(retUpload);
@@ -85,7 +61,7 @@ export class CmsFileUploaderComponent implements OnInit, OnDestroy, AfterViewIni
       }
     }
   }
-  trackTransfer(transfer: Transfer): string {
+  trackTransfer(transfer: any): string {
     return transfer.id;
   }
 

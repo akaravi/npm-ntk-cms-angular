@@ -30,7 +30,6 @@ export class TreeModel {
       allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
       showFilesInsideTree: false,
       showSelectFile: true,
-      showSelectFileType: [],
       showSelectFolder: false,
     },
   };
