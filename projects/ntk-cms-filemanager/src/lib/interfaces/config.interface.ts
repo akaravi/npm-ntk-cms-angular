@@ -25,7 +25,6 @@ export interface ConfigInterface {
     allowFolderDownload: DownloadModeEnum;
     showFilesInsideTree: boolean;
     showSelectFile: boolean;
-    showSelectFileType: string[];
     showSelectFolder: boolean;
   };
 }
