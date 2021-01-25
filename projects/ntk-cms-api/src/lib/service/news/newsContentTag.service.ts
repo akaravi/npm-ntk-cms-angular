@@ -16,9 +16,13 @@ export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel,
     return 'NewsContentTag';
   }
 
-  ServiceSearchTag(model: SearchTagModel): Observable<ErrorExceptionResult<NewsContentTagModel>> {
+
+  ServiceAddBatch(model: NewsContentTagModel[]): Observable<ErrorExceptionResult<NewsContentTagModel>> {
+    if (model == null) {
+      model = [];
+    }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchTag/', model, {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -30,3 +34,6 @@ export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel,
       );
   }
 }
+
+
+

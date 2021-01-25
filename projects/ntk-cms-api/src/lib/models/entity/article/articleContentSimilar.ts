@@ -1,7 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class ArticleContentSimilar extends BaseModuleEntity<number> {
-  Title: string;
+export class ArticleContentSimilar  {
   LinkSourceid: number;
   LinkDestinationid: number;
   // tslint:disable-next-line: variable-name

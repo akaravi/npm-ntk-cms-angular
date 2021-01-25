@@ -16,9 +16,12 @@ export class BiographyContentTagService extends ApiCmsServerBase<BiographyConten
     return 'BiographyContentTag';
   }
 
-  ServiceSearchTag(model: SearchTagModel): Observable<ErrorExceptionResult<BiographyContentTagModel>> {
+  ServiceAddBatch(model: BiographyContentTagModel[]): Observable<ErrorExceptionResult<BiographyContentTagModel>> {
+    if (model == null) {
+      model = [];
+    }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchTag/', model, {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -30,3 +33,4 @@ export class BiographyContentTagService extends ApiCmsServerBase<BiographyConten
       );
   }
 }
+

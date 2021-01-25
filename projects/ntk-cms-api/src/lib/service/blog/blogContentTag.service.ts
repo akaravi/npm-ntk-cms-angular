@@ -16,9 +16,13 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
     return 'BlogContentTag';
   }
 
-  ServiceSearchTag(model: SearchTagModel): Observable<ErrorExceptionResult<BlogContentTagModel>> {
+
+  ServiceAddBatch(model: BlogContentTagModel[]): Observable<ErrorExceptionResult<BlogContentTagModel>> {
+    if (model == null) {
+      model = [];
+    }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchTag/', model, {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -30,3 +34,5 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
       );
   }
 }
+
+

@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class NewsContentTagModel extends BaseModuleEntity<number> {
+export class NewsContentTagModel  {
   LinkContentId: number;
   LinkTagid: number;
   // tslint:disable-next-line: variable-name
