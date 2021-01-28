@@ -32,5 +32,24 @@ export class BiographyContentTagService extends ApiCmsServerBase<BiographyConten
         }),
       );
   }
+  ServiceDeleteBatch(model: BiographyContentTagModel[]): Observable<ErrorExceptionResult<BiographyContentTagModel>> {
+    if (model == null) {
+      model = [];
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteBatch', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
+
+
+
 

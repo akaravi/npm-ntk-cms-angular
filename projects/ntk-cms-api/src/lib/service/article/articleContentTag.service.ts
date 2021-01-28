@@ -33,6 +33,25 @@ export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTag
         }),
       );
   }
+  ServiceDeleteBatch(model: ArticleContentTagModel[]): Observable<ErrorExceptionResult<ArticleContentTagModel>> {
+    if (model == null) {
+      model = [];
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteBatch', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
+
+
+
 
 
