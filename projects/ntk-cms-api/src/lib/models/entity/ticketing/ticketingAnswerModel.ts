@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../coreMain/coreUserModel';
-import { MemberUser } from '../member/memberUser';
+import { MemberUser } from '../member/memberUserModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';
 import { TicketingTaskModel } from './ticketingTaskModel';

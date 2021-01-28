@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { NewsContentSimilar } from '../../models/entity/news/newsContentSimilar';
+import { NewsContentSimilar } from '../../models/entity/news/newsContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

@@ -1,7 +1,7 @@
 import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class MemberUser extends BaseModuleEntity<number> {
+export class MemberUserModel extends BaseModuleEntity<number> {
   linkCmsUserId?: number;
   deviceId: string;
   joinId: string;

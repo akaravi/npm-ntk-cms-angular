@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BlogContentSimilar } from '../../models/entity/blog/blogContentSimilar';
+import { BlogContentSimilar } from '../../models/entity/blog/blogContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';

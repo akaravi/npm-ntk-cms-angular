@@ -1,1 +1,1 @@
-export * from './memberUser';
+export * from './memberUserModel';

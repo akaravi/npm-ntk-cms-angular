@@ -2,7 +2,7 @@ import { EnumTicketingDepartemenPriority } from '../../enums/enumTicketingDepart
 import { EnumTicketStatus } from '../../enums/enumTicketStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../coreMain/coreUserModel';
-import { MemberUser } from '../member/memberUser';
+import { MemberUser } from '../member/memberUserModel';
 import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 

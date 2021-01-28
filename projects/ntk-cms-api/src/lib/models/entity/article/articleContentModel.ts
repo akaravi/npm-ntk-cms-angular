@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { ArticleCategoryModel } from './articleCategoryModel';
 import { ArticleContentTagModel } from './articleContentTagModel';
-import { ArticleContentSimilar } from './articleContentSimilar';
+import { ArticleContentSimilar } from './articleContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ArticleCommentModel } from './articleCommentModel';
 

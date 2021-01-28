@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BiographyCategoryModel } from './biographyCategoryModel';
 import { BiographyContentTagModel } from './biographyContentTagModel';
-import { BiographyContentSimilar } from './biographyContentSimilar';
+import { BiographyContentSimilar } from './biographyContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyCommentModel } from './biographyCommentModel';
 

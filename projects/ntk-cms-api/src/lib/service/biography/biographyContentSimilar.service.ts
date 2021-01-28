@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BiographyContentSimilar } from '../../models/entity/biography/biographyContentSimilar';
+import { BiographyContentSimilar } from '../../models/entity/biography/biographyContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

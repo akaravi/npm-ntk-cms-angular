@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { NewsCategoryModel } from './newsCategoryModel';
 import { NewsContentTagModel } from './newsContentTagModel';
-import { NewsContentSimilar } from './newsContentSimilar';
+import { NewsContentSimilar } from './newsContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsCommentModel } from './newsCommentModel';
 

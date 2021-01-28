@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BlogCategoryModel } from './blogCategoryModel';
 import { BlogContentTagModel } from './blogContentTagModel';
-import { BlogContentSimilar } from './blogContentSimilar';
+import { BlogContentSimilar } from './blogContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BlogCommentModel } from './blogCommentModel';
 

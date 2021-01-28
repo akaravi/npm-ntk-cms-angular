@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { MemberUser } from '../../models/entity/member/memberUser';
+import { MemberUser } from '../../models/entity/member/memberUserModel';
 
 import { Injectable } from '@angular/core';
 
