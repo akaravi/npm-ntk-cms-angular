@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../coreMain/coreUserModel';
-import { MemberUser } from '../member/memberUserModel';
+import { MemberUserModel } from '../member/memberUserModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
@@ -23,6 +23,6 @@ export class TicketingAnswerModel extends BaseModuleEntity<number> {
   LinkFileIds: string;
   LinkFileIdsSrc: string[];
   UploadFileGUID: string[];
-  ModuleCoreCreatedBy:CoreUserModel;
-  ModuleCoreMemberUserId:MemberUser;
+  ModuleCoreCreatedBy: CoreUserModel;
+  ModuleCoreMemberUserId: MemberUserModel;
 }

@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BlogCategoryModel } from './blogCategoryModel';
 import { BlogContentTagModel } from './blogContentTagModel';
-import { BlogContentSimilar } from './blogContentSimilarModel';
+import { BlogContentSimilarModel} from './blogContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BlogCommentModel } from './blogCommentModel';
 
@@ -32,7 +32,7 @@ export class BlogContentModel extends BaseModuleEntity<number> {
   virtual_Category: BlogCategoryModel;
   Category: BlogCategoryModel;
   ContentTags: BlogContentTagModel[];
-  Similars: BlogContentSimilar[];
+  Similars: BlogContentSimilarModel[];
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;

@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BiographyContentSimilar } from '../../models/entity/biography/biographyContentSimilarModel';
+import { BiographyContentSimilarModel } from '../../models/entity/biography/biographyContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,13 +8,13 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class BiographyContentSimilarService extends ApiCmsServerBase<BiographyContentSimilar, number>  {
+export class BiographyContentSimilarService extends ApiCmsServerBase<BiographyContentSimilarModel, number>  {
 
 
   getModuleCotrolerUrl(): string {
     return 'BiographyContentSimilar';
   }
-  ServiceAddBatch(model: BiographyContentSimilar[]): Observable<ErrorExceptionResult<BiographyContentSimilar>> {
+  ServiceAddBatch(model: BiographyContentSimilarModel[]): Observable<ErrorExceptionResult<BiographyContentSimilarModel>> {
     if (model == null) {
       model = [];
     }

@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { ArticleCategoryModel } from './articleCategoryModel';
 import { ArticleContentTagModel } from './articleContentTagModel';
-import { ArticleContentSimilar } from './articleContentSimilarModel';
+import { ArticleContentSimilarModel } from './articleContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ArticleCommentModel } from './articleCommentModel';
 
@@ -32,7 +32,7 @@ export class ArticleContentModel extends BaseModuleEntity<number> {
   virtual_Category: ArticleCategoryModel;
   Category: ArticleCategoryModel;
   ContentTags: ArticleContentTagModel[];
-  Similars: ArticleContentSimilar[];
+  Similars: ArticleContentSimilarModel[];
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;

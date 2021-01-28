@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BlogContentSimilar } from '../../models/entity/blog/blogContentSimilarModel';
+import { BlogContentSimilarModel } from '../../models/entity/blog/blogContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -8,13 +8,13 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class BlogContentSimilarService extends ApiCmsServerBase<BlogContentSimilar, number>  {
+export class BlogContentSimilarService extends ApiCmsServerBase<BlogContentSimilarModel, number>  {
 
 
   getModuleCotrolerUrl(): string {
     return 'BlogContentSimilar';
   }
-  ServiceAddBatch(model: BlogContentSimilar[]): Observable<ErrorExceptionResult<BlogContentSimilar>> {
+  ServiceAddBatch(model: BlogContentSimilarModel[]): Observable<ErrorExceptionResult<BlogContentSimilarModel>> {
     if (model == null) {
       model = [];
     }

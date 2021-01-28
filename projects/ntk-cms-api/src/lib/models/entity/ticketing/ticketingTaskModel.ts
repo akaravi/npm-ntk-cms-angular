@@ -2,7 +2,7 @@ import { EnumTicketingDepartemenPriority } from '../../enums/enumTicketingDepart
 import { EnumTicketStatus } from '../../enums/enumTicketStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../coreMain/coreUserModel';
-import { MemberUser } from '../member/memberUserModel';
+import { MemberUserModel } from '../member/memberUserModel';
 import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 
@@ -29,7 +29,7 @@ export class TicketingTaskModel extends BaseModuleEntity<number>  {
   LinkFileIds: string;
   LinkFileIdsSrc: string[];
   UploadFileGUID: string[];
-  ModuleCoreCreatedBy:CoreUserModel;
-  ModuleCoreMemberUserId:MemberUser;
+  ModuleCoreCreatedBy: CoreUserModel;
+  ModuleCoreMemberUserId: MemberUserModel;
 }
 

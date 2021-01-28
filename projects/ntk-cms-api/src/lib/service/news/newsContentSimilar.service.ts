@@ -1,5 +1,5 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { NewsContentSimilar } from '../../models/entity/news/newsContentSimilarModel';
+import { NewsContentSimilarModel } from '../../models/entity/news/newsContentSimilarModel';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,13 +8,13 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 @Injectable()
-export class NewsContentSimilarService extends ApiCmsServerBase<NewsContentSimilar, number>  {
+export class NewsContentSimilarService extends ApiCmsServerBase<NewsContentSimilarModel, number>  {
 
 
   getModuleCotrolerUrl(): string {
     return 'NewsContentSimilar';
   }
-  ServiceAddBatch(model: NewsContentSimilar[]): Observable<ErrorExceptionResult<NewsContentSimilar>> {
+  ServiceAddBatch(model: NewsContentSimilarModel[]): Observable<ErrorExceptionResult<NewsContentSimilarModel>> {
     if (model == null) {
       model = [];
     }

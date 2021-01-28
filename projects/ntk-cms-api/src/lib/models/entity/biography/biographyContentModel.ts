@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BiographyCategoryModel } from './biographyCategoryModel';
 import { BiographyContentTagModel } from './biographyContentTagModel';
-import { BiographyContentSimilar } from './biographyContentSimilarModel';
+import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyCommentModel } from './biographyCommentModel';
 
@@ -32,7 +32,7 @@ export class BiographyContentModel extends BaseModuleEntity<number> {
   virtual_Category: BiographyCategoryModel;
   Category: BiographyCategoryModel;
   ContentTags: BiographyContentTagModel[];
-  Similars: BiographyContentSimilar[];
+  Similars: BiographyContentSimilarModel[];
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;
