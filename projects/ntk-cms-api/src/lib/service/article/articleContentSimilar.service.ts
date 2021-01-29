@@ -30,4 +30,23 @@ export class ArticleContentSimilarService extends ApiCmsServerBase<ArticleConten
         }),
       );
   }
+  ServiceDeleteBatch(model: ArticleContentSimilarModel[]): Observable<ErrorExceptionResult<ArticleContentSimilarModel>> {
+    if (model == null) {
+      model = [];
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteBatch', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
+
+
+
