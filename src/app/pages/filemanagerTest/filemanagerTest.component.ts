@@ -43,7 +43,6 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
-        // showSelectFileType: ['png'],
       },
     };
     const treeConfig2: ConfigInterface = {
@@ -70,7 +69,6 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
-        // showSelectFileType: ['jpg'],
       },
     };
 

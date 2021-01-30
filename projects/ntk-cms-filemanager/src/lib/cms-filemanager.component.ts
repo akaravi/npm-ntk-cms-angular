@@ -22,11 +22,14 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() folderContentNewTemplate: TemplateRef<any>;
   @Input() loadingOverlayTemplate: TemplateRef<any>;
   @Input() sideViewTemplate: TemplateRef<any>;
-  @Input() selectFileType: Array<string>;
-
+  @Input() set selectFileType(model: Array<string>) {
+    if (model && model.length > 0) {
+      this.configSelectFileType = model;
+    }
+  }
+  configSelectFileType: Array<string> = [];
   @Input() tree: TreeModel;
   @Input() isPopup = false;
-
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Input() openFilemanagerButtonView = true;
   @Output() itemClicked = new EventEmitter();
@@ -341,9 +344,9 @@ export class CmsFileManagerComponent implements OnInit {
       model.isFolder ||
       !model.type ||
       model.type.length === 0 ||
-      !this.selectFileType ||
-      this.selectFileType.length === 0 ||
-      this.selectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
+      !this.configSelectFileType ||
+      this.configSelectFileType.length === 0 ||
+      this.configSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
     ) {
       return true;
     }

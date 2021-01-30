@@ -46,4 +46,23 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
         }),
       );
   }
+
+  ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<FileCategoryModel>> {
+    return this.http
+      .post(
+        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
+        { Old: OldId, New: NewId },
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
+
