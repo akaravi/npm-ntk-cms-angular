@@ -27,13 +27,14 @@ export class CoreAuthService extends ApiServerBase {
   CurrentTokenInfoBSObs = this.CurrentTokenInfoBS.asObservable();
   userRoles: string[] = [];
   userName = '';
+
   getModuleCotrolerUrl(): string {
     return 'auth';
   }
   SetCurrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('refreshToken');
+      localStorage.removeItem(this.keyUserToken);
+      // localStorage.removeItem('refreshToken');
       return;
     }
     this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
@@ -67,7 +68,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
-      map((ret:any) => {
+      map((ret: any) => {
         return ret;
       }),
     );
@@ -87,7 +88,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
-      map((ret:any) => {
+      map((ret: any) => {
         return ret;
       }),
     );
@@ -96,7 +97,7 @@ export class CoreAuthService extends ApiServerBase {
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signin', model).pipe(
       // catchError(this.handleError)
-      map((ret:any) => {
+      map((ret: any) => {
         if (ret.IsSuccess) {
           this.SetCurrentTokenInfo(ret.Item);
         }

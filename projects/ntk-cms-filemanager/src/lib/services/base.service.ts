@@ -5,6 +5,9 @@ import { ErrorExceptionResult } from 'ntk-cms-api';
 export class BaseService {
   deviceToken = '';
   userToken = '';
+  keyUserToken = 'userToken';
+  keyDeviceToken = 'deviceToken';
+
   getHeaders(): any {
     const headers = { Authorization: this.getUserToken(), DeviceToken: this.getDeviceToken() };
 
@@ -15,7 +18,7 @@ export class BaseService {
     if (this.userToken && this.userToken.length > 0) {
       return this.userToken;
     }
-    const token = localStorage.getItem('userToken');
+    const token = localStorage.getItem(this.keyUserToken);
     if (token && token.length > 0) {
       return token;
     }
@@ -28,7 +31,7 @@ export class BaseService {
     if (this.deviceToken && this.deviceToken.length > 0) {
       return this.deviceToken;
     }
-    const token = localStorage.getItem('deviceToken');
+    const token = localStorage.getItem(this.keyDeviceToken);
     if (token && token.length > 0) {
       return token;
     }

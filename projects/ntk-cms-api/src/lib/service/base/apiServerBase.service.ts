@@ -12,6 +12,8 @@ export class ApiServerBase {
   public userToken = '';
   public deviceToken = '';
   public configApiRetry = 1;
+  keyUserToken = 'userToken';
+  keyDeviceToken = 'deviceToken';
   setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
     localStorage.setItem('baseUrl', url);
@@ -42,7 +44,7 @@ export class ApiServerBase {
 
   getUserToken(): string | null {
     if (this.userToken && this.userToken.length > 0) { return this.userToken; }
-    const token = localStorage.getItem('userToken');
+    const token = localStorage.getItem(this.keyUserToken);
     if (token && token.length > 0) {
       return token;
     }
@@ -53,16 +55,16 @@ export class ApiServerBase {
   }
   getDeviceToken(): string | null {
     if (this.deviceToken && this.deviceToken.length > 0) { return this.deviceToken; }
-    const token = localStorage.getItem('deviceToken');
+    const token = localStorage.getItem(this.keyDeviceToken);
     if (token && token.length > 0) {
       return token;
     }
     return '';
   }
   setToken(userToken: string, deviceToken: string, refreshToken: string): void {
-    localStorage.setItem('userToken', userToken);
-    if (deviceToken && deviceToken.length > 0) { localStorage.setItem('deviceToken', deviceToken); }
-    localStorage.setItem('refreshToken', refreshToken);
+    localStorage.setItem(this.keyUserToken, userToken);
+    if (deviceToken && deviceToken.length > 0) { localStorage.setItem(this.keyDeviceToken, deviceToken); }
+    // localStorage.setItem('refreshToken', refreshToken);
   }
   errorExceptionResultCheck(model: ErrorExceptionResult<any>|any): ErrorExceptionResult<any> {
     if (model) {
