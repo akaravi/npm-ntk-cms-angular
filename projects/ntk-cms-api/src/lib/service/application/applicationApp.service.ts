@@ -15,7 +15,7 @@ import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfo
 @Injectable()
 export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number>  {
   getModuleCotrolerUrl(): string {
-    return 'ApplicationApp';
+    return 'Application';
   }
 
   ServiceScoreClick(model: ApplicationScoreDtoModel): Observable<ErrorExceptionResultBase> {
