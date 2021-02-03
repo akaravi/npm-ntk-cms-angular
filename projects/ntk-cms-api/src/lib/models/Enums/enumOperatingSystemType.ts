@@ -7,5 +7,4 @@ export enum EnumOperatingSystemType {
   GoogleAndroid = 5,
   OxygenOS = 6,
   Chromium = 7
-
 }

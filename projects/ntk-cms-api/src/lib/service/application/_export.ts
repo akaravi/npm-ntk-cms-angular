@@ -1,3 +1,4 @@
+export * from './applicationEnum.service';
 export * from './applicationApp.service';
 export * from './applicationIntro.service';
 export * from './applicationLayout.service';
