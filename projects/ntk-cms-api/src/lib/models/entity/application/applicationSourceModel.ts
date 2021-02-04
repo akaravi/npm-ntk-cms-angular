@@ -37,7 +37,7 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
     BuildKey5Value: string;
     IsPublish: boolean;
     SourceNameGit: string;
-    OsType: EnumOperatingSystemType;
+    OSType: EnumOperatingSystemType;
     UpdateSourceByGit: boolean;
     IsAbilityGradleBuild: boolean;
     FilePathOnServer: string;
