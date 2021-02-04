@@ -13,7 +13,7 @@ export class FilterDataModel {
   PropertyAnyName: string;
   ClauseType: EnumClauseType;
   SearchType: EnumFilterDataModelSearchTypes;
-  StringValue1: string;
+  StringValue: string;
   StringContainValues: string[] = new Array<string>();
   IntValue: number;
   IntContainValues: number[] = new Array<number>();
