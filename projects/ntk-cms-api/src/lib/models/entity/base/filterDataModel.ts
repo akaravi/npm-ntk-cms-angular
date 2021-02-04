@@ -19,10 +19,10 @@ export class FilterDataModel {
   IntContainValues: number[] = new Array<number>();
   DateTimeValue: Date;
   BooleanValue: boolean;
-  EnumValue1: string;
+  EnumValue: string;
   SingleValue: number;
   DecimalValue: number;
-  LatitudeValue1: number;
+  LatitudeValue: number;
   LatitudeLongitudeDistanceValue: number;
   LatitudeLongitudeSortType: string;
   HierarchyIdLevel: number;
