@@ -23,6 +23,7 @@ export class FilterDataModel {
   SingleValue: number;
   DecimalValue: number;
   LatitudeValue: number;
+  LongitudeValue: number;
   LatitudeLongitudeDistanceValue: number;
   LatitudeLongitudeSortType: string;
   HierarchyIdLevel: number;
