@@ -11,6 +11,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   LinkFileIdIcon?: number;
   LinkFileIdLogo?: number;
   LinkFileIdSplashScreen?: number;
+  LinkMainImageId?: number;
 
   Title: string;
   AppVersion: number;
@@ -62,9 +63,6 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   DownloadLinkSrcByDomain: string;
   DownloadLinkUpdateSrc: string;
   DownloadLinkUpdateSrcByDomain: string;
-  FilePathOnServer: string;
-  LinkFileIdIconSrc: string;
-  LinkFileIdLogoSrc: string;
   LinkFileIdSplashScreenSrc: string;
   AboutUsTitle: string;
   AboutUsDescription: string;
@@ -76,5 +74,8 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AboutUsLinkImageIdSrc: string;
   AboutUsGeolocationlatitude: number;
   AboutUsGeolocationlongitude: number;
+  LinkFileIdIconSrc: string;
+  LinkFileIdLogoSrc: string;
+  LinkMainImageIdSrc: string;
 
 }

@@ -40,6 +40,5 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
     OSType: EnumOperatingSystemType;
     UpdateSourceByGit: boolean;
     IsAbilityGradleBuild: boolean;
-    FilePathOnServer: string;
     LinkMainImageIdSrc: string;
 }
