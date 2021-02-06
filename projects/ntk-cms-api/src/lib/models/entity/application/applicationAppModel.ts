@@ -7,7 +7,7 @@ import { ApplicationThemeConfigModel } from './applicationThemeConfigModel';
 
 export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AppKey: string;
-  ExpireDate?: string;
+  ExpireDate?: Date;
   LinkFileIdIcon?: number;
   LinkFileIdLogo?: number;
   LinkFileIdSplashScreen?: number;
@@ -27,12 +27,12 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   QrCode: string;
   LastBuildAppKey: string;
   LastBuildStatus: EnumBuildStatusType;
-  LastNotificationOrderDate?: string;
-  LastBuildOrderDate?: string;
-  LastBuildRunDate?: string;
-  LastBuildEndDate?: string;
+  LastNotificationOrderDate?: Date;
+  LastBuildOrderDate?: Date;
+  LastBuildRunDate?: Date;
+  LastBuildEndDate?: Date;
   LastBuildErrorMessage: string;
-  LastSuccessfullyBuildDate?: string;
+  LastSuccessfullyBuildDate?: Date;
   LayoutValues: ApplicationLayoutValueModel[];
   BuildCount?: number;
   LinkThemeConfigId: number;
@@ -70,7 +70,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AboutUsFax: string;
   AboutUsEmail: string;
   AboutUsAddress: string;
-  AboutUsLinkImageId: string;
+  AboutUsLinkImageId: number;
   AboutUsLinkImageIdSrc: string;
   AboutUsGeolocationlatitude: number;
   AboutUsGeolocationlongitude: number;
