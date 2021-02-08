@@ -23,9 +23,9 @@ export class FilterDataModel {
   // EnumValue: string;
   // SingleValue: number;
   // DecimalValue: number;
-  // LatitudeValue: number;
-  // LongitudeValue: number;
-  // LatitudeLongitudeDistanceValue: number;
+   LatitudeValue: number;
+   LongitudeValue: number;
+   LatitudeLongitudeDistanceValue: number;
   // LatitudeLongitudeSortType: string;
   // HierarchyIdLevel: number;
   // ObjectIdContainValues: string[] = new Array<string>();
