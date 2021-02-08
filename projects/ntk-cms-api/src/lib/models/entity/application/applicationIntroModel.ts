@@ -6,8 +6,9 @@ export class ApplicationIntroModel extends BaseModuleEntity<number>  {
     Description: string;
     Priority: number;
     LinkMainImageId?: number;
+    LinkMainVideoId?: number;
     LinkApplicationId: number;
     Application: ApplicationAppModel;
-    MainImageSrc: string;
     LinkMainImageIdSrc: string;
+    LinkMainVideoIdSrc: string;
 }
