@@ -24,7 +24,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   IsGlobalUser: boolean;
   CheckUpdate: boolean;
   ForceUpdate: boolean;
-  QrCode: string;
+
   LastBuildAppKey: string;
   LastBuildStatus: EnumBuildStatusType;
   LastNotificationOrderDate?: Date;
@@ -60,9 +60,8 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   BuildKey5Value: string;
   DownloadLinkSrcCustomize: string;
   DownloadLinkSrc: string;
-  DownloadLinkSrcByDomain: string;
   DownloadLinkUpdateSrc: string;
-  DownloadLinkUpdateSrcByDomain: string;
+  DownloadLinkSrcByDomainQRCodeBase64: string;
   LinkFileIdSplashScreenSrc: string;
   AboutUsTitle: string;
   AboutUsDescription: string;
