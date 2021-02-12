@@ -32,7 +32,7 @@ export class FolderContentComponent implements OnInit {
   }
 
   onActionBack(node: NodeInterface): void {
-    this.store.dispatch({ type: SET_PARENT, payload: node.parentId });
+    this.store.setState({ type: SET_PARENT, payload: node.parentId });
   }
   onActionRefresh(node: NodeInterface): void {
     this.nodes = this.nodeService.SelectFolderById(0, true, true);

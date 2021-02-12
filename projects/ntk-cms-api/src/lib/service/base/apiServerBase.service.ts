@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { ntkCmsApiStoreService } from './ntkCmsApiStore.service';
+import { ntkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
 @Injectable()
@@ -20,7 +20,7 @@ export class ApiServerBase {
     localStorage.setItem('baseUrl', url);
     this.configApiRetry = apiRetry;
   }
-  constructor(public http: HttpClient,public cmsApiStore :ntkCmsApiStoreService) {
+  constructor(public http: HttpClient, public cmsApiStore: ntkCmsApiStoreService) {
     this.childConstructor();
   }
 
@@ -66,6 +66,10 @@ export class ApiServerBase {
     localStorage.setItem(this.keyUserToken, userToken);
     if (deviceToken && deviceToken.length > 0) { localStorage.setItem(this.keyDeviceToken, deviceToken); }
     // localStorage.setItem('refreshToken', refreshToken);
+  }
+  removeToken(): void {
+    localStorage.removeItem(this.keyUserToken);
+    localStorage.removeItem(this.keyDeviceToken);
   }
   errorExceptionResultCheck(model: ErrorExceptionResult<any>|any): ErrorExceptionResult<any> {
     if (model) {

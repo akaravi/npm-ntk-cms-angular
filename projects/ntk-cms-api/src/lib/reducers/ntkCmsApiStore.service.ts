@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { StateInterface } from '../../interfaces/state.interface';
-import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
-import { AppStore } from '../../models/reducers/reducer.factory';
+import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
+import { TokenInfoModel } from '../models/entity/base/tokenInfoModel';
+import { AppStore } from './reducer.factory';
 
-const initialState: StateInterface = {
+const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,
   tokenInfo : new TokenInfoModel(),
 };
@@ -27,10 +27,10 @@ export class ntkCmsApiStoreService {
     window.getInfo = () => this.state;
   }
 
-  dispatch(param: Actions): void {
+  setState(param: Actions): void {
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
     this.sub.next(this.state);
-    // if (isDevMode()) console.warn('[FileManagerStoreService] dispatch', param, JSON.parse(JSON.stringify(this.state)));
+    // if (isDevMode()) console.warn('[FileManagerStoreService] setState', param, JSON.parse(JSON.stringify(this.state)));
   }
 
   getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {
@@ -46,7 +46,7 @@ export class ntkCmsApiStoreService {
 
 
 // REDUCERS
-export function stateReducer(state: StateInterface = initialState, action: Actions): StateInterface {
+export function stateReducer(state: NtkCmsApiStoreInterface = initialState, action: Actions): NtkCmsApiStoreInterface {
   switch (action.type) {
     case SET_LOADING_STATE :
       return { ...state, isLoading: action.payload };

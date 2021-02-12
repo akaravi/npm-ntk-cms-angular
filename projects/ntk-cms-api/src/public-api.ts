@@ -5,9 +5,8 @@ export * from './lib/ntk-cms-api.service';
 export * from './lib/ntk-cms-api.component';
 export * from './lib/ntk-cms-api.module';
 // base
-export * from './lib/interfaces/_export';
+export * from './lib/reducers/_export';
 export * from './lib/common/_export';
-export * from './lib/models/reducers/_export';
 export * from './lib/models/enums/_export';
 export * from './lib/models/entity/base/_export';
 // base

@@ -40,7 +40,7 @@ export class TreeComponent implements AfterViewInit, OnInit {
     //   .pipe(first())
     //   .subscribe((parentId: number) => {
     //     const nodes = this.nodeService.findFolderById(parentId);
-    //     this.store.dispatch({ type: SET_SELECTED_NODE, payload: nodes });
+    //     this.store.setState({ type: SET_SELECTED_NODE, payload: nodes });
     //   });
   }
 }

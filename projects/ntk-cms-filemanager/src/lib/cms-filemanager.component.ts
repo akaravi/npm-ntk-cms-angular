@@ -100,7 +100,7 @@ export class CmsFileManagerComponent implements OnInit {
 
     this.nodeService.startManagerAt(this.tree.currentPath);
     // this.nodeService.getNodes(this.tree.currentPath).then(() => {
-    //   this.store.dispatch({type: SET_SELECTED_NODE, payload: });
+    //   this.store.setState({type: SET_SELECTED_NODE, payload: });
     // });
 
     this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation: any) => {
@@ -137,7 +137,7 @@ export class CmsFileManagerComponent implements OnInit {
   searchClicked(data: any): void {
     const node = this.nodeService.findFolderById(data.id);
     this.ntkSmartModalService.getModal('searchModal').close();
-    this.store.dispatch({ type: SET_SELECTED_NODE, payload: node });
+    this.store.setState({ type: SET_SELECTED_NODE, payload: node });
   }
 
   handleFileManagerClickEvent(event: any): any {
@@ -205,7 +205,7 @@ export class CmsFileManagerComponent implements OnInit {
 
     if (closing) {
       const parentNode = this.nodeService.findFolderById(this.nodeService.currentParentId);
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: parentNode });
+      this.store.setState({ type: SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
     } else {
       if (this.selectedNode === node && this.sideMenuClosed) {
@@ -308,7 +308,7 @@ export class CmsFileManagerComponent implements OnInit {
   backdropClicked(): void {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
-    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+    this.store.setState({ type: SET_LOADING_STATE, payload: false });
   }
 
   handleUploadDialog(event: any): void {

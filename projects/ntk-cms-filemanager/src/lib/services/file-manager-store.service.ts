@@ -17,9 +17,7 @@ const initialState: StateInterface = {
 })
 export class FileManagerStoreService {
   private state: AppStore;
-
   private sub: Subject<AppStore> = new Subject<AppStore>();
-
   constructor() {
     this.state = {
       fileManagerState: initialState,
@@ -29,10 +27,10 @@ export class FileManagerStoreService {
     window.getInfo = () => this.state;
   }
 
-  dispatch(param: Actions): void {
+  setState(param: Actions): void {
     Object.assign(this.state.fileManagerState, stateReducer(this.state.fileManagerState, param));
     this.sub.next(this.state);
-    // if (isDevMode()) console.warn('[FileManagerStoreService] dispatch', param, JSON.parse(JSON.stringify(this.state)));
+    // if (isDevMode()) console.warn('[FileManagerStoreService] setState', param, JSON.parse(JSON.stringify(this.state)));
   }
 
   getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {

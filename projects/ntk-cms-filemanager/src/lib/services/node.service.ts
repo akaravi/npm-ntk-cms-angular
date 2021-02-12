@@ -55,13 +55,13 @@ export class NodeService extends BaseService {
 
   public refreshCurrentPath(): any {
     // debugger;
-    this.store.dispatch({ type: SET_PARENT, payload: this.currentParentId });
-    this.store.dispatch({ type: SET_LOADING_STATE, payload: true });
+    this.store.setState({ type: SET_PARENT, payload: this.currentParentId });
+    this.store.setState({ type: SET_LOADING_STATE, payload: true });
     const children = this.findFolderById(this.currentParentId).children;
 
     if (!this.loadingListIdCheckAllowRunApi(this.currentParentId)) {
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
-      this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+      this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
+      this.store.setState({ type: SET_LOADING_STATE, payload: false });
       return;
     }
     this.LoadingListIdAdd(this.currentParentId);
@@ -69,11 +69,11 @@ export class NodeService extends BaseService {
     // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
       // debugger;
-      this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
+      this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
       this.getNodesFile(this.currentParentId).then(() => {
         // debugger;
-        this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
-        this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+        this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
+        this.store.setState({ type: SET_LOADING_STATE, payload: false });
         this.loadingListIdRemove(this.currentParentId);
       });
     });
@@ -84,20 +84,20 @@ export class NodeService extends BaseService {
       this.loadingListId = [];
     }
     this.loadingListId.push(id);
-    this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+    this.store.setState({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
   }
 
   loadingListIdRemove(id: number): void {
     if (!this.loadingListId) {
       this.loadingListId = [];
-      this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+      this.store.setState({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
       return;
     }
     const index = this.loadingListId.indexOf(id);
     if (index >= 0) {
       this.loadingListId = this.loadingListId.splice(index, 0);
     }
-    this.store.dispatch({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
+    this.store.setState({ type: SET_LOADING_LIST_ID, payload: this.loadingListId });
   }
 
   loadingListIdCheckAllowRunApi(id: number): boolean {
@@ -242,7 +242,7 @@ export class NodeService extends BaseService {
 
   public SelectFolderById(parentid: number, loadChild: boolean = false, reLoadChild: boolean = false): NodeInterface {
     const result = this.findFolderByIdHelper(parentid);
-    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+    this.store.setState({ type: SET_LOADING_STATE, payload: false });
 
     if (result === null) {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
@@ -263,7 +263,7 @@ export class NodeService extends BaseService {
   public findFolderById(parentid: number): NodeInterface {
     // debugger;
     const result = this.findFolderByIdHelper(parentid);
-    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
+    this.store.setState({ type: SET_LOADING_STATE, payload: false });
 
     if (result === null) {
       console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');

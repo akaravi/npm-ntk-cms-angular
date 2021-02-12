@@ -63,21 +63,21 @@ export class NodeComponent implements OnInit {
         this.nodeService.foldAll();
       }
 
-      this.store.dispatch({ type: SET_PARENT, payload: this.node.id });
+      this.store.setState({ type: SET_PARENT, payload: this.node.id });
       return;
     }
 
     this.toggleNodeExpanded();
 
     if (this.node.isExpanded) {
-      this.store.dispatch({ type: SET_PARENT, payload: this.node.id });
+      this.store.setState({ type: SET_PARENT, payload: this.node.id });
     }
 
     this.setNodeSelectedState();
   }
 
   private showMenu(): void {
-    this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.node });
+    this.store.setState({ type: SET_SELECTED_NODE, payload: this.node });
   }
 
   private toggleNodeExpanded(): void {
@@ -93,7 +93,7 @@ export class NodeComponent implements OnInit {
         node.classList.add('deselected');
       }
       this.nodeService.foldRecursively(this.node);
-      this.store.dispatch({ type: SET_PARENT, payload: this.node.id });
+      this.store.setState({ type: SET_PARENT, payload: this.node.id });
     } else {
       if (node && node.classList) {
         node.classList.remove('deselected');

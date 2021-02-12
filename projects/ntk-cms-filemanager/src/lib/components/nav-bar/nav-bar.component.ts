@@ -28,6 +28,6 @@ export class NavBarComponent implements OnInit {
 
     let parentId = 0;
     Number.parseInt(newPath, parentId);
-    this.store.dispatch({ type: SET_PARENT, payload: parentId });
+    this.store.setState({ type: SET_PARENT, payload: parentId });
   }
 }
