@@ -5,26 +5,24 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
-
 import { CaptchaModel } from '../../models/entity/base/captchaModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { AuthUserSignInModel } from '../../models/dto/core/authUserSignInModel';
-
 import { TokenDeviceClientInfoDtoModel } from '../../models/dto/core/tokenDeviceClientInfoDtoModel';
 import { AuthUserSignUpModel } from '../../models/dto/core/authUserSignUpModel';
 import { AuthRenewTokenModel } from '../../models/dto/core/authRenewTokenModel';
 import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChangePasswordModel';
 import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
 import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
-import { CoreUserModel } from '../../models/entity/coreMain/coreUserModel';
 import { Injectable } from '@angular/core';
 import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignInBySmsDtoModel';
+import { SET_TOKEN_INFO } from '../base/_export';
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
-  CurrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
-  CurrentTokenInfoBSObs = this.CurrentTokenInfoBS.asObservable();
+  // CurrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
+  // CurrentTokenInfoBSObs = this.CurrentTokenInfoBS.asObservable();
   userRoles: string[] = [];
   userName = '';
 
@@ -35,14 +33,17 @@ export class CoreAuthService extends ApiServerBase {
     if (model == null) {
       localStorage.removeItem(this.keyUserToken);
       // localStorage.removeItem('refreshToken');
+      //this.CurrentTokenInfoBS.next(new TokenInfoModel());
+      this.cmsApiStore.dispatch({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
+
       return;
     }
     this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
-    this.CurrentTokenInfoBS.next(model);
+    //this.CurrentTokenInfoBS.next(model);
+    this.cmsApiStore.dispatch({ type: SET_TOKEN_INFO, payload: model });
   }
-  CurrentTokenInfoBSRenew(): any {
+  CurrentTokenInfoRenew(): any {
     const token = this.getUserToken();
-
     // if (!token || token === 'null') {
     //   return;
     // }
