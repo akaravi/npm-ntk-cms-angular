@@ -42,7 +42,18 @@ export class ntkCmsApiStoreService {
       .pipe(map(mapFn))
       .pipe(distinctUntilChanged());
   }
+
+  getValue<R>(mapFn: (value: AppStore, index: number) => R): Promise<R> {
+    if (typeof mapFn !== 'function') {
+      throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
+    }
+
+    return this.sub.asObservable()
+      .pipe(map(mapFn))
+      .toPromise();
+  }
 }
+
 
 
 // REDUCERS
