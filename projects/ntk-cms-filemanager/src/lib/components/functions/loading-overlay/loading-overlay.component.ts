@@ -1,5 +1,4 @@
 import {Component, Input, OnInit, TemplateRef} from '@angular/core';
-// import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import {timer} from 'rxjs';
 
 @Component({

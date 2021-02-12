@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NodeService } from '../../../services/node.service';
 import { VoidExpression } from 'typescript';
 import { NodeClickedService } from '../../../services/node-clicked.service';
-import { FileContentModel, FileUpload, ErrorExceptionResult } from 'ntk-cms-api';
+import { FileContentModel, FileUploadModel, ErrorExceptionResult } from 'ntk-cms-api';
 import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
 import { FilePreviewModel } from 'ngx-awesome-uploader';
 
@@ -50,7 +50,7 @@ export class UploadComponent implements OnInit {
   onUploadSuccess(model: FilePreviewModel): void {
     if (!model.uploadResponse) {
     }
-    const ret = model.uploadResponse as ErrorExceptionResult<FileUpload>;
+    const ret = model.uploadResponse as ErrorExceptionResult<FileUploadModel>;
     if (!ret.IsSuccess) {
     }
     const fileModel = new FileContentModel();

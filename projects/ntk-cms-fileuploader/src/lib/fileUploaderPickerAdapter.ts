@@ -3,15 +3,15 @@ import {
   HttpClient,
   HttpEvent,
   HttpEventType
-} from "@angular/common/http";
-import { catchError, map } from "rxjs/operators";
-import { Observable, of } from "rxjs";
+} from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import {
   FilePickerAdapter,
   UploadResponse,
   UploadStatus,
   FilePreviewModel
-} from "ngx-awesome-uploader";
+} from 'ngx-awesome-uploader';
 
 export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {
@@ -19,9 +19,9 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
   }
   public uploadFile(fileItem: FilePreviewModel): Observable<UploadResponse> {
     const form = new FormData();
-    form.append("file", fileItem.file);
-    const api = "https://apifile.ir/api/v1/upload";
-    const req = new HttpRequest("POST", api, form, { reportProgress: true });
+    form.append('file', fileItem.file);
+    const api = 'https://apifile.ir/api/v1/upload';
+    const req = new HttpRequest('POST', api, form, { reportProgress: true });
     return this.http.request(req).pipe(
       map((res) => {
         if (res.type === HttpEventType.Response) {
@@ -53,7 +53,7 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
     const responseFromBackend = fileItem.uploadResponse;
     console.log(fileItem);
     const removeApi =
-      "https://run.mocky.io/v3/dedf88ec-7ce8-429a-829b-bd2fc55352bc";
+      'https://run.mocky.io/v3/dedf88ec-7ce8-429a-829b-bd2fc55352bc';
     return this.http.post(removeApi, { id });
   }
 }

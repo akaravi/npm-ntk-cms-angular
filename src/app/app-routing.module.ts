@@ -13,10 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'fileuploaderTest',
-    loadChildren: () =>
-      import('./pages/fileuploaderTest/fileuploaderTest.module').then(
-        (m) => m.FileuploaderTestModule
-      ),
+    loadChildren: () =>      import('./pages/fileuploaderTest/fileuploaderTest.module').then((m) => m.FileuploaderTestModule ),
   },
   {
     path: 'apiTest',

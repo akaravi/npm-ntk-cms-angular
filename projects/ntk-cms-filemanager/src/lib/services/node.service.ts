@@ -18,6 +18,26 @@ import { FileCategoryModel, FileContentModel, FilterDataModel, FilterModel } fro
   providedIn: 'root',
 })
 export class NodeService extends BaseService {
+  get currentParentId(): number {
+    return this.privateParentId;
+  }
+
+  set currentParentId(value: number) {
+    this.privateParentId = value;
+  }
+  constructor(private http: HttpClient, private store: FileManagerStoreService) {
+    super();
+    this.loadingListIdLive();
+    this.guid = this.newGuid();
+    // console.log('constructor', this.guid);
+
+  }
+  private guid = '';
+
+  public serviceTree: TreeModel;
+  private privateParentId: number;
+
+  loadingListId: number[];
   private S4(): string {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   }
@@ -26,26 +46,6 @@ export class NodeService extends BaseService {
 
     return isString;
   }
-  get currentParentId(): number {
-    return this.privateParentId;
-  }
-
-  set currentParentId(value: number) {
-    this.privateParentId = value;
-  }
-  private guid = '';
-  constructor(private http: HttpClient, private store: FileManagerStoreService) {
-    super();
-    this.loadingListIdLive();
-    this.guid = this.newGuid();
-    // console.log('constructor', this.guid);
-
-  }
-
-  public serviceTree: TreeModel;
-  private privateParentId: number;
-
-  loadingListId: number[];
 
   // todo ask server to get parent structure
   public startManagerAt(parentId: number): void {
@@ -165,7 +165,6 @@ export class NodeService extends BaseService {
     if (folderId > 0) {
       filter.Value = folderId;
     }
-    filter.IntValueForceNullSearch = true;
     filterModel.Filters.push(filter);
 
     return this.http
@@ -177,7 +176,7 @@ export class NodeService extends BaseService {
           const data = this.errorExceptionResultCheck<FileContentModel>(ret);
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
-            data.ListItems.forEach((x:FileContentModel) => {
+            data.ListItems.forEach((x: FileContentModel) => {
               const row = {
                 id: x.Id,
                 parentId: x.LinkCategoryId,
@@ -209,7 +208,6 @@ export class NodeService extends BaseService {
     if (folderId > 0) {
       filter.Value = folderId;
     }
-    filter.IntValueForceNullSearch = true;
     filterModel.Filters.push(filter);
     // Category
     return this.http
@@ -222,7 +220,7 @@ export class NodeService extends BaseService {
 
           const retOut: NodeInterface[] = [];
           if (data.IsSuccess) {
-            data.ListItems.forEach((x:FileCategoryModel) => {
+            data.ListItems.forEach((x: FileCategoryModel) => {
               const row = {
                 id: x.Id,
                 parentId: x.LinkParentId,

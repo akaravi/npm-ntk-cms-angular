@@ -6,8 +6,7 @@
     "@angular/core": ">=8.0.0"
   },
   "dependencies": {
-    "@flowjs/flow.js": "^2.14.1",
-    "@flowjs/ngx-flow": "^0.4.5",
+
     "tslib": "^2.0.0"
   }
 }
