@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output,   EventEmitter} from '@angular/core';
 import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
+import { FilePreviewModel } from 'ngx-awesome-uploader/lib/file-preview.model';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -21,7 +22,7 @@ export class CmsFileUploaderComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  uploadSuccess(event: any): void {
+  uploadSuccess(event: FilePreviewModel): void {
     this.optionUploadSuccess.emit(event);
   }
 }

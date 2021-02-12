@@ -36,7 +36,6 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    HttpClientModule,
     FilePickerModule
   ],
   declarations: [

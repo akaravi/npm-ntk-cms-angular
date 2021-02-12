@@ -11,8 +11,6 @@ import { FilePickerModule } from 'ngx-awesome-uploader';
   imports: [
     HttpClientModule,
     CommonModule,
-    BrowserModule,
-    FormsModule,
     FilePickerModule
   ],
   declarations: [
