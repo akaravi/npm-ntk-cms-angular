@@ -14,7 +14,7 @@ export class CmsFileUploaderComponent implements OnInit {
   constructor(private http: HttpClient) { }
   adapter = new FileUploaderPickerAdapter(this.http);
   fileType: string|string[];
-  @Output() optionUploadSuccess = new EventEmitter<any>();
+  @Output() optionUploadSuccess = new EventEmitter<FilePreviewModel>();
   @Input() set optionFileType(x: string|string[]) {
     this.fileType = x;
   }
