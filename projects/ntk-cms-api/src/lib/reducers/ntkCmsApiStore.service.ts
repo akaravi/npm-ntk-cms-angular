@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
 import { TokenInfoModel } from '../models/entity/base/tokenInfoModel';
@@ -7,7 +7,7 @@ import { AppStore } from './reducer.factory';
 
 const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,
-  tokenInfo : new TokenInfoModel(),
+  tokenInfo: new TokenInfoModel(),
 };
 
 @Injectable({
@@ -15,21 +15,24 @@ const initialState: NtkCmsApiStoreInterface = {
 })
 export class ntkCmsApiStoreService {
   private state: AppStore;
-
   private sub: Subject<AppStore> = new Subject<AppStore>();
+  private stateSubject: BehaviorSubject<AppStore>;
 
   constructor() {
     this.state = {
       ntkCmsAPiState: initialState,
     };
+    this.stateSubject = new BehaviorSubject(this.state);
 
     // @ts-ignore
     window.getInfo = () => this.state;
   }
 
   setState(param: Actions): void {
+    
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
     this.sub.next(this.state);
+    this.stateSubject.next( this.state );
     // if (isDevMode()) console.warn('[FileManagerStoreService] setState', param, JSON.parse(JSON.stringify(this.state)));
   }
 
@@ -37,20 +40,12 @@ export class ntkCmsApiStoreService {
     if (typeof mapFn !== 'function') {
       throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
     }
-
     return this.sub.asObservable()
       .pipe(map(mapFn))
       .pipe(distinctUntilChanged());
   }
-
-  getValue<R>(mapFn: (value: AppStore, index: number) => R): Promise<R> {
-    if (typeof mapFn !== 'function') {
-      throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
-    }
-
-    return this.sub.asObservable()
-      .pipe(map(mapFn))
-      .toPromise();
+  public getStateSnapshot(): AppStore {
+    return (this.stateSubject.getValue());
   }
 }
 
@@ -59,9 +54,9 @@ export class ntkCmsApiStoreService {
 // REDUCERS
 export function stateReducer(state: NtkCmsApiStoreInterface = initialState, action: Actions): NtkCmsApiStoreInterface {
   switch (action.type) {
-    case SET_LOADING_STATE :
+    case SET_LOADING_STATE:
       return { ...state, isLoading: action.payload };
-    case SET_TOKEN_INFO :
+    case SET_TOKEN_INFO:
       return { ...state, tokenInfo: action.payload };
     default:
       return initialState;
