@@ -15,10 +15,4 @@ export class ArticleCategoryModel extends BaseModuleEntity<number> {
   Contents: ArticleContentModel[];
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
-
-
-
-
-
-
 }
