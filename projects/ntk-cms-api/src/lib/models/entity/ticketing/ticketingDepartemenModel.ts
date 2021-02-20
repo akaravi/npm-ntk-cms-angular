@@ -15,4 +15,6 @@ export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
     TicketAnswers: TicketingAnswerModel[];
     Faqs: TicketingFaqModel[];
     Operators: TicketingDepartemenOperatorModel[];
+    LinkMainImageId?: number;
+    LinkMainImageIdSrc: string;
 }

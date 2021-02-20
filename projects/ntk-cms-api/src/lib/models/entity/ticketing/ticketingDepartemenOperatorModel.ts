@@ -9,4 +9,6 @@ export class TicketingDepartemenOperatorModel extends BaseModuleEntity<number>  
     virtual_Departemen: TicketingDepartemenModel;
     Departemen: TicketingDepartemenModel;
     Answers: TicketingAnswerModel[];
+    LinkMainImageId?: number;
+    LinkMainImageIdSrc: string;
 }
