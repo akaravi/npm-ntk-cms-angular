@@ -9,5 +9,6 @@ export class TicketingFaqModel extends BaseModuleEntity<number>  {
     virtual_TicketingDepartemen: TicketingDepartemenModel;
     TicketingDepartemen: TicketingDepartemenModel;
     LinkFileIds: string;
+    LinkFileIdsSrc: string[];
 }
 
