@@ -1,3 +1,4 @@
+export * from './newsConfigSite.service';
 export * from './newsCategory.service';
 export * from './newsComment.service';
 export * from './newsConfiguration.service';

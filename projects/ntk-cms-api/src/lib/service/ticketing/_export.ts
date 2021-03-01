@@ -1,3 +1,4 @@
+export * from './ticketingConfigSite.service';
 export * from './ticketingAnswer.service';
 export * from './ticketingDepartemen.service';
 export * from './ticketingDepartemenLog.service';

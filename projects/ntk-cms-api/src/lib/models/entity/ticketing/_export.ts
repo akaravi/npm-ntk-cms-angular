@@ -1,3 +1,4 @@
+export * from './ticketingSiteConfigModel';
 export * from './ticketingAnswerModel';
 export * from './ticketingDepartemenLogModel';
 export * from './ticketingDepartemenModel';

@@ -1,3 +1,4 @@
+export * from './blogConfigSite.service';
 export * from './blogCategory.service';
 export * from './blogComment.service';
 export * from './blogConfiguration.service';

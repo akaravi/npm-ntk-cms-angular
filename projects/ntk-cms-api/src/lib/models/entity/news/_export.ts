@@ -1,3 +1,4 @@
+export * from './newsSiteConfigModel';
 export * from './newsCategoryModel';
 export * from './newsCommentModel';
 export * from './newsContentModel';
