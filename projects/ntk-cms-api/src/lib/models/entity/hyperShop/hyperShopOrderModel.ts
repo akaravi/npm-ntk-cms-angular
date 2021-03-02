@@ -25,6 +25,4 @@ export class HyperShopOrderModel extends BaseModuleEntity<number>{
   FeeTransport: number;
   FeeTax: number;
   Products: HyperShopOrderContentModel[];
-
-
 }

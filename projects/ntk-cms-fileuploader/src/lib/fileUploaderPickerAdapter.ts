@@ -17,11 +17,11 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {
     super();
   }
+  ApiPath = 'https://apifile.ir/api/v1/upload';
   public uploadFile(fileItem: FilePreviewModel): Observable<UploadResponse> {
     const form = new FormData();
     form.append('file', fileItem.file);
-    const api = 'https://apifile.ir/api/v1/upload';
-    const req = new HttpRequest('POST', api, form, { reportProgress: true });
+    const req = new HttpRequest('POST', this.ApiPath, form, { reportProgress: true });
     return this.http.request(req).pipe(
       map((res) => {
         if (res.type === HttpEventType.Response) {
