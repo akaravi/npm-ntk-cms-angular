@@ -63,15 +63,22 @@ export class ApiServerBase {
     return '';
   }
   setToken(userToken: string, deviceToken: string, refreshToken: string): void {
+    if (userToken.length === 0 && deviceToken.length === 0) {
+      localStorage.removeItem(this.keyUserToken);
+      localStorage.removeItem(this.keyDeviceToken);
+      return;
+    }
     localStorage.setItem(this.keyUserToken, userToken);
-    if (deviceToken && deviceToken.length > 0) { localStorage.setItem(this.keyDeviceToken, deviceToken); }
+    if (deviceToken && deviceToken.length > 0) {
+      localStorage.setItem(this.keyDeviceToken, deviceToken);
+    }
     // localStorage.setItem('refreshToken', refreshToken);
   }
   removeToken(): void {
     localStorage.removeItem(this.keyUserToken);
     localStorage.removeItem(this.keyDeviceToken);
   }
-  errorExceptionResultCheck(model: ErrorExceptionResult<any>|any): ErrorExceptionResult<any> {
+  errorExceptionResultCheck(model: ErrorExceptionResult<any> | any): ErrorExceptionResult<any> {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
@@ -80,7 +87,7 @@ export class ApiServerBase {
     }
     return model;
   }
-  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase|any): ErrorExceptionResultBase {
+  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase | any): ErrorExceptionResultBase {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
