@@ -1,4 +1,4 @@
-import { EnumNotificationType } from './../../enums/enumNotificationType';
+import { EnumNotificationType } from '../../enums/enumNotificationType';
 export class RenderModelApplicationSendNotificationInput {
     AppId: number;
     LinkMemberIds: string[];

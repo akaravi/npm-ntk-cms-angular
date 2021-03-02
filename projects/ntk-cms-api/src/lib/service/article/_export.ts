@@ -1,3 +1,4 @@
+export * from './articleConfigSite.service';
 export * from './articleCategory.service';
 export * from './articleComment.service';
 export * from './articleConfiguration.service';

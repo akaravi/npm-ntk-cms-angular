@@ -1,3 +1,4 @@
+export * from './biographySiteConfigModel';
 export * from './biographyCategoryModel';
 export * from './biographyCommentModel';
 export * from './biographyContentModel';

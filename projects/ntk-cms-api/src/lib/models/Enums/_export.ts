@@ -28,6 +28,7 @@ export * from './enumTicketAccessStatus';
 export * from './eminUserActivateTypes';
 export * from './enumHyperShopPaymentType';
 export * from './enumHyperShopOrderType';
+export * from './enumHyperShopConnectionType';
 export * from './enumCmsSiteMenuAreaType';
 export * from './enumPageAbilityType';
 export * from './enumCmsPageUtilityToolsAction';
