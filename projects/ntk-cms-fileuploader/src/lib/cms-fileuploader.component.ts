@@ -22,9 +22,10 @@ export class CmsFileUploaderComponent implements OnInit {
     }
   }
   @Input() set optionApiPath(x: string) {
-    this.adapter.ApiPath = x;
+    if (x && x.length > 0) {
+      this.adapter.ApiPath = x;
+    }
   }
-
   ngOnInit(): void {
 
   }
