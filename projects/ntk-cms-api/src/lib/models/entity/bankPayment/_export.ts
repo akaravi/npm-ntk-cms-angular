@@ -1,4 +1,4 @@
-export * from './bankPaymentSiteConfigModel';
+export * from './bankPaymentConfigurationModel';
 export * from './bankPaymentPrivateSiteConfigModel';
 export * from './bankPaymentPublicConfigModel';
 export * from './bankPaymentTransactionLogModel';

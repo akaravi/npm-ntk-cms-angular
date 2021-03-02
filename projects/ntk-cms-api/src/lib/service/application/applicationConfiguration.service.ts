@@ -4,11 +4,11 @@ import {
   AapplicationModuleConfigSiteAccessValuesModel,
   AapplicationModuleConfigSiteValuesModel,
   AapplicationModuleSiteStorageValuesModel
-} from '../../models/entity/application/applicationSiteConfigModel';
+} from '../../models/entity/application/applicationConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class ApplicationConfigSiteService extends
+export class ApplicationConfigurationService extends
   ApiServerConfigSiteBase<AapplicationModuleConfigAdminMainValuesModel,
   AapplicationModuleConfigSiteValuesModel,
   AapplicationModuleConfigSiteAccessValuesModel,

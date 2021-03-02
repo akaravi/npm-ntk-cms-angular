@@ -1,4 +1,4 @@
-export * from './articleSiteConfigModel';
+export * from './articleConfigurationModel';
 export * from './articleCategoryModel';
 export * from './articleCommentModel';
 export * from './articleContentModel';

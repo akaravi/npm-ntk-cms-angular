@@ -1,4 +1,4 @@
-export * from './hyperShopSiteConfigModel';
+export * from './hyperShopConfigurationModel';
 export * from './hyperShopOrderModel';
 export * from './hyperShopOrderContentModel';
 export * from './hyperShopCategoryModel';

@@ -1,4 +1,4 @@
-export * from './webDesignerConfigSite.service';
+export * from './webDesignerConfiguration.service';
 export * from './webDesignerLogPageSafe.service';
 export * from './webDesignerMainIntro.service';
 export * from './webDesignerMainMenu.service';

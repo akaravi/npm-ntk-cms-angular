@@ -1,4 +1,4 @@
-export * from './applicationSiteConfigModel';
+export * from './applicationConfigurationModel';
 export * from './applicationAppModel';
 export * from './applicationIntroModel';
 export * from './applicationLayoutModel';

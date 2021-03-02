@@ -4,11 +4,11 @@ import {
   HyperShopModuleConfigSiteAccessValuesModel,
   HyperShopModuleConfigSiteValuesModel,
   HyperShopModuleSiteStorageValuesModel
-} from '../../models/entity/hyperShop/hyperShopSiteConfigModel';
+} from '../../models/entity/hyperShop/hyperShopConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class HyperShopConfigSiteService extends
+export class HyperShopConfigurationService extends
   ApiServerConfigSiteBase<HyperShopModuleConfigAdminMainValuesModel,
   HyperShopModuleConfigSiteValuesModel,
   HyperShopModuleConfigSiteAccessValuesModel,

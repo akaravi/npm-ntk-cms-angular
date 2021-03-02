@@ -4,11 +4,11 @@ import {
   WebDesignerModuleConfigSiteAccessValuesModel,
   WebDesignerModuleConfigSiteValuesModel,
   WebDesignerModuleSiteStorageValuesModel
-} from '../../models/entity/webDesigner/webDesignerSiteConfigModel';
+} from '../../models/entity/webDesigner/webDesignerConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class WebDesignerConfigSiteService extends
+export class WebDesignerConfigurationService extends
   ApiServerConfigSiteBase<WebDesignerModuleConfigAdminMainValuesModel,
   WebDesignerModuleConfigSiteValuesModel,
   WebDesignerModuleConfigSiteAccessValuesModel,

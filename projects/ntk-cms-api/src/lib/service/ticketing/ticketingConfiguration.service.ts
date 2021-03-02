@@ -4,11 +4,11 @@ import {
   TicketingModuleConfigSiteAccessValuesModel,
   TicketingModuleConfigSiteValuesModel,
   TicketingModuleSiteStorageValuesModel
-} from '../../models/entity/ticketing/ticketingSiteConfigModel';
+} from '../../models/entity/ticketing/ticketingConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class TicketingConfigSiteService extends
+export class TicketingConfigurationService extends
   ApiServerConfigSiteBase<TicketingModuleConfigAdminMainValuesModel,
   TicketingModuleConfigSiteValuesModel,
   TicketingModuleConfigSiteAccessValuesModel,

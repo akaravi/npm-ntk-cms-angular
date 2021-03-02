@@ -4,11 +4,11 @@ import {
   PollingModuleConfigSiteAccessValuesModel,
   PollingModuleConfigSiteValuesModel,
   PollingModuleSiteStorageValuesModel
-} from '../../models/entity/polling/pollingSiteConfigModel';
+} from '../../models/entity/polling/pollingConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class PollingConfigSiteService extends
+export class PollingConfigurationService extends
   ApiServerConfigSiteBase<PollingModuleConfigAdminMainValuesModel,
   PollingModuleConfigSiteValuesModel,
   PollingModuleConfigSiteAccessValuesModel,

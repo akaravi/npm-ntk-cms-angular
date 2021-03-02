@@ -1,3 +1,4 @@
+export * from './coreConfigurationModel';
 export * from './coreCpMainMenuCmsUserGroupModel';
 export * from './coreCpMainMenuModel';
 export * from './coreDeviceModel';

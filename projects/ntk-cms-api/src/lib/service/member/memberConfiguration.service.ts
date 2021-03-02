@@ -4,11 +4,11 @@ import {
   MemberModuleConfigSiteAccessValuesModel,
   MemberModuleConfigSiteValuesModel,
   MemberModuleSiteStorageValuesModel
-} from '../../models/entity/member/memberSiteConfigModel';
+} from '../../models/entity/member/memberConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class MemberConfigSiteService extends
+export class MemberConfigurationService extends
   ApiServerConfigSiteBase<MemberModuleConfigAdminMainValuesModel,
   MemberModuleConfigSiteValuesModel,
   MemberModuleConfigSiteAccessValuesModel,

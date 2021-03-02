@@ -1,2 +1,2 @@
-export * from './linkManagementSiteConfigModel';
+export * from './linkManagementConfigurationModel';
 

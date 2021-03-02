@@ -1,4 +1,4 @@
-export * from './smsSiteConfigModel';
+export * from './smsConfigurationModel';
 export * from './smsLogInBoxModel';
 export * from './smsLogOutBoxDetailBulkModel';
 export * from './smsLogOutBoxDetailModel';

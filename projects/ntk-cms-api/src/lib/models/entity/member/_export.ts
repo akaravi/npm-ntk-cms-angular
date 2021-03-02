@@ -1,2 +1,2 @@
-export * from './memberSiteConfigModel';
+export * from './memberConfigurationModel';
 export * from './memberUserModel';

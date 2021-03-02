@@ -1,4 +1,4 @@
-export * from './biographyConfigSite.service';
+export * from './biographyConfiguration.service';
 export * from './biographyCategory.service';
 export * from './biographyComment.service';
 export * from './biographyConfiguration.service';

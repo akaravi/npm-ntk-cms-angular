@@ -1,13 +1,19 @@
+import { Injectable } from '@angular/core';
+import {
+  BiographyModuleConfigAdminMainValuesModel,
+  BiographyModuleConfigSiteAccessValuesModel,
+  BiographyModuleConfigSiteValuesModel,
+  BiographyModuleSiteStorageValuesModel
+} from '../../models/entity/biography/biographyConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-import { Injectable } from '@angular/core';
-
-
 @Injectable()
-export class BiographyConfigurationService extends ApiServerConfigSiteBase  {
-
-
+export class BiographyConfigurationService extends
+  ApiServerConfigSiteBase<BiographyModuleConfigAdminMainValuesModel,
+  BiographyModuleConfigSiteValuesModel,
+  BiographyModuleConfigSiteAccessValuesModel,
+  BiographyModuleSiteStorageValuesModel> {
   getModuleCotrolerUrl(): string {
-    return 'BiographyConfiguration';
+    return 'biography';
   }
 }

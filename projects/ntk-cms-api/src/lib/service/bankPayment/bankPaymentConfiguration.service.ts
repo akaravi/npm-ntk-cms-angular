@@ -4,11 +4,11 @@ import {
   BankPaymentModuleConfigSiteAccessValuesModel,
   BankPaymentModuleConfigSiteValuesModel,
   BankPaymentModuleSiteStorageValuesModel
-} from '../../models/entity/bankPayment/bankPaymentSiteConfigModel';
+} from '../../models/entity/bankPayment/bankPaymentConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class BankPaymentConfigSiteService extends
+export class BankPaymentConfigurationService extends
   ApiServerConfigSiteBase<BankPaymentModuleConfigAdminMainValuesModel,
   BankPaymentModuleConfigSiteValuesModel,
   BankPaymentModuleConfigSiteAccessValuesModel,

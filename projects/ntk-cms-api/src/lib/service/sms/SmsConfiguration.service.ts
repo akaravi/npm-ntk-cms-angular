@@ -4,11 +4,11 @@ import {
   SmsModuleConfigSiteAccessValuesModel,
   SmsModuleConfigSiteValuesModel,
   SmsModuleSiteStorageValuesModel
-} from '../../models/entity/sms/smsSiteConfigModel';
+} from '../../models/entity/sms/smsConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class SmsConfigSiteService extends
+export class SmsConfigurationService extends
   ApiServerConfigSiteBase<SmsModuleConfigAdminMainValuesModel,
   SmsModuleConfigSiteValuesModel,
   SmsModuleConfigSiteAccessValuesModel,

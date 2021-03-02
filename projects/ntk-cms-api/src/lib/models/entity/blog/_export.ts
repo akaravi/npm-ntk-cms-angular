@@ -1,4 +1,4 @@
-export * from './blogSiteConfigModel';
+export * from './blogConfigurationModel';
 export * from './blogCategoryModel';
 export * from './blogCommentModel';
 export * from './blogContentModel';

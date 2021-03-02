@@ -4,11 +4,11 @@ import {
   LinkManagementModuleConfigSiteAccessValuesModel,
   LinkManagementModuleConfigSiteValuesModel,
   LinkManagementModuleSiteStorageValuesModel
-} from '../../models/entity/linkManagement/linkManagementSiteConfigModel';
+} from '../../models/entity/linkManagement/linkManagementConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 @Injectable()
-export class LinkManagementConfigSiteService extends
+export class LinkManagementConfigurationService extends
   ApiServerConfigSiteBase<LinkManagementModuleConfigAdminMainValuesModel,
   LinkManagementModuleConfigSiteValuesModel,
   LinkManagementModuleConfigSiteAccessValuesModel,

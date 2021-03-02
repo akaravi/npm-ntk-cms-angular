@@ -1,4 +1,4 @@
-export * from './memberConfigSite.service';
+export * from './memberConfiguration.service';
 export * from './memberUser.service';
 
 
