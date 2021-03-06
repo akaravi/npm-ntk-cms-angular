@@ -3,4 +3,5 @@ export class ErrorExceptionResultBase {
   IsSuccess = true;
   errors: any; // Map<string, Array<string>>;
   ErrorMessage: string;
+  TotalRowCount: number;
 }

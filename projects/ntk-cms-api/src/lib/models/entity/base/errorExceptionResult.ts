@@ -5,7 +5,6 @@ export class ErrorExceptionResult<T> extends ErrorExceptionResultBase {
   ListItems: T[];
   Item: T;
   CurrentPageNumber: number;
-  TotalRowCount: number;
   RowPerPage: number;
   Access: AccessModel = new AccessModel();
 }

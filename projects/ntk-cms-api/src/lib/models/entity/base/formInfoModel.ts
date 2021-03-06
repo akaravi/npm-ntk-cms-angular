@@ -3,6 +3,6 @@ export class FormInfoModel {
   FormAlert = '';
   FormError = '';
   FormErrorStatus = false;
-  FormAllowSubmit = true;
-  DisabledButtonSubmitted = false;
+  FormSubmitAllow = true;
+  ButtonSubmittedEnabled = true;
 }
