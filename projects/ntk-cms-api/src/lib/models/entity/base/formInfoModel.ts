@@ -5,4 +5,5 @@ export class FormInfoModel {
   FormErrorStatus = false;
   FormSubmitAllow = true;
   ButtonSubmittedEnabled = true;
+  viewlodingEnabled = false;
 }
