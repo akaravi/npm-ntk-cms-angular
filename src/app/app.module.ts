@@ -17,7 +17,7 @@ import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
     // TranslateModule.forRoot({
     //   loader: {
     //     provide: TranslateLoader,
-    //     useFactory: (createTranslateLoader),
+    //     useFactory: (CreateTranslateLoader),
     //     deps: [HttpClient]
     //   }
     // })

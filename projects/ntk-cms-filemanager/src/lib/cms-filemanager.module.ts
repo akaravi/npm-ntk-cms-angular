@@ -20,7 +20,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
 
-export function createTranslateLoader(http: HttpClient) {
+export function CreateTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
@@ -32,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: (CreateTranslateLoader),
         deps: [HttpClient]
       }
     }),

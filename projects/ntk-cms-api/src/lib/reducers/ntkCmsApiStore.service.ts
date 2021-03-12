@@ -13,7 +13,7 @@ const initialState: NtkCmsApiStoreInterface = {
 @Injectable({
   providedIn: 'root',
 })
-export class ntkCmsApiStoreService {
+export class NtkCmsApiStoreService {
   private state: AppStore;
   private sub: Subject<AppStore> = new Subject<AppStore>();
   private stateSubject: BehaviorSubject<AppStore>;
@@ -29,7 +29,7 @@ export class ntkCmsApiStoreService {
   }
 
   setState(param: Actions): void {
-    
+
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
     this.sub.next(this.state);
     this.stateSubject.next( this.state );

@@ -1,4 +1,4 @@
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
@@ -28,7 +28,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: any)=> {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -45,7 +45,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: any)=> {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
@@ -62,7 +62,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       .pipe(
         retry(this.configApiRetry),
         // catchError(this.handleError)
-        map((ret: any)=> {
+        map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );

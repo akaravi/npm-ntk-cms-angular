@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [CommonModule, ApiTestRoutes, HttpClientModule,FormsModule],
+  imports: [CommonModule, ApiTestRoutes, HttpClientModule, FormsModule],
   declarations: [ApiTestComponent],
   providers: [CoreAuthService],
 })
-export class ApiTestModule {}
+export class ApiTestModule { }

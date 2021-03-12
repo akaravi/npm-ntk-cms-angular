@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { ntkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
+import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
 @Injectable()
@@ -20,7 +20,7 @@ export class ApiServerBase {
     localStorage.setItem('baseUrl', url);
     this.configApiRetry = apiRetry;
   }
-  constructor(public http: HttpClient, public cmsApiStore: ntkCmsApiStoreService) {
+  constructor(public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
     this.childConstructor();
   }
 

@@ -28,7 +28,8 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
         }),
       );
   }
-  ServiceGetAllDefaultPagesBySiteCategory(model: GetAllDefaultPagesBySiteCategoryDtoModel): Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
+  ServiceGetAllDefaultPagesBySiteCategory(model: GetAllDefaultPagesBySiteCategoryDtoModel):
+    Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
     if (model == null) {
       model = new GetAllDefaultPagesBySiteCategoryDtoModel();
     }

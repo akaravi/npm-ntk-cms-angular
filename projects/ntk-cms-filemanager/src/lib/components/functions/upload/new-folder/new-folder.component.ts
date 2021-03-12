@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-new-folder',
@@ -16,16 +16,16 @@ export class NewFolderComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  onClick() {
+  onClick(): void {
     const el: HTMLElement = (this.uploadFolder.nativeElement as HTMLElement);
     // @ts-ignore
     this.buttonClicked.emit(el.value);
   }
 
-  onInputChange(event: any) {
+  onInputChange(event: any): void {
     this.inputValue = event.target.value;
     if (this.inputValue.length > 0) {
       // this.buttonText = _('filemanager.confirm').toString();

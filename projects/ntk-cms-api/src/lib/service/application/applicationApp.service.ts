@@ -85,7 +85,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
   ServiceBuildInfo(id: number, key: string): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id + "/" + key, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id + '/' + key, {
         headers: this.getHeaders(),
       })
       .pipe(

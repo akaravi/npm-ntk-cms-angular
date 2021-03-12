@@ -5,11 +5,11 @@ import { NtkSmartModalComponent, NtkSmartModalService } from 'projects/ngx-ntk-s
 
 
 @Component({
-  selector: 'app-smartModalTest',
+  selector: 'app-smart-modal-test',
   templateUrl: './smartModalTest.component.html',
   styleUrls: ['./smartModalTest.component.scss']
 })
-export class SmartModalTestComponent implements  AfterViewInit {
+export class SmartModalTestComponent implements AfterViewInit {
   version = VERSION.full;
 
   // tslint:disable:max-line-length
@@ -24,11 +24,11 @@ export class SmartModalTestComponent implements  AfterViewInit {
   constructor(public ntkSmartModalService: NtkSmartModalService, private router: Router, private cdr: ChangeDetectorRef) {
   }
 
-  public log(msg: string) {
+  public log(msg: string): void {
     console.log(msg);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     const obj: Object = {
       prop1: 'test',
       prop2: true,
@@ -58,23 +58,23 @@ export class SmartModalTestComponent implements  AfterViewInit {
     this.cdr.detectChanges();
   }
 
-  goFeature() {
+  goFeature(): void {
     this.router.navigate(['/', 'feature']);
   }
 
-  goBootstrap() {
+  goBootstrap(): void {
     this.router.navigate(['smartModalTest', 'bootstrap']);
   }
 
-  goMaterialize() {
+  goMaterialize(): void {
     this.router.navigate(['materialize']);
   }
 
-  goFoundation() {
+  goFoundation(): void {
     this.router.navigate(['foundation']);
   }
 
-  goAutoStart() {
+  goAutoStart(): void {
     this.router.navigate(['smartModalTest', 'autostart']);
   }
 

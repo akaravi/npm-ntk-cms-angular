@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
   onClick(path: string[], index: number): void {
     const newPath = path.slice(0, index + 1).join('/');
 
-    let parentId = 0;
+    const parentId = 0;
     Number.parseInt(newPath, parentId);
     this.store.setState({ type: SET_PARENT, payload: parentId });
   }

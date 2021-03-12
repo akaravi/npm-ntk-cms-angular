@@ -29,11 +29,21 @@ export class UploadComponent implements OnInit {
   ) {}
 
   adapter = new FileUploaderPickerAdapter(this.http);
-
+  fileType: string | string[];
+  @Output() optionUploadSuccess = new EventEmitter<FilePreviewModel>();
+  @Input() set optionFileType(x: string | string[]) {
+    if (x && x.length > 0) {
+      this.fileType = x;
+    }
+  }
+  @Input() set optionApiPath(x: string) {
+    if (x && x.length > 0) {
+      this.adapter.ApiPath = x;
+    }
+  }
   ngOnInit(): void {}
-
   uploadSuccess(event: any): void {
-    console.log(event);
+    this.optionUploadSuccess.emit(event);
   }
 
   get getCurrentPath(): number {

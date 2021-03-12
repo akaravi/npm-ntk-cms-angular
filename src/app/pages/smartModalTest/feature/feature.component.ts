@@ -16,7 +16,7 @@ export class FeatureComponent implements AfterViewInit {
   constructor(public ntkSmartModalService: NtkSmartModalService) {
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.ntkSmartModalService.getModal('classicModal').onEscape.subscribe((event: Event) => {
       console.log('You just escaped the classicModal!', event);
     });

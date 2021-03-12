@@ -44,16 +44,16 @@ import { NtkSmartModalService } from './ntk-smart-modal.service';
   `,
 })
 export class NtkSmartModalComponent implements OnInit, OnDestroy {
-  @Input() public closable: boolean = true;
-  @Input() public escapable: boolean = true;
-  @Input() public dismissable: boolean = true;
-  @Input() public identifier: string = '';
-  @Input() public customClass: string = 'nsm-dialog-animation-fade';
-  @Input() public visible: boolean = false;
-  @Input() public backdrop: boolean = true;
-  @Input() public force: boolean = true;
-  @Input() public hideDelay: number = 500;
-  @Input() public autostart: boolean = false;
+  @Input() public closable = true;
+  @Input() public escapable = true;
+  @Input() public dismissable = true;
+  @Input() public identifier = '';
+  @Input() public customClass = 'nsm-dialog-animation-fade';
+  @Input() public visible = false;
+  @Input() public backdrop = true;
+  @Input() public force = true;
+  @Input() public hideDelay = 500;
+  @Input() public autostart = false;
   @Input() public target: any;
 
   @Output() public visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -68,9 +68,9 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
   @Output() public onDataAdded: EventEmitter<any> = new EventEmitter();
   @Output() public onDataRemoved: EventEmitter<any> = new EventEmitter();
 
-  public layerPosition: number = 1041;
-  public overlayVisible: boolean = false;
-  public openedClass: boolean = false;
+  public layerPosition = 1041;
+  public overlayVisible = false;
+  public openedClass = false;
 
   private _data: any;
 
@@ -82,9 +82,9 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
     private _renderer: Renderer2,
     private _changeDetectorRef: ChangeDetectorRef,
     private _ntkSmartModalService: NtkSmartModalService,
-  ) {}
+  ) { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     if (!!this.identifier && this.identifier.length) {
       this.layerPosition += this._ntkSmartModalService.getModalStackCount();
       this._ntkSmartModalService.addModal({ id: this.identifier, modal: this }, this.force);
@@ -97,7 +97,7 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
     }
   }
 
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     this._ntkSmartModalService.removeModal(this.identifier);
     window.removeEventListener('keyup', this.escapeKeyboardEvent);
     if (!this._ntkSmartModalService.getModalStack.length) {
@@ -183,7 +183,7 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
     }
   }
 
-  public toggle(top?: boolean) {
+  public toggle(top?: boolean): void {
     if (this.visible) {
       this.close();
     } else {
@@ -238,10 +238,10 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
       this.onEscape.emit(this);
       this._ntkSmartModalService.closeLatestModal();
     }
-  };
+  }
 
   @HostListener('window:resize')
-  public targetPlacement() {
+  public targetPlacement(): void {
     if (!this.nsmDialog || !this.nsmContent || !this.nsmOverlay || !this.target) {
       return;
     }

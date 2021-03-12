@@ -8,9 +8,9 @@ describe('AutostartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AutostartComponent ]
+      declarations: [AutostartComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

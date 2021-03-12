@@ -137,8 +137,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       );
   }
 
-  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel): 
-  Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
@@ -154,7 +154,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-  ServiceGetAllWithSimilarLocationPeriodEnd(model: BiographyContentWithSimilarLocationPeriodDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodEnd(model: BiographyContentWithSimilarLocationPeriodDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
@@ -170,7 +171,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel();
     }
@@ -186,7 +188,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStart(model: BiographyContentWithSimilarDatePeriodStartDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStart(model: BiographyContentWithSimilarDatePeriodStartDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDtoModel();
     }
@@ -202,7 +205,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel();
     }
@@ -218,7 +222,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel();
     }
@@ -236,7 +241,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
   }
 
 
-  ServiceGetAllGetAllWithSimilarDatePeriodEnd(model: BiographyContentWithSimilarDatePeriodEndDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithSimilarDatePeriodEnd(model: BiographyContentWithSimilarDatePeriodEndDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodEndDtoModel();
     }
@@ -253,7 +259,8 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       );
   }
 
-  ServiceGetAllGetAllWithDatePeriodEnd(model: BiographyContentWithDatePeriodEndDtoModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithDatePeriodEnd(model: BiographyContentWithDatePeriodEndDtoModel):
+    Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithDatePeriodEndDtoModel();
     }

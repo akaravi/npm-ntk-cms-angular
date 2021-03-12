@@ -11,7 +11,7 @@ export class BootstrapComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

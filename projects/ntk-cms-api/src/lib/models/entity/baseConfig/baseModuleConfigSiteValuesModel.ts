@@ -1,5 +1,4 @@
 ﻿export class BaseModuleConfigSiteValuesModel {
-
-  StatusRenderUser: boolean
+  StatusRenderUser: boolean;
 }
 

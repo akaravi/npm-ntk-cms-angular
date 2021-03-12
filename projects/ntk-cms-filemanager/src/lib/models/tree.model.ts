@@ -60,8 +60,8 @@ export class TreeModel {
       UpdatedDate: null,
       downloadLinksrc: '',
       parentId: null,
-      size : null,
-      type : '',
+      size: null,
+      type: '',
     };
   }
 

@@ -7,15 +7,16 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {
     super();
   }
+  ApiPath = 'https://apifile.ir/api/v1/upload';
+
   public uploadFile(fileItem: FilePreviewModel): Observable<UploadResponse> {
     const form = new FormData();
     form.append('FileName', fileItem.file);
-    const api = 'https://apifile.ir/api/v1/upload';
     const headers = new HttpHeaders();
     headers.set('FileName', fileItem.file + '');
-    const req = new HttpRequest('POST', api, form, {
+    const req = new HttpRequest('POST', this.ApiPath, form, {
       reportProgress: true,
-      headers: headers,
+      headers,
     });
     return this.http.request(req).pipe(
       map((res) => {
