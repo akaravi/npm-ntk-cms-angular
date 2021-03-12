@@ -30,5 +30,5 @@ export class TokenInfoModel {
     PhotoUrl: string;
     MobileConfirmed: boolean;
     EmailConfirmed: boolean;
-
+    LinkMainImageIdSrc: string;
 }
