@@ -5,7 +5,8 @@ import { PollingOptionModel } from './pollingOptionModel';
 export class PollingContentModel extends BaseModuleEntity<number> {
   ExpireDate?: Date;
   Title: string;
-  Description: string;
+  Question: string;
+
   ViewStatisticsBeforeVote: boolean;
   ViewStatisticsAfterVote: boolean;
   // tslint:disable-next-line: variable-name
@@ -26,7 +27,6 @@ export class PollingContentModel extends BaseModuleEntity<number> {
   LinkFilePodcastIdSrc: string;
   LinkFileMovieIdSrc: string;
   LinkFileIdsSrc: string[];
-  Question: string;
   MaxVoteForThisContent: number;
   MaxVoteForEachOption: number;
   Options: PollingOptionModel[];
