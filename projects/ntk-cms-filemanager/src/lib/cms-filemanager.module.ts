@@ -21,7 +21,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
 
 export function CreateTranslateLoader(http: HttpClient): any {
-  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json');
 }
 
 @NgModule({
