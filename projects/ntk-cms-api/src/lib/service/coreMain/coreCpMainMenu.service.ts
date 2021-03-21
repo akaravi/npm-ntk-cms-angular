@@ -18,12 +18,6 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
   getModuleCotrolerUrl(): string {
     return 'CoreCpMainMenu';
   }
-
-  // SetCoreCpMainMenu(model: Array<CoreCpMainMenuModel>) {
-  //   if (model == null) model = new Array<CoreCpMainMenuModel>();
-  //   this.coreCpMainMenu.next(model);
-  // }
-
   ServiceGetAllMenu(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
     if (model == null) {
       model = new FilterModel();

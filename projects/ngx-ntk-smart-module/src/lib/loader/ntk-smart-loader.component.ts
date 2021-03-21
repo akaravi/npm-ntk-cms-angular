@@ -37,12 +37,12 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   public visible = false;
   public layerPosition = 999;
 
-  private _debouncer: any;
-  private _isProcessing = false;
+  private privateDebouncer: any;
+  private privateIsProcessing = false;
 
-  private _loaderBodyClass = 'loader-open';
-  private _enterClass = 'enter';
-  private _leaveClass = 'leave';
+  private privateLoaderBodyClass = 'loader-open';
+  private privateEnterClass = 'enter';
+  private privateLeaveClass = 'leave';
 
   constructor(public ntkSmartLoaderService: NtkSmartLoaderService, private changeDetectorRef: ChangeDetectorRef) {
   }
@@ -71,23 +71,23 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   }
 
   public start(top?: boolean): void {
-    this._isProcessing = true;
+    this.privateIsProcessing = true;
 
-    clearInterval(this._debouncer);
+    clearInterval(this.privateDebouncer);
 
     this.visible = true;
 
     setTimeout(() => {
-      this.addCustomClass(this._enterClass);
+      this.addCustomClass(this.privateEnterClass);
     });
 
-    this._debouncer = setTimeout(() => {
+    this.privateDebouncer = setTimeout(() => {
       if (top) {
         this.layerPosition = this.ntkSmartLoaderService.getHigherIndex();
       }
 
-      if (!document.body.classList.contains(this._loaderBodyClass)) {
-        document.body.classList.add(this._loaderBodyClass);
+      if (!document.body.classList.contains(this.privateLoaderBodyClass)) {
+        document.body.classList.add(this.privateLoaderBodyClass);
       }
 
       this.loading = true;
@@ -95,24 +95,24 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
       this.onStart.emit(this);
       this.onVisibleChange.emit(this);
 
-      this.removeCustomClass(this._enterClass);
-      this._isProcessing = false;
+      this.removeCustomClass(this.privateEnterClass);
+      this.privateIsProcessing = false;
     }, this.delayIn);
   }
 
   public stop(): void {
-    if (this._isProcessing) {
+    if (this.privateIsProcessing) {
       this.visible = false;
       this.loading = false;
     }
 
-    clearInterval(this._debouncer);
+    clearInterval(this.privateDebouncer);
 
-    this.addCustomClass(this._leaveClass);
+    this.addCustomClass(this.privateLeaveClass);
     this.loading = false;
-    this._debouncer = setTimeout(() => {
-      if (document.body.classList.contains(this._loaderBodyClass)) {
-        document.body.classList.remove(this._loaderBodyClass);
+    this.privateDebouncer = setTimeout(() => {
+      if (document.body.classList.contains(this.privateLoaderBodyClass)) {
+        document.body.classList.remove(this.privateLoaderBodyClass);
       }
 
       this.visible = false;
@@ -120,7 +120,7 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
       this.onStop.emit(this);
       this.onVisibleChange.emit(this);
 
-      this.removeCustomClass(this._leaveClass);
+      this.removeCustomClass(this.privateLeaveClass);
       setTimeout(() => {
         this.changeDetectorRef.markForCheck();
       });

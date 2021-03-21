@@ -10,8 +10,8 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
-  ServiceViewModel(): Observable<ErrorExceptionResult<TOut>> {
+export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
+  ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ViewModel', {
@@ -25,7 +25,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceGetAll(model: FilterModel): Observable<ErrorExceptionResult<TOut>> {
+  ServiceGetAll(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -44,7 +44,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TOut>> {
+  ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
@@ -96,7 +96,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResult<TOut>> {
+  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -114,7 +114,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceAdd(model: any): Observable<ErrorExceptionResult<TOut>> {
+  ServiceAdd(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
@@ -129,7 +129,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceEdit(model: any): Observable<ErrorExceptionResult<TOut>> {
+  ServiceEdit(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
@@ -144,7 +144,7 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceDelete(id: TKey): Observable<ErrorExceptionResult<TOut>> {
+  ServiceDelete(id: TKey): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .delete(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
@@ -158,10 +158,24 @@ export class ApiCmsServerBase<TOut, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResult<TOut>> {
+  ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteList', ids, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceDeleteEntity(model: TModel): Observable<ErrorExceptionResult<TModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/delete', model, {
         headers: this.getHeaders(),
       })
       .pipe(

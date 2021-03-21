@@ -72,25 +72,25 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
   public overlayVisible = false;
   public openedClass = false;
 
-  private _data: any;
+  private privateData: any;
 
   @ViewChild('nsmContent') private nsmContent: ElementRef | undefined;
   @ViewChild('nsmDialog') private nsmDialog: ElementRef | undefined;
   @ViewChild('nsmOverlay') private nsmOverlay: ElementRef | undefined;
 
   constructor(
-    private _renderer: Renderer2,
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _ntkSmartModalService: NtkSmartModalService,
+    private privateRenderer: Renderer2,
+    private privateChangeDetectorRef: ChangeDetectorRef,
+    private privateNtkSmartModalService: NtkSmartModalService,
   ) { }
 
   public ngOnInit(): void {
     if (!!this.identifier && this.identifier.length) {
-      this.layerPosition += this._ntkSmartModalService.getModalStackCount();
-      this._ntkSmartModalService.addModal({ id: this.identifier, modal: this }, this.force);
+      this.layerPosition += this.privateNtkSmartModalService.getModalStackCount();
+      this.privateNtkSmartModalService.addModal({ id: this.identifier, modal: this }, this.force);
 
       if (this.autostart) {
-        this._ntkSmartModalService.open(this.identifier);
+        this.privateNtkSmartModalService.open(this.identifier);
       }
     } else {
       throw new Error('identifier field isn’t set. Please set one before calling <ntk-smart-modal> in a template.');
@@ -98,19 +98,19 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this._ntkSmartModalService.removeModal(this.identifier);
+    this.privateNtkSmartModalService.removeModal(this.identifier);
     window.removeEventListener('keyup', this.escapeKeyboardEvent);
-    if (!this._ntkSmartModalService.getModalStack.length) {
-      this._renderer.removeClass(document.body, 'dialog-open');
+    if (!this.privateNtkSmartModalService.getModalStack.length) {
+      this.privateRenderer.removeClass(document.body, 'dialog-open');
     }
   }
 
   public open(top?: boolean): void {
     if (top) {
-      this.layerPosition = this._ntkSmartModalService.getHigherIndex();
+      this.layerPosition = this.privateNtkSmartModalService.getHigherIndex();
     }
 
-    this._renderer.addClass(document.body, 'dialog-open');
+    this.privateRenderer.addClass(document.body, 'dialog-open');
     this.overlayVisible = true;
     this.visible = true;
 
@@ -121,7 +121,7 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
         this.targetPlacement();
       }
 
-      this._changeDetectorRef.markForCheck();
+      this.privateChangeDetectorRef.markForCheck();
     });
 
     this.onOpen.emit(this);
@@ -138,15 +138,15 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
     this.onClose.emit(this);
     this.onAnyCloseEvent.emit(this);
 
-    if (this._ntkSmartModalService.getOpenedModals().length < 2) {
-      this._renderer.removeClass(document.body, 'dialog-open');
+    if (this.privateNtkSmartModalService.getOpenedModals().length < 2) {
+      this.privateRenderer.removeClass(document.body, 'dialog-open');
     }
 
     setTimeout(() => {
       me.visibleChange.emit(me.visible);
       me.visible = false;
       me.overlayVisible = false;
-      me._changeDetectorRef.markForCheck();
+      me.privateChangeDetectorRef.markForCheck();
       me.onCloseFinished.emit(me);
       me.onAnyCloseEventFinished.emit(me);
     }, this.hideDelay);
@@ -166,15 +166,15 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
       this.onDismiss.emit(this);
       this.onAnyCloseEvent.emit(this);
 
-      if (this._ntkSmartModalService.getOpenedModals().length < 2) {
-        this._renderer.removeClass(document.body, 'dialog-open');
+      if (this.privateNtkSmartModalService.getOpenedModals().length < 2) {
+        this.privateRenderer.removeClass(document.body, 'dialog-open');
       }
 
       setTimeout(() => {
         me.visible = false;
         me.visibleChange.emit(me.visible);
         me.overlayVisible = false;
-        me._changeDetectorRef.markForCheck();
+        me.privateChangeDetectorRef.markForCheck();
         me.onDismissFinished.emit(me);
         me.onAnyCloseEventFinished.emit(me);
       }, this.hideDelay);
@@ -212,31 +212,31 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
   }
 
   public hasData(): boolean {
-    return this._data !== undefined;
+    return this.privateData !== undefined;
   }
 
   public setData(data: any, force?: boolean): any {
     if (!this.hasData() || (this.hasData() && force)) {
-      this._data = data;
-      this.onDataAdded.emit(this._data);
-      this._changeDetectorRef.markForCheck();
+      this.privateData = data;
+      this.onDataAdded.emit(this.privateData);
+      this.privateChangeDetectorRef.markForCheck();
     }
   }
 
   public getData(): any {
-    return this._data;
+    return this.privateData;
   }
 
   public removeData(): void {
-    this._data = undefined;
+    this.privateData = undefined;
     this.onDataRemoved.emit(true);
-    this._changeDetectorRef.markForCheck();
+    this.privateChangeDetectorRef.markForCheck();
   }
 
   public escapeKeyboardEvent = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       this.onEscape.emit(this);
-      this._ntkSmartModalService.closeLatestModal();
+      this.privateNtkSmartModalService.closeLatestModal();
     }
   }
 
@@ -272,7 +272,7 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
       offsetTop = 0;
     }
 
-    this._renderer.setStyle(this.nsmContent.nativeElement, 'top', offsetTop + 'px');
-    this._renderer.setStyle(this.nsmContent.nativeElement, 'left', offsetLeft + 'px');
+    this.privateRenderer.setStyle(this.nsmContent.nativeElement, 'top', offsetTop + 'px');
+    this.privateRenderer.setStyle(this.nsmContent.nativeElement, 'left', offsetLeft + 'px');
   }
 }

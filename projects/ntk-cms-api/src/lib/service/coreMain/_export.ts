@@ -1,6 +1,7 @@
 
 export * from './coreConfiguration.service';
 export * from './coreCpMainMenu.service';
+export * from './coreCpMainMenuCmsUserGroup.service';
 export * from './coreEnum.service';
 export * from './coreGuide.service';
 export * from './coreLocation.service';

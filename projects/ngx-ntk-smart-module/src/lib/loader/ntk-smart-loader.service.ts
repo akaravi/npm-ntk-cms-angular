@@ -4,8 +4,8 @@ import { LoaderInstance } from './loader-instance';
 
 @Injectable()
 export class NtkSmartLoaderService {
-  private _loaderStack: LoaderInstance[] = [];
-  private _actions: Array<{ identifier: string, action: string }> = [];
+  private privateloaderStack: LoaderInstance[] = [];
+  private privateActions: Array<{ identifier: string, action: string }> = [];
 
   /**
    * Add a new loader instance. This step is essential and allows to retrieve any loader at any time.
@@ -17,13 +17,13 @@ export class NtkSmartLoaderService {
    */
   public addLoader(loaderInstance: LoaderInstance, force?: boolean): void {
     if (force) {
-      const i: number = this._loaderStack.findIndex((o: LoaderInstance) => {
+      const i: number = this.privateloaderStack.findIndex((o: LoaderInstance) => {
         return o.id === loaderInstance.id;
       });
       if (i > -1) {
-        this._loaderStack[i].component = loaderInstance.component;
+        this.privateloaderStack[i].component = loaderInstance.component;
       } else {
-        this._loaderStack.push(loaderInstance);
+        this.privateloaderStack.push(loaderInstance);
       }
       return;
     }
@@ -32,7 +32,7 @@ export class NtkSmartLoaderService {
     if (loader = this._getLoader(loaderInstance.id)) {
       throw (new Error('Loader with ' + loaderInstance.id + ' identifier already exist'));
     } else {
-      this._loaderStack.push(loaderInstance);
+      this.privateloaderStack.push(loaderInstance);
     }
   }
 
@@ -42,7 +42,7 @@ export class NtkSmartLoaderService {
    * @param id The loader identifier.
    */
   public removeLoader(id: string): void {
-    this._loaderStack = this._loaderStack.filter((loader) => loader.id !== id);
+    this.privateloaderStack = this.privateloaderStack.filter((loader) => loader.id !== id);
 
     this._removeAction(id, '*');
   }
@@ -53,7 +53,7 @@ export class NtkSmartLoaderService {
    * @returns Returns an array that contains all loader instances.
    */
   public getLoaderStack(): LoaderInstance[] {
-    return this._loaderStack;
+    return this.privateloaderStack;
   }
 
   /**
@@ -62,7 +62,7 @@ export class NtkSmartLoaderService {
    * @returns Returns the number of loader instances.
    */
   public getLoaderStackCount(): number {
-    return this._loaderStack.length;
+    return this.privateloaderStack.length;
   }
 
   /**
@@ -71,7 +71,7 @@ export class NtkSmartLoaderService {
    * @returns Returns an array that contains all the opened loaders.
    */
   public getOpenedLoaders(): LoaderInstance[] {
-    return this._loaderStack.filter((loader) => loader.component.visible);
+    return this.privateloaderStack.filter((loader) => loader.component.visible);
   }
 
   /**
@@ -80,7 +80,7 @@ export class NtkSmartLoaderService {
    * @returns Returns an array that contains all the active loaders.
    */
   public getActiveLoaders(): LoaderInstance[] {
-    return this._loaderStack.filter((loader) => loader.component.loading);
+    return this.privateloaderStack.filter((loader) => loader.component.loading);
   }
 
   /**
@@ -120,7 +120,7 @@ export class NtkSmartLoaderService {
    * Enable loading state to all loaders.
    */
   public startAll(): void {
-    this._loaderStack.forEach((loader) => this.start(loader.id));
+    this.privateloaderStack.forEach((loader) => this.start(loader.id));
   }
 
   /**
@@ -147,7 +147,7 @@ export class NtkSmartLoaderService {
    * Disable loading state to all loaders.
    */
   public stopAll(): void {
-    this._loaderStack.forEach((loader) => this.stop(loader.id));
+    this.privateloaderStack.forEach((loader) => this.stop(loader.id));
   }
 
   public isLoading(id: string | string[]): boolean {
@@ -156,7 +156,7 @@ export class NtkSmartLoaderService {
       const tmp: any = [];
 
       id.forEach((i: string) => {
-        this._loaderStack.forEach((load) => {
+        this.privateloaderStack.forEach((load) => {
           if (load.id === i) {
             tmp.push(load.component.loading);
           }
@@ -177,7 +177,7 @@ export class NtkSmartLoaderService {
    * @param action Name of the action.
    */
   public executeAction(id: string, action: string): void {
-    if (this._actions.find((act) => act.identifier === id && act.action === action)) {
+    if (this.privateActions.find((act) => act.identifier === id && act.action === action)) {
       switch (action) {
         case 'start':
           this.start(id);
@@ -196,7 +196,7 @@ export class NtkSmartLoaderService {
    * @param id The loader identifier used at creation time.
    */
   private _getLoader(id: string): LoaderInstance | null {
-    return this._loaderStack.find((load) => load.id === id) || null;
+    return this.privateloaderStack.find((load) => load.id === id) || null;
   }
 
   /**
@@ -211,7 +211,7 @@ export class NtkSmartLoaderService {
         this._addAction(i, action);
       });
     } else {
-      this._actions.push({ identifier: id, action: action });
+      this.privateActions.push({ identifier: id, action: action });
     }
   }
 
@@ -227,7 +227,7 @@ export class NtkSmartLoaderService {
         this._removeAction(i, action);
       });
     } else {
-      this._actions = this._actions.filter((act) => act.identifier !== id || (act.action !== action && action !== '*'));
+      this.privateActions = this.privateActions.filter((act) => act.identifier !== id || (act.action !== action && action !== '*'));
     }
   }
 }

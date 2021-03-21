@@ -63,14 +63,14 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   openFilemanagerButtonLabel: string;
-  private _language = 'en';
+  private privateLanguage = 'en';
   @Input() set language(value: string) {
-    this._language = value;
+    this.privateLanguage = value;
     this.translate.use(this.language);
   }
 
   get language(): string {
-    return this._language;
+    return this.privateLanguage;
   }
 
   selectedNode: NodeInterface;

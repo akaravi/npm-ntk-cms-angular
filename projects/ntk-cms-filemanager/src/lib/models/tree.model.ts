@@ -3,9 +3,9 @@ import { ConfigInterface } from '../interfaces/config.interface';
 import { DownloadModeEnum } from '../enums/download-mode.enum';
 
 export class TreeModel {
-  private _currentPath: number;
-  private _nodes: NodeInterface;
-  private _selectedNodeId: number;
+  private privateCurrentPath: number;
+  private privateNodes: NodeInterface;
+  private privateSelectedNodeId: number;
   public config: ConfigInterface;
   private configDefault: ConfigInterface = {
     baseURL: 'https://apicms.ir/api/v1/',
@@ -34,7 +34,7 @@ export class TreeModel {
     },
   };
   constructor(config: ConfigInterface = null) {
-    this._currentPath = 0;
+    this.privateCurrentPath = 0;
     this.config = config;
     if (!this.config || this.config == null) {
       this.config = this.configDefault;
@@ -66,27 +66,27 @@ export class TreeModel {
   }
 
   get currentPath(): number {
-    return this._currentPath;
+    return this.privateCurrentPath;
   }
 
   set currentPath(value: number) {
-    this._currentPath = value;
+    this.privateCurrentPath = value;
   }
 
   get nodes(): NodeInterface {
-    return this._nodes;
+    return this.privateNodes;
   }
 
   set nodes(value: NodeInterface) {
-    this._nodes = value;
+    this.privateNodes = value;
   }
 
   get selectedNodeId(): number {
-    return this._selectedNodeId;
+    return this.privateSelectedNodeId;
   }
 
   set selectedNodeId(value: number) {
-    this._selectedNodeId = value;
+    this.privateSelectedNodeId = value;
   }
 
 }

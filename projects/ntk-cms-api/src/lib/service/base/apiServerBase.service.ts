@@ -78,7 +78,7 @@ export class ApiServerBase {
     localStorage.removeItem(this.keyUserToken);
     localStorage.removeItem(this.keyDeviceToken);
   }
-  errorExceptionResultCheck(model: ErrorExceptionResult<any> | any): ErrorExceptionResult<any> {
+  errorExceptionResultCheck<TModel>(model: ErrorExceptionResult<TModel> ): ErrorExceptionResult<TModel> {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
@@ -87,7 +87,7 @@ export class ApiServerBase {
     }
     return model;
   }
-  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase | any): ErrorExceptionResultBase {
+  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase ): ErrorExceptionResultBase {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
