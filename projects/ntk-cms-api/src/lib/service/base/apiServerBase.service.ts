@@ -12,7 +12,7 @@ export class ApiServerBase {
   public baseUrl = 'https://apicms.ir/api/v1/';
   public userToken = '';
   public deviceToken = '';
-  public configApiRetry = 1;
+  public configApiRetry = 0;
   keyUserToken = 'userToken';
   keyDeviceToken = 'deviceToken';
   setConfig(url: string, apiRetry = 1): void {
