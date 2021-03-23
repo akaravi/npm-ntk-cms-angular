@@ -6,8 +6,8 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreCpMainMenuModel } from '../../models/entity/coreMain/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-
 import { Injectable } from '@angular/core';
+import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 
 @Injectable()
@@ -38,7 +38,10 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
         }),
       );
   }
-  ServiceEditStep(model: any): Observable<ErrorExceptionResultBase> {
+  ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
+    if(!model){
+      model=new EditStepDtoModel<number>()
+    }
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),

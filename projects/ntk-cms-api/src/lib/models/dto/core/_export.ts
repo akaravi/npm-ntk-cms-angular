@@ -13,3 +13,4 @@ export * from './authUserSignInBySmsDtoModel';
 export * from './authEmailConfirmDtoModel';
 export * from './authMobileConfirmDtoModel';
 export * from './universalActionModel';
+export * from './editStepDtoModel';

@@ -1,8 +1,8 @@
 import { BaseEntity } from '../base/baseEntity';
-import { EminUserActivateTypes } from '../../enums/eminUserActivateTypes';
+import { EnumUserActivateTypes } from '../../enums/enumUserActivateTypes';
 
 export class CoreTokenActivationModel extends BaseEntity<string>  {
-  ActivateType: EminUserActivateTypes;
+  ActivateType: EnumUserActivateTypes;
   LinkUserId?: number;
   LinkSiteId?: number;
   Username: string;
