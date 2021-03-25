@@ -521,6 +521,8 @@ i {
   @include borders;
   border-width: 2px;
   max-height: 90vh;
+  min-width: 900px;
+
 }
 
 .nsm-dialog-btn-close {

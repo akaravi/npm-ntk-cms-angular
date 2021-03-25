@@ -37,8 +37,15 @@ export class CmsFileManagerComponent implements OnInit {
 
   private privateOpenForm = false;
   @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   @Input() set openForm(model: boolean) {
+    if (this.ntkSmartModalService.getModal('mainModal')) {
+      if (model) {
+        this.ntkSmartModalService.getModal('mainModal').open();
+      }
+      else {
+        this.ntkSmartModalService.getModal('mainModal').close();
+      }
+    }
     this.privateOpenForm = model;
     this.openFormChange.emit(model);
   }
@@ -301,8 +308,8 @@ export class CmsFileManagerComponent implements OnInit {
     Array.from(document.getElementsByClassName(className)).map((el: any) => el.classList.remove(className));
   }
 
-  fmShowHide(): void {
-    this.openForm = !this.openForm;
+  fmShowHide(act = !this.openForm): void {
+    this.openForm = act;
   }
 
   backdropClicked(): void {
