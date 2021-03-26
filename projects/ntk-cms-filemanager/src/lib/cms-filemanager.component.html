@@ -2,12 +2,17 @@
 
 <ng-template #itIsPopup>
   <div>
-    <button class="button big" (click)="fmShowHide()" [disabled]="openForm"
-      *ngIf="openFilemanagerButtonView">{{openFilemanagerButtonLabel}}</button>
+    <button class="button big" (click)="fmShowHide(true)" [disabled]="openPopupForm"
+      *ngIf="openFilemanagerButtonView">{{openFilemanagerButtonLabel}}(    openPopupForm:{{this.openPopupForm}}
+      )</button>
   </div>
-  <ntk-smart-modal identifier="mainModal" [closable]="true" (onDismiss)="fmShowHide(false)" (onAnyCloseEvent)="fmShowHide(false)" (onEscape)="fmShowHide(false)" >
+  <ntk-smart-modal identifier="mainModal"  #mainModal [closable]="false" [dismissable]="false" [escapable]="false" >
     <br>
-    <div *ngIf="openForm; then showContent"></div>
+    openPopupForm:{{this.openPopupForm}}
+    <br>
+    itIsPopup:{{this.itIsPopup}}
+    <br>
+    <div *ngIf="this.openPopupForm; then showContent"></div>
     <div class="buttons-panel">
       <button class="button big" (click)="confirmSelection()"
         [disabled]="!allowConfirmSelection(selectedNode)">{{'filemanager.confirm_selection' | translate}}</button>
@@ -15,7 +20,6 @@
     </div>
   </ntk-smart-modal>
 </ng-template>
-
 <ng-template #showContent>
   <div class="content">
     <div class="file-manager-navbar">
@@ -27,7 +31,7 @@
 
       <div class="navigation">
         <app-navigation>
-          <div class="button close" (click)="fmShowHide()" *ngIf="isPopup">
+          <div class="button close" (click)="fmShowHide(false)" *ngIf="isPopup">
             <i class="fas fa-2x fa-times"></i>
           </div>
         </app-navigation>

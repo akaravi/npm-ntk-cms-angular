@@ -15,6 +15,7 @@ import {
 export class FileManagerTestComponent {
   tree1: TreeModel;
   tree2: TreeModel;
+  tree3: TreeModel;
   // node: NodeInterface;
   appLanguage = 'fa';
 
@@ -74,11 +75,13 @@ export class FileManagerTestComponent {
 
     this.tree1 = new TreeModel(treeConfig1);
     this.tree2 = new TreeModel(treeConfig2);
+    this.tree3 = new TreeModel(treeConfig1);
   }
   optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
   openForm = false;
   selected1: NodeInterface;
   selected2: NodeInterface;
+  selected3: NodeInterface;
   // noinspection JSUnusedLocalSymbols
   onActionFileSelect1(event: NodeInterface): void {
     console.log(event);
@@ -87,6 +90,10 @@ export class FileManagerTestComponent {
   onActionFileSelect2(event: NodeInterface): void {
     console.log(event);
     this.selected2 = event;
+  }
+  onActionFileSelect3(event: NodeInterface): void {
+    console.log(event);
+    this.selected3 = event;
   }
   onActionOpen(status: boolean): void {
     if (this.optionsFileManager.childMethods) {

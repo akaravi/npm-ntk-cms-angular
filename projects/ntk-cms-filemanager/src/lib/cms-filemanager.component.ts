@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { TreeModel } from './models/tree.model';
 import { NodeService } from './services/node.service';
 import { NodeInterface } from './interfaces/node.interface';
@@ -12,7 +12,7 @@ import { ComponentOptionModel } from './models/componentOptionModel';
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class CmsFileManagerComponent implements OnInit {
   @Input() iconTemplate: TemplateRef<any>;
@@ -34,23 +34,15 @@ export class CmsFileManagerComponent implements OnInit {
   @Input() openFilemanagerButtonView = true;
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
-
-  private privateOpenForm = false;
+  openPopupForm = false;
   @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() set openForm(model: boolean) {
-    if (this.ntkSmartModalService.getModal('mainModal')) {
-      if (model) {
-        this.ntkSmartModalService.getModal('mainModal').open();
-      }
-      else {
-        this.ntkSmartModalService.getModal('mainModal').close();
-      }
-    }
-    this.privateOpenForm = model;
+    console.log('openForm:', model);
+    this.openPopupForm = model;
     this.openFormChange.emit(model);
   }
   get openForm(): boolean {
-    return this.privateOpenForm;
+    return this.openPopupForm;
   }
 
   private optionsData: ComponentOptionModel = new ComponentOptionModel();
@@ -98,8 +90,17 @@ export class CmsFileManagerComponent implements OnInit {
     translate.use('fa');
     // console.log('CmsFileManagerComponent', this.nodeService.newGuid());
   }
+  fmShowHide(act: boolean): void {
+    debugger;
+    if (act) {
+      this.ntkSmartModalService.getModal('mainModal').open();
+    } else {
+      this.ntkSmartModalService.getModal('mainModal').close();
+    }
+    this.openForm = act;
+  }
   onActionOpen(status: boolean): void {
-    this.openForm = status;
+    this.fmShowHide(status);
   }
   ngOnInit(): void {
     this.nodeService.serviceTree = this.tree;
@@ -109,7 +110,6 @@ export class CmsFileManagerComponent implements OnInit {
     // this.nodeService.getNodes(this.tree.currentPath).then(() => {
     //   this.store.setState({type: SET_SELECTED_NODE, payload: });
     // });
-
     this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation: any) => {
       this.openFilemanagerButtonLabel = translation;
     });
@@ -308,9 +308,7 @@ export class CmsFileManagerComponent implements OnInit {
     Array.from(document.getElementsByClassName(className)).map((el: any) => el.classList.remove(className));
   }
 
-  fmShowHide(act = !this.openForm): void {
-    this.openForm = act;
-  }
+
 
   backdropClicked(): void {
     // todo get rid of this ugly workaround
@@ -323,7 +321,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   confirmSelection(): void {
-    this.openForm = false;
+    this.fmShowHide(false);
     this.itemSelected.emit(this.selectedNode);
   }
   allowConfirmSelection(selectedNode: NodeInterface): boolean {
@@ -342,7 +340,7 @@ export class CmsFileManagerComponent implements OnInit {
   }
 
   cancelSelection(): void {
-    this.openForm = false;
+    this.fmShowHide(false);
   }
 
   AllowFileView(model: NodeInterface): boolean {
