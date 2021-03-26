@@ -18,7 +18,7 @@
     "@angular/common": ">=8.0.0",
     "@angular/core": ">=8.0.0",
     "rxjs": ">=6.6.0",
-    "ngx-ntk-smart-module": ">=1.0.1",
+    "ngx-ntk-smart-module": ">=1.0.3",
     "ntk-cms-api": ">=1.0.100",
     "ngx-awesome-uploader": ">=10.0.2"
   },
