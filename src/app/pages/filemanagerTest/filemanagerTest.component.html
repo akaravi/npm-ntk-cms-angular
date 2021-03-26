@@ -28,11 +28,11 @@ test file manager
 ></cms-file-manager>
 {{ selected3 | json }}
 <br />
-<button (click)="onActionOpen(true)">Open Form</button>
+<button type="button"  (click)="onActionOpen(true)">Open Form</button>
 <br />
 <input  (click)="openForm=true"  type="test" value="{{selected2?.id}}" clickable>
 <br>
-<button (click)="onActionTest()">Click me!</button>
+<button type="button"  (click)="onActionTest()">Click me!</button>
 
 <br>
 {{ optionsFileManager | json }}

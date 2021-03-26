@@ -12,10 +12,10 @@
   </div>
   <div class="buttons">
 
-    <button class="button big" [disabled]="newFolder" (click)="createNewFolder()">
+    <button  type="button"  class="button big" [disabled]="newFolder" (click)="createNewFolder()">
       {{ 'filemanager.create_new_folder' | translate }}
     </button>
-    <button class="button big" (click)="newClickedAction()">
+    <button  type="button"  class="button big" (click)="newClickedAction()">
       {{ 'filemanager.close' | translate }}
     </button>
   </div>

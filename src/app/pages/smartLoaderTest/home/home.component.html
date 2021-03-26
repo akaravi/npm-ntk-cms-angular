@@ -38,10 +38,10 @@
     </span>
   </div>
 
-  <button (click)="loader.start('myLoader')">
+  <button type="button"  (click)="loader.start('myLoader')">
     Loading start (actionDelay: {{demoOptions.actionDelay}}ms)
   </button>
-  <button (click)="loader.stop('myLoader')">
+  <button type="button"  (click)="loader.stop('myLoader')">
     Loading stop (actionDelay: {{demoOptions.actionDelay}}ms, hideDelay: {{demoOptions.hideDelay}}ms)
   </button>
 </div>

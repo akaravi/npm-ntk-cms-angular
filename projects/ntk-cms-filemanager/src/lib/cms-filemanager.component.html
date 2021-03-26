@@ -6,21 +6,6 @@
       *ngIf="openFilemanagerButtonView">{{openFilemanagerButtonLabel}}( openPopupForm:{{this.openPopupForm}}
       )</button>
   </div>
-  <!-- <ntk-smart-modal identifier="mainModal"  #mainModal [closable]="false" [dismissable]="false" [escapable]="false" >
-    <br>
-    openPopupForm:{{this.openPopupForm}}
-    <br>
-    itIsPopup:{{this.itIsPopup}}
-    <br>
-    <div *ngIf="this.openPopupForm; then showContent"></div>
-    <div class="buttons-panel">
-      <button class="button big" (click)="confirmSelection()"
-        [disabled]="!allowConfirmSelection(selectedNode)">{{'filemanager.confirm_selection' | translate}}</button>
-      <button class="button big" (click)="cancelSelection()">{{'filemanager.cancel_selection' | translate}}</button>
-    </div>
-  </ntk-smart-modal> -->
-
-
   <div class="modal" #mainModal>
     <div class="jw-modal-body">
       <div class="jw-modal">
