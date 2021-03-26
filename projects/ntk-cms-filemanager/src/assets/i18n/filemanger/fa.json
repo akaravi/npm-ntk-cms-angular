@@ -1,6 +1,6 @@
 {
   "filemanager": {
-    "cancel": "لفو",
+    "cancel": "لغو",
     "close": "بستن",
     "confirm": "تایید",
     "create_new_folder": "ساخت فولدر جدید",
@@ -30,8 +30,8 @@
     "upload_file": "بازگزاری فایل",
     "yes": "بله",
     "yes_delete_this": "این حذف شود",
-    "file_delete_confirm": "تایید حذف فایل",
-    "file": "فایل",
+    "file_delete_confirm": " تایید حذف فایل",
+    "file": " فایل ",
     "folder": "فولدر",
     "confirm_selection": "تایید انتخاب",
     "cancel_selection": "لغو انتخاب",

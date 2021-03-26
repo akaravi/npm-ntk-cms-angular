@@ -29,22 +29,32 @@ ng lint ntk-cms-filemanager
 ng build ntk-cms-api --prod
 cd dist/ntk-cms-api
 npm publish
+cd ..
+cd ..
 =========================================
 ng build ntk-cms-filemanager --prod
 cd dist/ntk-cms-filemanager
 npm publish
+cd ..
+cd ..
 =========================================
 ng build ntk-cms-fileuploader --prod
 cd dist/ntk-cms-fileuploader
 npm publish
+cd ..
+cd ..
 =========================================
 ng build ntk-cms-module --prod
 cd dist/ntk-cms-module
 npm publish
+cd ..
+cd ..
 =========================================
 ng build ngx-ntk-smart-module --prod
 cd dist/ngx-ntk-smart-module
 npm publish
+cd ..
+cd ..
 =========================================
 Test All
 ng build ntk-cms-api --prod

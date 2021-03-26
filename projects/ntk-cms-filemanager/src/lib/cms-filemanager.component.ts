@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { TreeModel } from './models/tree.model';
 import { NodeService } from './services/node.service';
 import { NodeInterface } from './interfaces/node.interface';
@@ -14,7 +14,7 @@ import { ComponentOptionModel } from './models/componentOptionModel';
   styleUrls: ['./cms-filemanager.component.scss'],
   // encapsulation: ViewEncapsulation.None,
 })
-export class CmsFileManagerComponent implements OnInit {
+export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
   @Input() folderContentBackTemplate: TemplateRef<any>;
@@ -37,7 +37,18 @@ export class CmsFileManagerComponent implements OnInit {
   openPopupForm = false;
   @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() set openForm(model: boolean) {
-    console.log('openForm:', model);
+    // debugger;
+    if (model !== this.openPopupForm) {
+      if (model) {
+        this.mainModal.nativeElement.style.display = 'block';
+        document.body.classList.add('jw-modal-open');
+        // this.ntkSmartModalService.getModal('mainModal').open();
+      } else {
+        this.mainModal.nativeElement.style.display = 'none';
+        document.body.classList.remove('jw-modal-open');
+        // this.ntkSmartModalService.getModal('mainModal').close();
+      }
+    }
     this.openPopupForm = model;
     this.openFormChange.emit(model);
   }
@@ -78,6 +89,8 @@ export class CmsFileManagerComponent implements OnInit {
   // fmOpen = false;
   loading: boolean;
   newDialog = false;
+  HighestZIndex = 0;
+  @ViewChild('mainModal') mainModal: ElementRef;
 
   constructor(
     private store: FileManagerStoreService,
@@ -85,18 +98,31 @@ export class CmsFileManagerComponent implements OnInit {
     private nodeClickedService: NodeClickedService,
     public ntkSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
+    private el: ElementRef
   ) {
     translate.setDefaultLang('fa');
     translate.use('fa');
     // console.log('CmsFileManagerComponent', this.nodeService.newGuid());
   }
-  fmShowHide(act: boolean): void {
-    debugger;
-    if (act) {
-      this.ntkSmartModalService.getModal('mainModal').open();
-    } else {
-      this.ntkSmartModalService.getModal('mainModal').close();
+  ngAfterViewInit(): void {
+    // console.log(this.mainModal.nativeElement.innerHTML);
+    this.HighestZIndex = this.findHighestZIndex('div');
+  }
+  findHighestZIndex(elem: string): number {
+    const elems = document.getElementsByTagName(elem);
+    let highest = Number.MIN_SAFE_INTEGER || -(Math.pow(2, 53) - 1);
+    for (let i = 0; i < this.el.nativeElement.length; i++) {
+      const zindex = Number.parseInt(
+        document.defaultView.getComputedStyle(elems[i], null).getPropertyValue('z-index'),
+        10
+      );
+      if (zindex > highest) {
+        highest = zindex;
+      }
     }
+    return highest;
+  }
+  fmShowHide(act: boolean): void {
     this.openForm = act;
   }
   onActionOpen(status: boolean): void {
