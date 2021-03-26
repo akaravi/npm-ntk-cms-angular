@@ -12,7 +12,7 @@ import { ComponentOptionModel } from './models/componentOptionModel';
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],
-  // encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None,
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   @Input() iconTemplate: TemplateRef<any>;
