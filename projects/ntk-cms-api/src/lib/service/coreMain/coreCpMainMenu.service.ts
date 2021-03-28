@@ -12,11 +12,28 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 @Injectable()
 export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
-  coreCpMainMenu = new BehaviorSubject<CoreCpMainMenuModel[]>(new Array<CoreCpMainMenuModel>());
-  coreCpMainMenuObs = this.coreCpMainMenu.asObservable();
+  // coreCpMainMenu = new BehaviorSubject<CoreCpMainMenuModel[]>(new Array<CoreCpMainMenuModel>());
+  // coreCpMainMenuObs = this.coreCpMainMenu.asObservable();
 
   getModuleCotrolerUrl(): string {
     return 'CoreCpMainMenu';
+  }
+  ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    model.RowPerPage = 200;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
   }
   ServiceGetAllMenu(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
     if (model == null) {
@@ -31,9 +48,9 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          if (ret.Item != null) {
-            this.coreCpMainMenu.next(ret.ListItems);
-          }
+          // if (ret.Item != null) {
+          //   this.coreCpMainMenu.next(ret.ListItems);
+          // }
           return this.errorExceptionResultCheck(ret);
         }),
       );

@@ -3,7 +3,6 @@ import { map, catchError, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreLocationModel } from '../../models/entity/coreMain/coreLocationModel';
-
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -15,7 +14,23 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
   getModuleCotrolerUrl(): string {
     return 'CoreLocation';
   }
-
+  ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    model.RowPerPage = 200;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllProvinces(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
     if (model == null) {
       model = new FilterModel();
