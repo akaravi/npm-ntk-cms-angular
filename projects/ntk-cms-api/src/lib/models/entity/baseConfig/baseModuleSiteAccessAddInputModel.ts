@@ -2,6 +2,6 @@
   moduleSiteAccessJsonValue: string;
   SiteId: number;
   monthLength: number;
-  expireDate?: Date;
+  ExpireDate?: Date;
   fromDate?: Date;
 }

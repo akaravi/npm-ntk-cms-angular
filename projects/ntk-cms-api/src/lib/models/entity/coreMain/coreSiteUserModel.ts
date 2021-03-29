@@ -4,7 +4,7 @@ import { CoreUserModel } from './coreUserModel';
 import { CoreUserGroupModel } from './coreUserGroupModel';
 
 export class CoreSiteUserModel extends BaseEntity<number>  {
-  ExpireDate?: string;
+  ExpireDate?: Date;
   LinkSiteId: number;
   LinkUserId: number;
   LinkUserGroupId: number;

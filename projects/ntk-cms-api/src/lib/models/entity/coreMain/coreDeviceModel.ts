@@ -6,7 +6,7 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreDeviceModel extends BaseEntity<number>  {
     SecurityKey: string;
-    ExpireDate?: string;
+    ExpireDate?: Date;
     Description: string;
     OSType: EnumOperatingSystemType;
     DeviceType: EnumDeviceType;

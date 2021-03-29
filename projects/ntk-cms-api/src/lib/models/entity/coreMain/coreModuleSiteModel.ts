@@ -3,7 +3,7 @@ import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreModuleSiteModel extends BaseEntity<number>  {
-  expireDate?: string;
+  ExpireDate?: Date;
   LinkSiteId: number;
   Title: string;
   LinkModuleId: number;

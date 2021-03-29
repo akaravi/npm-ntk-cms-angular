@@ -7,7 +7,7 @@ export class TokenInfoModel {
     Token: string;
     DeviceToken: string;
     RefreshToken: string;
-    TokenExpireDate: string;
+    TokenExpireDate: Date;
     SiteId: number;
     UserId: number;
     MemberId: number;

@@ -9,7 +9,7 @@ export class CoreTokenLogModel  extends BaseEntity<string>  {
     DeviceClientMAC: string;
     LinkDeviceId: number;
     Token: string;
-    ExpireDate: string;
+    ExpireDate: Date;
     UserAccessAreaType: EnumManageUserAccessAreaTypes;
     UserType: EnumManageUserAccessControllerTypes;
     UserAccessAdminAllowToAllData: boolean;
