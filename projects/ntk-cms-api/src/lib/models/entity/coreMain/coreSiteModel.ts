@@ -24,6 +24,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   Keyword: string;
   Description: string;
   LinkFavIconId?: number;
+  LinkFavIconIdSrc: string;
   LinkSiteCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSiteCategory: CoreSiteCategoryModel;
@@ -47,7 +48,7 @@ export class CoreSiteModel extends BaseEntity<number> {
    AboutUsFax: string;
    AboutUsEmail: string;
    AboutUsAddress: string;
-   AboutUsLinkImageId: string;
+   AboutUsLinkImageId?: number;
    AboutUsLinkImageIdSrc: string;
    AboutUsGeolocationlatitude: number;
    AboutUsGeolocationlongitude: number;
