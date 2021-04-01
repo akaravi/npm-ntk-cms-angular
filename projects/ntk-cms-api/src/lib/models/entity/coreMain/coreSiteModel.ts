@@ -31,7 +31,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   virtual_CmsSiteCategory: CoreSiteCategoryModel;
   CmsSiteCategory: CoreSiteCategoryModel;
   HasAccountingForm: boolean;
-  ViewInCmsSiteLIst: boolean;
+  ViewInCmsSiteList: boolean;
   AccountingFormNo: number;
   AccountingFormCreatedDate?: string;
   AccountingFormUpdatedDate?: string;
