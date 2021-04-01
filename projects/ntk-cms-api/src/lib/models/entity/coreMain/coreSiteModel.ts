@@ -5,6 +5,7 @@ import { CoreModuleSiteModel } from './coreModuleSiteModel';
 import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
 import { CoreDeviceModel } from './coreDeviceModel';
 import { EnumSiteStatus } from '../../enums/enumSiteStatus';
+import { EnumLanguage } from '../../enums/enumLanguage';
 
 export class CoreSiteModel extends BaseEntity<number> {
   CurrentSiteDomainUrl: string;
@@ -17,7 +18,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   ParentCreator: CoreSiteModel;
   Title: string;
   OwnerSiteSetStatus: EnumSiteStatus;
-  UserLanguage: number;
+  UserLanguage: EnumLanguage;
   SubDomain: string;
   Domain: string;
   Redirect: string;

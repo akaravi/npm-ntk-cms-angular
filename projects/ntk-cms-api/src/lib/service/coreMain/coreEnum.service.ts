@@ -112,4 +112,16 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
+   ServiceEnumLanguage(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumLanguage', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

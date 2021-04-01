@@ -16,6 +16,7 @@ export * from './enumManageUserAccessControllerTypes';
 export * from './enumMenuPlaceType';
 export * from './enumOperatingSystemType';
 export * from './enumRecordStatus';
+export * from './enumLanguage';
 export * from './enumSortType';
 export * from './enumTransactionBankStatus';
 export * from './enumTransactionRecordStatus';
