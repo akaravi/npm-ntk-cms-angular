@@ -17,4 +17,5 @@ export * from './coreSiteDomainAlias.service';
 export * from './coreSiteUser.service';
 export * from './coreUser.service';
 export * from './coreUserGroup.service';
+export * from './coreDevice.service';
 
