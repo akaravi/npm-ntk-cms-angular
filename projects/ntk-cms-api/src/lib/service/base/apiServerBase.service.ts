@@ -9,19 +9,22 @@ import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 @Injectable()
 export class ApiServerBase {
+  constructor(public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
+    this.childConstructor();
+    this.headers = new Map<string, string>();
+  }
   public baseUrl = 'https://apicms.ir/api/v1/';
   public userToken = '';
   public deviceToken = '';
   public configApiRetry = 0;
   keyUserToken = 'userToken';
   keyDeviceToken = 'deviceToken';
+  private headers: Map<string, string>;
+  private accessLoad = false;
   setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
     localStorage.setItem('baseUrl', url);
     this.configApiRetry = apiRetry;
-  }
-  constructor(public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
-    this.childConstructor();
   }
 
   childConstructor(): any {
@@ -37,10 +40,11 @@ export class ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'Empty';
   }
-  getHeaders(): any {
-    const headers = { Authorization: this.getUserToken(), DeviceToken: this.getDeviceToken() };
-
-    return headers;
+  setHeaders(key: string, value: string): void {
+    this.headers.set(key, value);
+  }
+  setAccessLoad(status: boolean = true): void {
+    this.accessLoad = status;
   }
 
   getUserToken(): string | null {
@@ -51,7 +55,6 @@ export class ApiServerBase {
     }
     const title = 'تایید توکن';
     const message = 'لطفا مجددا وارد حساب کاربری خود شوید';
-
     return '';
   }
   getDeviceToken(): string | null {
@@ -78,7 +81,34 @@ export class ApiServerBase {
     localStorage.removeItem(this.keyUserToken);
     localStorage.removeItem(this.keyDeviceToken);
   }
-  errorExceptionResultCheck<TModel>(model: ErrorExceptionResult<TModel> ): ErrorExceptionResult<TModel> {
+  getHeaders(): any {
+    /*Authorization*/
+    if (this.getUserToken() && this.getUserToken().length > 1) {
+      this.headers.set('Authorization', this.getUserToken());
+    } else if (this.headers.has('Authorization')) {
+      this.headers.delete('Authorization');
+    }
+    /*DeviceToken*/
+    if (this.getDeviceToken() && this.getDeviceToken().length > 1) {
+      this.headers.set('DeviceToken', this.getDeviceToken());
+    } else if (this.headers.has('DeviceToken')) {
+      this.headers.delete('DeviceToken');
+    }
+    /*AccessLoad*/
+    if (this.accessLoad) {
+      this.headers.set('AccessLoad', 'true');
+    }
+    else if (this.headers.has('AccessLoad')) {
+      this.headers.delete('AccessLoad');
+    }
+    let retOut = Object.create(null);
+    for (let [k, v] of this.headers) {
+      retOut[k] = v; //look out! Key must be a string!
+    }
+    return retOut;
+  }
+
+  errorExceptionResultCheck<TModel>(model: ErrorExceptionResult<TModel>): ErrorExceptionResult<TModel> {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
@@ -87,7 +117,7 @@ export class ApiServerBase {
     }
     return model;
   }
-  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase ): ErrorExceptionResultBase {
+  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase): ErrorExceptionResultBase {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
