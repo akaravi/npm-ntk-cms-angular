@@ -38,7 +38,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() set openForm(model: boolean) {
     // debugger;
-    if (model !== this.openPopupForm && this.mainModal.nativeElement) {
+    if (model !== this.openPopupForm && this.mainModal && this.mainModal.nativeElement) {
       if (model) {
         this.mainModal.nativeElement.style.display = 'block';
         document.body.classList.add('jw-modal-open');
@@ -105,7 +105,6 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     // console.log('CmsFileManagerComponent', this.nodeService.newGuid());
   }
   ngAfterViewInit(): void {
-    // console.log(this.mainModal.nativeElement.innerHTML);
     this.HighestZIndex = this.findHighestZIndex('div');
   }
   findHighestZIndex(elem: string): number {
