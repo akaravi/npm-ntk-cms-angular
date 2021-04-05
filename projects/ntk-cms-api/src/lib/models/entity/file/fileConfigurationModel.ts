@@ -5,7 +5,7 @@ import { BaseModuleSiteStorageValuesModel } from '../baseConfig/baseModuleSiteSt
 
 export class ModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
 {
-
+  AllCateSizeUploadMB: number;
 }
 
 export class ModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
@@ -25,5 +25,5 @@ export class ModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 
 export class ModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-
+  SumSizeUploadMB: number;
 }

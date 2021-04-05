@@ -1,3 +1,4 @@
+import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 import { BaseModuleConfigAdminMainValuesModel } from '../baseConfig/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../baseConfig/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../baseConfig/baseModuleConfigSiteValuesModel';
@@ -5,12 +6,16 @@ import { BaseModuleSiteStorageValuesModel } from '../baseConfig/baseModuleSiteSt
 
 export class CoreModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
 {
-
+  DomainsList: string;
+  AdminCpUserRegidteryBool: boolean;
+  AdminCpUserRegidteryExpireDateDay: number;
 }
 
 export class CoreModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
 {
-
+  MaxAdminCpUserCreation: number;
+  MaxUserCreation: number;
+  DomainsList: string;
 }
 
 /// <summary>
@@ -20,10 +25,16 @@ export class CoreModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteA
 export class CoreModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 {
 
-
+  DomainsGoogleSitekey: string;
+  DomainsGoogleSecretkey: string;
+  UserRegidteryBool: boolean;
+  UserRegidteryRecordStatus: EnumRecordStatus;
+  UserRegidteryExpireDateDay: number;
+  RSSCount: number;
 }
 
 export class CoreModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-
+  AdminCpUserCreation: number;
+  UserCreation: number;
 }

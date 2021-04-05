@@ -25,5 +25,6 @@ export class BiographyModuleConfigSiteValuesModel extends BaseModuleConfigSiteVa
 
 export class BiographyModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-
+  UpdatedNewsContent: Date;
+  UpdatedNewsCategory: Date;
 }

@@ -3,27 +3,27 @@ import { BaseModuleConfigSiteAccessValuesModel } from '../baseConfig/baseModuleC
 import { BaseModuleConfigSiteValuesModel } from '../baseConfig/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../baseConfig/baseModuleSiteStorageValuesModel';
 
-export class AapplicationModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
+export class ApplicationModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
 {
 
 }
 
-export class AapplicationModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
+export class ApplicationModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
 {
-
+  MaxAppCreation: number;
 }
 
 /// <summary>
 /// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
-export class AapplicationModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
+export class ApplicationModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 {
 
 
 }
 
-export class AapplicationModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
+export class ApplicationModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-
+  UpdatedApplicationContent: Date;
 }
