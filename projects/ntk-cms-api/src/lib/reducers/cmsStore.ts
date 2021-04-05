@@ -8,14 +8,10 @@ import { map } from 'rxjs/operators';
 // ----------------------------------------------------------------------------------- //
 
 export class CmsStore<StateType = any> {
-
   private stateSubject: BehaviorSubject<StateType>;
-
   // I initialize the simple store with the givne initial state value.
   constructor(initialState: StateType) {
-
     this.stateSubject = new BehaviorSubject(initialState);
-
   }
 
   // ---
@@ -25,24 +21,19 @@ export class CmsStore<StateType = any> {
   // I get the current state as a stream (will always emit the current state value as
   // the first item in the stream).
   public getState(): Observable<StateType> {
-
     return (this.stateSubject.pipe(distinctUntilChanged()));
-
   }
 
 
   // I get the current state snapshot.
   public getStateSnapshot(): StateType {
-
     return (this.stateSubject.getValue());
-
   }
 
 
   // I return the given top-level state key as a stream (will always emit the current
   // key value as the first item in the stream).
   public select<K extends keyof StateType>(key: K): Observable<StateType[K]> {
-
     const selectStream = this.stateSubject.pipe(
       map(
         (state: StateType) => {
@@ -53,9 +44,7 @@ export class CmsStore<StateType = any> {
       ),
       distinctUntilChanged()
     );
-
     return (selectStream);
-
   }
 
 
