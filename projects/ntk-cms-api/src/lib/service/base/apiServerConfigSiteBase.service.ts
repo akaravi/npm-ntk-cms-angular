@@ -130,9 +130,9 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       );
   }
 
-  ServiceSiteAccessDefault(Siteid: number): Observable<ErrorExceptionResult<TSiteAccess>> {
+  ServiceSiteAccessDefault(): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/' + Siteid, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/' , {
         headers: this.getHeaders(),
       })
       .pipe(
