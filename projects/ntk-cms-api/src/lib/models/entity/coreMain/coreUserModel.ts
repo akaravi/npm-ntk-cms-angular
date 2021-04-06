@@ -3,6 +3,7 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreUserModel extends BaseEntity<number> {
   Username: string;
+  Pwd: string;
   ExpireDate: Date;
   Email: string;
   EmailConfirmed: boolean;
