@@ -2,7 +2,7 @@
 
 <ng-template #itIsPopup>
   <div>
-    <button  type="button"  class="button big" (click)="fmShowHide(true)" [attr.disabled]="openPopupForm"
+    <button  type="button"  class="button big" (click)="fmShowHide(true)" [disabled]="openPopupForm"
       *ngIf="openFilemanagerButtonView">{{openFilemanagerButtonLabel}}( openPopupForm:{{this.openPopupForm}}
       )</button>
   </div>
@@ -13,7 +13,7 @@
         <div *ngIf="this.openPopupForm; then showContent"></div>
         <div class="buttons-panel">
           <button type="button" class="button big" (click)="confirmSelection()"
-            [attr.disabled]="!allowConfirmSelection(selectedNode)">{{'filemanager.confirm_selection' | translate}}</button>
+            [disabled]="!allowConfirmSelection(selectedNode)">{{'filemanager.confirm_selection' | translate}}</button>
           <button type="button"  class="button big" (click)="cancelSelection()">{{'filemanager.cancel_selection' | translate}}</button>
         </div>
       </div>
@@ -191,7 +191,7 @@
 
   <div class="rename-button">
     <button  type="button"  class="button big" (click)="handleFileManagerClickEvent({type: 'rename', value: renameInput.value})"
-      [attr.disabled]="renameInput.value === selectedNode.name || renameInput.value.length === 0">
+      [disabled]="renameInput.value === selectedNode.name || renameInput.value.length === 0">
       {{'filename.rename' | translate}}
     </button>
     <button  type="button"  class="button big" (click)="renameModal.close()">

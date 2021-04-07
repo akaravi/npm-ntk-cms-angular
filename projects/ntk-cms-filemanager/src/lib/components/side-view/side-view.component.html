@@ -21,7 +21,7 @@
 
     <div class="side-view-buttons">
       <button type="button"  (click)="onClick($event, 'download')" class="button"
-              [attr.disabled]="isDisabled()">
+              [disabled]="isDisabled()">
         {{'filemanager.download' | translate }}
       </button>
       <button  type="button" (click)="onClick($event, 'renameConfirm')" class="button">{{'filemanager.rename' | translate }}</button>
