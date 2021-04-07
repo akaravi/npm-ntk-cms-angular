@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { ComponentOptionModel } from './models/componentOptionModel';
+import { FilePreviewModel } from 'ngx-awesome-uploader';
 
 @Component({
   selector: 'cms-file-manager',
@@ -32,6 +33,8 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   @Input() isPopup = false;
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
   @Input() openFilemanagerButtonView = true;
+  @Output() optionUploadSuccess = new EventEmitter<FilePreviewModel>();
+
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
   openPopupForm = false;
@@ -188,6 +191,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
       case 'renameConfirm':
         return this.ntkSmartModalService.getModal('renameModal').open();
+
       case 'rename':
         this.ntkSmartModalService.getModal('renameModal').close();
         if (this.selectedNode.isFolder) {
@@ -204,6 +208,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
       case 'removeAsk':
         return this.ntkSmartModalService.getModal('confirmDeleteModal').open();
+
       case 'remove':
         this.ntkSmartModalService.getModal('confirmDeleteModal').close();
         if (this.selectedNode.isFolder) {
@@ -381,5 +386,9 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       return true;
     }
     return false;
+  }
+  onActionUploadSuccess(model: FilePreviewModel): void {
+    this.optionUploadSuccess.emit(model);
+
   }
 }

@@ -1,8 +1,9 @@
 <div class="backdrop" (click)="newClickedAction()"></div>
 <div class="upload-background">
   <div class="uploader-wrapper">
-  <ngx-awesome-uploader [adapter]="adapter"  (uploadSuccess)="uploadSuccess($event)" (fileAdded)="onFileAdded($event)" (uploadSuccess)="onUploadSuccess($event)">
-  </ngx-awesome-uploader>
+    <ngx-awesome-uploader [adapter]="adapter" (uploadSuccess)="uploadSuccess($event)" (fileAdded)="onFileAdded($event)"
+      (uploadSuccess)="onUploadSuccess($event)">
+    </ngx-awesome-uploader>
   </div>
 
   <div *ngIf="newFolder">
@@ -12,10 +13,10 @@
   </div>
   <div class="buttons">
 
-    <button  type="button"  class="button big" [disabled]="newFolder" (click)="createNewFolder()">
+    <button type="button" class="button big" [disabled]="newFolder" (click)="createNewFolder()">
       {{ 'filemanager.create_new_folder' | translate }}
     </button>
-    <button  type="button"  class="button big" (click)="newClickedAction()">
+    <button type="button" class="button big" (click)="newClickedAction()">
       {{ 'filemanager.close' | translate }}
     </button>
   </div>

@@ -59,7 +59,6 @@ export class NodeService extends BaseService {
     this.store.setState({ type: SET_PARENT, payload: this.currentParentId });
     this.store.setState({ type: SET_LOADING_STATE, payload: true });
     const children = this.findFolderById(this.currentParentId).children;
-
     if (!this.loadingListIdCheckAllowRunApi(this.currentParentId)) {
       this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
       this.store.setState({ type: SET_LOADING_STATE, payload: false });

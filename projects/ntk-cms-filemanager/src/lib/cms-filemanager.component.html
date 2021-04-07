@@ -71,7 +71,8 @@
 
   <app-upload *ngIf="newDialog" [openDialog]="newDialog" [optionApiPath]="tree?.config?.baseUploadURL"
     (closeDialog)="handleUploadDialog(false)"
-    (createDir)="handleFileManagerClickEvent({type: 'createFolder', payload: $event})">
+    (createDir)="handleFileManagerClickEvent({type: 'createFolder', payload: $event})"
+    (optionUploadSuccess)="onActionUploadSuccess($event)" >
   </app-upload>
 
   <app-loading-overlay *ngIf="loading"

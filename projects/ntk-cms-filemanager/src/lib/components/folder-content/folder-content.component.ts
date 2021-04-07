@@ -19,7 +19,7 @@ export class FolderContentComponent implements OnInit {
   nodes: NodeInterface;
   obj = Object;
 
-  constructor(private nodeService: NodeService, private store: FileManagerStoreService) {}
+  constructor(private nodeService: NodeService, private store: FileManagerStoreService) { }
 
   ngOnInit(): void {
     this.nodes = this.nodeService.serviceTree.nodes;
@@ -29,6 +29,7 @@ export class FolderContentComponent implements OnInit {
         // debugger;
         this.nodes = this.nodeService.findFolderById(parentId);
       });
+
   }
 
   onActionBack(node: NodeInterface): void {

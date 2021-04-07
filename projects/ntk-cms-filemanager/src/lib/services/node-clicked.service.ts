@@ -38,7 +38,10 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) => this.successWithSideViewClose(),
+        (a) =>{
+          this.actionSuccess();
+          this.successWithSideViewClose();
+        },
         (err) => this.actionFailed('actionDeleteFolder', err),
       );
 
@@ -61,7 +64,10 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) => this.successWithSideViewClose(),
+        (a) =>{
+          this.actionSuccess();
+          this.successWithSideViewClose();
+        },
         (err) => this.actionFailed('actionDeleteFile', err),
       );
 
@@ -100,7 +106,10 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) => this.successWithSideViewClose(),
+        (a) =>{
+          this.actionSuccess();
+          this.successWithSideViewClose();
+        },
         (err) => this.actionFailed('actionCreateFolder', err),
       );
 
@@ -148,7 +157,10 @@ export class NodeClickedService extends BaseService {
             }),
           )
           .subscribe(
-            (a) => this.successWithSideViewClose(),
+            (a) =>{
+              this.actionSuccess();
+              this.successWithSideViewClose();
+            },
             (err) => this.actionFailed('actionRenameFolder', err),
           );
       });
@@ -181,7 +193,10 @@ export class NodeClickedService extends BaseService {
             }),
           )
           .subscribe(
-            (a) => this.successWithSideViewClose(),
+            (a) =>{
+              this.actionSuccess();
+              this.successWithSideViewClose();
+            },
             (err) => this.actionFailed('actionRenameFile', err),
           );
       });
@@ -197,13 +212,12 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) => {},
+        (a) => this.actionSuccess(),
         (err) => this.actionFailed('actionCreateFolder', err),
       );
   }
 
   private successWithSideViewClose(): void {
-    this.actionSuccess();
     document.getElementById('side-view').classList.remove('selected');
   }
 
@@ -223,18 +237,15 @@ export class NodeClickedService extends BaseService {
     mod.open();
   }
 
-  private actionSuccess(response: string = ''): void {
+  public actionSuccess(response: string = ''): void {
     this.nodeService.SelectFolderById(this.nodeService.currentParentId, true, true);
     document.body.classList.remove('dialog-open');
     this.nodeService.refreshCurrentPath();
-
     const modal = this.ntkSmartModalService.getModal('waitModal');
     if (!modal) {
       return;
     }
-
     modal.onCloseFinished.pipe(first()).subscribe(() => modal.close());
-
     modal.close();
   }
 
