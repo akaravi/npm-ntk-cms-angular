@@ -15,9 +15,9 @@ export class BlogContentModel extends BaseModuleEntity<number> {
   Geolocationlongitude: number;
   Keyword: string;
   LinkFileIds: string;
-  LinkFilePodcastId: number;
-  LinkFileMovieId: number;
-  LinkMainImageId: number;
+  LinkFilePodcastId?: number;
+  LinkFileMovieId?: number;
+  LinkMainImageId?: number;
   ScoreClick: number;
   ScoreSumPercent: number;
   ViewCount: number;

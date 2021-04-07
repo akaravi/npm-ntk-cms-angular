@@ -17,7 +17,7 @@ export class CoreUserModel extends BaseEntity<number> {
   CompanyName: string;
   Address: string;
   PostalCode: string;
-  LinkMainImageId: number;
+  LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
   Tell: string;
   IsCompany: boolean;

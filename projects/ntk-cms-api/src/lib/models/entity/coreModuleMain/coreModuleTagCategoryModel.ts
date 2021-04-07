@@ -13,5 +13,6 @@ export class CoreModuleTagCategoryModel extends BaseModuleEntity<number> {
   virtual_Category: CoreModuleTagCategoryModel;
   Children: CoreModuleTagCategoryModel[];
   Tags: CoreModuleTagModel[];
-
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

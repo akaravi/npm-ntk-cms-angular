@@ -7,5 +7,6 @@ export class CoreModuleTagModel extends BaseModuleEntity<number> {
   Title: string;
   LinkCategoryId: number;
   Category: CoreModuleTagCategoryModel;
-
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

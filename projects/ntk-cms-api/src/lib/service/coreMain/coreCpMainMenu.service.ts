@@ -56,8 +56,8 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       );
   }
   ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
-    if(!model){
-      model=new EditStepDtoModel<number>()
+    if (!model) {
+      model = new EditStepDtoModel<number>();
     }
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
