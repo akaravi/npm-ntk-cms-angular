@@ -8,6 +8,7 @@ export class CoreTokenUserModel  extends BaseEntity<string>   {
   LinkSiteId: number;
   DeviceClientMAC: string;
   LinkDeviceId: number;
+  LinkApplicationId: number;
   Token: string;
   ExpireDate: Date;
   UserAccessAreaType: EnumManageUserAccessAreaTypes;
@@ -17,4 +18,7 @@ export class CoreTokenUserModel  extends BaseEntity<string>   {
   RememberOnDevice: boolean;
   BrowserLanguage: string;
   UserLanguage: number;
+
+
+
 }

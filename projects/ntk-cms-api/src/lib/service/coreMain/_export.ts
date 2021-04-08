@@ -12,7 +12,6 @@ export * from './coreModuleSite.service';
 export * from './coreSite.service';
 export * from './coreSiteCategory.service';
 export * from './coreSiteCategoryCmsModule.service';
-export * from './coreSiteCategoryModule.service';
 export * from './coreSiteDomainAlias.service';
 export * from './coreSiteUser.service';
 export * from './coreUser.service';
