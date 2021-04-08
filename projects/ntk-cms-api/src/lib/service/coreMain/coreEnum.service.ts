@@ -148,4 +148,28 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
+  ServiceEnumManageUserAccessAreaTypes(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessAreaTypes', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEnumManageUserAccessControllerTypes(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessControllerTypes', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

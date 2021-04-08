@@ -17,4 +17,3 @@ export * from './formInfoModel';
 export * from './itemState';
 export * from './PageModel';
 export * from './searchModel';
-export * from './tokenInfoModel';

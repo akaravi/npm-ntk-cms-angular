@@ -1,8 +1,9 @@
 export * from './coreTokenActivationModel';
-export * from './coreTokenLogModel';
+export * from './coreTokenUserModel';
+export * from './coreTokenUserLogModel';
+export * from './coreTokenUserBadLoginModel';
 export * from './coreTokenMicroServiceLogModel';
 export * from './coreTokenMicroServiceModel';
-export * from './coreTokenUserBadLoginModel';
-export * from './coreTokenUserModel';
 export * from './userTokenModel';
+export * from './tokenInfoModel';
 

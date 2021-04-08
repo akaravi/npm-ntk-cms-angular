@@ -3,7 +3,7 @@ import { AuthMobileConfirmDtoModel } from './../../models/dto/core/authMobileCon
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
-import { TokenInfoModel } from '../../models/entity/base/tokenInfoModel';
+import { TokenInfoModel } from '../../models/entity/coreToken/tokenInfoModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CaptchaModel } from '../../models/entity/base/captchaModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
