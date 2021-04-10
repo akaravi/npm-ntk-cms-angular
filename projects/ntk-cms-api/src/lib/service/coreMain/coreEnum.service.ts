@@ -172,4 +172,16 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
+  ServiceEnumSendSmsStatusType(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumSendSmsStatusType', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

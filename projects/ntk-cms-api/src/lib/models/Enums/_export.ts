@@ -34,4 +34,5 @@ export * from './enumHyperShopConnectionType';
 export * from './enumCmsSiteMenuAreaType';
 export * from './enumPageAbilityType';
 export * from './enumCmsPageUtilityToolsAction';
+export * from './enumSendSmsStatusType';
 

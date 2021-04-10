@@ -2,6 +2,7 @@ export * from './authUserSignInModel';
 export * from './authRenewTokenModel';
 export * from './authUserChangePasswordModel';
 export * from './authUserForgetPasswordModel';
+export * from './authUserForgetPasswordEntryPinCodeModel';
 export * from './authUserSignOutModel';
 export * from './authUserSignUpModel';
 export * from './coreSiteAddFirstSiteDtoModel';

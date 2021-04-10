@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreLogAvoidDuplicateDataEntryService extends ApiCmsServerBase<CoreLogAvoidDuplicateDataEntryModel, number>  {
+export class CoreLogAvoidDuplicateDataEntryService extends ApiCmsServerBase<CoreLogAvoidDuplicateDataEntryModel, string>  {
 
   getModuleCotrolerUrl(): string {
     return 'CoreLogAvoidDuplicateDataEntry';

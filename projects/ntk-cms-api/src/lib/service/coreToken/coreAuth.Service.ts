@@ -18,6 +18,7 @@ import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForge
 import { Injectable } from '@angular/core';
 import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignInBySmsDtoModel';
 import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
+import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/authUserForgetPasswordEntryPinCodeModel';
 
 
 @Injectable({
@@ -152,6 +153,14 @@ export class CoreAuthService extends ApiServerBase {
       );
   }
   ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
+  ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
