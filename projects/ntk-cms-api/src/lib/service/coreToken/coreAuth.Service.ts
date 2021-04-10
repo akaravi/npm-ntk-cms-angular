@@ -139,7 +139,7 @@ export class CoreAuthService extends ApiServerBase {
         }),
       );
   }
-  ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
+  ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/changePassword', model, {
         headers: this.getHeaders(),

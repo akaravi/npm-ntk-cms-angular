@@ -42,7 +42,6 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
     if (model == null) {
       model = new FilterModel();
     }
-
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetGlobalToken', model, {
         headers: this.getHeaders(),
