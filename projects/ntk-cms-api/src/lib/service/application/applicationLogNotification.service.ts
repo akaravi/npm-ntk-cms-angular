@@ -8,7 +8,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, number>  {
+export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string>  {
 
 
   getModuleCotrolerUrl(): string {

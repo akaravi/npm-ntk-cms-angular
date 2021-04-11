@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationMemberInfoModel } from './applicationMemberInfoModel';
 
-export class ApplicationLogNotificationModel extends BaseModuleEntity<number>  {
+export class ApplicationLogNotificationModel extends BaseModuleEntity<string>  {
 
     LinkApplicationMemberId: string;
     MemberInfo: ApplicationMemberInfoModel;

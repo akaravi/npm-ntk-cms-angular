@@ -4,9 +4,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class ApplicationMemberInfoService extends ApiCmsServerBase<ApplicationMemberInfoModel, number>  {
-
-
+export class ApplicationMemberInfoService extends ApiCmsServerBase<ApplicationMemberInfoModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationMemberInfo';
   }

@@ -2,7 +2,7 @@ import { EnumDeviceStatus } from '../../enums/enumDeviceStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 
-export class ApplicationMemberInfoModel extends BaseModuleEntity<number>  {
+export class ApplicationMemberInfoModel extends BaseModuleEntity<string>  {
 
   LinkUserId?: number;
   LinkMemberId?: number;
