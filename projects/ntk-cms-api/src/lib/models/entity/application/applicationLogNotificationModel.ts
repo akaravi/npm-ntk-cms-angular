@@ -18,5 +18,6 @@ export class ApplicationLogNotificationModel extends BaseModuleEntity<string>  {
     BigImageId: number;
     SmallImageIdSrc: string;
     BigImageIdSrc: string;
+    ErrorMessage: string;
 
 }

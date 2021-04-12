@@ -10,6 +10,7 @@ export * from './captchaModel';
 export * from './enumModel';
 export * from './errorExceptionResult';
 export * from './errorExceptionResultBase';
+export * from './errorExceptionResultExportFile';
 export * from './exportFileModel';
 export * from './filterDataModel';
 export * from './filterModel';

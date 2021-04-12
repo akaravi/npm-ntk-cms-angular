@@ -5,12 +5,13 @@ import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 
 
 @Injectable()
 export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
+  [x: string]: any;
   ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
@@ -96,7 +97,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
+  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -110,7 +111,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return this.errorExceptionResultCheckExportFile(ret);
         }),
       );
   }

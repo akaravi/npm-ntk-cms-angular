@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
@@ -118,6 +119,16 @@ export class ApiServerBase {
     return model;
   }
   errorExceptionResultBaseCheck(model: ErrorExceptionResultBase): ErrorExceptionResultBase {
+    if (model) {
+      if (!model.IsSuccess) {
+        const title = 'خطا در دریافت اطلاعات از سرور';
+        const message = model.ErrorMessage;
+      }
+    }
+    // this.loadingStatus=false;
+    return model;
+  }
+  errorExceptionResultCheckExportFile(model: ErrorExceptionResultExportFile): ErrorExceptionResultExportFile {
     if (model) {
       if (!model.IsSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
