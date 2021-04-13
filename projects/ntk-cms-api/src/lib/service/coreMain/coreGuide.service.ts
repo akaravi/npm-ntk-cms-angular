@@ -47,7 +47,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
         }),
       );
   }
-  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResultBase> {
+  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<CoreGuideModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/key' + key, {
         headers: this.getHeaders(),
@@ -56,7 +56,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
