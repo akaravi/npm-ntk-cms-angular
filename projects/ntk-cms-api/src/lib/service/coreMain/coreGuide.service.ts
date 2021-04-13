@@ -47,4 +47,17 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
         }),
       );
   }
+  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/key' + key, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
 }
