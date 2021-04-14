@@ -49,7 +49,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
   }
   ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<CoreGuideModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/key' + key, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/key/' + key, {
         headers: this.getHeaders(),
       })
       .pipe(
