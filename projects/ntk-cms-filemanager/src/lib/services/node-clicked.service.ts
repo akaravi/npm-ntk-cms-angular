@@ -38,7 +38,7 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) =>{
+        (a) => {
           this.actionSuccess();
           this.successWithSideViewClose();
         },
@@ -64,7 +64,7 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) =>{
+        (a) => {
           this.actionSuccess();
           this.successWithSideViewClose();
         },
@@ -106,7 +106,7 @@ export class NodeClickedService extends BaseService {
         }),
       )
       .subscribe(
-        (a) =>{
+        (a) => {
           this.actionSuccess();
           this.successWithSideViewClose();
         },
@@ -157,7 +157,7 @@ export class NodeClickedService extends BaseService {
             }),
           )
           .subscribe(
-            (a) =>{
+            (a) => {
               this.actionSuccess();
               this.successWithSideViewClose();
             },
@@ -193,7 +193,7 @@ export class NodeClickedService extends BaseService {
             }),
           )
           .subscribe(
-            (a) =>{
+            (a) => {
               this.actionSuccess();
               this.successWithSideViewClose();
             },

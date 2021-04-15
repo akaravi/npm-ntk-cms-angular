@@ -1,4 +1,5 @@
-export class BankPaymentOnlineTransactionModel {
+export class BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel
+{
   UrlToPay: string;
   TransactionId: number;
   Amount: number;

@@ -28,7 +28,6 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   @Input() public delayIn = 0;
   @Input() public delayOut = 0;
   @Input() public autostart = false;
-
   @Output() public onStart = new EventEmitter<NtkSmartLoaderComponent>();
   @Output() public onStop = new EventEmitter<NtkSmartLoaderComponent>();
   @Output() public onVisibleChange = new EventEmitter<NtkSmartLoaderComponent>();

@@ -102,9 +102,9 @@ export class ApiServerBase {
     else if (this.headers.has('AccessLoad')) {
       this.headers.delete('AccessLoad');
     }
-    let retOut = Object.create(null);
-    for (let [k, v] of this.headers) {
-      retOut[k] = v; //look out! Key must be a string!
+    const retOut = Object.create(null);
+    for (const [k, v] of this.headers) {
+      retOut[k] = v; // look out! Key must be a string!
     }
     return retOut;
   }
