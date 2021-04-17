@@ -14,6 +14,19 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   getModuleCotrolerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
+  ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigAliasJsonModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
   ServiceTestPay(model: BankPaymentInjectOnlineTransactionDtoModel):
    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
@@ -52,17 +65,5 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
         }),
       );
   }
-  ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigAliasJsonModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+
 }

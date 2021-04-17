@@ -27,6 +27,6 @@ export class BankPaymentTransactionService
       );
   }
   ServiceGoToBank(id: number): string {
-    return this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GoToBank/' + id;
+    return this.getBaseUrl()  + '/GoToBank/' + id;
   }
 }

@@ -1,3 +1,4 @@
+export * from './sms/_export';
 export * from './enumApiDeliveryMethod';
 export * from './enumApiInfoCreditCheckMethod';
 export * from './enumApiPhoneBookMethod';

@@ -1,6 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
-import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 
 export class BankPaymentPublicConfigModel extends BaseEntity<number> {
   Title: string;

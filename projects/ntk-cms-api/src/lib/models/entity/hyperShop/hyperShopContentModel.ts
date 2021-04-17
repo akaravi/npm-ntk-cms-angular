@@ -1,4 +1,6 @@
-export class HyperShopContentModel {
+import { BaseModuleEntity } from '../base/baseModuleEntity';
+
+export class HyperShopContentModel  extends BaseModuleEntity<string>{
   Code: string;
   Name: string;
   Unit: string;
