@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NtkSmartLoaderService } from 'projects/ngx-ntk-smart-module/src/public-api';
 
 @Component({
-  selector: 'app-smartLoaderTest',
+  selector: 'app-smartloader-test',
   templateUrl: './smartLoaderTest.component.html',
   styleUrls: ['./smartLoaderTest.component.scss']
 })
