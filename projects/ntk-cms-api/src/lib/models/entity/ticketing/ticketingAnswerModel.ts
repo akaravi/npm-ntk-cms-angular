@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { CoreUserModel } from '../coreMain/coreUserModel';
+import { CoreUserModel } from '../core-main/coreUserModel';
 import { MemberUserModel } from '../member/memberUserModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';

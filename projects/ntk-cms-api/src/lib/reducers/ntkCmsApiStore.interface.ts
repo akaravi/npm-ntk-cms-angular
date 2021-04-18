@@ -1,4 +1,4 @@
-import { TokenInfoModel } from '../models/entity/coreToken/tokenInfoModel';
+import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
 
 export interface NtkCmsApiStoreInterface {
   tokenInfo: TokenInfoModel;

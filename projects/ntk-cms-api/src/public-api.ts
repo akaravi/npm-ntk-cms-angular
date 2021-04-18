@@ -12,22 +12,22 @@ export * from './lib/models/entity/base/_export';
 // base
 // core Serve
 export * from './lib/service/base/_export';
-export * from './lib/service/coreMain/_export';
-export * from './lib/service/coreLog/_export';
-export * from './lib/service/coreToken/_export';
+export * from './lib/service/core-main/_export';
+export * from './lib/service/core-log/_export';
+export * from './lib/service/core-token/_export';
 
-export * from './lib/models/entity/coreMain/_export';
-export * from './lib/models/entity/coreLog/_export';
-export * from './lib/models/entity/coreToken/_export';
+export * from './lib/models/entity/core-main/_export';
+export * from './lib/models/entity/core-log/_export';
+export * from './lib/models/entity/core-token/_export';
 
 export * from './lib/models/dto/core/_export';
 // core Serve
 // core Module Serve
-export * from './lib/service/coreModuleMain/_export';
-export * from './lib/service/coreModuleLog/_export';
+export * from './lib/service/core-module-main/_export';
+export * from './lib/service/core-module-log/_export';
 
-export * from './lib/models/entity/coreModuleMain/_export';
-export * from './lib/models/entity/coreModuleLog/_export';
+export * from './lib/models/entity/core-module-main/_export';
+export * from './lib/models/entity/core-module-log/_export';
 // core Module Serve
 
 // core Module Serve
@@ -37,8 +37,8 @@ export * from './lib/models/dto/file/_export';
 // core Module Serve
 
 // linkManagement Service
-export * from './lib/service/linkManagement/_export';
-export * from './lib/models/entity/linkManagement/_export';
+export * from './lib/service/link-management/_export';
+export * from './lib/models/entity/link-management/_export';
 export * from './lib/models/dto/linkManagement/_export';
 // linkManagement Service
 // news Service
@@ -50,8 +50,8 @@ export * from './lib/service/blog/_export';
 export * from './lib/models/entity/blog/_export';
 // blog Service
 // bankPayment Service
-export * from './lib/service/bankPayment/_export';
-export * from './lib/models/entity/bankPayment/_export';
+export * from './lib/service/bank-payment/_export';
+export * from './lib/models/entity/bank-payment/_export';
 export * from './lib/models/dto/bankPayment/_export';
 // bankPayment Dto
 // sms
@@ -77,8 +77,8 @@ export * from './lib/models/dto/ticketing/_export';
 // ticketing
 
 // hypershop
-export * from './lib/service/hyperShop/_export';
-export * from './lib/models/entity/hyperShop/_export';
+export * from './lib/service/hyper-shop/_export';
+export * from './lib/models/entity/hyper-shop/_export';
 export * from './lib/models/dto/hyperShop/_export';
 // hypershop
 
@@ -89,8 +89,8 @@ export * from './lib/models/dto/biography/_export';
 // biography
 
 // webDesigner
-export * from './lib/service/webDesigner/_export';
-export * from './lib/models/entity/webDesigner/_export';
+export * from './lib/service/web-designer/_export';
+export * from './lib/models/entity/web-designer/_export';
 export * from './lib/models/dto/webDesigner/_export';
 // webDesigner
 

@@ -1,0 +1,16 @@
+import { BaseEntity } from '../base/baseEntity';
+import { CoreModuleSaleHeaderGroupModel } from './coreModuleSaleHeaderGroupModel';
+import { CoreModuleSaleItemModel } from './coreModuleSaleItemModel';
+import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
+
+export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
+  FromDate: Date;
+  SalePrice: number;
+  HasDemo: boolean;
+  LinkModuleSaleHeaderGroupId: number;
+  // tslint:disable-next-line: variable-name
+  virtual_CmsModuleSaleHeaderGroup: CoreModuleSaleHeaderGroupModel;
+  Items: CoreModuleSaleItemModel[];
+  Serials: CoreModuleSaleSerialModel[];
+
+}

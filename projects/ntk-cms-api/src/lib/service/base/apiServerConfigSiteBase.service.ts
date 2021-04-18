@@ -3,10 +3,10 @@ import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ApiServerBase } from './apiServerBase.service';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { BaseModuleConfigAdminMainValuesModel } from '../../models/entity/baseConfig/baseModuleConfigAdminMainValuesModel';
-import { BaseModuleSiteStorageValuesModel } from '../../models/entity/baseConfig/baseModuleSiteStorageValuesModel';
-import { BaseModuleConfigSiteAccessValuesModel } from '../../models/entity/baseConfig/baseModuleConfigSiteAccessValuesModel';
-import { BaseModuleConfigSiteValuesModel } from '../../models/entity/baseConfig/baseModuleConfigSiteValuesModel';
+import { BaseModuleConfigAdminMainValuesModel } from '../../models/entity/base-config/baseModuleConfigAdminMainValuesModel';
+import { BaseModuleSiteStorageValuesModel } from '../../models/entity/base-config/baseModuleSiteStorageValuesModel';
+import { BaseModuleConfigSiteAccessValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteAccessValuesModel';
+import { BaseModuleConfigSiteValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteValuesModel';
 
 
 export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMainValuesModel,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
-import { TokenInfoModel } from '../models/entity/coreToken/tokenInfoModel';
+import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
 import { AppStore } from './reducer.factory';
 
 const initialState: NtkCmsApiStoreInterface = {
