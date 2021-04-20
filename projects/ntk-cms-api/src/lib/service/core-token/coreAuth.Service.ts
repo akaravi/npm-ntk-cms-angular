@@ -25,31 +25,29 @@ import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/a
   providedIn: 'root',
 })
 export class CoreAuthService extends ApiServerBase {
-  // CurrentTokenInfoBS = new BehaviorSubject<TokenInfoModel>(new TokenInfoModel());
-  // CurrentTokenInfoBSObs = this.CurrentTokenInfoBS.asObservable();
-  userRoles: string[] = [];
-  userName = '';
-
   getModuleCotrolerUrl(): string {
     return 'auth';
   }
   SetCurrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       this.removeToken();
-      // localStorage.removeItem('refreshToken');
-      // this.CurrentTokenInfoBS.next(new TokenInfoModel());
       this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
       return;
     }
-    this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
-    // this.CurrentTokenInfoBS.next(model);
+    if (model.Token && model.DeviceToken && model.RefreshToken) {
+      this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
+    } else if (model.Token && model.DeviceToken) {
+      this.setToken(model.Token, model.DeviceToken, '');
+    } else if (model.Token) {
+      this.setToken(model.Token, '', '');
+    }
+    else if (model.DeviceToken) {
+      this.setToken('', model.DeviceToken, '');
+    }
     this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
   }
+
   CurrentTokenInfoRenew(): any {
-    // const token = this.getUserToken();
-    // if (!token || token === 'null') {
-    //   return;
-    // }
     this.ServiceCurrentToken().subscribe(
       (next) => {
         this.SetCurrentTokenInfo(next.Item);
@@ -57,7 +55,6 @@ export class CoreAuthService extends ApiServerBase {
       (error) => {
       }
     );
-
   }
 
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {

@@ -4,7 +4,9 @@ import { CoreModuleSaleItemModel } from './coreModuleSaleItemModel';
 import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 
 export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
+  Title: string;
   FromDate: Date;
+  ExpireDate: Date;
   SalePrice: number;
   HasDemo: boolean;
   LinkModuleSaleHeaderGroupId: number;
