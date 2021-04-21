@@ -17,6 +17,22 @@ export class NewsContentService extends ApiCmsServerBase<NewsContentModel, numbe
     return 'NewsContent';
   }
 
+  ServiceGetAllWithHierarchyCategoryId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<NewsContentModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<NewsContentModel>> {
     if (model == null) {
       model = new FilterModel();

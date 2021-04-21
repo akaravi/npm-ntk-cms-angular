@@ -24,6 +24,22 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
     return 'BiographyContent';
   }
 
+  ServiceGetAllWithHierarchyCategoryId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
@@ -40,7 +56,6 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
         }),
       );
   }
-
   ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
