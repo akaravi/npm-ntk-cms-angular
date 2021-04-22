@@ -1,8 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class WebDesignerMainIntroModel  extends BaseModuleEntity<string> {
-
-
     Title: string;
     Description: string;
     Priority: number;
@@ -12,5 +10,4 @@ export class WebDesignerMainIntroModel  extends BaseModuleEntity<string> {
     MainImageSrc: string;
     LinkMainImageIdSrc: string;
     LinkMainVideoIdSrc: string;
-
 }

@@ -10,6 +10,7 @@ export class CoreCpMainMenuModel extends BaseEntity<number> {
   Icon: string;
   AddressLink: string;
   RouteAddressLink: string;
+  RouteAddressBlankPage: boolean;
   LinkParentId: number;
   LinkModuleId: number;
   Description: string;
