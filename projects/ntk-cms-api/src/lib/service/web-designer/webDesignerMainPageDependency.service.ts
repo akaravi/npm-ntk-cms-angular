@@ -13,7 +13,6 @@ export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDe
     return 'WebDesignerMainPageDependency';
   }
   ServiceAutoAdd(id: string): Observable<ErrorExceptionResultBase> {
-
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/' , {
         headers: this.getHeaders(),
