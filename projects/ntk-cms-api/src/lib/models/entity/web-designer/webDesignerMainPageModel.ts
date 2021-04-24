@@ -22,6 +22,4 @@ export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     SpecialUrlParameter: string;
     LinkPageDependencyGuId?: string;
     LinkPageTemplateGuId?: string;
-    ContentPageFindInDefaultSiteCategory: boolean;
-
 }
