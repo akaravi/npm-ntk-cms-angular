@@ -1,14 +1,13 @@
 import { EnumUserClaimGroupActionType } from '../../enums/core/enumUserClaimGroupActionType';
-import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 
 export class CoreUserClaimGroupModel extends BaseEntity<number> {
   Title: string;
   Description: string;
-  LinkApplicationId?: number;
+  LinkModuleId?: number;
   LinkSiteCategoryId?: number;
-  LinkModuleId: number;
+  LinkApplicationId?: number;
   ActionType: EnumUserClaimGroupActionType;
   UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
 }
