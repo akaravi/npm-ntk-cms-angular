@@ -1,7 +1,6 @@
-import { CoreUserModel } from 'dist/ntk-cms-api/public-api';
-import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimTypeModel } from './coreUserClaimTypeModel';
+import { CoreUserModel } from './coreUserModel';
 
 export class CoreUserClaimModel extends BaseEntity<number> {
   LinkUserId: number;
