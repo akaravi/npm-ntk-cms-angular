@@ -17,10 +17,16 @@ export * from './coreSiteUser.service';
 export * from './coreUser.service';
 export * from './coreUserGroup.service';
 export * from './coreDevice.service';
+/** */
 export * from './coreModuleSaleSerial.service';
 export * from './coreModuleSaleItem.service';
 export * from './coreModuleSaleInvoiceDetail.service';
 export * from './coreModuleSaleInvoice.service';
 export * from './coreModuleSaleHeaderGroup.service';
 export * from './coreModuleSaleHeader.service';
-
+/** */
+export * from './coreUserClaim.service';
+export * from './coreUserClaimGroup.service';
+export * from './coreUserClaimGroupDetail.service';
+export * from './coreUserClaimType.service';
+/** */
