@@ -23,5 +23,5 @@ export * from './coreModuleSaleInvoiceModel';
 export * from './coreModuleSaleInvoiceDetailModel';
 export * from './coreUserClaimGroupDetailModel';
 export * from './coreUserClaimGroupModel';
-export * from './coreUserClaimModel';
+export * from './coreUserClaimContentModel';
 export * from './coreUserClaimTypeModel';

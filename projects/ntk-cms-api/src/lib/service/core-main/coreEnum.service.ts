@@ -196,4 +196,28 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
+   ServiceEnumUserClaimKinds(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUserClaimKinds', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEnumUserClaimGroupActionType(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUserClaimGroupActionType', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

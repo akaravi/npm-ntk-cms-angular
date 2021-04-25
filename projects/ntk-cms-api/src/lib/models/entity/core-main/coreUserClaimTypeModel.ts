@@ -1,8 +1,7 @@
 import { EnumUserClaimKinds } from '../../enums/core/enumUserClaimKinds';
-import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
-import { CoreUserClaimModel } from './coreUserClaimModel';
+import { CoreUserClaimContentModel } from './coreUserClaimContentModel';
 
 export class CoreUserClaimTypeModel extends BaseEntity<number> {
   Title: string;
@@ -12,7 +11,7 @@ export class CoreUserClaimTypeModel extends BaseEntity<number> {
   LinkApplicationId?: number;
   LinkSiteCategoryId?: number;
   Kind: EnumUserClaimKinds;
-  UserClaims: CoreUserClaimModel[];
+  UserClaims: CoreUserClaimContentModel[];
   UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
 
 }

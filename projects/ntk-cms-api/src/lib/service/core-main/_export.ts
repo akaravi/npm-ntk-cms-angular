@@ -25,7 +25,7 @@ export * from './coreModuleSaleInvoice.service';
 export * from './coreModuleSaleHeaderGroup.service';
 export * from './coreModuleSaleHeader.service';
 /** */
-export * from './coreUserClaim.service';
+export * from './coreUserClaimContent.service';
 export * from './coreUserClaimGroup.service';
 export * from './coreUserClaimGroupDetail.service';
 export * from './coreUserClaimType.service';
