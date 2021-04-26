@@ -16,3 +16,5 @@ export * from './authMobileConfirmDtoModel';
 export * from './universalActionModel';
 export * from './editStepDtoModel';
 export * from './coreModuleCheckSerialForSiteDtoModel';
+export * from './coreUserClaimCheckDtoModel';
+export * from './coreUserClaimCheckModel';

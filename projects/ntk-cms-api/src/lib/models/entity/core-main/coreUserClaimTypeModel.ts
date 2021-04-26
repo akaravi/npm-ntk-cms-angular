@@ -7,9 +7,6 @@ export class CoreUserClaimTypeModel extends BaseEntity<number> {
   Title: string;
   Description: string;
   DismissOnEdit: boolean;
-  LinkModuleId?: number;
-  LinkSiteCategoryId?: number;
-  LinkApplicationId?: number;
   Kind: EnumUserClaimKinds;
   UserClaims: CoreUserClaimContentModel[];
   UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
