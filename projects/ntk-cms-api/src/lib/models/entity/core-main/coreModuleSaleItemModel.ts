@@ -1,7 +1,6 @@
 import { EnumCmsModuleSaleItemType } from '../../enums/core/enumCmsModuleSaleItemType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleModel } from './coreModuleModel';
-import { CoreModuleSaleHeaderGroupModel } from './coreModuleSaleHeaderGroupModel';
 import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 
 export class CoreModuleSaleItemModel extends BaseEntity<number>  {
@@ -10,7 +9,6 @@ export class CoreModuleSaleItemModel extends BaseEntity<number>  {
   Description: string;
   MonthLength: number;
   LinkModuleId: number;
-  SalePrice: number;
   EnumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
   ModuleSiteAccessJsonValue: string;
   // tslint:disable-next-line: variable-name
