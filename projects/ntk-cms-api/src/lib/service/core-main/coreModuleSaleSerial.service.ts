@@ -6,6 +6,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleCheckSerialForSiteDtoModel } from '../../models/dto/core/coreModuleCheckSerialForSiteDtoModel';
 import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/coreModuleSaleInvoiceDetailModel';
+import { CoreModuleSaleInvoiceModel } from '../../models/entity/core-main/coreModuleSaleInvoiceModel';
 
 
 @Injectable()
@@ -31,7 +32,7 @@ export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSale
       );
   }
   ServiceRegisterUseSerialForSite(model: CoreModuleCheckSerialForSiteDtoModel):
-    Observable<ErrorExceptionResult<CoreModuleSaleSerialModel>> {
+    Observable<ErrorExceptionResult<CoreModuleSaleInvoiceModel>> {
     if (!model) {
       model = new CoreModuleCheckSerialForSiteDtoModel();
     }

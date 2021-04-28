@@ -1,4 +1,5 @@
 import { EnumBuildStatusType } from '../../enums/enumBuildStatusType';
+import { EnumLanguage } from '../../enums/enumLanguage';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';
@@ -7,6 +8,7 @@ import { ApplicationThemeConfigModel } from './applicationThemeConfigModel';
 
 export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AppKey: string;
+  Lang: EnumLanguage;
   ExpireDate?: Date;
   LinkFileIdIcon?: number;
   LinkFileIdLogo?: number;

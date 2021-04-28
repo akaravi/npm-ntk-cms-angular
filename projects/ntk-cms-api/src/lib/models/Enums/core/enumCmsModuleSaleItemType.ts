@@ -1,4 +1,5 @@
 export enum EnumCmsModuleSaleItemType {
-  FirstSale = 0,
-  ReNew = 1,
+  SaleOrRenew=0,
+  OnlyFirstSale = 1,
+  OnlyReNew = 2,
 }
