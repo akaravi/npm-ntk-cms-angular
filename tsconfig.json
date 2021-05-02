@@ -42,6 +42,10 @@
       "ntk-cms-module": [
         "dist/ntk-cms-module/ntk-cms-module",
         "dist/ntk-cms-module"
+      ],
+      "ngx-ntk-query-builder": [
+        "dist/ngx-ntk-query-builder/ngx-ntk-query-builder",
+        "dist/ngx-ntk-query-builder"
       ]
     }
   },

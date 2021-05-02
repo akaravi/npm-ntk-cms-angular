@@ -10,6 +10,7 @@ ng generate library ntk-cms-filemanager
 ng generate library ntk-cms-fileuploader
 ng generate library ntk-cms-module
 ng generate library ngx-ntk-smart-module
+ng generate library ngx-ntk-query-builder
 
 =========================================First Time npm
 npm adduser
@@ -52,6 +53,12 @@ cd ..
 =========================================
 ng build ngx-ntk-smart-module --prod
 cd dist/ngx-ntk-smart-module
+npm publish
+cd ..
+cd ..
+=========================================
+ng build ngx-ntk-query-builder --prod
+cd dist/ngx-ntk-query-builder
 npm publish
 cd ..
 cd ..

@@ -1,0 +1,199 @@
+.ngx-ntk-query-builder {
+
+  &.disabled {
+    opacity: 0.5;
+
+    .ngx-btn-add:hover {
+      background-color: #5cb85c;
+      border-color: #4cae4c;
+    }
+
+    .ngx-btn-remove:hover {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+  }
+}
+
+.ngx-group-controls {
+  display: flex;
+
+  .ngx-condition-switcher {
+    flex: 1 0 auto;
+
+    .ngx-switch-label {
+      float: left;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      text-shadow: none;
+      box-sizing: border-box;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+      color: #fff;
+      transition-duration: 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #286090;
+      }
+    }
+
+    .ngx-switch-radio {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+
+      &:checked + .ngx-switch-label {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+      }
+    }
+
+  }
+
+  .ngx-actions {
+    display: flex;
+    margin-right: 10px;
+  }
+}
+
+.ngx-conditions {
+
+  ul {
+    margin: 0;
+    padding: 0 10px 0 25px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li.ngx-connector {
+    position: relative;
+    border: 1px solid #cccccc;
+    margin: 8px 0;
+    padding: 10px;
+
+    &::before {
+      top: -9px;
+      border-width: 0 0 2px 2px;
+    }
+
+    &::after {
+      border-width: 0 0 0 2px;
+      top: 50%;
+    }
+
+    &::before, &::after {
+      content: '';
+      left: -14px;
+      border-color: #cccccc;
+      border-style: solid;
+      width: 12px;
+      height: calc(50% + 9px);
+      position: absolute;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
+
+  .ngx-rule-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    .ngx-rule {
+      flex: 1;
+      margin-right: 10px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .ngx-field,
+      .ngx-operator,
+      .ngx-value {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        margin-right: 15px;
+      }
+
+    }
+
+    .ngx-rule-controls {
+      padding: 8px 0;
+    }
+  }
+
+}
+
+.ngx-control {
+  padding: 0 .75rem;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.ngx-input,
+.ngx-select,
+.ngx-multi-select {
+  display: block;
+  width: 100%;
+  color: #495057;
+  padding: .5rem .75rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.ngx-multi-select {
+  height: auto;
+  max-height: 200px;
+}
+
+.ngx-boolean-wrap {
+  display: flex;
+  color: #495057;
+}
+
+.ngx-btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  transition-duration: 0.3s;
+}
+
+.ngx-btn-add {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+
+  &:hover {
+    background-color: #449d44;
+    border-color: #398439;
+  }
+}
+
+.ngx-btn-remove {
+  background-color: #dc3545;
+  border-color: #dc3545;
+
+  &:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+}
+
