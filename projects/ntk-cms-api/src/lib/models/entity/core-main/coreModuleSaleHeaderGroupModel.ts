@@ -15,4 +15,6 @@ export class CoreModuleSaleHeaderGroupModel extends BaseEntity<number>  {
   // tslint:disable-next-line: variable-name
   virtual_SiteCategory: CoreSiteCategoryModel;
   Headers: CoreModuleSaleHeaderModel[];
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

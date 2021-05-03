@@ -5,6 +5,7 @@ import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 
 export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
   Title: string;
+  Description: string;
   FromDate: Date;
   ExpireDate: Date;
   SalePrice: number;
@@ -14,5 +15,6 @@ export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
   virtual_CmsModuleSaleHeaderGroup: CoreModuleSaleHeaderGroupModel;
   Items: CoreModuleSaleItemModel[];
   Serials: CoreModuleSaleSerialModel[];
-
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }
