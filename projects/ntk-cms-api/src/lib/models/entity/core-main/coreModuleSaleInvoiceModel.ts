@@ -1,4 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
+import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 import { CoreModuleSaleInvoiceDetailModel } from './coreModuleSaleInvoiceDetailModel';
 import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 import { CoreSiteModel } from './coreSiteModel';
@@ -9,7 +10,10 @@ export class CoreModuleSaleInvoiceModel extends BaseEntity<number>  {
   virtual_SiteBuyer: CoreSiteModel;
   HasUsed: boolean;
   Price: number;
-  LinkModuleSaleSerialId: number;
+  LinkModuleSaleHeaderId?: number;
+  // tslint:disable-next-line: variable-name
+  virtual_ModuleSaleHeader: CoreModuleSaleHeaderModel;
+  LinkModuleSaleSerialId?: number;
   // tslint:disable-next-line: variable-name
   virtual_ModuleSaleSerial: CoreModuleSaleSerialModel;
   Amount: number;

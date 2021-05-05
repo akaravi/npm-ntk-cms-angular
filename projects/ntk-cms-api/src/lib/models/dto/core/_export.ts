@@ -18,3 +18,5 @@ export * from './editStepDtoModel';
 export * from './coreModuleCheckSerialForSiteDtoModel';
 export * from './coreUserClaimCheckDtoModel';
 export * from './coreUserClaimCheckModel';
+export * from './coreModuleSaleHeaderCalculateDtoModel';
+export * from './coreModuleSaleHeaderPaymentDtoModel';

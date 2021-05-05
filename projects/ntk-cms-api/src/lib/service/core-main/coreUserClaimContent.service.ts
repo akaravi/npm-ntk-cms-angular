@@ -9,9 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number>  {
-
-  getModuleCotrolerUrl(): string {
+export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreUserClaimContent';
   }
   ServiceClaimCheck(model: CoreUserClaimCheckDtoModel): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {

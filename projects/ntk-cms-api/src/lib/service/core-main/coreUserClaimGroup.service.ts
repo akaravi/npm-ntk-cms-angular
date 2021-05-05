@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreUserClaimGroupService extends ApiCmsServerBase<CoreUserClaimGroupModel, number>  {
-
-  getModuleCotrolerUrl(): string {
+export class CoreUserClaimGroupService extends ApiCmsServerBase<CoreUserClaimGroupModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreUserClaimGroup';
   }
 }

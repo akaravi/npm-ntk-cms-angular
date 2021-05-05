@@ -14,8 +14,6 @@ import { FileDownloadDtoModel } from '../../models/dto/file/fileDownloadDtoModel
 
 @Injectable()
 export class FileContentService extends ApiCmsServerBase<FileContentModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'FileContent';
   }

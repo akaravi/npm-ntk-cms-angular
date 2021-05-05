@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'TicketingDepartemenOperator';
   }

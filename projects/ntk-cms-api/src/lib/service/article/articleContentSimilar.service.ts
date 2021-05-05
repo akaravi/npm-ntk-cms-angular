@@ -9,8 +9,6 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class ArticleContentSimilarService extends ApiCmsServerBase<ArticleContentSimilarModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'ArticleContentSimilar';
   }

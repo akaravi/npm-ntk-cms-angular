@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreModuleProcessCustomizeService extends ApiCmsServerBase<CoreModuleProcessCustomizeModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'CoreModuleProcessCustomize';
   }

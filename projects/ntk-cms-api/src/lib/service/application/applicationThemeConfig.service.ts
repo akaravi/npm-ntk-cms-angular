@@ -8,8 +8,6 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class ApplicationThemeConfigService extends ApiCmsServerBase<ApplicationThemeConfigModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'ApplicationThemeConfig';
   }

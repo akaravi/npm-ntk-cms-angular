@@ -12,9 +12,7 @@ import { BaseModuleConfigSiteValuesModel } from '../../models/entity/base-config
 export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMainValuesModel,
  TSiteConfig extends BaseModuleConfigSiteValuesModel,
   TSiteAccess extends BaseModuleConfigSiteAccessValuesModel,
-   TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase{
-
-  getModuleCotrolerUrl(): string {
+   TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase{  getModuleCotrolerUrl(): string {
     return 'Empty';
   }
 

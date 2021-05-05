@@ -4,9 +4,7 @@ import { CoreTokenMicroServiceLogModel } from '../../models/entity/core-token/co
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class CoreTokenMicroServiceLogService extends ApiCmsServerBase<CoreTokenMicroServiceLogModel, string>  {
-
-  getModuleCotrolerUrl(): string {
+export class CoreTokenMicroServiceLogService extends ApiCmsServerBase<CoreTokenMicroServiceLogModel, string>  {  getModuleCotrolerUrl(): string {
     return 'CoreTokenMicroServiceLog';
   }
 }

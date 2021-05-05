@@ -14,8 +14,6 @@ export class CoreConfigurationService extends
   CoreModuleConfigSiteValuesModel,
   CoreModuleConfigSiteAccessValuesModel,
   CoreModuleSiteStorageValuesModel>   {
-
-
   getModuleCotrolerUrl(): string {
     return 'Core';
   }

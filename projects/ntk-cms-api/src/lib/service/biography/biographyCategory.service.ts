@@ -10,8 +10,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BiographyCategoryService extends ApiCmsServerBase<BiographyCategoryModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'BiographyCategory';
   }

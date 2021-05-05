@@ -8,8 +8,6 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'PollingCategory';
   }

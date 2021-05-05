@@ -12,8 +12,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'CoreSite';
   }

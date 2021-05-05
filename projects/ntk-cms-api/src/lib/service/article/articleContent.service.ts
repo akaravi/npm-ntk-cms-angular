@@ -11,8 +11,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'ArticleContent';
   }

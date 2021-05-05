@@ -7,6 +7,12 @@ import { BankPaymentTransactionLogModel } from './bankPaymentTransactionLogModel
 
 
 export class BankPaymentTransactionModel extends BaseEntity<number> {
+  LinkSiteIdBuyer: number;
+  LinkSiteIdSaller: number;
+  ModuleName: string;
+  ModuleEntityName: string;
+  ModuleEntityId: string;
+
   TransactionStatus: EnumTransactionRecordStatus;
   BankStatus: EnumTransactionBankStatus;
   CurrencyUnit: string;

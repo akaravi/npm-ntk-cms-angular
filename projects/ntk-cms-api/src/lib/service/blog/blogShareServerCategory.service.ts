@@ -9,8 +9,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BlogShareServerCategoryService extends ApiCmsServerBase<any, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'BlogShareServerCategory';
   }

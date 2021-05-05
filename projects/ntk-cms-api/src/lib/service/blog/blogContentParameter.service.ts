@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BlogContentParameterService extends ApiCmsServerBase<any, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'BlogContentParameter';
   }

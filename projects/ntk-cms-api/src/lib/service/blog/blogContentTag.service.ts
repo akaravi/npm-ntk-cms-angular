@@ -10,8 +10,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'BlogContentTag';
   }

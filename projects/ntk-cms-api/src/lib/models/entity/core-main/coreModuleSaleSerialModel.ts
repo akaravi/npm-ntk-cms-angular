@@ -9,6 +9,7 @@ export class CoreModuleSaleSerialModel extends BaseEntity<number>  {
   HasUsed: boolean;
   HasDemo: boolean;
   SerialNumber: string;
+  AllowReuseDay: number;
   PwdForUse: string;
   NumberOfMaxUse: number;
   MaxExpireToUse?: Date;

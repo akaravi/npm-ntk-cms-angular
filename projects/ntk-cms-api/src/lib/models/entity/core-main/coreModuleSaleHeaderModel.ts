@@ -8,6 +8,8 @@ export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
   FromDate: Date;
   ExpireDate: Date;
   SalePrice: number;
+  AllowReuseDay: number;
+
   HasDemo: boolean;
   LinkModuleSaleHeaderGroupId: number;
   // tslint:disable-next-line: variable-name

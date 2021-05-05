@@ -9,8 +9,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayoutModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'ApplicationLayout';
   }

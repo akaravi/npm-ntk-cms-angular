@@ -9,9 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {
-
-  getModuleCotrolerUrl(): string {
+export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreModuleTagCategory';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleTagCategoryModel>> {

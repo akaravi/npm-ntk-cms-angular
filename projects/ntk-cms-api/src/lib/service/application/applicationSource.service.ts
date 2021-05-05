@@ -8,8 +8,6 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 @Injectable()
 export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'ApplicationSource';
   }

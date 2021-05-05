@@ -12,8 +12,6 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'FileCategory';
   }

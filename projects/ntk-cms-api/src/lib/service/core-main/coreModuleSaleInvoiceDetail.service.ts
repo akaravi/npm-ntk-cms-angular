@@ -5,8 +5,6 @@ import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/
 
 @Injectable()
 export class CoreModuleSaleInvoiceDetailService extends ApiCmsServerBase<CoreModuleSaleInvoiceDetailModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'CoreModuleSaleInvoiceDetail';
   }

@@ -8,9 +8,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {
-
-  getModuleCotrolerUrl(): string {
+export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreSiteUser';
   }
 

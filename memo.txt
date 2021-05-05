@@ -10,6 +10,7 @@ ng generate library ntk-cms-filemanager
 ng generate library ntk-cms-fileuploader
 ng generate library ntk-cms-module
 ng generate library ngx-ntk-smart-module
+ng generate library ngx-ntk-query-builder
 
 =========================================First Time npm
 npm adduser

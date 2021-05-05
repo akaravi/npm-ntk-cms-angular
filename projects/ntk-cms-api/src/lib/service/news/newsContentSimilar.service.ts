@@ -9,8 +9,6 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 @Injectable()
 export class NewsContentSimilarService extends ApiCmsServerBase<NewsContentSimilarModel, number>  {
-
-
   getModuleCotrolerUrl(): string {
     return 'NewsContentSimilar';
   }

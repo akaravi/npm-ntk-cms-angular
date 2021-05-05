@@ -65,5 +65,32 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
         }),
       );
   }
-
+  ServicePaymentGatewayList():
+   Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/PaymentGatewayList',  {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServicePaymentGatewayCoreList():
+  Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+   return this.http
+     .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/PaymentGatewayCoreList',  {
+       headers: this.getHeaders(),
+     })
+     .pipe(
+       retry(this.configApiRetry),
+       // catchError(this.handleError)
+       map((ret: any) => {
+         return this.errorExceptionResultCheck(ret);
+       }),
+     );
+ }
 }
