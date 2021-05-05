@@ -1,9 +1,17 @@
 {
   "name": "ngx-ntk-query-builder",
-  "version": "0.0.1",
+  "version": "1.0.1",
+  "description": "Angular query builder",
+  "author": "Alireza-Karavi",
+  "license": "ISC",
+  "keywords": [
+    "NTK",
+    "KARAVI",
+    "querybuilder"
+  ],
   "peerDependencies": {
-    "@angular/common": "^10.2.4",
-    "@angular/core": "^10.2.4"
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -57,6 +57,12 @@ npm publish
 cd ..
 cd ..
 =========================================
+ng build ngx-ntk-query-builder --prod
+cd dist/ngx-ntk-query-builder
+npm publish
+cd ..
+cd ..
+=========================================
 Test All
 ng build ntk-cms-api --prod
 ng build ntk-cms-filemanager --prod

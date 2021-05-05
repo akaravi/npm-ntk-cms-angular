@@ -1,20 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxNtkQueryBuilderComponent } from './ngx-ntk-query-builder.component';
+import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
 
-describe('NgxNtkQueryBuilderComponent', () => {
-  let component: NgxNtkQueryBuilderComponent;
-  let fixture: ComponentFixture<NgxNtkQueryBuilderComponent>;
+describe('NgxQueryBuilderComponent', () => {
+  let component: NgxQueryBuilderComponent;
+  let fixture: ComponentFixture<NgxQueryBuilderComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ NgxNtkQueryBuilderComponent ]
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ NgxQueryBuilderComponent ]
     })
     .compileComponents();
-  });
+  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxNtkQueryBuilderComponent);
+    fixture = TestBed.createComponent(NgxQueryBuilderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
