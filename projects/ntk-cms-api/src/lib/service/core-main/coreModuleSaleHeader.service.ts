@@ -8,6 +8,8 @@ import { map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSaleHeaderCalculateDtoModel } from '../../models/dto/core/coreModuleSaleHeaderCalculateDtoModel';
 import { CoreModuleSaleHeaderPaymentDtoModel } from '../../models/dto/core/coreModuleSaleHeaderPaymentDtoModel';
+import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
+import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 
 
 @Injectable()
@@ -33,7 +35,6 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
   }
   ServiceCheckUseHeaderForSite(id: number):
     Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
-
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseHeaderForSite/' + id, {
         headers: this.getHeaders(),
@@ -46,7 +47,8 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
         }),
       );
   }
-  ServiceOrderCalculate(model: CoreModuleSaleHeaderCalculateDtoModel): Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
+  ServiceOrderCalculate(model: CoreModuleSaleHeaderCalculateDtoModel):
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
     if (!model) {
       model = new CoreModuleSaleHeaderCalculateDtoModel();
     }
@@ -62,7 +64,8 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
         }),
       );
   }
-  ServiceOrderPayment(model: CoreModuleSaleHeaderPaymentDtoModel): Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
+  ServiceOrderPayment(model: CoreModuleSaleHeaderPaymentDtoModel):
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     if (!model) {
       model = new CoreModuleSaleHeaderPaymentDtoModel();
     }
