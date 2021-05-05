@@ -1,4 +1,4 @@
 export class CoreModuleSaleHeaderCalculateDtoModel {
-  LinkHeaderId: string;
+  LinkHeaderId: number;
   BankPaymentPrivateId: number;
 }

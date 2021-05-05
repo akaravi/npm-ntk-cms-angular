@@ -12,8 +12,7 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 @Injectable()
 export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
-  // coreCpMainMenu = new BehaviorSubject<CoreCpMainMenuModel[]>(new Array<CoreCpMainMenuModel>());
-  // coreCpMainMenuObs = this.coreCpMainMenu.asObservable();  getModuleCotrolerUrl(): string {
+  getModuleCotrolerUrl(): string {
     return 'CoreCpMainMenu';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
