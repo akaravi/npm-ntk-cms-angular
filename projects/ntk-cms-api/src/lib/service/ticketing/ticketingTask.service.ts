@@ -5,7 +5,7 @@ import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskM
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { ErrorExceptionResultBase } from 'dist/ntk-cms-api/public-api';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
