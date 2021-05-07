@@ -6,4 +6,5 @@ export * from './ticketingDepartemenOperator.service';
 export * from './ticketingFaq.service';
 export * from './ticketingTask.service';
 export * from './ticketingTemplate.service';
+export * from './ticketingEnum.service';
 

@@ -5,6 +5,7 @@ import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskM
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultBase } from 'dist/ntk-cms-api/public-api';
 
 
 @Injectable()
@@ -19,6 +20,34 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ContactUS', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceTaskReaded(id: number): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TaskReaded/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceisClosed(id: number): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/isClosed/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
