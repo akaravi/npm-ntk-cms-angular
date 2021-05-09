@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class ticketingEnumService extends ApiServerBase {
+export class TicketingEnumService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'ticketingEnum';
   }

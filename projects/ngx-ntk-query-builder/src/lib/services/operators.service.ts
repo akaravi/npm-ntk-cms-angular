@@ -76,7 +76,7 @@ export class OperatorsService {
     return operators;
   }
 
-  getDefaultOperator() {
+  getDefaultOperator(): string {
     return this.defaultOperator;
   }
 
