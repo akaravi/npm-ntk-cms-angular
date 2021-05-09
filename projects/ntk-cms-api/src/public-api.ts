@@ -88,6 +88,13 @@ export * from './lib/models/entity/biography/_export';
 export * from './lib/models/dto/biography/_export';
 // biography
 
+
+// estate
+export * from './lib/service/estate/_export';
+export * from './lib/models/entity/estate/_export';
+export * from './lib/models/enums/estate/_export';
+// estate
+
 // webDesigner
 export * from './lib/service/web-designer/_export';
 export * from './lib/models/entity/web-designer/_export';
@@ -104,7 +111,3 @@ export * from './lib/models/entity/article/_export';
 export * from './lib/service/member/_export';
 export * from './lib/models/entity/member/_export';
 // member
-
-// news DTO model
-// export class CoreUser extends DataFieldInfoModel {
-// }

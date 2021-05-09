@@ -1,4 +1,4 @@
-export * from './coreAuth.Service';
+export * from './coreAuth.service';
 export * from './coreTokenActivation.service';
 export * from './coreTokenUser.service';
 export * from './coreTokenUserLog.service';
