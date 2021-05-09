@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreLogErrorService extends ApiCmsServerBase<CoreLogErrorModel, string>  {  getModuleCotrolerUrl(): string {
+export class CoreLogErrorService extends ApiCmsServerBase<CoreLogErrorModel, string>  {
+  getModuleCotrolerUrl(): string {
     return 'CoreLogError';
   }
 }

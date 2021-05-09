@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreLogCurrencyService extends ApiCmsServerBase<CoreLogCurrencyModel, string>  {  getModuleCotrolerUrl(): string {
+export class CoreLogCurrencyService extends ApiCmsServerBase<CoreLogCurrencyModel, string>  {
+  getModuleCotrolerUrl(): string {
     return 'CoreLogCurrency';
   }
 }
