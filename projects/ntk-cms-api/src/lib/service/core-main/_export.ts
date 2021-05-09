@@ -4,6 +4,7 @@ export * from './coreCpMainMenu.service';
 export * from './coreCpMainMenuCmsUserGroup.service';
 export * from './coreEnum.service';
 export * from './coreGuide.service';
+export * from './CoreCurrency.service';
 export * from './coreLocation.service';
 export * from './coreModule.service';
 export * from './coreModuleProcess.service';
