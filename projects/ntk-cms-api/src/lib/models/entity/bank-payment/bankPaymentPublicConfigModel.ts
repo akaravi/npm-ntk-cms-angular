@@ -6,7 +6,7 @@ export class BankPaymentPublicConfigModel extends BaseEntity<number> {
   ClassName: string;
   LinkModuleFileLogoId: number;
   LinkModuleFileLogoIdSrc: string;
-  LinkCurrency: number;
+  LinkCurrencyId: number;
   PublicConfigJsonValues: string;
   Memo: string;
   PrivateSiteConfigs: BankPaymentPrivateSiteConfigModel[];
