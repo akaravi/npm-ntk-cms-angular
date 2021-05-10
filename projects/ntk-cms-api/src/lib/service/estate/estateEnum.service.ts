@@ -36,5 +36,17 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
+    ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumEstateUserType', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
 }

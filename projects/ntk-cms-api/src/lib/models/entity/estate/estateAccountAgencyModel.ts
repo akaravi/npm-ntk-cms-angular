@@ -10,6 +10,8 @@ export class EstateAccountAgencyModel extends BaseModuleEntity<string> {
 
   Address: string;
   LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 
   LinkExtraImageIds: string;
+  LinkExtraImageIdsSrc: string[];
 }
