@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateAccountUserModel extends BaseModuleEntity<string> {
-  LinkCmsUserId?: number;
+  LinkCmsUserId: number;
   Title: string;
   Description: string;
   JoinId: string;
