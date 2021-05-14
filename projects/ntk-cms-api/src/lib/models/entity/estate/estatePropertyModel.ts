@@ -43,12 +43,12 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
 
   ViewCount: number;
 
-  Contracts: EstateContractModel[]
+  Contracts: EstateContractModel[];
 
 
 
-  PropertyDetailValues: EstatePropertyDetailValueModel[]
-  PropertyDetailGroups: EstatePropertyDetailGroupModel[]
+  PropertyDetailValues: EstatePropertyDetailValueModel[];
+  PropertyDetailGroups: EstatePropertyDetailGroupModel[];
 
 
   LinkMainImageIdSrc: string;
