@@ -19,6 +19,7 @@ export class EstatePropertyDetailModel {
   ShowInFormOrder?: number;
   LinkPropertyTypeId: string;
   LinkPropertyDetailGroupId: string;
+  ConfigValueDefaultValueJson: string;
   ConfigValueDefaultValue: string[];
   ConfigValueForceUseDefaultValue: boolean;
   ConfigValueMultipleChoice: boolean;
