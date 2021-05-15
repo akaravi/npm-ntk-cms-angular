@@ -111,3 +111,9 @@ export * from './lib/models/entity/article/_export';
 export * from './lib/service/member/_export';
 export * from './lib/models/entity/member/_export';
 // member
+
+// donate
+export * from './lib/models/entity/donate/_export';
+export * from './lib/models/enums/donate/_export';
+export * from './lib/service/donate/_export';
+// donate
