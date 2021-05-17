@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { DonateSponsorModel } from '../../models/entity/donate/donateSponsorModel';
 
 @Injectable()
-export class DonateSponsorService extends ApiCmsServerBase<DonateSponsorModel, string>  {
+export class DonateSponsorService extends ApiCmsServerBase<DonateSponsorModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'DonateSponsor';
   }

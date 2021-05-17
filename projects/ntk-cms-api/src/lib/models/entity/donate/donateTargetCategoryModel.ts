@@ -14,4 +14,5 @@ export class DonateTargetCategoryModel extends BaseModuleEntity<number> {
   Children: DonateTargetCategoryModel[];
   Targets: DonateTargetModel[];
   Sponsors: DonateSponsorModel[];
+  LinkMainImageIdSrc: string;
 }
