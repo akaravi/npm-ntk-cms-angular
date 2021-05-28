@@ -11,6 +11,8 @@ export * from './estatePropertyDetail.service';
 export * from './estatePropertyHistory.service';
 export * from './estateProperty.service';
 export * from './estatePropertyType.service';
+export * from './estatePropertyTypeLanduse.service';
+export * from './estatePropertyTypeUsage.service';
 export * from './estatePropertyShareAgency.service';
 export * from './estatePropertyShareAgent.service';
 export * from './estatePropertyShareSite.service';

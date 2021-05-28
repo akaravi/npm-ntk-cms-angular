@@ -1,14 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstatePropertyDetailModel } from './estatePropertyDetailModel';
+import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
+import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 
 export class EstatePropertyTypeModel extends BaseModuleEntity<string> {
-  Title: string;
-  TitleCreatedYaer: string;
-  TitlePartition: string;
-  LinkLocationId?: number;
-  Description: string;
-  LinkMainImageId: number;
-  LinkMainImageIdSrc: string;
-  PropertyDetails: EstatePropertyDetailModel[];
-
+  LinkPropertyTypeLanduse: string;
+  LinkPropertyTypeUsage: string;
+  PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
+  PropertyTypeUsage: EstatePropertyTypeUsageModel;
 }

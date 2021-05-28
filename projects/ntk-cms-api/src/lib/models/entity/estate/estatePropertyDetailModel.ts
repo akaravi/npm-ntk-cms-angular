@@ -1,4 +1,4 @@
-import { EnumInputDataType } from '../../enums/estate/enumInputDataType';
+import { EnumInputDataType } from "../../enums/estate/enumInputDataType";
 
 export class EstatePropertyDetailModel {
   Id: string;

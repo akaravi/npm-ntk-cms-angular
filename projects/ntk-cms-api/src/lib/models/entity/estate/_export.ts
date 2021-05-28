@@ -11,6 +11,8 @@ export * from './estatePropertyDetailValueModel';
 export * from './estatePropertyHistoryModel';
 export * from './estatePropertyModel';
 export * from './estatePropertyTypeModel';
+export * from './estatePropertyTypeUsageModel';
+export * from './estatePropertyTypeLanduseModel';
 export * from './estatePropertyShareAgencyModel';
 export * from './estatePropertyShareAgentModel';
 export * from './estatePropertyShareSiteModel';
