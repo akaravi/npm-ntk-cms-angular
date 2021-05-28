@@ -7,6 +7,6 @@ export class EstatePropertyDetailGroupModel extends BaseModuleEntity<string> {
   IconFont: string;
   IconColor: string;
   ShowInFormOrder?: number;
-  LinkPropertyTypeId: string;
-  PropertyDetails: EstatePropertyDetailModel[]
+  LinkPropertyTypeLanduseId: string;
+  PropertyDetails: EstatePropertyDetailModel[];
 }

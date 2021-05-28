@@ -1,4 +1,4 @@
-import { EnumInputDataType } from "../../enums/estate/enumInputDataType";
+import { EnumInputDataType } from '../../enums/estate/enumInputDataType';
 
 export class EstatePropertyDetailModel {
   Id: string;
@@ -18,7 +18,7 @@ export class EstatePropertyDetailModel {
   IsHistoryable: boolean;
   IsSearchable: boolean;
   ShowInFormOrder?: number;
-  LinkPropertyTypeId: string;
+  LinkPropertyTypeLanduseId: string;
   LinkPropertyDetailGroupId: string;
   ConfigValueDefaultValueJson: string;
   ConfigValueDefaultValue: string[];
