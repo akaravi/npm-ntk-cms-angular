@@ -4,8 +4,8 @@ import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel
 import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 
 export class EstatePropertyTypeModel extends BaseModuleEntity<string> {
-  LinkPropertyTypeLanduse: string;
-  LinkPropertyTypeUsage: string;
+  LinkPropertyTypeLanduseId: string;
+  LinkPropertyTypeUsageId: string;
   PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
   PropertyTypeUsage: EstatePropertyTypeUsageModel;
 }
