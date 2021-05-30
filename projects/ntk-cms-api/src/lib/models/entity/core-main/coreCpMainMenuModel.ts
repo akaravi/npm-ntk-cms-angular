@@ -6,7 +6,6 @@ export class CoreCpMainMenuModel extends BaseEntity<number> {
   TitleML: string;
   TitleResourceLanguage: string;
   Color: string;
-  TitleEn: string;
   Icon: string;
   AddressLink: string;
   RouteAddressLink: string;
