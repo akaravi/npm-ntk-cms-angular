@@ -2,6 +2,7 @@ import { EnumOperatingSystemType } from '../../enums/enumOperatingSystemType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationLayoutModel } from './applicationLayoutModel';
+import { ApplicationSourceSiteCategoryModel } from './applicationSourceSiteCategoryModel';
 
 export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   Title: string;
@@ -20,6 +21,7 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   LastUnsuccessfullyBuildErrorMessage: string;
   Layouts: ApplicationLayoutModel[];
   Applications: ApplicationAppModel[];
+  SourceSiteCategores: ApplicationSourceSiteCategoryModel[];
   FireBaseServerKey: string;
   Extension: string;
   ExtensionUpdateFile: string;
