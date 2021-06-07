@@ -7,12 +7,26 @@ import { Injectable } from '@angular/core';
 import { WebDesignerMainPageModel } from '../../models/entity/web-designer/webDesignerMainPageModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { GetAllDefaultPagesBySiteCategoryDtoModel } from '../../models/dto/webDesigner/getAllDefaultPagesBySiteCategoryDtoModel';
+import { WebDesignerPageAutoAddDtoModel } from '../../models/dto/webDesigner/webDesignerPageAutoAddDtoModel';
 
 
 @Injectable()
 export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainPage';
+  }
+  ServiceAutoAdd(model: WebDesignerPageAutoAddDtoModel): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/',model , {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
   }
   ServiceWebScreenshot(id: string): Observable<ErrorExceptionResultBase> {
 

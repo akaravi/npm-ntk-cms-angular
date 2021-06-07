@@ -13,7 +13,7 @@ export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     Export2: string;
     Export3: string;
     ExportPreview: string;
-    LinkCmsPageGuId?: string;
+    LinkPageParentGuId?: string;
     PageJsonValueDefualtByAdmin: string;
     PageJsonValueDefualtByAdminDateTimeUpdate?: string;
     HtmlValue: string;
