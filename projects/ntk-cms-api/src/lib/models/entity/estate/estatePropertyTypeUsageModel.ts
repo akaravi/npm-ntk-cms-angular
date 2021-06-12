@@ -9,5 +9,5 @@ export class EstatePropertyTypeUsageModel extends BaseModuleEntity<string> {
   IconColor: string;
   LinkMainImageId: number;
   LinkMainImageIdSrc: string;
-  PropertyType: EstatePropertyTypeModel[];
+  PropertyTypes: EstatePropertyTypeModel[];
 }
