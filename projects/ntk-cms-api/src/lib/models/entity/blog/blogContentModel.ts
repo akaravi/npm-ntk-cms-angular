@@ -4,6 +4,7 @@ import { BlogContentTagModel } from './blogContentTagModel';
 import { BlogContentSimilarModel} from './blogContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BlogCommentModel } from './blogCommentModel';
+import { BlogContentCategoryModel } from './blogContentCategoryModel';
 
 export class BlogContentModel extends BaseModuleEntity<number> {
   LinkCategoryId: number;
@@ -33,10 +34,12 @@ export class BlogContentModel extends BaseModuleEntity<number> {
   Category: BlogCategoryModel;
   ContentTags: BlogContentTagModel[];
   Similars: BlogContentSimilarModel[];
+  ContentCategores: BlogContentCategoryModel[];
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;
   LinkFilePodcastIdSrc: string;
   LinkFileMovieIdSrc: string;
   LinkFileIdsSrc: string[];
+
 }

@@ -12,4 +12,5 @@ export * from './blogContentTag.service';
 export * from './blogShareMainAdminSetting.service';
 export * from './blogShareReciverCategory.service';
 export * from './blogShareServerCategory.service';
+export * from './blogContentCategory.service';
 

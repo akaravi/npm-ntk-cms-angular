@@ -4,6 +4,7 @@ import { NewsContentTagModel } from './newsContentTagModel';
 import { NewsContentSimilarModel } from './newsContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsCommentModel } from './newsCommentModel';
+import { NewsContentCategoryModel } from './newsContentCategoryModel';
 
 export class NewsContentModel extends BaseModuleEntity<number> {
   LinkCategoryId: number;
@@ -33,6 +34,8 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   Category: NewsCategoryModel;
   ContentTags: NewsContentTagModel[];
   Similars: NewsContentSimilarModel[];
+  ContentCategores: NewsContentCategoryModel[];
+
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;

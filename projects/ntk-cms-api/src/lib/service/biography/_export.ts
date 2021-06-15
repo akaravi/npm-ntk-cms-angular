@@ -12,4 +12,5 @@ export * from './biographyContentTag.service';
 export * from './biographyShareMainAdminSetting.service';
 export * from './biographyShareReciverCategory.service';
 export * from './biographyShareServerCategory.service';
+export * from './biographyContentCategory.service';
 

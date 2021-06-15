@@ -12,4 +12,5 @@ export * from './articleContentTag.service';
 export * from './articleShareMainAdminSetting.service';
 export * from './articleShareReciverCategory.service';
 export * from './articleShareServerCategory.service';
+export * from './articleContentCategory.service';
 

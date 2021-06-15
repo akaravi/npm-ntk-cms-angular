@@ -5,4 +5,5 @@ export * from './biographyContentModel';
 export * from './biographyContentOtherInfoModel';
 export * from './biographyContentSimilarModel';
 export * from './biographyContentTagModel';
+export * from './biographyContentCategoryModel';
 

@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { ArticleContentCategoryModel } from './articleContentCategoryModel';
 import { ArticleContentModel } from './articleContentModel';
 
 export class ArticleCategoryModel extends BaseModuleEntity<number> {
@@ -13,6 +14,7 @@ export class ArticleCategoryModel extends BaseModuleEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_Category: ArticleCategoryModel;
   Contents: ArticleContentModel[];
+  ContentCategores: ArticleContentCategoryModel[];
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
 }

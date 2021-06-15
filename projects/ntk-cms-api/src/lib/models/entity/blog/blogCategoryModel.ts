@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { BlogContentCategoryModel } from './blogContentCategoryModel';
 import { BlogContentModel } from './blogContentModel';
 
 export class BlogCategoryModel extends BaseModuleEntity<number> {
@@ -13,6 +14,7 @@ export class BlogCategoryModel extends BaseModuleEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_Category: BlogCategoryModel;
   Contents: BlogContentModel[];
+  ContentCategores: BlogContentCategoryModel[];
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
 

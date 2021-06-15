@@ -4,6 +4,7 @@ import { ArticleContentTagModel } from './articleContentTagModel';
 import { ArticleContentSimilarModel } from './articleContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ArticleCommentModel } from './articleCommentModel';
+import { ArticleContentCategoryModel } from './articleContentCategoryModel';
 
 export class ArticleContentModel extends BaseModuleEntity<number> {
   LinkCategoryId: number;
@@ -33,6 +34,8 @@ export class ArticleContentModel extends BaseModuleEntity<number> {
   Category: ArticleCategoryModel;
   ContentTags: ArticleContentTagModel[];
   Similars: ArticleContentSimilarModel[];
+  ContentCategores: ArticleContentCategoryModel[];
+
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;

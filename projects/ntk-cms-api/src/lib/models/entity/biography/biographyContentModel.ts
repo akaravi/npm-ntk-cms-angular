@@ -4,6 +4,7 @@ import { BiographyContentTagModel } from './biographyContentTagModel';
 import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyCommentModel } from './biographyCommentModel';
+import { BiographyContentCategoryModel } from './biographyContentCategoryModel';
 
 export class BiographyContentModel extends BaseModuleEntity<number> {
   LinkCategoryId: number;
@@ -33,6 +34,8 @@ export class BiographyContentModel extends BaseModuleEntity<number> {
   Category: BiographyCategoryModel;
   ContentTags: BiographyContentTagModel[];
   Similars: BiographyContentSimilarModel[];
+  ContentCategores: BiographyContentCategoryModel[];
+
   OtherInfos: string;
   ContentAndParameterValues: any;
   LinkMainImageIdSrc: string;

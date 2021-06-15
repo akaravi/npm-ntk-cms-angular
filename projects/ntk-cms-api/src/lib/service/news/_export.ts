@@ -12,4 +12,5 @@ export * from './newsContentTag.service';
 export * from './newsShareMainAdminSetting.service';
 export * from './newsShareReciverCategory.service';
 export * from './newsShareServerCategory.service';
+export * from './newsContentCategory.service';
 
