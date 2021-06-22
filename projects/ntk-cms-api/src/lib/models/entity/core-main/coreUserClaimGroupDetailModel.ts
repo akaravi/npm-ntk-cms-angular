@@ -1,4 +1,3 @@
-import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupModel } from './coreUserClaimGroupModel';
 import { CoreUserClaimTypeModel } from './coreUserClaimTypeModel';

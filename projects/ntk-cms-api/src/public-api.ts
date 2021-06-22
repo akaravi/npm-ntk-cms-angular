@@ -45,6 +45,10 @@ export * from './lib/models/dto/linkManagement/_export';
 export * from './lib/service/news/_export';
 export * from './lib/models/entity/news/_export';
 // news Service
+// chart Service
+export * from './lib/service/chart/_export';
+export * from './lib/models/entity/chart/_export';
+// chart Service
 // blog Service
 export * from './lib/service/blog/_export';
 export * from './lib/models/entity/blog/_export';
