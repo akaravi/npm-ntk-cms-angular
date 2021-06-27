@@ -55,7 +55,6 @@ export class NodeService extends BaseService {
   }
 
   public refreshCurrentPath(): any {
-    // debugger;
     this.store.setState({ type: SET_PARENT, payload: this.currentParentId });
     this.store.setState({ type: SET_LOADING_STATE, payload: true });
     const children = this.findFolderById(this.currentParentId).children;
@@ -66,12 +65,9 @@ export class NodeService extends BaseService {
     }
     this.LoadingListIdAdd(this.currentParentId);
 
-    // debugger;
     this.getNodesFolder(this.currentParentId).then(() => {
-      // debugger;
       this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
       this.getNodesFile(this.currentParentId).then(() => {
-        // debugger;
         this.store.setState({ type: SET_SELECTED_NODE, payload: this.serviceTree.nodes });
         this.store.setState({ type: SET_LOADING_STATE, payload: false });
         this.loadingListIdRemove(this.currentParentId);
@@ -245,7 +241,6 @@ export class NodeService extends BaseService {
     this.store.setState({ type: SET_LOADING_STATE, payload: false });
 
     if (result === null) {
-      console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.serviceTree.nodes;
     }
     if (!loadChild) {
@@ -261,12 +256,10 @@ export class NodeService extends BaseService {
   }
 
   public findFolderById(parentid: number): NodeInterface {
-    // debugger;
     const result = this.findFolderByIdHelper(parentid);
     this.store.setState({ type: SET_LOADING_STATE, payload: false });
 
     if (result === null) {
-      console.warn('[Node Service] Cannot find node by id. Id not existing or not fetched. Returning root.');
       return this.serviceTree.nodes;
     }
 
@@ -278,7 +271,6 @@ export class NodeService extends BaseService {
       return node;
     }
 
-    // debugger;
     if (!node.children || node.children.length === 0) {
       return null;
     }
@@ -294,7 +286,6 @@ export class NodeService extends BaseService {
   }
 
   public foldRecursively(node: NodeInterface): void {
-    // debugger;
     if (!node.children || node.children.length === 0) {
       return null;
     }

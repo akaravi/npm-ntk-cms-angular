@@ -33,7 +33,6 @@ export class NtkCmsApiStoreService {
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
     this.sub.next(this.state);
     this.stateSubject.next( this.state );
-    // if (isDevMode()) console.warn('[FileManagerStoreService] setState', param, JSON.parse(JSON.stringify(this.state)));
   }
 
   getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {

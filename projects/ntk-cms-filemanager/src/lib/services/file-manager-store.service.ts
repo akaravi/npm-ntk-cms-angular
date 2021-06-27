@@ -30,7 +30,6 @@ export class FileManagerStoreService {
   setState(param: Actions): void {
     Object.assign(this.state.fileManagerState, stateReducer(this.state.fileManagerState, param));
     this.sub.next(this.state);
-    // if (isDevMode()) console.warn('[FileManagerStoreService] setState', param, JSON.parse(JSON.stringify(this.state)));
   }
 
   getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {
@@ -51,7 +50,6 @@ export function stateReducer(state: StateInterface = initialState, action: Actio
     case SET_LOADING_LIST_ID :
       return { ...state, loadingListId: action.payload };
     case SET_PARENT :
-      // debugger;
       if (state.parentId === action.payload) {
         return state;
       }

@@ -45,7 +45,6 @@ export class NodeComponent implements OnInit {
   }
 
   private open(): void {
-    // debugger;
     if (!this.node.isFolder) {
       if (this.nodeService?.serviceTree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
         this.isSingleClick = true;
@@ -85,7 +84,6 @@ export class NodeComponent implements OnInit {
   }
 
   private setNodeSelectedState(): void {
-    // debugger;
     const node = document.getElementById('tree_' + this.node.id);
 
     if (!this.node.isExpanded) {

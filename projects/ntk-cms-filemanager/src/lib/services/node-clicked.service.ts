@@ -254,6 +254,5 @@ export class NodeClickedService extends BaseService {
 
     this.ntkSmartModalService.getModal('waitModal').close();
     this.ntkSmartModalService.getModal('errorModal').open();
-    console.warn('[NodeClickedService] Action "' + name + '" failed', error);
   }
 }

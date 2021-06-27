@@ -26,7 +26,6 @@ export class FolderContentComponent implements OnInit {
     this.store
       .getState((state) => state.fileManagerState.parentId)
       .subscribe((parentId: number) => {
-        // debugger;
         this.nodes = this.nodeService.findFolderById(parentId);
       });
 
