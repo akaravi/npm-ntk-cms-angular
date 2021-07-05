@@ -21,6 +21,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   UserLanguage: EnumLanguage;
   SubDomain: string;
   Domain: string;
+  SSL: Boolean;
   Redirect: string;
   Keyword: string;
   Description: string;

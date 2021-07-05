@@ -118,9 +118,9 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
         }),
       );
   }
-  ServiceDomain(): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceGetCurrencyMaster(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domain', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrencyMaster', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -131,9 +131,35 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
         }),
       );
   }
-  ServiceDomains(id: number): Observable<ErrorExceptionResult<DomainModel>> {
+  ServiceGetCurrencySite(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Domains/' + id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrencySite', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetCurrentDomain(): Observable<ErrorExceptionResult<string>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrentDomain', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetRegDomains(siteCategoryId: number): Observable<ErrorExceptionResult<string>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRegDomains/' + siteCategoryId, {
         headers: this.getHeaders(),
       })
       .pipe(
