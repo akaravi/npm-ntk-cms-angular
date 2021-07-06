@@ -3,4 +3,5 @@ export class BankPaymentInjectPaymentGotoBankStep1CalculateModel {
   AmountPure: number;
   FeeTransport: number;
   Amount: number;
+  Currency: string;
 }
