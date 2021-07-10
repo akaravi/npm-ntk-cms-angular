@@ -62,5 +62,21 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
         }),
       );
   }
+  ServiceOptimaze(): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .get(
+        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Optimaze',
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
 

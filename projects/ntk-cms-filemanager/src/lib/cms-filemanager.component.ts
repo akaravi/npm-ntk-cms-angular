@@ -363,7 +363,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       model.type.length === 0 ||
       !this.configSelectFileType ||
       this.configSelectFileType.length === 0 ||
-      this.configSelectFileType.find((t) => t.toLowerCase() === model.type.toLowerCase())
+      this.configSelectFileType.find((t) => (t && model.type && t.toLowerCase() === model.type.toLowerCase()))
     ) {
       return true;
     }
