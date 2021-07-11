@@ -158,7 +158,7 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
   ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
