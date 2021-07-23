@@ -30,7 +30,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceCurrectSite(): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrectSite',  {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrectSite', {
         headers: this.getHeaders(),
       })
       .pipe(
