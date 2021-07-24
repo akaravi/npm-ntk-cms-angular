@@ -33,9 +33,9 @@ export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMain
         }),
       );
   }
-  ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
+  ServiceEditStep(model: EditStepDtoModel<string>): Observable<ErrorExceptionResultBase> {
     if (!model) {
-      model = new EditStepDtoModel<number>();
+      model = new EditStepDtoModel<string>();
     }
     return this.http
       .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
