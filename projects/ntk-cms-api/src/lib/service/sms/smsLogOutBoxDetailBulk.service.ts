@@ -3,7 +3,9 @@ import { SmsLogOutBoxDetailBulkModel } from '../../models/entity/sms/smsLogOutBo
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SmsLogOutBoxDetailBulkService extends ApiCmsServerBase<SmsLogOutBoxDetailBulkModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsLogOutBoxDetailBulk';

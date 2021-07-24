@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/application/applicationConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApplicationConfigurationService extends
   ApiServerConfigSiteBase<ApplicationModuleConfigAdminMainValuesModel,
   ApplicationModuleConfigSiteValuesModel,

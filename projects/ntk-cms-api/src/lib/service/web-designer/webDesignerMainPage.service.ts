@@ -10,7 +10,9 @@ import { GetAllDefaultPagesBySiteCategoryDtoModel } from '../../models/dto/webDe
 import { WebDesignerPageAutoAddDtoModel } from '../../models/dto/webDesigner/webDesignerPageAutoAddDtoModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainPage';

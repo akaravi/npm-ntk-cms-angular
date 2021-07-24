@@ -10,7 +10,9 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class LinkManagementTargetService extends ApiCmsServerBase<any, number>  {
   getModuleCotrolerUrl(): string {
     return 'LinkManagementTarget';

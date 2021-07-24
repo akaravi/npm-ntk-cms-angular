@@ -7,7 +7,9 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayoutModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationLayout';

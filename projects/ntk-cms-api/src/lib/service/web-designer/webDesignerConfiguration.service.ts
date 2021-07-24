@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/web-designer/webDesignerConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WebDesignerConfigurationService extends
   ApiServerConfigSiteBase<WebDesignerModuleConfigAdminMainValuesModel,
   WebDesignerModuleConfigSiteValuesModel,

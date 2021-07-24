@@ -7,7 +7,9 @@ import { Injectable } from '@angular/core';
 import { HyperShopCategoryModel } from '../../models/entity/hyper-shop/hyperShopCategoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategoryModel, string> {
   getModuleCotrolerUrl(): string {
     return 'HyperShopCategory';

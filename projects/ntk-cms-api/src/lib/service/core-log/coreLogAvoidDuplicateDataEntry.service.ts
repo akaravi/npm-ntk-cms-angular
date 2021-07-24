@@ -4,7 +4,9 @@ import { CoreLogAvoidDuplicateDataEntryModel } from '../../models/entity/core-lo
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreLogAvoidDuplicateDataEntryService extends ApiCmsServerBase<CoreLogAvoidDuplicateDataEntryModel, string>  {
     getModuleCotrolerUrl(): string {
     return 'CoreLogAvoidDuplicateDataEntry';

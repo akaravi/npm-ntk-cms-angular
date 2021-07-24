@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/news/newsConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class NewsConfigurationService extends
   ApiServerConfigSiteBase<NewsModuleConfigAdminMainValuesModel,
   NewsModuleConfigSiteValuesModel,

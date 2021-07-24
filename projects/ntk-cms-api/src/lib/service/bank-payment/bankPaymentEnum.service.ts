@@ -6,7 +6,9 @@ import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BankPaymentEnumService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'BankPaymentEnum';

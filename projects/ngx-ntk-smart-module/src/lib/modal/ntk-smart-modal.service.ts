@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { NtkSmartModalComponent } from './ntk-smart-modal.component';
 import { ModalInstance } from './modal-instance';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class NtkSmartModalService {
   public modalStack: ModalInstance[] = [];
   private debouncer: any;

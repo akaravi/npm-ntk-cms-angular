@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/link-management/linkManagementConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class LinkManagementConfigurationService extends
   ApiServerConfigSiteBase<LinkManagementModuleConfigAdminMainValuesModel,
   LinkManagementModuleConfigSiteValuesModel,

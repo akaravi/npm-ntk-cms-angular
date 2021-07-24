@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { WebDesignerMainIntroModel } from '../../models/entity/web-designer/webDesignerMainIntroModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WebDesignerMainIntroService extends ApiCmsServerBase<WebDesignerMainIntroModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainIntro';

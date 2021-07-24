@@ -7,7 +7,9 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainMenu';

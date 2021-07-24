@@ -10,7 +10,9 @@ import { HyperShopOrderModel } from '../../models/entity/hyper-shop/hyperShopOrd
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'HyperShopOrder';

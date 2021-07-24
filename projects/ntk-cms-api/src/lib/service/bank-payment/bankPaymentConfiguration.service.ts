@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/bank-payment/bankPaymentConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BankPaymentConfigurationService extends
   ApiServerConfigSiteBase<BankPaymentModuleConfigAdminMainValuesModel,
   BankPaymentModuleConfigSiteValuesModel,

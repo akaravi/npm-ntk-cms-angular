@@ -7,7 +7,9 @@ import {
 } from '../../models/entity/estate/estateConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class EstateConfigurationService extends
   ApiServerConfigSiteBase<EstateModuleConfigAdminMainValuesModel,
   EstateModuleConfigSiteValuesModel,

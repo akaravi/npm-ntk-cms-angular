@@ -12,7 +12,9 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfoModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'Application';

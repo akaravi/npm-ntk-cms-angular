@@ -8,7 +8,9 @@ import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'TicketingDepartemenOperator';

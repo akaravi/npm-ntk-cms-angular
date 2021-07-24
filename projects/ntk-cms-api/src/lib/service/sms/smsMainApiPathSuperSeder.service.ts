@@ -3,7 +3,9 @@ import { SmsMainApiPathSuperSederModel } from '../../models/entity/sms/smsMainAp
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SmsMainApiPathSuperSederService extends ApiCmsServerBase<SmsMainApiPathSuperSederModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathSuperSeder';

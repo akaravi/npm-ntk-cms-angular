@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { ChartContentCategoryModel } from '../../models/entity/chart/chartContentCategoryModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ChartContentCategoryService extends ApiCmsServerBase<ChartContentCategoryModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ChartContentCategory';

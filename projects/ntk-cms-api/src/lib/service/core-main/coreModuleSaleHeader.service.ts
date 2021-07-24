@@ -12,7 +12,9 @@ import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../..
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSaleHeaderModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreModuleSaleHeader';

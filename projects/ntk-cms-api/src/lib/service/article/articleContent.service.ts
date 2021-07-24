@@ -9,7 +9,9 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ArticleContent';

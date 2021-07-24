@@ -3,7 +3,9 @@ import { CoreSiteDomainAliasModel } from '../../models/entity/core-main/coreSite
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreSiteDomainAliasService extends ApiCmsServerBase<CoreSiteDomainAliasModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreSiteDomainAlias';
   }

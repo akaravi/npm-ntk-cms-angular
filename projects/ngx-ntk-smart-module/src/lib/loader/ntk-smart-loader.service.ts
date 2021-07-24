@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { LoaderInstance } from './loader-instance';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class NtkSmartLoaderService {
   private privateloaderStack: LoaderInstance[] = [];
   private privateActions: Array<{ identifier: string, action: string }> = [];

@@ -3,7 +3,9 @@ import { CoreUserClaimGroupModel } from '../../models/entity/core-main/coreUserC
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreUserClaimGroupService extends ApiCmsServerBase<CoreUserClaimGroupModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreUserClaimGroup';
   }

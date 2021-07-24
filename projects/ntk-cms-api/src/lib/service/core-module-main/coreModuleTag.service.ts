@@ -4,7 +4,9 @@ import { CoreModuleTagModel } from '../../models/entity/core-module-main/coreMod
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreModuleTagService extends ApiCmsServerBase<CoreModuleTagModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreModuleTag';
   }

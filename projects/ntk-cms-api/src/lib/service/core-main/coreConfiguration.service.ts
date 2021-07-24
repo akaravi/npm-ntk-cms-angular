@@ -8,7 +8,9 @@ import {
 } from '../../models/entity/core-main/coreConfigurationModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreConfigurationService extends
   ApiServerConfigSiteBase<CoreModuleConfigAdminMainValuesModel,
   CoreModuleConfigSiteValuesModel,

@@ -9,7 +9,9 @@ import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
   CurrentUserObs = this.CurrentUser.asObservable();  getModuleCotrolerUrl(): string {

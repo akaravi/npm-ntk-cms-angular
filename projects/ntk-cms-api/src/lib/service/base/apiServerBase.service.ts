@@ -1,6 +1,6 @@
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
@@ -8,9 +8,11 @@ import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorEx
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApiServerBase {
-  constructor(public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
+  constructor(@Inject(HttpClient) public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
     this.childConstructor();
     this.headers = new Map<string, string>();
   }

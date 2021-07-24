@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'PollingCategory';

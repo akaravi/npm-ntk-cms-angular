@@ -9,7 +9,9 @@ import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../..
 import { BankPaymentPrivateSiteConfigAliasJsonModel } from '../../models/entity/bank-payment/bankPaymentPrivateSiteConfigAliasJsonModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';

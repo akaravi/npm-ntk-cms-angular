@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BiographyContentTagService extends ApiCmsServerBase<BiographyContentTagModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BiographyContentTag';

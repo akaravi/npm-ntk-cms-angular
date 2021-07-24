@@ -3,7 +3,9 @@ import { SmsMainApiPathProcessFlowModel } from '../../models/entity/sms/smsMainA
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SmsMainApiPathProcessFlowService extends ApiCmsServerBase<SmsMainApiPathProcessFlowModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathProcessFlow';

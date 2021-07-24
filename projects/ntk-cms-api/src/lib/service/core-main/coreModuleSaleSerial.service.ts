@@ -9,7 +9,9 @@ import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/
 import { CoreModuleSaleInvoiceModel } from '../../models/entity/core-main/coreModuleSaleInvoiceModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSaleSerialModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreModuleSaleSerial';

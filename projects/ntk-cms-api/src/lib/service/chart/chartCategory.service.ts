@@ -8,7 +8,9 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ChartCategoryService extends ApiCmsServerBase<ChartCategoryModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ChartCategory';

@@ -6,7 +6,9 @@ import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class WebDesignerEnumService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerEnum';

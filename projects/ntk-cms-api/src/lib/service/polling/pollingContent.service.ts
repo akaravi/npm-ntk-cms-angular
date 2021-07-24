@@ -3,7 +3,9 @@ import { PollingContentModel } from '../../models/entity/polling/pollingContentM
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class PollingContentService extends ApiCmsServerBase<PollingContentModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'PollingContent';

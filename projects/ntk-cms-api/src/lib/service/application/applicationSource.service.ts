@@ -6,7 +6,9 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationSource';

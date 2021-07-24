@@ -8,7 +8,9 @@ import { Injectable } from '@angular/core';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'TicketingTask';

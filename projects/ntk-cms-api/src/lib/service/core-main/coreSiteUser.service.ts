@@ -7,7 +7,9 @@ import { CoreSiteUserModel } from '../../models/entity/core-main/coreSiteUserMod
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreSiteUser';
   }

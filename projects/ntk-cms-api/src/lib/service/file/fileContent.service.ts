@@ -12,7 +12,9 @@ import { FileCopyCutDtoModel } from '../../models/dto/file/fileCopyCutDtoModel';
 import { FileDownloadDtoModel } from '../../models/dto/file/fileDownloadDtoModel';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class FileContentService extends ApiCmsServerBase<FileContentModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'FileContent';

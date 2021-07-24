@@ -4,7 +4,9 @@ import { CoreUserGroupModel } from '../../models/entity/core-main/coreUserGroupM
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CoreUserGroupService extends ApiCmsServerBase<CoreUserGroupModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreUserGroup';
   }
