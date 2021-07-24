@@ -5,6 +5,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
+import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable({
@@ -28,6 +30,22 @@ export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMain
         // catchError(this.handleError)
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
+    if (!model) {
+      model = new EditStepDtoModel<number>();
+    }
+    return this.http
+      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }
