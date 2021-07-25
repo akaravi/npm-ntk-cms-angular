@@ -43,18 +43,32 @@ export class CoreSiteModel extends BaseEntity<number> {
   Devices: CoreDeviceModel[];
   Copyright: string;
 
-
-   AboutUsTitle: string;
-   AboutUsDescription: string;
-   AboutUsTel: string;
-   AboutUsFax: string;
-   AboutUsEmail: string;
-   AboutUsAddress: string;
-   AboutUsLinkImageId?: number;
-   AboutUsLinkImageIdSrc: string;
-   AboutUsGeolocationlatitude: number;
-   AboutUsGeolocationlongitude: number;
-
-
+  /*
+  AboutUs
+    */
+  AboutUsTitle: string;
+  AboutUsDescription: string;
+  AboutUsTel: string;
+  AboutUsMobile: string;
+  AboutUsFax: string;
+  AboutUsEmail: string;
+  AboutUsAddress: string;
+  AboutUsLinkImageId?: number;
+  AboutUsLinkImageIdSrc: string;
+  AboutUsGeolocationlatitude: number;
+  AboutUsGeolocationlongitude: number;
+  AboutUsLinkFacebook: string;
+  AboutUsLinkTwitter: string;
+  AboutUsLinkGooglePlus: string;
+  AboutUsLinkInstagram: string;
+  AboutUsLinklinkedin: string;
+  AboutUsLinkYahoo: string;
+  AboutUsLinkYoutube: string;
+  AboutUsLinkTelegram: string;
+  AboutUsLinkPinterest: string;
+  AboutUsLinkRss: string;
+  /*
+  AboutUs
+    */
 }
 

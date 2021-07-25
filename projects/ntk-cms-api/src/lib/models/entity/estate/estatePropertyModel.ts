@@ -43,7 +43,12 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   ScoreSumPercent: number;
 
   ViewCount: number;
+  // * AboutUs */
+  AboutUsTel: string;
+  AboutUsMobile: string;
+  AboutUsEmail: string;
 
+  // * AboutUs */
   Contracts: EstateContractModel[];
 
 

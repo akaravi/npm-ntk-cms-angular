@@ -65,16 +65,33 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   DownloadLinkUpdateSrc: string;
   DownloadLinkSrcByDomainQRCodeBase64: string;
   LinkFileIdSplashScreenSrc: string;
+  /*
+  AboutUs
+    */
   AboutUsTitle: string;
   AboutUsDescription: string;
   AboutUsTel: string;
+  AboutUsMobile: string;
   AboutUsFax: string;
   AboutUsEmail: string;
   AboutUsAddress: string;
-  AboutUsLinkImageId: number;
+  AboutUsLinkImageId?: number;
   AboutUsLinkImageIdSrc: string;
   AboutUsGeolocationlatitude: number;
   AboutUsGeolocationlongitude: number;
+  AboutUsLinkFacebook: string;
+  AboutUsLinkTwitter: string;
+  AboutUsLinkGooglePlus: string;
+  AboutUsLinkInstagram: string;
+  AboutUsLinklinkedin: string;
+  AboutUsLinkYahoo: string;
+  AboutUsLinkYoutube: string;
+  AboutUsLinkTelegram: string;
+  AboutUsLinkPinterest: string;
+  AboutUsLinkRss: string;
+  /*
+  AboutUs
+    */
   LinkFileIdIconSrc: string;
   LinkFileIdLogoSrc: string;
   LinkMainImageIdSrc: string;
