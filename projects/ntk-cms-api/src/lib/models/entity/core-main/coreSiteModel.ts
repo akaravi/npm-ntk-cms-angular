@@ -21,12 +21,14 @@ export class CoreSiteModel extends BaseEntity<number> {
   UserLanguage: EnumLanguage;
   SubDomain: string;
   Domain: string;
-  SSL: Boolean;
+  SSL: boolean;
   Redirect: string;
   Keyword: string;
   Description: string;
   LinkFavIconId?: number;
   LinkFavIconIdSrc: string;
+  LinkImageLogoId?: number;
+  LinkImageLogoIdSrc: string;
   LinkSiteCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSiteCategory: CoreSiteCategoryModel;

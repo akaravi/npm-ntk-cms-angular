@@ -11,12 +11,15 @@ export class EstateContractTypeModel extends BaseModuleEntity<string> {
   UnitRentPrice: string;
   UnitDepositPrice: string;
 
+  SalePriceAllowAgreement: boolean;
   SalePriceMin?: number;
   SalePriceMax?: number;
 
+  RentPriceAllowAgreement: boolean;
   RentPriceMin?: number;
   RentPriceMax?: number;
 
+  DepositPriceAllowAgreement: boolean;
   DepositPriceMin?: number;
   DepositPriceMax?: number;
 }

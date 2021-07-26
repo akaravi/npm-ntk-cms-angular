@@ -47,8 +47,12 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   AboutUsTel: string;
   AboutUsMobile: string;
   AboutUsEmail: string;
-
   // * AboutUs */
+   // * AboutCustomer */
+   AboutCustomerTel: string;
+   AboutCustomerMobile: string;
+   AboutCustomerEmail: string;
+   // * AboutCustomer */
   Contracts: EstateContractModel[];
 
 
