@@ -7,7 +7,10 @@ export class EstateContractModel extends BaseModuleEntity<string> {
   LinkEstateContractTypeId: string;
   ContractType: EstateContractTypeModel;
   LinkPropertyId: string;
+  SalePriceByAgreement: boolean;
   SalePrice?: number;
+  RentPriceByAgreement: boolean;
   RentPrice?: number;
+  DepositPriceByAgreement: boolean;
   DepositPrice?: number;
 }
