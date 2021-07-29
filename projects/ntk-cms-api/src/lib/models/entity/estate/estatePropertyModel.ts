@@ -6,6 +6,7 @@ import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   Title: string;
+  CaseCode: string;
 
   CreatedYaer?: number;
   Partition: number;
@@ -43,15 +44,13 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   ScoreSumPercent: number;
 
   ViewCount: number;
-  // * AboutUs */
-  AboutUsTel: string;
-  AboutUsMobile: string;
-  AboutUsEmail: string;
-  // * AboutUs */
+  // * AboutAgent */
+  AboutAgentTel: string;
+  AboutAgentMobile: string;
+  // * AboutAgent */
    // * AboutCustomer */
    AboutCustomerTel: string;
    AboutCustomerMobile: string;
-   AboutCustomerEmail: string;
    // * AboutCustomer */
   Contracts: EstateContractModel[];
 
