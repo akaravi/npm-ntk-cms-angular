@@ -38,4 +38,5 @@ export * from './enumCmsSiteMenuAreaType';
 export * from './enumPageAbilityType';
 export * from './enumCmsPageUtilityToolsAction';
 export * from './enumSendSmsStatusType';
+export * from './enumFormSubmitedStatus';
 

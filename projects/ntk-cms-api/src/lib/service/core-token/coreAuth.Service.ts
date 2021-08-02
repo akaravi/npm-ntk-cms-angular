@@ -47,7 +47,7 @@ export class CoreAuthService extends ApiServerBase {
     this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
   }
 
-  CurrentTokenInfoRenew(): any {
+  CurrentTokenInfoRenew(): void {
     this.ServiceCurrentToken().subscribe(
       (next) => {
         this.SetCurrentTokenInfo(next.Item);
