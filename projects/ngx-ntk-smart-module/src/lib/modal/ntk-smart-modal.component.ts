@@ -1,60 +1,83 @@
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
-  Input,
-  Output,
-  OnInit,
-  OnDestroy,
-  Renderer2,
+  AfterViewInit,
+  ChangeDetectorRef,
   Component,
+  ComponentFactory,
+  ComponentFactoryResolver,
+  ElementRef,
   EventEmitter,
   HostListener,
-  ChangeDetectorRef,
-  ViewChild,
-  ElementRef,
+  Inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  PLATFORM_ID,
+  QueryList,
+  Renderer2,
+  Type,
+  ViewChildren,
+  ViewContainerRef
 } from '@angular/core';
+import { NtkSmartModalConfig } from './ntk-smart-modal.config';
 
-import { NtkSmartModalService } from './ntk-smart-modal.service';
 
 @Component({
   selector: 'ntk-smart-modal',
   template: `
-    <div
-      *ngIf="overlayVisible"
-      [style.z-index]="visible ? layerPosition - 1 : -1"
-      [ngClass]="{ transparent: !backdrop, overlay: true, 'nsm-overlay-open': openedClass }"
-      (click)="dismiss($event)"
-      #nsmOverlay
-    >
-      <div
-        [style.z-index]="visible ? layerPosition : -1"
-        [ngClass]="['nsm-dialog', customClass, openedClass ? 'nsm-dialog-open' : 'nsm-dialog-close']"
-        #nsmDialog
-      >
+    <div *ngIf="overlayVisible"
+         [style.z-index]="visible ? layerPosition-1 : -1"
+         [ngClass]="{'transparent':!backdrop, 'overlay':true, 'nsm-overlay-open':openedClass}"
+         (click)="dismiss($event)" #nsmOverlay>
+      <div [style.z-index]="visible ? layerPosition : -1"
+           [ngClass]="['nsm-dialog', customClass, openedClass ? 'nsm-dialog-open': 'nsm-dialog-close']" #nsmDialog
+           [attr.aria-hidden]="openedClass ? false : true"
+           [attr.aria-label]="ariaLabel"
+           [attr.aria-labelledby]="ariaLabelledBy"
+           [attr.aria-describedby]="ariaDescribedBy">
         <div class="nsm-content" #nsmContent>
           <div class="nsm-body">
+            <ng-template #dynamicContent></ng-template>
             <ng-content></ng-content>
+
           </div>
           <button type="button" *ngIf="closable" (click)="close()" aria-label="Close" class="nsm-dialog-btn-close">
-            <img
-              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNS45NDMsNi4wNThjLTguMDc3LTguMDc3LTIxLjE3Mi04LjA3Ny0yOS4yNDksMEw2LjA1OCw0NzYuNjkzYy04LjA3Nyw4LjA3Ny04LjA3NywyMS4xNzIsMCwyOS4yNDkgICAgQzEwLjA5Niw1MDkuOTgyLDE1LjM5LDUxMiwyMC42ODMsNTEyYzUuMjkzLDAsMTAuNTg2LTIuMDE5LDE0LjYyNS02LjA1OUw1MDUuOTQzLDM1LjMwNiAgICBDNTE0LjAxOSwyNy4yMyw1MTQuMDE5LDE0LjEzNSw1MDUuOTQzLDYuMDU4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNS45NDIsNDc2LjY5NEwzNS4zMDYsNi4wNTljLTguMDc2LTguMDc3LTIxLjE3Mi04LjA3Ny0yOS4yNDgsMGMtOC4wNzcsOC4wNzYtOC4wNzcsMjEuMTcxLDAsMjkuMjQ4bDQ3MC42MzYsNDcwLjYzNiAgICBjNC4wMzgsNC4wMzksOS4zMzIsNi4wNTgsMTQuNjI1LDYuMDU4YzUuMjkzLDAsMTAuNTg3LTIuMDE5LDE0LjYyNC02LjA1N0M1MTQuMDE4LDQ5Ny44NjYsNTE0LjAxOCw0ODQuNzcxLDUwNS45NDIsNDc2LjY5NHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
-            />
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512"
+                 xml:space="preserve" width="16px" height="16px" role="img" aria-labelledby="closeIconTitle closeIconDesc">
+              <title id="closeIconTitle">Close Icon</title>
+              <desc id="closeIconDesc">A light-gray close icon used to close the modal</desc>
+              <g>
+                <path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249    C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306    C514.019,27.23,514.019,14.135,505.943,6.058z"
+                      fill="currentColor"/>
+              </g>
+              <g>
+                <path d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636    c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"
+                      fill="currentColor"/>
+              </g>
+            </svg>
           </button>
         </div>
       </div>
     </div>
-  `,
+  `
 })
-export class NtkSmartModalComponent implements OnInit, OnDestroy {
-  @Input() public closable = true;
-  @Input() public escapable = true;
-  @Input() public dismissable = true;
-  @Input() public identifier = '';
-  @Input() public customClass = 'nsm-dialog-animation-fade';
-  @Input() public visible = false;
-  @Input() public backdrop = true;
-  @Input() public force = true;
-  @Input() public hideDelay = 500;
-  @Input() public autostart = false;
-  @Input() public target: any;
+export class NtkSmartModalComponent implements OnInit, OnDestroy, AfterViewInit {
+  @Input() public closable: boolean = true;
+  @Input() public escapable: boolean = true;
+  @Input() public dismissable: boolean = true;
+  @Input() public identifier: string = '';
+  @Input() public customClass: string = 'nsm-dialog-animation-fade';
+  @Input() public visible: boolean = false;
+  @Input() public backdrop: boolean = true;
+  @Input() public force: boolean = true;
+  @Input() public hideDelay: number = 500;
+  @Input() public autostart: boolean = false;
+  @Input() public target: string = '';
+  @Input() public ariaLabel: string | null = null;
+  @Input() public ariaLabelledBy: string | null = null;
+  @Input() public ariaDescribedBy: string | null = null;
+  @Input() public refocus: boolean = true;
 
   @Output() public visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() public onClose: EventEmitter<any> = new EventEmitter();
@@ -64,202 +87,248 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
   @Output() public onAnyCloseEvent: EventEmitter<any> = new EventEmitter();
   @Output() public onAnyCloseEventFinished: EventEmitter<any> = new EventEmitter();
   @Output() public onOpen: EventEmitter<any> = new EventEmitter();
+  @Output() public onOpenFinished: EventEmitter<any> = new EventEmitter();
   @Output() public onEscape: EventEmitter<any> = new EventEmitter();
   @Output() public onDataAdded: EventEmitter<any> = new EventEmitter();
   @Output() public onDataRemoved: EventEmitter<any> = new EventEmitter();
 
-  public layerPosition = 1041;
-  public overlayVisible = false;
-  public openedClass = false;
+  public contentComponent: Type<Component>;
+  public layerPosition: number = 1041;
+  public overlayVisible: boolean = false;
+  public openedClass: boolean = false;
 
-  private privateData: any;
+  public createFrom = 'html';
 
-  @ViewChild('nsmContent') private nsmContent: ElementRef | undefined;
-  @ViewChild('nsmDialog') private nsmDialog: ElementRef | undefined;
-  @ViewChild('nsmOverlay') private nsmOverlay: ElementRef | undefined;
+  private _data: any;
+
+  @ViewChildren('nsmContent') private nsmContent: QueryList<ElementRef>;
+  @ViewChildren('nsmDialog') public nsmDialog: QueryList<ElementRef>;
+  @ViewChildren('nsmOverlay') private nsmOverlay: QueryList<ElementRef>;
+  @ViewChildren('dynamicContent', { read: ViewContainerRef }) dynamicContentContainer: QueryList<ViewContainerRef>;
 
   constructor(
-    private privateRenderer: Renderer2,
-    private privateChangeDetectorRef: ChangeDetectorRef,
-    private privateNtkSmartModalService: NtkSmartModalService,
+    private _renderer: Renderer2,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    @Inject(DOCUMENT) private _document: any,
+    @Inject(PLATFORM_ID) private _platformId: any,
   ) { }
 
   public ngOnInit(): void {
-    if (!!this.identifier && this.identifier.length) {
-      this.layerPosition += this.privateNtkSmartModalService.getModalStackCount();
-      this.privateNtkSmartModalService.addModal({ id: this.identifier, modal: this }, this.force);
+    if (!this.identifier || !this.identifier.length) {
+      throw new Error('identifier field isn’t set. Please set one before calling <ngx-smart-modal> in a template.');
+    }
 
-      if (this.autostart) {
-        this.privateNtkSmartModalService.open(this.identifier);
-      }
-    } else {
-      throw new Error('identifier field isn’t set. Please set one before calling <ntk-smart-modal> in a template.');
+    this._sendEvent('create');
+  }
+
+  public ngAfterViewInit(): void {
+    if (this.contentComponent) {
+      const factory = this.componentFactoryResolver.resolveComponentFactory(this.contentComponent);
+      this.createDynamicContent(this.dynamicContentContainer, factory);
+      this.dynamicContentContainer.changes.subscribe((contentViewContainers: QueryList<ViewContainerRef>) => {
+        this.createDynamicContent(contentViewContainers, factory);
+      });
     }
   }
 
   public ngOnDestroy(): void {
-    this.privateNtkSmartModalService.removeModal(this.identifier);
-    window.removeEventListener('keyup', this.escapeKeyboardEvent);
-    if (!this.privateNtkSmartModalService.getModalStack.length) {
-      this.privateRenderer.removeClass(document.body, 'dialog-open');
-    }
+    this._sendEvent('delete');
   }
 
-  public open(top?: boolean): void {
-    if (top) {
-      this.layerPosition = this.privateNtkSmartModalService.getHigherIndex();
-    }
+  /**
+   * Open the modal instance
+   *
+   * @param top open the modal top of all other
+   * @returns the modal component
+   */
+  public open(top?: boolean): NtkSmartModalComponent {
+    this._sendEvent('open', { top: top });
 
-    this.privateRenderer.addClass(document.body, 'dialog-open');
-    this.overlayVisible = true;
-    this.visible = true;
-
-    setTimeout(() => {
-      this.openedClass = true;
-
-      if (this.target) {
-        this.targetPlacement();
-      }
-
-      this.privateChangeDetectorRef.markForCheck();
-    });
-
-    this.onOpen.emit(this);
-
-    if (this.escapable) {
-      window.addEventListener('keyup', this.escapeKeyboardEvent);
-    }
+    return this;
   }
 
-  public close(): void {
-    const me = this;
+  /**
+   * Close the modal instance
+   *
+   * @returns the modal component
+   */
+  public close(): NtkSmartModalComponent {
+    this._sendEvent('close');
 
-    this.openedClass = false;
-    this.onClose.emit(this);
-    this.onAnyCloseEvent.emit(this);
-
-    if (this.privateNtkSmartModalService.getOpenedModals().length < 2) {
-      this.privateRenderer.removeClass(document.body, 'dialog-open');
-    }
-
-    setTimeout(() => {
-      me.visibleChange.emit(me.visible);
-      me.visible = false;
-      me.overlayVisible = false;
-      me.privateChangeDetectorRef.markForCheck();
-      me.onCloseFinished.emit(me);
-      me.onAnyCloseEventFinished.emit(me);
-    }, this.hideDelay);
-
-    window.removeEventListener('keyup', this.escapeKeyboardEvent);
+    return this;
   }
 
-  public dismiss(e: any): void {
-    const me = this;
-
-    if (!this.dismissable) {
-      return;
+  /**
+   * Dismiss the modal instance
+   *
+   * @param e the event sent by the browser
+   * @returns the modal component
+   */
+  public dismiss(e: any): NtkSmartModalComponent {
+    if (!this.dismissable || !e.target.classList.contains('overlay')) {
+      return this;
     }
 
-    if (e.target.classList.contains('overlay')) {
-      this.openedClass = false;
-      this.onDismiss.emit(this);
-      this.onAnyCloseEvent.emit(this);
+    this._sendEvent('dismiss');
 
-      if (this.privateNtkSmartModalService.getOpenedModals().length < 2) {
-        this.privateRenderer.removeClass(document.body, 'dialog-open');
-      }
-
-      setTimeout(() => {
-        me.visible = false;
-        me.visibleChange.emit(me.visible);
-        me.overlayVisible = false;
-        me.privateChangeDetectorRef.markForCheck();
-        me.onDismissFinished.emit(me);
-        me.onAnyCloseEventFinished.emit(me);
-      }, this.hideDelay);
-
-      window.removeEventListener('keyup', this.escapeKeyboardEvent);
-    }
+    return this;
   }
 
-  public toggle(top?: boolean): void {
-    if (this.visible) {
-      this.close();
-    } else {
-      this.open(top);
-    }
+  /**
+   * Toggle visibility of the modal instance
+   *
+   * @param top open the modal top of all other
+   * @returns the modal component
+   */
+  public toggle(top?: boolean): NtkSmartModalComponent {
+    this._sendEvent('toggle', { top: top });
+
+    return this;
   }
 
-  public addCustomClass(className: string): void {
+  /**
+   * Add a custom class to the modal instance
+   *
+   * @param className the class to add
+   * @returns the modal component
+   */
+  public addCustomClass(className: string): NtkSmartModalComponent {
     if (!this.customClass.length) {
       this.customClass = className;
     } else {
       this.customClass += ' ' + className;
     }
+
+    return this;
   }
 
-  public removeCustomClass(className?: string): void {
+  /**
+   * Remove a custom class to the modal instance
+   *
+   * @param className the class to remove
+   * @returns the modal component
+   */
+  public removeCustomClass(className?: string): NtkSmartModalComponent {
     if (className) {
       this.customClass = this.customClass.replace(className, '').trim();
     } else {
       this.customClass = '';
     }
+
+    return this;
   }
 
+  /**
+   * Returns the visibility state of the modal instance
+   */
   public isVisible(): boolean {
     return this.visible;
   }
 
+  /**
+   * Checks if data is attached to the modal instance
+   */
   public hasData(): boolean {
-    return this.privateData !== undefined;
+    return this._data !== undefined;
   }
 
-  public setData(data: any, force?: boolean): any {
+  /**
+   * Attach data to the modal instance
+   *
+   * @param data the data to attach
+   * @param force override potentially attached data
+   * @returns the modal component
+   */
+  public setData(data: any, force?: boolean): NtkSmartModalComponent {
     if (!this.hasData() || (this.hasData() && force)) {
-      this.privateData = data;
-      this.onDataAdded.emit(this.privateData);
-      this.privateChangeDetectorRef.markForCheck();
+      this._data = data;
+      this.onDataAdded.emit(this._data);
+      this.markForCheck();
     }
+
+    return this;
   }
 
+  /**
+   * Retrieve the data attached to the modal instance
+   */
   public getData(): any {
-    return this.privateData;
+    return this._data;
   }
 
-  public removeData(): void {
-    this.privateData = undefined;
+  /**
+   * Remove the data attached to the modal instance
+   *
+   * @returns the modal component
+   */
+  public removeData(): NtkSmartModalComponent {
+    this._data = undefined;
     this.onDataRemoved.emit(true);
-    this.privateChangeDetectorRef.markForCheck();
+    this.markForCheck();
+
+    return this;
   }
 
-  public escapeKeyboardEvent = (event: KeyboardEvent) => {
-    if (event.keyCode === 27) {
-      this.onEscape.emit(this);
-      this.privateNtkSmartModalService.closeLatestModal();
+  /**
+   * Add body class modal opened
+   *
+   * @returns the modal component
+   */
+  public addBodyClass(): NtkSmartModalComponent {
+    this._renderer.addClass(this._document.body, NtkSmartModalConfig.bodyClassOpen);
+
+    return this;
+  }
+
+  /**
+   * Add body class modal opened
+   *
+   * @returns the modal component
+   */
+  public removeBodyClass(): NtkSmartModalComponent {
+    this._renderer.removeClass(this._document.body, NtkSmartModalConfig.bodyClassOpen);
+
+    return this;
+  }
+
+  public markForCheck() {
+    try {
+      this._changeDetectorRef.detectChanges();
+    } catch (e) {
     }
+
+    this._changeDetectorRef.markForCheck();
   }
 
+  /**
+   * Listens for window resize event and recalculates modal instance position if it is element-relative
+   */
   @HostListener('window:resize')
-  public targetPlacement(): void {
-    if (!this.nsmDialog || !this.nsmContent || !this.nsmOverlay || !this.target) {
-      return;
+  public targetPlacement(): boolean | void {
+    if (!this.isBrowser || !this.nsmDialog.length || !this.nsmContent.length || !this.nsmOverlay.length || !this.target) {
+      return false;
+    }
+    const targetElement = this._document.querySelector(this.target);
+
+    if (!targetElement) {
+      return false;
     }
 
-    const targetElementRect = document.querySelector(this.target).getBoundingClientRect();
-    const bodyRect = this.nsmOverlay.nativeElement.getBoundingClientRect();
+    const targetElementRect = targetElement.getBoundingClientRect();
+    const bodyRect = this.nsmOverlay.first.nativeElement.getBoundingClientRect();
 
-    const nsmContentRect = this.nsmContent.nativeElement.getBoundingClientRect();
-    const nsmDialogRect = this.nsmDialog.nativeElement.getBoundingClientRect();
+    const nsmContentRect = this.nsmContent.first.nativeElement.getBoundingClientRect();
+    const nsmDialogRect = this.nsmDialog.first.nativeElement.getBoundingClientRect();
 
-    const marginLeft = parseInt(getComputedStyle(this.nsmContent.nativeElement).marginLeft as any, 10);
-    const marginTop = parseInt(getComputedStyle(this.nsmContent.nativeElement).marginTop as any, 10);
+    const marginLeft = parseInt(getComputedStyle(this.nsmContent.first.nativeElement).marginLeft as any, 10);
+    const marginTop = parseInt(getComputedStyle(this.nsmContent.first.nativeElement).marginTop as any, 10);
 
-    let offsetTop = targetElementRect.top - nsmDialogRect.top - (nsmContentRect.height - targetElementRect.height) / 2;
-    let offsetLeft = targetElementRect.left - nsmDialogRect.left - (nsmContentRect.width - targetElementRect.width) / 2;
+    let offsetTop = targetElementRect.top - nsmDialogRect.top - ((nsmContentRect.height - targetElementRect.height) / 2);
+    let offsetLeft = targetElementRect.left - nsmDialogRect.left - ((nsmContentRect.width - targetElementRect.width) / 2);
 
-    if (offsetLeft + nsmDialogRect.left + nsmContentRect.width + marginLeft * 2 > bodyRect.width) {
-      offsetLeft = bodyRect.width - (nsmDialogRect.left + nsmContentRect.width) - marginLeft * 2;
+    if (offsetLeft + nsmDialogRect.left + nsmContentRect.width + (marginLeft * 2) > bodyRect.width) {
+      offsetLeft = bodyRect.width - (nsmDialogRect.left + nsmContentRect.width) - (marginLeft * 2);
     } else if (offsetLeft + nsmDialogRect.left < 0) {
       offsetLeft = -nsmDialogRect.left;
     }
@@ -268,11 +337,40 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy {
       offsetTop = bodyRect.height - (nsmDialogRect.top + nsmContentRect.height) - marginTop;
     }
 
-    if (offsetTop < 0) {
-      offsetTop = 0;
+    this._renderer.setStyle(this.nsmContent.first.nativeElement, 'top', (offsetTop < 0 ? 0 : offsetTop) + 'px');
+    this._renderer.setStyle(this.nsmContent.first.nativeElement, 'left', offsetLeft + 'px');
+  }
+
+  private _sendEvent(name: string, extraData?: any): boolean {
+    if (!this.isBrowser) {
+      return false;
     }
 
-    this.privateRenderer.setStyle(this.nsmContent.nativeElement, 'top', offsetTop + 'px');
-    this.privateRenderer.setStyle(this.nsmContent.nativeElement, 'left', offsetLeft + 'px');
+    const data = {
+      extraData: extraData,
+      instance: { id: this.identifier, modal: this }
+    };
+
+    const event = new CustomEvent(NtkSmartModalConfig.prefixEvent + name, { detail: data });
+
+    return window.dispatchEvent(event);
+  }
+
+  /**
+   * Is current platform browser
+   */
+  private get isBrowser(): boolean {
+    return isPlatformBrowser(this._platformId);
+  }
+
+  /**
+   * Creates content inside provided ViewContainerRef
+   */
+  private createDynamicContent(changes: QueryList<ViewContainerRef>, factory: ComponentFactory<Component>): void {
+    changes.forEach((viewContainerRef: ViewContainerRef) => {
+      viewContainerRef.clear();
+      viewContainerRef.createComponent(factory);
+      this.markForCheck();
+    });
   }
 }

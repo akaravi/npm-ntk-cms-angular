@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { NtkSmartModalService } from './ntk-smart-modal.service';
+import { NtkSmartModalStackService } from './ntk-smart-modal-stack.service';
 import { NtkSmartModalComponent } from './ntk-smart-modal.component';
+import { NtkSmartModalService } from './ntk-smart-modal.service';
 
 @NgModule({
   declarations: [NtkSmartModalComponent],
@@ -15,7 +16,10 @@ export class NtkSmartModalModule {
   public static forRoot(): ModuleWithProviders<NtkSmartModalModule> {
     return {
       ngModule: NtkSmartModalModule,
-      providers: [NtkSmartModalService],
+      providers: [
+        NtkSmartModalService,
+        NtkSmartModalStackService
+      ],
     };
   }
 
@@ -25,7 +29,10 @@ export class NtkSmartModalModule {
   public static forChild(): ModuleWithProviders<NtkSmartModalModule> {
     return {
       ngModule: NtkSmartModalModule,
-      providers: [NtkSmartModalService],
+      providers: [
+        NtkSmartModalService,
+        NtkSmartModalStackService
+      ],
     };
   }
 }

@@ -1,13 +1,39 @@
-import { Injectable } from '@angular/core';
-import { NtkSmartModalComponent } from './ntk-smart-modal.component';
-import { ModalInstance } from './modal-instance';
+import {
+  Injectable,
+  ComponentFactoryResolver,
+  ApplicationRef,
+  Injector,
+  EmbeddedViewRef,
+  Inject,
+  TemplateRef,
+  Type,
+  PLATFORM_ID
+} from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
-@Injectable({
-  providedIn: 'root',
-})
+
+import { ModalInstance } from './modal-instance';
+import { NtkSmartModalStackService } from './ntk-smart-modal-stack.service';
+import { NtkSmartModalComponent } from './ntk-smart-modal.component';
+import { INtkSmartModalOptions, NtkSmartModalConfig } from './ntk-smart-modal.config';
+
+export type Content<T> = string | TemplateRef<T> | Type<T>;
+
+@Injectable()
 export class NtkSmartModalService {
-  public modalStack: ModalInstance[] = [];
-  private debouncer: any;
+  private lastElementFocused: any;
+
+  constructor(
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _appRef: ApplicationRef,
+    private _injector: Injector,
+    private _modalStack: NtkSmartModalStackService,
+    private applicationRef: ApplicationRef,
+    @Inject(DOCUMENT) private _document: any,
+    @Inject(PLATFORM_ID) private _platformId: any
+  ) {
+    this._addEvents();
+  }
 
   /**
    * Add a new modal instance. This step is essential and allows to retrieve any modal at any time.
@@ -18,18 +44,7 @@ export class NtkSmartModalService {
    * @returns nothing special.
    */
   public addModal(modalInstance: ModalInstance, force?: boolean): void {
-    if (force) {
-      const i: number = this.modalStack.findIndex((o: ModalInstance) => {
-        return o.id === modalInstance.id;
-      });
-      if (i > -1) {
-        this.modalStack[i].modal = modalInstance.modal;
-      } else {
-        this.modalStack.push(modalInstance);
-      }
-      return;
-    }
-    this.modalStack.push(modalInstance);
+    this._modalStack.addModal(modalInstance, force);
   }
 
   /**
@@ -37,17 +52,8 @@ export class NtkSmartModalService {
    *
    * @param id The modal identifier used at creation time.
    */
-  public getModal(id: string): NtkSmartModalComponent | null {
-    if (!this.modalStack || this.modalStack.length === 0) {
-      return null;
-    }
-    const ret = this.modalStack.filter((o: any) => {
-      return o.id === id;
-    })[0];
-    if (!ret) {
-      return null;
-    }
-    return ret.modal;
+  public getModal(id: string): NtkSmartModalComponent {
+    return this._modalStack.getModal(id);
   }
 
   /**
@@ -65,15 +71,8 @@ export class NtkSmartModalService {
    * @param id The modal identifier used at creation time.
    * @param force Tell the modal to open top of all other opened modals
    */
-  public open(id: string, force = false): void {
-    const instance = this.modalStack.find((o: ModalInstance) => {
-      return o.id === id;
-    });
-    if (!!instance) {
-      instance.modal.open(force);
-    } else {
-      throw new Error('Modal not found');
-    }
+  public open(id: string, force = false): boolean {
+    return this._openModal(this.get(id), force);
   }
 
   /**
@@ -81,15 +80,17 @@ export class NtkSmartModalService {
    *
    * @param id The modal identifier used at creation time.
    */
-  public close(id: string): void {
-    const instance = this.modalStack.find((o: ModalInstance) => {
-      return o.id === id;
+  public close(id: string): boolean {
+    return this._closeModal(this.get(id));
+  }
+
+  /**
+   * Close all opened modals
+   */
+  public closeAll(): void {
+    this.getOpenedModals().forEach((instance: ModalInstance) => {
+      this._closeModal(instance.modal);
     });
-    if (!!instance) {
-      instance.modal.close();
-    } else {
-      throw new Error('Modal not found');
-    }
   }
 
   /**
@@ -99,15 +100,8 @@ export class NtkSmartModalService {
    * @param id The modal identifier used at creation time.
    * @param force Tell the modal to open top of all other opened modals
    */
-  public toggle(id: string, force = false): any {
-    const instance = this.modalStack.find((o: ModalInstance) => {
-      return o.id === id;
-    });
-    if (!!instance) {
-      instance.modal.toggle(force);
-    } else {
-      throw new Error('Modal not found');
-    }
+  public toggle(id: string, force = false): boolean {
+    return this._toggleModal(this.get(id), force);
   }
 
   /**
@@ -116,7 +110,7 @@ export class NtkSmartModalService {
    * @returns an array that contains all modal instances.
    */
   public getModalStack(): ModalInstance[] {
-    return this.modalStack;
+    return this._modalStack.getModalStack();
   }
 
   /**
@@ -125,13 +119,16 @@ export class NtkSmartModalService {
    * @returns an array that contains all the opened modals.
    */
   public getOpenedModals(): ModalInstance[] {
-    const modals: ModalInstance[] = [];
-    this.modalStack.forEach((o: ModalInstance) => {
-      if (o.modal.visible) {
-        modals.push(o);
-      }
-    });
-    return modals;
+    return this._modalStack.getOpenedModals();
+  }
+
+  /**
+   * Retrieve the opened modal with highest z-index.
+   *
+   * @returns the opened modal with highest z-index.
+   */
+  public getTopOpenedModal(): NtkSmartModalComponent {
+    return this._modalStack.getTopOpenedModal();
   }
 
   /**
@@ -142,12 +139,7 @@ export class NtkSmartModalService {
    * @returns a higher index from all the existing modal instances.
    */
   public getHigherIndex(): number {
-    const index: number[] = [1041];
-    const modals: ModalInstance[] = this.getModalStack();
-    modals.forEach((o: ModalInstance) => {
-      index.push(o.modal.layerPosition);
-    });
-    return Math.max(...index) + 1;
+    return this._modalStack.getHigherIndex();
   }
 
   /**
@@ -156,7 +148,7 @@ export class NtkSmartModalService {
    * @returns the number of modal instances.
    */
   public getModalStackCount(): number {
-    return this.modalStack.length;
+    return this._modalStack.getModalStackCount();
   }
 
   /**
@@ -166,12 +158,7 @@ export class NtkSmartModalService {
    * @returns the removed modal instance.
    */
   public removeModal(id: string): void {
-    const i: number = this.modalStack.findIndex((o: any) => {
-      return o.id === id;
-    });
-    if (i > -1) {
-      this.modalStack.splice(i, 1);
-    }
+    this._modalStack.removeModal(id);
   }
 
   /**
@@ -186,12 +173,9 @@ export class NtkSmartModalService {
    * @returns true if the given modal exists and the process has been tried, either false.
    */
   public setModalData(data: any, id: string, force?: boolean): boolean {
-    if (
-      !!this.modalStack.find((o: ModalInstance) => {
-        return o.id === id;
-      })
-    ) {
-      this.getModal(id).setData(data, force);
+    let i;
+    if (i = this.get(id)) {
+      i.setData(data, force);
       return true;
     } else {
       return false;
@@ -205,7 +189,12 @@ export class NtkSmartModalService {
    * @returns the associated modal data.
    */
   public getModalData(id: string): any {
-    return this.getModal(id).getData();
+    let i;
+    if (i = this.get(id)) {
+      return i.getData();
+    }
+
+    return null;
   }
 
   /**
@@ -215,11 +204,7 @@ export class NtkSmartModalService {
    * @returns the removed data or false if modal doesn't exist.
    */
   public resetModalData(id: string): any | boolean {
-    if (
-      !!this.modalStack.find((o: ModalInstance) => {
-        return o.id === id;
-      })
-    ) {
+    if (!!this._modalStack.getModalStack().find((o: ModalInstance) => o.id === id)) {
       const removed: any = this.getModal(id).getData();
       this.getModal(id).removeData();
       return removed;
@@ -234,16 +219,284 @@ export class NtkSmartModalService {
    * escape key press event.
    */
   public closeLatestModal(): void {
-    const me = this;
-    clearTimeout(this.debouncer);
-    this.debouncer = setTimeout(() => {
-      let tmp: ModalInstance | undefined;
-      me.getOpenedModals().forEach((m: ModalInstance) => {
-        if (m.modal.layerPosition > (!!tmp ? tmp.modal.layerPosition : 0 && m.modal.escapable)) {
-          tmp = m;
+    this.getTopOpenedModal().close();
+  }
+
+  /**
+   * Create dynamic NtkSmartModalComponent
+   * @param id The modal identifier used at creation time.
+   * @param content The modal content ( string, templateRef or Component )
+   */
+  public create<T>(id: string, content: Content<T>, options: INtkSmartModalOptions = {}) {
+    try {
+      return this.getModal(id);
+    } catch (e) {
+      const componentFactory = this._componentFactoryResolver.resolveComponentFactory(NtkSmartModalComponent);
+      const ngContent = this._resolveNgContent(content);
+
+      const componentRef = componentFactory.create(this._injector, ngContent);
+
+      if (content instanceof Type) {
+        componentRef.instance.contentComponent = content;
+      }
+
+      componentRef.instance.identifier = id;
+      componentRef.instance.createFrom = 'service';
+
+      if (typeof options.closable === 'boolean') { componentRef.instance.closable = options.closable; }
+      if (typeof options.escapable === 'boolean') { componentRef.instance.escapable = options.escapable; }
+      if (typeof options.dismissable === 'boolean') { componentRef.instance.dismissable = options.dismissable; }
+      if (typeof options.customClass === 'string') { componentRef.instance.customClass = options.customClass; }
+      if (typeof options.backdrop === 'boolean') { componentRef.instance.backdrop = options.backdrop; }
+      if (typeof options.force === 'boolean') { componentRef.instance.force = options.force; }
+      if (typeof options.hideDelay === 'number') { componentRef.instance.hideDelay = options.hideDelay; }
+      if (typeof options.autostart === 'boolean') { componentRef.instance.autostart = options.autostart; }
+      if (typeof options.target === 'string') { componentRef.instance.target = options.target; }
+      if (typeof options.ariaLabel === 'string') { componentRef.instance.ariaLabel = options.ariaLabel; }
+      if (typeof options.ariaLabelledBy === 'string') { componentRef.instance.ariaLabelledBy = options.ariaLabelledBy; }
+      if (typeof options.ariaDescribedBy === 'string') { componentRef.instance.ariaDescribedBy = options.ariaDescribedBy; }
+      if (typeof options.refocus === 'boolean') { componentRef.instance.refocus = options.refocus; }
+
+      this._appRef.attachView(componentRef.hostView);
+
+      const domElem = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+      this._document.body.appendChild(domElem);
+
+      return componentRef.instance;
+    }
+  }
+
+  private _addEvents(): boolean {
+    if (!this.isBrowser) {
+      return false;
+    }
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'create', ((e: CustomEvent) => {
+      this._initModal(e.detail.instance);
+    }) as EventListener);
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'delete', ((e: CustomEvent) => {
+      this._deleteModal(e.detail.instance);
+    }) as EventListener);
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'open', ((e: CustomEvent) => {
+      this._openModal(e.detail.instance.modal, e.detail.top);
+    }) as EventListener);
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'toggle', ((e: CustomEvent) => {
+      this._toggleModal(e.detail.instance.modal, e.detail.top);
+    }) as EventListener);
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'close', ((e: CustomEvent) => {
+      this._closeModal(e.detail.instance.modal);
+    }) as EventListener);
+
+    window.addEventListener(NtkSmartModalConfig.prefixEvent + 'dismiss', ((e: CustomEvent) => {
+      this._dismissModal(e.detail.instance.modal);
+    }) as EventListener);
+
+    window.addEventListener('keyup', this._escapeKeyboardEvent);
+
+    return true;
+  }
+
+  private _initModal(modalInstance: ModalInstance) {
+    modalInstance.modal.layerPosition += this.getModalStackCount();
+    this.addModal(modalInstance, modalInstance.modal.force);
+
+    if (modalInstance.modal.autostart) {
+      this.open(modalInstance.id);
+    }
+  }
+
+  private _openModal(modal: NtkSmartModalComponent, top?: boolean): boolean {
+    if (modal.visible) {
+      return false;
+    }
+
+    this.lastElementFocused = document.activeElement;
+
+    if (modal.escapable) {
+      window.addEventListener('keyup', this._escapeKeyboardEvent);
+    }
+
+    if (modal.backdrop) {
+      window.addEventListener('keydown', this._trapFocusModal);
+    }
+
+    if (top) {
+      modal.layerPosition = this.getHigherIndex();
+    }
+
+    modal.addBodyClass();
+    modal.overlayVisible = true;
+    modal.visible = true;
+    modal.onOpen.emit(modal);
+    modal.markForCheck();
+
+    setTimeout(() => {
+      modal.openedClass = true;
+
+      if (modal.target) {
+        modal.targetPlacement();
+      }
+
+      modal.nsmDialog.first.nativeElement.setAttribute('role', 'dialog');
+      modal.nsmDialog.first.nativeElement.setAttribute('tabIndex', '-1');
+      modal.nsmDialog.first.nativeElement.setAttribute('aria-modal', 'true');
+      modal.nsmDialog.first.nativeElement.focus();
+
+      modal.markForCheck();
+      modal.onOpenFinished.emit(modal);
+    });
+
+    return true;
+  }
+
+  private _toggleModal(modal: NtkSmartModalComponent, top?: boolean): boolean {
+    if (modal.visible) {
+      return this._closeModal(modal);
+    } else {
+      return this._openModal(modal, top);
+    }
+  }
+
+  private _closeModal(modal: NtkSmartModalComponent): boolean {
+    if (!modal.openedClass) {
+      return false;
+    }
+
+    modal.openedClass = false;
+    modal.onClose.emit(modal);
+    modal.onAnyCloseEvent.emit(modal);
+
+    if (this.getOpenedModals().length < 2) {
+      modal.removeBodyClass();
+      window.removeEventListener('keyup', this._escapeKeyboardEvent);
+      window.removeEventListener('keydown', this._trapFocusModal);
+    }
+
+    setTimeout(() => {
+      modal.visibleChange.emit(modal.visible);
+      modal.visible = false;
+      modal.overlayVisible = false;
+      modal.nsmDialog.first.nativeElement.removeAttribute('tabIndex');
+      modal.markForCheck();
+      modal.onCloseFinished.emit(modal);
+      modal.onAnyCloseEventFinished.emit(modal);
+      if (modal.refocus) {
+        this.lastElementFocused.focus();
+      }
+    }, modal.hideDelay);
+
+    return true;
+  }
+
+  private _dismissModal(modal: NtkSmartModalComponent): boolean {
+    if (!modal.openedClass) {
+      return false;
+    }
+
+    modal.openedClass = false;
+    modal.onDismiss.emit(modal);
+    modal.onAnyCloseEvent.emit(modal);
+
+    if (this.getOpenedModals().length < 2) {
+      modal.removeBodyClass();
+    }
+
+    setTimeout(() => {
+      modal.visible = false;
+      modal.visibleChange.emit(modal.visible);
+      modal.overlayVisible = false;
+      modal.markForCheck();
+      modal.onDismissFinished.emit(modal);
+      modal.onAnyCloseEventFinished.emit(modal);
+    }, modal.hideDelay);
+
+    return true;
+  }
+
+  private _deleteModal(modalInstance: ModalInstance) {
+    this.removeModal(modalInstance.id);
+
+    if (!this.getModalStack().length) {
+      modalInstance.modal.removeBodyClass();
+    }
+  }
+
+  /**
+   * Resolve content according to the types
+   * @param content The modal content ( string, templateRef or Component )
+   */
+  private _resolveNgContent<T>(content: Content<T>): any[][] | Text[][] {
+    if (typeof content === 'string') {
+      const element = this._document.createTextNode(content);
+      return [[element]];
+    }
+
+    if (content instanceof TemplateRef) {
+      const viewRef = content.createEmbeddedView(null as any);
+      this.applicationRef.attachView(viewRef);
+      return [viewRef.rootNodes];
+    }
+
+    return [];
+  }
+
+  /**
+   * Close the latest opened modal if escape key event is emitted
+   * @param event The Keyboard Event
+   */
+  private _escapeKeyboardEvent = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      try {
+        const modal = this.getTopOpenedModal();
+
+        if (!modal.escapable) {
+          return false;
         }
-      });
-      return !!tmp ? tmp.modal.close() : false;
-    }, 100);
+
+        modal.onEscape.emit(modal);
+        this.closeLatestModal();
+
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Is current platform browser
+   */
+  private get isBrowser(): boolean {
+    return isPlatformBrowser(this._platformId);
+  }
+
+  /**
+   * While modal is open, the focus stay on it
+   * @param event The Keyboar dEvent
+   */
+  private _trapFocusModal = (event: KeyboardEvent) => {
+    if (event.key === 'Tab') {
+      try {
+        const modal = this.getTopOpenedModal();
+
+        if (!modal.nsmDialog.first.nativeElement.contains(document.activeElement)) {
+          event.preventDefault();
+          event.stopPropagation();
+          modal.nsmDialog.first.nativeElement.focus();
+        }
+
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    return false;
   }
 }
