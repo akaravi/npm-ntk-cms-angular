@@ -77,10 +77,10 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       );
   }
 
-  ServiceGetFilesInCategoryId(categoryId: number): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceGetAllInCategoryById(categoryId: number): Observable<ErrorExceptionResult<FileContentModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetFilesInCategoryId/' + categoryId, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllInCategoryById/' + categoryId, {
         headers: this.getHeaders(),
       })
       .pipe(

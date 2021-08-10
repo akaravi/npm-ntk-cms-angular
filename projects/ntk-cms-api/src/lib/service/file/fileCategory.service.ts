@@ -18,10 +18,10 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
     return 'FileCategory';
   }
 
-  ServiceGetSubCategoryFromCategory(ParentId: number): Observable<ErrorExceptionResult<FileCategoryModel>> {
+  ServiceGetAllInCategoryById(ParentId: number): Observable<ErrorExceptionResult<FileCategoryModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetSubCategoryFromCategory/' + ParentId, {
+        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllInCategoryById/' + ParentId, {
         headers: this.getHeaders(),
       },
       )
