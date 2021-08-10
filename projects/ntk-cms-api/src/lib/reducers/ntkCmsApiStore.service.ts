@@ -8,6 +8,7 @@ import { AppStore } from './reducer.factory';
 const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,
   tokenInfo: new TokenInfoModel(),
+  inProcessingList: []
 };
 
 @Injectable({
@@ -32,7 +33,7 @@ export class NtkCmsApiStoreService {
 
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
     this.sub.next(this.state);
-    this.stateSubject.next( this.state );
+    this.stateSubject.next(this.state);
   }
 
   getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {
@@ -46,6 +47,30 @@ export class NtkCmsApiStoreService {
   public getStateSnapshot(): AppStore {
     return (this.stateSubject.getValue());
   }
+  processStart(name: string): void {
+    if (this.state?.ntkCmsAPiState?.inProcessingList) {
+      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
+      if (index < 0) {
+        // console.log('processStart 1', this.state.ntkCmsAPiState.inProcessingList);
+        const list = [...this.state.ntkCmsAPiState.inProcessingList];
+        list.push(name);
+        // console.log('processStart 2', this.state.ntkCmsAPiState.inProcessingList);
+        this.setState({ type: SET_IN_PROCESSING_LIST, payload: list });
+      }
+    }
+  }
+  processStop(name: string): void {
+    if (this.state?.ntkCmsAPiState?.inProcessingList) {
+      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
+      if (index >= 0) {
+        // console.log('processStop 1', this.state.ntkCmsAPiState.inProcessingList);
+        const list = [...this.state.ntkCmsAPiState.inProcessingList];
+        list.splice(index, 1);
+        // console.log('processStop 2', this.state.ntkCmsAPiState.inProcessingList);
+        this.setState({ type: SET_IN_PROCESSING_LIST, payload: list });
+      }
+    }
+  }
 }
 
 
@@ -57,6 +82,8 @@ export function stateReducer(state: NtkCmsApiStoreInterface = initialState, acti
       return { ...state, isLoading: action.payload };
     case SET_TOKEN_INFO:
       return { ...state, tokenInfo: action.payload };
+    case SET_IN_PROCESSING_LIST:
+      return { ...state, inProcessingList: action.payload };
     default:
       return initialState;
   }
@@ -71,6 +98,7 @@ export interface ActionInterface {
 
 export const SET_LOADING_STATE = 'SET_LOADING_STATE';
 export const SET_TOKEN_INFO = 'SET_TOKEN_INFO';
+export const SET_IN_PROCESSING_LIST = 'SET_IN_PROCESSING_LIST';
 
 
 export class SetLoadingState implements ActionInterface {
@@ -82,5 +110,9 @@ export class SetTokenInfoState implements ActionInterface {
   readonly type = SET_TOKEN_INFO;
   payload: TokenInfoModel;
 }
+export class SetInProcessingList implements ActionInterface {
+  readonly type = SET_IN_PROCESSING_LIST;
+  payload: Array<string>;
+}
 
-export type Actions = SetLoadingState | SetTokenInfoState;
+export type Actions = SetLoadingState | SetTokenInfoState|SetInProcessingList;
