@@ -2,6 +2,7 @@ import { EnumFormSubmitedStatus } from '../../enums/enumFormSubmitedStatus';
 
 export class FormInfoModel {
   FormTitle = '';
+  FormDescription = '';
   FormAlert = '';
   FormError = '';
   FormErrorStatus = false;
