@@ -17,14 +17,13 @@ export class CoreSiteModel extends BaseEntity<number> {
   virtual_ParentCreator: CoreSiteModel;
   ParentCreator: CoreSiteModel;
   Title: string;
+  Copyright: string;
   OwnerSiteSetStatus: EnumSiteStatus;
   UserLanguage: EnumLanguage;
   SubDomain: string;
   Domain: string;
   SSL: boolean;
   Redirect: string;
-  Keyword: string;
-  Description: string;
   LinkFavIconId?: number;
   LinkFavIconIdSrc: string;
   LinkImageLogoId?: number;
@@ -43,7 +42,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   DomainAliases: CoreSiteDomainAliasModel[];
   ChildernCreateds: CoreSiteModel[];
   Devices: CoreDeviceModel[];
-  Copyright: string;
+
 
   /*
   AboutUs
