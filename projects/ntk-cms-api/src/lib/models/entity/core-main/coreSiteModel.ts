@@ -72,5 +72,15 @@ export class CoreSiteModel extends BaseEntity<number> {
   /*
   AboutUs
     */
+  /*
+  SEO
+  */
+  SeoKeyword: string;
+  SeoDescription: string;
+  SeoGoogleAnalytics: string;
+  SeoGoogleHTMLtag: string;
+  /*
+   SEO
+   */
 }
 

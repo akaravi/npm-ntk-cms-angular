@@ -48,10 +48,10 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   AboutAgentTel: string;
   AboutAgentMobile: string;
   // * AboutAgent */
-   // * AboutCustomer */
-   AboutCustomerTel: string;
-   AboutCustomerMobile: string;
-   // * AboutCustomer */
+  // * AboutCustomer */
+  AboutCustomerTel: string;
+  AboutCustomerMobile: string;
+  // * AboutCustomer */
   Contracts: EstateContractModel[];
 
 
@@ -63,4 +63,6 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   LinkMainImageIdSrc: string;
   LinkExtraImageIdsSrc: string[];
   LinkFileIdsSrc: string[];
+  /** برای انتصا مسقیم فایل آپلود شده */
+  UploadFileGUID: string[];
 }
