@@ -17,6 +17,7 @@ export * from './lib/service/core-log/_export';
 export * from './lib/service/core-token/_export';
 
 export * from './lib/models/entity/core-main/_export';
+export * from './lib/models/entity/base-config/_export';
 export * from './lib/models/entity/core-log/_export';
 export * from './lib/models/entity/core-token/_export';
 

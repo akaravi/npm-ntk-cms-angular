@@ -7,6 +7,8 @@ import { BaseModuleConfigAdminMainValuesModel } from '../../models/entity/base-c
 import { BaseModuleSiteStorageValuesModel } from '../../models/entity/base-config/baseModuleSiteStorageValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteValuesModel';
+import { BaseModuleSiteCheckUserModel } from '../../models/entity/base-config/baseModuleSiteCheckUserModel';
+import { BaseModuleSiteCheckSiteModel } from '../../models/entity/base-config/baseModuleSiteCheckSiteModel';
 
 
 export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMainValuesModel,
@@ -173,6 +175,32 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
   ServiceAdminMainSave(model: TAdminMain): Observable<ErrorExceptionResult<TAdminMain>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/AdminMain/', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceCheckSite(id: number=0): Observable<ErrorExceptionResult<BaseModuleSiteCheckSiteModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckSite/'+id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceCheckUser(id: number=0): Observable<ErrorExceptionResult<BaseModuleSiteCheckUserModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckUser/'+id, {
         headers: this.getHeaders(),
       })
       .pipe(
