@@ -4,7 +4,7 @@ export class EstateAccountAgencyModel extends BaseModuleEntity<string> {
   LinkCmsUserId: number;
   Title: string;
   Description: string;
-
+  LinkLocationId?: number;
   Geolocationlatitude?: number;
   Geolocationlongitude?: number;
 

@@ -6,7 +6,7 @@ export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     Title: string;
     Keyword: string;
     Description: string;
-    PageDependencyIsDefualtPage: boolean;
+    PageDependencyIsDefaultPage: boolean;
     PageJsonValue: string;
     PageAbilityType: EnumPageAbilityType;
     Export1: string;
@@ -14,8 +14,8 @@ export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     Export3: string;
     ExportPreview: string;
     LinkPageParentGuId?: string;
-    PageJsonValueDefualtByAdmin: string;
-    PageJsonValueDefualtByAdminDateTimeUpdate?: string;
+    PageJsonValueDefaultByAdmin: string;
+    PageJsonValueDefaultByAdminDateTimeUpdate?: string;
     HtmlValue: string;
     RenderVersion: string;
     SpecialIdendity: string;

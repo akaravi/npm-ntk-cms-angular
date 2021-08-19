@@ -2,5 +2,5 @@
   Key: string;
   Title: string;
   Description: string;
-  Warrning: boolean;
+  Accepted: boolean;
 }
