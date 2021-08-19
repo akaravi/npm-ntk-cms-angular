@@ -7,6 +7,7 @@ export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     Keyword: string;
     Description: string;
     PageDependencyIsDefaultPage: boolean;
+    PageDependencyIsDefaultPageLinkSiteCategoryId?: number;
     PageJsonValue: string;
     PageAbilityType: EnumPageAbilityType;
     Export1: string;
