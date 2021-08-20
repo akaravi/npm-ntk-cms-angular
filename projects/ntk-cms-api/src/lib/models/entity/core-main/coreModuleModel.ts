@@ -7,12 +7,12 @@ export class CoreModuleModel extends BaseEntity<number>{
   Description: string;
   AdministratorIsActivate: boolean;
   ModuleConfigAdminMainJson?: any;
-  ModuleConfigAdminMainJsonForm?: any;
+  // ModuleConfigAdminMainJsonForm?: any;
   ModuleConfigSiteAccessDefaultJson?: any;
-  ModuleConfigSiteAccessJsonFrom?: any;
+  // ModuleConfigSiteAccessJsonFrom?: any;
   ModuleConfigSiteDefaultJson?: any;
-  ModuleConfigSiteJsonForm?: any;
-  ModuleSiteStorageValuesJsonForm?: any;
+  // ModuleConfigSiteJsonForm?: any;
+  // ModuleSiteStorageValuesJsonForm?: any;
   ModuleSites?: any;
   CmsCpMainMenu?: any;
   CmsModuleProcess?: any;
