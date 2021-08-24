@@ -12,6 +12,7 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   PlaceProduction: string;
   SerialRfId: string;
   SerialNumber: string;
+  PhoneNumber: string;
   Address: string;
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
