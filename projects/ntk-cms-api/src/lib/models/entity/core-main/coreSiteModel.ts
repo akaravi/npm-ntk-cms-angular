@@ -54,6 +54,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   AboutUsFax: string;
   AboutUsEmail: string;
   AboutUsAddress: string;
+  AboutUsMoreInfoUrl: string;
   AboutUsLinkImageId?: number;
   AboutUsLinkImageIdSrc: string;
   AboutUsGeolocationlatitude: number;
