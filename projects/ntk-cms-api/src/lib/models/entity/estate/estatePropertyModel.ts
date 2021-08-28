@@ -1,3 +1,4 @@
+import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
@@ -7,7 +8,7 @@ import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   Title: string;
   CaseCode: string;
-
+  MainAdminRecordStatus = EnumRecordStatus.Pending;
   CreatedYaer?: number;
   Partition: number;
   Area: number;
