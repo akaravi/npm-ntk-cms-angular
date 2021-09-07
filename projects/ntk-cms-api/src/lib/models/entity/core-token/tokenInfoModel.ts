@@ -1,5 +1,6 @@
 import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
 import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessTokenTypes } from '../../enums/enumManageUserAccessTokenTypes';
 
 
 export class TokenInfoModel {
@@ -14,11 +15,14 @@ export class TokenInfoModel {
     DeviceId: number;
     ApplicationId: number;
     UserGroupId: number;
-    UserTypeTitle: string;
     UserAccessAdminAllowToProfessionalData: boolean;
     UserAccessAdminAllowToAllData: boolean;
-    UserType: EnumManageUserAccessControllerTypes;
+    UserAccessUserType: EnumManageUserAccessControllerTypes;
     UserAccessAreaType: EnumManageUserAccessAreaTypes;
+    UserAccessTokenType: EnumManageUserAccessTokenTypes;
+    UserAccessUserTypeTitle: string;
+    UserAccessUserAreaTitle: string;
+    UserAccessUserTokenTitle: string;
     Username: string;
     Name: string;
     LastName: string;

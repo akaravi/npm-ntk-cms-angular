@@ -12,5 +12,4 @@ export class CoreTokenUserBadLoginModel extends BaseEntity<string>  {
   LinkUserId?: number;
   LinkSiteId?: number;
   LinkMemberUserId?: number;
-
 }

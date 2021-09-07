@@ -39,4 +39,5 @@ export * from './enumPageAbilityType';
 export * from './enumCmsPageUtilityToolsAction';
 export * from './enumSendSmsStatusType';
 export * from './enumFormSubmitedStatus';
+export * from './enumManageUserAccessTokenTypes';
 

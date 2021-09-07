@@ -1,5 +1,6 @@
 import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
 import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessTokenTypes } from '../../enums/enumManageUserAccessTokenTypes';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreTokenUserModel  extends BaseEntity<string>   {
@@ -12,13 +13,12 @@ export class CoreTokenUserModel  extends BaseEntity<string>   {
   Token: string;
   ExpireDate: Date;
   UserAccessAreaType: EnumManageUserAccessAreaTypes;
-  UserType: EnumManageUserAccessControllerTypes;
+  UserAccessUserType: EnumManageUserAccessControllerTypes;
+  UserAccessTokenType: EnumManageUserAccessTokenTypes;
   UserAccessAdminAllowToAllData: boolean;
   UserAccessAdminAllowToProfessionalData: boolean;
   RememberOnDevice: boolean;
   BrowserLanguage: string;
   UserLanguage: number;
-
-
 
 }
