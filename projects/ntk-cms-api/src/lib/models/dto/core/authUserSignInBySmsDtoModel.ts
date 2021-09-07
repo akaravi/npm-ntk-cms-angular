@@ -1,3 +1,5 @@
+import { EnumManageUserAccessTokenTypes } from '../../enums/enumManageUserAccessTokenTypes';
+
 export class AuthUserSignInBySmsDtoModel {
   CaptchaKey: string;
   CaptchaText: string;
@@ -6,4 +8,5 @@ export class AuthUserSignInBySmsDtoModel {
   IsRemember: boolean;
   SiteId: number;
   lang: string;
+  UserAccessTokenType: EnumManageUserAccessTokenTypes;
 }

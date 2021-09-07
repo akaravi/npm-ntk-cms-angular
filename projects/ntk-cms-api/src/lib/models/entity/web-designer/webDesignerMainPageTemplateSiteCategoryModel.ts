@@ -5,6 +5,7 @@ export class WebDesignerMainPageTemplateSiteCategoryModel extends BaseModuleEnti
 
   LinkPageTemplateId: string;
   LinkSiteCagegoryId: number;
+  // tslint:disable-next-line: variable-name
   virtual_PageTemplate: WebDesignerMainPageTemplateModel;
   PageTemplate: WebDesignerMainPageTemplateModel;
 

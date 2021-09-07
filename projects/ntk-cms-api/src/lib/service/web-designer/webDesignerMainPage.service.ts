@@ -19,7 +19,7 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
   }
   ServiceAutoAdd(model: WebDesignerPageAutoAddDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/',model , {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

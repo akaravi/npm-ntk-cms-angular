@@ -6,10 +6,10 @@ import { NtkSmartModalComponent } from './ntk-smart-modal.component';
 
 @Injectable()
 export class NtkSmartModalStackService {
-  private _modalStack: ModalInstance[];
+  private modalStack: ModalInstance[];
 
   constructor() {
-    this._modalStack = [];
+    this.modalStack = [];
   }
 
   /**
@@ -22,15 +22,15 @@ export class NtkSmartModalStackService {
    */
   public addModal(modalInstance: ModalInstance, force?: boolean): void {
     if (force) {
-      const i: number = this._modalStack.findIndex((o: ModalInstance) => o.id === modalInstance.id);
+      const i: number = this.modalStack.findIndex((o: ModalInstance) => o.id === modalInstance.id);
       if (i > -1) {
-        this._modalStack[i].modal = modalInstance.modal;
+        this.modalStack[i].modal = modalInstance.modal;
       } else {
-        this._modalStack.push(modalInstance);
+        this.modalStack.push(modalInstance);
       }
       return;
     }
-    this._modalStack.push(modalInstance);
+    this.modalStack.push(modalInstance);
   }
 
   /**
@@ -39,7 +39,7 @@ export class NtkSmartModalStackService {
    * @param id The modal identifier used at creation time.
    */
   public getModal(id: string): NtkSmartModalComponent {
-    const i = this._modalStack.find((o: ModalInstance) => o.id === id);
+    const i = this.modalStack.find((o: ModalInstance) => o.id === id);
 
     if (i !== undefined) {
       return i.modal;
@@ -54,7 +54,7 @@ export class NtkSmartModalStackService {
    * @returns an array that contains all modal instances.
    */
   public getModalStack(): ModalInstance[] {
-    return this._modalStack;
+    return this.modalStack;
   }
 
   /**
@@ -63,7 +63,7 @@ export class NtkSmartModalStackService {
    * @returns an array that contains all the opened modals.
    */
   public getOpenedModals(): ModalInstance[] {
-    return this._modalStack.filter((o: ModalInstance) => o.modal.visible);
+    return this.modalStack.filter((o: ModalInstance) => o.modal.visible);
   }
 
   /**
@@ -89,7 +89,7 @@ export class NtkSmartModalStackService {
    * @returns a higher index from all the existing modal instances.
    */
   public getHigherIndex(): number {
-    return Math.max(...this._modalStack.map((o) => o.modal.layerPosition), 1041) + 1;
+    return Math.max(...this.modalStack.map((o) => o.modal.layerPosition), 1041) + 1;
   }
 
   /**
@@ -98,7 +98,7 @@ export class NtkSmartModalStackService {
    * @returns the number of modal instances.
    */
   public getModalStackCount(): number {
-    return this._modalStack.length;
+    return this.modalStack.length;
   }
 
   /**
@@ -108,9 +108,9 @@ export class NtkSmartModalStackService {
    * @returns the removed modal instance.
    */
   public removeModal(id: string): void {
-    const i: number = this._modalStack.findIndex((o: any) => o.id === id);
+    const i: number = this.modalStack.findIndex((o: any) => o.id === id);
     if (i > -1) {
-      this._modalStack.splice(i, 1);
+      this.modalStack.splice(i, 1);
     }
   }
 }

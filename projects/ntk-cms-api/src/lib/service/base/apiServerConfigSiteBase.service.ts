@@ -12,11 +12,12 @@ import { BaseModuleSiteCheckSiteModel } from '../../models/entity/base-config/ba
 
 
 export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMainValuesModel,
- TSiteConfig extends BaseModuleConfigSiteValuesModel,
+  TSiteConfig extends BaseModuleConfigSiteValuesModel,
   TSiteAccess extends BaseModuleConfigSiteAccessValuesModel,
-   TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase{  getModuleCotrolerUrl(): string {
-    return 'Empty';
-  }
+  TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase {
+    getModuleCotrolerUrl(): string {
+      return 'Empty';
+    }
 
   ServiceSiteConfigDefault(): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http
@@ -132,7 +133,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteAccessDefault(): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/' , {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -185,9 +186,9 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
         }),
       );
   }
-  ServiceCheckSite(id: number=0): Observable<ErrorExceptionResult<BaseModuleSiteCheckSiteModel>> {
+  ServiceCheckSite(id: number = 0): Observable<ErrorExceptionResult<BaseModuleSiteCheckSiteModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckSite/'+id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckSite/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -198,9 +199,9 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
         }),
       );
   }
-  ServiceCheckUser(id: number=0): Observable<ErrorExceptionResult<BaseModuleSiteCheckUserModel>> {
+  ServiceCheckUser(id: number = 0): Observable<ErrorExceptionResult<BaseModuleSiteCheckUserModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckUser/'+id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckUser/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

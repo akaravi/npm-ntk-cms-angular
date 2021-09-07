@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from "../../enums/enumRecordStatus";
+import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 
 export class CoreUserClaimCheckModel {
   RecordStatus = EnumRecordStatus.Available;
