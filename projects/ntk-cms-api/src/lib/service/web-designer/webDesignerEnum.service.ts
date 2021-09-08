@@ -1,7 +1,7 @@
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumModel } from '../../models/entity/base/enumModel';
+import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class WebDesignerEnumService extends ApiServerBase {
     return 'WebDesignerEnum';
   }
 
-  ServiceEnumPageAbilityType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumPageAbilityType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumPageAbilityType', {
         headers: this.getHeaders(),
@@ -26,7 +26,7 @@ export class WebDesignerEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsSiteMenuAreaType', {
         headers: this.getHeaders(),
@@ -38,7 +38,7 @@ export class WebDesignerEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumCmsPageUtilityToolsDtoModelAction(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumCmsPageUtilityToolsDtoModelAction(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsPageUtilityToolsDtoModelAction', {
         headers: this.getHeaders(),

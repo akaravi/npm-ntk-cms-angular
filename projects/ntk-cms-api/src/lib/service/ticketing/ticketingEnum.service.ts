@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumModel } from '../../models/entity/base/enumModel';
+import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class TicketingEnumService extends ApiServerBase {
     return 'ticketingEnum';
   }
 
-  ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumTicketingDepartemenPriority', {
         headers: this.getHeaders(),

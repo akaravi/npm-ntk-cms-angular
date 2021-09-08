@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumModel } from '../../models/entity/base/enumModel';
+import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class EstateEnumService extends ApiServerBase {
     return 'EstateEnum';
   }
 
-  ServiceEnumInputDataType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumInputDataType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumInputDataType', {
         headers: this.getHeaders(),
@@ -26,7 +26,7 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
-   ServiceEnumUiPropertyDesign(): Observable<ErrorExceptionResult<EnumModel>> {
+   ServiceEnumUiPropertyDesign(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUiPropertyDesign', {
         headers: this.getHeaders(),
@@ -38,7 +38,7 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
-    ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumModel>> {
+    ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumEstateUserType', {
         headers: this.getHeaders(),

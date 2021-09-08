@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumModel } from '../../models/entity/base/enumModel';
+import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class ApplicationEnumService extends ApiServerBase {
     return 'ApplicationEnum';
   }
 
-  ServiceEnumNotificationType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumNotificationType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumNotificationType', {
         headers: this.getHeaders(),
@@ -26,7 +26,7 @@ export class ApplicationEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumOSType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumOSType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumOSType', {
         headers: this.getHeaders(),

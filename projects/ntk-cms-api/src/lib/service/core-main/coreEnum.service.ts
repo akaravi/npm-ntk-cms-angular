@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumModel } from '../../models/entity/base/enumModel';
+import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class CoreEnumService extends ApiServerBase {
     return 'CoreEnum';
   }
 
-  ServiceEnumRecordStatus(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumRecordStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumRecordStatus', {
         headers: this.getHeaders(),
@@ -27,7 +27,7 @@ export class CoreEnumService extends ApiServerBase {
       );
   }
 
-  ServiceEnumLocationType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumLocationType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumLocationType', {
         headers: this.getHeaders(),
@@ -39,7 +39,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumUserLanguage(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumUserLanguage(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumUserLanguage', {
         headers: this.getHeaders(),
@@ -54,7 +54,7 @@ export class CoreEnumService extends ApiServerBase {
   ////
   // EnumUserLanguage
   ////
-  ServiceEnumGender(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumGender(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumGender', {
         headers: this.getHeaders(),
@@ -66,7 +66,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumMenuPlaceType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumMenuPlaceType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/enumMenuPlaceType', {
         headers: this.getHeaders(),
@@ -78,7 +78,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumSiteStatus(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumSiteStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumSiteStatus', {
         headers: this.getHeaders(),
@@ -90,7 +90,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumGenderType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumGenderType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumGenderType', {
         headers: this.getHeaders(),
@@ -102,7 +102,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsSiteMenuAreaType', {
         headers: this.getHeaders(),
@@ -114,7 +114,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumLanguage(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumLanguage(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumLanguage', {
         headers: this.getHeaders(),
@@ -126,7 +126,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumDeviceType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumDeviceType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumDeviceType', {
         headers: this.getHeaders(),
@@ -138,7 +138,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumOperatingSystemType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumOperatingSystemType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumOperatingSystemType', {
         headers: this.getHeaders(),
@@ -150,7 +150,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumManageUserAccessAreaTypes(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumManageUserAccessAreaTypes(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessAreaTypes', {
         headers: this.getHeaders(),
@@ -162,7 +162,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumManageUserAccessControllerTypes(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumManageUserAccessControllerTypes(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessControllerTypes', {
         headers: this.getHeaders(),
@@ -174,7 +174,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumSendSmsStatusType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumSendSmsStatusType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumSendSmsStatusType', {
         headers: this.getHeaders(),
@@ -186,7 +186,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumCmsModuleSaleItemType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumCmsModuleSaleItemType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsModuleSaleItemType', {
         headers: this.getHeaders(),
@@ -198,7 +198,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-   ServiceEnumUserClaimKinds(): Observable<ErrorExceptionResult<EnumModel>> {
+   ServiceEnumUserClaimKinds(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUserClaimKinds', {
         headers: this.getHeaders(),
@@ -210,7 +210,7 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumUserClaimGroupActionType(): Observable<ErrorExceptionResult<EnumModel>> {
+  ServiceEnumUserClaimGroupActionType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUserClaimGroupActionType', {
         headers: this.getHeaders(),
