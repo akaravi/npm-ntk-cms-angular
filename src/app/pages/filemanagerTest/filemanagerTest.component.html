@@ -4,6 +4,7 @@ test file manager
   [language]="appLanguage"
   [isPopup]="true"
   [tree]="tree1"
+  [openForm]="openForm"
   [openFilemanagerButtonLabelKey]="'hello.test'"
 ></cms-file-manager>
 {{ selected1 | json }}
@@ -11,7 +12,6 @@ test file manager
 
 <cms-file-manager
   (itemSelected)="onActionFileSelect2($event)"
-  [(options)]="optionsFileManager"
   [language]="appLanguage"
   [isPopup]="true"
   [(openForm)]="openForm"
@@ -35,5 +35,4 @@ test file manager
 <button type="button"  (click)="onActionTest()">Click me!</button>
 
 <br>
-{{ optionsFileManager | json }}
 

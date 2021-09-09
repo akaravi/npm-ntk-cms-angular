@@ -69,6 +69,8 @@ ng build ntk-cms-filemanager --prod
 ng build ntk-cms-fileuploader --prod
 ng build ntk-cms-module --prod
 ng build ngx-ntk-smart-module --prod
+ng build ngx-ntk-query-builder --prod
+
 
 
 

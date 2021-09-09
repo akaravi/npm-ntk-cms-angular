@@ -77,7 +77,7 @@ export class FileManagerTestComponent {
     this.tree2 = new TreeModel(treeConfig2);
     this.tree3 = new TreeModel(treeConfig1);
   }
-  optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
+  // optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
   openForm = false;
   selected1: NodeInterface;
   selected2: NodeInterface;
@@ -96,9 +96,10 @@ export class FileManagerTestComponent {
     this.selected3 = event;
   }
   onActionOpen(status: boolean): void {
-    if (this.optionsFileManager.childMethods) {
-      this.optionsFileManager.childMethods.ActionOpen(status);
-    }
+    // if (this.optionsFileManager.childMethods) {
+    //   this.optionsFileManager.childMethods.ActionOpen(status);
+    // }
+    this.openForm = status;
   }
   onActionTest(): void {
     this.openForm = true;

@@ -5,54 +5,41 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
-    "strict": true,
-    "noImplicitReturns": true,
+    "strict": false,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strictNullChecks": false,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "allowJs": true,
+    "checkJs": false,
+    "strictFunctionTypes": true,
+    "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "ntk-cms-api": [
-        "dist/ntk-cms-api/ntk-cms-api",
-        "dist/ntk-cms-api"
-      ],
-      "ntk-cms-filemanager": [
-        "dist/ntk-cms-filemanager/ntk-cms-filemanager",
-        "dist/ntk-cms-filemanager"
-      ],
-      "ntk-cms-fileuploader": [
-        "dist/ntk-cms-fileuploader/ntk-cms-fileuploader",
-        "dist/ntk-cms-fileuploader"
-      ],
-      "ngx-ntk-smart-module": [
-        "dist/ngx-ntk-smart-module/ngx-ntk-smart-module",
-        "dist/ngx-ntk-smart-module"
-      ],
-      "ntk-cms-module": [
-        "dist/ntk-cms-module/ntk-cms-module",
-        "dist/ntk-cms-module"
-      ],
-      "ngx-ntk-query-builder": [
-        "dist/ngx-ntk-query-builder/ngx-ntk-query-builder",
-        "dist/ngx-ntk-query-builder"
-      ]
+      "ntk-cms-api": ["dist/ntk-cms-api/ntk-cms-api", "dist/ntk-cms-api"],
+      "ntk-cms-filemanager": ["dist/ntk-cms-filemanager/ntk-cms-filemanager", "dist/ntk-cms-filemanager"],
+      "ntk-cms-fileuploader": ["dist/ntk-cms-fileuploader/ntk-cms-fileuploader", "dist/ntk-cms-fileuploader"],
+      "ngx-ntk-smart-module": ["dist/ngx-ntk-smart-module/ngx-ntk-smart-module", "dist/ngx-ntk-smart-module"],
+      "ntk-cms-module": ["dist/ntk-cms-module/ntk-cms-module", "dist/ntk-cms-module"],
+      "ngx-ntk-query-builder": ["dist/ngx-ntk-query-builder/ngx-ntk-query-builder", "dist/ngx-ntk-query-builder"]
     }
   },
   "angularCompilerOptions": {
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
+    "enableI18nLegacyMessageIdFormat": false,
     "strictTemplates": true,
-    "enableIvy": false
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true,
+    "strictAttributeTypes": false,
+    "strictSafeNavigationTypes": false,
+    "strictDomLocalRefTypes": false,
+    "strictOutputEventTypes": false,
+    "strictDomEventTypes": false,
+    "strictLiteralTypes": false,
+    "strictNullChecks": false
   }
 }
