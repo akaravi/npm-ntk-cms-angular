@@ -1,8 +1,8 @@
 export enum EnumRecordStatus {
   Available = 1,
-  Deleted = 2,
-  Pending = 3,
-  Confirmed = 4,
+  Disable = 2,
+  Deleted = 3,
+  Pending = 4,
   DeniedConfirmed = 5,
-  AvailableArchive = 6,
+  Archive = 6
 }
