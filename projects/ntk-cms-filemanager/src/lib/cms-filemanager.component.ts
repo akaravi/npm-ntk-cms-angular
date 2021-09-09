@@ -117,7 +117,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     translate.use('en');
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.nodeService.serviceTree = this.tree;
     this.nodeClickedService.serviceTree = this.tree;
     if (!this.isPopup) {
@@ -169,7 +169,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     this.itemClicked.emit(event);
   }
 
-  searchClicked(data: any) {
+  searchClicked(data: any): void {
     // console.log(data);
 
     const node = this.nodeService.findNodeById(data.id);
@@ -178,7 +178,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     this.cdr.detectChanges();
   }
 
-  handleFileManagerClickEvent(event: any) {
+  handleFileManagerClickEvent(event: any): any {
     switch (event.type) {
       case 'closeSideView':
         return this.nodeClickHandler(event.node, true);
@@ -226,7 +226,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       case 'createFile':
         if (this.openDirectUploadView && !this.openDirectUploadSave) {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
-          const selectedModel = <NodeInterface>{
+          const selectedModel = <NodeInterface> {
             id: event.payload.uploadFileGUID,
             name: event.payload.uploadFileGUID,
             isFolder: false
@@ -241,7 +241,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         };
         const successMethod = (next: any) => {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
-          const selectedModel = <NodeInterface>{
+          const selectedModel = <NodeInterface> {
             id: next.Item.Id,
             name: next.Item.FileName,
             downloadLinksrc: next.Item.DownloadLinksrc,
@@ -270,7 +270,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  nodeClickHandler(node: NodeInterface, closing?: boolean) {
+  nodeClickHandler(node: NodeInterface, closing?: boolean): void {
     if (node.name === 'root') {
       return;
     }
@@ -302,7 +302,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   // todo stay DRY!
-  highlightSelected(node: NodeInterface) {
+  highlightSelected(node: NodeInterface): void{
     let pathToNode = node.pathToNode;
 
     if (pathToNode.length === 0) {
@@ -345,7 +345,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     this.highilghtChildElement(parentElement);
   }
 
-  private highilghtChildElement(el: HTMLElement, light: boolean = false) {
+  private highilghtChildElement(el: HTMLElement, light: boolean = false): void {
     el.children[0] // appnode div wrapper
       .children[0] // ng template first item
       .classList.add('highlighted');
@@ -362,7 +362,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     return document.getElementById(fullId);
   }
 
-  private removeClass(className: string) {
+  private removeClass(className: string): void {
     Array.from(document.getElementsByClassName(className))
       .map((el) => el.classList.remove(className));
   }
@@ -375,20 +375,20 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     this.fmShowHide(status);
   }
 
-  backdropClicked() {
+  backdropClicked(): void{
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
   }
 
-  handleUploadDialog(event: any) {
+  handleUploadDialog(event: any): void{
     this.newFileDialog = event;
   }
-  handleNewFolderDialog(event: any) {
+  handleNewFolderDialog(event: any): void {
     this.newFolderDialog = event;
   }
 
-  confirmSelection() {
+  confirmSelection(): void{
     this.fmShowHide(false);
     this.itemSelected.emit(this.selectedNode);
   }
@@ -407,7 +407,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     return true;
   }
 
-  cancelSelection() {
+  cancelSelection(): void {
     this.fmShowHide(false);
   }
   AllowFileView(model: NodeInterface): boolean {
