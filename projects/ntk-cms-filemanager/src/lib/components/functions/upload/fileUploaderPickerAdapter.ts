@@ -1,17 +1,18 @@
-import { HttpRequest, HttpClient,  HttpEventType, HttpHeaders } from '@angular/common/http';
+import { HttpRequest, HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { observable, Observable, of } from 'rxjs';
 import { FilePickerAdapter, UploadResponse, UploadStatus, FilePreviewModel } from 'ngx-awesome-uploader';
 
 export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {
     super();
   }
-  ApiPath = 'https://apifile.ir/api/v1/upload';
+  baseUploadURL = 'https://apifile.ir/api/v1/';
+  routeUpload = 'upload';
   public uploadFile(fileItem: FilePreviewModel): Observable<UploadResponse> {
     const form = new FormData();
     form.append('file', fileItem.file);
-    const req = new HttpRequest('POST', this.ApiPath, form, { reportProgress: true });
+    const req = new HttpRequest('POST', this.baseUploadURL + this.routeUpload, form, { reportProgress: true });
     return this.http.request(req).pipe(
       map((res) => {
         if (res.type === HttpEventType.Response) {
@@ -39,6 +40,10 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
     );
   }
   public removeFile(fileItem: FilePreviewModel): Observable<any> {
-    return null;
+    return new Observable<any>((observer) => {
+      return () => {
+        // Detach the event handler from the target
+      };
+    });
   }
 }

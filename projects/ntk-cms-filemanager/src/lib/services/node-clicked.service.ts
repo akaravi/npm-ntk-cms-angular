@@ -4,255 +4,307 @@ import { NodeService } from './node.service';
 import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { first, map } from 'rxjs/operators';
-import { BaseService } from './base.service';
-import { ErrorExceptionResult, FileContentModel, FileCategoryModel } from 'ntk-cms-api';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
+import { first, map } from 'rxjs/operators';
+import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'ntk-cms-api';
+import { FileManagerStoreService } from './file-manager-store.service';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class NodeClickedService extends BaseService {
+// @Injectable({
+//   providedIn: 'root'
+// })
+@Injectable()
+export class NodeClickedService {
   public serviceTree: TreeModel;
 
   constructor(
-    public ntkSmartModalService: NtkSmartModalService,
+    public ngxSmartModalService: NtkSmartModalService,
     private nodeService: NodeService,
+    private store: FileManagerStoreService,
     private http: HttpClient,
+    private fileContentService: FileContentService,
+    private fileCategoryService: FileCategoryService,
   ) {
-    super();
   }
 
+  public startDownload_orginal(node: NodeInterface): void {
+    const parameters = new HttpParams().append('path', node.id + '');
+    this.reachServer('download', this.serviceTree.config.api.downloadFile, parameters);
+  }
   public startDownload(node: NodeInterface): void {
     window.open(node.downloadLinksrc, '_blank');
   }
-
-  public actionDeleteFolder(node: NodeInterface): void {
-    this.http
-      .delete(this.serviceTree.config.baseURL + this.serviceTree.config.api.deleteFolder + '/' + node.id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
-        }),
-      )
-      .subscribe(
-        (a) => {
-          this.actionSuccess();
-          this.successWithSideViewClose();
-        },
-        (err) => this.actionFailed('actionDeleteFolder', err),
+  public initDelete_orginal(node: NodeInterface): void {
+    this.sideEffectHelper(
+      'Delete',
+      new HttpParams().append('path', node.id + ''),
+      'delete',
+      this.serviceTree.config.api.deleteFile,
+      () => this.successWithSideViewClose()
+    );
+  }
+  public initDelete(node: NodeInterface): void {
+    const prosses = 'initDelete';
+    this.store.processStart(prosses);
+    if (node.isFolder) {
+      this.fileCategoryService.ServiceDelete(node.id).subscribe(
+        (next) => {
+          if (next.IsSuccess) {
+            this.successWithSideViewClose();
+          }
+          else {
+            this.actionFailed('Delete Folder Error', next.ErrorMessage);
+          }
+          this.store.processStop(prosses);
+        }
+        , (error) => {
+          this.actionFailed('Delete Folder Error', error);
+          this.store.processStop(prosses);
+        }
       );
-
-    // this.sideEffectHelper(
-    //   'Delete',
-    //   new HttpParams().append('path', node.id + ''),
-    //   'delete',
-    //   this.serviceTree.config.api.deleteFile,
-    //   () => this.successWithSideViewClose(),
-    // );
-  }
-  public actionDeleteFile(node: NodeInterface): void {
-    this.http
-      .delete(this.serviceTree.config.baseURL + this.serviceTree.config.api.deleteFile + '/' + node.id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
-        }),
-      )
-      .subscribe(
-        (a) => {
-          this.actionSuccess();
-          this.successWithSideViewClose();
-        },
-        (err) => this.actionFailed('actionDeleteFile', err),
+    } else {
+      this.fileContentService.ServiceDelete(node.id).subscribe(
+        (next) => {
+          if (next.IsSuccess) {
+            this.successWithSideViewClose();
+          }
+          else {
+            this.actionFailed('Delete File Error', next.ErrorMessage);
+          }
+          this.store.processStop(prosses);
+        }
+        , (error) => {
+          this.actionFailed('Delete File Error', error);
+          this.store.processStop(prosses);
+        }
       );
-
-    // this.sideEffectHelper(
-    //   'Delete',
-    //   new HttpParams().append('path', node.id + ''),
-    //   'delete',
-    //   this.serviceTree.config.api.deleteFile,
-    //   () => this.successWithSideViewClose(),
-    // );
+    }
   }
 
-  public actionSearchForString(input: string): void {
-    // this.sideEffectHelper(
-    //   'Search',
-    //   new HttpParams().append('query', input),
-    //   'get',
-    //   this.serviceTree.config.api.searchFiles,
-    //   (res) => this.searchSuccess(input, res),
-    // );
+  public searchForString(input: string): void {
+    this.sideEffectHelper(
+      'Search',
+      new HttpParams().append('query', input),
+      'get',
+      this.serviceTree.config.api.searchFiles,
+      (res) => this.searchSuccess(input, res)
+    );
   }
 
-  public actionCreateFolder(currentParent: number, newDirName: string): void {
+  public createFolder_orginal(currentParent: number, newDirName: string): void {
+    this.sideEffectHelper(
+      'Create Folder',
+      (() => {
+        let httpParams = new HttpParams().append('dirName', newDirName);
+        if (currentParent !== 0) {
+          httpParams = httpParams.append('parentPath', currentParent + '');
+        }
+
+        console.log(currentParent, httpParams.get('dirName'), httpParams.get('parentPath'));
+        return httpParams;
+      })(),
+      'post',
+      this.serviceTree.config.api.createFolder
+    );
+  }
+  public createFolder(currentParent: number, newDirName: string): void {
     const model = new FileCategoryModel();
     model.Title = newDirName;
     if (currentParent > 0) {
       model.LinkParentId = currentParent;
     }
-    this.http
-      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.createFolder, model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          const retExc = this.errorExceptionResultCheck<FileCategoryModel>(ret);
-        }),
-      )
-      .subscribe(
-        (a) => {
-          this.actionSuccess();
+    const prosses = 'createFolder';
+    this.store.processStart(prosses);
+    this.fileCategoryService.ServiceAdd(model).subscribe(
+      (next) => {
+        if (next.IsSuccess) {
           this.successWithSideViewClose();
-        },
-        (err) => this.actionFailed('actionCreateFolder', err),
-      );
-
-    // this.sideEffectHelper(
-    //   'Create Folder',
-    //   (() => {
-    //     let httpParams = new HttpParams().append('dirName', newDirName);
-    //     if (currentParent !== 0) {
-    //       httpParams = httpParams.append('parentPath', currentParent + '');
-    //     }
-
-    //     console.log(currentParent, httpParams.get('dirName'), httpParams.get('parentPath'));
-    //     return httpParams;
-    //   })(),
-    //   'post',
-    //   this.serviceTree.config.api.createFolder,
-    // );
-  }
-
-  public actionRenameFolder(id: number, newName: string): void {
-    this.http
-      .get(this.serviceTree.config.baseURL + this.serviceTree.config.api.getOneFolder + '/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          return this.errorExceptionResultCheck<FileCategoryModel>(ret);
-        }),
-      )
-      .toPromise()
-      .then((retExc) => {
-        if (!retExc.IsSuccess) {
-          this.actionFailed('actionRenameFolder', retExc.ErrorMessage);
-          return;
         }
-
-        retExc.Item.Title = newName;
-        this.http
-          .put(this.serviceTree.config.baseURL + this.serviceTree.config.api.renameFolder, retExc.Item, {
-            headers: this.getHeaders(),
-          })
-          .pipe(
-            map((ret) => {
-              return this.errorExceptionResultCheck<FileCategoryModel>(ret);
-            }),
-          )
-          .subscribe(
-            (a) => {
-              this.actionSuccess();
-              this.successWithSideViewClose();
-            },
-            (err) => this.actionFailed('actionRenameFolder', err),
-          );
-      });
-  }
-  public actionRenameFile(id: number, newName: string): void {
-    this.http
-      .get(this.serviceTree.config.baseURL + this.serviceTree.config.api.getOneFile + '/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          return this.errorExceptionResultCheck<FileContentModel>(ret);
-        }),
-      )
-      .toPromise()
-      .then((retExc) => {
-        if (!retExc.IsSuccess) {
-          this.actionFailed('actionRenameFile', retExc.ErrorMessage);
-          return;
+        else {
+          this.actionFailed('Create Folder Error', next.ErrorMessage);
         }
-
-        retExc.Item.FileName = newName;
-        this.http
-          .put(this.serviceTree.config.baseURL + this.serviceTree.config.api.renameFile, retExc.Item, {
-            headers: this.getHeaders(),
-          })
-          .pipe(
-            map((ret) => {
-              return this.errorExceptionResultCheck<FileContentModel>(ret);
-            }),
-          )
-          .subscribe(
-            (a) => {
-              this.actionSuccess();
-              this.successWithSideViewClose();
-            },
-            (err) => this.actionFailed('actionRenameFile', err),
-          );
-      });
+        this.store.processStop(prosses);
+      }
+      , (error) => {
+        this.actionFailed('Create Folder Error', error);
+        this.store.processStop(prosses);
+      }
+    );
   }
-  public actionCreateFile(model: FileContentModel): void {
-    this.http
-      .post(this.serviceTree.config.baseURL + this.serviceTree.config.api.createFile, model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        map((ret) => {
-          const retExc = this.errorExceptionResultCheck<FileContentModel>(ret);
-        }),
-      )
+  public createFile(
+    currentParent: number, fileName: string, uploadFileGUID: string,
+    successMethod: any,
+    failMethod: any
+  ): void {
+    const model = new FileContentModel();
+    model.FileName = fileName;
+    model.UploadFileGUID = uploadFileGUID;
+    if (currentParent > 0) {
+      model.LinkCategoryId = currentParent;
+    }
+    const prosses = 'createFile';
+    this.store.processStart(prosses);
+    this.fileContentService.ServiceAdd(model).subscribe(
+      (next) => {
+        if (next.IsSuccess) {
+          this.successWithSideViewClose();
+          if (successMethod) {
+            successMethod(next);
+          }
+        }
+        else {
+          this.actionFailed('Create File Error', next.ErrorMessage);
+        }
+        this.store.processStop(prosses);
+      }
+      , (error) => {
+        this.actionFailed('Create File Error', error);
+        if (failMethod) {
+          failMethod(error);
+        }
+        this.store.processStop(prosses);
+      }
+    );
+  }
+  public rename_orginal(node: NodeInterface, newName: string): void {
+    this.sideEffectHelper(
+      'Rename',
+      new HttpParams().append('path', node.id + '').append('newName', newName),
+      'post',
+      this.serviceTree.config.api.renameFile,
+      () => this.successWithSideViewClose()
+    );
+  }
+  public rename(node: NodeInterface, newName: string): void {
+    const prosses = 'rename';
+    this.store.processStart(prosses);
+    if (node.isFolder) {
+      this.fileCategoryService.ServiceGetOneById(node.id).subscribe((next) => {
+        if (next.IsSuccess) {
+          next.Item.Title = newName;
+          /** update */
+          this.fileCategoryService.ServiceEdit(next.Item).subscribe(
+            (next2) => {
+              if (next2.IsSuccess) {
+                this.successWithSideViewClose();
+              }
+              else {
+                this.actionFailed('rename Folder Error', next.ErrorMessage);
+              }
+              this.store.processStop(prosses);
+            }
+            , (error) => {
+              this.actionFailed('rename Folder Error', error);
+              this.store.processStop(prosses);
+            }
+          );
+          /** update */
+        } else {
+          this.actionFailed('rename Folder Error', next.ErrorMessage);
+          this.store.processStop(prosses);
+        }
+      }
+        , (error) => {
+          this.actionFailed('rename Folder Error', error);
+          this.store.processStop(prosses);
+        });
+
+    } else {
+      this.fileContentService.ServiceGetOneById(node.id).subscribe((next) => {
+        if (next.IsSuccess) {
+          next.Item.FileName = newName;
+          /** update */
+          this.fileContentService.ServiceEdit(next.Item).subscribe(
+            (next2) => {
+              if (next2.IsSuccess) {
+                this.successWithSideViewClose();
+              }
+              else {
+                this.actionFailed('rename File Error', next.ErrorMessage);
+              }
+              this.store.processStop(prosses);
+            }
+            , (error) => {
+              this.actionFailed('rename File Error', error);
+              this.store.processStop(prosses);
+            }
+          );
+          /** update */
+        } else {
+          this.actionFailed('rename File Error', next.ErrorMessage);
+          this.store.processStop(prosses);
+        }
+      }
+        , (error) => {
+          this.actionFailed('rename File Error', error);
+          this.store.processStop(prosses);
+        });
+    }
+  }
+
+  private sideEffectHelper(
+    name: string, parameters: HttpParams, httpMethod: string, apiURL: string,
+    successMethod = (a: any) => this.actionSuccess(a),
+    failMethod = (a: any, b: any) => this.actionFailed(a, b)
+  ): void {
+    this.ngxSmartModalService.getModal('waitModal').open();
+
+    this.reachServer(httpMethod, apiURL, parameters)
       .subscribe(
-        (a) => this.actionSuccess(),
-        (err) => this.actionFailed('actionCreateFolder', err),
+        (a) => successMethod(a),
+        (err) => failMethod(name, err)
       );
+  }
+
+  private reachServer(method: string, apiUrl: string, parameters: HttpParams, data: any = {}): Observable<any> {
+    switch (method.toLowerCase()) {
+      case 'get':
+        return this.http.get(this.serviceTree.config.baseURL + apiUrl, { params: parameters });
+      case 'post':
+        return this.http.post(this.serviceTree.config.baseURL + apiUrl, data, { params: parameters });
+      case 'delete':
+        return this.http.delete(this.serviceTree.config.baseURL + apiUrl, { params: parameters });
+      case 'download':
+        window.open(this.serviceTree.config.baseURL + apiUrl + '?path=' + parameters.get('path'), '_blank');
+        return null;
+      default:
+        console.warn('[NodeClickedService] Incorrect params for this side-effect');
+        return null;
+    }
   }
 
   private successWithSideViewClose(): void {
+    this.actionSuccess();
     document.getElementById('side-view').classList.remove('selected');
   }
 
   private searchSuccess(input: string, data: any): void {
     const obj = {
       searchString: input,
-      response: data,
+      response: data
     };
 
     this.actionSuccess();
 
-    this.ntkSmartModalService.setModalData(obj, 'searchModal', true);
-    const mod = this.ntkSmartModalService.getModal('searchModal');
-    if (!mod) {
-      return;
-    }
-    mod.open();
+    this.ngxSmartModalService.setModalData(obj, 'searchModal', true);
+    this.ngxSmartModalService.getModal('searchModal').open();
   }
 
-  public actionSuccess(response: string = ''): void {
-    this.nodeService.SelectFolderById(this.nodeService.currentParentId, true, true);
+  private actionSuccess(response: string = ''): void {
     document.body.classList.remove('dialog-open');
+
     this.nodeService.refreshCurrentPath();
-    const modal = this.ntkSmartModalService.getModal('waitModal');
-    if (!modal) {
-      return;
-    }
-    modal.onCloseFinished.pipe(first()).subscribe(() => modal.close());
+
+    const modal = this.ngxSmartModalService.getModal('waitModal');
+    modal.onOpenFinished.pipe(first()).subscribe(() => modal.close());
     modal.close();
   }
 
   private actionFailed(name: string, error: any): void {
     document.body.classList.remove('dialog-open');
 
-    this.ntkSmartModalService.getModal('waitModal').close();
-    this.ntkSmartModalService.getModal('errorModal').open();
+    this.ngxSmartModalService.getModal('waitModal').close();
+    this.ngxSmartModalService.getModal('errorModal').open();
+    console.warn('[NodeClickedService] Action "' + name + '" failed', error);
   }
+
 }

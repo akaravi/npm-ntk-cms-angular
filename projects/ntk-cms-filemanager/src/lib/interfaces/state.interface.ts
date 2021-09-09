@@ -1,8 +1,8 @@
 import {NodeInterface} from './node.interface';
 
 export interface StateInterface {
-  loadingListId?: number[];
-  parentId: number;
+  path: string;
   selectedNode: NodeInterface;
   isLoading: boolean;
+  inProcessingList: Array<string>;
 }

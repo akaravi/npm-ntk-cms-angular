@@ -1,25 +1,29 @@
-<div class="item-holder" *ngIf="nodes">
+<div class="item-holder" style="direction: ltr;" *ngIf="nodes">
   <ng-container *ngIf="nodes.id !== 0">
-    <app-node [node]="nodes" id="{{ nodes.id }}" (click)="onActionBack(nodes)" >
-      <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="folderContentBackTemplate">
+    <lib-filemanager-node [node]=nodes id="{{nodes.pathToNode}}">
+      <ng-container [ngTemplateOutletContext]="{$implicit: nodes}" [ngTemplateOutlet]="folderContentBackTemplate">
       </ng-container>
-    </app-node>
+    </lib-filemanager-node>
   </ng-container>
   <ng-container *ngIf="nodes.id === 0">
-    <app-node [node]="nodes" id="{{ nodes.id }}" (click)="onActionRefresh(nodes)" >
+    <lib-filemanager-node [node]="nodes" id="{{ nodes.id }}" >
       <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="folderContentReloadTemplate">
       </ng-container>
-    </app-node>
+    </lib-filemanager-node>
   </ng-container>
 
-  <ng-container *ngFor="let node of nodes.children">
-    <app-node [node]="node" id="fc_{{ node.id }}">
-      <ng-container [ngTemplateOutletContext]="{ $implicit: node }" [ngTemplateOutlet]="folderContentTemplate">
+  <ng-container *ngFor="let node of obj.keys(nodes.children)">
+    <lib-filemanager-node [node]="nodes.children[node]" id="fc_{{nodes.children[node].pathToNode}}">
+      <ng-container [ngTemplateOutletContext]="{$implicit: nodes.children[node]}"
+        [ngTemplateOutlet]="folderContentTemplate">
       </ng-container>
-    </app-node>
+    </lib-filemanager-node>
   </ng-container>
 
-  <div class="new" (click)="newClickedAction()">
-    <ng-container [ngTemplateOutlet]="folderContentNewTemplate"></ng-container>
+  <div class="new" (click)="newFolderClickedAction()" *ngIf="nodes?.children">
+    <ng-container [ngTemplateOutlet]="folderContentNewFolderTemplate"></ng-container>
+  </div>
+  <div class="new" (click)="newFileClickedAction()" *ngIf="nodes?.children">
+    <ng-container [ngTemplateOutlet]="folderContentNewFileTemplate"></ng-container>
   </div>
 </div>

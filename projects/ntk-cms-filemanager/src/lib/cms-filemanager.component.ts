@@ -1,26 +1,44 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { TreeModel } from './models/tree.model';
 import { NodeService } from './services/node.service';
 import { NodeInterface } from './interfaces/node.interface';
+import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
-import { NtkSmartModalService } from 'ngx-ntk-smart-module';
-import { ComponentOptionModel } from './models/componentOptionModel';
-import { FilePreviewModel } from 'ngx-awesome-uploader';
+import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './services/file-manager-store.service';
 
 @Component({
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  providers: [NodeService, NodeClickedService, FileManagerStoreService]
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
+
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
   @Input() folderContentBackTemplate: TemplateRef<any>;
+  @Input() folderContentNewFileTemplate: TemplateRef<any>;
+  @Input() folderContentNewFolderTemplate: TemplateRef<any>;
   @Input() folderContentReloadTemplate: TemplateRef<any>;
-  @Input() folderContentNewTemplate: TemplateRef<any>;
+
+
+  @Input() openFilemanagerButtonView = true;
+  @Input() openDirectUploadSave = true;
+  @Input() openDirectUploadView = false;
   @Input() loadingOverlayTemplate: TemplateRef<any>;
   @Input() sideViewTemplate: TemplateRef<any>;
   @Input() set selectFileType(model: Array<string>) {
@@ -29,11 +47,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     }
   }
   configSelectFileType: Array<string> = [];
+
   @Input() tree: TreeModel;
   @Input() isPopup = false;
   @Input() openFilemanagerButtonLabelKey = 'filemanager.open_file_manager';
-  @Input() openFilemanagerButtonView = true;
-  @Output() optionUploadSuccess = new EventEmitter<FilePreviewModel>();
+  @Input() openSelectFileDescription = '';
   @Output() itemClicked = new EventEmitter();
   @Output() itemSelected = new EventEmitter();
   openPopupForm = false;
@@ -52,25 +70,17 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     }
     this.openPopupForm = model;
     this.openFormChange.emit(model);
+    if (this.openDirectUploadView) {
+      this.newFileDialog = true;
+    }
+    if (model && this.isPopup && !this.startManagerRuned) {
+      this.nodeService.startManagerAt(this.tree.currentPath + '');
+      this.startManagerRuned = true;
+    }
+
   }
   get openForm(): boolean {
     return this.openPopupForm;
-  }
-
-  private optionsData: ComponentOptionModel = new ComponentOptionModel();
-  @Output() optionsChange: EventEmitter<ComponentOptionModel> = new EventEmitter<ComponentOptionModel>();
-  @Input() set options(model: ComponentOptionModel) {
-    if (!model) {
-      model = new ComponentOptionModel();
-    }
-    this.optionsData = model;
-    this.optionsData.childMethods = {
-      ActionOpen: (status: boolean) => this.onActionOpen(status),
-    };
-    this.optionsChange.emit(model);
-  }
-  get options(): ComponentOptionModel {
-    return this.optionsData;
   }
 
   openFilemanagerButtonLabel: string;
@@ -86,84 +96,89 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
   selectedNode: NodeInterface;
   sideMenuClosed = true;
+
+  // fmOpen = false;
   loading: boolean;
-  newDialog = false;
+  newFileDialog = false;
+  newFolderDialog = false;
   HighestZIndex = 0;
+  startManagerRuned = false;
   @ViewChild('mainModal') mainModal: ElementRef;
   constructor(
     private store: FileManagerStoreService,
-    public nodeService: NodeService,
+    private nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
-    public ntkSmartModalService: NtkSmartModalService,
+    public ngxSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
+    private cdr: ChangeDetectorRef,
     private el: ElementRef
   ) {
-    translate.setDefaultLang('fa');
-    translate.use('fa');
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
-  ngAfterViewInit(): void {
-    this.HighestZIndex = this.findHighestZIndex('div');
-  }
-  ngOnInit(): void {
+
+  ngOnInit() {
     this.nodeService.serviceTree = this.tree;
     this.nodeClickedService.serviceTree = this.tree;
+    if (!this.isPopup) {
+      this.nodeService.startManagerAt(this.tree.currentPath + '');
+      this.startManagerRuned = true;
+    }
+    // this.store.dispatch({ type: SET_PATH, payload: this.tree.currentPath });
 
-    this.nodeService.startManagerAt(this.tree.currentPath);
     // this.nodeService.getNodes(this.tree.currentPath).then(() => {
-    //   this.store.setState({type: SET_SELECTED_NODE, payload: });
+    //   this.store.dispatch({type: SET_SELECTED_NODE, payload: });
     // });
-    this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation: any) => {
+
+    this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation) => {
       this.openFilemanagerButtonLabel = translation;
     });
-    this.store.getState((state) => state.fileManagerState.isLoading)
+
+    this.store
+      .getState(state => state.fileManagerState.inProcessingList)
+      .subscribe((inProcessingList: Array<string>) => {
+        this.cdr.detectChanges();
+      });
+    this.store
+      .getState(state => state.fileManagerState.isLoading)
       .subscribe((isLoading: boolean) => {
         this.loading = isLoading;
+        this.cdr.detectChanges();
       });
-    this.store.getState((state) => state.fileManagerState.selectedNode)
+    this.store
+      .getState(state => state.fileManagerState.selectedNode)
       .subscribe((selectedNode: NodeInterface) => {
+        this.cdr.detectChanges();
         if (!selectedNode) {
           return;
         }
         // fixed highlighting error when closing node but not changing path
-        if (selectedNode.isExpanded && selectedNode.id !== this.nodeService.currentParentId && !selectedNode.stayOpen) {
+        if ((selectedNode.isExpanded && selectedNode.pathToNode !== this.nodeService.currentPath) && !selectedNode.stayOpen) {
           return;
         }
+
         this.handleFileManagerClickEvent({ type: 'select', node: selectedNode });
       });
-  }
-  findHighestZIndex(elem: string): number {
-    const elems = document.getElementsByTagName(elem);
-    let highest = Number.MIN_SAFE_INTEGER || -(Math.pow(2, 53) - 1);
-    for (let i = 0; i < this.el.nativeElement.length; i++) {
-      const zindex = Number.parseInt(
-        document.defaultView.getComputedStyle(elems[i], null).getPropertyValue('z-index'),
-        10
-      );
-      if (zindex > highest) {
-        highest = zindex;
-      }
-    }
-    return highest;
-  }
-  fmShowHide(act: boolean): void {
-    this.openForm = act;
-  }
-  onActionOpen(status: boolean): void {
-    this.fmShowHide(status);
-  }
 
 
+  }
+  ngAfterViewInit(): void {
+    // this.HighestZIndex = this.findHighestZIndex('div');
+  }
   onItemClicked(event: any): void {
     this.itemClicked.emit(event);
   }
 
-  searchClicked(data: any): void {
-    const node = this.nodeService.findFolderById(data.id);
-    this.ntkSmartModalService.getModal('searchModal').close();
-    this.store.setState({ type: SET_SELECTED_NODE, payload: node });
+  searchClicked(data: any) {
+    // console.log(data);
+
+    const node = this.nodeService.findNodeById(data.id);
+    this.ngxSmartModalService.getModal('searchModal').close();
+    this.store.dispatch({ type: SET_SELECTED_NODE, payload: node });
+    this.cdr.detectChanges();
   }
 
-  handleFileManagerClickEvent(event: any): any {
+  handleFileManagerClickEvent(event: any) {
     switch (event.type) {
       case 'closeSideView':
         return this.nodeClickHandler(event.node, true);
@@ -178,74 +193,103 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         return this.onItemClicked(event);
 
       case 'renameConfirm':
-        return this.ntkSmartModalService.getModal('renameModal').open();
-
+        return this.ngxSmartModalService.getModal('renameModal').open();
       case 'rename':
-        this.ntkSmartModalService.getModal('renameModal').close();
-        if (this.selectedNode.isFolder) {
-          this.nodeClickedService.actionRenameFolder(this.selectedNode.id, event.value);
-        } else {
-          this.nodeClickedService.actionRenameFile(this.selectedNode.id, event.value);
-        }
+        this.ngxSmartModalService.getModal('renameModal').close();
 
+        this.nodeClickedService.rename(this.selectedNode, event.value);
         return this.onItemClicked({
           type: event.type,
           node: this.selectedNode,
-          newName: event.value,
+          newName: event.value
         });
 
       case 'removeAsk':
-        return this.ntkSmartModalService.getModal('confirmDeleteModal').open();
-
+        return this.ngxSmartModalService.getModal('confirmDeleteModal').open();
       case 'remove':
-        this.ntkSmartModalService.getModal('confirmDeleteModal').close();
-        if (this.selectedNode.isFolder) {
-          this.nodeClickedService.actionDeleteFolder(this.selectedNode);
-        } else {
-          this.nodeClickedService.actionDeleteFile(this.selectedNode);
-        }
+        this.ngxSmartModalService.getModal('confirmDeleteModal').close();
 
+        this.nodeClickedService.initDelete(this.selectedNode);
         return this.onItemClicked({
           type: event.type,
-          node: this.selectedNode,
+          node: this.selectedNode
         });
 
       case 'createFolder':
-        const parentId = this.nodeService.findFolderById(this.nodeService.currentParentId).id;
-
-        this.nodeClickedService.actionCreateFolder(parentId, event.payload);
+        const parentid = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
+        this.nodeClickedService.createFolder(parentid, event.payload);
         return this.onItemClicked({
           type: event.type,
-          parentId,
-          newDirName: event.payload,
+          parentId: parentid,
+          newDirName: event.payload
+        });
+      case 'createFile':
+        if (this.openDirectUploadView && !this.openDirectUploadSave) {
+          // tslint:disable-next-line: no-angle-bracket-type-assertion
+          const selectedModel = <NodeInterface>{
+            id: event.payload.uploadFileGUID,
+            name: event.payload.uploadFileGUID,
+            isFolder: false
+          };
+          this.selectedNode = selectedModel;
+          this.confirmSelection();
+          return;
+        }
+
+        const failMethod = (error: any) => {
+
+        };
+        const successMethod = (next: any) => {
+          // tslint:disable-next-line: no-angle-bracket-type-assertion
+          const selectedModel = <NodeInterface>{
+            id: next.Item.Id,
+            name: next.Item.FileName,
+            downloadLinksrc: next.Item.DownloadLinksrc,
+            size: next.Item.size,
+            Extension: next.Item.Extension,
+            isFolder: false
+          };
+          this.selectedNode = selectedModel;
+          if (this.openDirectUploadView) {
+            this.confirmSelection();
+            return;
+          }
+        };
+
+
+        const catid = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
+
+        this.nodeClickedService.createFile(catid, event.payload.fileName, event.payload.uploadFileGUID, successMethod, failMethod);
+
+        return this.onItemClicked({
+          type: event.type,
+          parentId: catid,
+          fileName: event.payload.fileName,
+          uploadFileGUID: event.payload.uploadFileGUID
         });
     }
   }
 
-  nodeClickHandler(node: NodeInterface, closing?: boolean): any {
-    if (node.id === 0) {
+  nodeClickHandler(node: NodeInterface, closing?: boolean) {
+    if (node.name === 'root') {
       return;
     }
     if (closing) {
-      const parentNode = this.nodeService.findFolderById(this.nodeService.currentParentId);
-      this.store.setState({ type: SET_SELECTED_NODE, payload: parentNode });
+      const parentNode = this.nodeService.findNodeByPath(this.nodeService.currentPath);
+      this.store.dispatch({ type: SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
     } else {
-      if (this.selectedNode === node && this.sideMenuClosed) {
-        this.sideMenuClosed = false;
-      } else if (this.selectedNode === node && !this.sideMenuClosed) {
-        this.sideMenuClosed = true;
-      } else if (this.selectedNode !== node && this.sideMenuClosed) {
-        this.sideMenuClosed = false;
-      } else if (this.selectedNode !== node && !this.sideMenuClosed) {
-        this.sideMenuClosed = false;
-      }
+      if (this.selectedNode === node && this.sideMenuClosed) { this.sideMenuClosed = false; }
+      else if (this.selectedNode === node && !this.sideMenuClosed) { this.sideMenuClosed = true; }
+      else if (this.selectedNode !== node && this.sideMenuClosed) { this.sideMenuClosed = false; }
+      else if (this.selectedNode !== node && !this.sideMenuClosed) { this.sideMenuClosed = false; }
     }
 
     this.selectedNode = node;
 
     // todo investigate this workaround - warning: [File Manager] failed to find requested node for path: [path]
     if (!document.getElementById('side-view')) {
+      this.cdr.detectChanges();
       return;
     }
 
@@ -254,23 +298,21 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     } else {
       document.getElementById('side-view').classList.add('selected');
     }
+    this.cdr.detectChanges();
   }
 
   // todo stay DRY!
-  highlightSelected(node: NodeInterface): void {
-    let pathToNode = node.id;
+  highlightSelected(node: NodeInterface) {
+    let pathToNode = node.pathToNode;
 
-    if (!pathToNode || pathToNode === 0) {
-      pathToNode = 0;
+    if (pathToNode.length === 0) {
+      pathToNode = 'root';
     }
 
     const treeElement = this.getElementById(pathToNode, 'tree_');
     const fcElement = this.getElementById(pathToNode, 'fc_');
-
-    if (!treeElement && !fcElement && pathToNode === 0) {
-      return;
-    }
     if (!treeElement && !fcElement) {
+      console.warn('[File Manager] failed to find requested node for path:', pathToNode);
       return;
     }
 
@@ -285,54 +327,68 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     }
 
     // parent node highlight
-    let pathToParent = node.id;
-    if (pathToParent === this.nodeService.currentParentId) {
+    let pathToParent = node.pathToParent;
+    if (pathToParent === null || node.pathToNode === this.nodeService.currentPath) {
       return;
     }
 
-    if (pathToParent === 0) {
-      pathToParent = 0;
+    if (pathToParent.length === 0) {
+      pathToParent = 'root';
     }
 
     const parentElement = this.getElementById(pathToParent, 'tree_');
     if (!parentElement) {
+      console.warn('[File Manager] failed to find requested parent node for path:', pathToParent);
       return;
     }
 
     this.highilghtChildElement(parentElement);
   }
 
-  private highilghtChildElement(el: HTMLElement, light: boolean = false): void {
-    el.children[0].children[0].classList // appnode div wrapper // ng template first item
-      .add('highlighted');
+  private highilghtChildElement(el: HTMLElement, light: boolean = false) {
+    el.children[0] // appnode div wrapper
+      .children[0] // ng template first item
+      .classList.add('highlighted');
 
     if (light) {
-      el.children[0].children[0].classList.add('light');
+      el.children[0]
+        .children[0]
+        .classList.add('light');
     }
   }
 
-  private getElementById(id: number, prefix: string = ''): HTMLElement | null {
+  private getElementById(id: string, prefix: string = ''): HTMLElement {
     const fullId = prefix + id;
     return document.getElementById(fullId);
   }
 
-  private removeClass(className: string): void {
-    Array.from(document.getElementsByClassName(className)).map((el: any) => el.classList.remove(className));
+  private removeClass(className: string) {
+    Array.from(document.getElementsByClassName(className))
+      .map((el) => el.classList.remove(className));
   }
 
 
+  fmShowHide(act: boolean): void {
+    this.openForm = act;
+  }
+  onActionOpen(status: boolean): void {
+    this.fmShowHide(status);
+  }
 
-  backdropClicked(): void {
+  backdropClicked() {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
-    this.store.setState({ type: SET_LOADING_STATE, payload: false });
+    this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
   }
 
-  handleUploadDialog(event: any): void {
-    this.newDialog = event;
+  handleUploadDialog(event: any) {
+    this.newFileDialog = event;
+  }
+  handleNewFolderDialog(event: any) {
+    this.newFolderDialog = event;
   }
 
-  confirmSelection(): void {
+  confirmSelection() {
     this.fmShowHide(false);
     this.itemSelected.emit(this.selectedNode);
   }
@@ -351,26 +407,37 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     return true;
   }
 
-  cancelSelection(): void {
+  cancelSelection() {
     this.fmShowHide(false);
   }
-
   AllowFileView(model: NodeInterface): boolean {
     if (
       !model ||
       model.isFolder ||
-      !model.type ||
-      model.type.length === 0 ||
+      !model.Extension ||
+      model.Extension.length === 0 ||
       !this.configSelectFileType ||
       this.configSelectFileType.length === 0 ||
-      this.configSelectFileType.find((t) => (t && model.type && t.toLowerCase() === model.type.toLowerCase()))
+      this.configSelectFileType.find((t) => (t && model.Extension && t.toLowerCase() === model.Extension.toLowerCase()))
     ) {
       return true;
     }
     return false;
   }
-  onActionUploadSuccess(model: FilePreviewModel): void {
-    this.optionUploadSuccess.emit(model);
-
+  findHighestZIndex(elem: string): number {
+    const elems = document.getElementsByTagName(elem);
+    let highest = Number.MIN_SAFE_INTEGER || -(Math.pow(2, 53) - 1);
+    for (let i = 0; i < this.el.nativeElement.length; i++) {
+      const zindex = Number.parseInt(
+        document.defaultView.getComputedStyle(elems[i], null).getPropertyValue('z-index'),
+        10
+      );
+      if (zindex > highest) {
+        highest = zindex;
+      }
+    }
+    console.log('HighestZIndex', highest);
+    return highest;
   }
+
 }

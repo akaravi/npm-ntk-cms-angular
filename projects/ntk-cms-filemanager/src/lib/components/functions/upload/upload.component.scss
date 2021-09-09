@@ -1,9 +1,10 @@
-ngx-awesome-uploader  {
-  display: inline-table!important;
+:host {
+  display: block;
 }
-.file-drop-wrapper {
-  max-width:max-content!important;
+.ntk-awesome-uploader {
+  max-width: none !important;
+ 
 }
-.custom-drag {
-  max-width:max-content!important;
+.dropzoneTemplate {
+  font-size: large;
 }

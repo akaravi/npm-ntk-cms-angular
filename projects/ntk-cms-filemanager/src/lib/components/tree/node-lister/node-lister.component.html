@@ -1,22 +1,22 @@
-<ul class="node-lister-flist">
+<ul class="node-lister-flist" style="direction: ltr;text-align: left;">
   <!--In order to avoid having to create that extra div, we can instead use ng-container directive-->
-  <ng-container *ngFor="let node of nodes">
-    <li class="node-lister-list-item" *ngIf="node.isFolder || showFiles ">
-      <app-node class="node-lister-app-node" [node]="node" id="tree_{{ node.isRoot ? '0' : node.id }}">
-        <ng-container [ngTemplateOutletContext]="{ $implicit: node }" [ngTemplateOutlet]="templateRef"> </ng-container>
-      </app-node>
+  <ng-container *ngFor="let node of obj.keys(nodes)">
+    <li class="node-lister-list-item" *ngIf="nodes[node].isFolder || showFiles">
 
-      <app-node-lister
-        class="node-lister"
-        *ngIf="node?.children?.length > 0"
-        [showFiles]="showFiles"
-        [nodes]="node?.children"
-      >
+      <lib-filemanager-node class="node-lister-app-node" [node]="nodes[node]" id="tree_{{nodes[node].isRoot ? 'root' : nodes[node].pathToNode}}">
+        <ng-container [ngTemplateOutletContext]="{$implicit: (nodes[node])}"
+                      [ngTemplateOutlet]="templateRef">
+        </ng-container>
+      </lib-filemanager-node>
+
+      <lib-filemanager-node-lister class="node-lister" *ngIf="obj.keys(nodes[node].children).length > 0"
+                       [showFiles]="showFiles" [nodes]="nodes[node].children">
         <ng-template let-nodes>
-          <ng-container [ngTemplateOutletContext]="{ $implicit: nodes }" [ngTemplateOutlet]="templateRef">
+          <ng-container [ngTemplateOutletContext]="{$implicit: (nodes)}"
+                        [ngTemplateOutlet]="templateRef">
           </ng-container>
         </ng-template>
-      </app-node-lister>
+      </lib-filemanager-node-lister>
     </li>
   </ng-container>
 </ul>

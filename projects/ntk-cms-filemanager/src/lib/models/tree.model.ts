@@ -1,92 +1,60 @@
 import { NodeInterface } from '../interfaces/node.interface';
 import { ConfigInterface } from '../interfaces/config.interface';
-import { DownloadModeEnum } from '../enums/download-mode.enum';
 
 export class TreeModel {
-  private privateCurrentPath: number;
-  private privateNodes: NodeInterface;
-  private privateSelectedNodeId: number;
+  private _currentPath: string;
+  private _nodes: NodeInterface;
+  private _selectedNodeId: string;
   public config: ConfigInterface;
-  private configDefault: ConfigInterface = {
-    baseURL: 'https://apicms.ir/api/v1/',
-    baseUploadURL: 'https://apifile.ir/api/v1/',
-    api: {
-      listFile: 'FileContent/GetAll',
-      listFolder: 'FileCategory/GetAll',
-      uploadFile: 'upload',
-      downloadFile: 'download',
-      deleteFile: 'FileContent',
-      deleteFolder: 'FileCategory',
-      createFolder: 'FileCategory',
-      createFile: 'FileContent',
-      getOneFile: 'FileContent',
-      getOneFolder: 'FileCategory',
-      renameFile: 'FileContent',
-      renameFolder: 'FileCategory',
-      searchFiles: 'FileCategory/GetAll',
-    },
-    options: {
-      title: 'Select File',
-      allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
-      showFilesInsideTree: false,
-      showSelectFile: true,
-      showSelectFolder: false,
-    },
-  };
-  constructor(config: ConfigInterface = null) {
-    this.privateCurrentPath = 0;
+
+  constructor(config: ConfigInterface) {
+    // this._currentPath = config.startingFolder; // todo implement (config.interfce.ts)
+    this._currentPath = '';
     this.config = config;
-    if (!this.config || this.config == null) {
-      this.config = this.configDefault;
-    }
-    if (!this.config.api) {
-      this.config.api = this.configDefault.api;
-    }
-    if (!this.config.baseURL || this.config.baseURL.length === 0) {
-      this.config.baseURL = this.configDefault.baseURL;
-    }
-    if (!this.config.baseUploadURL || this.config.baseUploadURL.length === 0) {
-      this.config.baseUploadURL = this.configDefault.baseUploadURL;
-    }
-    this.nodes = {
+
+    this.nodes = ( {
       id: 0,
+      pathToNode: '',
+      pathToParent: null,
       isFolder: true,
       isExpanded: true,
       stayOpen: true,
-      name: '...',
-      children: [],
-      isRoot: true,
-      CreatedDate: null,
-      UpdatedDate: null,
-      downloadLinksrc: '',
-      parentId: null,
-      size: null,
-      type: '',
-    };
+      name: 'root',
+      children: {},
+      isRoot: true
+    } as NodeInterface);
   }
 
-  get currentPath(): number {
-    return this.privateCurrentPath;
+  get currentPath(): string {
+    return this._currentPath;
   }
 
-  set currentPath(value: number) {
-    this.privateCurrentPath = value;
+  set currentPath(value: string) {
+    this._currentPath = value;
   }
 
   get nodes(): NodeInterface {
-    return this.privateNodes;
+    return this._nodes;
   }
 
   set nodes(value: NodeInterface) {
-    this.privateNodes = value;
+    this._nodes = value;
   }
 
-  get selectedNodeId(): number {
-    return this.privateSelectedNodeId;
+  get selectedNodeId(): string {
+    return this._selectedNodeId;
   }
 
-  set selectedNodeId(value: number) {
-    this.privateSelectedNodeId = value;
+  set selectedNodeId(value: string) {
+    this._selectedNodeId = value;
   }
 
+  // todo implement (config.interfce.ts)
+  // get isCache(): boolean {
+  //   return this.config.offlineMode;
+  // }
+  //
+  // set isCache(value: boolean) {
+  //   this.config.offlineMode = value;
+  // }
 }

@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { NodeInterface } from '../../../interfaces/node.interface';
 
 import { NodeService } from '../../../services/node.service';
 import { NodeClickedService } from '../../../services/node-clicked.service';
-import { FileManagerStoreService, SET_PARENT, SET_SELECTED_NODE } from '../../../services/file-manager-store.service';
+import { FileManagerStoreService, SET_PATH, SET_SELECTED_NODE } from '../../../services/file-manager-store.service';
 import { DownloadModeEnum } from '../../../enums/download-mode.enum';
 
 @Component({
-  selector: 'app-node',
+  selector: 'lib-filemanager-node',
   templateUrl: './node.component.html',
-  styleUrls: ['./node.component.scss'],
+  styleUrls: ['./node.component.scss']
 })
 export class NodeComponent implements OnInit {
   @Input() node: NodeInterface;
@@ -19,10 +19,17 @@ export class NodeComponent implements OnInit {
     private store: FileManagerStoreService,
     private nodeService: NodeService,
     private nodeClickedService: NodeClickedService,
+    private cdr: ChangeDetectorRef
   ) {
+    this.store
+      .getState(state => state.fileManagerState.selectedNode)
+      .subscribe((value: NodeInterface) => {
+        this.selectedNode = value;
+        this.cdr.detectChanges();
+      });
   }
-
-  public method1CallForClick(event: MouseEvent): void {
+  selectedNode: NodeInterface;
+  public method1CallForClick(event: MouseEvent) {
     event.preventDefault();
 
     this.isSingleClick = true;
@@ -34,17 +41,17 @@ export class NodeComponent implements OnInit {
   }
 
   // todo event.preventDefault for double click
-  public method2CallForDblClick(event: any): void {
+  public method2CallForDblClick(event: any) {
     event.preventDefault();
 
     this.isSingleClick = false;
     this.open();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  private open(): void {
+  private open() {
     if (!this.node.isFolder) {
       if (this.nodeService?.serviceTree?.config?.options?.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
         this.isSingleClick = true;
@@ -57,46 +64,46 @@ export class NodeComponent implements OnInit {
     }
 
     if (this.node.stayOpen) {
-
-      if (this.node.id === 0) {
-        this.nodeService.foldAll();
+      if (this.node.name === 'root') {
+        if (this.selectedNode && this.selectedNode.id === this.node.id) {
+          this.nodeService.foldAll(true);
+        }
+        else {
+          this.nodeService.foldAll();
+        }
       }
 
-      this.store.setState({ type: SET_PARENT, payload: this.node.id });
+      this.store.dispatch({ type: SET_PATH, payload: this.node.pathToNode });
       return;
     }
 
     this.toggleNodeExpanded();
 
     if (this.node.isExpanded) {
-      this.store.setState({ type: SET_PARENT, payload: this.node.id });
+      this.store.dispatch({ type: SET_PATH, payload: this.node.pathToNode });
     }
 
     this.setNodeSelectedState();
   }
 
-  private showMenu(): void {
-    this.store.setState({ type: SET_SELECTED_NODE, payload: this.node });
+  private showMenu() {
+    this.store.dispatch({ type: SET_SELECTED_NODE, payload: this.node });
+    this.cdr.detectChanges();
   }
 
-  private toggleNodeExpanded(): void {
+  private toggleNodeExpanded() {
     this.node.isExpanded = !this.node.isExpanded;
   }
 
-  private setNodeSelectedState(): void {
-    const node = document.getElementById('tree_' + this.node.id);
-
+  private setNodeSelectedState() {
     if (!this.node.isExpanded) {
-      if (node && node.classList) {
-        node.classList.add('deselected');
-      }
-      this.nodeService.foldRecursively(this.node);
-      this.store.setState({ type: SET_PARENT, payload: this.node.id });
-    } else {
-      if (node && node.classList) {
-        node.classList.remove('deselected');
-      }
+      document.getElementById('tree_' + this.node.pathToNode).classList.add('deselected');
 
+      this.nodeService.foldRecursively(this.node);
+
+      this.store.dispatch({ type: SET_PATH, payload: this.node.pathToParent });
+    } else {
+      document.getElementById('tree_' + this.node.pathToNode).classList.remove('deselected');
     }
   }
 }

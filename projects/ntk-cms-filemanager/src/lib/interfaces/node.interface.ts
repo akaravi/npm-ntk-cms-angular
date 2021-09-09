@@ -1,16 +1,18 @@
 export interface NodeInterface {
   isRoot: boolean;
   id: number;
-  parentId?: number;
-  CreatedDate?: Date;
-  UpdatedDate?: Date;
-
+  pathToNode: string;
+  pathToParent: string;
   isFolder: boolean;
   isExpanded: boolean;
   stayOpen?: boolean;
-  name: string;
-  type?: string;
+  name?: string;
+  children?: any;
+
+  Extension?: string;
   size?: number;
+  parentId?: number;
+  CreatedDate?: Date;
+  UpdatedDate?: Date;
   downloadLinksrc?: string;
-  children: NodeInterface[];
 }

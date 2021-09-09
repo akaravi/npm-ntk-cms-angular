@@ -6,5 +6,5 @@
   },
   "angularCompilerOptions": {
     "enableIvy": false
-  },
+  }
 }

@@ -1,4 +1,4 @@
-import { DownloadModeEnum } from '../enums/download-mode.enum';
+import {DownloadModeEnum} from '../enums/download-mode.enum';
 
 export interface ConfigInterface {
   baseURL: string;
@@ -26,5 +26,5 @@ export interface ConfigInterface {
     showFilesInsideTree: boolean;
     showSelectFile: boolean;
     showSelectFolder: boolean;
-  };
+  }
 }

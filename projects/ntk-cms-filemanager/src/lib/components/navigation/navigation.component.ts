@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {NodeClickedService} from '../../services/node-clicked.service';
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'lib-filemanager-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   encapsulation: ViewEncapsulation.None
@@ -14,10 +14,10 @@ export class NavigationComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  onClick(input: string): void {
-    this.nodeClickedService.actionSearchForString(input);
+  onClick(input: string) {
+    this.nodeClickedService.searchForString(input);
   }
 }

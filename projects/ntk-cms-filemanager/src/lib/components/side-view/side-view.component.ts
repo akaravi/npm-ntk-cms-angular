@@ -1,12 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { NodeInterface } from '../../interfaces/node.interface';
 import { DownloadModeEnum } from '../../enums/download-mode.enum';
+import { FileManagerStoreService } from '../../services/file-manager-store.service';
 
 @Component({
-  selector: 'app-side-view',
+  selector: 'lib-filemanager-side-view',
   templateUrl: './side-view.component.html',
   styleUrls: ['./side-view.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class SideViewComponent implements OnInit {
   @Input() sideViewTemplate: TemplateRef<any>;
@@ -16,15 +17,30 @@ export class SideViewComponent implements OnInit {
 
   @Output() clickEvent = new EventEmitter();
 
-  constructor() {}
+  constructor(
+    private store: FileManagerStoreService,
+    private cdr: ChangeDetectorRef
+  ) {
+    this.store
+      .getState(state => state.fileManagerState.isLoading)
+      .subscribe((isLoading: boolean) => {
+        this.cdr.detectChanges();
+      });
+    this.store
+      .getState(state => state.fileManagerState.selectedNode)
+      .subscribe(() => {
+        this.cdr.detectChanges();
+      });
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+  }
 
-  onClick(event: any, type: string): void {
+  onClick(event: any, type: string) {
     this.clickEvent.emit({ type, event, node: this.node });
   }
 
-  isDisabled(): boolean {
+  isDisabled() {
     if (this.allowFolderDownload === DownloadModeEnum.DOWNLOAD_DISABLED) {
       return true;
     } else if (this.allowFolderDownload === DownloadModeEnum.DOWNLOAD_FILES && this.node.isFolder) {
@@ -36,14 +52,14 @@ export class SideViewComponent implements OnInit {
   AllowPlayMP3(node: NodeInterface): boolean {
     if (
       node.isFolder ||
-      !node.type ||
-      node.type.length === 0 ||
+      !node.Extension ||
+      node.Extension.length === 0 ||
       !node.downloadLinksrc ||
       node.downloadLinksrc.length === 0
     ) {
       return false;
     }
-    if (node.type.toLowerCase() === 'mp3' ) {
+    if (node.Extension.toLowerCase() === 'mp3') {
       return true;
     }
     return false;
@@ -51,16 +67,16 @@ export class SideViewComponent implements OnInit {
   AllowViewImage(node: NodeInterface): boolean {
     if (
       node.isFolder ||
-      !node.type ||
-      node.type.length === 0 ||
+      !node.Extension ||
+      node.Extension.length === 0 ||
       !node.downloadLinksrc ||
       node.downloadLinksrc.length === 0
     ) {
       return false;
     }
-    if (node.type.toLowerCase() === 'png' || node.type.toLowerCase() === 'jpeg'
-    || node.type.toLowerCase() === 'gif'
-    || node.type.toLowerCase() === 'jpg') {
+    if (node.Extension.toLowerCase() === 'png' || node.Extension.toLowerCase() === 'jpeg'
+      || node.Extension.toLowerCase() === 'gif'
+      || node.Extension.toLowerCase() === 'jpg') {
       return true;
     }
     return false;

@@ -1,31 +1,31 @@
-<div class="side-view" *ngIf="node">
+<div class="side-view" style="direction: ltr;" *ngIf="node">
   <div class="side-view-preview">
     <i (click)="onClick($event, 'closeSideView')" class="fas fa-times side-view-close"></i>
 
     <div class="side-view-preview-title">{{node.name}}</div>
-    <div *ngIf="AllowViewImage(node)" class="side-view-preview-content">
-      <img src="{{node.downloadLinksrc}}" loading="lazy" alt="..."  class="mb-3" style="max-width: -webkit-fill-available">
-    </div>
-    <div *ngIf="AllowPlayMP3(node)" class="side-view-preview-content">
-      <audio controls>
-        <source src="{{node.downloadLinksrc}}" type="audio/mp3">
-        Your browser does not support the audio tag.
-      </audio>
-    </div>
+
     <div class="side-view-preview-content">
-      <ng-container
-        [ngTemplateOutletContext]="{$implicit: node}"
-        [ngTemplateOutlet]="sideViewTemplate">
+      <div *ngIf="AllowViewImage(node)" class="side-view-preview-content">
+        <img src="{{node.downloadLinksrc}}" loading="lazy" alt="..." class="mb-3"
+          style="max-width: -webkit-fill-available">
+      </div>
+      <div *ngIf="AllowPlayMP3(node)" class="side-view-preview-content">
+        <audio controls>
+          <source src="{{node.downloadLinksrc}}" type="audio/mp3">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+      <ng-container [ngTemplateOutletContext]="{$implicit: node}" [ngTemplateOutlet]="sideViewTemplate">
       </ng-container>
     </div>
-
     <div class="side-view-buttons">
-      <button type="button"  (click)="onClick($event, 'download')" class="button"
-              [disabled]="isDisabled()">
+      <button type="button" (click)="onClick($event, 'download')" class="button" [disabled]="isDisabled()">
         {{'filemanager.download' | translate }}
       </button>
-      <button  type="button" (click)="onClick($event, 'renameConfirm')" class="button">{{'filemanager.rename' | translate }}</button>
-      <button type="button" (click)="onClick($event, 'removeAsk')" class="button">{{'filemanager.delete' | translate }}</button>
+      <button type="button" (click)="onClick($event, 'renameConfirm')" class="button">{{'filemanager.rename' | translate
+        }}</button>
+      <button type="button" (click)="onClick($event, 'removeAsk')" class="button">{{'filemanager.delete' | translate
+        }}</button>
     </div>
   </div>
 </div>

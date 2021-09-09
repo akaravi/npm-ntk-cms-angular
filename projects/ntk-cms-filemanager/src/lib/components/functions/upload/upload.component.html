@@ -1,23 +1,30 @@
 <div class="backdrop" (click)="newClickedAction()"></div>
 <div class="upload-background">
-  <div class="uploader-wrapper">
-    <ngx-awesome-uploader [adapter]="adapter" (uploadSuccess)="uploadSuccess($event)" (fileAdded)="onFileAdded($event)"
-      (uploadSuccess)="onUploadSuccess($event)">
+  <div class="row" style="flex-direction: column;">
+    
+    <ngx-awesome-uploader class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="3" [fileMaxSize]="700" [uploadType]="'multi'"
+      (validationError)="onValidationError($event)" [fileExtensions]="fileExtensions"
+      [enableCropper]="false" (uploadSuccess)="onUploadSuccess($event)" (removeSuccess)="onRemoveSuccess($event)"
+      (fileAdded)="onFileAdded($event)" [customValidator]="myCustomValidator" [captions]="captions"
+      [accept]="fileTypeAccept">
     </ngx-awesome-uploader>
+    <h2>{{openSelectFileDescription}}</h2>
   </div>
-
-  <div *ngIf="newFolder">
+  <div class="row">
+    <ng-template #myItemTemplate let-fileItem="fileItem" let-uploadProgress="uploadProgress" >
+      <p>File Size: {{fileItem.file.size}}</p>
+      <p>File Name: {{fileItem.fileName}}</p>
+      <p > Upload Progress: {{uploadProgress}} % </p>
+      <button type="button" (click)="uploader.removeFile(fileItem)">Remove</button>
+    </ng-template>
+    <hr>
     <div class="buttons">
-      <app-new-folder (buttonClicked)="createNewFolder($event)"></app-new-folder>
+      <button type="button" class="button big" [disabled]="this.counter < 1" (click)="uploadFiles()">
+        {{'filemanager.upload' | translate }}
+      </button>
+      <button type="button" class="button big" [disabled]="!allowClose" (click)="newClickedAction()">
+        {{'filemanager.close' | translate }}
+      </button>
     </div>
-  </div>
-  <div class="buttons">
-
-    <button type="button" class="button big" [disabled]="newFolder" (click)="createNewFolder()">
-      {{ 'filemanager.create_new_folder' | translate }}
-    </button>
-    <button type="button" class="button big" (click)="newClickedAction()">
-      {{ 'filemanager.close' | translate }}
-    </button>
   </div>
 </div>
