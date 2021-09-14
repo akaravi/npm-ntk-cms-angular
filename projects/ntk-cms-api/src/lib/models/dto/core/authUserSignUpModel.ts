@@ -4,9 +4,10 @@ export class AuthUserSignUpModel {
   Email: string;
   Mobile: string;
   Password: string;
-  RePassword: string;
   Name: string;
   Family: string;
-  SiteId: number;
-  Roulaccespt: boolean;
+  SiteId?: number;
+  ResellerSiteId?: number;
+  ResellerUserId?: number;
 }
+
