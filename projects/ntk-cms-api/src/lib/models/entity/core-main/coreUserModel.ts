@@ -23,4 +23,6 @@ export class CoreUserModel extends BaseEntity<number> {
   IsCompany: boolean;
   LinkLocationId: number;
   FirewallAllowIP: string;
+  LinkResellerSiteId?: number;
+  LinkResellerUserId?: number;
 }
