@@ -9,4 +9,6 @@ export class AuthUserSignInBySmsDtoModel {
   SiteId: number;
   lang: string;
   UserAccessTokenType: EnumManageUserAccessTokenTypes;
+  ResellerSiteId?: number;
+  ResellerUserId?: number;
 }
