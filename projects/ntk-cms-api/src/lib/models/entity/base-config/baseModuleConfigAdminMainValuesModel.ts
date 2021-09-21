@@ -4,4 +4,5 @@ export class BaseModuleConfigAdminMainValuesModel {
   AccessBuyMonth: number;
   AccessFree: boolean;
   AccessFreeDay: number;
+  UseDataDefaulteSiteId: number;
 }
