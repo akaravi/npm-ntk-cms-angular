@@ -7,5 +7,6 @@ export class CoreSiteCategoryModel extends BaseEntity<number>  {
     TitleResourceLanguage: string;
     Domains: string;
     Description: string;
+    RuleHtmlBody: string;
     Sites: CoreSiteModel[];
 }
