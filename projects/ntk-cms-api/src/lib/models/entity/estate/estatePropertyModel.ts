@@ -4,6 +4,7 @@ import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
 import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
+import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 
 
 export class EstatePropertyModel extends BaseModuleEntity<string> {
@@ -20,7 +21,8 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   LinkCmsUserId: number;
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
-  PropertyType: EstatePropertyTypeLanduseModel;
+  PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
+  PropertyTypeUsage: EstatePropertyTypeUsageModel;
 
 
   /// <summary>
