@@ -3,7 +3,8 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
-import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
+import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
+
 
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   Title: string;
@@ -19,7 +20,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   LinkCmsUserId: number;
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
-  PropertyType: EstatePropertyTypeModel;
+  PropertyType: EstatePropertyTypeLanduseModel;
 
 
   /// <summary>
