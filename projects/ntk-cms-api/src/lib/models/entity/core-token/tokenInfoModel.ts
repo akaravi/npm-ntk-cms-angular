@@ -1,8 +1,5 @@
 import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
-import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
-import { EnumManageUserAccessTokenTypes } from '../../enums/enumManageUserAccessTokenTypes';
-
-
+import { EnumManageUserAccessUserTypes } from '../../enums/enumManageUserAccessUserTypes';
 export class TokenInfoModel {
 
     Token: string;
@@ -17,12 +14,10 @@ export class TokenInfoModel {
     UserGroupId: number;
     UserAccessAdminAllowToProfessionalData: boolean;
     UserAccessAdminAllowToAllData: boolean;
-    UserAccessUserType: EnumManageUserAccessControllerTypes;
+    UserAccessUserType: EnumManageUserAccessUserTypes;
     UserAccessAreaType: EnumManageUserAccessAreaTypes;
-    UserAccessTokenType: EnumManageUserAccessTokenTypes;
     UserAccessUserTypeTitle: string;
     UserAccessUserAreaTitle: string;
-    UserAccessUserTokenTitle: string;
     Username: string;
     Name: string;
     LastName: string;

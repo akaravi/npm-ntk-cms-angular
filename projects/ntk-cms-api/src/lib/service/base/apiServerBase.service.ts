@@ -5,6 +5,7 @@ import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { EnumManageUserAccessDataTypes } from '../../models/enums/enumManageUserAccessDataTypes';
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
@@ -24,6 +25,7 @@ export class ApiServerBase {
   keyDeviceToken = 'deviceToken';
   private headers: Map<string, string>;
   private accessLoad = false;
+  private accessDataType: EnumManageUserAccessDataTypes;
   setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
     localStorage.setItem('baseUrl', url);
@@ -48,6 +50,9 @@ export class ApiServerBase {
   }
   setAccessLoad(status: boolean = true): void {
     this.accessLoad = status;
+  }
+  setAccessDataType(status: EnumManageUserAccessDataTypes): void {
+    this.accessDataType = status;
   }
 
   getUserToken(): string | null {
@@ -103,6 +108,13 @@ export class ApiServerBase {
     }
     else if (this.headers.has('AccessLoad')) {
       this.headers.delete('AccessLoad');
+    }
+    /*AccessDataType*/
+    if (this.accessDataType) {
+      this.headers.set('AccessDataType', this.accessDataType.toString());
+    }
+    else if (this.headers.has('AccessDataType')) {
+      this.headers.delete('AccessDataType');
     }
     const retOut = Object.create(null);
     for (const [k, v] of this.headers) {

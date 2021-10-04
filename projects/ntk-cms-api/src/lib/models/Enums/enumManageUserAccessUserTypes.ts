@@ -1,4 +1,4 @@
-export enum EnumManageUserAccessControllerTypes {
+export enum EnumManageUserAccessUserTypes {
   AccessDenay = 0,
   //////////////////////////////////////////////// مدیریت سی ام اس
   AdminMainCms = 1,

@@ -162,9 +162,9 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumManageUserAccessControllerTypes(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceEnumManageUserAccessUserTypes(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessControllerTypes', {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManageUserAccessUserTypes', {
         headers: this.getHeaders(),
       })
       .pipe(

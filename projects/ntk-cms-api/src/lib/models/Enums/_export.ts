@@ -14,7 +14,7 @@ export * from './enumExportReceiveMethod';
 export * from './enumFilterDataModelSearchTypes';
 export * from './enumGenderType';
 export * from './enumManageUserAccessAreaTypes';
-export * from './enumManageUserAccessControllerTypes';
+export * from './enumManageUserAccessUserTypes';
 export * from './enumMenuPlaceType';
 export * from './enumOperatingSystemType';
 export * from './enumRecordStatus';
@@ -39,5 +39,5 @@ export * from './enumPageAbilityType';
 export * from './enumCmsPageUtilityToolsAction';
 export * from './enumSendSmsStatusType';
 export * from './enumFormSubmitedStatus';
-export * from './enumManageUserAccessTokenTypes';
+export * from './enumManageUserAccessDataTypes';
 

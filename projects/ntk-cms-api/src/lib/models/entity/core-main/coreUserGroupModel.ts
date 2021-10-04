@@ -1,4 +1,4 @@
-import { EnumManageUserAccessControllerTypes } from '../../enums/enumManageUserAccessControllerTypes';
+import { EnumManageUserAccessUserTypes } from '../../enums/enumManageUserAccessUserTypes';
 import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
 import { BaseEntity } from '../base/baseEntity';
@@ -7,7 +7,7 @@ export class CoreUserGroupModel  extends BaseEntity<number>  {
     Title: string;
     TitleResourceLanguage: string;
     Description: string;
-    UserType: EnumManageUserAccessControllerTypes;
+    UserType: EnumManageUserAccessUserTypes;
     UserTypeTitle: string;
     UserTypeDescription: string;
     CmsSiteUsers: CoreSiteUserModel[];

@@ -1,4 +1,3 @@
-import { EnumManageUserAccessTokenTypes } from '../../enums/enumManageUserAccessTokenTypes';
 
 export class AuthUserSignInModel {
   CaptchaKey: string;
@@ -9,6 +8,4 @@ export class AuthUserSignInModel {
   IsRemember: boolean;
   SiteId: number;
   lang: string;
-  UserAccessTokenType: EnumManageUserAccessTokenTypes;
-
 }
