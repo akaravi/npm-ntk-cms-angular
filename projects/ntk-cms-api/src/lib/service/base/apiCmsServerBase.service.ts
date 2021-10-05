@@ -45,7 +45,24 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
+  ServiceGetAllEditor(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
+    // this.loadingStatus=true;
+    if (model == null) {
+      model = new FilterModel();
+    }
 
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/getAllEditor', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
