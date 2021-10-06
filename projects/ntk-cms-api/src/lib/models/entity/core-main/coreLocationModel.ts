@@ -12,4 +12,6 @@ export class CoreLocationModel extends BaseEntity<number> {
   virtual_Parent: CoreLocationModel;
   Parent: CoreLocationModel;
   Children: CoreLocationModel[];
+  LinkImageId?: number;
+  LinkImageIdSrc: string;
 }
