@@ -8,4 +8,11 @@ export class EstatePropertyAdsModel extends BaseModuleEntity<string> {
   LinkPropertyId: string;
   FromDate: Date;
   ExpireDate: Date;
+  LinkPropertyAdsTypeId: string;
+  SystemTransactionId: number;
+  SystemPaymentIsSuccess: number;
+  AmountPure: number;
+  FeeTransport: number;
+  FeeTax: number;
+  Amount: number;
 }

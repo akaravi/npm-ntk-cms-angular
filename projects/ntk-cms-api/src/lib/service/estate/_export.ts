@@ -10,6 +10,7 @@ export * from './estatePropertyDetailGroup.service';
 export * from './estatePropertyDetail.service';
 export * from './estatePropertyHistory.service';
 export * from './estatePropertyAds.service';
+export * from './estatePropertyAdsType.service';
 export * from './estateProperty.service';
 export * from './estatePropertyType.service';
 export * from './estatePropertyTypeLanduse.service';
