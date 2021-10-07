@@ -10,7 +10,7 @@ export * from './estatePropertyDetailModel';
 export * from './estatePropertyDetailValueModel';
 export * from './estatePropertyHistoryModel';
 export * from './estatePropertyAdsModel';
-export * from './estatePropertyAdsTypeModel';
+export * from './estateAdsTypeModel';
 export * from './estatePropertyModel';
 export * from './estatePropertyTypeModel';
 export * from './estatePropertyTypeUsageModel';
