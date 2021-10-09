@@ -9,6 +9,7 @@ export class CoreModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminM
   DomainsList: string;
   AdminCpUserRegidteryBool: boolean;
   AdminCpUserRegidteryExpireDateDay: number;
+  UserMembershipRuleHtmlBody: string;
 }
 
 export class CoreModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel

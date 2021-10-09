@@ -6,6 +6,9 @@ import {
   CoreModuleConfigSiteValuesModel,
   CoreModuleSiteStorageValuesModel
 } from '../../models/entity/core-main/coreConfigurationModel';
+import { Observable } from 'rxjs';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -19,4 +22,17 @@ export class CoreConfigurationService extends
   getModuleCotrolerUrl(): string {
     return 'Core';
   }
+  ServiceUserMembershipRule(): Observable<ErrorExceptionResult<string>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/UserMembershipRule', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+
 }
