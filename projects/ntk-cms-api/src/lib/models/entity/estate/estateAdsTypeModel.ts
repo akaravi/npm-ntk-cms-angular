@@ -6,7 +6,7 @@ export class EstateAdsTypeModel extends BaseModuleEntity<string> {
   StationLevel: number;
   ViewLevel: number;
   DayOfActivity: number;
-  Price: number;
-  LinkImageId?: number;
-  LinkImageIdSrc: string;
+  SalePrice: number;
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

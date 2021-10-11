@@ -98,6 +98,7 @@ export * from './lib/models/dto/biography/_export';
 export * from './lib/service/estate/_export';
 export * from './lib/models/entity/estate/_export';
 export * from './lib/models/enums/estate/_export';
+export * from './lib/models/dto/estate/_export';
 // estate
 
 // webDesigner
