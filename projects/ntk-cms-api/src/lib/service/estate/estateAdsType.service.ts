@@ -35,10 +35,10 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
         }),
       );
   }
-  ServiceCheckUseAdsForProperty(id: number):
+  ServiceCheckUseAdsForProperty(AdsTypeId: string, id: string):
     Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseAdsForProperty/' + id, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseAdsForProperty/' + AdsTypeId + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -49,30 +49,10 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
         }),
       );
   }
-  ServiceOrderCalculate(model: EstateModuleSalePropertyAdsCalculateDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
-    if (!model) {
-      model = new EstateModuleSalePropertyAdsCalculateDtoModel();
-    }
+  ServiceCheckUseAdsForAccountAgency(AdsTypeId: string, id: string):
+    Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderCalculate', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceOrderPayment(model: EstateModuleSalePropertyAdsPaymentDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
-    if (!model) {
-      model = new EstateModuleSalePropertyAdsPaymentDtoModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderPayment', model, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseAdsForAccountAgency/' + AdsTypeId + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

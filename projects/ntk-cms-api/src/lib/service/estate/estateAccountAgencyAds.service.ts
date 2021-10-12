@@ -1,26 +1,26 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropertyAdsModel';
-import { EstateModuleSalePropertyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsPaymentDtoModel';
+import { EstateAccountAgencyAdsModel } from '../../models/entity/estate/estateAccountAgencyAdsModel';
+import { EstateModuleSaleAccountAgencyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { EstateModuleSalePropertyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsCalculateDtoModel';
+import { EstateModuleSaleAccountAgencyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsCalculateDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 
 @Injectable({
   providedIn: 'root',
 })
-export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAdsModel, string>  {
+export class EstateAccountAgencyAdsService extends ApiCmsServerBase<EstateAccountAgencyAdsModel, string>  {
   getModuleCotrolerUrl(): string {
-    return 'EstatePropertyAds';
+    return 'EstateAccountAgencyAds';
   }
-  ServiceOrderCalculate(model: EstateModuleSalePropertyAdsCalculateDtoModel):
+  ServiceOrderCalculate(model: EstateModuleSaleAccountAgencyAdsCalculateDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
     if (!model) {
-      model = new EstateModuleSalePropertyAdsCalculateDtoModel();
+      model = new EstateModuleSaleAccountAgencyAdsCalculateDtoModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderCalculate', model, {
@@ -34,10 +34,10 @@ export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAds
         }),
       );
   }
-  ServiceOrderPayment(model: EstateModuleSalePropertyAdsPaymentDtoModel):
+  ServiceOrderPayment(model: EstateModuleSaleAccountAgencyAdsPaymentDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     if (!model) {
-      model = new EstateModuleSalePropertyAdsPaymentDtoModel();
+      model = new EstateModuleSaleAccountAgencyAdsPaymentDtoModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderPayment', model, {

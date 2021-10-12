@@ -1,5 +1,6 @@
 export * from './estateConfigurationModel';
 export * from './estateAccountAgencyModel';
+export * from './estateAccountAgencyAdsModel';
 export * from './estateAccountAgencyTypeUserModel';
 export * from './estateAccountUserModel';
 export * from './estateContractModel';
