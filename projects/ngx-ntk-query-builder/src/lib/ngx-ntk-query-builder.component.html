@@ -3,24 +3,24 @@
     <div class="ngx-condition-switcher">
       <div>
         <input name="{{'condition' + index}}" type="radio" class="ngx-switch-radio" [(ngModel)]="data.condition" value="and" #andOption>
-        <label (click)="changeCondition(andOption.value)" class="ngx-control ngx-switch-label">AND</label>
+        <label (click)="changeCondition(andOption.value)" class="ngx-control ngx-switch-label">  {{'querybuilder.And' | translate}}</label>
       </div>
       <div>
         <input name="{{'condition' + index}}" type="radio" class="ngx-switch-radio" [(ngModel)]="data.condition" value="or" #orOption>
-        <label (click)="changeCondition(orOption.value)" class="ngx-control ngx-switch-label">OR</label>
+        <label (click)="changeCondition(orOption.value)" class="ngx-control ngx-switch-label">{{'querybuilder.Or' | translate}}</label>
       </div>
     </div>
 
     <div class="ngx-actions">
       <button type="button" class="ngx-control ngx-btn ngx-btn-add" (click)="addRule()">
-        Add Rule
+        {{'querybuilder.AddRule' | translate}}
       </button>
       <button type="button" class="ngx-control ngx-btn ngx-btn-add" (click)="addRuleSet()">
-        Add Group
+        {{'querybuilder.AddGroup' | translate}}
       </button>
       <ng-container *ngIf="hasParentRuleSet()">
         <button type="button" class="ngx-control ngx-btn ngx-btn-remove" (click)="removeRuleSet(index)">
-          Remove
+          {{'querybuilder.Remove' | translate}}
         </button>
       </ng-container>
     </div>
@@ -85,11 +85,11 @@
                   <div class="ngx-boolean-wrap">
                     <div class="ngx-boolean">
                       <input id="{{'booleanYes' + i}}" name="{{'boolean' + i}}" type="radio" class="ngx-radio-btn" [(ngModel)]="child.value" [value]="true" [disabled]="disabled">
-                      <label for="{{'booleanYes' + i}}" class="ngx-label">Yes</label>
+                      <label for="{{'booleanYes' + i}}" class="ngx-label">{{'querybuilder.Yes' | translate}}</label>
                     </div>
                     <div class="ngx-boolean">
                       <input id="{{'booleanNo' + i}}" name="{{'boolean' + i}}" type="radio" class="ngx-radio-btn" [(ngModel)]="child.value" [value]="false" [disabled]="disabled">
-                      <label for="{{'booleanNo' + i}}" class="ngx-label">No</label>
+                      <label for="{{'booleanNo' + i}}" class="ngx-label">{{'querybuilder.No' | translate}}</label>
                     </div>
                   </div>
                 </ng-container>
@@ -117,7 +117,7 @@
             </div>
             <div class="ngx-rule-controls">
               <button type="button" class="ngx-control ngx-btn ngx-btn-remove" (click)="removeRule(i)">
-                Remove
+                {{'querybuilder.Remove' | translate}}
               </button>
             </div>
           </div>
@@ -126,8 +126,7 @@
 
         <!-- rule set -->
         <ng-container *ngIf="child.rules">
-          <ngx-ntk-query-builder [data]="child" [fieldMap]="fieldMap" [parent]="data"
-                             [disabled]="disabled" [index]="i">
+          <ngx-ntk-query-builder [data]="child" [fieldMap]="fieldMap" [parent]="data" [disabled]="disabled" [index]="i">
           </ngx-ntk-query-builder>
         </ng-container>
 

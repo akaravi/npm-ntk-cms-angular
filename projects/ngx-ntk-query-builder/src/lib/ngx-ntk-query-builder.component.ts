@@ -1,7 +1,7 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {Field, QueryBuilderFieldMap, Rule, RuleSet, QueryBuilderSettings} from './interfaces/ngx-ntk-query-builder.interfaces';
-import {OperatorsService} from './services/operators.service';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Field, QueryBuilderFieldMap, Rule, RuleSet, QueryBuilderSettings } from './interfaces/ngx-ntk-query-builder.interfaces';
+import { OperatorsService } from './services/operators.service';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'ngx-ntk-query-builder',
@@ -27,7 +27,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     public operatorsService: OperatorsService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (typeof this.fieldMap !== 'object') {
       throw new Error('fieldMap must be an object');
     }
@@ -39,8 +39,8 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
 
   /**** ControlValueAccessor START ****/
 
-  onChange = (data: RuleSet) => {};
-  onTouched = () => {};
+  onChange = (data: RuleSet) => { };
+  onTouched = () => { };
 
   writeValue(data: any): void {
     this.data = data || this.getEmptyRuleSetData();
@@ -121,7 +121,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
   }
 
-  changeField(rule: Rule, index: number) {
+  changeField(rule: Rule, index: number): void {
     (this.data.rules[index] as Rule).type = this.fieldMap[rule.field].type;
     (this.data.rules[index] as Rule).operator = this.operatorsService.getDefaultOperator();
     (this.data.rules[index] as Rule).value = undefined;
@@ -147,7 +147,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     });
   }
 
-  getInputType(rule: Rule) {
+  getInputType(rule: Rule): string {
 
     if (!this.fieldMap[rule.field]) {
       throw new Error(`No configuration for field '${rule.field}' was found!`);
@@ -166,7 +166,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     return type;
   }
 
-  getRuleOptions(rule: Rule) {
+  getRuleOptions(rule: Rule): any {
     return this.fieldMap[rule.field].options ? this.fieldMap[rule.field].options : [];
   }
 

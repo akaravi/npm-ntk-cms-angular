@@ -1,0 +1,10 @@
+{
+  "querybuilder": {
+    "And": "و",
+    "Or": "یا",
+    "AddRule": "و شرط",
+    "Add Group": "و گروه",
+    "Remove":"حذف",
+    "Yes":"بله"
+  }
+}

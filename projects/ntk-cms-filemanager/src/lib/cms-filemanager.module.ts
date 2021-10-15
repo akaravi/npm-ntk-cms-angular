@@ -1,5 +1,5 @@
 // import {ModuleWithProviders, NgModule} from '@angular/core';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CmsFileManagerComponent } from './cms-filemanager.component';
 import { FolderContentComponent } from './components/folder-content/folder-content.component';
@@ -37,7 +37,6 @@ export function CreateTranslateLoader(http: HttpClient): any {
         deps: [HttpClient]
       }
     }),
-    TranslateModule,
     FilePickerModule
   ],
   declarations: [
@@ -75,10 +74,10 @@ export function CreateTranslateLoader(http: HttpClient): any {
 
 })
 export class CmsFileManagerModule {
-  // static forRoot(): ModuleWithProviders {
-  //   return {
-  //     ngModule: FileManagerModule,
-  //     providers: [TranslateService]
-  //   };
-  // }
+  static forRoot(): ModuleWithProviders<CmsFileManagerModule> {
+    return {
+      ngModule: CmsFileManagerModule,
+      providers: [TranslateService]
+    };
+  }
 }

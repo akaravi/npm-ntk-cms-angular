@@ -1,0 +1,10 @@
+{
+  "querybuilder": {
+    "And": "AND",
+    "Or": "OR",
+    "AddRule": "Add Rule",
+    "AddGroup": "Add Group",
+    "Remove":"Remove",
+    "Yes":"Yes"
+  }
+}
