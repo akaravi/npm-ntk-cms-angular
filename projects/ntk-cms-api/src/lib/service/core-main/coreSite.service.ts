@@ -8,6 +8,7 @@ import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
 import { DomainModel } from '../../models/dto/core/domainModel';
 import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { Injectable } from '@angular/core';
+import { ShareInfoModel } from '../../models/dto/core/shareInfoModel';
 
 
 @Injectable({
@@ -136,6 +137,19 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   ServiceGetCurrencySite(): Observable<ErrorExceptionResult<string>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrencySite', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetShareInfo(): Observable<ErrorExceptionResult<ShareInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetShareInfo', {
         headers: this.getHeaders(),
       })
       .pipe(
