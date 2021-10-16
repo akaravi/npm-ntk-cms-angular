@@ -3,9 +3,7 @@ import { CoreSiteCategoryModel } from '../../models/entity/core-main/coreSiteCat
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreSiteCategoryService extends ApiCmsServerBase<CoreSiteCategoryModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreSiteCategory';
   }

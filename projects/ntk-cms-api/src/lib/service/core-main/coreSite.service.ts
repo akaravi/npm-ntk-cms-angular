@@ -11,9 +11,7 @@ import { Injectable } from '@angular/core';
 import { ShareInfoModel } from '../../models/dto/core/shareInfoModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreSite';

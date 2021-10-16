@@ -7,9 +7,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TicketingFaqService extends ApiCmsServerBase<TicketingFaqModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'TicketingFaq';

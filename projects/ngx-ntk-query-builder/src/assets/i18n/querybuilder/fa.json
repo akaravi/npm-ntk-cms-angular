@@ -3,8 +3,26 @@
     "And": "و",
     "Or": "یا",
     "AddRule": "و شرط",
-    "Add Group": "و گروه",
+    "AddGroup": "و گروه",
     "Remove":"حذف",
-    "Yes":"بله"
+    "Yes":"بله",
+    "equal": "مساوی",
+    "not_equal": "مساوی نباشد",
+    "contains": "شامل",
+    "not_contains": "شامل نباشد",
+    "begins_with": "شروع شود با",
+    "not_begins_with": "شروع نشود با",
+    "ends_with": "پایان شود با",
+    "not_ends_with": "پایان نشود با",
+    "greater": "بزرگتر از",
+    "greater_or_equal": "بزرگتر یا مساوی با",
+    "less": "کوچک تر از",
+    "less_or_equal": "کوچک تر یا مساوی با",
+    "is_null": "نال باشد",
+    "is_not_null": "نال نباشد",
+    "is_empty": "خالی باشد",
+    "is_not_empty": "خالی نباشد",
+    "in": "در",
+    "not_in": "مخالف در"
   }
 }

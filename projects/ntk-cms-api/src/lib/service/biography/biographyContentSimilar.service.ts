@@ -7,9 +7,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BiographyContentSimilarService extends ApiCmsServerBase<BiographyContentSimilarModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BiographyContentSimilar';

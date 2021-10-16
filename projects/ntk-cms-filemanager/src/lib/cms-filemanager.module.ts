@@ -19,7 +19,7 @@ import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
-import { FileContentService } from 'ntk-cms-api';
+import { FileCategoryService, FileContentService } from 'ntk-cms-api';
 
 export function CreateTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json');
@@ -29,7 +29,6 @@ export function CreateTranslateLoader(http: HttpClient): any {
   imports: [
     HttpClientModule,
     CommonModule,
-    NtkSmartModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -37,6 +36,7 @@ export function CreateTranslateLoader(http: HttpClient): any {
         deps: [HttpClient]
       }
     }),
+    NtkSmartModalModule.forRoot(),
     FilePickerModule
   ],
   declarations: [
@@ -69,7 +69,8 @@ export function CreateTranslateLoader(http: HttpClient): any {
   ],
   providers: [
     TranslateService,
-    FileContentService
+    FileContentService,
+    FileCategoryService
   ]
 
 })

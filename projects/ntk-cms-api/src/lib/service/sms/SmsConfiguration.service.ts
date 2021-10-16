@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/sms/smsConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsConfigurationService extends
   ApiServerConfigSiteBase<SmsModuleConfigAdminMainValuesModel,
   SmsModuleConfigSiteValuesModel,

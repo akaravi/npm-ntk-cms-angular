@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import {QueryBuilderFieldMap, Rule} from '../interfaces/ngx-ntk-query-builder.interfaces';
 
 @Injectable({
@@ -33,6 +34,26 @@ export class OperatorsService {
   };
 
   private readonly operatorsDisplayNames: { [key: string]: string } = {
+    equal: 'querybuilder.equal',
+    not_equal: 'querybuilder.not_equal',
+    contains: 'querybuilder.contains',
+    not_contains: 'querybuilder.not_contains',
+    begins_with: 'querybuilder.begins_with',
+    not_begins_with: 'querybuilder.not_begins_with',
+    ends_with: 'querybuilder.ends_with',
+    not_ends_with: 'querybuilder.not_ends_with',
+    greater: 'querybuilder.greater',
+    greater_or_equal: 'querybuilder.greater_or_equal',
+    less: 'querybuilder.less',
+    less_or_equal: 'querybuilder.less_or_equal',
+    is_null: 'querybuilder.is_null',
+    is_not_null: 'querybuilder.is_not_null',
+    is_empty: 'querybuilder.is_empty',
+    is_not_empty: 'querybuilder.is_not_empty',
+    in: 'querybuilder.in',
+    not_in: 'querybuilder.not_in'
+  };
+  private readonly operatorsDisplayNames___old: { [key: string]: string } = {
     equal: 'Equals',
     not_equal: 'Does not equal',
     contains: 'Contains',
@@ -52,8 +73,8 @@ export class OperatorsService {
     in: 'In',
     not_in: 'Not in'
   };
-
-  constructor() { }
+  constructor(    private translate: TranslateService,
+    ) { }
 
   getOperators(rule: Rule, fieldMap: QueryBuilderFieldMap): string[] {
 

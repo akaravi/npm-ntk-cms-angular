@@ -7,9 +7,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ArticleContentOtherInfoService extends ApiCmsServerBase<ArticleContentOtherInfoModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ArticleContentOtherInfo';

@@ -21,9 +21,7 @@ import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
 import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/authUserForgetPasswordEntryPinCodeModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreAuthService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'auth';

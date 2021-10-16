@@ -8,9 +8,7 @@ import { HyperShopContentModel } from '../../models/entity/hyper-shop/hyperShopC
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string> {
   getModuleCotrolerUrl(): string {
     return 'HyperShopContent';

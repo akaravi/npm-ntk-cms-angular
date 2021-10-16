@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/biography/biographyConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BiographyConfigurationService extends
   ApiServerConfigSiteBase<BiographyModuleConfigAdminMainValuesModel,
   BiographyModuleConfigSiteValuesModel,

@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { CoreModuleSaleItemModel } from '../../models/entity/core-main/coreModuleSaleItemModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreModuleSaleItemService extends ApiCmsServerBase<CoreModuleSaleItemModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreModuleSaleItem';

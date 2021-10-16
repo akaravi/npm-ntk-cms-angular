@@ -6,9 +6,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'PollingVote';

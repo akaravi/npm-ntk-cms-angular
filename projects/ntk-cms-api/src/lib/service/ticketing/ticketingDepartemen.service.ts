@@ -9,9 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepartemenModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'TicketingDepartemen';

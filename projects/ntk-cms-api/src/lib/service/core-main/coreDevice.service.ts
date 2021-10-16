@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { CoreDeviceModel } from '../../models/entity/core-main/coreDeviceModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreDeviceService extends ApiCmsServerBase<CoreDeviceModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreDevice';

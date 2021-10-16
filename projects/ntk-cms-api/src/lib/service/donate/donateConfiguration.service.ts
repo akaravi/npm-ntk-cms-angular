@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/donate/donateConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class DonateConfigurationService extends
   ApiServerConfigSiteBase<DonateModuleConfigAdminMainValuesModel,
   DonateModuleConfigSiteValuesModel,

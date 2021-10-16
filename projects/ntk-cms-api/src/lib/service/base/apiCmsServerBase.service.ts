@@ -9,9 +9,7 @@ import { Injectable } from '@angular/core';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;

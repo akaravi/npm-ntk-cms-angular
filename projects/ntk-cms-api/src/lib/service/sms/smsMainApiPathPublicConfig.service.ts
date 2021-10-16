@@ -7,9 +7,7 @@ import { map, retry } from 'rxjs/operators';
 import { SmsMainApiPathPublicConfigAliasJsonModel } from '../../models/entity/sms/smsMainApiPathPublicConfigAliasJsonModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainApiPathPublicConfigModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathPublicConfig';

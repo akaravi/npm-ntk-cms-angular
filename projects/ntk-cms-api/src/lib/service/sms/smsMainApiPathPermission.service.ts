@@ -3,9 +3,7 @@ import { SmsMainApiPathPermissionModel } from '../../models/entity/sms/smsMainAp
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsMainApiPathPermissionService extends ApiCmsServerBase<SmsMainApiPathPermissionModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathPermission';

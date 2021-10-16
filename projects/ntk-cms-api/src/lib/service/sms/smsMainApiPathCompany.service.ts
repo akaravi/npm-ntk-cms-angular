@@ -3,9 +3,7 @@ import { SmsMainApiPathCompanyModel } from '../../models/entity/sms/smsMainApiCo
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsMainApiPathCompanyService extends ApiCmsServerBase<SmsMainApiPathCompanyModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathCompany';

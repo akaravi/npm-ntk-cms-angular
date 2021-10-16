@@ -16,9 +16,7 @@ import { BiographyContentWithSimilarDatePeriodStartDtoModel } from '../../models
 import { BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BiographyContentService extends ApiCmsServerBase<BiographyContentModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'BiographyContent';

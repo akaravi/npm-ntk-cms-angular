@@ -6,9 +6,7 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BankPaymentTransactionService
   extends ApiCmsServerBase<BankPaymentTransactionModel, number>
    {

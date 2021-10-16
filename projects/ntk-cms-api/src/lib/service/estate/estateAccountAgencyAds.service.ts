@@ -10,9 +10,7 @@ import { map, retry } from 'rxjs/operators';
 import { EstateModuleSaleAccountAgencyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsCalculateDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EstateAccountAgencyAdsService extends ApiCmsServerBase<EstateAccountAgencyAdsModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'EstateAccountAgencyAds';

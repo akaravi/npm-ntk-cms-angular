@@ -11,9 +11,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { map } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreConfigurationService extends
   ApiServerConfigSiteBase<CoreModuleConfigAdminMainValuesModel,
   CoreModuleConfigSiteValuesModel,

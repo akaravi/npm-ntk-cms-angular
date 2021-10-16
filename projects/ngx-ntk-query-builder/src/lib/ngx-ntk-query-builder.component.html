@@ -10,7 +10,6 @@
         <label (click)="changeCondition(orOption.value)" class="ngx-control ngx-switch-label">{{'querybuilder.Or' | translate}}</label>
       </div>
     </div>
-
     <div class="ngx-actions">
       <button type="button" class="ngx-control ngx-btn ngx-btn-add" (click)="addRule()">
         {{'querybuilder.AddRule' | translate}}
@@ -25,18 +24,13 @@
       </ng-container>
     </div>
   </div>
-
-
   <div class="ngx-conditions">
-
     <ul *ngIf="data.rules && data.rules.length > 0">
       <li *ngFor="let child of data.rules; let i = index" class="ngx-connector">
         <!-- rule -->
         <ng-container *ngIf="!child.rules">
-
           <div class="ngx-rule-wrap">
             <div class="ngx-rule">
-
               <div class="ngx-field">
                 <select class="ngx-control ngx-select" [(ngModel)]="child.field" (change)="changeField(child, i)" [disabled]="disabled">
                   <option *ngFor="let field of getFields()" [value]="field.value">
@@ -44,17 +38,14 @@
                   </option>
                 </select>
               </div>
-
               <div class="ngx-operator">
                 <select class="ngx-control ngx-select" [(ngModel)]="child.operator" [disabled]="disabled">
                   <option *ngFor="let operator of operatorsService.getOperators(child, fieldMap)" [value]="operator">
-                    {{operatorsService.getOperatorDisplayName(operator)}}
+                    {{this.translate.instant(operatorsService.getOperatorDisplayName(operator)) }}
                   </option>
                 </select>
               </div>
-
               <div class="ngx-value" [ngSwitch]="getInputType(child)">
-
                 <!-- STING -->
                 <ng-container *ngSwitchCase="operatorsService.INPUT_TYPE_STRING">
                   <input class="ngx-control ngx-input" type="text" [(ngModel)]="child.value" [disabled]="disabled">
@@ -111,9 +102,7 @@
                     </option>
                   </select>
                 </ng-container>
-
               </div>
-
             </div>
             <div class="ngx-rule-controls">
               <button type="button" class="ngx-control ngx-btn ngx-btn-remove" (click)="removeRule(i)">
@@ -121,7 +110,6 @@
               </button>
             </div>
           </div>
-
         </ng-container>
 
         <!-- rule set -->
@@ -129,10 +117,8 @@
           <ngx-ntk-query-builder [data]="child" [fieldMap]="fieldMap" [parent]="data" [disabled]="disabled" [index]="i">
           </ngx-ntk-query-builder>
         </ng-container>
-
       </li>
     </ul>
-
   </div>
 </div>
 

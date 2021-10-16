@@ -5,6 +5,25 @@
     "AddRule": "Add Rule",
     "AddGroup": "Add Group",
     "Remove":"Remove",
-    "Yes":"Yes"
+    "Yes":"Yes",
+    "equal": "Equals",
+    "not_equal": "Does not equal",
+    "contains": "Contains",
+    "not_contains": "Does not contain",
+    "begins_with": "Begins with",
+    "not_begins_with": "Does not begins with",
+    "ends_with": "Ends with",
+    "not_ends_with": "Does not end with",
+    "greater": "Greater than",
+    "greater_or_equal": "Greater than or equal",
+    "less": "Less than",
+    "less_or_equal": "Less than or equal",
+    "is_null": "Is null",
+    "is_not_null": "Is not null",
+    "is_empty": "Is empty",
+    "is_not_empty": "Is not empty",
+    "in": "In",
+    "not_in": "Not in"
+
   }
 }

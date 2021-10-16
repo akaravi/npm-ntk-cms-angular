@@ -9,9 +9,7 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainMenu';

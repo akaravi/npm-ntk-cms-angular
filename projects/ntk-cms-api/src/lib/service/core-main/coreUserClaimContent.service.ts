@@ -8,9 +8,7 @@ import { CoreUserClaimCheckModel } from '../../models/dto/core/coreUserClaimChec
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreUserClaimContent';
   }

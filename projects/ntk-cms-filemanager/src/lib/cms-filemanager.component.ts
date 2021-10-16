@@ -84,15 +84,17 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   openFilemanagerButtonLabel: string;
-  private privateLanguage = 'en';
+  // private privateLanguage = 'en';
   @Input() set language(value: string) {
-    this.privateLanguage = value;
-    this.translate.use(this.language);
+    // this.privateLanguage = value;
+    if (value && value.length > 0) {
+      this.translate.use(value);
+    }
   }
 
-  get language(): string {
-    return this.privateLanguage;
-  }
+  // get language(): string {
+  //   return this.privateLanguage;
+  // }
 
   selectedNode: NodeInterface;
   sideMenuClosed = true;
@@ -226,7 +228,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       case 'createFile':
         if (this.openDirectUploadView && !this.openDirectUploadSave) {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
-          const selectedModel = <NodeInterface> {
+          const selectedModel = <NodeInterface>{
             id: event.payload.uploadFileGUID,
             name: event.payload.uploadFileGUID,
             isFolder: false
@@ -241,7 +243,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         };
         const successMethod = (next: any) => {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
-          const selectedModel = <NodeInterface> {
+          const selectedModel = <NodeInterface>{
             id: next.Item.Id,
             name: next.Item.FileName,
             downloadLinksrc: next.Item.DownloadLinksrc,
@@ -302,7 +304,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   // todo stay DRY!
-  highlightSelected(node: NodeInterface): void{
+  highlightSelected(node: NodeInterface): void {
     let pathToNode = node.pathToNode;
 
     if (pathToNode.length === 0) {
@@ -375,20 +377,20 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     this.fmShowHide(status);
   }
 
-  backdropClicked(): void{
+  backdropClicked(): void {
     // todo get rid of this ugly workaround
     // todo fire userCanceledLoading event
     this.store.dispatch({ type: SET_LOADING_STATE, payload: false });
   }
 
-  handleUploadDialog(event: any): void{
+  handleUploadDialog(event: any): void {
     this.newFileDialog = event;
   }
   handleNewFolderDialog(event: any): void {
     this.newFolderDialog = event;
   }
 
-  confirmSelection(): void{
+  confirmSelection(): void {
     this.fmShowHide(false);
     this.itemSelected.emit(this.selectedNode);
   }

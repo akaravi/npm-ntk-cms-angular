@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ChartContentTagService extends ApiCmsServerBase<ChartContentTagModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ChartContentTag';

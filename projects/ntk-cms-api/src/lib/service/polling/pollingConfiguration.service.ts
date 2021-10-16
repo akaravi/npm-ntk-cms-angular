@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/polling/pollingConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PollingConfigurationService extends
   ApiServerConfigSiteBase<PollingModuleConfigAdminMainValuesModel,
   PollingModuleConfigSiteValuesModel,

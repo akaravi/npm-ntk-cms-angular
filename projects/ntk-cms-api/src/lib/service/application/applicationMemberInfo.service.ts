@@ -3,9 +3,7 @@ import { ApplicationMemberInfoModel } from '../../models/entity/application/appl
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApplicationMemberInfoService extends ApiCmsServerBase<ApplicationMemberInfoModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationMemberInfo';

@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePropertyDetailGroupModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'EstatePropertyDetailGroup';

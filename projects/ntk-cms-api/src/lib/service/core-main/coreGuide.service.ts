@@ -9,9 +9,7 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreGuide';

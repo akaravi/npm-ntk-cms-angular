@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/file/fileConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class FileConfigurationService extends
   ApiServerConfigSiteBase<ModuleConfigAdminMainValuesModel,
   ModuleConfigSiteValuesModel,

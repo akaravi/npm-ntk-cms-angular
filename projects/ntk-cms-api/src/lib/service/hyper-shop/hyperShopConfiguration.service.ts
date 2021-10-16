@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/hyper-shop/hyperShopConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HyperShopConfigurationService extends
   ApiServerConfigSiteBase<HyperShopModuleConfigAdminMainValuesModel,
   HyperShopModuleConfigSiteValuesModel,

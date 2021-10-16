@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
+
 export function CreateTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, '/assets/i18n/querybuilder/', '.json');
 }

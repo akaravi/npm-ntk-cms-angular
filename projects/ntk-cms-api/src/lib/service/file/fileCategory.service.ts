@@ -10,9 +10,7 @@ import { FileCompressDtoModel } from '../../models/dto/file/fileCompressDtoModel
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'FileCategory';

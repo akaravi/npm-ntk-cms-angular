@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { WebDesignerMainPageTemplateSiteCategoryModel }
   from '../../models/entity/web-designer/webDesignerMainPageTemplateSiteCategoryModel';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class WebDesignerMainPageTemplateSiteCategoryService
   extends ApiCmsServerBase<WebDesignerMainPageTemplateSiteCategoryModel, string>  {
   getModuleCotrolerUrl(): string {

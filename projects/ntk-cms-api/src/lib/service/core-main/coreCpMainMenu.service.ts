@@ -10,9 +10,7 @@ import { Injectable } from '@angular/core';
 import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreCpMainMenu';

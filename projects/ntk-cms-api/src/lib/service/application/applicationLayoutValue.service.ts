@@ -3,9 +3,7 @@ import { ApplicationLayoutValueModel } from '../../models/entity/application/app
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApplicationLayoutValueService extends ApiCmsServerBase<ApplicationLayoutValueModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationLayoutValue';

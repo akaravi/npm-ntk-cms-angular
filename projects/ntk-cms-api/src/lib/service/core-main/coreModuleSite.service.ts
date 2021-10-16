@@ -7,9 +7,7 @@ import { CoreModuleSiteModel } from '../../models/entity/core-main/coreModuleSit
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreModuleSite';

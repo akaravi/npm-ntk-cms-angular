@@ -7,9 +7,7 @@ import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ChartContentSimilarService extends ApiCmsServerBase<ChartContentSimilarModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ChartContentSimilar';

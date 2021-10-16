@@ -2,6 +2,7 @@ import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { Field, QueryBuilderFieldMap, Rule, RuleSet, QueryBuilderSettings } from './interfaces/ngx-ntk-query-builder.interfaces';
 import { OperatorsService } from './services/operators.service';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-ntk-query-builder',
@@ -22,10 +23,23 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
   @Input() data: RuleSet = this.getEmptyRuleSetData();
   @Input() parent: RuleSet;
   @Input() index: number;
-
+  // private privateLanguage = 'en';
+  @Input() set language(value: string) {
+    // this.privateLanguage = value;
+    if (value && value.length > 0) {
+      this.translate.use(value);
+    }
+  }
+  // get language(): string {
+  //   return this.privateLanguage;
+  // }
   constructor(
+    public translate: TranslateService,
     public operatorsService: OperatorsService
-  ) { }
+  ) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
 
   ngOnInit(): void {
     if (typeof this.fieldMap !== 'object') {

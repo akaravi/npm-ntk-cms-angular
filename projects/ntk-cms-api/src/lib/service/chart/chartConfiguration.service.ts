@@ -7,9 +7,7 @@ import {
 } from '../../models/entity/chart/chartConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ChartConfigurationService extends
   ApiServerConfigSiteBase<ChartModuleConfigAdminMainValuesModel,
   ChartModuleConfigSiteValuesModel,

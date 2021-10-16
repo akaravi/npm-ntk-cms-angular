@@ -8,9 +8,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {  getModuleCotrolerUrl(): string {
     return 'CoreModuleTagCategory';
   }

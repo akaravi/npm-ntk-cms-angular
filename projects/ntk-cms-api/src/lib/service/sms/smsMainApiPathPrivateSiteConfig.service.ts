@@ -7,9 +7,7 @@ import { map, retry } from 'rxjs/operators';
 import { SmsMainApiPathPrivateSiteConfigAliasJsonModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigAliasJsonModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsMainApiPathPrivateSiteConfigService extends ApiCmsServerBase<
   SmsMainApiPathPrivateSiteConfigModel,
   number

@@ -7,9 +7,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationLogNotification';

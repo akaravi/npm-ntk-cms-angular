@@ -3,9 +3,7 @@ import { SmsLogInBoxModel } from '../../models/entity/sms/smsLogInBoxModel';
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SmsLogInBoxService extends ApiCmsServerBase<SmsLogInBoxModel, number> {
   getModuleCotrolerUrl(): string {
     return 'SmsLogInBox';

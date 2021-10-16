@@ -12,9 +12,7 @@ import { EstateModuleSalePropertyAdsCalculateDtoModel } from '../../models/dto/e
 import { EstateModuleSalePropertyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsPaymentDtoModel';
 import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropertyAdsModel';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'EstateAdsType';

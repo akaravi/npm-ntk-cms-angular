@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BiographyShareServerCategoryService extends ApiCmsServerBase<any, number>  {
   getModuleCotrolerUrl(): string {
     return 'BiographyShareServerCategory';

@@ -6,9 +6,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApplicationThemeConfigService extends ApiCmsServerBase<ApplicationThemeConfigModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationThemeConfig';

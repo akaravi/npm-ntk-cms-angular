@@ -9,9 +9,7 @@ import { EnumManageUserAccessDataTypes } from '../../models/enums/enumManageUser
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApiServerBase {
   constructor(@Inject(HttpClient) public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
     this.childConstructor();

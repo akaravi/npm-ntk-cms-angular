@@ -8,9 +8,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'EstateProperty';

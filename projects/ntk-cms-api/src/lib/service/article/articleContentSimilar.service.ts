@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ArticleContentSimilarService extends ApiCmsServerBase<ArticleContentSimilarModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ArticleContentSimilar';

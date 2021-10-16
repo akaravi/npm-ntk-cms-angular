@@ -3,9 +3,7 @@ import { ApplicationIntroModel } from '../../models/entity/application/applicati
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApplicationIntroService extends ApiCmsServerBase<ApplicationIntroModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'ApplicationIntro';

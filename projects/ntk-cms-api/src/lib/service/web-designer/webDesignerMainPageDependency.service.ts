@@ -7,9 +7,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDesignerMainPageDependencyModel, string>  {
   getModuleCotrolerUrl(): string {
     return 'WebDesignerMainPageDependency';

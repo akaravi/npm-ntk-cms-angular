@@ -7,9 +7,7 @@ import { map, retry } from 'rxjs/operators';
 import { BankPaymentPublicConfigAliasJsonModel } from '../../models/entity/bank-payment/bankPaymentPublicConfigAliasJsonModel';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BankPaymentPublicConfigService
   extends ApiCmsServerBase<BankPaymentPublicConfigModel, number>
 {

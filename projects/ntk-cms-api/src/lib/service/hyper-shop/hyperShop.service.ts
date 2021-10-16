@@ -7,9 +7,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ApiServerBase } from '../base/apiServerBase.service';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HyperShopService extends ApiServerBase {
   getModuleCotrolerUrl(): string {
     return 'HyperShop';
