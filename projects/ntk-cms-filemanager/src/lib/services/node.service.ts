@@ -34,7 +34,7 @@ export class NodeService {
     /** GUID */
     this.guid = this.newGuid();
     /** GUID */
-    console.log('NodeService Constructor:', this.guid);
+    // console.log('NodeService Constructor:', this.guid);
   }
   /** GUID */
   private guid = '';
