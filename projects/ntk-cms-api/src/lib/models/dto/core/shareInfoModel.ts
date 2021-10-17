@@ -1,5 +1,7 @@
 export class ShareInfoModel {
-  urlResellerUser: string;
-  urlResellerSite: string;
-  urlResellerSiteCategory: string;
+  SiteTitle: string;
+  UserTitle: string;
+  UrlResellerUser: string;
+  UrlResellerSite: string;
+  UrlResellerSiteCategory: string;
 }
