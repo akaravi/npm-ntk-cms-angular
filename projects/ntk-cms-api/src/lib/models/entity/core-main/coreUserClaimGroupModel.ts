@@ -8,6 +8,8 @@ export class CoreUserClaimGroupModel extends BaseEntity<number> {
   LinkModuleId?: number;
   LinkSiteCategoryId?: number;
   LinkApplicationId?: number;
+  LinkApplicationSourceId?: number;
+  LinkUserGroupId?: number;
   ActionType: EnumUserClaimGroupActionType;
   UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
 }

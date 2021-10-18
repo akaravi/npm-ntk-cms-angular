@@ -14,4 +14,6 @@ export class CoreModuleModel extends BaseEntity<number>{
   CmsModuleProcess?: any;
   CmsSiteCategoryCmsModule?: any;
   RuleHtmlBody: string;
+  LinkMainImageId: number;
+  LinkMainImageIdSrc: string;
 }
