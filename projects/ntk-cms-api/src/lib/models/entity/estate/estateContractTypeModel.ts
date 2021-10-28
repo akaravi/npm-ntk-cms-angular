@@ -6,8 +6,12 @@ export class EstateContractTypeModel extends BaseModuleEntity<string> {
   HasSalePrice: boolean;
   HasRentPrice: boolean;
   HasDepositPrice: boolean;
-  UnitSalePrice: string;
 
+  TitleSalePrice: string;
+  TitleRentPrice: string;
+  TitleDepositPrice: string;
+
+  UnitSalePrice: string;
   UnitRentPrice: string;
   UnitDepositPrice: string;
 
