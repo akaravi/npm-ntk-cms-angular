@@ -8,7 +8,7 @@ import { SmsMainApiPathPublicConfigAliasJsonModel } from '../../models/entity/sm
 
 
 @Injectable()
-export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainApiPathPublicConfigModel, number> {
+export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainApiPathPublicConfigModel, string> {
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathPublicConfig';
   }

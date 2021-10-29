@@ -1,14 +1,16 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { SmsMainApiPathModel } from './smsMainApiPathModel';
 
-export class SmsMainApiPathPermissionModel extends BaseModuleEntity<number> {
+export class SmsMainApiPathPermissionModel extends BaseModuleEntity<string> {
   LinkSiteAndUserid: number;
-  LinkApiPathId?: any;
+  LinkApiPathId: string;
   HasAccess: boolean;
   HasInherits: boolean;
   FromDate: Date;
+  EndDate: Date;
   AccessStatus: number;
   Action: number;
   // tslint:disable-next-line: variable-name
-  virtual_ApiPath?: any;
-  ApiPath?: any;
+  virtual_ApiPath: SmsMainApiPathModel;
+  ApiPath: SmsMainApiPathModel;
 }

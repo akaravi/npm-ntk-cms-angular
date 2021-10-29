@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
 import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 
-export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<number> {
+export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<string> {
   MaxProcessFlowAmount: number;
   MinProcessFlowAmount: number;
   FixFeeProcessFlowAmount: number;

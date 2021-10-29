@@ -1,6 +1,10 @@
 import { BaseModuleEntity } from './../base/baseModuleEntity';
+import { SmsMainApiPathAndCustomerNumberModel } from './smsMainApiPathAndCustomerNumberModel';
+import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
+import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
+import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
 
-export class SmsMainApiPathModel extends BaseModuleEntity<number> {
+export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   Title: string;
   Description?: any;
   ApiDefaultNumber?: any;
@@ -29,10 +33,11 @@ export class SmsMainApiPathModel extends BaseModuleEntity<number> {
   ApiAbilityRegulatorDenayToSend?: any;
   ApiAbilityLengthMinToSend: number;
   ApiAbilityLengthMaxToSend: number;
-  ApiPathSuperSeders?: any;
-  ApiPathPermissions?: any;
-  ApiPathAndApiPathNumbers?: any;
-  ApiPathPriceServices?: any;
+  ApiPathSuperSeders: SmsMainApiPathSuperSederModel[];
+  ApiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
+  ApiPathPermissions: SmsMainApiPathPermissionModel[];
+  ApiPathAndApiPathNumbers: SmsMainApiPathAndCustomerNumberModel[];
+  ApiPathPriceServices: SmsMainApiPathPriceServiceModel[];
   ApiSendMessageIsOn: boolean;
   ApiSendMessageUrl?: any;
   ApiSendMessageUrlParameter?: any;

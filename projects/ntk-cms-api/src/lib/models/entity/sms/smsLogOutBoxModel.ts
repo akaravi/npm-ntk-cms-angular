@@ -1,9 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { SmsLogOutBoxDetailBulkModel } from './smsLogOutBoxDetailBulkModel';
+import { SmsLogOutBoxDetailModel } from './smsLogOutBoxDetailModel';
 
-export class SmsLogOutBoxModel extends BaseModuleEntity<number> {
+export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   RegisterDate: Date;
   SendDate: Date;
-  DefaultApiNumber?: any;
+  DefaultApiNumber?: string;
   Message?: any;
   Memo?: any;
   Flash: number;
@@ -12,6 +14,6 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<number> {
   IsAccepted: boolean;
   ReceiverNumberHidden: boolean;
   OutBoxType: number;
-  OutBoxDetails?: any;
-  OutBoxDetailBulks?: any;
+  OutBoxDetails?: SmsLogOutBoxDetailModel[];
+  OutBoxDetailBulks?: SmsLogOutBoxDetailBulkModel[];
 }

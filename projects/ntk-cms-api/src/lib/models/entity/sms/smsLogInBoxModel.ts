@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class SmsLogInBoxModel extends BaseModuleEntity<number> {
+export class SmsLogInBoxModel extends BaseModuleEntity<string> {
   ReceiverDate: Date;
   AnalysisDate: Date;
   SenderNumber?: any;

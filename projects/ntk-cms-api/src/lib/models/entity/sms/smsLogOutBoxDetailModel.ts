@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class SmsLogOutBoxDetailModel extends BaseModuleEntity<number> {
+export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   RecordDetailStatus: number;
   LinkOutBoxId?: any;
   ReceiverNumber?: any;
@@ -13,7 +13,7 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<number> {
   GetApiOnDeliveryInfo?: any;
   UserDelete?: any;
   AdminuserDelete?: any;
-  ApiNumber: number;
+  ApiNumber: string;
   // tslint:disable-next-line: variable-name
   virtual_OutBox?: any;
   OutBox?: any;

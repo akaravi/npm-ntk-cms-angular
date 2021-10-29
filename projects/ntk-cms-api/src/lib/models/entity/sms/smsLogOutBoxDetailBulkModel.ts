@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class SmsLogOutBoxDetailBulkModel extends BaseModuleEntity<number> {
+export class SmsLogOutBoxDetailBulkModel extends BaseModuleEntity<string> {
   LockDate: Date;
   ProcessType?: any;
   Processid: number;
