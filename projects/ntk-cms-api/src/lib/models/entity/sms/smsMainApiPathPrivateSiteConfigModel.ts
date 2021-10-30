@@ -7,7 +7,7 @@ export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<strin
   MinProcessFlowAmount: number;
   FixFeeProcessFlowAmount: number;
   PercentFeeProcessFlowAmount: number;
-  LinkPublicConfigId: number;
+  LinkPublicConfigId: string;
   PrivateConfigJsonValues: string;
   Memo: string;
   // tslint:disable-next-line: variable-name

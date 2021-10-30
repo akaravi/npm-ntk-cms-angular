@@ -5,7 +5,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class SmsMainApiPathProcessFlowModel extends BaseModuleEntity<string> {
   ProcessFlowStatus: EnumProcessFlowRecordStatus;
   SmsStatus: EnumProcessFlowSmsStatus;
-  LinkPrivateSiteConfigId: number;
+  LinkPrivateSiteConfigId: string;
   LinkUserId?: number;
   Amount: number;
   AmountPure: number;

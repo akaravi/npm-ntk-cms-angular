@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from './../base/baseModuleEntity';
+import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
 import { SmsMainApiPathAndCustomerNumberModel } from './smsMainApiPathAndCustomerNumberModel';
 import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
 import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
@@ -19,10 +20,10 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ServerAbilityMaxPack: number;
   ApiMinPathNeedToCheckIsOn: boolean;
   ApiMinPathNeedToCheck: number;
-  LinkApiPathCompanyid: number;
+  LinkApiPathCompanyId: string;
   // tslint:disable-next-line: variable-name
-  virtual_ApiPathCompany?: any;
-  ApiPathCompany?: any;
+  virtual_ApiPathCompany: SmsMainApiPathCompanyModel;
+  ApiPathCompany: SmsMainApiPathCompanyModel;
   ApiPathCompanyCounterIsOn: boolean;
   ApiAbilitySendUnicodeMessage: boolean;
   ApiAbilitySendNormalMessage: boolean;

@@ -6,7 +6,7 @@ export class SmsMainApiPathSuperSederModel extends BaseModuleEntity<string> {
   LinkApiPathId: string;
   LinkApiPathSuperSederId: string;
   FromDate: Date;
-  EndDate: Date;
+  ExpireDate: Date;
   // tslint:disable-next-line: variable-name
   virtual_ApiPath: SmsMainApiPathModel;
   ApiPath: SmsMainApiPathModel;

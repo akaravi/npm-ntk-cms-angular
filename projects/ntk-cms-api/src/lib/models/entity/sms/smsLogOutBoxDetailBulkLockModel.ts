@@ -7,7 +7,7 @@ export class SmsLogOutBoxDetailBulkLockModel extends BaseModuleEntity<string> {
   DefaultApiNumber?: string;
   ProcessId: number;
   ProcessIdSecond?: number;
-  LinkOutBoxDetailId?: number;
+  LinkOutBoxDetailId: string;
   OutBoxDetailBulk: SmsLogOutBoxDetailBulkModel;
   // tslint:disable-next-line: variable-name
   virtual_OutBoxDetailBulk: SmsLogOutBoxDetailBulkModel;
