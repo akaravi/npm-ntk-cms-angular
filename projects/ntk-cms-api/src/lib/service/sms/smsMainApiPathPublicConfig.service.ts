@@ -12,7 +12,7 @@ export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainA
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPathPublicConfig';
   }
-  ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigAliasJsonModel>> {
+  ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigAliasJsonModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
         headers: this.getHeaders(),

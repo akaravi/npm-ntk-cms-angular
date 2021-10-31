@@ -8,4 +8,6 @@ export class SmsMainApiPathPublicConfigModel extends BaseModuleEntity<string> {
   PublicConfigJsonValues: string;
   Memo: string;
   PrivateSiteConfigs: SmsMainApiPathPrivateSiteConfigModel[];
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

@@ -3,6 +3,8 @@ import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel
 import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 
 export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<string> {
+  Title: string;
+  IsPublic: boolean;
   MaxProcessFlowAmount: number;
   MinProcessFlowAmount: number;
   FixFeeProcessFlowAmount: number;
@@ -13,4 +15,6 @@ export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<strin
   // tslint:disable-next-line: variable-name
   virtual_PublicConfig: SmsMainApiPathPublicConfigModel;
   ProcessFlow: SmsMainApiPathProcessFlowModel[];
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }

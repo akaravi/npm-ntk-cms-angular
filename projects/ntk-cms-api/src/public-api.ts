@@ -62,6 +62,7 @@ export * from './lib/models/dto/bankPayment/_export';
 // sms
 export * from './lib/models/entity/sms/_export';
 export * from './lib/service/sms/_export';
+export * from './lib/models/dto/sms/_export';
 // sms
 
 // aplication
