@@ -25,4 +25,17 @@ export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainA
         }),
       );
   }
+  ServiceAutoAdd(): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

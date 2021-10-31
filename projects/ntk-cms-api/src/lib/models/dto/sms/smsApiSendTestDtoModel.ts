@@ -1,5 +1,5 @@
 
 export class SmsApiSendTestDtoModel {
-  dateTime: Date;
-  info: Map<string, boolean>;
+  LinkPrivateConfigId: string;
+  
 }

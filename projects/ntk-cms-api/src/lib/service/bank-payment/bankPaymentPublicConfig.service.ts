@@ -27,7 +27,7 @@ export class BankPaymentPublicConfigService
         }),
       );
   }
-  ServiceAutoAdd(id: number): Observable<ErrorExceptionResult<BankPaymentPublicConfigModel>> {
+  ServiceAutoAdd(): Observable<ErrorExceptionResult<BankPaymentPublicConfigModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
