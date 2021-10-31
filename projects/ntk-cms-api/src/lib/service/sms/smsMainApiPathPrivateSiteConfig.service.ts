@@ -1,50 +1,50 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { Injectable } from '@angular/core';
-import { SmsMainApiPathPrivateSiteConfigModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { Observable } from 'rxjs';
-import { map, retry } from 'rxjs/operators';
-import { SmsMainApiPathPrivateSiteConfigAliasJsonModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigAliasJsonModel';
-import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
-import { SmsApiSendTestDtoModel } from '../../models/dto/sms/smsApiSendTestDtoModel';
+// import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+// import { Injectable } from '@angular/core';
+// import { SmsMainApiPathPrivateSiteConfigModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigModel';
+// import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+// import { Observable } from 'rxjs';
+// import { map, retry } from 'rxjs/operators';
+// import { SmsMainApiPathPrivateSiteConfigAliasJsonModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigAliasJsonModel';
+// import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
+// import { SmsApiSendTestDtoModel } from '../../models/dto/sms/smsApiSendTestDtoModel';
 
 
-@Injectable()
-export class SmsMainApiPathPrivateSiteConfigService extends ApiCmsServerBase<
-  SmsMainApiPathPrivateSiteConfigModel,
-  string
-> {
-  getModuleCotrolerUrl(): string {
-    return 'SmsMainApiPathPrivateSiteConfig';
-  }
-  ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPrivateSiteConfigAliasJsonModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceTestSend(model: SmsApiSendTestDtoModel):  Observable<ErrorExceptionResult<SmsApiSendResultModel>> {
-   if (model == null) {
-     model = new SmsApiSendTestDtoModel();
-   }
+// @Injectable()
+// export class SmsMainApiPathPrivateSiteConfigService extends ApiCmsServerBase<
+//   SmsMainApiPathPrivateSiteConfigModel,
+//   string
+// > {
+//   getModuleCotrolerUrl(): string {
+//     return 'SmsMainApiPathPrivateSiteConfig';
+//   }
+//   ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPrivateSiteConfigAliasJsonModel>> {
+//     return this.http
+//       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+//         headers: this.getHeaders(),
+//       })
+//       .pipe(
+//         retry(this.configApiRetry),
+//         // catchError(this.handleError)
+//         map((ret: any) => {
+//           return this.errorExceptionResultCheck(ret);
+//         }),
+//       );
+//   }
+//   ServiceTestSend(model: SmsApiSendTestDtoModel):  Observable<ErrorExceptionResult<SmsApiSendResultModel>> {
+//    if (model == null) {
+//      model = new SmsApiSendTestDtoModel();
+//    }
 
-   return this.http
-     .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TestSend', model, {
-       headers: this.getHeaders(),
-     })
-     .pipe(
-       retry(this.configApiRetry),
-       // catchError(this.handleError)
-       map((ret: any) => {
-         return this.errorExceptionResultCheck(ret);
-       }),
-     );
- }
-}
+//    return this.http
+//      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TestSend', model, {
+//        headers: this.getHeaders(),
+//      })
+//      .pipe(
+//        retry(this.configApiRetry),
+//        // catchError(this.handleError)
+//        map((ret: any) => {
+//          return this.errorExceptionResultCheck(ret);
+//        }),
+//      );
+//  }
+// }

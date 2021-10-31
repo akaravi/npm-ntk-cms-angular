@@ -3,6 +3,8 @@ import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
 import { SmsMainApiPathAndCustomerNumberModel } from './smsMainApiPathAndCustomerNumberModel';
 import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
 import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
+import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
+import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
 
 export class SmsMainApiPathModel extends BaseModuleEntity<string> {
@@ -72,4 +74,19 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ErrorTextToStandByExit: number;
   ErrorTextToDisableLastGet?: any;
   ErrorTextToDisableLastGetDate?: any;
+
+
+  IsPublic: boolean;
+  MaxProcessFlowAmount: number;
+  MinProcessFlowAmount: number;
+  FixFeeProcessFlowAmount: number;
+  PercentFeeProcessFlowAmount: number;
+  LinkPublicConfigId: string;
+  PrivateConfigJsonValues: string;
+  Memo: string;
+  // tslint:disable-next-line: variable-name
+  virtual_PublicConfig: SmsMainApiPathPublicConfigModel;
+  ProcessFlow: SmsMainApiPathProcessFlowModel[];
+  LinkMainImageId?: number;
+  LinkMainImageIdSrc: string;
 }
