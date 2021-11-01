@@ -43,7 +43,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   ChildernCreateds: CoreSiteModel[];
   Devices: CoreDeviceModel[];
 
-
+  LinkResellerSiteId?: number;
+  LinkResellerUserId?: number;
   /*
   AboutUs
     */

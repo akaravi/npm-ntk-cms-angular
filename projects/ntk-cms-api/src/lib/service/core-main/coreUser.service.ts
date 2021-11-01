@@ -1,5 +1,5 @@
 
-import {  Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { catchError, map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -7,15 +7,28 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 
 import { Injectable } from '@angular/core';
+import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
 
 
 @Injectable()
 export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
-  CurrentUserObs = this.CurrentUser.asObservable();  getModuleCotrolerUrl(): string {
+  CurrentUserObs = this.CurrentUser.asObservable(); getModuleCotrolerUrl(): string {
     return 'CoreUser';
   }
-
+  ServiceGetRessellerChart(linkUserId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRessellerChart/' + linkUserId, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   SetCurrentUser(model: CoreUserModel): any {
     if (model == null) {
       model = new CoreUserModel();

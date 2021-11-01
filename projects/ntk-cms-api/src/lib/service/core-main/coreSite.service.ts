@@ -9,6 +9,7 @@ import { DomainModel } from '../../models/dto/core/domainModel';
 import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { Injectable } from '@angular/core';
 import { ShareInfoModel } from '../../models/dto/core/shareInfoModel';
+import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
 
 
 @Injectable()
@@ -19,6 +20,19 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/WebScreenshot', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetRessellerChart(linkSiteId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRessellerChart/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(
