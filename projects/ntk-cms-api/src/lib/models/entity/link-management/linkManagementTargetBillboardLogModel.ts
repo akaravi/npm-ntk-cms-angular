@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
 
-export class LinkManagementTargetBillboardLogModel extends BaseModuleEntity<number> {
+export class LinkManagementTargetBillboardLogModel extends BaseModuleEntity<string> {
   ClickPrice: number;
   ViewPrice: number;
   DeviceId: string;
