@@ -8,7 +8,7 @@ export class LinkManagementTargetBillboardLogModel extends BaseModuleEntity<numb
   DeviceId: string;
   IpAddress: string;
   BrowserName: string;
-  VisitDate: Date;
+  VisitTimeInSecond: number;
   LinkManagementBillboardId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Billboard: LinkManagementBillboardModel;
