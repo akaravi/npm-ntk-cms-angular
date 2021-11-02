@@ -41,6 +41,8 @@ export * from './lib/models/dto/file/_export';
 export * from './lib/service/link-management/_export';
 export * from './lib/models/entity/link-management/_export';
 export * from './lib/models/dto/linkManagement/_export';
+export * from './lib/models/enums/linkManagement/_export';
+
 // linkManagement Service
 // news Service
 export * from './lib/service/news/_export';
