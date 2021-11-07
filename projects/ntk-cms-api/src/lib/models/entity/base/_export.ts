@@ -3,7 +3,7 @@ export * from './fieldInfo/dataFieldInfoModel';
 export * from './fieldInfo/fieldInfoModel';
 export * from './fieldInfo/fieldInputDataSourceModel';
 export * from './fieldInfo/getPropertiesInfoModel';
-export * from './fieldInfo/formBuilderFieldModel';
+// export * from './fieldInfo/formBuilderFieldModel';
 export * from './accessModel';
 export * from './baseEntity';
 export * from './baseModuleEntity';

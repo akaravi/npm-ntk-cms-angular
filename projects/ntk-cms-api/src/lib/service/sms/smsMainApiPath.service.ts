@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { SmsApiSendTestDtoModel } from '../../models/dto/sms/smsApiSendTestDtoModel';
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { map, retry } from 'rxjs/operators';
+import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
 
 
 @Injectable()
@@ -13,7 +14,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
   getModuleCotrolerUrl(): string {
     return 'SmsMainApiPath';
   }
-  ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathModel>> {
+  ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathAliasJsonModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
         headers: this.getHeaders(),
