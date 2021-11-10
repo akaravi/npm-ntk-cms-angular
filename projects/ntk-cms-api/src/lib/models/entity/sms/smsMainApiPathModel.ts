@@ -32,8 +32,8 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ApiAllowSuperSeder: boolean;
   ApiAbilityUseWebservice: boolean;
   ApiAbilityUseInside: boolean;
-  ApiAbilityRegulatorAllowToSend?: any;
-  ApiAbilityRegulatorDenayToSend?: any;
+  ApiAbilityRegulatorAllowToSend: string;
+  ApiAbilityRegulatorDenayToSend: string;
   ApiAbilityLengthMinToSend: number;
   ApiAbilityLengthMaxToSend: number;
   ApiPathSuperSeders: SmsMainApiPathSuperSederModel[];
@@ -42,31 +42,20 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ApiPathAndApiPathNumbers: SmsMainApiPathAndCustomerNumberModel[];
   ApiPathPriceServices: SmsMainApiPathPriceServiceModel[];
   ApiSendMessageIsOn: boolean;
-  ApiSendMessageUrl?: any;
-  ApiSendMessageUrlParameter?: any;
-  ApiSendMessageMethod: number;
+
   ApiDeliveryIsOn: boolean;
-  ApiDeliveryUrl?: any;
-  ApiDeliveryUrlParameter?: any;
-  ApiDeliveryMethod: number;
+
   ApiCreditBackIsOn: boolean;
   ApiCreditBackCheckOnSend?: any;
   ApiCreditBackCheckOnDelivery?: any;
   ApiReciveIsOn: boolean;
-  ApiReciveUrl?: any;
-  ApiReciveUrlParameter?: any;
-  ApiReciveMethod: number;
+
   ApiInfoCreditCheckIsOn: boolean;
-  ApiInfoCreditCheckUrl?: any;
-  ApiInfoCreditCheckParameter?: any;
-  ApiInfoCreditCheckMethod: number;
+
   ApiPhoneBookIsOn: boolean;
-  ApiPhoneBookUrl?: any;
-  ApiPhoneBookMethod: number;
+
   ApiSendVoiceIsOn: boolean;
-  ApiSendVoiceUrl?: any;
-  ApiSendVoiceUrlParameter?: any;
-  ApiSendVoiceMethod: number;
+
   ErrorTextToStandBy?: any;
   ErrorTextToDisable?: any;
   ErrorTextToStandByLastGet?: any;

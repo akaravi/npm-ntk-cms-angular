@@ -1,11 +1,8 @@
 export * from './sms/_export';
 export * from './core/_export';
-export * from './enumApiDeliveryMethod';
-export * from './enumApiInfoCreditCheckMethod';
-export * from './enumApiPhoneBookMethod';
 export * from './enumApiReciveMethod';
-export * from './enumApiSendMessageMethod';
-export * from './enumApiSendVoiceMethod';
+
+
 export * from './enumClauseType';
 export * from './enumDeviceType';
 export * from './enumActionGoStep';

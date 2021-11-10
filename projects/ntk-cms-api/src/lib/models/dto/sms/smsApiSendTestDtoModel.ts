@@ -1,9 +1,10 @@
 
 export class SmsApiSendTestDtoModel {
-  LinkPrivateConfigId: string;
-  SendByQeue: boolean;
+  LinkApiPathId: string;
+  ApiNumber: number;
   FromNumber: string;
   ToNumber: string;
   Message: string;
-  ApiNumber: number;
+  SendByQeue: boolean;
+  IsFlash: boolean;
 }
