@@ -69,4 +69,6 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   LinkFileIdsSrc: string[];
   /** برای انتصا مسقیم فایل آپلود شده */
   UploadFileGUID: string[];
+  UrlViewContent: string;
+  UrlViewContentQRCodeBase64: string;
 }

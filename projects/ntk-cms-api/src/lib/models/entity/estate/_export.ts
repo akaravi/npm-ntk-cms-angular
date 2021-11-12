@@ -13,6 +13,7 @@ export * from './estatePropertyHistoryModel';
 export * from './estatePropertyAdsModel';
 export * from './estateAdsTypeModel';
 export * from './estatePropertyModel';
+export * from './estateBillboardModel';
 export * from './estatePropertyTypeModel';
 export * from './estatePropertyTypeUsageModel';
 export * from './estatePropertyTypeLanduseModel';
