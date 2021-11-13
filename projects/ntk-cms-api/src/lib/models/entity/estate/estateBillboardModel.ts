@@ -8,6 +8,7 @@ export class EstateBillboardModel extends BaseModuleEntity<string> {
   LinkLocationId?: number;
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
+  LinkContractTypeId: string;
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
   UrlViewContent: string;
