@@ -5,10 +5,10 @@ export class EstateBillboardModel extends BaseModuleEntity<string> {
   SpeedView: number;
   ReloadViewPerMin: number;
   LinkPropertyIds: string[];
-  LinkLocationId?: number;
-  LinkPropertyTypeLanduseId: string;
-  LinkPropertyTypeUsageId: string;
-  LinkContractTypeId: string;
+  LinkLocationIds: number[];
+  LinkPropertyTypeLanduseIds: string[];
+  LinkPropertyTypeUsageIds: string[];
+  LinkContractTypeIds: string[];
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
   UrlViewContent: string;
