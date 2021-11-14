@@ -59,15 +59,34 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithBillbordId(billbordId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithBillboardId(BillboardId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new FilterModel();
     }
-    if (!billbordId || billbordId.length === 0) {
-      billbordId = '00';
+    if (!BillboardId || BillboardId.length === 0) {
+      BillboardId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithBillbordId/' + billbordId, model, {
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithBillboardId/' + BillboardId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithCustomerOrderId(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    if (!CustomerOrderId || CustomerOrderId.length === 0) {
+      CustomerOrderId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithCustomerOrderId/' + CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

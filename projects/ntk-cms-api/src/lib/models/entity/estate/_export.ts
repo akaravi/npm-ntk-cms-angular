@@ -14,6 +14,7 @@ export * from './estatePropertyAdsModel';
 export * from './estateAdsTypeModel';
 export * from './estatePropertyModel';
 export * from './estateBillboardModel';
+export * from './estateCustomerOrderModel';
 export * from './estatePropertyTypeModel';
 export * from './estatePropertyTypeUsageModel';
 export * from './estatePropertyTypeLanduseModel';
