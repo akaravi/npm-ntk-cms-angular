@@ -4,7 +4,7 @@ import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel
 export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   Title: string;
   Description: string;
-  LinkCmsUserId?: number;
+  LinkEstateUserId: string;
   AreaAddress: string;
   IncludeAllSite: boolean;
   LinkPropertyIds: string[];
@@ -12,6 +12,9 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
   LinkContractTypeId: string;
+  CreatedYaer?: number;
+  Partition?: number;
+  Area?: number;
   SalePriceMin?: number;
   SalePriceMax?: number;
   RentPriceMin?: number;

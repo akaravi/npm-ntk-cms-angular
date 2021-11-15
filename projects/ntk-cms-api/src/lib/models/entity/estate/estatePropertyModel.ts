@@ -14,11 +14,12 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   CreatedYaer?: number;
   Partition: number;
   Area: number;
-  LinkEstateUserId?: number;
+  LinkCmsUserId?: number;
+  LinkEstateUserId: string;
 
   LinkLocationId: number;
   Description: string;
-  LinkCmsUserId: number;
+
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
   PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
