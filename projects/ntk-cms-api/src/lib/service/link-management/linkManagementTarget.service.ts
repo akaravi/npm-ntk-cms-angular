@@ -16,7 +16,23 @@ export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagement
   getModuleCotrolerUrl(): string {
     return 'LinkManagementTarget';
   }
+  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<LinkManagementTargetShortLinkGetResponceModel>> {
+    if (!key || key.length === 0) {
+      key = '---';
+    }
 
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneByKey/', key, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceShortLinkSet(
     model: LinkManagementTargetShortLinkSetDtoModel,
   ): Observable<ErrorExceptionResult<LinkManagementTargetShortLinkSetResponceModel>> {
