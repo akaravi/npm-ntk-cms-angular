@@ -83,6 +83,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AboutUsLinkTwitter: string;
   AboutUsLinkGooglePlus: string;
   AboutUsLinkInstagram: string;
+  AboutUsLinkWhatsapp: string;
   AboutUsLinklinkedin: string;
   AboutUsLinkYahoo: string;
   AboutUsLinkYoutube: string;

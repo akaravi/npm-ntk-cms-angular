@@ -34,4 +34,6 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   otherInfo8: string;
   otherInfo9: string;
   otherInfo10: string;
+  LinkLocationIdTitle: string;
+  LinkLocationIdParentTitle: string;
 }
