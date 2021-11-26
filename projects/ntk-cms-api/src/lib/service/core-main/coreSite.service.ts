@@ -17,6 +17,19 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreSite';
   }
+    ServiceOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<CoreSiteModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Optimaze/' + linkSiteId, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/WebScreenshot', model, {

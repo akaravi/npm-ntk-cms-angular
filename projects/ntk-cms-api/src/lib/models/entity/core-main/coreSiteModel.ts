@@ -6,6 +6,7 @@ import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
 import { CoreDeviceModel } from './coreDeviceModel';
 import { EnumSiteStatus } from '../../enums/enumSiteStatus';
 import { EnumLanguage } from '../../enums/enumLanguage';
+import { Data } from '@angular/router';
 
 export class CoreSiteModel extends BaseEntity<number> {
   CurrentSiteDomainUrl: string;
@@ -35,8 +36,9 @@ export class CoreSiteModel extends BaseEntity<number> {
   HasAccountingForm: boolean;
   ViewInCmsSiteList: boolean;
   AccountingFormNo: number;
-  AccountingFormCreatedDate?: string;
-  AccountingFormUpdatedDate?: string;
+  AccountingFormCreatedDate?: Date;
+  AccountingFormUpdatedDate?: Date;
+  AccountingMemo: string;
   SiteUsers: CoreSiteUserModel[];
   ModuleSites: CoreModuleSiteModel[];
   DomainAliases: CoreSiteDomainAliasModel[];
