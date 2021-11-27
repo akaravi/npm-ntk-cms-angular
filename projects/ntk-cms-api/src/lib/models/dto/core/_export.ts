@@ -22,3 +22,6 @@ export * from './coreModuleSaleHeaderCalculateDtoModel';
 export * from './coreModuleSaleHeaderPaymentDtoModel';
 export * from './shareInfoModel';
 export * from './ressellerChartModel';
+export * from './processModuleSiteDataInfoOutputModel';
+export * from './processModuleSiteDataRemoveOutputModel';
+export * from './processModuleSiteDataOptimazeOutputModel';

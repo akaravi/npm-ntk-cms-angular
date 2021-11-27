@@ -10,6 +10,8 @@ import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { Injectable } from '@angular/core';
 import { ShareInfoModel } from '../../models/dto/core/shareInfoModel';
 import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
+import { ProcessModuleSiteDataInfoOutputModel } from '../../models/dto/core/processModuleSiteDataInfoOutputModel';
+import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core/processModuleSiteDataOptimazeOutputModel';
 
 
 @Injectable()
@@ -17,9 +19,22 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   getModuleCotrolerUrl(): string {
     return 'CoreSite';
   }
-    ServiceOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<CoreSiteModel>> {
+    ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Optimaze/' + linkSiteId, {
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DataOptimaze/' + linkSiteId, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceModuleDataInfo(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataInfoOutputModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DataInfo/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(
