@@ -2,15 +2,25 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateContractTypeModel extends BaseModuleEntity<string> {
   Title: string;
-  SoldItTitle: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
+  TitleSoldIt: string;
+  TitleSoldItML: string;
+  TitleSoldItResourceLanguage: string;
   Description: string;
   HasSalePrice: boolean;
   HasRentPrice: boolean;
   HasDepositPrice: boolean;
 
   TitleSalePrice: string;
+  TitleSalePriceML: string;
+  TitleSalePriceResourceLanguage: string;
   TitleRentPrice: string;
+  TitleRentPriceML: string;
+  TitleRentPriceResourceLanguage: string;
   TitleDepositPrice: string;
+  TitleDepositPriceML: string;
+  TitleDepositPriceResourceLanguage: string;
 
   UnitSalePrice: string;
   UnitRentPrice: string;
