@@ -2,6 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateContractTypeModel extends BaseModuleEntity<string> {
   Title: string;
+  SoldItTitle: string;
   Description: string;
   HasSalePrice: boolean;
   HasRentPrice: boolean;
