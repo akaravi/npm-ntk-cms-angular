@@ -75,4 +75,5 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   UrlViewContentQRCodeBase64: string;
   LinkLocationIdTitle: string;
   LinkLocationIdParentTitle: string;
+  Favorited: boolean;
 }
