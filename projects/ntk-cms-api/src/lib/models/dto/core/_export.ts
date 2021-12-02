@@ -1,3 +1,4 @@
+export * from './ipModel';
 export * from './authUserSignInModel';
 export * from './authRenewTokenModel';
 export * from './authUserChangePasswordModel';

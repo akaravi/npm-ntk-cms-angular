@@ -9,6 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map } from 'rxjs/operators';
+import { IpModel } from '../../models/dto/core/ipModel';
 
 
 @Injectable()
@@ -32,5 +33,16 @@ export class CoreConfigurationService extends
         }),
       );
   }
-
+  ServiceIp(): Observable<IpModel> {
+    return this.http
+      .get(this.getBaseUrl()  + 'ip', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
 }
