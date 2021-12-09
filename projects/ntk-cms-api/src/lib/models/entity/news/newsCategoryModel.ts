@@ -5,6 +5,7 @@ import { NewsContentModel } from './newsContentModel';
 export class NewsCategoryModel extends BaseModuleEntity<number> {
   Title: string;
   TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   FontIcon: string;
   LinkParentIdNode: string;

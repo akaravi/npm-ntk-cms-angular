@@ -5,6 +5,7 @@ import { BlogContentModel } from './blogContentModel';
 export class BlogCategoryModel extends BaseModuleEntity<number> {
   Title: string;
   TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   FontIcon: string;
   LinkParentIdNode: string;

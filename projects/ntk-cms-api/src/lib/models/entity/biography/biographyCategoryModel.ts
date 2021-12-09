@@ -5,6 +5,7 @@ import { BiographyContentModel } from './biographyContentModel';
 export class BiographyCategoryModel extends BaseModuleEntity<number> {
   Title: string;
   TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   FontIcon: string;
   LinkParentIdNode: string;

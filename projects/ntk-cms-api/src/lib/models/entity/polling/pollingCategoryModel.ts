@@ -5,6 +5,7 @@ import { PollingContentModel } from './pollingContentModel';
 export class PollingCategoryModel extends BaseModuleEntity<number>  {
   Title: string;
   TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   FontIcon: string;
   LinkParentIdNode: string;

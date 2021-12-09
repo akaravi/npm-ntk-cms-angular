@@ -4,6 +4,9 @@ import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 
 export class EstatePropertyTypeLanduseModel extends BaseModuleEntity<string> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
+  ContentCount: number;
   TitleCreatedYaer: string;
   TitlePartition: string;
   Description: string;

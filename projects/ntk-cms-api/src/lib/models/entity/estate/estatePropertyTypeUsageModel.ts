@@ -4,6 +4,9 @@ import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 
 export class EstatePropertyTypeUsageModel extends BaseModuleEntity<string> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   IconFont: string;
   IconColor: string;

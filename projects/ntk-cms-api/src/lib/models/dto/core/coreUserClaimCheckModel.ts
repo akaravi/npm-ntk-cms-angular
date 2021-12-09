@@ -10,4 +10,8 @@ export class CoreUserClaimCheckModel {
   ApprovedResult: string;
   ApproveCheckDate?: Date;
   ApprovedExpireDate?: Date;
+  TypeLinkMainImageId:number;
+  TypeLinkMainImageIdSrc:string;
+  LinkFileContentId:number;
+  LinkFileContentIdSrc:string;
 }

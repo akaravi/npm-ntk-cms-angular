@@ -4,6 +4,7 @@ import { FileContentModel } from './fileContentModel';
 export class FileCategoryModel extends BaseModuleEntity<number> {
   Title: string;
   TitleResourceLanguage: string;
+  ContentCount: number;
   Description: string;
   FontIcon: string;
   LinkParentIdNode: string;
