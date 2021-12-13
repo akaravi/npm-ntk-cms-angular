@@ -42,4 +42,6 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   LinkFilePodcastIdSrc: string;
   LinkFileMovieIdSrc: string;
   LinkFileIdsSrc: string[];
+  UrlViewContent: string;
+  UrlViewContentQRCodeBase64: string;
 }

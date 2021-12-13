@@ -49,4 +49,6 @@ export class BiographyContentModel extends BaseModuleEntity<number> {
   LocationPeriodEnd: number;
   DatePeriodStart?: Date;
   DatePeriodEnd?: Date;
+  UrlViewContent: string;
+  UrlViewContentQRCodeBase64: string;
 }
