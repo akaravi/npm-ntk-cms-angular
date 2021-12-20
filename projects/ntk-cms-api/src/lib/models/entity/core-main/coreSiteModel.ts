@@ -83,6 +83,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   SeoDescription: string;
   SeoGoogleAnalytics: string;
   SeoGoogleHTMLtag: string;
+  SeoTwitterCardSite: string;
+  SeoTwitterCardCreator: string;
   /*
    SEO
    */
