@@ -5,6 +5,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleModel } from '../../models/entity/core-main/coreModuleModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 
 @Injectable()
@@ -12,7 +14,22 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
   getModuleCotrolerUrl(): string {
     return 'CoreModule';
   }
-
+  ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
+    if (!model) {
+      model = new EditStepDtoModel<number>();
+    }
+    return this.http
+      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
   ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {

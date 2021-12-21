@@ -73,6 +73,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   AboutUsLinkTelegram: string;
   AboutUsLinkPinterest: string;
   AboutUsLinkRss: string;
+  AboutUsLinkCompanyAuthorSite: string;
+  AboutUsLinkCompanyPublisherSite: string;
   /*
   AboutUs
     */

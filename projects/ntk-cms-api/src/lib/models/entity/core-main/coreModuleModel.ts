@@ -16,4 +16,5 @@ export class CoreModuleModel extends BaseEntity<number>{
   RuleHtmlBody: string;
   LinkMainImageId: number;
   LinkMainImageIdSrc: string;
+  ShowInOrder: number;
 }
