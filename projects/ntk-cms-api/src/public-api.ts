@@ -42,8 +42,22 @@ export * from './lib/service/link-management/_export';
 export * from './lib/models/entity/link-management/_export';
 export * from './lib/models/dto/linkManagement/_export';
 export * from './lib/models/enums/linkManagement/_export';
-
 // linkManagement Service
+
+// api-telegram Service
+export * from './lib/service/api-telegram/_export';
+export * from './lib/models/entity/api-telegram/_export';
+export * from './lib/models/dto/api-telegram/_export';
+export * from './lib/models/enums/api-telegram/_export';
+// api-telegram Service
+
+// universal-menu Service
+export * from './lib/service/universal-menu/_export';
+export * from './lib/models/entity/universal-menu/_export';
+// export * from './lib/models/dto/universal-menu/_export';
+export * from './lib/models/enums/universal-menu/_export';
+// universal-menu Service
+
 // news Service
 export * from './lib/service/news/_export';
 export * from './lib/models/entity/news/_export';

@@ -16,6 +16,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   LinkMainImageId?: number;
 
   Title: string;
+  Description: string;
   AppVersion: number;
   IsPublished: boolean;
   LinkSourceId: number;
