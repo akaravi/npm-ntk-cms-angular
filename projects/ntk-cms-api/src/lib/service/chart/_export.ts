@@ -10,7 +10,7 @@ export * from './chartContentParameterType.service';
 export * from './chartContentSimilar.service';
 export * from './chartContentTag.service';
 export * from './chartShareMainAdminSetting.service';
-export * from './chartShareReciverCategory.service';
+export * from './chartShareReceiverCategory.service';
 export * from './chartShareServerCategory.service';
 export * from './chartContentCategory.service';
 

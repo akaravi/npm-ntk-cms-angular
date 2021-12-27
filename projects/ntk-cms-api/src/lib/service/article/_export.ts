@@ -10,7 +10,7 @@ export * from './articleContentParameterType.service';
 export * from './articleContentSimilar.service';
 export * from './articleContentTag.service';
 export * from './articleShareMainAdminSetting.service';
-export * from './articleShareReciverCategory.service';
+export * from './articleShareReceiverCategory.service';
 export * from './articleShareServerCategory.service';
 export * from './articleContentCategory.service';
 

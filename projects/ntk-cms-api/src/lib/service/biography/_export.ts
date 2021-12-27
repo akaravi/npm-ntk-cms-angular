@@ -10,7 +10,7 @@ export * from './biographyContentParameterType.service';
 export * from './biographyContentSimilar.service';
 export * from './biographyContentTag.service';
 export * from './biographyShareMainAdminSetting.service';
-export * from './biographyShareReciverCategory.service';
+export * from './biographyShareReceiverCategory.service';
 export * from './biographyShareServerCategory.service';
 export * from './biographyContentCategory.service';
 

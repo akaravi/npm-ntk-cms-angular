@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class NewsShareReciverCategoryService extends ApiCmsServerBase<any, number>  {
+export class ChartShareReceiverCategoryService extends ApiCmsServerBase<any, number>  {
   getModuleCotrolerUrl(): string {
-    return 'NewsShareReciverCategory';
+    return 'ChartShareReceiverCategory';
   }
 }

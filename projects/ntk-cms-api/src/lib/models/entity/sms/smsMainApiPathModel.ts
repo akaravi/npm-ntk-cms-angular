@@ -12,6 +12,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   Description?: any;
   ApiDefaultNumber?: any;
   ApiIdentity: number;
+  ApiReceiveKey: string;
   Priority: number;
   PerriodStartWorkTime?: any;
   PerriodEndWorkTime?: any;
@@ -48,7 +49,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ApiCreditBackIsOn: boolean;
   ApiCreditBackCheckOnSend?: any;
   ApiCreditBackCheckOnDelivery?: any;
-  ApiReciveIsOn: boolean;
+  ApiReceiveIsOn: boolean;
 
   ApiInfoCreditCheckIsOn: boolean;
 

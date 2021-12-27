@@ -10,7 +10,7 @@ export * from './newsContentParameterType.service';
 export * from './newsContentSimilar.service';
 export * from './newsContentTag.service';
 export * from './newsShareMainAdminSetting.service';
-export * from './newsShareReciverCategory.service';
+export * from './newsShareReceiverCategory.service';
 export * from './newsShareServerCategory.service';
 export * from './newsContentCategory.service';
 

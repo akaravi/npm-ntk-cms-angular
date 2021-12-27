@@ -10,7 +10,7 @@ export * from './blogContentParameterType.service';
 export * from './blogContentSimilar.service';
 export * from './blogContentTag.service';
 export * from './blogShareMainAdminSetting.service';
-export * from './blogShareReciverCategory.service';
+export * from './blogShareReceiverCategory.service';
 export * from './blogShareServerCategory.service';
 export * from './blogContentCategory.service';
 
