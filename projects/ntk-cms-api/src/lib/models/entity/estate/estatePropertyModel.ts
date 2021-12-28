@@ -20,13 +20,13 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   ReviewDataAfterSoldIt?: Date;
   LinkLocationId: number;
   Description: string;
-
+  ViewConfigHiddenInList: boolean;
   LinkPropertyTypeLanduseId: string;
   LinkPropertyTypeUsageId: string;
   PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
   PropertyTypeUsage: EstatePropertyTypeUsageModel;
 
-
+  SharingKey: number;
   /// <summary>
   /// موقعیت جغرافیایی
   /// </summary>

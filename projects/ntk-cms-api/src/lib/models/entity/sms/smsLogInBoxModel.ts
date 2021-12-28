@@ -5,7 +5,8 @@ export class SmsLogInBoxModel extends BaseModuleEntity<string> {
   AnalysisDate: Date;
   SenderNumber?: any;
   ReceiverNumber?: any;
-  ApiNumber: number;
+  LinkPublicConfigId: string;
+  LinkPrivateConfigId: string;
   InBoxType?: any;
   Message?: any;
   IsAccepted: boolean;
