@@ -27,7 +27,9 @@ export class TokenInfoModel {
     SubDomain: string;
     Title: string;
     PhotoUrl: string;
+    Mobile: string;
     MobileConfirmed: boolean;
+    Email: string;
     EmailConfirmed: boolean;
     LinkMainImageIdSrc: string;
 }

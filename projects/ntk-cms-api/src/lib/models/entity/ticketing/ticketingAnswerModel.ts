@@ -7,7 +7,7 @@ import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingAnswerModel extends BaseModuleEntity<number> {
   LinkMemberUserId?: number;
-  LinkTicketId: number;
+  LinkTaskId: number;
   HtmlBody: string;
   // tslint:disable-next-line: variable-name
   virtual_Ticket: TicketingTaskModel;
