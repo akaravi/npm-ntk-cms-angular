@@ -5,8 +5,8 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Injectable } from '@angular/core';
 import { ApiTelegramBotConfigModel } from '../../models/entity/api-telegram/apiTelegramBotConfigModel';
 import { ApplicationSendMessageModel } from '../../models/dto/api-telegram/applicationSendMessageModel';
-import { ErrorExceptionResultBase } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
 import { ApiTelegramRenderInfoModel } from '../../models/dto/api-telegram/apiTelegramRenderInfoModel';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()

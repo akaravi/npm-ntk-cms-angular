@@ -6,13 +6,15 @@ export class ApiTelegramBotConfigModel extends BaseModuleEntity<number>{
   Title: string;
   Username: string;
   BotToken: string;
-  LinkUniversalMenuIdOnUndetectableKey?: number;
   SecurityKey: string;
   UrlWebhook: string;
   StatusWebhook?: boolean;
+  LinkUniversalMenuIdOnUndetectableKey?: number;
   LinkUniversalMenuId?: number;
   LinkQRCodeImageId?: number;
   StatisticsMemberCount?: number;
   LogInputs: ApiTelegramLogInputModel[];
   LogOutputs: ApiTelegramLogOutputModel[];
+  UrlViewContent: string;
+  UrlViewContentQRCodeBase64: string;
 }

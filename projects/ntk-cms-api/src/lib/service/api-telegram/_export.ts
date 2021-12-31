@@ -1,4 +1,5 @@
 export * from './apiTelegramConfiguration.service';
+export * from './apiTelegramBotConfig.service';
 export * from './apiTelegramEnum.service';
 export * from './apiTelegramUploadedFile.service';
 export * from './apiTelegramReceivedFile.service';
