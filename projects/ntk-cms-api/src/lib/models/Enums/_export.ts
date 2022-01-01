@@ -1,6 +1,7 @@
 export * from './sms/_export';
 export * from './core/_export';
 export * from './enumApiReceiveMethod';
+export * from './enumDayOfWeek';
 
 
 export * from './enumClauseType';

@@ -4,9 +4,10 @@ import { retry, catchError, map } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
 import { ApiTelegramBotConfigModel } from '../../models/entity/api-telegram/apiTelegramBotConfigModel';
-import { ApplicationSendMessageModel } from '../../models/dto/api-telegram/applicationSendMessageModel';
+
 import { ApiTelegramRenderInfoModel } from '../../models/dto/api-telegram/apiTelegramRenderInfoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { ApiTelegramSendMessageTodoModel } from '../../models/dto/api-telegram/apiTelegramSendMessageTodoModel';
 
 
 @Injectable()
@@ -15,7 +16,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
     return 'ApiTelegramBotConfig';
   }
 
-  ServiceSendMessage(model: ApplicationSendMessageModel): Observable<ErrorExceptionResultBase> {
+  ServiceSendMessage(model: ApiTelegramSendMessageTodoModel): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SendMessage', model, { headers: this.getHeaders(), },
