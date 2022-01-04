@@ -7,7 +7,6 @@ export class WebDesignerMainMenuModel  extends BaseModuleEntity<string>{
   TitleML: string;
   TitleResourceLanguage: string;
   Color: string;
-  TitleEn: string;
   Icon: string;
   RouteAddressLink: string;
   RouteAddressBlankPage: boolean;

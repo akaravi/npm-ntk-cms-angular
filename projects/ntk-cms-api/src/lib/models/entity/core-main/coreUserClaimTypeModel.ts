@@ -5,6 +5,8 @@ import { CoreUserClaimContentModel } from './coreUserClaimContentModel';
 
 export class CoreUserClaimTypeModel extends BaseEntity<number> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
   Description: string;
   DismissOnEdit: boolean;
   Kind: EnumUserClaimKinds;

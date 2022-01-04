@@ -4,6 +4,8 @@ import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 
 export class CoreUserClaimGroupModel extends BaseEntity<number> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
   Description: string;
   LinkModuleId?: number;
   LinkSiteCategoryId?: number;

@@ -4,6 +4,8 @@ import { CoreUserModel } from './coreUserModel';
 
 export class CoreUserClaimContentModel extends BaseEntity<number> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
   Description: string;
   LinkUserId: number;
   LinkSiteId?: number;

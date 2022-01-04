@@ -3,6 +3,8 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreLocationModel extends BaseEntity<number> {
   Title: string;
+  TitleML: string;
+  TitleResourceLanguage: string;
   LinkParentId?: number;
   LinkParentIdNode: string;
   GeoLocationLatitude: string;
