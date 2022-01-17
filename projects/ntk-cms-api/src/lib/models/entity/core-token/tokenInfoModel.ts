@@ -32,10 +32,5 @@ export class TokenInfoModel {
   Email: string;
   EmailConfirmed: boolean;
   LinkMainImageIdSrc: string;
-  get Direction(): string {
-    if (this.Language && this.Language.length > 0 && (this.Language.toLowerCase() == 'fa ' || this.Language.toLowerCase() == 'ar')) {
-      return 'rtl';
-    }
-    return 'ltr';
-  }
+  Direction: string ;
 }

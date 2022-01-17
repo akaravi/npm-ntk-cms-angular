@@ -47,6 +47,15 @@ export class CoreSiteModel extends BaseEntity<number> {
 
   LinkResellerSiteId?: number;
   LinkResellerUserId?: number;
+   /*
+  Pwa
+    */
+  PwaName: string;
+  PwaShortName: string;
+  PwaDescription: string;
+  PwaDisplay: string;
+  PwaIconSize190x192Id?: number;
+  PwaIconSize512x512Id?: number;
   /*
   AboutUs
     */
