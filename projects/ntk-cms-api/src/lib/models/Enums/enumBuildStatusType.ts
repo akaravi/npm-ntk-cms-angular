@@ -10,12 +10,9 @@ export enum EnumBuildStatusType {
   BuildMSMQRunNowBuildTempPathCreate = 9,
   BuildMSMQRunNowFiledownloaded = 10,
   BuildMSMQRunNowGitPull = 11,
-
   BuildMSMQRunNowBuildStart = 12,
-
-  BuildMSMQRunNowBuildEnd = 12,
-
-  BuildMSMQRunNowFileCopy = 13,
+  BuildMSMQRunNowBuildEnd = 13,
+  BuildMSMQRunNowFileCopy = 14,
   CopyAppReleaseToExportApplication,
   BuildMSMQRunNowBuildDownloadFiles,
   BuildGitError,

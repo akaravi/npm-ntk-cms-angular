@@ -1,4 +1,3 @@
-import { EnumCmsSiteMenuAreaType } from '../../enums/enumCmsSiteMenuAreaType';
 import { EnumMenuPlaceType } from '../../enums/enumMenuPlaceType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
