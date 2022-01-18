@@ -54,8 +54,12 @@ export class CoreSiteModel extends BaseEntity<number> {
   PwaShortName: string;
   PwaDescription: string;
   PwaDisplay: string;
+  PwaThemeColor: string;
+  PwaThemeBackgroundColor: string;
   PwaIconSize190x192Id?: number;
+  PwaIconSize190x192IdSrc: string;
   PwaIconSize512x512Id?: number;
+  PwaIconSize512x512IdSrc: string;
   /*
   AboutUs
     */
