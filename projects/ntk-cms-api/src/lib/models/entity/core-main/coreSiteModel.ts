@@ -47,9 +47,10 @@ export class CoreSiteModel extends BaseEntity<number> {
 
   LinkResellerSiteId?: number;
   LinkResellerUserId?: number;
-   /*
-  Pwa
-    */
+  /*
+ Pwa
+   */
+  PwaConfigJson: string;
   PwaName: string;
   PwaShortName: string;
   PwaDescription: string;
@@ -60,6 +61,21 @@ export class CoreSiteModel extends BaseEntity<number> {
   PwaIconSize190x192IdSrc: string;
   PwaIconSize512x512Id?: number;
   PwaIconSize512x512IdSrc: string;
+  PwaNotifySubject: string;
+  PwaNotifyPublicKey: string;
+  PwaNotifyPrivateKey: string;
+  /*
+   FCM
+  */
+  FirebaseConfigJson: string;
+  FirebaseApiKey: string;
+  FirebaseAuthDomain: string;
+  FirebaseDatabaseURL: string;
+  FirebaseProjectId: string;
+  FirebaseStorageBucket: string;
+  FirebaseMessagingSenderId: string;
+  FirebaseAppId: string;
+
   /*
   AboutUs
     */
