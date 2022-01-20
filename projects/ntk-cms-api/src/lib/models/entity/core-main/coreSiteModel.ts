@@ -50,8 +50,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   /*
  Pwa
    */
-  PwaConfigJson: string;
-  PwaName: string;
+    PwaName: string;
   PwaShortName: string;
   PwaDescription: string;
   PwaDisplay: string;
@@ -67,8 +66,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   /*
    FCM
   */
-  FirebaseConfigJson: string;
-  FirebaseApiKey: string;
+    FirebaseApiKey: string;
   FirebaseAuthDomain: string;
   FirebaseDatabaseURL: string;
   FirebaseProjectId: string;
