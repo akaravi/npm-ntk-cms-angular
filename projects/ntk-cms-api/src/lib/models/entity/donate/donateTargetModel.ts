@@ -10,7 +10,7 @@ export class DonateTargetModel extends BaseModuleEntity<number>{
   TransactionLogPublic: EnumTransactionLogPublicType;
   ToWebAddress: string;
   HashMd5: string;
-  Key: string;
+  KeyCode: string;
   CurrentClickCount: number;
   CurrentViewCount: number;
   CurrentPaymentCount: number;
