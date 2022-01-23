@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from './../base/baseModuleEntity';
 import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
-import { SmsMainApiPathAndCustomerNumberModel } from './smsMainApiPathAndCustomerNumberModel';
+import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberModel';
 import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
 import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
 import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
@@ -40,7 +40,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ApiPathSuperSeders: SmsMainApiPathSuperSederModel[];
   ApiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
   ApiPathPermissions: SmsMainApiPathPermissionModel[];
-  ApiPathAndApiPathNumbers: SmsMainApiPathAndCustomerNumberModel[];
+  ApiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
   ApiPathPriceServices: SmsMainApiPathPriceServiceModel[];
   ApiSendMessageIsOn: boolean;
 

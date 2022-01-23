@@ -37,4 +37,29 @@ export class SmsEnumService extends ApiServerBase {
       );
   }
 
+  ServiceEnumApiNumberPermissionAccessStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiNumberPermissionAccessStatus', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEnumApiNumberPermissionAction(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiNumberPermissionAction', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+
 }
