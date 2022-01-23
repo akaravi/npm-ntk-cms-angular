@@ -3,13 +3,13 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class SmsLogInBoxModel extends BaseModuleEntity<string> {
   ReceiverDate: Date;
   AnalysisDate: Date;
-  SenderNumber?: any;
-  ReceiverNumber?: any;
+  SenderNumber: string;
+  ReceiverNumber: string;
   LinkPublicConfigId: string;
   LinkPrivateConfigId: string;
-  InBoxType?: any;
-  Message?: any;
-  IsAccepted: boolean;
+  InBoxType: string;
+  Message: string;
+  IsRead: boolean;
+  IsProcessed: boolean;
   Credit: number;
-  InBoxLocks?: any;
 }

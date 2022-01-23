@@ -8,7 +8,7 @@ export * from './smsMainApiPath.service';
 export * from './smsMainApiPathCompany.service';
 export * from './smsMainApiPathPermission.service';
 export * from './smsMainApiPathPriceService.service';
-// export * from './smsMainApiPathPrivateSiteConfig.service';
+export * from './smsMainApiPathAndCustomerNumber.service';
 export * from './smsMainApiPathProcessFlow.service';
 export * from './smsMainApiPathProcessFlowLog.service';
 export * from './smsMainApiPathPublicConfig.service';
