@@ -9,12 +9,12 @@ import { SmsMainApiPathPublicConfigAliasJsonModel } from '../../models/entity/sm
 
 @Injectable()
 export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainApiPathPublicConfigModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'SmsMainApiPathPublicConfig';
   }
   ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigAliasJsonModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -27,7 +27,7 @@ export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainA
   }
   ServiceAutoAdd(): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(

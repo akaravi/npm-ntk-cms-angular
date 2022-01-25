@@ -5,7 +5,7 @@ import { ChartContentCategoryModel } from '../../models/entity/chart/chartConten
 
 @Injectable()
 export class ChartContentCategoryService extends ApiCmsServerBase<ChartContentCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ChartContentCategory';
   }
 

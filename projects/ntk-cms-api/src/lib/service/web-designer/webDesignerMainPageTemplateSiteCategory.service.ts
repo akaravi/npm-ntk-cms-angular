@@ -6,7 +6,7 @@ import { WebDesignerMainPageTemplateSiteCategoryModel }
 @Injectable()
 export class WebDesignerMainPageTemplateSiteCategoryService
   extends ApiCmsServerBase<WebDesignerMainPageTemplateSiteCategoryModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainPageTemplateSiteCategory';
   }
 

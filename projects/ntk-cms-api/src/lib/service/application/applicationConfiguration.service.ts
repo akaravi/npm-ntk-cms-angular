@@ -13,7 +13,7 @@ export class ApplicationConfigurationService extends
   ApplicationModuleConfigSiteValuesModel,
   ApplicationModuleConfigSiteAccessValuesModel,
   ApplicationModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Application';
   }
 }

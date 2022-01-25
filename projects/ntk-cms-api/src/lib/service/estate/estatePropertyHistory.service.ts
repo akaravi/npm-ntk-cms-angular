@@ -5,7 +5,7 @@ import { EstatePropertyHistoryModel } from '../../models/entity/estate/estatePro
 
 @Injectable()
 export class EstatePropertyHistoryService extends ApiCmsServerBase<EstatePropertyHistoryModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyHistory';
   }
 }

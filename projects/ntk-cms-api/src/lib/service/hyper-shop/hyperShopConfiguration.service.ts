@@ -13,7 +13,7 @@ export class HyperShopConfigurationService extends
   HyperShopModuleConfigSiteValuesModel,
   HyperShopModuleConfigSiteAccessValuesModel,
   HyperShopModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'HyperShop';
   }
 }

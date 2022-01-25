@@ -5,7 +5,7 @@ import { EstatePropertyShareSiteModel } from '../../models/entity/estate/estateP
 
 @Injectable()
 export class EstatePropertyShareSiteService extends ApiCmsServerBase<EstatePropertyShareSiteModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyShareSite';
   }
 }

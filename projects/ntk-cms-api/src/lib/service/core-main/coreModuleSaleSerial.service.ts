@@ -11,7 +11,7 @@ import { CoreModuleSaleInvoiceModel } from '../../models/entity/core-main/coreMo
 
 @Injectable()
 export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSaleSerialModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModuleSaleSerial';
   }
   ServiceCheckUseSerialForSite(model: CoreModuleCheckSerialForSiteDtoModel):
@@ -20,7 +20,7 @@ export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSale
       model = new CoreModuleCheckSerialForSiteDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseSerialForSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseSerialForSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -37,7 +37,7 @@ export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSale
       model = new CoreModuleCheckSerialForSiteDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/RegisterUseSerialForSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/RegisterUseSerialForSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NewsShareMainAdminSettingService extends ApiCmsServerBase<any, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'NewsShareMainAdminSetting';
   }
 }

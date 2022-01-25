@@ -14,7 +14,7 @@ import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfo
 
 @Injectable()
 export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Application';
   }
 
@@ -23,7 +23,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       model = new ApplicationScoreDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ScoreClick', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -39,7 +39,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ScoreClickList', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClickList', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -54,7 +54,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
   ServiceCurrentApp(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentApp', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentApp', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -70,7 +70,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
   ServiceBuild(id: number): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/build/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -85,7 +85,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
   ServiceBuildInfo(id: number, key: string): Observable<ErrorExceptionResult<ApplicationAppModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/build/' + id + '/' + key, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/build/' + id + '/' + key, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -103,7 +103,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       model = new BuilderInfoStatusDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/BuildInfo', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/BuildInfo', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -121,7 +121,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       model = new UploadApplictionDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UploadUpdate', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadUpdate', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -139,7 +139,7 @@ export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel,
       model = new UploadApplictionDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Upload', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Upload', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -4,7 +4,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class ApplicationSourceSiteCategoryService extends ApiCmsServerBase<ApplicationSourceSiteCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApplicationSourceSiteCategory';
   }
 

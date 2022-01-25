@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ArticleContent';
   }
   ServiceGetAllWithHierarchyCategoryId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
@@ -19,7 +19,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -35,7 +35,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -52,7 +52,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithTagId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithTagId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -68,7 +68,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -85,7 +85,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new ScoreClickDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ScoreClick', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -100,7 +100,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -115,7 +115,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -131,7 +131,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteList', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -14,13 +14,13 @@ import { FileDownloadDtoModel } from '../../models/dto/file/fileDownloadDtoModel
 
 @Injectable()
 export class FileContentService extends ApiCmsServerBase<FileContentModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'FileContent';
   }
 
   ServiceUploadByUrl(model: FileUploadByUrlDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UploadByUrl/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadByUrl/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -34,7 +34,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
 
   ServiceCopyCutFile(model: FileCopyCutDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CopyCutFile/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/CopyCutFile/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -47,7 +47,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
   }
   ServiceCopyCutFileRootToRootFolder(): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CopyCutFileRootToRootFolder/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CopyCutFileRootToRootFolder/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -63,7 +63,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       model = new FileContentModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Copy/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Copy/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -78,7 +78,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
   ServiceGetAllInCategoryById(categoryId: number): Observable<ErrorExceptionResult<FileContentModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllInCategoryById/' + categoryId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllInCategoryById/' + categoryId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -95,7 +95,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchFilesInCategory', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SearchFilesInCategory', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -112,7 +112,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       model = new FileDownloadDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DownloadFile', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DownloadFile', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -126,7 +126,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
   ServiceUpdateFileSizes(fileId: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UpdateFileSizes/' + fileId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UpdateFileSizes/' + fileId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -141,7 +141,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
   ServiceUpdateSumSizeUpload(fileId: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UpdateSumSizeUpload/' + fileId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UpdateSumSizeUpload/' + fileId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -160,7 +160,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       model = new FileDownloadDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ImageFileEdit', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ImageFileEdit', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -176,7 +176,7 @@ export class FileContentService extends ApiCmsServerBase<FileContentModel, numbe
       model = new FileContentModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/replace/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/replace/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

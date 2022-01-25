@@ -5,7 +5,7 @@ import { LinkManagementBillboardPatternModel } from '../../models/entity/link-ma
 
 @Injectable()
 export class LinkManagementBillboardPatternService extends ApiCmsServerBase<LinkManagementBillboardPatternModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementBillboardPattern';
   }
 }

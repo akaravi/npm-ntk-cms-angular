@@ -16,12 +16,12 @@ import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core/
 
 @Injectable()
 export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreSite';
   }
     ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DataOptimaze/' + linkSiteId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataOptimaze/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -34,7 +34,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceModuleDataInfo(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataInfoOutputModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DataInfo/' + linkSiteId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataInfo/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -47,7 +47,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/WebScreenshot', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebScreenshot', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -60,7 +60,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetRessellerChart(linkSiteId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRessellerChart/' + linkSiteId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRessellerChart/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -73,7 +73,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceCurrectSite(): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrectSite', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrectSite', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -86,7 +86,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceAddFirstSite(model: CoreSiteAddFirstSiteDtoModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddFirstSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddFirstSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -103,7 +103,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithAlias', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithAlias', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -120,7 +120,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllChildWithAlias', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllChildWithAlias', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -137,7 +137,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SearchNew', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SearchNew', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -150,7 +150,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceSearch(model: CoreSiteSearchModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Search', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Search', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -163,7 +163,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetCurrencyMaster(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrencyMaster', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrencyMaster', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -176,7 +176,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetCurrencySite(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrencySite', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrencySite', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -189,7 +189,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetShareInfo(): Observable<ErrorExceptionResult<ShareInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetShareInfo', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetShareInfo', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -202,7 +202,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetCurrentDomain(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrentDomain', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrentDomain', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -215,7 +215,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
   }
   ServiceGetRegDomains(siteCategoryId: number): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRegDomains/' + siteCategoryId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRegDomains/' + siteCategoryId, {
         headers: this.getHeaders(),
       })
       .pipe(

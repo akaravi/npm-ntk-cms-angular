@@ -13,7 +13,7 @@ import { LinkManagementTargetModel } from '../../models/entity/link-management/l
 
 @Injectable()
 export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagementTargetModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementTarget';
   }
   ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<LinkManagementTargetShortLinkGetResponceModel>> {
@@ -22,7 +22,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagement
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneByKey/', key, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneByKey/', key, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -41,7 +41,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagement
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ShortLinkSet/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShortLinkSet/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -60,7 +60,7 @@ export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagement
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ShortLinkGet/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShortLinkGet/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

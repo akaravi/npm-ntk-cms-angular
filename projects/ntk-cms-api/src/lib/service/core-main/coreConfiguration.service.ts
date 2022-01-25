@@ -18,12 +18,12 @@ export class CoreConfigurationService extends
   CoreModuleConfigSiteValuesModel,
   CoreModuleConfigSiteAccessValuesModel,
   CoreModuleSiteStorageValuesModel>   {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Core';
   }
   ServiceUserMembershipRule(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/UserMembershipRule', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/UserMembershipRule', {
         headers: this.getHeaders(),
       })
       .pipe(

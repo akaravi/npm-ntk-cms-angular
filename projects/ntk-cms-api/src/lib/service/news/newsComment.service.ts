@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'NewsComment';
   }
 
@@ -17,7 +17,7 @@ export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, numbe
   ServiceLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/LikeClick/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/LikeClick/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, numbe
   ServiceDisLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DisLikeClick/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DisLikeClick/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(

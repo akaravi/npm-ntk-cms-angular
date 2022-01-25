@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTagModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ArticleContentTag';
   }
 
@@ -20,7 +20,7 @@ export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTag
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTag
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(

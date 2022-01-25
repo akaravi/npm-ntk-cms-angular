@@ -18,7 +18,7 @@ import { BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel } fro
 
 @Injectable()
 export class BiographyContentService extends ApiCmsServerBase<BiographyContentModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BiographyContent';
   }
 
@@ -27,7 +27,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -43,7 +43,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -59,7 +59,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithTagId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithTagId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -75,7 +75,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -92,7 +92,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new ScoreClickDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ScoreClick', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -107,7 +107,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -122,7 +122,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -138,7 +138,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteList', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -156,7 +156,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarLocationPeriodStart', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarLocationPeriodStart', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -173,7 +173,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarLocationPeriodEnd', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarLocationPeriodEnd', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -190,7 +190,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarDatePeriodStartMonthOfYear', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartMonthOfYear', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -207,7 +207,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarDatePeriodStartDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarDatePeriodStart', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStart', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -224,7 +224,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarDatePeriodStartDayOfYear', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartDayOfYear', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -241,7 +241,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarDatePeriodStartDayAndMonthOfYear', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartDayAndMonthOfYear', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -260,7 +260,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithSimilarDatePeriodEndDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithSimilarDatePeriodEnd', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodEnd', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -278,7 +278,7 @@ export class BiographyContentService extends ApiCmsServerBase<BiographyContentMo
       model = new BiographyContentWithDatePeriodEndDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithDatePeriodEnd', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithDatePeriodEnd', model, {
         headers: this.getHeaders(),
       })
       .pipe(

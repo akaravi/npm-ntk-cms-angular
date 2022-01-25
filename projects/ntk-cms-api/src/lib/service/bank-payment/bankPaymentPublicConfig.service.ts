@@ -11,12 +11,12 @@ import { BankPaymentPublicConfigAliasJsonModel } from '../../models/entity/bank-
 export class BankPaymentPublicConfigService
   extends ApiCmsServerBase<BankPaymentPublicConfigModel, number>
 {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPaymentPublicConfig';
   }
   ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPublicConfigAliasJsonModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -29,7 +29,7 @@ export class BankPaymentPublicConfigService
   }
   ServiceAutoAdd(): Observable<ErrorExceptionResult<BankPaymentPublicConfigModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(

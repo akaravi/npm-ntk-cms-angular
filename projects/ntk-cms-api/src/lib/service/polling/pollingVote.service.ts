@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'PollingVote';
   }
   ServiceAddBatch(model: PollingVoteModel[]): Observable<ErrorExceptionResult<PollingVoteModel>> {
@@ -16,7 +16,7 @@ export class PollingVoteService extends ApiCmsServerBase<PollingVoteModel, numbe
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(

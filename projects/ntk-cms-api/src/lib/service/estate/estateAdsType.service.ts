@@ -14,7 +14,7 @@ import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropert
 
 @Injectable()
 export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateAdsType';
   }
   ServiceGetAllSale(model: FilterModel): Observable<ErrorExceptionResult<EstateAdsTypeModel>> {
@@ -22,7 +22,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllSale', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
   ServiceCheckUseAdsForProperty(AdsTypeId: string, id: string):
     Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseAdsForProperty/' + AdsTypeId + '/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseAdsForProperty/' + AdsTypeId + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -50,7 +50,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
   ServiceCheckUseAdsForAccountAgency(AdsTypeId: string, id: string):
     Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseAdsForAccountAgency/' + AdsTypeId + '/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseAdsForAccountAgency/' + AdsTypeId + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

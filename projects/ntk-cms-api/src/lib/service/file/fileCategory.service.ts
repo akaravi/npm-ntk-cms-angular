@@ -12,14 +12,14 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'FileCategory';
   }
 
   ServiceGetAllInCategoryById(ParentId: number): Observable<ErrorExceptionResult<FileCategoryModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllInCategoryById/' + ParentId, {
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllInCategoryById/' + ParentId, {
         headers: this.getHeaders(),
       },
       )
@@ -33,7 +33,7 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
   ServiceCreateCompressDownload(model: FileCompressDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CreateCompressDownload/', model, {
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/CreateCompressDownload/', model, {
         headers: this.getHeaders(),
       },
       )
@@ -48,7 +48,7 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
   ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<FileCategoryModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
         { Old: OldId, New: NewId },
         {
           headers: this.getHeaders(),
@@ -65,7 +65,7 @@ export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, num
   ServiceOptimaze(): Observable<ErrorExceptionResultBase> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Optimaze',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Optimaze',
         {
           headers: this.getHeaders(),
         },

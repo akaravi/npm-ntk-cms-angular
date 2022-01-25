@@ -10,7 +10,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'TicketingTask';
   }
 
@@ -19,7 +19,7 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
       model = new TicketingTaskDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ContactUS', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ContactUS', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -33,7 +33,7 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
   ServiceTaskReaded(id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TaskReaded/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskReaded/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -47,7 +47,7 @@ export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, n
   ServiceisClosed(id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/isClosed/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/isClosed/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

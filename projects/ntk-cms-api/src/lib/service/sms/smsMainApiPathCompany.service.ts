@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SmsMainApiPathCompanyService extends ApiCmsServerBase<SmsMainApiPathCompanyModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'SmsMainApiPathCompany';
   }
 }

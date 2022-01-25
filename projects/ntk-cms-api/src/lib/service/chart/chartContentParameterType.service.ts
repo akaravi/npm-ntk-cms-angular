@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ChartContentParameterTypeService extends ApiCmsServerBase<any, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ChartContentParameterType';
   }
 }

@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class TicketingFaqService extends ApiCmsServerBase<TicketingFaqModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'TicketingFaq';
   }
 
@@ -18,7 +18,7 @@ export class TicketingFaqService extends ApiCmsServerBase<TicketingFaqModel, num
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllOrigin/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOrigin/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

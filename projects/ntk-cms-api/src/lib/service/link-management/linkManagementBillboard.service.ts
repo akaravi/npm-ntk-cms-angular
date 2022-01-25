@@ -8,7 +8,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class LinkManagementBillboardService extends ApiCmsServerBase<LinkManagementBillboardModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementBillboard';
   }
   ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<LinkManagementBillboardModel>> {
@@ -17,7 +17,7 @@ export class LinkManagementBillboardService extends ApiCmsServerBase<LinkManagem
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneByKey/', key, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneByKey/', key, {
         headers: this.getHeaders(),
       })
       .pipe(

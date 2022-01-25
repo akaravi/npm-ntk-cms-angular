@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UniversalMenuEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'UniversalMenuEnum';
   }
 
   ServiceEnumUniversalMenuPlatformType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUniversalMenuPlatformType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUniversalMenuPlatformType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class UniversalMenuEnumService extends ApiServerBase {
   }
   ServiceEnumUniversalMenuRenderType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUniversalMenuRenderType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUniversalMenuRenderType', {
         headers: this.getHeaders(),
       })
       .pipe(

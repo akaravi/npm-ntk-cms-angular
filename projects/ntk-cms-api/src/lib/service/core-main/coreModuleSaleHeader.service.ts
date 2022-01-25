@@ -14,7 +14,7 @@ import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../model
 
 @Injectable()
 export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSaleHeaderModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModuleSaleHeader';
   }
   ServiceGetAllSale(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleSaleHeaderModel>> {
@@ -22,7 +22,7 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllSale', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
   ServiceCheckUseHeaderForSite(id: number):
     Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckUseHeaderForSite/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseHeaderForSite/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -53,7 +53,7 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
       model = new CoreModuleSaleHeaderCalculateDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderCalculate', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -70,7 +70,7 @@ export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSale
       model = new CoreModuleSaleHeaderPaymentDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderPayment', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
         headers: this.getHeaders(),
       })
       .pipe(

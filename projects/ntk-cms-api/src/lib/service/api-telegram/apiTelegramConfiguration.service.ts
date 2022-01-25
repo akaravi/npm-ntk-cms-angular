@@ -13,7 +13,7 @@ export class ApiTelegramConfigurationService extends
   ApiTelegramModuleConfigSiteValuesModel,
   ApiTelegramModuleConfigSiteAccessValuesModel,
   ApiTelegramModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegram';
   }
 }

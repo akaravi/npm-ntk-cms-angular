@@ -5,7 +5,7 @@ import { SmsMainApiNumberModel } from '../../models/entity/sms/smsMainApiNumberM
 
 @Injectable()
 export class SmsMainApiNumberService extends ApiCmsServerBase<SmsMainApiNumberModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'SmsMainApiNumber';
   }
 }

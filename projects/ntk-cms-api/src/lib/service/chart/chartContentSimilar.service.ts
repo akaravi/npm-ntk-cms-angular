@@ -9,7 +9,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 @Injectable()
 export class ChartContentSimilarService extends ApiCmsServerBase<ChartContentSimilarModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ChartContentSimilar';
   }
   ServiceAddBatch(model: ChartContentSimilarModel[]): Observable<ErrorExceptionResult<ChartContentSimilarModel>> {
@@ -17,7 +17,7 @@ export class ChartContentSimilarService extends ApiCmsServerBase<ChartContentSim
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -33,7 +33,7 @@ export class ChartContentSimilarService extends ApiCmsServerBase<ChartContentSim
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(

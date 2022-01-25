@@ -5,7 +5,7 @@ import { DonateLogViewModel } from '../../models/entity/donate/donateLogViewMode
 
 @Injectable()
 export class DonateLogViewService extends ApiCmsServerBase<DonateLogViewModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'DonateLogView';
   }
 }

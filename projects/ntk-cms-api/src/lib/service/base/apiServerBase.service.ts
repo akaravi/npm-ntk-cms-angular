@@ -40,7 +40,7 @@ export class ApiServerBase {
     }
     return this.baseUrl;
   }
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Empty';
   }
   setHeaders(key: string, value: string): void {

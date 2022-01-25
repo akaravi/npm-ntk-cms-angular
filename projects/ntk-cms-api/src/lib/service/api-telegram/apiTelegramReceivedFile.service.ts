@@ -4,7 +4,7 @@ import { ApiTelegramReceivedFileModel } from '../../models/entity/api-telegram/a
 
 @Injectable()
 export class ApiTelegramReceivedFileService extends ApiCmsServerBase<ApiTelegramReceivedFileModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegramReceivedFile';
   }
 

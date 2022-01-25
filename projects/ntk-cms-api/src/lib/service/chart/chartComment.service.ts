@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ChartCommentService extends ApiCmsServerBase<ChartCommentModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ChartComment';
   }
 
@@ -17,7 +17,7 @@ export class ChartCommentService extends ApiCmsServerBase<ChartCommentModel, num
   ServiceLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/LikeClick/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/LikeClick/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class ChartCommentService extends ApiCmsServerBase<ChartCommentModel, num
   ServiceDisLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DisLikeClick/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DisLikeClick/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(

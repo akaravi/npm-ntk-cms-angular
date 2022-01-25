@@ -8,14 +8,14 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 @Injectable()
 export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApplicationSource';
   }
 
   ServiceBuildApp(Id: number): Observable<ErrorExceptionResult<ApplicationSourceModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/buildApp/' + Id,
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/buildApp/' + Id,
         {
           headers: this.getHeaders(),
         },

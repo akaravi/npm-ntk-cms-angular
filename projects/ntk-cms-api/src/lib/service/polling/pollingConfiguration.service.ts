@@ -13,7 +13,7 @@ export class PollingConfigurationService extends
   PollingModuleConfigSiteValuesModel,
   PollingModuleConfigSiteAccessValuesModel,
   PollingModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'polling';
   }
 }

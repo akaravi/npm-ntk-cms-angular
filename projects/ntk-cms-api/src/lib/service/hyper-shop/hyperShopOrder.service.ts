@@ -12,12 +12,12 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'HyperShopOrder';
   }
   ServiceOrderAdd(): Observable<ErrorExceptionResult<HyperShopOrderModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/LastOrder', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/LastOrder', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -31,7 +31,7 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
   ServiceOrderCalculate(model: HyperShopOrderCalculateDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderCalculate', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -45,7 +45,7 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
   ServiceOrderPayment(model: HyperShopOrderPaymentDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderPayment', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', {
         headers: this.getHeaders(),
       })
       .pipe(

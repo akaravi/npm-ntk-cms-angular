@@ -5,7 +5,7 @@ import { LinkManagementAccountingModel } from '../../models/entity/link-manageme
 
 @Injectable()
 export class LinkManagementAccountingService extends ApiCmsServerBase<LinkManagementAccountingModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementAccounting';
   }
 }

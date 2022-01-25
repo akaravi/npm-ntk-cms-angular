@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class LinkManagementTargetBillboardLogService extends ApiCmsServerBase<LinkManagementTargetBillboardLogModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementTargetBillboardLog';
   }
 
@@ -22,7 +22,7 @@ export class LinkManagementTargetBillboardLogService extends ApiCmsServerBase<Li
       key = '---';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/getAll/' + key, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll/' + key, model, {
         headers: this.getHeaders(),
       })
       .pipe(

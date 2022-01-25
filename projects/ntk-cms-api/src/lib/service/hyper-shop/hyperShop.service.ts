@@ -9,7 +9,7 @@ import { ApiServerBase } from '../base/apiServerBase.service';
 
 @Injectable()
 export class HyperShopService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'HyperShop';
   }
   ServiceUniversalAction(model: UniversalActionModel): Observable<ErrorExceptionResult<UniversalActionModel>> {
@@ -17,7 +17,7 @@ export class HyperShopService extends ApiServerBase {
       model = new UniversalActionModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UniversalAction', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UniversalAction', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -30,7 +30,7 @@ export class HyperShopService extends ApiServerBase {
   }
   ServiceCheckStatus(): Observable<ErrorExceptionResult<CheckStatusActionModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CheckStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckStatus', {
         headers: this.getHeaders(),
       })
       .pipe(

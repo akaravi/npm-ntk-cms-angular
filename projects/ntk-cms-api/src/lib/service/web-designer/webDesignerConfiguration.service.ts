@@ -13,7 +13,7 @@ export class WebDesignerConfigurationService extends
   WebDesignerModuleConfigSiteValuesModel,
   WebDesignerModuleConfigSiteAccessValuesModel,
   WebDesignerModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'webDesigner';
   }
 }

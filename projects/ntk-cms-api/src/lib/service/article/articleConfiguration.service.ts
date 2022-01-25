@@ -13,7 +13,7 @@ export class ArticleConfigurationService extends
   ArticleModuleConfigSiteValuesModel,
   ArticleModuleConfigSiteAccessValuesModel,
   ArticleModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Article';
   }
 }

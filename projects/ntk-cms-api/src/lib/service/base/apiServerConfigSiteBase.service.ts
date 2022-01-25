@@ -15,13 +15,13 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
   TSiteConfig extends BaseModuleConfigSiteValuesModel,
   TSiteAccess extends BaseModuleConfigSiteAccessValuesModel,
   TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase {
-    getModuleCotrolerUrl(): string {
+    getModuleControllerUrl(): string {
       return 'Empty';
     }
 
   ServiceSiteConfigDefault(): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteConfigDefault', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteConfigDefault', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -35,7 +35,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteConfigDefaultSave(model: TSiteConfig): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteConfigDefault', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteConfigDefault', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -49,7 +49,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteStorage(id: number): Observable<ErrorExceptionResult<TSiteStorage>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteStorage/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteStorage/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -63,7 +63,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteStorageSave(Siteid: number, model: TSiteStorage): Observable<ErrorExceptionResult<TSiteStorage>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteStorage/' + Siteid, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteStorage/' + Siteid, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -77,7 +77,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteConfig(id: number): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteConfig/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteConfig/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -91,7 +91,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteConfigSave(Siteid: number, model: TSiteConfig): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteConfig/' + Siteid, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteConfig/' + Siteid, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -105,7 +105,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteAccess(Siteid: number): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccess/' + Siteid, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteAccess/' + Siteid, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -119,7 +119,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteAccessSave(Siteid: number, model: TSiteAccess): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccess/' + Siteid, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteAccess/' + Siteid, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -133,7 +133,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteAccessDefault(): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteAccessDefault/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -147,7 +147,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceSiteAccessDefaultSave(model: TSiteAccess): Observable<ErrorExceptionResult<TSiteAccess>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/SiteAccessDefault/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/SiteAccessDefault/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -161,7 +161,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceAdminMain(): Observable<ErrorExceptionResult<TAdminMain>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/AdminMain/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/AdminMain/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -175,7 +175,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
 
   ServiceAdminMainSave(model: TAdminMain): Observable<ErrorExceptionResult<TAdminMain>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/AdminMain/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/AdminMain/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -188,7 +188,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
   }
   ServiceCheckSite(id: number = 0): Observable<ErrorExceptionResult<BaseModuleSiteCheckSiteModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckSite/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/CheckSite/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -201,7 +201,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
   }
   ServiceCheckUser(id: number = 0): Observable<ErrorExceptionResult<BaseModuleSiteCheckUserModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + 'Configuration/CheckUser/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/CheckUser/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

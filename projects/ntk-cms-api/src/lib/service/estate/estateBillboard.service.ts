@@ -4,7 +4,7 @@ import { EstateBillboardModel } from '../../models/entity/estate/estateBillboard
 
 @Injectable()
 export class EstateBillboardService extends ApiCmsServerBase<EstateBillboardModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateBillboard';
   }
 

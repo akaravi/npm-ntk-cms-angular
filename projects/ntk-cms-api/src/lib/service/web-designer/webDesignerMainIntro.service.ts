@@ -5,7 +5,7 @@ import { WebDesignerMainIntroModel } from '../../models/entity/web-designer/webD
 
 @Injectable()
 export class WebDesignerMainIntroService extends ApiCmsServerBase<WebDesignerMainIntroModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainIntro';
   }
 

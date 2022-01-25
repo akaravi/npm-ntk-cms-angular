@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePropertyDetailGroupModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyDetailGroup';
   }
   ServiceEditStep(model: EditStepDtoModel<string>): Observable<ErrorExceptionResultBase> {
@@ -17,7 +17,7 @@ export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePro
       model = new EditStepDtoModel<string>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
       })
       .pipe(

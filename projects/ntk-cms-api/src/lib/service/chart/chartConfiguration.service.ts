@@ -13,7 +13,7 @@ export class ChartConfigurationService extends
   ChartModuleConfigSiteValuesModel,
   ChartModuleConfigSiteAccessValuesModel,
   ChartModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'chart';
   }
 }

@@ -4,7 +4,7 @@ import { CoreModuleSaleHeaderGroupModel } from '../../models/entity/core-main/co
 
 @Injectable()
 export class CoreModuleSaleHeaderGroupService extends ApiCmsServerBase<CoreModuleSaleHeaderGroupModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModuleSaleHeaderGroup';
   }
 }

@@ -13,7 +13,7 @@ export class EstateConfigurationService extends
   EstateModuleConfigSiteValuesModel,
   EstateModuleConfigSiteAccessValuesModel,
   EstateModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Estate';
   }
 }

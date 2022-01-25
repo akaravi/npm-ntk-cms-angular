@@ -11,7 +11,7 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 @Injectable()
 export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModule';
   }
   ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
@@ -19,7 +19,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
       model = new EditStepDtoModel<number>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
   }
   ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -45,7 +45,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
   }
   ServiceConfig(MoudleClassName: string): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Config/', MoudleClassName, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Config/', MoudleClassName, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -62,7 +62,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithModuleConfig/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithModuleConfig/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -75,7 +75,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
   }
   ServiceGetViewModelWithModuleConfig(id: number): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetViewModelWithModuleConfig/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetViewModelWithModuleConfig/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -92,7 +92,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllModuleName/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllModuleName/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -112,7 +112,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllByCategorySiteId/' + CategorySiteId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllByCategorySiteId/' + CategorySiteId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

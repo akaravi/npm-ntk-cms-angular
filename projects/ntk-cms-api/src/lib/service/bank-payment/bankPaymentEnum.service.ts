@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BankPaymentEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPaymentEnum';
   }
 
   ServiceEnumTransactionRecordStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumTransactionRecordStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionRecordStatus', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class BankPaymentEnumService extends ApiServerBase {
   }
    ServiceEnumTransactionBankStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumTransactionBankStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionBankStatus', {
         headers: this.getHeaders(),
       })
       .pipe(

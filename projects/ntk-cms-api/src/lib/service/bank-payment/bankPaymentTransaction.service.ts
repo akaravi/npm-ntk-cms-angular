@@ -10,12 +10,12 @@ import { map, retry } from 'rxjs/operators';
 export class BankPaymentTransactionService
   extends ApiCmsServerBase<BankPaymentTransactionModel, number>
    {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPaymentTransaction';
   }
   ServiceTransactionCheck(id: number): Observable<ErrorExceptionResult<BankPaymentTransactionModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TransactionCheck/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionCheck/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

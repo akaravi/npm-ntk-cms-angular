@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class WebDesignerEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerEnum';
   }
 
   ServiceEnumPageAbilityType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumPageAbilityType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumPageAbilityType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class WebDesignerEnumService extends ApiServerBase {
   }
   ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsSiteMenuAreaType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumCmsSiteMenuAreaType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -38,7 +38,7 @@ export class WebDesignerEnumService extends ApiServerBase {
   }
   ServiceEnumCmsPageUtilityToolsDtoModelAction(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumCmsPageUtilityToolsDtoModelAction', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumCmsPageUtilityToolsDtoModelAction', {
         headers: this.getHeaders(),
       })
       .pipe(

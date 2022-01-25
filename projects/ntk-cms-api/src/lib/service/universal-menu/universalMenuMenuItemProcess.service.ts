@@ -10,7 +10,7 @@ import { UniversalMenuMenuItemProcessModel } from '../../models/entity/universal
 
 @Injectable()
 export class UniversalMenuMenuItemProcessService extends ApiCmsServerBase<UniversalMenuMenuItemProcessModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'UniversalMenuMenuItemProcess';
   }
 

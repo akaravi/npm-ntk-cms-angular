@@ -5,7 +5,7 @@ import { CoreDeviceModel } from '../../models/entity/core-main/coreDeviceModel';
 
 @Injectable()
 export class CoreDeviceService extends ApiCmsServerBase<CoreDeviceModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreDevice';
   }
 }

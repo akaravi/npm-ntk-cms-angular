@@ -5,7 +5,7 @@ import { WebDesignerLogPageSafeModel } from '../../models/entity/web-designer/we
 
 @Injectable()
 export class WebDesignerLogPageSafeService extends ApiCmsServerBase<WebDesignerLogPageSafeModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerLogPageSafe';
   }
 

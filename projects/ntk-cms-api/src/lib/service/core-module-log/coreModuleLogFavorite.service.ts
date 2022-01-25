@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreModuleLogFavoriteService extends ApiCmsServerBase<CoreModuleLogFavoriteModel, string>  {  getModuleCotrolerUrl(): string {
+export class CoreModuleLogFavoriteService extends ApiCmsServerBase<CoreModuleLogFavoriteModel, string>  {  getModuleControllerUrl(): string {
     return 'CoreModuleLogFavorite';
   }
 }

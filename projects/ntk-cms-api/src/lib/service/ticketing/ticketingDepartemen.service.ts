@@ -11,7 +11,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepartemenModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'TicketingDepartemen';
   }
   ServiceGetAllOrigin( model: FilterModel): Observable<ErrorExceptionResult<TicketingDepartemenModel>> {
@@ -19,7 +19,7 @@ export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepart
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllOrigin/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOrigin/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

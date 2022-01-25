@@ -9,13 +9,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModuleSite';
   }
 
   ServiceConfigSite(model: CoreModuleSiteModel): Observable<ErrorExceptionResult<CoreModuleSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ConfigSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ConfigSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -28,7 +28,7 @@ export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel,
   }
   ServiceEditConfigSite(model: CoreModuleSiteModel): Observable<ErrorExceptionResult<CoreModuleSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditConfigSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditConfigSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -45,7 +45,7 @@ export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel,
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAll/' + id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAll/' + id, model, {
         headers: this.getHeaders(),
       })
       .pipe(

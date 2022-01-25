@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {  getModuleCotrolerUrl(): string {
+export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {  getModuleControllerUrl(): string {
     return 'CoreModuleTagCategory';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleTagCategoryModel>> {
@@ -18,7 +18,7 @@ export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTag
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
       })
       .pipe(

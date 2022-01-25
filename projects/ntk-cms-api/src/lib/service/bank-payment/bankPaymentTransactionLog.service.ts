@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class BankPaymentTransactionLogService
   extends ApiCmsServerBase<BankPaymentTransactionLogModel, number>
    {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPaymentTransactionLog';
   }
 }

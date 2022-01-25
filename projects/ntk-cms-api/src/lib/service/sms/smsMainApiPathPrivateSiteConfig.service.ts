@@ -14,12 +14,12 @@
 //   SmsMainApiPathPrivateSiteConfigModel,
 //   string
 // > {
-//   getModuleCotrolerUrl(): string {
+//   getModuleControllerUrl(): string {
 //     return 'SmsMainApiPathPrivateSiteConfig';
 //   }
 //   ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPrivateSiteConfigAliasJsonModel>> {
 //     return this.http
-//       .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+//       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
 //         headers: this.getHeaders(),
 //       })
 //       .pipe(
@@ -36,7 +36,7 @@
 //    }
 
 //    return this.http
-//      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TestSend', model, {
+//      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/TestSend', model, {
 //        headers: this.getHeaders(),
 //      })
 //      .pipe(

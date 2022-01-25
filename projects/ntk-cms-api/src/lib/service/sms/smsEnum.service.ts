@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SmsEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'SmsEnum';
   }
 
   ServiceEnumApiPathPermissionAccessStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiPathPermissionAccessStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumApiPathPermissionAccessStatus', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class SmsEnumService extends ApiServerBase {
   }
   ServiceEnumApiPathPermissionAction(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiPathPermissionAction', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumApiPathPermissionAction', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -39,7 +39,7 @@ export class SmsEnumService extends ApiServerBase {
 
   ServiceEnumApiNumberPermissionAccessStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiNumberPermissionAccessStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumApiNumberPermissionAccessStatus', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -51,7 +51,7 @@ export class SmsEnumService extends ApiServerBase {
   }
   ServiceEnumApiNumberPermissionAction(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumApiNumberPermissionAction', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumApiNumberPermissionAction', {
         headers: this.getHeaders(),
       })
       .pipe(

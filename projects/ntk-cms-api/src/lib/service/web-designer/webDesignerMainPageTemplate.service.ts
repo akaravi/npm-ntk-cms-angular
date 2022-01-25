@@ -4,7 +4,7 @@ import { WebDesignerMainPageTemplateModel } from '../../models/entity/web-design
 
 @Injectable()
 export class WebDesignerMainPageTemplateService extends ApiCmsServerBase<WebDesignerMainPageTemplateModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainPageTemplate';
   }
 

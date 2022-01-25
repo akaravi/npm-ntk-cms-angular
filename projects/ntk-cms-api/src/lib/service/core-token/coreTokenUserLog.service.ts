@@ -4,7 +4,7 @@ import { CoreTokenUserLogModel } from '../../models/entity/core-token/coreTokenU
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class CoreTokenUserLogService extends ApiCmsServerBase<CoreTokenUserLogModel, string>  {  getModuleCotrolerUrl(): string {
+export class CoreTokenUserLogService extends ApiCmsServerBase<CoreTokenUserLogModel, string>  {  getModuleControllerUrl(): string {
     return 'CoreTokenUserLog';
   }
 }

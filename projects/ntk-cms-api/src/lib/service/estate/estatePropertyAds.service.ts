@@ -12,7 +12,7 @@ import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../model
 
 @Injectable()
 export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAdsModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyAds';
   }
   ServiceOrderCalculate(model: EstateModuleSalePropertyAdsCalculateDtoModel):
@@ -21,7 +21,7 @@ export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAds
       model = new EstateModuleSalePropertyAdsCalculateDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderCalculate', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -38,7 +38,7 @@ export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAds
       model = new EstateModuleSalePropertyAdsPaymentDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/OrderPayment', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
         headers: this.getHeaders(),
       })
       .pipe(

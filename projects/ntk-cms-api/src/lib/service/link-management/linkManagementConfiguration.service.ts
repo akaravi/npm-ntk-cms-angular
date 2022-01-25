@@ -13,7 +13,7 @@ export class LinkManagementConfigurationService extends
   LinkManagementModuleConfigSiteValuesModel,
   LinkManagementModuleConfigSiteAccessValuesModel,
   LinkManagementModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'linkManagement';
   }
 }

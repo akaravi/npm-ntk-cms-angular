@@ -5,7 +5,7 @@ import { ApiTelegramMemberInfoModel } from '../../models/entity/api-telegram/api
 
 @Injectable()
 export class ApiTelegramMemberInfoService extends ApiCmsServerBase<ApiTelegramMemberInfoModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegramMemberInfo';
   }
 

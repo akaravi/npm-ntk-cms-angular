@@ -4,7 +4,7 @@ import { CoreCurrencyModel } from '../../models/entity/core-main/coreCurrencyMod
 
 @Injectable()
 export class CoreCurrencyService extends ApiCmsServerBase<CoreCurrencyModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreCurrency';
   }
 

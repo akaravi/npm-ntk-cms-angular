@@ -13,7 +13,7 @@ export class UniversalMenuConfigurationService extends
   UniversalMenuModuleConfigSiteValuesModel,
   UniversalMenuModuleConfigSiteAccessValuesModel,
   UniversalMenuModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'UniversalMenu';
   }
 }

@@ -13,7 +13,7 @@ export class SmsConfigurationService extends
   SmsModuleConfigSiteValuesModel,
   SmsModuleConfigSiteAccessValuesModel,
   SmsModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'sms';
   }
 }

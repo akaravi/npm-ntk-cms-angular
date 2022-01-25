@@ -13,7 +13,7 @@ export class FileConfigurationService extends
   ModuleConfigSiteValuesModel,
   ModuleConfigSiteAccessValuesModel,
   ModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'file';
   }
 }

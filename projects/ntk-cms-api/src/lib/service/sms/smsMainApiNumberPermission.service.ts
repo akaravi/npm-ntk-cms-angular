@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SmsMainApiNumberPermissionService extends ApiCmsServerBase<SmsMainApiNumberPermissionModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'SmsMainApiNumberPermission';
   }
 }

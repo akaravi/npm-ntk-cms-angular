@@ -10,7 +10,7 @@ import { UniversalMenuPlatformModel } from '../../models/entity/universal-menu/u
 
 @Injectable()
 export class UniversalMenuPlatformService extends ApiCmsServerBase<UniversalMenuPlatformModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'UniversalMenuPlatform';
   }
 

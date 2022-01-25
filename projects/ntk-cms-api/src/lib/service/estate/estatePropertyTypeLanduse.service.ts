@@ -5,7 +5,7 @@ import { EstatePropertyTypeLanduseModel } from '../../models/entity/estate/estat
 
 @Injectable()
 export class EstatePropertyTypeLanduseService extends ApiCmsServerBase<EstatePropertyTypeLanduseModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyTypeLanduse';
   }
 }

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreLocation';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
@@ -18,7 +18,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -35,7 +35,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllProvinces', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllProvinces', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -52,7 +52,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllCities', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllCities', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -69,7 +69,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllNeighbourhoods', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllNeighbourhoods', model, {
         headers: this.getHeaders(),
       })
       .pipe(

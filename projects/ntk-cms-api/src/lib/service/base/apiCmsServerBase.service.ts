@@ -14,7 +14,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ViewModel', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ViewModel', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/getAll', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -50,7 +50,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/getAllEditor', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAllEditor', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -64,7 +64,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -83,7 +83,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Count', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Count', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -102,7 +102,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/exist', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/exist', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -120,7 +120,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ExportFile', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -134,7 +134,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceAdd(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -149,7 +149,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceEdit(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -164,7 +164,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceDelete(id: TKey): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .delete(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/' + id, {
+      .delete(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -178,7 +178,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/DeleteList', ids, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteList', ids, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -192,7 +192,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
   ServiceDeleteEntity(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/delete', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/delete', model, {
         headers: this.getHeaders(),
       })
       .pipe(

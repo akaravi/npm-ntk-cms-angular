@@ -13,7 +13,7 @@ export class BiographyConfigurationService extends
   BiographyModuleConfigSiteValuesModel,
   BiographyModuleConfigSiteAccessValuesModel,
   BiographyModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'biography';
   }
 }

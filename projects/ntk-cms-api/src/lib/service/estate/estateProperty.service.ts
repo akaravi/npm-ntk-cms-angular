@@ -10,14 +10,14 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateProperty';
   }
 
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -48,7 +48,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteList', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -67,7 +67,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       BillboardId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithBillboardId/' + BillboardId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithBillboardId/' + BillboardId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -86,7 +86,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       CustomerOrderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithCustomerOrderId/' + CustomerOrderId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderId/' + CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -5,7 +5,7 @@ import { BiographyContentCategoryModel } from '../../models/entity/biography/bio
 
 @Injectable()
 export class BiographyContentCategoryService extends ApiCmsServerBase<BiographyContentCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BiographyContentCategory';
   }
 

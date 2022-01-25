@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number>  {  getModuleCotrolerUrl(): string {
+export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number>  {  getModuleControllerUrl(): string {
     return 'CoreUserClaimContent';
   }
   ServiceClaimCheck(model: CoreUserClaimCheckDtoModel): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
@@ -18,7 +18,7 @@ export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimC
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ClaimCheck', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ClaimCheck', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -31,7 +31,7 @@ export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimC
   }
   ServiceClaimCheckCurrent(): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ClaimCheck', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ClaimCheck', {
         headers: this.getHeaders(),
       })
       .pipe(

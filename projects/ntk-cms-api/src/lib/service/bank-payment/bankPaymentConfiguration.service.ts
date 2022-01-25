@@ -13,7 +13,7 @@ export class BankPaymentConfigurationService extends
   BankPaymentModuleConfigSiteValuesModel,
   BankPaymentModuleConfigSiteAccessValuesModel,
   BankPaymentModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPayment';
   }
 }

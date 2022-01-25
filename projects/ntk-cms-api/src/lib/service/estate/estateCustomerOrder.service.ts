@@ -4,7 +4,7 @@ import { EstateCustomerOrderModel } from '../../models/entity/estate/estateCusto
 
 @Injectable()
 export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerOrderModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateCustomerOrder';
   }
 

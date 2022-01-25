@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class EstateEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateEnum';
   }
 
   ServiceEnumInputDataType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumInputDataType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumInputDataType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class EstateEnumService extends ApiServerBase {
   }
    ServiceEnumUiPropertyDesign(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumUiPropertyDesign', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUiPropertyDesign', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -38,7 +38,7 @@ export class EstateEnumService extends ApiServerBase {
   }
     ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumEstateUserType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumEstateUserType', {
         headers: this.getHeaders(),
       })
       .pipe(

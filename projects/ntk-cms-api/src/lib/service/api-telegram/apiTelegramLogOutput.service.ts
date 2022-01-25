@@ -4,7 +4,7 @@ import { ApiTelegramLogOutputModel } from '../../models/entity/api-telegram/apiT
 
 @Injectable()
 export class ApiTelegramLogOutputService extends ApiCmsServerBase<ApiTelegramLogOutputModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegramLogOutput';
   }
 

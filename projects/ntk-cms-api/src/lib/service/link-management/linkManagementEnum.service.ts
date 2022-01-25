@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LinkManagementEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementEnum';
   }
 
   ServiceEnumSharingPriceType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumSharingPriceType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumSharingPriceType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class LinkManagementEnumService extends ApiServerBase {
   }
   ServiceEnumManagementContentSettingType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumManagementContentSettingType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumManagementContentSettingType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -38,7 +38,7 @@ export class LinkManagementEnumService extends ApiServerBase {
   }
   ServiceEnumSharingAccountingType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumSharingAccountingType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumSharingAccountingType', {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -10,14 +10,14 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BlogCategoryService extends ApiCmsServerBase<BlogCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BlogCategory';
   }
 
   ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<BlogCategoryModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
         { Old: OldId, New: NewId },
         {
           headers: this.getHeaders(),

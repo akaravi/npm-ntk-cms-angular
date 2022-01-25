@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ChartShareServerCategoryService extends ApiCmsServerBase<any, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ChartShareServerCategory';
   }
 
@@ -19,7 +19,7 @@ export class ChartShareServerCategoryService extends ApiCmsServerBase<any, numbe
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllOtherSite/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOtherSite/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

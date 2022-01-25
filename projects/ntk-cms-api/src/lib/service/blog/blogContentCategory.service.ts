@@ -5,7 +5,7 @@ import { BlogContentCategoryModel } from '../../models/entity/blog/blogContentCa
 
 @Injectable()
 export class BlogContentCategoryService extends ApiCmsServerBase<BlogContentCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BlogContentCategory';
   }
 

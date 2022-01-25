@@ -1,8 +1,7 @@
 
-export class SmsApiSendTestDtoModel {
+export class SmsApiSendMessageDtoModel {
   LinkApiPathId: string;
-  ApiNumber: number;
-  FromNumber: string;
+  LinkFromNumber: string;
   ToNumber: string;
   Message: string;
   SendByQeue: boolean;

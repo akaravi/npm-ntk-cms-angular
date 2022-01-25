@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApiTelegramEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegramEnum';
   }
 
   ServiceEnumNotificationType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumNotificationType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumNotificationType', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -26,7 +26,7 @@ export class ApiTelegramEnumService extends ApiServerBase {
   }
   ServiceEnumOSType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumOSType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumOSType', {
         headers: this.getHeaders(),
       })
       .pipe(

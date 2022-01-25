@@ -5,7 +5,7 @@ import { LinkManagementBillboardTargetCategoryModel } from '../../models/entity/
 
 @Injectable()
 export class LinkManagementBillboardTargetCategoryService extends ApiCmsServerBase<LinkManagementBillboardTargetCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementBillboardTargetCategory';
   }
 }

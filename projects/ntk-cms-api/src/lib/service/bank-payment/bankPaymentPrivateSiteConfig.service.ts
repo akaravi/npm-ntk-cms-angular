@@ -11,12 +11,12 @@ import { BankPaymentPrivateSiteConfigAliasJsonModel } from '../../models/entity/
 
 @Injectable()
 export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
   ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigAliasJsonModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -35,7 +35,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/TestPay', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/TestPay', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -54,7 +54,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GoToBankPaymentWebSite', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GoToBankPaymentWebSite', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -68,7 +68,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   ServicePaymentGatewayList():
    Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/PaymentGatewayList',  {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayList',  {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -82,7 +82,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   ServicePaymentGatewayCoreList():
   Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
    return this.http
-     .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/PaymentGatewayCoreList',  {
+     .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayCoreList',  {
        headers: this.getHeaders(),
      })
      .pipe(

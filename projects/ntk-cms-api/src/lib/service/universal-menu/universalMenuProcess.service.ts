@@ -5,7 +5,7 @@ import { UniversalMenuProcessModel } from '../../models/entity/universal-menu/un
 
 @Injectable()
 export class UniversalMenuProcessService extends ApiCmsServerBase<UniversalMenuProcessModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'UniversalMenuProcess';
   }
 

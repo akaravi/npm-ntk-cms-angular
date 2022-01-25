@@ -9,14 +9,14 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApplicationLogNotification';
   }
 
   ServiceSendNotification(model: SendNotificationModel): Observable<ErrorExceptionResult<ApplicationLogNotificationModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SendNotification',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotification',
         model,
         {
           headers: this.getHeaders(),

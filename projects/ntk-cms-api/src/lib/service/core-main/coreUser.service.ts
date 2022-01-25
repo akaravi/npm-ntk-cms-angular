@@ -13,12 +13,12 @@ import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
 @Injectable()
 export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
-  CurrentUserObs = this.CurrentUser.asObservable(); getModuleCotrolerUrl(): string {
+  CurrentUserObs = this.CurrentUser.asObservable(); getModuleControllerUrl(): string {
     return 'CoreUser';
   }
   ServiceGetRessellerChart(linkUserId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetRessellerChart/' + linkUserId, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRessellerChart/' + linkUserId, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -37,7 +37,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
   }
   ServiceCurrectUser(): Observable<ErrorExceptionResult<CoreUserModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentUser', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentUser', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -54,7 +54,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetGlobalToken', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetGlobalToken', model, {
         headers: this.getHeaders(),
       })
       .pipe(

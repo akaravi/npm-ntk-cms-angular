@@ -9,13 +9,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcessModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreModuleProcess';
   }
 
   ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -32,7 +32,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormatter/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -50,7 +50,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithJsonFormatter/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithJsonFormatter/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -9,12 +9,12 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDesignerMainPageDependencyModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainPageDependency';
   }
   ServiceAutoAdd(): Observable<ErrorExceptionResultBase> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/' , {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/' , {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -11,7 +11,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreGuide';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreGuideModel>> {
@@ -20,7 +20,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
       model = new EditStepDtoModel<number>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -49,7 +49,7 @@ export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number>  
   }
   ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<CoreGuideModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/key/' + key, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/key/' + key, {
         headers: this.getHeaders(),
       })
       .pipe(

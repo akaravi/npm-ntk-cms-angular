@@ -8,14 +8,14 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class ApplicationThemeConfigService extends ApiCmsServerBase<ApplicationThemeConfigModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApplicationThemeConfig';
   }
 
   ServiceCurrentTheme(): Observable<ErrorExceptionResult<ApplicationThemeConfigModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentTheme', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentTheme', {
         headers: this.getHeaders(),
       })
       .pipe(

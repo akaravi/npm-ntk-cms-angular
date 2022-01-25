@@ -8,14 +8,14 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'PollingCategory';
   }
 
   ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<PollingCategoryModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/Move',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
         { Old: OldId, New: NewId },
         {
           headers: this.getHeaders(),

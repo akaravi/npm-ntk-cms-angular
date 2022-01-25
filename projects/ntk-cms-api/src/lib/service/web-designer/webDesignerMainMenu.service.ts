@@ -11,7 +11,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainMenu';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<WebDesignerMainMenuModel>> {
@@ -20,7 +20,7 @@ export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMain
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -36,7 +36,7 @@ export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMain
       model = new EditStepDtoModel<string>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -9,7 +9,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategoryModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'HyperShopCategory';
   }
 
@@ -19,7 +19,7 @@ export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategor
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllMicroService/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllMicroService/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -34,7 +34,7 @@ export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategor
   ServiceGetOneMicroService(id: string): Observable<ErrorExceptionResult<HyperShopCategoryModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneMicroService/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneMicroService/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

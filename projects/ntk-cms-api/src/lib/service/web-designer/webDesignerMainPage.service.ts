@@ -12,12 +12,12 @@ import { WebDesignerPageAutoAddDtoModel } from '../../models/dto/webDesigner/web
 
 @Injectable()
 export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'WebDesignerMainPage';
   }
   ServiceAutoAdd(model: WebDesignerPageAutoAddDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AutoAdd/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -31,7 +31,7 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
   ServiceWebScreenshot(id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/WebScreenshot/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebScreenshot/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -48,7 +48,7 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
       model = new GetAllDefaultPagesBySiteCategoryDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllDefaultPagesBySiteCategory', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllDefaultPagesBySiteCategory', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -62,7 +62,7 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
   ServiceSetDefaultAdminValuePage(id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SetDefaultAdminValuePage/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetDefaultAdminValuePage/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -78,7 +78,7 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
       model = new CmsPageUtilityToolsDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/UtilityTools', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UtilityTools', model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -5,7 +5,7 @@ import { EstateContractTypeModel } from '../../models/entity/estate/estateContra
 
 @Injectable()
 export class EstateContractTypeService extends ApiCmsServerBase<EstateContractTypeModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateContractType';
   }
 }

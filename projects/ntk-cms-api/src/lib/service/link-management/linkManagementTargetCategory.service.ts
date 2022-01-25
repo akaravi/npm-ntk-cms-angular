@@ -5,7 +5,7 @@ import { LinkManagementTargetCategoryModel } from '../../models/entity/link-mana
 
 @Injectable()
 export class LinkManagementTargetCategoryService extends ApiCmsServerBase<LinkManagementTargetCategoryModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'LinkManagementTargetCategory';
   }
 }

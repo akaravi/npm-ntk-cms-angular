@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DonateEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'DonateEnum';
   }
 
   ServiceEnumTransactionLogPublicType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumTransactionLogPublicType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionLogPublicType', {
         headers: this.getHeaders(),
       })
       .pipe(

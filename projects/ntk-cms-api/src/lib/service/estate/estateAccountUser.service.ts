@@ -5,7 +5,7 @@ import { EstateAccountUserModel } from '../../models/entity/estate/estateAccount
 
 @Injectable()
 export class EstateAccountUserService extends ApiCmsServerBase<EstateAccountUserModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstateAccountUser';
   }
 }

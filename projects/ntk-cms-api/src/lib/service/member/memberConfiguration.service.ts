@@ -13,7 +13,7 @@ export class MemberConfigurationService extends
   MemberModuleConfigSiteValuesModel,
   MemberModuleConfigSiteAccessValuesModel,
   MemberModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'member';
   }
 }

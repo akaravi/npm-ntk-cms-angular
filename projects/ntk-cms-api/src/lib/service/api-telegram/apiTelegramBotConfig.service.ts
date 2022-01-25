@@ -12,14 +12,14 @@ import { ApiTelegramSendMessageTodoModel } from '../../models/dto/api-telegram/a
 
 @Injectable()
 export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApiTelegramBotConfig';
   }
 
   ServiceSendMessage(model: ApiTelegramSendMessageTodoModel): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SendMessage', model, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage', model, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -33,7 +33,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetUpdatesAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetUpdatesAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsync/'+id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -46,7 +46,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetUpdatesAsyncLast(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetUpdatesAsyncLast/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsyncLast/'+id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -59,7 +59,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetMeAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetMeAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetMeAsync/'+id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -72,7 +72,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceSetWebhookAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SetWebhookAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsync/'+id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -85,7 +85,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceSetWebhookAsyncEmpty(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SetWebhookAsyncEmpty/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsyncEmpty/'+id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -98,7 +98,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceSetAllWebhookUpdate(): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/SetAllWebhookUpdate/', { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetAllWebhookUpdate/', { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),

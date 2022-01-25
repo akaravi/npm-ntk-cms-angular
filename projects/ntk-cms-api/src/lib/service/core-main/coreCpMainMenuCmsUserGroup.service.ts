@@ -5,7 +5,7 @@ import { CoreCpMainMenuCmsUserGroupModel } from '../../models/entity/core-main/c
 
 @Injectable()
 export class CoreCpMainMenuCmsUserGroupService extends ApiCmsServerBase<CoreCpMainMenuCmsUserGroupModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreCpMainMenuCmsUserGroup';
   }
 }

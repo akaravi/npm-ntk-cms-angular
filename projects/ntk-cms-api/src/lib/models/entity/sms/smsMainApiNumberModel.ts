@@ -6,6 +6,7 @@ export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   FirstSubmit: Date;
   UsanceDate: Date;
   SaleStatus: boolean;
-  LinkPathAndApiNumber: string;
+  IsPublic: boolean;
+  Priority?: number;
   ApiPathAndApiNumbers: SmsMainApiPathAndApiNumberModel[];
 }

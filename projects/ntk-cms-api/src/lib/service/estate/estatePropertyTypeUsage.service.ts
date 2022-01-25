@@ -5,7 +5,7 @@ import { EstatePropertyTypeUsageModel } from '../../models/entity/estate/estateP
 
 @Injectable()
 export class EstatePropertyTypeUsageService extends ApiCmsServerBase<EstatePropertyTypeUsageModel, string>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'EstatePropertyTypeUsage';
   }
 }

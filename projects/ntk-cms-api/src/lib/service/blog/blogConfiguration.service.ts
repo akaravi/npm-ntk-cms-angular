@@ -13,7 +13,7 @@ export class BlogConfigurationService extends
   BlogModuleConfigSiteValuesModel,
   BlogModuleConfigSiteAccessValuesModel,
   BlogModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Blog';
   }
 }

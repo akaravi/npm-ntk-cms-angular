@@ -5,7 +5,7 @@ import { DonateSponsorModel } from '../../models/entity/donate/donateSponsorMode
 
 @Injectable()
 export class DonateSponsorService extends ApiCmsServerBase<DonateSponsorModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'DonateSponsor';
   }
 }

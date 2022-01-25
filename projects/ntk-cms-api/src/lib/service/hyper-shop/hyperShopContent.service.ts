@@ -10,7 +10,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 @Injectable()
 export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'HyperShopContent';
   }
 
@@ -20,7 +20,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllMicroService/', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllMicroService/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -35,7 +35,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   ServiceGetOneMicroService(id: string): Observable<ErrorExceptionResult<HyperShopContentModel>> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneMicroService/' + id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneMicroService/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -50,7 +50,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteAdd/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -65,7 +65,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteRemove/' + Id, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -81,7 +81,7 @@ export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentM
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/FavoriteList', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
         headers: this.getHeaders(),
       })
       .pipe(

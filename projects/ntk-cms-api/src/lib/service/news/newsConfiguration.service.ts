@@ -13,7 +13,7 @@ export class NewsConfigurationService extends
   NewsModuleConfigSiteValuesModel,
   NewsModuleConfigSiteAccessValuesModel,
   NewsModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'news';
   }
 }

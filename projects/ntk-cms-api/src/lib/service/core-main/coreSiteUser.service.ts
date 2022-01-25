@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {  getModuleCotrolerUrl(): string {
+export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, number>  {  getModuleControllerUrl(): string {
     return 'CoreSiteUser';
   }
 
@@ -18,7 +18,7 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllSiteUser', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSiteUser', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -31,7 +31,7 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
   }
   ServiceGetCurrentSiteUsers(): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetCurrentSiteUsers', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrentSiteUsers', {
         headers: this.getHeaders(),
       })
       .pipe(

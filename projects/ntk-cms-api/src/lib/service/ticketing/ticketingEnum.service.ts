@@ -8,13 +8,38 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TicketingEnumService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ticketingEnum';
   }
 
   ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EnumTicketingDepartemenPriority', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTicketingDepartemenPriority', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+
+  ServiceEnumTicketStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTicketStatus', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEnumAnswerStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumAnswerStatus', {
         headers: this.getHeaders(),
       })
       .pipe(

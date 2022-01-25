@@ -9,13 +9,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayoutModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ApplicationLayout';
   }
   ServiceGetOneWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetOneWithJsonFormat',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormat',
         model,
         {
           headers: this.getHeaders(),
@@ -34,7 +34,7 @@ export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayout
   ServiceGetAllWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllWithJsonFormat',
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithJsonFormat',
         model,
         {
           headers: this.getHeaders(),

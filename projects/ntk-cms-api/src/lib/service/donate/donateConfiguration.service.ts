@@ -13,7 +13,7 @@ export class DonateConfigurationService extends
   DonateModuleConfigSiteValuesModel,
   DonateModuleConfigSiteAccessValuesModel,
   DonateModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'Donate';
   }
 }

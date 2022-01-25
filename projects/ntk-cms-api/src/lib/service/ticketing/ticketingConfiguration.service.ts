@@ -13,7 +13,7 @@ export class TicketingConfigurationService extends
   TicketingModuleConfigSiteValuesModel,
   TicketingModuleConfigSiteAccessValuesModel,
   TicketingModuleSiteStorageValuesModel> {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'ticketing';
   }
 }

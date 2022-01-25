@@ -81,11 +81,11 @@ export * from './lib/service/sms/_export';
 export * from './lib/models/dto/sms/_export';
 // sms
 
-// aplication
+// application
 export * from './lib/service/application/_export';
 export * from './lib/models/entity/application/_export';
 export * from './lib/models/dto/application/_export';
-// aplication
+// application
 
 // polling
 export * from './lib/service/polling/_export';
@@ -96,6 +96,7 @@ export * from './lib/models/entity/polling/_export';
 export * from './lib/service/ticketing/_export';
 export * from './lib/models/entity/ticketing/_export';
 export * from './lib/models/dto/ticketing/_export';
+export * from './lib/models/enums/ticketing/_export';
 // ticketing
 
 // hypershop

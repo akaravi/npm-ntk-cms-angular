@@ -12,7 +12,7 @@ import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
 
 @Injectable()
 export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'CoreCpMainMenu';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreCpMainMenuModel>> {
@@ -21,7 +21,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllTree', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -38,7 +38,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
     }
     model.RowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetAllMenu', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllMenu', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -57,7 +57,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       model = new EditStepDtoModel<number>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditStep', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
         headers: this.getHeaders(),
       })
       .pipe(

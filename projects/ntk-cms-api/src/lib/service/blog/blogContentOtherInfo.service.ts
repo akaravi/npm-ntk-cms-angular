@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class BlogContentOtherInfoService extends ApiCmsServerBase<BlogContentOtherInfoModel, number>  {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'BlogContentOtherInfo';
   }
   ServiceAddBatch(model: BlogContentOtherInfoModel[]): Observable<ErrorExceptionResult<BlogContentOtherInfoModel>> {
@@ -17,7 +17,7 @@ export class BlogContentOtherInfoService extends ApiCmsServerBase<BlogContentOth
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/AddBatch', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -33,7 +33,7 @@ export class BlogContentOtherInfoService extends ApiCmsServerBase<BlogContentOth
       model = [];
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/EditBatch', model, {
+      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditBatch', model, {
         headers: this.getHeaders(),
       })
       .pipe(

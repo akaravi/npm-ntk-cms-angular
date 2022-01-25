@@ -23,7 +23,7 @@ import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/a
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
-  getModuleCotrolerUrl(): string {
+  getModuleControllerUrl(): string {
     return 'auth';
   }
   SetCurrentTokenInfo(model: TokenInfoModel | null): any {
@@ -56,7 +56,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
+    return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
@@ -65,7 +65,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
-    return this.http.get(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/captcha').pipe(
+    return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
@@ -73,7 +73,7 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
   ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/GetTokenDevice/', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         if (ret.IsSuccess) {
@@ -85,7 +85,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signup', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
@@ -94,7 +94,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signin', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         if (ret.IsSuccess) {
@@ -106,7 +106,7 @@ export class CoreAuthService extends ApiServerBase {
   }
 
   ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signInBySms', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signInBySms', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         if (ret.IsSuccess) {
@@ -122,7 +122,7 @@ export class CoreAuthService extends ApiServerBase {
       model = new AuthRenewTokenModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/renewToken', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/renewToken', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -137,7 +137,7 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/changePassword', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/changePassword', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -148,7 +148,7 @@ export class CoreAuthService extends ApiServerBase {
       );
   }
   ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/forgetPassword', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/forgetPassword', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
@@ -156,7 +156,7 @@ export class CoreAuthService extends ApiServerBase {
     );
   }
   ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
-    return this.http.post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         return ret;
@@ -165,7 +165,7 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceLogout(model: AuthUserSignOutModel = new AuthUserSignOutModel()): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/signOut', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signOut', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -184,7 +184,7 @@ export class CoreAuthService extends ApiServerBase {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/existToken', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/existToken', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -200,7 +200,7 @@ export class CoreAuthService extends ApiServerBase {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/mobileConfirm', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/mobileConfirm', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -216,7 +216,7 @@ export class CoreAuthService extends ApiServerBase {
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleCotrolerUrl() + '/emailConfirm', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/emailConfirm', model, {
         headers: this.getHeaders(),
       })
       .pipe(
