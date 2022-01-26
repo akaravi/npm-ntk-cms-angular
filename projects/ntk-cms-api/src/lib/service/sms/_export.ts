@@ -15,3 +15,4 @@ export * from './smsMainApiPathPublicConfig.service';
 export * from './smsMainApiPathSuperSeder.service';
 export * from './smsMainApiNumber.service';
 export * from './smsMainApiNumberPermission.service';
+export * from './SmsMainCustomerCredit.service';
