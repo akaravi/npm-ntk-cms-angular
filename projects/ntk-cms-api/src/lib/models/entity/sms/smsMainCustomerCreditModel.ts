@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-export class SmsMainCustomerCreditViewModel extends BaseModuleEntity<string> {
+export class SmsMainCustomerCreditModel extends BaseModuleEntity<string> {
   Number: string;
   Description: string;
   Debtor: number;

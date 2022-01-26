@@ -19,4 +19,4 @@ export * from './smsMainApiPathSuperSederModel';
 export * from './smsMainApiPathAndApiNumberModel';
 export * from './smsMainApiNumberModel';
 export * from './smsMainApiNumberPermissionModel';
-export * from './smsMainCustomerCreditViewModel';
+export * from './smsMainCustomerCreditModel';
