@@ -2,8 +2,11 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiNumberModel } from './smsMainApiNumberModel';
 
 export class SmsMainApiNumberPermissionModel extends BaseModuleEntity<string> {
-  LinkCmsUserId: number;
   LinkApiNumberId: string;
+  LinkCoreUserId?: number;
+  LinkCoreSiteId?: number;
+  LinkCoreUserGroupId?: number;
+  LinkCoreSiteCategoryId?: number;
   HasAccess: boolean;
   HasInherits: boolean;
   FromDate: Date;

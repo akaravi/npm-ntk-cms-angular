@@ -1,10 +1,11 @@
-import { EnumProcessFlowRecordStatus } from '../../enums/sms/enumProcessFlowRecordStatus';
-import { EnumProcessFlowSmsStatus } from '../../enums/sms/enumProcessFlowSmsStatus';
+
+import { SmsProcessFlowRecordStatusEnum } from '../../enums/sms/smsProcessFlowRecordStatus.enum';
+import { SmsProcessFlowSmsStatusEnum } from '../../enums/sms/smsProcessFlowSmsStatus.enum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class SmsMainApiPathProcessFlowModel extends BaseModuleEntity<string> {
-  ProcessFlowStatus: EnumProcessFlowRecordStatus;
-  SmsStatus: EnumProcessFlowSmsStatus;
+  ProcessFlowStatus: SmsProcessFlowRecordStatusEnum;
+  SmsStatus: SmsProcessFlowSmsStatusEnum;
   LinkPrivateSiteConfigId: string;
   LinkUserId?: number;
   Amount: number;
