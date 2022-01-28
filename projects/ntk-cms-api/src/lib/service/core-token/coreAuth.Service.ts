@@ -19,6 +19,7 @@ import { Injectable } from '@angular/core';
 import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignInBySmsDtoModel';
 import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
 import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/authUserForgetPasswordEntryPinCodeModel';
+import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 
 
 @Injectable()
@@ -72,12 +73,12 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-  ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
+  ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenDeviceModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
         if (ret.IsSuccess) {
-          this.SetCurrentTokenInfo(ret.Item);
+          this.setToken('', ret.DeviceToken, '');
         }
         return ret;
       }),
