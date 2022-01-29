@@ -76,4 +76,8 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   LinkLocationIdTitle: string;
   LinkLocationIdParentTitle: string;
   Favorited: boolean;
+  /**Action */
+  ActionSendSmsToCustomer: boolean;
+  ActionSendSmsToAgent: boolean;
+  ActionSendSmsToCustomerOrder: boolean;
 }
