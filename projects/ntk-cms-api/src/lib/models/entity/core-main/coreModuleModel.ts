@@ -4,6 +4,8 @@ export class CoreModuleModel extends BaseEntity<number>{
   TitleML: string;
   TitleResourceLanguage?: any;
   ClassName: string;
+  NeedSiteCreditAccount:boolean;
+  NeedSiteUserCreditAccount:boolean;
   Description: string;
   AdministratorIsActivate: boolean;
   ModuleConfigAdminMainJson?: any;
