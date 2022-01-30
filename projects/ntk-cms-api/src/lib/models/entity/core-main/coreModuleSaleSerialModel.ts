@@ -4,8 +4,8 @@ import { CoreModuleSaleInvoiceModel } from './coreModuleSaleInvoiceModel';
 import { CoreSiteModel } from './coreSiteModel';
 
 export class CoreModuleSaleSerialModel extends BaseEntity<number>  {
-  ExpireDate: Date;
-  Price: number;
+  DatePeriodStart: Date;
+  DatePeriodEnd: Date;
   HasUsed: boolean;
   HasDemo: boolean;
   SerialNumber: string;
@@ -15,10 +15,11 @@ export class CoreModuleSaleSerialModel extends BaseEntity<number>  {
   MaxExpireToUse?: Date;
   NumberOfRegistered: number;
   LinkSiteIdDeposit?: number;
+  LinkUserIdDeposit?: number;
   // tslint:disable-next-line: variable-name
   virtual_SiteDeposit: CoreSiteModel;
   LinkModuleSaleHeaderId: number;
-  LinkSiteIdBuyer?: number;
+
   // tslint:disable-next-line: variable-name
   virtual_ModuleSaleHeader: CoreModuleSaleHeaderModel;
   ModuleSaleInvoices: CoreModuleSaleInvoiceModel[];
