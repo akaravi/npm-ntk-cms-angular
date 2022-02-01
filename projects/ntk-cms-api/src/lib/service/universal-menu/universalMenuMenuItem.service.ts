@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 import { UniversalMenuMenuItemModel } from '../../models/entity/universal-menu/universalMenuMenuItemModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()

@@ -6,7 +6,7 @@ import { CoreModuleModel } from '../../models/entity/core-main/coreModuleModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()

@@ -4,7 +4,7 @@ import { CoreModuleSaleSerialModel } from '../../models/entity/core-main/coreMod
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleCheckSerialForSiteDtoModel } from '../../models/dto/core/coreModuleCheckSerialForSiteDtoModel';
+import { CoreModuleCheckSerialForSiteDtoModel } from '../../models/dto/core-main/coreModuleCheckSerialForSiteDtoModel';
 import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/coreModuleSaleInvoiceDetailModel';
 import { CoreModuleSaleInvoiceModel } from '../../models/entity/core-main/coreModuleSaleInvoiceModel';
 

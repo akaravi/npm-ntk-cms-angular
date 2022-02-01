@@ -6,8 +6,8 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreModuleSaleHeaderCalculateDtoModel } from '../../models/dto/core/coreModuleSaleHeaderCalculateDtoModel';
-import { CoreModuleSaleHeaderPaymentDtoModel } from '../../models/dto/core/coreModuleSaleHeaderPaymentDtoModel';
+import { CoreModuleSaleHeaderCalculateDtoModel } from '../../models/dto/core-main/coreModuleSaleHeaderCalculateDtoModel';
+import { CoreModuleSaleHeaderPaymentDtoModel } from '../../models/dto/core-main/coreModuleSaleHeaderPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 

@@ -7,7 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreCpMainMenuModel } from '../../models/entity/core-main/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()

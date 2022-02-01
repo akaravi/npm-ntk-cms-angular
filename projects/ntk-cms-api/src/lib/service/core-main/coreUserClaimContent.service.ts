@@ -3,8 +3,8 @@ import { CoreUserClaimContentModel } from '../../models/entity/core-main/coreUse
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
-import { CoreUserClaimCheckDtoModel } from '../../models/dto/core/coreUserClaimCheckDtoModel';
-import { CoreUserClaimCheckModel } from '../../models/dto/core/coreUserClaimCheckModel';
+import { CoreUserClaimCheckDtoModel } from '../../models/dto/core-main/coreUserClaimCheckDtoModel';
+import { CoreUserClaimCheckModel } from '../../models/dto/core-main/coreUserClaimCheckModel';
 import { map, retry } from 'rxjs/operators';
 
 

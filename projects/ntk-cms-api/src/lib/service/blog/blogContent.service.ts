@@ -4,7 +4,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { catchError, map, retry } from 'rxjs/operators';
 import { BlogContentModel } from '../../models/entity/blog/blogContentModel';
 import { Observable } from 'rxjs';
-import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
+import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 

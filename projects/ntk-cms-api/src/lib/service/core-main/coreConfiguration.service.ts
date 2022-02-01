@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map } from 'rxjs/operators';
-import { IpModel } from '../../models/dto/core/ipModel';
+import { IpModel } from '../../models/dto/core-main/ipModel';
 
 
 @Injectable()

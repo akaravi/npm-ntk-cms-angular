@@ -1,5 +1,5 @@
-import { AuthEmailConfirmDtoModel } from '../../models/dto/core/authEmailConfirmDtoModel';
-import { AuthMobileConfirmDtoModel } from '../../models/dto/core/authMobileConfirmDtoModel';
+import { AuthEmailConfirmDtoModel } from '../../models/dto/core-main/authEmailConfirmDtoModel';
+import { AuthMobileConfirmDtoModel } from '../../models/dto/core-main/authMobileConfirmDtoModel';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiServerBase } from '../base/apiServerBase.service';
@@ -8,17 +8,17 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CaptchaModel } from '../../models/entity/base/captchaModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { AuthUserSignInModel } from '../../models/dto/core/authUserSignInModel';
-import { TokenDeviceClientInfoDtoModel } from '../../models/dto/core/tokenDeviceClientInfoDtoModel';
-import { AuthUserSignUpModel } from '../../models/dto/core/authUserSignUpModel';
-import { AuthRenewTokenModel } from '../../models/dto/core/authRenewTokenModel';
-import { AuthUserChangePasswordModel } from '../../models/dto/core/authUserChangePasswordModel';
-import { AuthUserSignOutModel } from '../../models/dto/core/authUserSignOutModel';
-import { AuthUserForgetPasswordModel } from '../../models/dto/core/authUserForgetPasswordModel';
+import { AuthUserSignInModel } from '../../models/dto/core-main/authUserSignInModel';
+import { TokenDeviceClientInfoDtoModel } from '../../models/dto/core-main/tokenDeviceClientInfoDtoModel';
+import { AuthUserSignUpModel } from '../../models/dto/core-main/authUserSignUpModel';
+import { AuthRenewTokenModel } from '../../models/dto/core-main/authRenewTokenModel';
+import { AuthUserChangePasswordModel } from '../../models/dto/core-main/authUserChangePasswordModel';
+import { AuthUserSignOutModel } from '../../models/dto/core-main/authUserSignOutModel';
+import { AuthUserForgetPasswordModel } from '../../models/dto/core-main/authUserForgetPasswordModel';
 import { Injectable } from '@angular/core';
-import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core/authUserSignInBySmsDtoModel';
+import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core-main/authUserSignInBySmsDtoModel';
 import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
-import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core/authUserForgetPasswordEntryPinCodeModel';
+import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core-main/authUserForgetPasswordEntryPinCodeModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 
 

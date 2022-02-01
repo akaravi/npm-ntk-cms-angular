@@ -7,7 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 
 import { Injectable } from '@angular/core';
-import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
+import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
 
 
 @Injectable()

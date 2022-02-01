@@ -2,7 +2,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { EstatePropertyDetailModel } from '../../models/entity/estate/estatePropertyDetailModel';
-import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';

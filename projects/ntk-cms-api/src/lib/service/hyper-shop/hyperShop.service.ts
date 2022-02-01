@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { UniversalActionModel } from '../../models/dto/core/universalActionModel';
+import { UniversalActionModel } from '../../models/dto/core-main/universalActionModel';
 import { CheckStatusActionModel } from '../../models/dto/hyperShop/checkStatusActionModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiServerBase } from '../base/apiServerBase.service';

@@ -21,7 +21,7 @@ export * from './lib/models/entity/base-config/_export';
 export * from './lib/models/entity/core-log/_export';
 export * from './lib/models/entity/core-token/_export';
 
-export * from './lib/models/dto/core/_export';
+export * from './lib/models/dto/core-main/_export';
 // core Serve
 // core Module Serve
 export * from './lib/service/core-module-main/_export';
@@ -29,6 +29,8 @@ export * from './lib/service/core-module-log/_export';
 
 export * from './lib/models/entity/core-module-main/_export';
 export * from './lib/models/entity/core-module-log/_export';
+
+export * from './lib/models/dto/core-module/_export';
 // core Module Serve
 
 // core Module Serve

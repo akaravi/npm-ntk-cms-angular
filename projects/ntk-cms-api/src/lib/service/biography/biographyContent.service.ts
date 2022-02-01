@@ -5,7 +5,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { catchError, map, retry } from 'rxjs/operators';
 import { BiographyContentModel } from '../../models/entity/biography/biographyContentModel';
 import { Observable } from 'rxjs';
-import { ScoreClickDtoModel } from '../../models/dto/core/scoreClickDtoModel';
+import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 import { BiographyContentWithDatePeriodEndDtoModel } from '../../models/dto/biography/biographyContentWithDatePeriodEndDtoModel';

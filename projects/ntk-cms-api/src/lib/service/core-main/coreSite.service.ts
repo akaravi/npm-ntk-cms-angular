@@ -2,16 +2,16 @@ import { Observable } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core/coreSiteAddFirstSiteDtoModel';
+import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core-main/coreSiteAddFirstSiteDtoModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreSiteSearchModel } from '../../models/dto/core/coreSiteSearchModel';
-import { DomainModel } from '../../models/dto/core/domainModel';
+import { CoreSiteSearchModel } from '../../models/dto/core-main/coreSiteSearchModel';
+import { DomainModel } from '../../models/dto/core-main/domainModel';
 import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { Injectable } from '@angular/core';
-import { ShareInfoModel } from '../../models/dto/core/shareInfoModel';
-import { RessellerChartModel } from '../../models/dto/core/ressellerChartModel';
-import { ProcessModuleSiteDataInfoOutputModel } from '../../models/dto/core/processModuleSiteDataInfoOutputModel';
-import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core/processModuleSiteDataOptimazeOutputModel';
+import { ShareInfoModel } from '../../models/dto/core-main/shareInfoModel';
+import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
+import { ProcessModuleSiteDataInfoOutputModel } from '../../models/dto/core-main/processModuleSiteDataInfoOutputModel';
+import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core-main/processModuleSiteDataOptimazeOutputModel';
 
 
 @Injectable()

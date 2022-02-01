@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EditStepDtoModel } from '../../models/dto/core/editStepDtoModel';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { map, retry } from 'rxjs/operators';
 
 
