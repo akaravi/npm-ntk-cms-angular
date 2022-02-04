@@ -11,10 +11,12 @@ import { CoreModuleSiteUserCreditPaymentDtoModel } from '../../models/dto/core-m
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 
 
+
 @Injectable()
-export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModuleSiteUserCreditModel, number>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleSiteUserCredit';
-  }
+export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModuleSiteUserCreditModel, number>  {
+    getModuleControllerUrl(): string {
+      return 'CoreModuleSiteUserCredit';
+    }
   ServiceGetCredit(LinkModuleId: number): Observable<ErrorExceptionResult<CoreModuleSiteUserCreditModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCredit/' + LinkModuleId, {
@@ -31,37 +33,37 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModule
 
 
   ServiceOrderCalculate(model: CoreModuleSiteUserCreditCalculateDtoModel):
-  Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
-  if (!model) {
-    model = new CoreModuleSiteUserCreditCalculateDtoModel();
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
+    if (!model) {
+      model = new CoreModuleSiteUserCreditCalculateDtoModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
   }
-  return this.http
-    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
-      headers: this.getHeaders(),
-    })
-    .pipe(
-      retry(this.configApiRetry),
-      // catchError(this.handleError)
-      map((ret: any) => {
-        return this.errorExceptionResultCheck(ret);
-      }),
-    );
-}
-ServiceOrderPayment(model: CoreModuleSiteUserCreditPaymentDtoModel):
-  Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
-  if (!model) {
-    model = new CoreModuleSiteUserCreditPaymentDtoModel();
+  ServiceOrderPayment(model: CoreModuleSiteUserCreditPaymentDtoModel):
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+    if (!model) {
+      model = new CoreModuleSiteUserCreditPaymentDtoModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
   }
-  return this.http
-    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
-      headers: this.getHeaders(),
-    })
-    .pipe(
-      retry(this.configApiRetry),
-      // catchError(this.handleError)
-      map((ret: any) => {
-        return this.errorExceptionResultCheck(ret);
-      }),
-    );
-}
 }

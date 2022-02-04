@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NodeService } from '../../../services/node.service';
-import { ErrorExceptionResult, FileContentModel, FileContentService, FileUploadModel } from 'ntk-cms-api';
+import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-awesome-uploader';
 import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
 import { Observable, of } from 'rxjs';

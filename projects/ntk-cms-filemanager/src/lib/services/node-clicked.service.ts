@@ -5,7 +5,7 @@ import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
-import { first, map } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'ntk-cms-api';
 import { FileManagerStoreService } from './file-manager-store.service';
 
