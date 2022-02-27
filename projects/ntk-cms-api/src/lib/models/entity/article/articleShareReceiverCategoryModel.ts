@@ -5,8 +5,8 @@ import { ArticleShareServerCategoryModel } from './articleShareServerCategoryMod
 
 export class ArticleShareReceiverCategoryModel extends BaseModuleEntity<number> {
   FromDate?: Date;
-  LinkShareReciverCategoryId?: number;
-  LinkShareServerCategoryId?: number;
+  LinkShareReciverCategoryId: number;
+  LinkShareServerCategoryId: number;
   ExpireDate?: Date;
   ShareServerCategory: ArticleShareServerCategoryModel;
   ShareReciverCategory: ArticleCategoryModel;

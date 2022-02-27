@@ -5,15 +5,16 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { NewsShareServerCategoryModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
 
 
 @Injectable()
-export class NewsShareServerCategoryService extends ApiCmsServerBase<any, number>  {
+export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number>  {
   getModuleControllerUrl(): string {
     return 'NewsShareServerCategory';
   }
 
-  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExceptionResult<any>> {
+  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExceptionResult<NewsShareServerCategoryModel>> {
     if (model == null) {
       model = new FilterModel();
     }

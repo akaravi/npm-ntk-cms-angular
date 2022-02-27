@@ -91,6 +91,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   AboutUsLinkTelegram: string;
   AboutUsLinkPinterest: string;
   AboutUsLinkRss: string;
+  AboutUsPrivacyPolicyHtmlBody: string;
   /*
   AboutUs
     */

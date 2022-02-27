@@ -5,8 +5,8 @@ import { BiographyShareServerCategoryModel } from './biographyShareServerCategor
 
 export class BiographyShareReceiverCategoryModel extends BaseModuleEntity<number> {
   FromDate?: Date;
-  LinkShareReciverCategoryId?: number;
-  LinkShareServerCategoryId?: number;
+  LinkShareReciverCategoryId: number;
+  LinkShareServerCategoryId: number;
   ExpireDate?: Date;
   ShareServerCategory: BiographyShareServerCategoryModel;
   ShareReciverCategory: BiographyCategoryModel;
