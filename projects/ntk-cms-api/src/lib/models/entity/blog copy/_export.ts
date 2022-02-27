@@ -6,7 +6,4 @@ export * from './blogContentOtherInfoModel';
 export * from './blogContentSimilarModel';
 export * from './blogContentTagModel';
 export * from './blogContentCategoryModel';
-export * from './blogShareMainAdminSettingModel';
-export * from './blogShareReceiverCategoryModel';
-export * from './blogShareServerCategoryModel';
 

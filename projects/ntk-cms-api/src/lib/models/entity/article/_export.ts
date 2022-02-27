@@ -6,4 +6,7 @@ export * from './articleContentOtherInfoModel';
 export * from './articleContentSimilarModel';
 export * from './articleContentTagModel';
 export * from './articleContentCategoryModel';
+export * from './articleShareMainAdminSettingModel';
+export * from './articleShareReceiverCategoryModel';
+export * from './articleShareServerCategoryModel';
 
