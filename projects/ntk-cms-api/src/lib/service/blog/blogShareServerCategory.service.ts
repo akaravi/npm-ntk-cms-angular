@@ -5,7 +5,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
-import { BlogShareServerCategoryModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
+import { BlogShareServerCategoryModel } from '../../models/entity/blog/blogShareServerCategoryModel';
+
 
 
 @Injectable()

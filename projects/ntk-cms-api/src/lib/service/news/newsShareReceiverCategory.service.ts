@@ -1,7 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-
 import { Injectable } from '@angular/core';
-import { NewsShareReceiverCategoryModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
+import { NewsShareReceiverCategoryModel } from '../../models/entity/news/newsShareReceiverCategoryModel';
+
 
 
 @Injectable()

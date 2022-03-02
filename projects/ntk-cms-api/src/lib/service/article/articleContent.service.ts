@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
+import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
 
 
 @Injectable()
@@ -132,6 +133,38 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceReportAbuseAdd(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+    if (model == null) {
+      model = new CoreModuleReportAbuseDtoModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseAdd', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceReportAbuseList(model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList', model, {
         headers: this.getHeaders(),
       })
       .pipe(

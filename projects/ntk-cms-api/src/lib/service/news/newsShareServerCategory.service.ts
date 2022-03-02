@@ -3,9 +3,9 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import {  map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
-
 import { Injectable } from '@angular/core';
-import { NewsShareServerCategoryModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
+import { NewsShareServerCategoryModel } from '../../models/entity/news/newsShareServerCategoryModel';
+
 
 
 @Injectable()

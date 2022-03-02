@@ -1,7 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-
 import { Injectable } from '@angular/core';
-import { NewsShareMainAdminSettingModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
+import { NewsShareMainAdminSettingModel } from '../../models/entity/news/newsShareMainAdminSettingModel';
+
 
 
 @Injectable()
