@@ -7,6 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { EnumRecordStatus } from '../../models/enums/enumRecordStatus';
 
 
 @Injectable()
@@ -94,7 +95,20 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
-
+  ServiceSetStatus(id: TKey,recordStatus:EnumRecordStatus): Observable<ErrorExceptionResult<TModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetStatus/' + id+"/"+recordStatus, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     if (model == null) {
