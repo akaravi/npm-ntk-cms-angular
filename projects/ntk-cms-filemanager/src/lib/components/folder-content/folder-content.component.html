@@ -23,7 +23,7 @@
   <div class="new" (click)="newFolderClickedAction()" *ngIf="nodes?.children">
     <ng-container [ngTemplateOutlet]="folderContentNewFolderTemplate"></ng-container>
   </div>
-  <div class="new" (click)="newFileClickedAction()" *ngIf="nodes?.children">
+  <div class="new" (click)="newFileClickedAction()" *ngIf="nodes?.children && nodes.id !== 0">
     <ng-container [ngTemplateOutlet]="folderContentNewFileTemplate"></ng-container>
   </div>
 </div>

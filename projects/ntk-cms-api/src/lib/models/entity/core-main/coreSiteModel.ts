@@ -39,6 +39,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   AccountingFormCreatedDate?: Date;
   AccountingFormUpdatedDate?: Date;
   AccountingMemo: string;
+  AdminSiteMemo: string;
+  AdminMainMemo: string;
   SiteUsers: CoreSiteUserModel[];
   ModuleSites: CoreModuleSiteModel[];
   DomainAliases: CoreSiteDomainAliasModel[];
@@ -102,6 +104,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   AboutUsLinkRss: string;
   AboutUsLinkCompanyAuthorSite: string;
   AboutUsLinkCompanyPublisherSite: string;
+  AboutUsPrivacyPolicyHtmlBody: string;
+
   /*
   AboutUs
     */

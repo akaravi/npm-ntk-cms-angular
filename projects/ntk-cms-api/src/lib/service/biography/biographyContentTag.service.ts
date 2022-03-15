@@ -6,6 +6,7 @@ import { BiographyContentTagModel } from '../../models/entity/biography/biograph
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
@@ -30,7 +31,7 @@ export class BiographyContentTagService extends ApiCmsServerBase<BiographyConten
         }),
       );
   }
-  ServiceDeleteBatch(model: BiographyContentTagModel[]): Observable<ErrorExceptionResult<BiographyContentTagModel>> {
+  ServiceDeleteBatch(model: BiographyContentTagModel[]): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }

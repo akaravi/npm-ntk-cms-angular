@@ -5,6 +5,7 @@ import { ChartContentTagModel } from '../../models/entity/chart/chartContentTagM
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
@@ -30,7 +31,7 @@ export class ChartContentTagService extends ApiCmsServerBase<ChartContentTagMode
         }),
       );
   }
-  ServiceDeleteBatch(model: ChartContentTagModel[]): Observable<ErrorExceptionResult<ChartContentTagModel>> {
+  ServiceDeleteBatch(model: ChartContentTagModel[]): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }

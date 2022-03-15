@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
@@ -28,7 +29,7 @@ export class NewsContentSimilarService extends ApiCmsServerBase<NewsContentSimil
         }),
       );
   }
-  ServiceDeleteBatch(model: NewsContentSimilarModel[]): Observable<ErrorExceptionResult<NewsContentSimilarModel>> {
+  ServiceDeleteBatch(model: NewsContentSimilarModel[]): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }

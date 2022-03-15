@@ -175,7 +175,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
       );
   }
 
-  ServiceDelete(id: TKey): Observable<ErrorExceptionResult<TModel>> {
+  ServiceDelete(id: TKey): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .delete(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
@@ -189,7 +189,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResult<TModel>> {
+  ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteList', ids, {
@@ -203,7 +203,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
-  ServiceDeleteEntity(model: TModel): Observable<ErrorExceptionResult<TModel>> {
+  ServiceDeleteEntity(model: TModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/delete', model, {

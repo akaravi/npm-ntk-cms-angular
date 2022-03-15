@@ -6,6 +6,7 @@ import { BlogContentTagModel } from '../../models/entity/blog/blogContentTagMode
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
@@ -31,7 +32,7 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
         }),
       );
   }
-  ServiceDeleteBatch(model: BlogContentTagModel[]): Observable<ErrorExceptionResult<BlogContentTagModel>> {
+  ServiceDeleteBatch(model: BlogContentTagModel[]): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }
