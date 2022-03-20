@@ -46,7 +46,7 @@ export class CoreSiteModel extends BaseEntity<number> {
   DomainAliases: CoreSiteDomainAliasModel[];
   ChildernCreateds: CoreSiteModel[];
   Devices: CoreDeviceModel[];
-
+  ConfigNeshanMapApiKey: string;
   LinkResellerSiteId?: number;
   LinkResellerUserId?: number;
   /*

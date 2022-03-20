@@ -9,4 +9,5 @@ export class CoreSiteDomainAliasModel extends BaseEntity<number>  {
   LinkCmsSiteId?: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSite: CoreSiteModel;
+  ConfigNeshanMapApiKey: string;
 }
