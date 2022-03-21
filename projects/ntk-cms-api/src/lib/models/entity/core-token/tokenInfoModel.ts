@@ -25,6 +25,7 @@ export class TokenInfoModel {
   Language: string;
   Domain: string;
   SubDomain: string;
+  CurrentSiteDomainUrl: string;
   Title: string;
   PhotoUrl: string;
   Mobile: string;

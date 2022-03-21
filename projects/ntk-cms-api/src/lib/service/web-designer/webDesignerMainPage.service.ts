@@ -42,6 +42,20 @@ export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMain
         }),
       );
   }
+  ServiceWebRoute(id: string): Observable<ErrorExceptionResult<string>> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebRoute/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllDefaultPagesBySiteCategory(model: GetAllDefaultPagesBySiteCategoryDtoModel):
     Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
     if (model == null) {
