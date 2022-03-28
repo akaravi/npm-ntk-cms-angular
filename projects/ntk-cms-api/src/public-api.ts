@@ -140,6 +140,7 @@ export * from './lib/models/entity/member/_export';
 
 // donate
 export * from './lib/models/entity/donate/_export';
+export * from './lib/models/dto/donate/_export';
 export * from './lib/models/enums/donate/_export';
 export * from './lib/service/donate/_export';
 // donate
