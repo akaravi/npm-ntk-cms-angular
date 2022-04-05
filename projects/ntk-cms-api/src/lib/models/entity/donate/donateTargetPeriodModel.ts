@@ -9,6 +9,7 @@ export class DonateTargetPeriodModel extends BaseModuleEntity<number> {
   SupportRequiredPayment: number;
   LinkTargeId?: number;
   Target: DonateTargetModel;
+  virtual_Target: DonateTargetModel;
   ShareBeginDate?: Date;
   ShareExpireDate?: Date;
   CurrentClickCount: number;

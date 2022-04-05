@@ -144,3 +144,10 @@ export * from './lib/models/dto/donate/_export';
 export * from './lib/models/enums/donate/_export';
 export * from './lib/service/donate/_export';
 // donate
+
+// data-provider
+export * from './lib/models/entity/data-provider/_export';
+export * from './lib/models/dto/data-provider/_export';
+export * from './lib/models/enums/data-provider/_export';
+export * from './lib/service/data-provider/_export';
+// data-provider

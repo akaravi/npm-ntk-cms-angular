@@ -7,5 +7,6 @@ export class DonateSponsorModel extends BaseModuleEntity<number> {
   LinkCmsUserId: number;
   LinkTargetCategoryId: number;
   TargetCategory: DonateTargetCategoryModel;
+  virtual_TargetCategory: DonateTargetCategoryModel;
   TargetPeriodSponsors: DonateTargetPeriodSponsorModel[];
 }

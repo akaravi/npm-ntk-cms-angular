@@ -7,8 +7,10 @@ export class DonateTransactionModel extends BaseModuleEntity<number> {
   LinkCmsUserId?: number;
   LinkSponsorId?: number;
   Sponsor: DonateSponsorModel;
+  virtual_Sponsor: DonateSponsorModel;
   LinkTargetPeriodId: number;
   TargetPeriod: DonateTargetPeriodModel;
+  virtual_TargetPeriod: DonateTargetPeriodModel;
 
   SystemTransactionId: number;
   SystemPaymentIsSuccess: number;
