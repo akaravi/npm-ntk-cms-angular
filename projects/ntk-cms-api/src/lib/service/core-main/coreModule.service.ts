@@ -32,7 +32,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>
   }
   ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(

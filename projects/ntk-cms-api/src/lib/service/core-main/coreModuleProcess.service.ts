@@ -15,7 +15,7 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
 
   ServiceAutoAdd(): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(
