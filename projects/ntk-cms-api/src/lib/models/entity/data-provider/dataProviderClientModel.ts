@@ -5,5 +5,5 @@ import { DataProviderPlanClientModel } from './dataProviderPlanClientModel';
 export class DataProviderClientModel extends BaseModuleEntity<number> {
   Title: string;
   ConnectionType: DataProviderClientConnectionTypeEnum;
-  PlanClient: DataProviderPlanClientModel[];
+  PlanClients: DataProviderPlanClientModel[];
 }

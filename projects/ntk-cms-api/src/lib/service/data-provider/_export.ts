@@ -1,6 +1,7 @@
 export * from './dataProviderConfiguration.service';
 export * from './dataProviderEnum.service';
 export * from './dataProviderLogClient.service';
+export * from './dataProviderLogData.service';
 export * from './dataProviderLogPlan.service';
 export * from './dataProviderLogSource.service';
 export * from './dataProviderClient.service';

@@ -7,7 +7,7 @@ import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
 export class DataProviderPlanModel extends BaseModuleEntity<number> {
   Title: string;
   Description: string;
-  LinkPlanCategory: number;
+  LinkPlanCategoryId: number;
   PlanCategory: DataProviderPlanCategoryModel;
   virtual_PlanCategory: DataProviderPlanCategoryModel;
   PlanClients: DataProviderPlanClientModel[];

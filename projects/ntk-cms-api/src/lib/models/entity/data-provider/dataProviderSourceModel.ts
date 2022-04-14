@@ -9,5 +9,5 @@ export class DataProviderSourceModel extends BaseModuleEntity<number> {
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
 
-  PlanSource: DataProviderPlanSourceModel[];
+  PlanSources: DataProviderPlanSourceModel[];
 }

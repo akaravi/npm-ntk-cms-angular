@@ -8,6 +8,7 @@ export * from './dataProviderPlanSourceModel';
 export * from './dataProviderSourceModel';
 export * from './dataProviderPlanCategoryModel';
 export * from './dataProviderTransactionModel';
+export * from './dataProviderLogDataModel';
 export * from './dataProviderLogClientModel';
 export * from './dataProviderLogPlanModel';
 export * from './dataProviderLogSourceModel';
