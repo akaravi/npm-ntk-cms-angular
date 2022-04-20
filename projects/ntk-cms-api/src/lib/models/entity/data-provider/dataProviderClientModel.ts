@@ -4,6 +4,8 @@ import { DataProviderPlanClientModel } from './dataProviderPlanClientModel';
 
 export class DataProviderClientModel extends BaseModuleEntity<number> {
   Title: string;
+  Description: string;
   ConnectionType: DataProviderClientConnectionTypeEnum;
+  KeyCode: string;
   PlanClients: DataProviderPlanClientModel[];
 }
