@@ -6,6 +6,8 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   Description: string;
   JoinId: string;
   LinkLocationId?: number;
+  LinkLocationIdTitle: string;
+  LinkLocationIdParentTitle: string;
   Geolocationlatitude?: number;
   Geolocationlongitude?: number;
   DateManufacture?: Date;
@@ -17,6 +19,5 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
 
-  LinkLocationIdTitle: string;
-  LinkLocationIdParentTitle: string;
+
 }

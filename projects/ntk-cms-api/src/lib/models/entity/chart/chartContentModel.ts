@@ -15,6 +15,8 @@ export class ChartContentModel extends BaseModuleEntity<number> {
   Geolocationlatitude?: number;
   Geolocationlongitude?: number;
   LinkLocationId?:number;
+  LinkLocationIdTitle: string;
+  LinkLocationIdParentTitle: string;
   Keyword: string;
   LinkFileIds: string;
   LinkFilePodcastId?: number;
