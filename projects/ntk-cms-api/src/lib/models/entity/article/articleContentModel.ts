@@ -12,8 +12,9 @@ export class ArticleContentModel extends BaseModuleEntity<number> {
   Description: string;
   Body: string;
   FromDate: Date;
-  Geolocationlatitude: number;
-  Geolocationlongitude: number;
+  Geolocationlatitude?: number;
+  Geolocationlongitude?: number;
+  LinkLocationId?:number;
   Keyword: string;
   LinkFileIds: string;
   LinkFilePodcastId?: number;
