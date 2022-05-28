@@ -28,21 +28,6 @@ export class CoreModuleLogReportAbuseService extends ApiCmsServerBase<CoreModule
         }),
       );
   }
-  ServiceRemoveReportAbuse(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<CoreModuleLogReportAbuseModel>> {
-    if (model == null) {
-      model = new CoreModuleReportAbuseDtoModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/RemoveReportAbuse', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+
 }
 
