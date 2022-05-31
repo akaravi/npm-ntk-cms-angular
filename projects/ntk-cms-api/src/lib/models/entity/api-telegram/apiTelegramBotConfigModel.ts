@@ -17,4 +17,6 @@ export class ApiTelegramBotConfigModel extends BaseModuleEntity<number>{
   LogOutputs: ApiTelegramLogOutputModel[];
   UrlViewContent: string;
   UrlViewContentQRCodeBase64: string;
+  HookAddressAPI:string;
+  HookAddressAPIById:string;
 }

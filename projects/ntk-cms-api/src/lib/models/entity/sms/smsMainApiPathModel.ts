@@ -79,4 +79,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   ProcessFlow: SmsMainApiPathProcessFlowModel[];
   LinkMainImageId?: number;
   LinkMainImageIdSrc: string;
+
+  HookAddressAPI:string;
+  HookAddressAPIById:string;
 }

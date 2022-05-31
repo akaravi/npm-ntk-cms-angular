@@ -8,6 +8,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EnumRecordStatus } from '../../models/enums/enumRecordStatus';
+import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 
 
 @Injectable()
@@ -207,6 +208,20 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/delete', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoAdd', model, {
         headers: this.getHeaders(),
       })
       .pipe(
