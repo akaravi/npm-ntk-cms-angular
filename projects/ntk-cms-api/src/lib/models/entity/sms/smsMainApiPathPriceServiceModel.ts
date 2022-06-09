@@ -4,19 +4,19 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
 
 export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
-  LinkApiPathId: string;
-  LinkCoreUserId?: number;
-  LinkCoreSiteId?: number;
-  LinkCoreUserGroupId?: number;
-  LinkCoreSiteCategoryId?: number;
-  RegulatorNumber: string;
-  ServicePrice: number;
-  EndUserPrice: number;
-  MessageLength: number;
-  MessageType: SmsMessageTypeEnum;
-  OutBoxType: SmsOutBoxTypeEnum;
-  UserVoicePrice: number;
+  linkApiPathId: string;
+  linkCoreUserId?: number;
+  linkCoreSiteId?: number;
+  linkCoreUserGroupId?: number;
+  linkCoreSiteCategoryId?: number;
+  regulatorNumber: string;
+  servicePrice: number;
+  endUserPrice: number;
+  messageLength: number;
+  messageType: SmsMessageTypeEnum;
+  outBoxType: SmsOutBoxTypeEnum;
+  userVoicePrice: number;
   // tslint:disable-next-line: variable-name
   virtual_ApiPath: SmsMainApiPathModel;
-  ApiPath: SmsMainApiPathModel;
+  apiPath: SmsMainApiPathModel;
 }

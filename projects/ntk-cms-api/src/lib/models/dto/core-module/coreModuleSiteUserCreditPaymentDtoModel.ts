@@ -1,8 +1,8 @@
 export class CoreModuleSiteUserCreditPaymentDtoModel {
-  LinkSiteId: number;
-  LinkUserId: number;
-  LinkModuleId: number;
-  Credit: number;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
+  linkSiteId: number;
+  linkUserId: number;
+  linkModuleId: number;
+  credit: number;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
 }

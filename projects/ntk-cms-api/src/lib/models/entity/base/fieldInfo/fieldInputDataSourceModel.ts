@@ -1,7 +1,7 @@
 export class FieldInputDataSourceModel {
-  InputFixed: string;
-  InputForm: string;
-  InputRequest: string;
-  InputBeforProcess: string;
-  InputControler: string;
+  inputFixed: string;
+  inputForm: string;
+  inputRequest: string;
+  inputBeforProcess: string;
+  inputControler: string;
 }

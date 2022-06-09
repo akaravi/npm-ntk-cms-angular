@@ -5,13 +5,13 @@ import { CoreModuleTagCategoryModel } from './coreModuleTagCategoryModel';
 
 
 export class CoreModuleSiteAccountingDocumentModel extends BaseModuleEntity<number> {
-  ActionDate?: Date;
-  Number: string;
-  Description: string;
-  SumDebtor: number;
-  SumCreditor: number;
-  SumRemaining: number;
-  LinkUserId?: number;
-  IsAutoAccept:boolean;
-  DocumentDetails:CoreModuleSiteAccountingDocumentDetailModel[];
+  actionDate?: Date;
+  number: string;
+  description: string;
+  sumDebtor: number;
+  sumCreditor: number;
+  sumRemaining: number;
+  linkUserId?: number;
+  isAutoAccept:boolean;
+  documentDetails:CoreModuleSiteAccountingDocumentDetailModel[];
 }

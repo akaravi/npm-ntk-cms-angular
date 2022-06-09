@@ -1,5 +1,5 @@
 export class CoreModuleFavoriteDtoModel {
-  ModuleName: string;
-  ModuleEntityName: string;
-  ModuleEntityId: string;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
 }

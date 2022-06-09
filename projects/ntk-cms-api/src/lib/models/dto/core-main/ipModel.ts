@@ -1,8 +1,8 @@
 export class IpModel {
-  YourIP: string;
-  AppVersion: string;
-  AppInfo: string;
-  Orgin: string;
-  UniqueDeviceId: string;
-  Token: string;
+  yourIP: string;
+  appVersion: string;
+  appInfo: string;
+  orgin: string;
+  uniqueDeviceId: string;
+  token: string;
 }

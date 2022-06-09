@@ -5,20 +5,20 @@ import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
 
 export class LinkManagementBillboardPatternModel extends BaseModuleEntity<number> {
-  SharingLinkType: EnumSharingPriceType;
-  SettingType: EnumManagementContentSettingType;
-  Title: string;
-  ClickPrice: number;
-  ViewPrice: number;
-  Width: number;
-  Height: number;
-  LinkMainImageId?: number;
-  LinkBackgroundId?: number;
-  LinkFileIds: string;
-  PatternScript: string;
-  Targets: LinkManagementTargetModel[];
-  Billboards: LinkManagementBillboardModel[];
-  LinkMainImageIdSrc: string;
-  LinkBackgroundIdSrc: string;
-  LinkFileIdsSrc: string[];
+  sharingLinkType: EnumSharingPriceType;
+  settingType: EnumManagementContentSettingType;
+  title: string;
+  clickPrice: number;
+  viewPrice: number;
+  width: number;
+  height: number;
+  linkMainImageId?: number;
+  linkBackgroundId?: number;
+  linkFileIds: string;
+  patternScript: string;
+  targets: LinkManagementTargetModel[];
+  billboards: LinkManagementBillboardModel[];
+  linkMainImageIdSrc: string;
+  linkBackgroundIdSrc: string;
+  linkFileIdsSrc: string[];
 }

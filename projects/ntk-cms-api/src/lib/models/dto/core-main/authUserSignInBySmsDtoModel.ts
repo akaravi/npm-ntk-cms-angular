@@ -1,11 +1,11 @@
 export class AuthUserSignInBySmsDtoModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  Mobile: string;
-  Code: string;
-  IsRemember: boolean;
-  SiteId: number;
+  captchaKey: string;
+  captchaText: string;
+  mobile: string;
+  code: string;
+  isRemember: boolean;
+  siteId: number;
   lang: string;
-  ResellerSiteId?: number;
-  ResellerUserId?: number;
+  resellerSiteId?: number;
+  resellerUserId?: number;
 }

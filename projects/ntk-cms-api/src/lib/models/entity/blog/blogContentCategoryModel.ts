@@ -7,8 +7,8 @@ import { BlogCommentModel } from './blogCommentModel';
 import { BlogContentModel } from './blogContentModel';
 
 export class BlogContentCategoryModel extends BaseModuleEntity<number> {
-  Content: BlogContentModel;
-  Category: BlogCategoryModel;
-  LinkCategoryId: number;
-  LinkContentId: number;
+  content: BlogContentModel;
+  category: BlogCategoryModel;
+  linkCategoryId: number;
+  linkContentId: number;
 }

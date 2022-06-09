@@ -7,24 +7,24 @@ import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorM
 import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingAnswerModel extends BaseModuleEntity<number> {
-  LinkMemberUserId?: number;
-  LinkTaskId: number;
-  HtmlBody: string;
+  linkMemberUserId?: number;
+  linkTaskId: number;
+  htmlBody: string;
   // tslint:disable-next-line: variable-name
   virtual_Ticket: TicketingTaskModel;
-  AnswerStatus: EnumAnswerStatus;
-  Ticket: TicketingTaskModel;
-  LinkTicketingDepartemenId?: number;
+  answerStatus: EnumAnswerStatus;
+  ticket: TicketingTaskModel;
+  linkTicketingDepartemenId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Departemen: TicketingDepartemenModel;
-  Departemen: TicketingDepartemenModel;
-  LinkTypeOperatorId?: number;
+  departemen: TicketingDepartemenModel;
+  linkTypeOperatorId?: number;
   // tslint:disable-next-line: variable-name
   virtual_DepartemenOperator: TicketingDepartemenOperatorModel;
-  DepartemenOperator: TicketingDepartemenOperatorModel;
-  LinkFileIds: string;
-  LinkFileIdsSrc: string[];
-  UploadFileGUID: string[];
-  ModuleCoreCreatedBy: CoreUserModel;
-  ModuleCoreMemberUserId: MemberUserModel;
+  departemenOperator: TicketingDepartemenOperatorModel;
+  linkFileIds: string;
+  linkFileIdsSrc: string[];
+  uploadFileGUID: string[];
+  moduleCoreCreatedBy: CoreUserModel;
+  moduleCoreMemberUserId: MemberUserModel;
 }

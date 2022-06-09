@@ -1,5 +1,5 @@
 export class PageModel {
-  PageNumber = 0;
-  TotalElements: number;
-  Size = 20;
+  pageNumber = 0;
+  totalElements: number;
+  size = 20;
 }

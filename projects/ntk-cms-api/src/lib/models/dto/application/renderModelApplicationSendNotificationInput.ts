@@ -1,12 +1,12 @@
 import { EnumNotificationType } from '../../enums/enumNotificationType';
 export class RenderModelApplicationSendNotificationInput {
-    AppId: number;
-    LinkMemberIds: string[];
-    Title: string;
-    Content: string;
-    ContentJson: string;
-    ContentType: EnumNotificationType;
-    SmallImageId?: number;
-    BigImageId?: number;
+    appId: number;
+    linkMemberIds: string[];
+    title: string;
+    content: string;
+    contentJson: string;
+    contentType: EnumNotificationType;
+    smallImageId?: number;
+    bigImageId?: number;
 }
 

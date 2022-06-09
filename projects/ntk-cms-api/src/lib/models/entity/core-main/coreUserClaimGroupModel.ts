@@ -3,15 +3,15 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 
 export class CoreUserClaimGroupModel extends BaseEntity<number> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  Description: string;
-  LinkModuleId?: number;
-  LinkSiteCategoryId?: number;
-  LinkApplicationId?: number;
-  LinkApplicationSourceId?: number;
-  LinkUserGroupId?: number;
-  ActionType: EnumUserClaimGroupActionType;
-  UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  description: string;
+  linkModuleId?: number;
+  linkSiteCategoryId?: number;
+  linkApplicationId?: number;
+  linkApplicationSourceId?: number;
+  linkUserGroupId?: number;
+  actionType: EnumUserClaimGroupActionType;
+  userClaimGroupDetails: CoreUserClaimGroupDetailModel[];
 }

@@ -4,17 +4,17 @@ import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
 import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 
 export class CoreModuleSaleHeaderGroupModel extends BaseEntity<number>  {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  Description: string;
-  LinkUserGroupId?: number;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  description: string;
+  linkUserGroupId?: number;
   // tslint:disable-next-line: variable-name
   virtual_UserGroup: CoreUserGroupModel;
-  LinkCmsSiteCategoryId?: number;
+  linkCmsSiteCategoryId?: number;
   // tslint:disable-next-line: variable-name
   virtual_SiteCategory: CoreSiteCategoryModel;
-  Headers: CoreModuleSaleHeaderModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  headers: CoreModuleSaleHeaderModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

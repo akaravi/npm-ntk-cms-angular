@@ -4,11 +4,11 @@ import { ArticleShareMainAdminSettingModel } from './articleShareMainAdminSettin
 import { ArticleShareReceiverCategoryModel } from './articleShareReceiverCategoryModel';
 
 export class ArticleShareServerCategoryModel extends BaseModuleEntity<number> {
-  Description:string;
-  LinkShareMainAdminSettingId:number;
-  Title:string;
-  LinkServerCategoryId:number;
-  ServerCategory:ArticleCategoryModel;
-  ShareMainAdminSetting:ArticleShareMainAdminSettingModel;
-  ShareReciverCategories:ArticleShareReceiverCategoryModel[];
+  description:string;
+  linkShareMainAdminSettingId:number;
+  title:string;
+  linkServerCategoryId:number;
+  serverCategory:ArticleCategoryModel;
+  shareMainAdminSetting:ArticleShareMainAdminSettingModel;
+  shareReciverCategories:ArticleShareReceiverCategoryModel[];
 }

@@ -1,7 +1,7 @@
 export class ItemState<TcClass> {
-  Item: TcClass;
-  ActionStart = false;
-  ActionEnd = false;
-  Status: string;
-  Message: string;
+  item: TcClass;
+  actionStart = false;
+  actionEnd = false;
+  status: string;
+  message: string;
 }

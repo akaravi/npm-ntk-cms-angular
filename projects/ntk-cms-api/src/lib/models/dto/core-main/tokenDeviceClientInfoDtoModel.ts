@@ -2,18 +2,18 @@ import { EnumDeviceType } from '../../enums/enumDeviceType';
 import { EnumOperatingSystemType } from '../../enums/enumOperatingSystemType';
 
 export class TokenDeviceClientInfoDtoModel {
-  SecurityKey: string;
-  ClientMACAddress: string;
-  NotificationId: string;
-  OSType: EnumOperatingSystemType;
-  DeviceType: EnumDeviceType;
-  PackageName: string;
-  AppBuildVer: number;
-  AppSourceVer: string;
-  Country: string;
-  LocationLat: string;
-  LocationLong: string;
-  SimCard: string;
-  Language: string;
-  DeviceBrand: string;
+  securityKey: string;
+  clientMACAddress: string;
+  notificationId: string;
+  oSType: EnumOperatingSystemType;
+  deviceType: EnumDeviceType;
+  packageName: string;
+  appBuildVer: number;
+  appSourceVer: string;
+  country: string;
+  locationLat: string;
+  locationLong: string;
+  simCard: string;
+  language: string;
+  deviceBrand: string;
 }

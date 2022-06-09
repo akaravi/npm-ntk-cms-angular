@@ -3,13 +3,13 @@ import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
 export class CoreSiteCategoryCmsModuleModel  extends BaseEntity<number> {
 
-  LinkCmsSiteCategoryId: number;
+  linkCmsSiteCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSiteCategory: CoreSiteCategoryModel;
-  VmsSiteCategory: CoreSiteCategoryModel;
-  LinkCmsModuleId: number;
+  vmsSiteCategory: CoreSiteCategoryModel;
+  linkCmsModuleId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsModule: CoreModuleModel;
-  CmsModule: CoreModuleModel;
-  ConfigValuesJson: string;
+  cmsModule: CoreModuleModel;
+  configValuesJson: string;
 }

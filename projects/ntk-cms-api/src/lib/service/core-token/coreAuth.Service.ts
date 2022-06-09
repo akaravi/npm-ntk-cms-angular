@@ -33,15 +33,15 @@ export class CoreAuthService extends ApiServerBase {
       this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
       return;
     }
-    if (model.Token && model.DeviceToken && model.RefreshToken) {
-      this.setToken(model.Token, model.DeviceToken, model.RefreshToken);
-    } else if (model.Token && model.DeviceToken) {
-      this.setToken(model.Token, model.DeviceToken, '');
-    } else if (model.Token) {
-      this.setToken(model.Token, '', '');
+    if (model.token && model.deviceToken && model.refreshToken) {
+      this.setToken(model.token, model.deviceToken, model.refreshToken);
+    } else if (model.token && model.deviceToken) {
+      this.setToken(model.token, model.deviceToken, '');
+    } else if (model.token) {
+      this.setToken(model.token, '', '');
     }
-    else if (model.DeviceToken) {
-      this.setToken('', model.DeviceToken, '');
+    else if (model.deviceToken) {
+      this.setToken('', model.deviceToken, '');
     }
     this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
   }
@@ -49,7 +49,7 @@ export class CoreAuthService extends ApiServerBase {
   CurrentTokenInfoRenew(): void {
     this.ServiceCurrentToken().subscribe(
       (next) => {
-        this.SetCurrentTokenInfo(next.Item);
+        this.SetCurrentTokenInfo(next.item);
       },
       (error) => {
       }
@@ -77,8 +77,8 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
-        if (ret.IsSuccess) {
-          this.setToken('', ret.DeviceToken, '');
+        if (ret.isSuccess) {
+          this.setToken('', ret.deviceToken, '');
         }
         return ret;
       }),
@@ -98,8 +98,8 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
-        if (ret.IsSuccess) {
-          this.SetCurrentTokenInfo(ret.Item);
+        if (ret.isSuccess) {
+          this.SetCurrentTokenInfo(ret.item);
         }
         return ret;
       }),
@@ -110,8 +110,8 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signInBySms', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
-        if (ret.IsSuccess) {
-          this.SetCurrentTokenInfo(ret.Item);
+        if (ret.isSuccess) {
+          this.SetCurrentTokenInfo(ret.item);
         }
         return ret;
       }),
@@ -129,8 +129,8 @@ export class CoreAuthService extends ApiServerBase {
       .pipe(
         // catchError(this.handleError)
         map((ret: any) => {
-          if (ret.IsSuccess) {
-            this.SetCurrentTokenInfo(ret.Item);
+          if (ret.isSuccess) {
+            this.SetCurrentTokenInfo(ret.item);
           }
           return ret;
         }),

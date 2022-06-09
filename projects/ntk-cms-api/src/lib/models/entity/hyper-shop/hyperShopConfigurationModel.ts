@@ -15,11 +15,11 @@ export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfig
   /// <summary>
   /// تمام مدارک درگاه اشتراکی تایید شده است
   /// </summary>
-  BankSharingMethodClaimIsApproved: boolean;
+  bankSharingMethodClaimIsApproved: boolean;
   /// <summary>
   /// تمام مدارک درگاه بانکی کاربر تایید شده است
   /// </summary>
-  UserPaymentMethodIsApproved: boolean;
+  userPaymentMethodIsApproved: boolean;
 }
 
 /// <summary>
@@ -28,31 +28,31 @@ export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfig
 /// </summary>
 export class HyperShopModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 {
-  HyperShopConnectionType: EnumHyperShopConnectionType;
+  hyperShopConnectionType: EnumHyperShopConnectionType;
   /// <summary>
   /// پرداخت در محل فعال است
   /// </summary>
-  InPlacePaymentMethodIsEnabled: boolean;
+  inPlacePaymentMethodIsEnabled: boolean;
   /// <summary>
   /// درگاه اشتراکی فعال است
   /// </summary>
-  BankSharingMethodIsEnabled: boolean;
+  bankSharingMethodIsEnabled: boolean;
   /// <summary>
   /// درگاه بانکی کاربر فعال است
   /// </summary>
-  UserPaymentMethodIsEnabled: boolean;
+  userPaymentMethodIsEnabled: boolean;
   /// <summary>
   /// اتصال توسط ادرس ای پی آی
   /// </summary>
-  HyperShopApiUrl: string;
+  hyperShopApiUrl: string;
   /// <summary>
   /// کش کردن محصولات در سرور مرکزی
   /// </summary>
-  DataCacheIsEnabled: boolean;
+  dataCacheIsEnabled: boolean;
   /// <summary>
   /// تایید فاکترو در صورت آفلاین بودن میکرو سرویس
   /// </summary>
-  DataOrderAcceptAutoIfMicroServiceOfflineIsEnabled: boolean;
+  dataOrderAcceptAutoIfMicroServiceOfflineIsEnabled: boolean;
 
 }
 

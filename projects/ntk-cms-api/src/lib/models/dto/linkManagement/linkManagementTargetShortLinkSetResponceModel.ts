@@ -1,6 +1,6 @@
 export class LinkManagementTargetShortLinkSetResponceModel {
-  Key: string;
-  ShareExpireDate: Date;
-  ShortLinkUrl: string;
-  ShortLinkQRCodeBase64: string;
+  key: string;
+  shareExpireDate: Date;
+  shortLinkUrl: string;
+  shortLinkQRCodeBase64: string;
 }

@@ -1,7 +1,7 @@
 export class CoreModuleMemoDtoModel {
-  ModuleName: string;
-  ModuleEntityName: string;
-  ModuleEntityId: string;
-  SubjectTitle: string;
-  SubjectBody: string;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
+  subjectTitle: string;
+  subjectBody: string;
 }

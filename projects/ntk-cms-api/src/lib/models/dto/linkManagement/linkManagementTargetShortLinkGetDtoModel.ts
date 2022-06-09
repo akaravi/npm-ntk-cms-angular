@@ -1,5 +1,5 @@
 export class LinkManagementTargetShortLinkGetDtoModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  Key: string;
+  captchaKey: string;
+  captchaText: string;
+  key: string;
 }

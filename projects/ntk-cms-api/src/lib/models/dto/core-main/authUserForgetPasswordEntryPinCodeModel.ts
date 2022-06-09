@@ -1,8 +1,8 @@
 export class AuthUserForgetPasswordEntryPinCodeModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  Email: string;
-  Mobile: string;
-  ActivateCode: string;
-  NewPassword: string;
+  captchaKey: string;
+  captchaText: string;
+  email: string;
+  mobile: string;
+  activateCode: string;
+  newPassword: string;
 }

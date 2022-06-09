@@ -8,29 +8,29 @@ import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 
 export class TicketingTaskModel extends BaseModuleEntity<number>  {
-  ExpireDate?: Date;
-  Title: string;
-  HtmlBody: string;
-  FullName: string;
-  PhoneNo: string;
-  Email: string;
+  expireDate?: Date;
+  title: string;
+  htmlBody: string;
+  fullName: string;
+  phoneNo: string;
+  email: string;
   priority: EnumTicketingDepartemenPriority;
-  LinkCmsUserId?: number;
-  LinkMemberUserId?: number;
-  LinkTicketingDepartemenId?: number;
-  TicketStatus: EnumTicketStatus;
-  UserIpAddress: string;
-  DeviceInformation: string;
+  linkCmsUserId?: number;
+  linkMemberUserId?: number;
+  linkTicketingDepartemenId?: number;
+  ticketStatus: EnumTicketStatus;
+  userIpAddress: string;
+  deviceInformation: string;
   // tslint:disable-next-line: variable-name
   virtual_Departemen: TicketingDepartemenModel;
-  Departemen: TicketingDepartemenModel;
-  LinkOperatorId?: number;
-  Answers: TicketingAnswerModel[];
-  TicketingDepartemenDefaultAnswerBody: string;
-  LinkFileIds: string;
-  LinkFileIdsSrc: string[];
-  UploadFileGUID: string[];
-  ModuleCoreCreatedBy: CoreUserModel;
-  ModuleCoreMemberUserId: MemberUserModel;
+  departemen: TicketingDepartemenModel;
+  linkOperatorId?: number;
+  answers: TicketingAnswerModel[];
+  ticketingDepartemenDefaultAnswerBody: string;
+  linkFileIds: string;
+  linkFileIdsSrc: string[];
+  uploadFileGUID: string[];
+  moduleCoreCreatedBy: CoreUserModel;
+  moduleCoreMemberUserId: MemberUserModel;
 }
 

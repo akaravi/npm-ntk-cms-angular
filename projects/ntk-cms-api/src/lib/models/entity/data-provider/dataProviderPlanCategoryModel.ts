@@ -3,15 +3,15 @@ import { DataProviderPlanModel } from './dataProviderPlanModel';
 
 
 export class DataProviderPlanCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  LinkMainImageId?: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentId?: number;
+  title: string;
+  linkMainImageId?: number;
+  description: string;
+  fontIcon: string;
+  linkParentId?: number;
   // tslint:disable-next-line: variable-name
   virtual_PlanCategory: DataProviderPlanCategoryModel;
-  PlanCategory: DataProviderPlanCategoryModel;
-  Children: DataProviderPlanCategoryModel[];
-  Plans: DataProviderPlanModel[];
-  LinkMainImageIdSrc: string;
+  planCategory: DataProviderPlanCategoryModel;
+  children: DataProviderPlanCategoryModel[];
+  plans: DataProviderPlanModel[];
+  linkMainImageIdSrc: string;
 }

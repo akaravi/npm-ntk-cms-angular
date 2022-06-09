@@ -3,10 +3,10 @@ import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodSponsorModel } from './donateTargetPeriodSponsorModel';
 
 export class DonateSponsorModel extends BaseModuleEntity<number> {
-  Title: string;
-  LinkCmsUserId: number;
-  LinkTargetCategoryId: number;
-  TargetCategory: DonateTargetCategoryModel;
+  title: string;
+  linkCmsUserId: number;
+  linkTargetCategoryId: number;
+  targetCategory: DonateTargetCategoryModel;
   virtual_TargetCategory: DonateTargetCategoryModel;
-  TargetPeriodSponsors: DonateTargetPeriodSponsorModel[];
+  targetPeriodSponsors: DonateTargetPeriodSponsorModel[];
 }

@@ -33,12 +33,14 @@ npm publish
 cd ..
 cd ..
 
+
 =========================================
 ng build ntk-cms-filemanager --prod
 cd dist/ntk-cms-filemanager
 npm publish
 cd ..
 cd ..
+
 =========================================
 ng build ntk-cms-fileuploader --prod
 cd dist/ntk-cms-fileuploader

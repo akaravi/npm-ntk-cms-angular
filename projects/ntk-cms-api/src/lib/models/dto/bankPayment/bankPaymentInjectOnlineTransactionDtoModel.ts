@@ -1,9 +1,9 @@
 export class BankPaymentInjectOnlineTransactionDtoModel {
-  ModuleName: string;
-  ModuleEntityName: string;
-  ModuleEntityId: string;
-  Amount: number;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
-  FeeTransport: number;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
+  amount: number;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
+  feeTransport: number;
 }

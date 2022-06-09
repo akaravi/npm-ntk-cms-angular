@@ -2,6 +2,6 @@ import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
 
 export class BankPaymentPrivateSiteConfigAliasJsonModel  extends BankPaymentPrivateSiteConfigModel {
-  PrivateConfigJsonFormatter: GetPropertiesInfoModel[];
+  privateConfigJsonFormatter: GetPropertiesInfoModel[];
 
 }

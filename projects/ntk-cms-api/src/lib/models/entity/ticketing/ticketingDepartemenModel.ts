@@ -7,14 +7,14 @@ import { TicketingFaqModel } from './ticketingFaqModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
-    Title: string;
-    DefaultAnswerBody: string;
-    Priority: EnumTicketingDepartemenPriority;
-    AccessToChangeType: EnumTicketAccessStatus;
-    Tickets: TicketingTaskModel[];
-    TicketAnswers: TicketingAnswerModel[];
-    Faqs: TicketingFaqModel[];
-    Operators: TicketingDepartemenOperatorModel[];
-    LinkMainImageId?: number;
-    LinkMainImageIdSrc: string;
+    title: string;
+    defaultAnswerBody: string;
+    priority: EnumTicketingDepartemenPriority;
+    accessToChangeType: EnumTicketAccessStatus;
+    tickets: TicketingTaskModel[];
+    ticketAnswers: TicketingAnswerModel[];
+    faqs: TicketingFaqModel[];
+    operators: TicketingDepartemenOperatorModel[];
+    linkMainImageId?: number;
+    linkMainImageIdSrc: string;
 }

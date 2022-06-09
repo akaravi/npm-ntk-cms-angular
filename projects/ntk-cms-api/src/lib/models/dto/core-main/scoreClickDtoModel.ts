@@ -1,4 +1,4 @@
 export class ScoreClickDtoModel {
-  Id: number;
-  ScorePercent: number;
+  id: number;
+  scorePercent: number;
 }

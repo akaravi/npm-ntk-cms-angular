@@ -1,41 +1,41 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateContractTypeModel extends BaseModuleEntity<string> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  ContentCount: number;
-  TitleSoldIt: string;
-  TitleSoldItML: string;
-  TitleSoldItResourceLanguage: string;
-  Description: string;
-  HasSalePrice: boolean;
-  HasRentPrice: boolean;
-  HasDepositPrice: boolean;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  contentCount: number;
+  titleSoldIt: string;
+  titleSoldItML: string;
+  titleSoldItResourceLanguage: string;
+  description: string;
+  hasSalePrice: boolean;
+  hasRentPrice: boolean;
+  hasDepositPrice: boolean;
 
-  TitleSalePrice: string;
-  TitleSalePriceML: string;
-  TitleSalePriceResourceLanguage: string;
-  TitleRentPrice: string;
-  TitleRentPriceML: string;
-  TitleRentPriceResourceLanguage: string;
-  TitleDepositPrice: string;
-  TitleDepositPriceML: string;
-  TitleDepositPriceResourceLanguage: string;
+  titleSalePrice: string;
+  titleSalePriceML: string;
+  titleSalePriceResourceLanguage: string;
+  titleRentPrice: string;
+  titleRentPriceML: string;
+  titleRentPriceResourceLanguage: string;
+  titleDepositPrice: string;
+  titleDepositPriceML: string;
+  titleDepositPriceResourceLanguage: string;
 
-  UnitSalePrice: string;
-  UnitRentPrice: string;
-  UnitDepositPrice: string;
+  unitSalePrice: string;
+  unitRentPrice: string;
+  unitDepositPrice: string;
 
-  SalePriceAllowAgreement: boolean;
-  SalePriceMin?: number;
-  SalePriceMax?: number;
+  salePriceAllowAgreement: boolean;
+  salePriceMin?: number;
+  salePriceMax?: number;
 
-  RentPriceAllowAgreement: boolean;
-  RentPriceMin?: number;
-  RentPriceMax?: number;
+  rentPriceAllowAgreement: boolean;
+  rentPriceMin?: number;
+  rentPriceMax?: number;
 
-  DepositPriceAllowAgreement: boolean;
-  DepositPriceMin?: number;
-  DepositPriceMax?: number;
+  depositPriceAllowAgreement: boolean;
+  depositPriceMin?: number;
+  depositPriceMax?: number;
 }

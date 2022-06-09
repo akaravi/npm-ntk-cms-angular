@@ -5,19 +5,19 @@ import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 import { CoreSiteModel } from './coreSiteModel';
 
 export class CoreModuleSaleInvoiceModel extends BaseEntity<number>  {
-  LinkSiteIdBuyer: number;
+  linkSiteIdBuyer: number;
   // tslint:disable-next-line: variable-name
   virtual_SiteBuyer: CoreSiteModel;
-  HasUsed: boolean;
-  Price: number;
-  LinkModuleSaleHeaderId?: number;
+  hasUsed: boolean;
+  price: number;
+  linkModuleSaleHeaderId?: number;
   // tslint:disable-next-line: variable-name
   virtual_ModuleSaleHeader: CoreModuleSaleHeaderModel;
-  LinkModuleSaleSerialId?: number;
+  linkModuleSaleSerialId?: number;
   // tslint:disable-next-line: variable-name
   virtual_ModuleSaleSerial: CoreModuleSaleSerialModel;
-  Amount: number;
-  SystemTransactionId: number;
-  SystemPaymentIsSuccess: number;
-  ModuleSaleInvoiceDetails: CoreModuleSaleInvoiceDetailModel[];
+  amount: number;
+  systemTransactionId: number;
+  systemPaymentIsSuccess: number;
+  moduleSaleInvoiceDetails: CoreModuleSaleInvoiceDetailModel[];
 }

@@ -1,7 +1,7 @@
 export class AuthRenewTokenModel {
-  SiteId: number;
-  UserId: number;
-  UserAccessAdminAllowToAllData: boolean;
-  UserAccessAdminAllowToProfessionalData: boolean;
-  Lang: string;
+  siteId: number;
+  userId: number;
+  userAccessAdminAllowToAllData: boolean;
+  userAccessAdminAllowToProfessionalData: boolean;
+  lang: string;
 }

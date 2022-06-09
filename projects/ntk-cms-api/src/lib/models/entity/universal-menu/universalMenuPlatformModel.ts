@@ -2,6 +2,6 @@ import { EnumUniversalMenuPlatformType } from "../../enums/universal-menu/enumUn
 import { BaseModuleEntity } from "../base/baseModuleEntity";
 
 export class UniversalMenuPlatformModel extends BaseModuleEntity<number>{
-  Title: string;
-  PlatformType: EnumUniversalMenuPlatformType;
+  title: string;
+  platformType: EnumUniversalMenuPlatformType;
 }

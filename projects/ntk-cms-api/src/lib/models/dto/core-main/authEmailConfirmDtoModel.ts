@@ -1,7 +1,7 @@
 export class AuthEmailConfirmDtoModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  LinkUserId: number;
-  Mobile: string;
-  Code: string;
+  captchaKey: string;
+  captchaText: string;
+  linkUserId: number;
+  mobile: string;
+  code: string;
 }

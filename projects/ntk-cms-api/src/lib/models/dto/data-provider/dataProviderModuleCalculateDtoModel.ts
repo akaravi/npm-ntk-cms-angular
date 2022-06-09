@@ -1,5 +1,5 @@
 export class DataProviderModuleCalculateDtoModel {
-  LinkClientId: number;
-  LinkPlanPriceId: number;
-  BankPaymentPrivateId: number;
+  linkClientId: number;
+  linkPlanPriceId: number;
+  bankPaymentPrivateId: number;
 }

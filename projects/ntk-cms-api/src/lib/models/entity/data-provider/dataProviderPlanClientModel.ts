@@ -3,11 +3,11 @@ import { DataProviderClientModel } from './dataProviderClientModel';
 import { DataProviderPlanModel } from './dataProviderPlanModel';
 
 export class DataProviderPlanClientModel extends BaseModuleEntity<number> {
-  ExpireDate: Date;
-  LinkPlanId: number;
-  LinkClientId: number;
-  Plan: DataProviderPlanModel;
+  expireDate: Date;
+  linkPlanId: number;
+  linkClientId: number;
+  plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;
-  Client: DataProviderClientModel;
+  client: DataProviderClientModel;
   virtual_Client: DataProviderClientModel;
 }

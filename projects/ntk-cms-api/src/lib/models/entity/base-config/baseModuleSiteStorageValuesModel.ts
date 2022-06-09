@@ -1,6 +1,5 @@
 ﻿export class BaseModuleSiteStorageValuesModel {
-
-  MainDataContentRowCount: number;
-  RowCount: boolean;
-  UpdatedContent: Date;
+  mainDataContentRowCount: number;
+  rowCount: boolean;
+  updatedContent: Date;
 }

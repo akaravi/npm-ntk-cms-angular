@@ -5,17 +5,17 @@ import { BaseEntity } from '../base/baseEntity';
 
 
 export class CoreDeviceModel extends BaseEntity<number>  {
-    SecurityKey: string;
-    ExpireDate?: Date;
-    Description: string;
-    OSType: EnumOperatingSystemType;
-    DeviceType: EnumDeviceType;
-    PackageName: string;
-    DeviceIPsAllow: string;
-    LinkApplicationId?: number;
-    LinkSiteId: number;
+    securityKey: string;
+    expireDate?: Date;
+    description: string;
+    oSType: EnumOperatingSystemType;
+    deviceType: EnumDeviceType;
+    packageName: string;
+    deviceIPsAllow: string;
+    linkApplicationId?: number;
+    linkSiteId: number;
     // tslint:disable-next-line: variable-name
     virtual_CmsSite: CoreSiteModel;
-    CmsSite: CoreSiteModel;
+    cmsSite: CoreSiteModel;
 }
 

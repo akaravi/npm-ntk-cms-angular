@@ -1,5 +1,5 @@
 export class EstateModuleSalePropertyAdsCalculateDtoModel {
-  LinkPropertyId: string;
-  LinkAdsTypeId: string;
-  BankPaymentPrivateId: number;
+  linkPropertyId: string;
+  linkAdsTypeId: string;
+  bankPaymentPrivateId: number;
 }

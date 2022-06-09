@@ -3,11 +3,11 @@ import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodSponsorModel } from './donateTargetPeriodSponsorModel';
 
 export class DonateLogViewModel extends BaseModuleEntity<string> {
-  DonateTargetId: number;
-  DeviceId: string;
-  IpAddress: string;
-  BrowserName: string;
-  VisitDate: Date;
-  VisitTimeInSecond: number;
-  DonateBillboardId?: number;
+  donateTargetId: number;
+  deviceId: string;
+  ipAddress: string;
+  browserName: string;
+  visitDate: Date;
+  visitTimeInSecond: number;
+  donateBillboardId?: number;
 }

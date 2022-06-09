@@ -2,11 +2,11 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreSiteModel } from './coreSiteModel';
 
 export class CoreSiteCategoryModel extends BaseEntity<number>  {
-    TitleML: string;
-    Title: string;
-    TitleResourceLanguage: string;
-    Domains: string;
-    Description: string;
-    RuleHtmlBody: string;
-    Sites: CoreSiteModel[];
+    titleML: string;
+    title: string;
+    titleResourceLanguage: string;
+    domains: string;
+    description: string;
+    ruleHtmlBody: string;
+    sites: CoreSiteModel[];
 }

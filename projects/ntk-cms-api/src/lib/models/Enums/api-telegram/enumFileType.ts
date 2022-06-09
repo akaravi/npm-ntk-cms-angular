@@ -1,7 +1,7 @@
 export enum EnumFileType{
-	Photo = 1,
-        Video = 2,
-        Document = 3,
-        Audio = 4,
-        Voice = 5
+	photo = 1,
+        video = 2,
+        document = 3,
+        audio = 4,
+        voice = 5
 }

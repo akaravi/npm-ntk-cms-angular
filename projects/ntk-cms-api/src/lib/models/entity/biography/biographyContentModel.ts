@@ -1,4 +1,3 @@
-import { BaseEntity } from '../base/baseEntity';
 import { BiographyCategoryModel } from './biographyCategoryModel';
 import { BiographyContentTagModel } from './biographyContentTagModel';
 import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
@@ -7,51 +6,51 @@ import { BiographyCommentModel } from './biographyCommentModel';
 import { BiographyContentCategoryModel } from './biographyContentCategoryModel';
 
 export class BiographyContentModel extends BaseModuleEntity<number> {
-  LinkCategoryId: number;
-  Title: string;
-  Description: string;
-  Body: string;
-  FromDate: Date;
-  Geolocationlatitude?: number;
-  Geolocationlongitude?: number;
-  LinkLocationId?:number;
-  LinkLocationIdTitle: string;
-  LinkLocationIdParentTitle: string;
-  Keyword: string;
-  LinkFileIds: string;
-  LinkFilePodcastId?: number;
-  LinkFileMovieId?: number;
-  LinkMainImageId?: number;
-  ScoreClick: number;
-  ScoreSumPercent: number;
-  ViewCount: number;
-  Favorited: boolean;
+  linkCategoryId: number;
+  title: string;
+  description: string;
+  body: string;
+  fromDate: Date;
+  geolocationlatitude?: number;
+  geolocationlongitude?: number;
+  linkLocationId?:number;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
+  keyword: string;
+  linkFileIds: string;
+  linkFilePodcastId?: number;
+  linkFileMovieId?: number;
+  linkMainImageId?: number;
+  scoreClick: number;
+  scoreSumPercent: number;
+  viewCount: number;
+  favorited: boolean;
 
-  ExpireDate: Date;
-  ModuleCoreCreatedBy: string;
-  ModuleCoreUpdatedBy: string;
-  Source: string;
-  Comments: BiographyCommentModel;
+  expireDate: Date;
+  moduleCoreCreatedBy: string;
+  moduleCoreUpdatedBy: string;
+  source: string;
+  comments: BiographyCommentModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: BiographyCategoryModel;
-  Category: BiographyCategoryModel;
-  ContentTags: BiographyContentTagModel[];
-  Similars: BiographyContentSimilarModel[];
-  ContentCategores: BiographyContentCategoryModel[];
+  category: BiographyCategoryModel;
+  contentTags: BiographyContentTagModel[];
+  similars: BiographyContentSimilarModel[];
+  contentCategores: BiographyContentCategoryModel[];
 
-  OtherInfos: string;
-  ContentAndParameterValues: any;
-  LinkMainImageIdSrc: string;
-  LinkFilePodcastIdSrc: string;
-  LinkFileMovieIdSrc: string;
-  LinkFileIdsSrc: string[];
+  otherInfos: string;
+  contentAndParameterValues: any;
+  linkMainImageIdSrc: string;
+  linkFilePodcastIdSrc: string;
+  linkFileMovieIdSrc: string;
+  linkFileIdsSrc: string[];
 
 
 
-  LocationPeriodStart: number;
-  LocationPeriodEnd: number;
-  DatePeriodStart?: Date;
-  DatePeriodEnd?: Date;
-  UrlViewContent: string;
-  UrlViewContentQRCodeBase64: string;
+  locationPeriodStart: number;
+  locationPeriodEnd: number;
+  datePeriodStart?: Date;
+  datePeriodEnd?: Date;
+  urlViewContent: string;
+  urlViewContentQRCodeBase64: string;
 }

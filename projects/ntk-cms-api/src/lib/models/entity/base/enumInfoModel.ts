@@ -1,6 +1,6 @@
 export class EnumInfoModel {
-  Key: string;
-  Value: number;
-  Title: string;
-  Description: string;
+  key: string;
+  value: number;
+  title: string;
+  description: string;
 }

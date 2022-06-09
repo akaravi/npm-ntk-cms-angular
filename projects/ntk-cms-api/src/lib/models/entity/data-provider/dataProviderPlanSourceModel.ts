@@ -3,10 +3,10 @@ import { DataProviderPlanModel } from './dataProviderPlanModel';
 import { DataProviderSourceModel } from './dataProviderSourceModel';
 
 export class DataProviderPlanSourceModel extends BaseModuleEntity<number> {
-  LinkPlanId: number;
-  LinkSourceId: number;
-  Plan: DataProviderPlanModel;
+  linkPlanId: number;
+  linkSourceId: number;
+  plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;
-  Source: DataProviderSourceModel;
+  source: DataProviderSourceModel;
   virtual_Source: DataProviderSourceModel;
 }

@@ -4,9 +4,9 @@ import { CoreModuleTagCategoryModel } from './coreModuleTagCategoryModel';
 
 
 export class CoreModuleTagModel extends BaseModuleEntity<number> {
-  Title: string;
-  LinkCategoryId: number;
-  Category: CoreModuleTagCategoryModel;
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  title: string;
+  linkCategoryId: number;
+  category: CoreModuleTagCategoryModel;
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

@@ -4,17 +4,17 @@ import { CoreUserModel } from './coreUserModel';
 import { CoreUserGroupModel } from './coreUserGroupModel';
 
 export class CoreSiteUserModel extends BaseEntity<number>  {
-  ExpireDate?: Date;
-  LinkSiteId: number;
-  LinkUserId: number;
-  LinkUserGroupId: number;
+  expireDate?: Date;
+  linkSiteId: number;
+  linkUserId: number;
+  linkUserGroupId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSite: CoreSiteModel;
-  CmsSite: CoreSiteModel;
+  cmsSite: CoreSiteModel;
   // tslint:disable-next-line: variable-name
   virtual_CmsUser: CoreUserModel;
-  CmsUser: CoreUserModel;
+  cmsUser: CoreUserModel;
   // tslint:disable-next-line: variable-name
   virtual_CmsUserGroup: CoreUserGroupModel;
-  CmsUserGroup: CoreUserGroupModel;
+  cmsUserGroup: CoreUserGroupModel;
 }

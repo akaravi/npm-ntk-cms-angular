@@ -5,16 +5,16 @@ import { EnumSortType } from '../../enums/enumSortType';
 
 export class FilterModel {
   constructor() {
-    this.Filters = new Array<FilterDataModel>();
+    this.filters = new Array<FilterDataModel>();
   }
-  Filters: FilterDataModel[];
-  CountLoad = false;
-  AccessLoad = false;
-  TotalRowData: number;
-  SkipRowData = 0;
-  CurrentPageNumber = 1;
-  RowPerPage = 20;
-  SortType: EnumSortType = 1;
-  SortColumn: string;
-  ExportFile: ExportFileModel;
+  filters: FilterDataModel[];
+  countLoad = false;
+  accessLoad = false;
+  totalRowData: number;
+  skipRowData = 0;
+  currentPageNumber = 1;
+  rowPerPage = 20;
+  sortType: EnumSortType = 1;
+  sortColumn: string;
+  exportFile: ExportFileModel;
 }

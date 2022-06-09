@@ -2,13 +2,13 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
 
 export class SmsMainApiPathCompanyModel extends BaseModuleEntity<string> {
-  Title: string;
-  Description: string;
-  ServiceAvailableCredit: number;
-  ServiceSumCredit: number;
-  UserAvailableCredit: number;
-  UserSumCredit: number;
-  ServiceCreditLastEdit: Date;
-  UserCreditLastEdit: Date;
-  ApiPaths: SmsMainApiPathModel[];
+  title: string;
+  description: string;
+  serviceAvailableCredit: number;
+  serviceSumCredit: number;
+  userAvailableCredit: number;
+  userSumCredit: number;
+  serviceCreditLastEdit: Date;
+  userCreditLastEdit: Date;
+  apiPaths: SmsMainApiPathModel[];
 }

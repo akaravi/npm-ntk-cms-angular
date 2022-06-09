@@ -1,12 +1,12 @@
 import { HyperShopOrderModel } from './hyperShopOrderModel';
 export class HyperShopOrderContentModel {
 
-    LinkOrderId: number;
-    Order: HyperShopOrderModel;
-    Code: string;
-    Name: string;
-    Memo: string;
-    Price: number;
-    Count: number;
+    linkOrderId: number;
+    order: HyperShopOrderModel;
+    code: string;
+    name: string;
+    memo: string;
+    price: number;
+    count: number;
 
 }

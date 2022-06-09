@@ -44,7 +44,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          this.SetCurrentUser(ret.Item);
+          this.SetCurrentUser(ret.item);
           return this.errorExceptionResultCheck(ret);
         }),
       );

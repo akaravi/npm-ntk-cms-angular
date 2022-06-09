@@ -1,5 +1,5 @@
 export class HyperShopOrderPaymentDtoModel {
-  LinkOrderId: number;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
+  linkOrderId: number;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
 }

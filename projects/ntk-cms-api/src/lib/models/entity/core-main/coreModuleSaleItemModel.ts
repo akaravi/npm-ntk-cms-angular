@@ -4,13 +4,13 @@ import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 
 export class CoreModuleSaleItemModel extends BaseEntity<number>  {
-  LinkModuleSaleHeader: number;
-  ExpireDate: Date;
-  Description: string;
-  MonthLength: number;
-  LinkModuleId: number;
-  EnumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
-  ModuleSiteAccessJsonValue: string;
+  linkModuleSaleHeader: number;
+  expireDate: Date;
+  description: string;
+  monthLength: number;
+  linkModuleId: number;
+  enumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
+  moduleSiteAccessJsonValue: string;
   // tslint:disable-next-line: variable-name
   virtual_CmsModuleSaleHeader: CoreModuleSaleHeaderModel;
   // tslint:disable-next-line: variable-name

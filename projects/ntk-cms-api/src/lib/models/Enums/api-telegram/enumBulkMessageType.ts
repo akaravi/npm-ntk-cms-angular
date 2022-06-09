@@ -1,5 +1,5 @@
 export enum EnumBulkMessageType{
-  SentToSelectedBotMembers = 1,
-  SentToAllBotMembers = 2,
-  SentToAllGroupsMembers = 3,
+  sentToSelectedBotMembers = 1,
+  sentToAllBotMembers = 2,
+  sentToAllGroupsMembers = 3,
 }

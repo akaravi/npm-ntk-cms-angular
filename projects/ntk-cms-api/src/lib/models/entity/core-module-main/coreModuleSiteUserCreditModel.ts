@@ -1,12 +1,12 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class CoreModuleSiteUserCreditModel extends BaseModuleEntity<number> {
-  LinkUserId: number;
-  LinkModuleId: number;
-  Credit: number;
-  SumCreditBlocked: number;
-  SumCost: number;
-  SumDebtor: number;
-  SumCreditor: number;
-  SumRemaining: number;
-  Description: string;
+  linkUserId: number;
+  linkModuleId: number;
+  credit: number;
+  sumCreditBlocked: number;
+  sumCost: number;
+  sumDebtor: number;
+  sumCreditor: number;
+  sumRemaining: number;
+  description: string;
 }

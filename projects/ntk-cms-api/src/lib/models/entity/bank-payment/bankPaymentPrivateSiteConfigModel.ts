@@ -3,22 +3,22 @@ import { BankPaymentPublicConfigModel } from './bankPaymentPublicConfigModel';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 
 export class BankPaymentPrivateSiteConfigModel extends BaseEntity<number> {
-  Title: string;
-  CurrencyUnitRatioByShop: number;
+  title: string;
+  currencyUnitRatioByShop: number;
 
-  MaxTransactionAmount: number;
-  MinTransactionAmount: number;
+  maxTransactionAmount: number;
+  minTransactionAmount: number;
 
-  FixFeeTransactionAmount: number;
+  fixFeeTransactionAmount: number;
 
-  PercentFeeTransactionAmount: number;
-  LinkPublicConfigId: number;
+  percentFeeTransactionAmount: number;
+  linkPublicConfigId: number;
   // tslint:disable-next-line: variable-name
   virtual_PublicConfig: BankPaymentPublicConfigModel;
-  PublicConfig: BankPaymentPublicConfigModel;
+  publicConfig: BankPaymentPublicConfigModel;
 
-  PrivateConfigJsonValues: string;
-  Memo: string;
-  Transactions: BankPaymentTransactionModel[];
-  LinkModuleFileLogoIdSrc: string;
+  privateConfigJsonValues: string;
+  memo: string;
+  transactions: BankPaymentTransactionModel[];
+  linkModuleFileLogoIdSrc: string;
 }

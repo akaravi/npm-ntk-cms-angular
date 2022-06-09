@@ -1,11 +1,11 @@
 
 export class SmsApiSendResultModel {
-  LinkCmsUser?:number;
-  LinkSiteId?:number;
-  LogOutId: string;
-  ToNumber:string;
-  FromNumber:string;
-  SendId:string;
-  LinkApiId:string;
-  LinkApiNumberId:string;
+  linkCmsUser?:number;
+  linkSiteId?:number;
+  logOutId: string;
+  toNumber:string;
+  fromNumber:string;
+  sendId:string;
+  linkApiId:string;
+  linkApiNumberId:string;
 }

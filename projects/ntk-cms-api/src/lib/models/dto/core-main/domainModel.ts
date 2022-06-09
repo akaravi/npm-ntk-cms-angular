@@ -1,4 +1,4 @@
 export class DomainModel {
-  Title: string;
-  Domain: string;
+  title: string;
+  domain: string;
 }

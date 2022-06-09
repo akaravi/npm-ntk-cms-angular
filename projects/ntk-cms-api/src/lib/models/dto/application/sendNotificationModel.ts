@@ -2,25 +2,21 @@ import { EnumScheduleCronType } from '../../enums/enumScheduleCronType';
 import { RenderModelApplicationSendNotificationInput } from './renderModelApplicationSendNotificationInput';
 
 export class SendNotificationModel extends RenderModelApplicationSendNotificationInput {
-
-
-    ScheduleCronTypeInt: number;
-    CronWeeklyDayOfWeekInt: number;
-
-    ScheduleCronType: EnumScheduleCronType;
-    CronOnceDate?: string;
-    CronHourlyMinute: number;
-    CronDailyHour: number;
-    CronDailyMinute: number;
-    CronMonthlyDay: number;
-    CronMonthlyHour: number;
-    CronMonthlyMinute: number;
-    CronWeeklyDayOfWeek: number;
-    CronWeeklyHour: number;
-    CronWeeklyMinute: number;
-    CronYearlyMonth: number;
-    CronYearlyDay: number;
-    CronYearlyHour: number;
-    CronYearlyMinute: number;
-
+    scheduleCronTypeInt: number;
+    cronWeeklyDayOfWeekInt: number;
+    scheduleCronType: EnumScheduleCronType;
+    cronOnceDate?: string;
+    cronHourlyMinute: number;
+    cronDailyHour: number;
+    cronDailyMinute: number;
+    cronMonthlyDay: number;
+    cronMonthlyHour: number;
+    cronMonthlyMinute: number;
+    cronWeeklyDayOfWeek: number;
+    cronWeeklyHour: number;
+    cronWeeklyMinute: number;
+    cronYearlyMonth: number;
+    cronYearlyDay: number;
+    cronYearlyHour: number;
+    cronYearlyMinute: number;
 }

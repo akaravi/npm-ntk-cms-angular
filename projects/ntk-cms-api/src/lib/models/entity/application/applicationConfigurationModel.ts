@@ -10,7 +10,7 @@ export class ApplicationModuleConfigAdminMainValuesModel extends BaseModuleConfi
 
 export class ApplicationModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
 {
-  MaxAppCreation: number;
+  maxAppCreation: number;
 }
 
 /// <summary>
@@ -25,5 +25,5 @@ export class ApplicationModuleConfigSiteValuesModel extends BaseModuleConfigSite
 
 export class ApplicationModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  UpdatedApplicationContent: Date;
+  updatedApplicationContent: Date;
 }

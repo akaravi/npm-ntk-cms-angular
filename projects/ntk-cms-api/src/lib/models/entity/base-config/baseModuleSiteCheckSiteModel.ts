@@ -1,6 +1,6 @@
 ﻿export class BaseModuleSiteCheckSiteModel {
-  Key: string;
-  Title: string;
-  Description: string;
-  Accepted: boolean;
+  key: string;
+  title: string;
+  description: string;
+  accepted: boolean;
 }

@@ -3,14 +3,14 @@ import { EstatePropertyDetailModel } from './estatePropertyDetailModel';
 import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 
 export class EstatePropertyTypeUsageModel extends BaseModuleEntity<string> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  ContentCount: number;
-  Description: string;
-  IconFont: string;
-  IconColor: string;
-  LinkMainImageId: number;
-  LinkMainImageIdSrc: string;
-  PropertyTypes: EstatePropertyTypeModel[];
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  contentCount: number;
+  description: string;
+  iconFont: string;
+  iconColor: string;
+  linkMainImageId: number;
+  linkMainImageIdSrc: string;
+  propertyTypes: EstatePropertyTypeModel[];
 }

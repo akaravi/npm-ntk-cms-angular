@@ -3,18 +3,18 @@ import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
 
 export class LinkManagementTargetBillboardLogModel extends BaseModuleEntity<string> {
-  ClickPrice: number;
-  ViewPrice: number;
-  DeviceId: string;
-  IpAddress: string;
-  BrowserName: string;
-  VisitTimeInSecond: number;
-  LinkManagementBillboardId?: number;
+  clickPrice: number;
+  viewPrice: number;
+  deviceId: string;
+  ipAddress: string;
+  browserName: string;
+  visitTimeInSecond: number;
+  linkManagementBillboardId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Billboard: LinkManagementBillboardModel;
-  Billboard: LinkManagementBillboardModel;
-  LinkManagementTargetId: number;
+  billboard: LinkManagementBillboardModel;
+  linkManagementTargetId: number;
   // tslint:disable-next-line: variable-name
   virtual_Target: LinkManagementTargetModel;
-  Target: LinkManagementTargetModel;
+  target: LinkManagementTargetModel;
 }

@@ -9,102 +9,102 @@ import { EnumLanguage } from '../../enums/enumLanguage';
 import { Data } from '@angular/router';
 
 export class CoreSiteModel extends BaseEntity<number> {
-  CurrentSiteDomainUrl: string;
-  MainImageSrc: string;
+  currentSiteDomainUrl: string;
+  mainImageSrc: string;
 
-  ExpireDate?: Date;
+  expireDate?: Date;
   linkCreatedBySiteId?: number;
   // tslint:disable-next-line: variable-name
   virtual_ParentCreator: CoreSiteModel;
-  ParentCreator: CoreSiteModel;
-  Title: string;
-  Copyright: string;
-  OwnerSiteSetStatus: EnumSiteStatus;
-  UserLanguage: EnumLanguage;
-  SubDomain: string;
-  Domain: string;
-  SSL: boolean;
-  Redirect: string;
-  LinkFavIconId?: number;
-  LinkFavIconIdSrc: string;
-  LinkImageLogoId?: number;
-  LinkImageLogoIdSrc: string;
-  LinkSiteCategoryId: number;
+  parentCreator: CoreSiteModel;
+  title: string;
+  copyright: string;
+  ownerSiteSetStatus: EnumSiteStatus;
+  userLanguage: EnumLanguage;
+  subDomain: string;
+  domain: string;
+  ssl: boolean;
+  redirect: string;
+  linkFavIconId?: number;
+  linkFavIconIdSrc: string;
+  linkImageLogoId?: number;
+  linkImageLogoIdSrc: string;
+  linkSiteCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSiteCategory: CoreSiteCategoryModel;
-  CmsSiteCategory: CoreSiteCategoryModel;
-  HasAccountingForm: boolean;
-  ViewInCmsSiteList: boolean;
-  AccountingFormNo: number;
-  AccountingFormCreatedDate?: Date;
-  AccountingFormUpdatedDate?: Date;
-  AccountingMemo: string;
-  AdminSiteMemo: string;
-  AdminMainMemo: string;
-  SiteUsers: CoreSiteUserModel[];
-  ModuleSites: CoreModuleSiteModel[];
-  DomainAliases: CoreSiteDomainAliasModel[];
-  ChildernCreateds: CoreSiteModel[];
-  Devices: CoreDeviceModel[];
-  ConfigNeshanMapApiKey: string;
-  LinkResellerSiteId?: number;
-  LinkResellerUserId?: number;
+  cmsSiteCategory: CoreSiteCategoryModel;
+  hasAccountingForm: boolean;
+  viewInCmsSiteList: boolean;
+  accountingFormNo: number;
+  accountingFormCreatedDate?: Date;
+  accountingFormUpdatedDate?: Date;
+  accountingMemo: string;
+  adminSiteMemo: string;
+  adminMainMemo: string;
+  siteUsers: CoreSiteUserModel[];
+  moduleSites: CoreModuleSiteModel[];
+  domainAliases: CoreSiteDomainAliasModel[];
+  childernCreateds: CoreSiteModel[];
+  devices: CoreDeviceModel[];
+  configNeshanMapApiKey: string;
+  linkResellerSiteId?: number;
+  linkResellerUserId?: number;
   /*
  Pwa
    */
-    PwaName: string;
-  PwaShortName: string;
-  PwaDescription: string;
-  PwaDisplay: string;
-  PwaThemeColor: string;
-  PwaThemeBackgroundColor: string;
-  PwaIconSize190x192Id?: number;
-  PwaIconSize190x192IdSrc: string;
-  PwaIconSize512x512Id?: number;
-  PwaIconSize512x512IdSrc: string;
-  PwaNotifySubject: string;
-  PwaNotifyPublicKey: string;
-  PwaNotifyPrivateKey: string;
+    pwaName: string;
+pwaShortName: string;
+  pwaDescription: string;
+  pwaDisplay: string;
+  pwaThemeColor: string;
+  pwaThemeBackgroundColor: string;
+  pwaIconSize190x192Id?: number;
+  pwaIconSize190x192IdSrc: string;
+  pwaIconSize512x512Id?: number;
+  pwaIconSize512x512IdSrc: string;
+  pwaNotifySubject: string;
+  pwaNotifyPublicKey: string;
+  pwaNotifyPrivateKey: string;
   /*
    FCM
   */
-    FirebaseApiKey: string;
-  FirebaseAuthDomain: string;
-  FirebaseDatabaseURL: string;
-  FirebaseProjectId: string;
-  FirebaseStorageBucket: string;
-  FirebaseMessagingSenderId: string;
-  FirebaseAppId: string;
+  firebaseApiKey: string;
+  firebaseAuthDomain: string;
+  firebaseDatabaseURL: string;
+  firebaseProjectId: string;
+  firebaseStorageBucket: string;
+  firebaseMessagingSenderId: string;
+  firebaseAppId: string;
 
   /*
   AboutUs
     */
-  AboutUsTitle: string;
-  AboutUsDescription: string;
-  AboutUsTel: string;
-  AboutUsMobile: string;
-  AboutUsFax: string;
-  AboutUsEmail: string;
-  AboutUsAddress: string;
-  AboutUsMoreInfoUrl: string;
-  AboutUsLinkImageId?: number;
-  AboutUsLinkImageIdSrc: string;
-  AboutUsGeolocationlatitude: number;
-  AboutUsGeolocationlongitude: number;
-  AboutUsLinkFacebook: string;
-  AboutUsLinkTwitter: string;
-  AboutUsLinkGooglePlus: string;
-  AboutUsLinkInstagram: string;
-  AboutUsLinkWhatsapp: string;
-  AboutUsLinklinkedin: string;
-  AboutUsLinkYahoo: string;
-  AboutUsLinkYoutube: string;
-  AboutUsLinkTelegram: string;
-  AboutUsLinkPinterest: string;
-  AboutUsLinkRss: string;
-  AboutUsLinkCompanyAuthorSite: string;
-  AboutUsLinkCompanyPublisherSite: string;
-  AboutUsPrivacyPolicyHtmlBody: string;
+  aboutUsTitle: string;
+  aboutUsDescription: string;
+  aboutUsTel: string;
+  aboutUsMobile: string;
+  aboutUsFax: string;
+  aboutUsEmail: string;
+  aboutUsAddress: string;
+  aboutUsMoreInfoUrl: string;
+  aboutUsLinkImageId?: number;
+  aboutUsLinkImageIdSrc: string;
+  aboutUsGeolocationlatitude: number;
+  aboutUsGeolocationlongitude: number;
+  aboutUsLinkFacebook: string;
+  aboutUsLinkTwitter: string;
+  aboutUsLinkGooglePlus: string;
+  aboutUsLinkInstagram: string;
+  aboutUsLinkWhatsapp: string;
+  aboutUsLinklinkedin: string;
+  aboutUsLinkYahoo: string;
+  aboutUsLinkYoutube: string;
+  aboutUsLinkTelegram: string;
+  aboutUsLinkPinterest: string;
+  aboutUsLinkRss: string;
+  aboutUsLinkCompanyAuthorSite: string;
+  aboutUsLinkCompanyPublisherSite: string;
+  aboutUsPrivacyPolicyHtmlBody: string;
 
   /*
   AboutUs
@@ -112,12 +112,12 @@ export class CoreSiteModel extends BaseEntity<number> {
   /*
   SEO
   */
-  SeoKeyword: string;
-  SeoDescription: string;
-  SeoGoogleAnalytics: string;
-  SeoGoogleHTMLtag: string;
-  SeoTwitterCardSite: string;
-  SeoTwitterCardCreator: string;
+  seoKeyword: string;
+  seoDescription: string;
+  seoGoogleAnalytics: string;
+  seoGoogleHTMLtag: string;
+  seoTwitterCardSite: string;
+  seoTwitterCardCreator: string;
   /*
    SEO
    */

@@ -1,4 +1,4 @@
 export class CoreUserClaimCheckDtoModel {
-  SiteId: number;
-  UserId: number;
+  siteId: number;
+  userId: number;
 }

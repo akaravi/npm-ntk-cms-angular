@@ -4,13 +4,13 @@ import { SmsProcessFlowSmsStatusEnum } from '../../enums/sms/smsProcessFlowSmsSt
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class SmsMainApiPathProcessFlowModel extends BaseModuleEntity<string> {
-  ProcessFlowStatus: SmsProcessFlowRecordStatusEnum;
-  SmsStatus: SmsProcessFlowSmsStatusEnum;
-  LinkPrivateSiteConfigId: string;
-  LinkUserId?: number;
-  Amount: number;
-  AmountPure: number;
-  StampJsonValues: string;
-  RequestBackUserFromSmsJsonValues: string;
-  LastStatusMessage: string;
+  processFlowStatus: SmsProcessFlowRecordStatusEnum;
+  smsStatus: SmsProcessFlowSmsStatusEnum;
+  linkPrivateSiteConfigId: string;
+  linkUserId?: number;
+  amount: number;
+  amountPure: number;
+  stampJsonValues: string;
+  requestBackUserFromSmsJsonValues: string;
+  lastStatusMessage: string;
 }

@@ -2,18 +2,18 @@ import { EnumLocationType } from '../../enums/enumLocationType';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreLocationModel extends BaseEntity<number> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  LinkParentId?: number;
-  LinkParentIdNode: string;
-  GeoLocationLatitude: string;
-  GeoLocationLongitude: string;
-  LocationType: EnumLocationType;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  linkParentId?: number;
+  linkParentIdNode: string;
+  geoLocationLatitude: string;
+  geoLocationLongitude: string;
+  locationType: EnumLocationType;
   // tslint:disable-next-line: variable-name
   virtual_Parent: CoreLocationModel;
-  Parent: CoreLocationModel;
-  Children: CoreLocationModel[];
-  LinkImageId?: number;
-  LinkImageIdSrc: string;
+  parent: CoreLocationModel;
+  children: CoreLocationModel[];
+  linkImageId?: number;
+  linkImageIdSrc: string;
 }

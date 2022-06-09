@@ -4,18 +4,18 @@ import { DonateTargetPeriodSponsorModel } from './donateTargetPeriodSponsorModel
 import { DonateTransactionModel } from './donateTransactionModel';
 
 export class DonateTargetPeriodModel extends BaseModuleEntity<number> {
-  Title: string;
-  Description: string;
-  SupportRequiredPayment: number;
-  LinkTargeId?: number;
-  Target: DonateTargetModel;
+  title: string;
+  description: string;
+  supportRequiredPayment: number;
+  linkTargeId?: number;
+  target: DonateTargetModel;
   virtual_Target: DonateTargetModel;
-  ShareBeginDate?: Date;
-  ShareExpireDate?: Date;
-  CurrentClickCount: number;
-  CurrentViewCount: number;
-  CurrentPaymentCount: number;
-  CurrentPaymentSum: number;
-  TargetPeriodSponsors: DonateTargetPeriodSponsorModel[];
-  Transactions: DonateTransactionModel[];
+  shareBeginDate?: Date;
+  shareExpireDate?: Date;
+  currentClickCount: number;
+  currentViewCount: number;
+  currentPaymentCount: number;
+  currentPaymentSum: number;
+  targetPeriodSponsors: DonateTargetPeriodSponsorModel[];
+  transactions: DonateTransactionModel[];
 }

@@ -342,19 +342,19 @@ export class NodeService {
       map((x) => {
         const retList: NodeInterface[] = [];
 
-        x.ListItems.forEach(element => {
+        x.listItems.forEach(element => {
           const item: NodeInterface = {
-            name: element.Title,
+            name: element.title,
             isRoot: true,
-            id: element.Id,
-            parentId: element.LinkParentId ? element.LinkParentId : null,
-            pathToNode: path + '/' + element.Id,
+            id: element.id,
+            parentId: element.linkParentId ? element.linkParentId : null,
+            pathToNode: path + '/' + element.id,
             pathToParent: '',
             isFolder: true,
             isExpanded: false,
-            CreatedDate: element.CreatedDate,
-            UpdatedDate: element.UpdatedDate,
-            downloadLinksrc: element.LinkMainImageIdSrc,
+            CreatedDate: element.createdDate,
+            UpdatedDate: element.updatedDate,
+            downloadLinksrc: element.linkMainImageIdSrc,
           };
           item.pathToNode = '/' + item.pathToNode;
           item.pathToNode = item.pathToNode.replace('//', '/');
@@ -371,21 +371,21 @@ export class NodeService {
     return this.fileContentService.ServiceGetAllInCategoryById(folderId).pipe(
       map((x) => {
         const retList: NodeInterface[] = [];
-        x.ListItems.forEach(element => {
+        x.listItems.forEach(element => {
           const item: NodeInterface = {
-            name: element.FileName,
+            name: element.fileName,
             isRoot: false,
-            id: element.Id,
-            parentId: element.LinkCategoryId ? element.LinkCategoryId : null,
-            pathToNode: path + '/' + element.Id,
+            id: element.id,
+            parentId: element.linkCategoryId ? element.linkCategoryId : null,
+            pathToNode: path + '/' + element.id,
             pathToParent: '',
             isFolder: false,
             isExpanded: false,
-            CreatedDate: element.CreatedDate,
-            UpdatedDate: element.UpdatedDate,
-            downloadLinksrc: element.DownloadLinksrc,
-            size: element.FileSize,
-            Extension: element.Extension
+            CreatedDate: element.createdDate,
+            UpdatedDate: element.updatedDate,
+            downloadLinksrc: element.downloadLinksrc,
+            size: element.fileSize,
+            Extension: element.extension
           };
           item.pathToNode = '/' + item.pathToNode;
           item.pathToNode = item.pathToNode.replace('//', '/');

@@ -4,24 +4,24 @@ import { LinkManagementBillboardTargetCategoryModel } from './linkManagementBill
 import { LinkManagementMemberModel } from './linkManagementMemberModel';
 
 export class LinkManagementBillboardModel extends BaseModuleEntity<number> {
-  Title: string;
+  title: string;
   bgColor: string;
-  CurrentClickCount: number;
-  CurrentViewCount: number;
-  FromDate?: Date;
-  LinkMainImageId?: number;
-  LinkFileIds: string;
-  LinkManagementMemberId?: number;
+  currentClickCount: number;
+  currentViewCount: number;
+  fromDate?: Date;
+  linkMainImageId?: number;
+  linkFileIds: string;
+  linkManagementMemberId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Member: LinkManagementMemberModel;
-  Member: LinkManagementMemberModel;
-  LinkBillboardPatternId: number;
+  member: LinkManagementMemberModel;
+  linkBillboardPatternId: number;
   // tslint:disable-next-line: variable-name
   virtual_BillboardPattern: LinkManagementBillboardPatternModel;
-  BillboardPattern: LinkManagementBillboardPatternModel;
-  BillboardTargetCategories: LinkManagementBillboardTargetCategoryModel[];
-  LinkMainImageIdSrc: string;
-  LinkFileIdsSrc: string[];
-  BillboardScript: string;
+  billboardPattern: LinkManagementBillboardPatternModel;
+  billboardTargetCategories: LinkManagementBillboardTargetCategoryModel[];
+  linkMainImageIdSrc: string;
+  linkFileIdsSrc: string[];
+  billboardScript: string;
 
 }

@@ -1,11 +1,11 @@
 
 export class AuthUserSignInModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  Email: string;
-  Mobile: string;
-  Password: string;
-  IsRemember: boolean;
-  SiteId: number;
+  captchaKey: string;
+  captchaText: string;
+  email: string;
+  mobile: string;
+  password: string;
+  isRemember: boolean;
+  siteId: number;
   lang: string;
 }

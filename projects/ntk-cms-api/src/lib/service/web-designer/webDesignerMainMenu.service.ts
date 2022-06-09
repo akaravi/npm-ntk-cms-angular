@@ -18,7 +18,7 @@ export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMain
     if (model == null) {
       model = new FilterModel();
     }
-    model.RowPerPage = 200;
+    model.rowPerPage = 200;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),

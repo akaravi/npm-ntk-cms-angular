@@ -244,11 +244,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         const successMethod = (next: any) => {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
           const selectedModel = <NodeInterface>{
-            id: next.Item.Id,
-            name: next.Item.FileName,
-            downloadLinksrc: next.Item.DownloadLinksrc,
-            size: next.Item.size,
-            Extension: next.Item.Extension,
+            id: next.item.id,
+            name: next.item.fileName,
+            downloadLinksrc: next.item.downloadLinksrc,
+            size: next.item.size,
+            Extension: next.item.extension,
             isFolder: false
           };
           this.selectedNode = selectedModel;

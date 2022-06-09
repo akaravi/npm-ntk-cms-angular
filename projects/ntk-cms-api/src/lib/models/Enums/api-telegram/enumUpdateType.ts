@@ -2,61 +2,61 @@ export enum EnumUpdateType{
 	//
 		// Summary:
 		//     Update Type is unknown
-		Unknown = 0,
+		unknown = 0,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains a Telegram.Bot.Types.Message.
-		Message = 1,
+		message = 1,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.InlineQuery.
-		InlineQuery = 2,
+		inlineQuery = 2,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains a Telegram.Bot.Types.ChosenInlineResult.
-		ChosenInlineResult = 3,
+		chosenInlineResult = 3,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains a Telegram.Bot.Types.CallbackQuery
-		CallbackQuery = 4,
+		callbackQuery = 4,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an edited Telegram.Bot.Types.Message
-		EditedMessage = 5,
+		editedMessage = 5,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains a channel post Telegram.Bot.Types.Message
-		ChannelPost = 6,
+		channelPost = 6,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an edited channel post Telegram.Bot.Types.Message
-		EditedChannelPost = 7,
+		editedChannelPost = 7,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.ShippingQuery
-		ShippingQuery = 8,
+		shippingQuery = 8,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.PreCheckoutQuery
-		PreCheckoutQuery = 9,
+		preCheckoutQuery = 9,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.Poll
-		Poll = 10,
+		poll = 10,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.PollAnswer
-		PollAnswer = 11,
+		pollAnswer = 11,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.MyChatMember
-		MyChatMember = 12,
+		myChatMember = 12,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.ChatMember
-		ChatMember = 13,
+		chatMember = 13,
 		//
 		// Summary:
 		//     The Telegram.Bot.Types.Update contains an Telegram.Bot.Types.Enums.UpdateType.ChatJoinRequest
-		ChatJoinRequest = 14
+		chatJoinRequest = 14
 }

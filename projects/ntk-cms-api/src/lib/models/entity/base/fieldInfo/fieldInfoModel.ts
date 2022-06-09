@@ -1,12 +1,12 @@
 export class FieldInfoModel {
-  FieldName: string;
-  FieldType: string;
-  FieldTypeClass: string;
-  FieldTitle: string;
-  FieldDescription: string;
-  FieldScriptDescription: string;
-  FieldDefaultValue: string;
-  FieldValue: string;
-  FieldTypeFullName: string;
+  fieldName: string;
+  fieldType: string;
+  fieldTypeClass: string;
+  fieldTitle: string;
+  fieldDescription: string;
+  fieldScriptDescription: string;
+  fieldDefaultValue: string;
+  fieldValue: string;
+  fieldTypeFullName: string;
   fieldsInfo: FieldInfoModel[];
 }

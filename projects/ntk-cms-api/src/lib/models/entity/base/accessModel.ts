@@ -1,16 +1,18 @@
 import { DataFieldInfoModel } from './fieldInfo/dataFieldInfoModel';
 
 export class AccessModel {
-  AccessDeleteRow = false;
-  AccessWatchRow = false;
-  AccessEditRow = false;
-  AccessAddRow = false;
-  AccessRowInPanelDemo = false;
-  AccessRowWatchInSharingCategory = false;
-  AccessWatchRowOtherSiteId = false;
-  AccessWatchRowOtherCreatedBy = false;
-  AccessEditRowOtherSiteId = false;
-  AccessEditRowOtherCreatedBy = false;
-  AccessDeleteRowOtherCreatedBy = false;
-  FieldsInfo: DataFieldInfoModel[];
+  moduleName: string;
+  moduleEntityName: string;
+  accessDeleteRow = false;
+  accessWatchRow = false;
+  accessEditRow = false;
+  accessAddRow = false;
+  accessRowInPanelDemo = false;
+  accessRowWatchInSharingCategory = false;
+  accessWatchRowOtherSiteId = false;
+  accessWatchRowOtherCreatedBy = false;
+  accessEditRowOtherSiteId = false;
+  accessEditRowOtherCreatedBy = false;
+  accessDeleteRowOtherCreatedBy = false;
+  fieldsInfo: DataFieldInfoModel[];
 }

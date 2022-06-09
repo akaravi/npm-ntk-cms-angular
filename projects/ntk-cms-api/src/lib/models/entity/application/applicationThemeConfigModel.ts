@@ -4,20 +4,20 @@ import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationSourceModel } from './applicationSourceModel';
 
 export class ApplicationThemeConfigModel extends BaseModuleEntity<number>  {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  TypeId: string;
-  LinkMainImageId?: number;
-  LinkSourceId?: number;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  typeId: string;
+  linkMainImageId?: number;
+  linkSourceId?: number;
   // tslint:disable-next-line: variable-name
   virtual_Source: ApplicationSourceModel;
-  Source: ApplicationSourceModel;
-  ThemeConfigBuilderJsonValues: string;
-  ThemeConfigRuntimeJsonValues: string;
-  ThemeConfigLayoutJsonValues: string;
-  ThemeConfigJsonValues: string;
-  ThemeConfigLayouts: ThemeConfigLayoutModel[];
+  source: ApplicationSourceModel;
+  themeConfigBuilderJsonValues: string;
+  themeConfigRuntimeJsonValues: string;
+  themeConfigLayoutJsonValues: string;
+  themeConfigJsonValues: string;
+  themeConfigLayouts: ThemeConfigLayoutModel[];
   applications: ApplicationAppModel[];
-  LinkMainImageIdSrc: string;
+  linkMainImageIdSrc: string;
 }

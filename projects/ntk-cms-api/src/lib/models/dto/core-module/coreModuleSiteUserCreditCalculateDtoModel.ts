@@ -1,7 +1,7 @@
 export class CoreModuleSiteUserCreditCalculateDtoModel{
-  LinkSiteId: number;
-  LinkUserId: number;
-  LinkModuleId: number;
-  Credit: number;
-  BankPaymentPrivateId: number;
+  linkSiteId: number;
+  linkUserId: number;
+  linkModuleId: number;
+  credit: number;
+  bankPaymentPrivateId: number;
 }

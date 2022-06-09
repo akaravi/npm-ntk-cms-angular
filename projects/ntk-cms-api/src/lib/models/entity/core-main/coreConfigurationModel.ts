@@ -6,17 +6,17 @@ import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteS
 
 export class CoreModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
 {
-  DomainsList: string;
-  AdminCpUserRegidteryBool: boolean;
-  AdminCpUserRegidteryExpireDateDay: number;
-  UserMembershipRuleHtmlBody: string;
+  domainsList: string;
+  adminCpUserRegidteryBool: boolean;
+  adminCpUserRegidteryExpireDateDay: number;
+  userMembershipRuleHtmlBody: string;
 }
 
 export class CoreModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
 {
-  MaxAdminCpUserCreation: number;
-  MaxUserCreation: number;
-  DomainsList: string;
+  maxAdminCpUserCreation: number;
+  maxUserCreation: number;
+  domainsList: string;
 }
 
 /// <summary>
@@ -26,16 +26,16 @@ export class CoreModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteA
 export class CoreModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 {
 
-  DomainsGoogleSitekey: string;
-  DomainsGoogleSecretkey: string;
-  UserRegidteryBool: boolean;
-  UserRegidteryRecordStatus: EnumRecordStatus;
-  UserRegidteryExpireDateDay: number;
-  RSSCount: number;
+  domainsGoogleSitekey: string;
+  domainsGoogleSecretkey: string;
+  userRegidteryBool: boolean;
+  userRegidteryRecordStatus: EnumRecordStatus;
+  userRegidteryExpireDateDay: number;
+  rssCount: number;
 }
 
 export class CoreModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  AdminCpUserCreation: number;
-  UserCreation: number;
+  adminCpUserCreation: number;
+  userCreation: number;
 }

@@ -1,7 +1,7 @@
 export class ErrorExceptionResultBase {
-  Status = 0;
-  IsSuccess = true;
+  status = 0;
+  isSuccess = true;
   errors: any; // Map<string, Array<string>>;
-  ErrorMessage: string;
-  TotalRowCount: number;
+  errorMessage: string;
+  totalRowCount: number;
 }

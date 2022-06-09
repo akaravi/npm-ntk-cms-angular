@@ -1,4 +1,4 @@
 export class BiographyContentWithSimilarLocationPeriodDtoModel {
-  TagIds: number[];
-  LocationId: number;
+  tagIds: number[];
+  locationId: number;
 }

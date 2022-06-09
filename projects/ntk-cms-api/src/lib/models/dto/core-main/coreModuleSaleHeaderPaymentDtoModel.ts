@@ -1,5 +1,5 @@
 export class CoreModuleSaleHeaderPaymentDtoModel {
-  LinkHeaderId: number;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
+  linkHeaderId: number;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
 }

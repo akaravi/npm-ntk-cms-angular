@@ -25,6 +25,6 @@ export class ArticleModuleConfigSiteValuesModel extends BaseModuleConfigSiteValu
 
 export class ArticleModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  UpdatedNewsContent: Date;
-  UpdatedNewsCategory: Date;
+  updatedNewsContent: Date;
+  updatedNewsCategory: Date;
 }

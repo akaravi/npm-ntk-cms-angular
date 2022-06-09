@@ -14,11 +14,11 @@ export class AccessHelper {
     this.AccessEditFields = {};
     this.AccessWatchFields = {};
     this.AccessSearchFields = {};
-    access.FieldsInfo.filter((item) => {
-      this.AccessAddFields[item.FieldName] = item.AccessAddField;
-      this.AccessEditFields[item.FieldName] = item.AccessEditField;
-      this.AccessWatchFields[item.FieldName] = item.AccessWatchField;
-      this.AccessSearchFields[item.FieldName] = item.AccessSearchField;
+    access.fieldsInfo.filter((item) => {
+      this.AccessAddFields[item.fieldName] = item.accessAddField;
+      this.AccessEditFields[item.fieldName] = item.accessEditField;
+      this.AccessWatchFields[item.fieldName] = item.accessWatchField;
+      this.AccessSearchFields[item.fieldName] = item.accessSearchField;
     });
   }
 }

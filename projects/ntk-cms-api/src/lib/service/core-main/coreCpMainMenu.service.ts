@@ -19,7 +19,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
     if (model == null) {
       model = new FilterModel();
     }
-    model.RowPerPage = 200;
+    model.rowPerPage = 200;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
         headers: this.getHeaders(),
@@ -36,7 +36,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
     if (model == null) {
       model = new FilterModel();
     }
-    model.RowPerPage = 200;
+    model.rowPerPage = 200;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllMenu', model, {
         headers: this.getHeaders(),
@@ -45,8 +45,8 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          // if (ret.Item != null) {
-          //   this.coreCpMainMenu.next(ret.ListItems);
+          // if (ret.item != null) {
+          //   this.coreCpMainMenu.next(ret.listItems);
           // }
           return this.errorExceptionResultCheck(ret);
         }),

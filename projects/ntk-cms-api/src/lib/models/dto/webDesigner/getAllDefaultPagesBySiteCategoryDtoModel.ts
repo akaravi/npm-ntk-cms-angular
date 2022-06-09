@@ -1,5 +1,5 @@
 export class GetAllDefaultPagesBySiteCategoryDtoModel {
-    PageId?: string;
-    LinkSiteCategoryId?: number;
-    LinkPageDependencyId?: string;
+    pageId?: string;
+    linkSiteCategoryId?: number;
+    linkPageDependencyId?: string;
 }

@@ -2,9 +2,9 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class CoreModuleRelationshipContentModel extends BaseModuleEntity<number> {
-  Title: string;
-  ModuleNameMain: number;
-  LinkModuleContentIdMain: number;
-  ModuleNameOther: number;
-  LinkModuleContentIdOther: number;
+  title: string;
+  moduleNameMain: number;
+  linkModuleContentIdMain: number;
+  moduleNameOther: number;
+  linkModuleContentIdOther: number;
 }

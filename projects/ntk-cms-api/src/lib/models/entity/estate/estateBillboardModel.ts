@@ -1,18 +1,18 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstateBillboardModel extends BaseModuleEntity<string> {
-  Title: string;
-  Description: string;
-  IncludeAllSite: boolean;
-  SpeedView: number;
-  ReloadViewPerMin: number;
-  LinkPropertyIds: string[];
-  LinkLocationIds: number[];
-  LinkPropertyTypeLanduseIds: string[];
-  LinkPropertyTypeUsageIds: string[];
-  LinkContractTypeIds: string[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
-  UrlViewContent: string;
-  UrlViewContentQRCodeBase64: string;
+  title: string;
+  description: string;
+  includeAllSite: boolean;
+  speedView: number;
+  reloadViewPerMin: number;
+  linkPropertyIds: string[];
+  linkLocationIds: number[];
+  linkPropertyTypeLanduseIds: string[];
+  linkPropertyTypeUsageIds: string[];
+  linkContractTypeIds: string[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
+  urlViewContent: string;
+  urlViewContentQRCodeBase64: string;
 }
 

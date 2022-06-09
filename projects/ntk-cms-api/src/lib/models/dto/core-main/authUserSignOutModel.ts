@@ -1,4 +1,4 @@
 export class AuthUserSignOutModel {
-  Tokens: string[] = new Array<string>();
-  AllToken = false;
+  tokens: string[] = new Array<string>();
+  allToken = false;
 }

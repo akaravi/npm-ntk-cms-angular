@@ -4,19 +4,19 @@ import { CoreModuleSaleItemModel } from './coreModuleSaleItemModel';
 import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 
 export class CoreModuleSaleHeaderModel extends BaseEntity<number>  {
-  Title: string;
-  Description: string;
-  FromDate: Date;
-  ExpireDate: Date;
-  SalePrice: number;
-  AllowReuseDay: number;
+  title: string;
+  description: string;
+  fromDate: Date;
+  expireDate: Date;
+  salePrice: number;
+  allowReuseDay: number;
 
-  HasDemo: boolean;
-  LinkModuleSaleHeaderGroupId: number;
+  hasDemo: boolean;
+  linkModuleSaleHeaderGroupId: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsModuleSaleHeaderGroup: CoreModuleSaleHeaderGroupModel;
-  Items: CoreModuleSaleItemModel[];
-  Serials: CoreModuleSaleSerialModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  items: CoreModuleSaleItemModel[];
+  serials: CoreModuleSaleSerialModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

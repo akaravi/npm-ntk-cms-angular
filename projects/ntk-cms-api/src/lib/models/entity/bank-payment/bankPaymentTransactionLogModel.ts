@@ -3,12 +3,12 @@ import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 
 export class BankPaymentTransactionLogModel extends BaseEntity<number> {
-  TransactionStatus: EnumTransactionRecordStatus;
-  LinkTransactionId: number;
+  transactionStatus: EnumTransactionRecordStatus;
+  linkTransactionId: number;
 
   // tslint:disable-next-line: variable-name
   virtual_Transaction: BankPaymentTransactionModel;
-  Transaction: BankPaymentTransactionModel;
+  transaction: BankPaymentTransactionModel;
 
-  Memo: string;
+  memo: string;
 }

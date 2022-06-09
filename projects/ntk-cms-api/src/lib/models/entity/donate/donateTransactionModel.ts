@@ -4,47 +4,47 @@ import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
 
 export class DonateTransactionModel extends BaseModuleEntity<number> {
-  LinkCmsUserId?: number;
-  LinkSponsorId?: number;
-  Sponsor: DonateSponsorModel;
+  linkCmsUserId?: number;
+  linkSponsorId?: number;
+  sponsor: DonateSponsorModel;
   virtual_Sponsor: DonateSponsorModel;
-  LinkTargetPeriodId: number;
-  TargetPeriod: DonateTargetPeriodModel;
+  linkTargetPeriodId: number;
+  targetPeriod: DonateTargetPeriodModel;
   virtual_TargetPeriod: DonateTargetPeriodModel;
 
-  SystemTransactionId: number;
-  SystemPaymentIsSuccess: number;
+  systemTransactionId: number;
+  systemPaymentIsSuccess: number;
 
-  Name: string;
-  Family: string;
-  Mobile: string;
+  name: string;
+  family: string;
+  mobile: string;
 
 
   /// <summary>
   /// موقعیت عرض جغرافیایی
   /// </summary>
-  GeoLocationLatitude?: number;
+  geoLocationLatitude?: number;
   /// <summary>
   /// موقعیت طول جغرافیایی
   /// </summary>
-  GeoLocationLongitude?: number;
-  Address: string;
+  geoLocationLongitude?: number;
+  address: string;
 
   /// <summary>
   /// مبلغ خالص فاکتور
   /// </summary>
-  AmountPure: number;
+  amountPure: number;
   /// <summary>
   /// هزینه حمل و نقل
   /// </summary>
-  FeeTransport: number;
+  feeTransport: number;
   /// <summary>
   /// هزینه مالیات
   /// </summary>
-  FeeTax: number;
+  feeTax: number;
 
   /// <summary>
   /// مبلغ کل پرداختی
   /// </summary>
-  Amount: number;
+  amount: number;
 }

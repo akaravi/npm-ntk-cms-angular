@@ -1,5 +1,5 @@
 export class WebDesignerPageAutoAddDtoModel{
-  LinkPageTemplateGuId: string;
-  LinkPageParentGuId: string;
-  PageDependencyIsDefaultPage: boolean;
+  linkPageTemplateGuId: string;
+  linkPageParentGuId: string;
+  pageDependencyIsDefaultPage: boolean;
 }

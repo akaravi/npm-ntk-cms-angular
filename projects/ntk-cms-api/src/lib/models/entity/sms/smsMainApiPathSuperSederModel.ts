@@ -3,14 +3,14 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
 
 export class SmsMainApiPathSuperSederModel extends BaseModuleEntity<string> {
-  LinkApiPathId: string;
-  LinkApiPathSuperSederId: string;
-  FromDate: Date;
-  ExpireDate: Date;
+  linkApiPathId: string;
+  linkApiPathSuperSederId: string;
+  fromDate: Date;
+  expireDate: Date;
   // tslint:disable-next-line: variable-name
   virtual_ApiPath: SmsMainApiPathModel;
-  ApiPath: SmsMainApiPathModel;
+  apiPath: SmsMainApiPathModel;
   // tslint:disable-next-line: variable-name
   virtual_ApiPathSuperSeder: SmsMainApiPathModel;
-  ApiPathSuperSeder: SmsMainApiPathModel;
+  apiPathSuperSeder: SmsMainApiPathModel;
 }

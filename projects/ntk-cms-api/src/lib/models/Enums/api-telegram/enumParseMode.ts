@@ -5,13 +5,13 @@ export enum EnumParseMode{
         //
         // Remarks:
         //     This is a legacy mode, retained for backward compatibility
-        Markdown = 1,
+        markdown = 1,
         //
         // Summary:
         //     HTML-formatted Telegram.Bot.Types.Message.Text
-        Html = 2,
+        html = 2,
         //
         // Summary:
         //     MarkdownV2-formatted Telegram.Bot.Types.Message.Text
-        MarkdownV2 = 3
+        markdownV2 = 3
 }

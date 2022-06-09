@@ -9,9 +9,6 @@ import { first } from 'rxjs/operators';
 import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'ntk-cms-api';
 import { FileManagerStoreService } from './file-manager-store.service';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
 @Injectable()
 export class NodeClickedService {
   public serviceTree: TreeModel;
@@ -48,11 +45,11 @@ export class NodeClickedService {
     if (node.isFolder) {
       this.fileCategoryService.ServiceDelete(node.id).subscribe(
         (next) => {
-          if (next.IsSuccess) {
+          if (next.isSuccess) {
             this.successWithSideViewClose();
           }
           else {
-            this.actionFailed('Delete Folder Error', next.ErrorMessage);
+            this.actionFailed('Delete Folder Error', next.errorMessage);
           }
           this.store.processStop(prosses);
         }
@@ -64,11 +61,11 @@ export class NodeClickedService {
     } else {
       this.fileContentService.ServiceDelete(node.id).subscribe(
         (next) => {
-          if (next.IsSuccess) {
+          if (next.isSuccess) {
             this.successWithSideViewClose();
           }
           else {
-            this.actionFailed('Delete File Error', next.ErrorMessage);
+            this.actionFailed('Delete File Error', next.errorMessage);
           }
           this.store.processStop(prosses);
         }
@@ -108,19 +105,19 @@ export class NodeClickedService {
   }
   public createFolder(currentParent: number, newDirName: string): void {
     const model = new FileCategoryModel();
-    model.Title = newDirName;
+    model.title = newDirName;
     if (currentParent > 0) {
-      model.LinkParentId = currentParent;
+      model.linkParentId = currentParent;
     }
     const prosses = 'createFolder';
     this.store.processStart(prosses);
     this.fileCategoryService.ServiceAdd(model).subscribe(
       (next) => {
-        if (next.IsSuccess) {
+        if (next.isSuccess) {
           this.successWithSideViewClose();
         }
         else {
-          this.actionFailed('Create Folder Error', next.ErrorMessage);
+          this.actionFailed('Create Folder Error', next.errorMessage);
         }
         this.store.processStop(prosses);
       }
@@ -136,23 +133,23 @@ export class NodeClickedService {
     failMethod: any
   ): void {
     const model = new FileContentModel();
-    model.FileName = fileName;
-    model.UploadFileGUID = uploadFileGUID;
+    model.fileName = fileName;
+    model.uploadFileGUID = uploadFileGUID;
     if (currentParent > 0) {
-      model.LinkCategoryId = currentParent;
+      model.linkCategoryId = currentParent;
     }
     const prosses = 'createFile';
     this.store.processStart(prosses);
     this.fileContentService.ServiceAdd(model).subscribe(
       (next) => {
-        if (next.IsSuccess) {
+        if (next.isSuccess) {
           this.successWithSideViewClose();
           if (successMethod) {
             successMethod(next);
           }
         }
         else {
-          this.actionFailed('Create File Error', next.ErrorMessage);
+          this.actionFailed('Create File Error', next.errorMessage);
         }
         this.store.processStop(prosses);
       }
@@ -179,16 +176,16 @@ export class NodeClickedService {
     this.store.processStart(prosses);
     if (node.isFolder) {
       this.fileCategoryService.ServiceGetOneById(node.id).subscribe((next) => {
-        if (next.IsSuccess) {
-          next.Item.Title = newName;
+        if (next.isSuccess) {
+          next.item.title = newName;
           /** update */
-          this.fileCategoryService.ServiceEdit(next.Item).subscribe(
+          this.fileCategoryService.ServiceEdit(next.item).subscribe(
             (next2) => {
-              if (next2.IsSuccess) {
+              if (next2.isSuccess) {
                 this.successWithSideViewClose();
               }
               else {
-                this.actionFailed('rename Folder Error', next.ErrorMessage);
+                this.actionFailed('rename Folder Error', next.errorMessage);
               }
               this.store.processStop(prosses);
             }
@@ -199,7 +196,7 @@ export class NodeClickedService {
           );
           /** update */
         } else {
-          this.actionFailed('rename Folder Error', next.ErrorMessage);
+          this.actionFailed('rename Folder Error', next.errorMessage);
           this.store.processStop(prosses);
         }
       }
@@ -210,16 +207,16 @@ export class NodeClickedService {
 
     } else {
       this.fileContentService.ServiceGetOneById(node.id).subscribe((next) => {
-        if (next.IsSuccess) {
-          next.Item.FileName = newName;
+        if (next.isSuccess) {
+          next.item.fileName = newName;
           /** update */
-          this.fileContentService.ServiceEdit(next.Item).subscribe(
+          this.fileContentService.ServiceEdit(next.item).subscribe(
             (next2) => {
-              if (next2.IsSuccess) {
+              if (next2.isSuccess) {
                 this.successWithSideViewClose();
               }
               else {
-                this.actionFailed('rename File Error', next.ErrorMessage);
+                this.actionFailed('rename File Error', next.errorMessage);
               }
               this.store.processStop(prosses);
             }
@@ -230,7 +227,7 @@ export class NodeClickedService {
           );
           /** update */
         } else {
-          this.actionFailed('rename File Error', next.ErrorMessage);
+          this.actionFailed('rename File Error', next.errorMessage);
           this.store.processStop(prosses);
         }
       }

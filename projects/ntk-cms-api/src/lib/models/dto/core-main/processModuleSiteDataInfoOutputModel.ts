@@ -1,6 +1,6 @@
 export class ProcessModuleSiteDataInfoOutputModel {
-  RowCount: number;
-  ModuleName: string;
-  ModuleEntityName: string;
-  Log: string;
+  rowCount: number;
+  moduleName: string;
+  moduleEntityName: string;
+  log: string;
 }

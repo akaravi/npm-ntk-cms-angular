@@ -1,16 +1,16 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateAdsTypeModel extends BaseModuleEntity<string> {
-  Title: string;
-  Description: string;
-  PaymentForMainSite:boolean;
-  StationLevel: number;
-  ViewLevel: number;
-  DayOfActivity: number;
-  SalePrice: number;
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
-  StationLevelDescription: string[];
-  ViewLevelDescription: string[];
+  title: string;
+  description: string;
+  paymentForMainSite:boolean;
+  stationLevel: number;
+  viewLevel: number;
+  dayOfActivity: number;
+  salePrice: number;
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
+  stationLevelDescription: string[];
+  viewLevelDescription: string[];
 
 }

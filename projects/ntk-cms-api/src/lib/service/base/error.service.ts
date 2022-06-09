@@ -21,9 +21,9 @@ export class ErrorService extends ApiServerBase  {
   errorExceptionResultCheck<TOut>(model: ErrorExceptionResult<TOut>): ErrorExceptionResult<TOut> {
     if (model) {
       // tslint:disable-next-line: no-empty
-      if (model.IsSuccess) {
+      if (model.isSuccess) {
       } else {
-        // this.toastrService.error(model.ErrorMessage, 'خطا در دریافت از سرور');
+        // this.toastrService.error(model.errorMessage, 'خطا در دریافت از سرور');
       }
     }
     return model;

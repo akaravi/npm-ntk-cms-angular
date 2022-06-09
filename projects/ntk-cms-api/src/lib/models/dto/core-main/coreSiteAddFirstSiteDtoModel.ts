@@ -1,7 +1,7 @@
 export class CoreSiteAddFirstSiteDtoModel {
-  Domain: string;
-  Description: string;
-  SubDomain: string;
-  LinkSiteCategoryId: number;
-  Title: string;
+  domain: string;
+  description: string;
+  subDomain: string;
+  linkSiteCategoryId: number;
+  title: string;
 }

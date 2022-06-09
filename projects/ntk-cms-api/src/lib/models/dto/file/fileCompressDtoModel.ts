@@ -1,4 +1,4 @@
 export class FileCompressDtoModel {
-  FileIds: number[];
-  FolderIds: number[];
+  fileIds: number[];
+  folderIds: number[];
 }

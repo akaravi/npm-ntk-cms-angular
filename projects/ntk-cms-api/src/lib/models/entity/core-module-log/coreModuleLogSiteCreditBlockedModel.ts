@@ -1,11 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class CoreModuleLogSiteCreditBlockedModel extends BaseModuleEntity<string> {
-  LinkModuleId:number;
-  TransactionId: number;
-  TransactionCredit: number;
-  StratTransactionCredit: number;
-  EndTransactionCredit: number;
-  EndTransactionDate: Date;
+  linkModuleId:number;
+  transactionId: number;
+  transactionCredit: number;
+  stratTransactionCredit: number;
+  endTransactionCredit: number;
+  endTransactionDate: Date;
 }
 

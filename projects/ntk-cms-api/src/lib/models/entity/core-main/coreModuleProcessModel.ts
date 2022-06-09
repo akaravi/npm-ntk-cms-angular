@@ -3,17 +3,17 @@ import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleProcessCustomizeModel } from './coreModuleProcessCustomizeModel';
 
 export class CoreModuleProcessModel extends BaseEntity<number>  {
-  TitleML: string;
-  Title: string;
-  TitleResourceLanguage: string;
-  TitleEn: string;
-  ProcessName: string;
-  Description: string;
-  LinkModuleId?: number;
+  titleML: string;
+  title: string;
+  titleResourceLanguage: string;
+  titleEn: string;
+  processName: string;
+  description: string;
+  linkModuleId?: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsModule: CoreModuleModel;
-  CmsModule: CoreModuleModel;
-  CmsModuleProcessCustomize: CoreModuleProcessCustomizeModel[];
+  cmsModule: CoreModuleModel;
+  cmsModuleProcessCustomize: CoreModuleProcessCustomizeModel[];
 }
 
 

@@ -1,9 +1,9 @@
 
 export class SmsApiSendMessageDtoModel {
-  LinkApiPathId: string;
-  LinkFromNumber: string;
-  ToNumber: string;
-  Message: string;
-  SendByQeue: boolean;
-  IsFlash: boolean;
+  linkApiPathId: string;
+  linkFromNumber: string;
+  toNumber: string;
+  message: string;
+  sendByQeue: boolean;
+  isFlash: boolean;
 }

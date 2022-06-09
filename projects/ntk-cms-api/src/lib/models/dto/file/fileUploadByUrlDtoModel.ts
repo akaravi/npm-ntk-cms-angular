@@ -1,5 +1,5 @@
 export class FileUploadByUrlDtoModel {
-  FileIds: number[];
-  IsCut: boolean;
-  LinkCategoryIdTarget?: number;
+  fileIds: number[];
+  isCut: boolean;
+  linkCategoryIdTarget?: number;
 }

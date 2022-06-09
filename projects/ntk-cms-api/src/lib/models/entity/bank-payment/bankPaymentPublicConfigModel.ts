@@ -2,12 +2,12 @@ import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
 
 export class BankPaymentPublicConfigModel extends BaseEntity<number> {
-  Title: string;
-  ClassName: string;
-  LinkModuleFileLogoId: number;
-  LinkModuleFileLogoIdSrc: string;
-  LinkCurrencyId: number;
-  PublicConfigJsonValues: string;
-  Memo: string;
-  PrivateSiteConfigs: BankPaymentPrivateSiteConfigModel[];
+  title: string;
+  className: string;
+  linkModuleFileLogoId: number;
+  linkModuleFileLogoIdSrc: string;
+  linkCurrencyId: number;
+  publicConfigJsonValues: string;
+  memo: string;
+  privateSiteConfigs: BankPaymentPrivateSiteConfigModel[];
 }

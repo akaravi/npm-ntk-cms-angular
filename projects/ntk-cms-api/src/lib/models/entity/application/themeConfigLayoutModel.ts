@@ -1,4 +1,4 @@
 export class ThemeConfigLayoutModel {
-  LayoutName: string;
-  LayoutTheme: string;
+  layoutName: string;
+  layoutTheme: string;
 }

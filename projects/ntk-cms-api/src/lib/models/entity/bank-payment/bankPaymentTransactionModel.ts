@@ -7,39 +7,39 @@ import { BankPaymentTransactionLogModel } from './bankPaymentTransactionLogModel
 
 
 export class BankPaymentTransactionModel extends BaseEntity<number> {
-  LinkSiteIdBuyer: number;
-  LinkSiteIdSaller: number;
-  ModuleName: string;
-  ModuleEntityName: string;
-  ModuleEntityId: string;
+  linkSiteIdBuyer: number;
+  linkSiteIdSaller: number;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
 
-  TransactionStatus: EnumTransactionRecordStatus;
-  BankStatus: EnumTransactionBankStatus;
-  CurrencyUnit: string;
-  CurrencyUnitRatioByShop: number;
-  SuccessStatusMessage: string;
-  LastStatusMessage: string;
-  LastTransactionCheckMessage: string;
-  BackedFromBank: boolean;
-  LinkPrivateSiteConfigId: number;
-  LinkUserId: number;
-  Amount: number;
-  AmountPure: number;
-  StampJsonValues: string;
-  StampJsonFormatter: GetPropertiesInfoModel[];
+  transactionStatus: EnumTransactionRecordStatus;
+  bankStatus: EnumTransactionBankStatus;
+  currencyUnit: string;
+  currencyUnitRatioByShop: number;
+  successStatusMessage: string;
+  lastStatusMessage: string;
+  lastTransactionCheckMessage: string;
+  backedFromBank: boolean;
+  linkPrivateSiteConfigId: number;
+  linkUserId: number;
+  amount: number;
+  amountPure: number;
+  stampJsonValues: string;
+  stampJsonFormatter: GetPropertiesInfoModel[];
 
-  RequestBackUserFromBankJsonValues: string;
-  RequestBackUserFromBankJsonFormatter: GetPropertiesInfoModel[];
+  requestBackUserFromBankJsonValues: string;
+  requestBackUserFromBankJsonFormatter: GetPropertiesInfoModel[];
 
-  OnlineDateLock: Date;
-  OnlineDateUnlock: Date;
-  LastUrlAddressInUse: string;
+  onlineDateLock: Date;
+  onlineDateUnlock: Date;
+  lastUrlAddressInUse: string;
   // tslint:disable-next-line: variable-name
   virtual_PrivateSiteConfig: BankPaymentPrivateSiteConfigModel;
-  PrivateSiteConfig: BankPaymentPrivateSiteConfigModel;
+  privateSiteConfig: BankPaymentPrivateSiteConfigModel;
 
-  LinkModelShopCartId: number;
-  ModelShopInvoiceSaleRelease: boolean;
-  ModelShopInvoiceSaleReleaseDate: Date;
-  TransactionLogs: BankPaymentTransactionLogModel;
+  linkModelShopCartId: number;
+  modelShopInvoiceSaleRelease: boolean;
+  modelShopInvoiceSaleReleaseDate: Date;
+  transactionLogs: BankPaymentTransactionLogModel;
 }

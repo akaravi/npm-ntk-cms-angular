@@ -1,29 +1,29 @@
 import { EnumInputDataType } from '../../enums/estate/enumInputDataType';
 
 export class EstatePropertyDetailModel {
-  Id: string;
-  Title: string;
-  Description: string;
-  IconFont: string;
-  IconColor: string;
-  InputDataType: EnumInputDataType;
+  id: string;
+  title: string;
+  description: string;
+  iconFont: string;
+  iconColor: string;
+  inputDataType: EnumInputDataType;
 
-  InvisibleForEndUser: boolean;
+  invisibleForEndUser: boolean;
 
-  InvisibleForSubmiter: boolean;
+  invisibleForSubmiter: boolean;
 
-  Unit: string;
+  unit: string;
 
-  Required: boolean;
-  IsHistoryable: boolean;
-  IsSearchable: boolean;
-  ShowInFormOrder?: number;
-  LinkPropertyTypeLanduseId: string;
-  LinkPropertyDetailGroupId: string;
-  ConfigValueDefaultValueJson: string;
-  ConfigValueDefaultValue: string[];
-  ConfigValueForceUseDefaultValue: boolean;
-  ConfigValueMultipleChoice: boolean;
-  ConfigValueIntValueMin: number;
-  ConfigValueIntValueMax: number;
+  required: boolean;
+  isHistoryable: boolean;
+  isSearchable: boolean;
+  showInFormOrder?: number;
+  linkPropertyTypeLanduseId: string;
+  linkPropertyDetailGroupId: string;
+  configValueDefaultValueJson: string;
+  configValueDefaultValue: string[];
+  configValueForceUseDefaultValue: boolean;
+  configValueMultipleChoice: boolean;
+  configValueIntValueMin: number;
+  configValueIntValueMax: number;
 }

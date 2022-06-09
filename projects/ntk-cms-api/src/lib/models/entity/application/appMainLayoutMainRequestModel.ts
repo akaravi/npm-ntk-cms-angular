@@ -1,19 +1,17 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class AppMainLayoutMainRequestModel extends BaseModuleEntity<number>  {
-
-
-    UserId: number;
-    MemberUserId: number;
-    SiteId: number;
-    AppTitle: string;
-    AppUrl: string;
-    AppId: number;
-    AppVersion: number;
-    LastUpdateSource?: string;
-    LastUpdateTheme?: string;
-    LastUpdateApp?: string;
-    AppForceUpdate: boolean;
-    AppThemeId?: number;
+    userId: number;
+    memberUserId: number;
+    siteId: number;
+    appTitle: string;
+    appUrl: string;
+    appId: number;
+    appVersion: number;
+    lastUpdateSource?: string;
+    lastUpdateTheme?: string;
+    lastUpdateApp?: string;
+    appForceUpdate: boolean;
+    appThemeId?: number;
 }
 

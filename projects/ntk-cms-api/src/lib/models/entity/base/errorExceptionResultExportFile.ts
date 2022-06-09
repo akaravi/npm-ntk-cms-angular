@@ -1,11 +1,10 @@
 import { ErrorExceptionResultBase } from './errorExceptionResultBase';
 
 export class ErrorExceptionResultExportFile extends ErrorExceptionResultBase {
-  Status = 0;
-  IsSuccess = true;
+  status = 0;
+  isSuccess = true;
   errors: any; // Map<string, Array<string>>;
-  ErrorMessage: string;
-  TotalRowCount: number;
-  LinkFile: string;
-
+  errorMessage: string;
+  totalRowCount: number;
+  linkFile: string;
 }

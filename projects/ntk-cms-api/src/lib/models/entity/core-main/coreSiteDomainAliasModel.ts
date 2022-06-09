@@ -2,12 +2,12 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreSiteModel } from './coreSiteModel';
 
 export class CoreSiteDomainAliasModel extends BaseEntity<number>  {
-  CmsSite: CoreSiteModel;
-  SubDomain: string;
-  Domain: string;
-  Redirect: string;
-  LinkCmsSiteId?: number;
+cmsSite: CoreSiteModel;
+  subDomain: string;
+  domain: string;
+  redirect: string;
+  linkCmsSiteId?: number;
   // tslint:disable-next-line: variable-name
   virtual_CmsSite: CoreSiteModel;
-  ConfigNeshanMapApiKey: string;
+  configNeshanMapApiKey: string;
 }

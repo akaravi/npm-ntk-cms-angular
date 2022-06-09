@@ -1,6 +1,6 @@
 export class DonateModulePaymentDtoModel {
-  LinkTargetPeriodId: number;
-  SupportPayment: number;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
+  linkTargetPeriodId: number;
+  supportPayment: number;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
 }

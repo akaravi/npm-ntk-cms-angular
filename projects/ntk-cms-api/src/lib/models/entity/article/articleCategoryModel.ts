@@ -3,19 +3,19 @@ import { ArticleContentCategoryModel } from './articleContentCategoryModel';
 import { ArticleContentModel } from './articleContentModel';
 
 export class ArticleCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  TitleResourceLanguage: string;
-  ContentCount: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentIdNode: string;
-  LinkParentId: number;
-  Children: ArticleCategoryModel[];
-  Category: ArticleCategoryModel;
+  title: string;
+  titleResourceLanguage: string;
+  contentCount: number;
+  description: string;
+  fontIcon: string;
+  linkParentIdNode: string;
+  linkParentId: number;
+  children: ArticleCategoryModel[];
+  category: ArticleCategoryModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: ArticleCategoryModel;
-  Contents: ArticleContentModel[];
-  ContentCategores: ArticleContentCategoryModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  contents: ArticleContentModel[];
+  contentCategores: ArticleContentCategoryModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

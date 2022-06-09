@@ -1,8 +1,6 @@
 export class UploadApplictionDtoModel {
-
-  UploadFileGUID: string;
-  LinkApplicationId: number;
-  AppVersion: number;
-  LastBuildAppKey: string;
-
+  uploadFileGUID: string;
+  linkApplicationId: number;
+  appVersion: number;
+  lastBuildAppKey: string;
 }

@@ -25,6 +25,6 @@ export class UniversalMenuModuleConfigSiteValuesModel extends BaseModuleConfigSi
 
 export class UniversalMenuModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  UpdatedNewsContent: Date;
-  UpdatedNewsCategory: Date;
+  updatedNewsContent: Date;
+  updatedNewsCategory: Date;
 }

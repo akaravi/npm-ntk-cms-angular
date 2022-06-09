@@ -7,8 +7,8 @@ import { ChartCommentModel } from './chartCommentModel';
 import { ChartContentModel } from './chartContentModel';
 
 export class ChartContentCategoryModel extends BaseModuleEntity<number> {
-  Content: ChartContentModel;
-  Category: ChartCategoryModel;
-  LinkCategoryId: number;
-  LinkContentId: number;
+  content: ChartContentModel;
+  category: ChartCategoryModel;
+  linkCategoryId: number;
+  linkContentId: number;
 }

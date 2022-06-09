@@ -1,5 +1,5 @@
 ﻿export class BaseModuleConfigSiteValuesModel {
-  StatusRenderUser: boolean;
-  UseDataDefaulteSite: boolean;
+  statusRenderUser: boolean;
+  useDataDefaulteSite: boolean;
 }
 

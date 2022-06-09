@@ -4,14 +4,14 @@ import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 import { CoreUserClaimContentModel } from './coreUserClaimContentModel';
 
 export class CoreUserClaimTypeModel extends BaseEntity<number> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  Description: string;
-  DismissOnEdit: boolean;
-  Kind: EnumUserClaimKinds;
-  UserClaims: CoreUserClaimContentModel[];
-  UserClaimGroupDetails: CoreUserClaimGroupDetailModel[];
-  LinkMainImageId: number;
-  LinkMainImageIdSrc: string;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  description: string;
+  dismissOnEdit: boolean;
+  kind: EnumUserClaimKinds;
+  userClaims: CoreUserClaimContentModel[];
+  userClaimGroupDetails: CoreUserClaimGroupDetailModel[];
+  linkMainImageId: number;
+  linkMainImageIdSrc: string;
 }

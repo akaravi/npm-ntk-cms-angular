@@ -2,18 +2,18 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { FileContentModel } from './fileContentModel';
 
 export class FileCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  TitleResourceLanguage: string;
-  ContentCount: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentIdNode: string;
-  LinkParentId: number;
-  Children: FileCategoryModel[];
-  Category: FileCategoryModel;
+  title: string;
+  titleResourceLanguage: string;
+  contentCount: number;
+  description: string;
+  fontIcon: string;
+  linkParentIdNode: string;
+  linkParentId: number;
+  children: FileCategoryModel[];
+  category: FileCategoryModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: FileCategoryModel;
-  Contents: FileContentModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  contents: FileContentModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

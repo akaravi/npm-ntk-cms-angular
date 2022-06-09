@@ -1,10 +1,10 @@
 export class BaseModuleConfigAdminMainValuesModel {
-  AccessBuy: boolean;
-  AccessFree: boolean;
-  AccessFreeDay: number;
-  UseDataDefaulteSiteId: number;
-  ImageMainSizeWidth: number;
-  ImageMainSizeHeight: number;
-  ImageThumbnailSizeWidth: number;
-  ImageThumbnailSizeHeight: number;
+  accessBuy: boolean;
+  accessFree: boolean;
+  accessFreeDay: number;
+  useDataDefaulteSiteId: number;
+  imageMainSizeWidth: number;
+  imageMainSizeHeight: number;
+  imageThumbnailSizeWidth: number;
+  imageThumbnailSizeHeight: number;
 }

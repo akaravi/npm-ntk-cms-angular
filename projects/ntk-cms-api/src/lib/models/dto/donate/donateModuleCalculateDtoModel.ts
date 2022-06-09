@@ -1,5 +1,5 @@
 export class DonateModuleCalculateDtoModel {
-  LinkTargetPeriodId: number;
-  SupportPayment: number;
-  BankPaymentPrivateId: number;
+  linkTargetPeriodId: number;
+  supportPayment: number;
+  bankPaymentPrivateId: number;
 }

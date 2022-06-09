@@ -8,78 +8,78 @@ import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigMod
 import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
 
 export class SmsMainApiPathModel extends BaseModuleEntity<string> {
-  Title: string;
-  Description?: any;
-  ApiDefaultNumber?: any;
-  ApiIdentity: number;
-  ApiReceiveKey: string;
-  Priority: number;
-  PerriodStartWorkTime?: any;
-  PerriodEndWorkTime?: any;
-  ServerAbilityApiPhoneBook: boolean;
-  ServerAbilityApiVoice: boolean;
-  ServerConnectionPerMinute: number;
-  ServerAbilityMinPack: number;
-  ServerAbilityMaxPack: number;
-  ApiMinPathNeedToCheckIsOn: boolean;
-  ApiMinPathNeedToCheck: number;
-  LinkApiPathCompanyId: string;
+  title: string;
+  description?: any;
+  apiDefaultNumber?: any;
+  apiIdentity: number;
+  apiReceiveKey: string;
+  priority: number;
+  perriodStartWorkTime?: any;
+  perriodEndWorkTime?: any;
+  serverAbilityApiPhoneBook: boolean;
+  serverAbilityApiVoice: boolean;
+  serverConnectionPerMinute: number;
+  serverAbilityMinPack: number;
+  serverAbilityMaxPack: number;
+  apiMinPathNeedToCheckIsOn: boolean;
+  apiMinPathNeedToCheck: number;
+  linkApiPathCompanyId: string;
   // tslint:disable-next-line: variable-name
   virtual_ApiPathCompany: SmsMainApiPathCompanyModel;
-  ApiPathCompany: SmsMainApiPathCompanyModel;
-  ApiPathCompanyCounterIsOn: boolean;
-  ApiAbilitySendUnicodeMessage: boolean;
-  ApiAbilitySendNormalMessage: boolean;
-  ApiAllowSuperSeder: boolean;
-  ApiAbilityUseWebservice: boolean;
-  ApiAbilityUseInside: boolean;
-  ApiAbilityRegulatorAllowToSend: string;
-  ApiAbilityRegulatorDenayToSend: string;
-  ApiAbilityLengthMinToSend: number;
-  ApiAbilityLengthMaxToSend: number;
-  ApiPathSuperSeders: SmsMainApiPathSuperSederModel[];
-  ApiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
-  ApiPathPermissions: SmsMainApiPathPermissionModel[];
-  ApiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
-  ApiPathPriceServices: SmsMainApiPathPriceServiceModel[];
-  ApiSendMessageIsOn: boolean;
+  apiPathCompany: SmsMainApiPathCompanyModel;
+  apiPathCompanyCounterIsOn: boolean;
+  apiAbilitySendUnicodeMessage: boolean;
+  apiAbilitySendNormalMessage: boolean;
+  apiAllowSuperSeder: boolean;
+  apiAbilityUseWebservice: boolean;
+  apiAbilityUseInside: boolean;
+  apiAbilityRegulatorAllowToSend: string;
+  apiAbilityRegulatorDenayToSend: string;
+  apiAbilityLengthMinToSend: number;
+  apiAbilityLengthMaxToSend: number;
+  apiPathSuperSeders: SmsMainApiPathSuperSederModel[];
+  apiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
+  apiPathPermissions: SmsMainApiPathPermissionModel[];
+  apiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
+  apiPathPriceServices: SmsMainApiPathPriceServiceModel[];
+  apiSendMessageIsOn: boolean;
 
-  ApiDeliveryIsOn: boolean;
+  apiDeliveryIsOn: boolean;
 
-  ApiCreditBackIsOn: boolean;
-  ApiCreditBackCheckOnSend?: any;
-  ApiCreditBackCheckOnDelivery?: any;
-  ApiReceiveIsOn: boolean;
+  apiCreditBackIsOn: boolean;
+  apiCreditBackCheckOnSend?: any;
+  apiCreditBackCheckOnDelivery?: any;
+  apiReceiveIsOn: boolean;
 
-  ApiInfoCreditCheckIsOn: boolean;
+  apiInfoCreditCheckIsOn: boolean;
 
-  ApiPhoneBookIsOn: boolean;
+  apiPhoneBookIsOn: boolean;
 
-  ApiSendVoiceIsOn: boolean;
+  apiSendVoiceIsOn: boolean;
 
-  ErrorTextToStandBy?: any;
-  ErrorTextToDisable?: any;
-  ErrorTextToStandByLastGet?: any;
-  ErrorTextToStandByLastGetDate?: any;
-  ErrorTextToStandByExit: number;
-  ErrorTextToDisableLastGet?: any;
-  ErrorTextToDisableLastGetDate?: any;
+  errorTextToStandBy?: any;
+  errorTextToDisable?: any;
+  errorTextToStandByLastGet?: any;
+  errorTextToStandByLastGetDate?: any;
+  errorTextToStandByExit: number;
+  errorTextToDisableLastGet?: any;
+  errorTextToDisableLastGetDate?: any;
 
 
-  IsPublic: boolean;
-  MaxProcessFlowAmount: number;
-  MinProcessFlowAmount: number;
-  FixFeeProcessFlowAmount: number;
-  PercentFeeProcessFlowAmount: number;
-  LinkPublicConfigId: string;
-  PrivateConfigJsonValues: string;
-  Memo: string;
+  isPublic: boolean;
+  maxProcessFlowAmount: number;
+  minProcessFlowAmount: number;
+  fixFeeProcessFlowAmount: number;
+  percentFeeProcessFlowAmount: number;
+  linkPublicConfigId: string;
+  privateConfigJsonValues: string;
+  memo: string;
   // tslint:disable-next-line: variable-name
   virtual_PublicConfig: SmsMainApiPathPublicConfigModel;
-  ProcessFlow: SmsMainApiPathProcessFlowModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  processFlow: SmsMainApiPathProcessFlowModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 
-  HookAddressAPI:string;
-  HookAddressAPIById:string;
+  hookAddressAPI:string;
+  hookAddressAPIById:string;
 }

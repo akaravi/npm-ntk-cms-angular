@@ -3,22 +3,22 @@ import { CoreUserClaimTypeModel } from './coreUserClaimTypeModel';
 import { CoreUserModel } from './coreUserModel';
 
 export class CoreUserClaimContentModel extends BaseEntity<number> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  Description: string;
-  LinkUserId: number;
-  LinkSiteId?: number;
-  LinkUserIdApprover?: number;
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  description: string;
+  linkUserId: number;
+  linkSiteId?: number;
+  linkUserIdApprover?: number;
   // tslint:disable-next-line: variable-name
   virtual_CoreUser: CoreUserModel;
-  IsApproved: boolean;
-  ApprovedResult: string;
-  ApproveCheckDate: Date;
-  LinkFileContentId?: number;
-  LinkFileContentIdSrc: string;
-  ExpireDate?: Date;
-  LinkUserClaimTypeId: number;
+  isApproved: boolean;
+  approvedResult: string;
+  approveCheckDate: Date;
+  linkFileContentId?: number;
+  linkFileContentIdSrc: string;
+  expireDate?: Date;
+  linkUserClaimTypeId: number;
   // tslint:disable-next-line: variable-name
   virtual_UserClaimType: CoreUserClaimTypeModel;
 }

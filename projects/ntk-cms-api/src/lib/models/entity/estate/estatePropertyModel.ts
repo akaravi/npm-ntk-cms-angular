@@ -8,76 +8,76 @@ import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 
 
 export class EstatePropertyModel extends BaseModuleEntity<string> {
-  Title: string;
-  CaseCode: string;
-  MainAdminRecordStatus = EnumRecordStatus.Pending;
-  CreatedYaer?: number;
-  Partition: number;
-  Area: number;
-  LinkCmsUserId?: number;
-  LinkEstateUserId: string;
-  IsSoldIt: boolean;
-  ReviewDataAfterSoldIt?: Date;
-  LinkLocationId: number;
-  Description: string;
-  ViewConfigHiddenInList: boolean;
-  LinkPropertyTypeLanduseId: string;
-  LinkPropertyTypeUsageId: string;
-  PropertyTypeLanduse: EstatePropertyTypeLanduseModel;
-  PropertyTypeUsage: EstatePropertyTypeUsageModel;
+  title: string;
+  caseCode: string;
+  mainAdminRecordStatus = EnumRecordStatus.Pending;
+  createdYaer?: number;
+  partition: number;
+  area: number;
+  linkCmsUserId?: number;
+  linkEstateUserId: string;
+  isSoldIt: boolean;
+  reviewDataAfterSoldIt?: Date;
+  linkLocationId: number;
+  description: string;
+  viewConfigHiddenInList: boolean;
+  linkPropertyTypeLanduseId: string;
+  linkPropertyTypeUsageId: string;
+  propertyTypeLanduse: EstatePropertyTypeLanduseModel;
+  propertyTypeUsage: EstatePropertyTypeUsageModel;
 
-  SharingKey: number;
+  sharingKey: number;
   /// <summary>
   /// موقعیت جغرافیایی
   /// </summary>
-  Geolocationlatitude?: number;
-  Geolocationlongitude?: number;
+  geolocationlatitude?: number;
+  geolocationlongitude?: number;
 
-  Address: string;
-  LinkMainImageId?: number;
-  LinkExtraImageIds: string;
-  LinkFileIds: string;
+  address: string;
+  linkMainImageId?: number;
+  linkExtraImageIds: string;
+  linkFileIds: string;
   /// <summary>
   /// تعداد مجموع آرا
   /// </summary>
 
-  ScoreClick: number;
+  scoreClick: number;
   /// <summary>
   /// مجموع امتیازهای داده شده در آراها
   /// امتیاز از 10 می باشد
   /// </summary>
 
-  ScoreSumPercent: number;
+  scoreSumPercent: number;
 
-  ViewCount: number;
+  viewCount: number;
   // * AboutAgent */
-  AboutAgentTel: string;
-  AboutAgentMobile: string;
+  aboutAgentTel: string;
+  aboutAgentMobile: string;
   // * AboutAgent */
   // * AboutCustomer */
-  AboutCustomerTel: string;
-  AboutCustomerMobile: string;
+  aboutCustomerTel: string;
+  aboutCustomerMobile: string;
   // * AboutCustomer */
-  Contracts: EstateContractModel[];
+  contracts: EstateContractModel[];
 
 
 
-  PropertyDetailValues: EstatePropertyDetailValueModel[];
-  PropertyDetailGroups: EstatePropertyDetailGroupModel[];
+  propertyDetailValues: EstatePropertyDetailValueModel[];
+  propertyDetailGroups: EstatePropertyDetailGroupModel[];
 
 
-  LinkMainImageIdSrc: string;
-  LinkExtraImageIdsSrc: string[];
-  LinkFileIdsSrc: string[];
+  linkMainImageIdSrc: string;
+  linkExtraImageIdsSrc: string[];
+  linkFileIdsSrc: string[];
   /** برای انتصا مسقیم فایل آپلود شده */
-  UploadFileGUID: string[];
-  UrlViewContent: string;
-  UrlViewContentQRCodeBase64: string;
-  LinkLocationIdTitle: string;
-  LinkLocationIdParentTitle: string;
-  Favorited: boolean;
+  uploadFileGUID: string[];
+  urlViewContent: string;
+  urlViewContentQRCodeBase64: string;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
+  favorited: boolean;
   /**Action */
-  ActionSendSmsToCustomer: boolean;
-  ActionSendSmsToAgent: boolean;
-  ActionSendSmsToCustomerOrder: boolean;
+  actionSendSmsToCustomer: boolean;
+  actionSendSmsToAgent: boolean;
+  actionSendSmsToCustomerOrder: boolean;
 }

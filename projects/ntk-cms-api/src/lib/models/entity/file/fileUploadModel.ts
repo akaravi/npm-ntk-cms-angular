@@ -1,4 +1,4 @@
 export class FileUploadModel {
-  public FileName: string;
-  public FileKey: string;
+  public fileName: string;
+  public fileKey: string;
 }

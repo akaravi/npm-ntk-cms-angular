@@ -25,6 +25,6 @@ export class ApiTelegramModuleConfigSiteValuesModel extends BaseModuleConfigSite
 
 export class ApiTelegramModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  UpdatedNewsContent: Date;
-  UpdatedNewsCategory: Date;
+  updatedNewsContent: Date;
+  updatedNewsCategory: Date;
 }

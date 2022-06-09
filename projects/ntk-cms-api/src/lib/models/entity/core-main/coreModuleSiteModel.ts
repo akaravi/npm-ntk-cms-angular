@@ -3,19 +3,19 @@ import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreModuleSiteModel extends BaseEntity<number>  {
-  ExpireDate?: Date;
-  LinkSiteId: number;
-  Title: string;
-  LinkModuleId: number;
-  RenewDate?: string;
-  HasBuyed: boolean;
+  expireDate?: Date;
+  linkSiteId: number;
+  title: string;
+  linkModuleId: number;
+  renewDate?: string;
+  hasBuyed: boolean;
   // tslint:disable-next-line: variable-name
   virtual_CmsSite: CoreSiteModel;
-  CmsSite: CoreSiteModel;
+  cmsSite: CoreSiteModel;
   // tslint:disable-next-line: variable-name
   virtual_CmsModule: CoreModuleModel;
-  CmsModule: CoreModuleModel;
-  ModuleConfigSiteAccessValuesJson: string;
-  ModuleConfigSiteValuesJson: string;
-  ModuleSiteStorageValuesJson: string;
+  cmsModule: CoreModuleModel;
+  moduleConfigSiteAccessValuesJson: string;
+  moduleConfigSiteValuesJson: string;
+  moduleSiteStorageValuesJson: string;
 }

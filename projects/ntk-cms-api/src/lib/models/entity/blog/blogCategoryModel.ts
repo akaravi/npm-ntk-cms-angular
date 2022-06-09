@@ -3,21 +3,21 @@ import { BlogContentCategoryModel } from './blogContentCategoryModel';
 import { BlogContentModel } from './blogContentModel';
 
 export class BlogCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  TitleResourceLanguage: string;
-  ContentCount: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentIdNode: string;
-  LinkParentId: number;
-  Children: BlogCategoryModel[];
-  Category: BlogCategoryModel;
+  title: string;
+  titleResourceLanguage: string;
+  contentCount: number;
+  description: string;
+  fontIcon: string;
+  linkParentIdNode: string;
+  linkParentId: number;
+  children: BlogCategoryModel[];
+  category: BlogCategoryModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: BlogCategoryModel;
-  Contents: BlogContentModel[];
-  ContentCategores: BlogContentCategoryModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  contents: BlogContentModel[];
+  contentCategores: BlogContentCategoryModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 
 
 

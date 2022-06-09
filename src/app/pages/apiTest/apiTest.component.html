@@ -1,7 +1,7 @@
 <p>apiTest works!</p>
 
 <input
-  [(ngModel)]="modelData.Email"
+  [(ngModel)]="modelData.email"
   class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
   type="text"
   placeholder="Email"
@@ -9,7 +9,7 @@
 />
 <br>
 <input
-  [(ngModel)]="modelData.Password"
+  [(ngModel)]="modelData.password"
   class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
   type="password"
   placeholder="Password"
@@ -17,7 +17,7 @@
 />
 <br>
 <input
-  [(ngModel)]="modelData.SiteId"
+  [(ngModel)]="modelData.siteId"
   class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
   type="text"
   placeholder="SiteId"
@@ -25,14 +25,14 @@
 />
 <br>
 <img
-  src="{{ captchaModel.Image }}"
+  src="{{ captchaModel.image }}"
   (click)="onCaptchaOrder()"
   class="mb-3"
   alt=""
 />
 <br>
 <input
-  [(ngModel)]="modelData.CaptchaText"
+  [(ngModel)]="modelData.captchaText"
   class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
   type="text"
   placeholder="CAPTCHA CODE"
@@ -44,7 +44,7 @@
 <button type="button" (click)="onActionLogin()">login</button>
 <button type="button" (click)="onActionLogout()">logout</button>
 <button type="button" (click)="onActionCheckToken()">CheckToken</button>
-<div *ngIf="TokenInfoResult?.IsSuccess">
+<div *ngIf="TokenInfoResult?.isSuccess">
   Token Id Valid
 </div>
 

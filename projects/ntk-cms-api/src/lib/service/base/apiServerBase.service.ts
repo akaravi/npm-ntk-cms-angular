@@ -21,12 +21,13 @@ export class ApiServerBase {
   public configApiRetry = 0;
   keyUserToken = 'userToken';
   keyDeviceToken = 'deviceToken';
+  keyBaseUrl = 'baseUrl';
   private headers: Map<string, string>;
   private accessLoad = false;
   private accessDataType: EnumManageUserAccessDataTypes;
   setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
-    localStorage.setItem('baseUrl', url);
+    localStorage.setItem(this.keyBaseUrl, url);
     this.configApiRetry = apiRetry;
   }
 
@@ -34,7 +35,7 @@ export class ApiServerBase {
     // test
   }
   getBaseUrl(): string {
-    const BaseUrl = localStorage.getItem('baseUrl');
+    const BaseUrl = localStorage.getItem(this.keyBaseUrl);
     if (BaseUrl && BaseUrl.length > 0) {
       return BaseUrl;
     }
@@ -123,18 +124,18 @@ export class ApiServerBase {
 
   errorExceptionResultCheck<TModel>(model: ErrorExceptionResult<TModel>): ErrorExceptionResult<TModel> {
     if (model) {
-      if (!model.IsSuccess) {
+      if (!model.isSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.ErrorMessage;
+        const message = model.errorMessage;
       }
     }
     return model;
   }
   errorExceptionResultBaseCheck(model: ErrorExceptionResultBase): ErrorExceptionResultBase {
     if (model) {
-      if (!model.IsSuccess) {
+      if (!model.isSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.ErrorMessage;
+        const message = model.errorMessage;
       }
     }
     // this.loadingStatus=false;
@@ -142,9 +143,9 @@ export class ApiServerBase {
   }
   errorExceptionResultCheckExportFile(model: ErrorExceptionResultExportFile): ErrorExceptionResultExportFile {
     if (model) {
-      if (!model.IsSuccess) {
+      if (!model.isSuccess) {
         const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.ErrorMessage;
+        const message = model.errorMessage;
       }
     }
     // this.loadingStatus=false;

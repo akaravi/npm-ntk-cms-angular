@@ -7,8 +7,8 @@ import { NewsCommentModel } from './newsCommentModel';
 import { NewsContentModel } from './newsContentModel';
 
 export class NewsContentCategoryModel extends BaseModuleEntity<number> {
-  Content: NewsContentModel;
-  Category: NewsCategoryModel;
-  LinkCategoryId: number;
-  LinkContentId: number;
+  content: NewsContentModel;
+  category: NewsCategoryModel;
+  linkCategoryId: number;
+  linkContentId: number;
 }

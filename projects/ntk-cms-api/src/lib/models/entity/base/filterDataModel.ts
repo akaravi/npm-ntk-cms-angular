@@ -5,15 +5,15 @@ import { EnumFilterDataModelSearchTypes } from '../../enums/enumFilterDataModelS
 
 export class FilterDataModel {
   constructor() {
-    this.Filters = new Array<FilterDataModel>();
+    this.filters = new Array<FilterDataModel>();
   }
-  Filters: FilterDataModel[];
-  Value: any;
-  Values: any[];
-  PropertyName: string;
-  PropertyAnyName: string;
-  ClauseType: EnumClauseType;
-  SearchType: EnumFilterDataModelSearchTypes;
+  filters: FilterDataModel[];
+  value: any;
+  values: any[];
+  propertyName: string;
+  propertyAnyName: string;
+  clauseType: EnumClauseType;
+  searchType: EnumFilterDataModelSearchTypes;
   // StringValue: string;
   // StringContainValues: string[] = new Array<string>();
   // IntValue: number;
@@ -23,9 +23,9 @@ export class FilterDataModel {
   // EnumValue: string;
   // SingleValue: number;
   // DecimalValue: number;
-   LatitudeValue: number;
-   LongitudeValue: number;
-   LatitudeLongitudeDistanceValue: number;
+   latitudeValue: number;
+   longitudeValue: number;
+   latitudeLongitudeDistanceValue: number;
   // LatitudeLongitudeSortType: string;
   // HierarchyIdLevel: number;
   // ObjectIdContainValues: string[] = new Array<string>();

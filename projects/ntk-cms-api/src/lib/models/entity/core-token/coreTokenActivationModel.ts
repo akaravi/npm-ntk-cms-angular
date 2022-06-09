@@ -2,15 +2,15 @@ import { BaseEntity } from '../base/baseEntity';
 import { EnumUserActivateTypes } from '../../enums/enumUserActivateTypes';
 
 export class CoreTokenActivationModel extends BaseEntity<string>  {
-  ActivateType: EnumUserActivateTypes;
-  LinkUserId?: number;
-  LinkSiteId?: number;
-  Username: string;
-  Email: string;
-  Mobile: string;
-  ActivateCode: string;
-  ActivateShortCode: string;
-  Useed: boolean;
+  activateType: EnumUserActivateTypes;
+  linkUserId?: number;
+  linkSiteId?: number;
+  username: string;
+  email: string;
+  mobile: string;
+  activateCode: string;
+  activateShortCode: string;
+  useed: boolean;
 }
 
 

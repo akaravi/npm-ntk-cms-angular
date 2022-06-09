@@ -2,11 +2,11 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
 
 export class DataProviderSourceModel extends BaseModuleEntity<number> {
-  Title: string;
-  Description: string;
-  KeyCode: string;
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  title: string;
+  description: string;
+  keyCode: string;
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 
-  PlanSources: DataProviderPlanSourceModel[];
+  planSources: DataProviderPlanSourceModel[];
 }

@@ -1,9 +1,9 @@
 export class TokenDeviceModel {
-  LinkSiteId: number;
-  LinkDeviceId: number;
-  LinkApplicationId: number;
-  RememberOnDevice: boolean;
-  CurrentSiteDomainUrl: string;
-  DeviceToken: string;
+  linkSiteId: number;
+  linkDeviceId: number;
+  linkApplicationId: number;
+  rememberOnDevice: boolean;
+  currentSiteDomainUrl: string;
+  deviceToken: string;
   tokenExpireDate: Date;
 }

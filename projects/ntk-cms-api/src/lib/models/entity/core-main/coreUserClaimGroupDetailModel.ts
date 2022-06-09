@@ -3,9 +3,9 @@ import { CoreUserClaimGroupModel } from './coreUserClaimGroupModel';
 import { CoreUserClaimTypeModel } from './coreUserClaimTypeModel';
 
 export class CoreUserClaimGroupDetailModel extends BaseEntity<number> {
-  LinkUserClaimGroupId: number;
-  LinkUserClaimTypeId: number;
-  IsRequired: boolean;
+  linkUserClaimGroupId: number;
+  linkUserClaimTypeId: number;
+  isRequired: boolean;
   // tslint:disable-next-line: variable-name
   virtual_UserClaimGroup: CoreUserClaimGroupModel;
   // tslint:disable-next-line: variable-name

@@ -1,3 +1,3 @@
 export class AppMainDtoModel {
-   RequestObject: any;
+   requestObject: any;
 }

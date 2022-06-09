@@ -1,17 +1,17 @@
 import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 
 export class CoreUserClaimCheckModel {
-  RecordStatus = EnumRecordStatus.Available;
-  IsApproved: boolean;
-  TypeTitle: string;
-  TypeDescription: string;
-  LinkTypeId: number;
-  LinkContentId?: number;
-  ApprovedResult: string;
-  ApproveCheckDate?: Date;
-  ApprovedExpireDate?: Date;
-  TypeLinkMainImageId:number;
-  TypeLinkMainImageIdSrc:string;
-  LinkFileContentId:number;
-  LinkFileContentIdSrc:string;
+  recordStatus = EnumRecordStatus.Available;
+  isApproved: boolean;
+  typeTitle: string;
+  typeDescription: string;
+  linkTypeId: number;
+  linkContentId?: number;
+  approvedResult: string;
+  approveCheckDate?: Date;
+  approvedExpireDate?: Date;
+  typeLinkMainImageId:number;
+  typeLinkMainImageIdSrc:string;
+  linkFileContentId:number;
+  linkFileContentIdSrc:string;
 }

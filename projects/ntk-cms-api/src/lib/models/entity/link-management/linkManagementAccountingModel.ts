@@ -3,16 +3,16 @@ import { LinkManagementAccountingDetailModel } from './linkManagementAccountingD
 import { LinkManagementMemberModel } from './linkManagementMemberModel';
 
 export class LinkManagementAccountingModel extends BaseModuleEntity<number> {
-  BeginDate: Date;
-  EndDate?: Date;
-  LinkManagementMemberId: number;
-  IsCertainDocument: boolean;
+  beginDate: Date;
+  endDate?: Date;
+  linkManagementMemberId: number;
+  isCertainDocument: boolean;
   // tslint:disable-next-line: variable-name
   virtual_ManagementMember: LinkManagementMemberModel;
-  ManagementMember: LinkManagementMemberModel;
-  Debtor: number;
-  Creditor: number;
-  Description: string;
-  Notes: string;
-  AccountingDetail: LinkManagementAccountingDetailModel;
+  managementMember: LinkManagementMemberModel;
+  debtor: number;
+  creditor: number;
+  description: string;
+  notes: string;
+  accountingDetail: LinkManagementAccountingDetailModel;
 }

@@ -3,11 +3,11 @@ import { DonateSponsorModel } from './donateSponsorModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
 
 export class DonateTargetPeriodSponsorModel extends BaseModuleEntity<number> {
-  LinkTargetPeriodId: number;
-  TargetPeriod: DonateTargetPeriodModel;
+  linkTargetPeriodId: number;
+  targetPeriod: DonateTargetPeriodModel;
   virtual_TargetPeriod: DonateTargetPeriodModel;
-  LinkSponsorId: number;
-  Sponsor: DonateSponsorModel;
+  linkSponsorId: number;
+  sponsor: DonateSponsorModel;
   virtual_Sponsor: DonateSponsorModel;
   payment: number;
 }

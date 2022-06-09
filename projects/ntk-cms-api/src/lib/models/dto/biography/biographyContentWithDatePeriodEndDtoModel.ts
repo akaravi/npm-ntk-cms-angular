@@ -1,5 +1,5 @@
 export class BiographyContentWithDatePeriodEndDtoModel {
-    TagIds: number[];
-    SearchDateMin?: string;
-    SearchDateMax?: string;
+    tagIds: number[];
+    searchDateMin?: string;
+    searchDateMax?: string;
 }

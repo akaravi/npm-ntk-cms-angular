@@ -1,6 +1,6 @@
 export class EstateModuleSalePropertyAdsPaymentDtoModel {
-  LinkPropertyId: string;
-  LinkAdsTypeId: string;
-  BankPaymentPrivateId: number;
-  LastUrlAddressInUse: string;
+  linkPropertyId: string;
+  linkAdsTypeId: string;
+  bankPaymentPrivateId: number;
+  lastUrlAddressInUse: string;
 }

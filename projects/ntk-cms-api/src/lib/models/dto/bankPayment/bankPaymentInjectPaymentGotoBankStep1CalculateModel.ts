@@ -1,7 +1,7 @@
 export class BankPaymentInjectPaymentGotoBankStep1CalculateModel {
-  FeeTax: number;
-  AmountPure: number;
-  FeeTransport: number;
-  Amount: number;
-  Currency: string;
+  feeTax: number;
+  amountPure: number;
+  feeTransport: number;
+  amount: number;
+  currency: string;
 }

@@ -3,16 +3,16 @@ import { LinkManagementBillboardTargetCategoryModel } from './linkManagementBill
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
 
 export class LinkManagementTargetCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  LinkMainImageId?: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentId?: number;
+  title: string;
+  linkMainImageId?: number;
+  description: string;
+  fontIcon: string;
+  linkParentId?: number;
   // tslint:disable-next-line: variable-name
   virtual_TargetCategory: LinkManagementTargetCategoryModel;
-  TargetCategory: LinkManagementTargetCategoryModel;
-  Children: LinkManagementTargetCategoryModel[];
-  Target: LinkManagementTargetModel[];
-  BillboardTargetCategory: LinkManagementBillboardTargetCategoryModel[];
-  LinkMainImageIdSrc: string;
+  targetCategory: LinkManagementTargetCategoryModel;
+  children: LinkManagementTargetCategoryModel[];
+  target: LinkManagementTargetModel[];
+  billboardTargetCategory: LinkManagementBillboardTargetCategoryModel[];
+  linkMainImageIdSrc: string;
 }

@@ -3,11 +3,11 @@ import { UniversalMenuMenuItemModel } from "./universalMenuMenuItemModel";
 import { UniversalMenuProcessModel } from "./universalMenuProcessModel";
 
 export class UniversalMenuMenuItemProcessModel extends BaseModuleEntity<number>{
-  MenuId: number;
-  ProcessId: number;
+  menuId: number;
+  processId: number;
   virtual_Process: UniversalMenuProcessModel;
-  Process: UniversalMenuProcessModel;
+  process: UniversalMenuProcessModel;
 
   virtual_MenuItem: UniversalMenuMenuItemModel;
-  MenuItem: UniversalMenuMenuItemModel;
+  menuItem: UniversalMenuMenuItemModel;
 }

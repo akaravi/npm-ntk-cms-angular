@@ -1,6 +1,6 @@
 export class ScoreClickInfoModel {
-  CreatedDate?: Date;
-  ScorePercent: number;
-  ScoreComment: string;
-  LinkUserId?: number;
+  createdDate?: Date;
+  scorePercent: number;
+  scoreComment: string;
+  linkUserId?: number;
 }

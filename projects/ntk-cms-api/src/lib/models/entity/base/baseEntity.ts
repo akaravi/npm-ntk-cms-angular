@@ -1,20 +1,20 @@
 import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 
 export class BaseEntity<TKey> {
-  Id: TKey;
-  CreatedDate: Date;
-  CreatedBy: number;
-  UpdatedDate: Date;
-  UpdatedBy: number;
-  RecordStatus = EnumRecordStatus.Available;
+  id: TKey;
+  createdDate: Date;
+  createdBy: number;
+  updatedDate: Date;
+  updatedBy: number;
+  recordStatus = EnumRecordStatus.Available;
 
   //region AntiInjection
-  AntiInjectionRun: boolean;
-  AntiInjectionGuid: string;
-  AntiInjectionDate: Date;
-  AntiInjectionTokenActionState: boolean;
-  AntiInjectionExpiredMinute: number;
-  AntiInjectionToken: string;
-  AntiInjectionExpireDate: Date;
+  antiInjectionRun: boolean;
+  antiInjectionGuid: string;
+  antiInjectionDate: Date;
+  antiInjectionTokenActionState: boolean;
+  antiInjectionExpiredMinute: number;
+  antiInjectionToken: string;
+  antiInjectionExpireDate: Date;
   //endregion AniInjection
 }

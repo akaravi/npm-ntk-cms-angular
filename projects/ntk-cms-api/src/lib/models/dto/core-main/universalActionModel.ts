@@ -1,5 +1,5 @@
 export class UniversalActionModel {
-  Action: string;
+  action: string;
   key: boolean;
-  Data: string;
+  data: string;
 }

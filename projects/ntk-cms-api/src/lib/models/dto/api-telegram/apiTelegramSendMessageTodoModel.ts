@@ -3,35 +3,33 @@ import { EnumDayOfWeek } from "../../enums/enumDayOfWeek";
 import { EnumScheduleCronType } from "../../enums/enumScheduleCronType";
 
 export class ApiTelegramSendMessageTodoModel  {
-  ScheduleCronType: EnumScheduleCronType
-  CronOnceDate: Date;
-  CronHourlyMinute:number;
-  CronDailyHour: number;
-  CronDailyMinute: number;
-  CronMonthlyDay: number;
-  CronMonthlyHour: number;
-  CronMonthlyMinute: number;
-  CronWeeklyDayOfWeek: number;
-  CronWeeklyHour: number;
-  CronWeeklyMinute: number;
-  CronYearlyMonth: number;
-  CronYearlyDay: EnumDayOfWeek;
-  CronYearlyHour: number;
-  CronYearlyMinute: number;
+  scheduleCronType: EnumScheduleCronType
+  cronOnceDate: Date;
+  cronHourlyMinute:number;
+  cronDailyHour: number;
+  cronDailyMinute: number;
+  cronMonthlyDay: number;
+  cronMonthlyHour: number;
+  cronMonthlyMinute: number;
+  cronWeeklyDayOfWeek: number;
+  cronWeeklyHour: number;
+  cronWeeklyMinute: number;
+  cronYearlyMonth: number;
+  cronYearlyDay: EnumDayOfWeek;
+  cronYearlyHour: number;
+  cronYearlyMinute: number;
   title: string;
   text: string;
-  BotId: number;
+  botId: number;
   chatId: number[];
-  MemberGroupId: number[];
-  SentToAllMembers: boolean;
-  LinkFileId?: number;
+  memberGroupId: number[];
+  sentToAllMembers: boolean;
+  linkFileId?: number;
   latitude: number;
   longitude: number;
   firstName: number;
   lastName: number;
   universalMenuId?: number;
   phoneNumber: string;
-  MessageParseMode:EnumParseMode;
-
-
+  messageParseMode:EnumParseMode;
 }

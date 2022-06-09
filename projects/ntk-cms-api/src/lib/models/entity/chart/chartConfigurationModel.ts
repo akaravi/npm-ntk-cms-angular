@@ -25,6 +25,6 @@ export class ChartModuleConfigSiteValuesModel extends BaseModuleConfigSiteValues
 
 export class ChartModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
 {
-  UpdatedChartContent: Date;
-  UpdatedChartCategory: Date;
+  updatedChartContent: Date;
+  updatedChartCategory: Date;
 }

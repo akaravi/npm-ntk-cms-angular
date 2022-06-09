@@ -3,17 +3,17 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingModel } from './linkManagementAccountingModel';
 
 export class LinkManagementAccountingDetailModel extends BaseModuleEntity<number> {
-  LinkManagementAccountingId: number;
+  linkManagementAccountingId: number;
   // tslint:disable-next-line: variable-name
   virtual_Accounting: LinkManagementAccountingModel;
-  Accounting: LinkManagementAccountingModel;
-  AccountingType: EnumSharingAccountingType;
-  LinkExternalShopInvoiceSaleDetailId?: number;
-  RowNumber: number;
-  Description: string;
-  Debtor: number;
-  Creditor: number;
-  FishNumber: string;
-  TokenNumber: string;
-  ReceiptCode: string;
+  accounting: LinkManagementAccountingModel;
+  accountingType: EnumSharingAccountingType;
+  linkExternalShopInvoiceSaleDetailId?: number;
+  rowNumber: number;
+  description: string;
+  debtor: number;
+  creditor: number;
+  fishNumber: string;
+  tokenNumber: string;
+  receiptCode: string;
 }

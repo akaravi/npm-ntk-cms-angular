@@ -3,12 +3,12 @@ import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 
 export class TicketingDepartemenOperatorModel extends BaseModuleEntity<number>  {
-    LinkDepartemenId: number;
-    LinkUserId: number;
+    linkDepartemenId: number;
+    linkUserId: number;
     // tslint:disable-next-line: variable-name
     virtual_Departemen: TicketingDepartemenModel;
-    Departemen: TicketingDepartemenModel;
-    Answers: TicketingAnswerModel[];
-    LinkMainImageId?: number;
-    LinkMainImageIdSrc: string;
+    departemen: TicketingDepartemenModel;
+    answers: TicketingAnswerModel[];
+    linkMainImageId?: number;
+    linkMainImageIdSrc: string;
 }

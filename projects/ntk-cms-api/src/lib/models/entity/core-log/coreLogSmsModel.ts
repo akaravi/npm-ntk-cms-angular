@@ -3,17 +3,17 @@ import { BaseEntity } from '../base/baseEntity';
 
 
 export class CoreLogSmsModel extends BaseEntity<string>{
-  SendStatusType: EnumSendSmsStatusType;
-  LinkSiteId?: number;
-  LinkUserId?: number;
-  LinkMemberUserId?: number;
-  ModuleName: string;
-  ModuleEntityName: string;
-  ModuleEntityId: string;
+  sendStatusType: EnumSendSmsStatusType;
+  linkSiteId?: number;
+  linkUserId?: number;
+  linkMemberUserId?: number;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
 
-  FromNumber: string;
-  ToNumber: string;
-  Message: string;
-  ApiNumber?: number;
-  ReturnApi: string;
+  fromNumber: string;
+  toNumber: string;
+  message: string;
+  apiNumber?: number;
+  returnApi: string;
 }

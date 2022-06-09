@@ -2,13 +2,13 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 
 export class ApplicationIntroModel extends BaseModuleEntity<number>  {
-    Title: string;
-    Description: string;
-    Priority: number;
-    LinkMainImageId?: number;
-    LinkMainVideoId?: number;
-    LinkApplicationId: number;
-    Application: ApplicationAppModel;
-    LinkMainImageIdSrc: string;
-    LinkMainVideoIdSrc: string;
+    title: string;
+    description: string;
+    priority: number;
+    linkMainImageId?: number;
+    linkMainVideoId?: number;
+    linkApplicationId: number;
+    application: ApplicationAppModel;
+    linkMainImageIdSrc: string;
+    linkMainVideoIdSrc: string;
 }

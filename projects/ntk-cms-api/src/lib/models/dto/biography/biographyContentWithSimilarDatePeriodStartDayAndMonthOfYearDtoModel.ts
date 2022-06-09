@@ -1,5 +1,5 @@
 export class BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel {
-    TagIds: number[];
-    MonthOfYear: number;
-    DayOfMonth: number;
+    tagIds: number[];
+    monthOfYear: number;
+    dayOfMonth: number;
 }

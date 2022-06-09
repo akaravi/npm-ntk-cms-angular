@@ -1,6 +1,6 @@
 export class AuthUserForgetPasswordModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  Email: string;
-  Mobile: string;
+  captchaKey: string;
+  captchaText: string;
+  email: string;
+  mobile: string;
 }

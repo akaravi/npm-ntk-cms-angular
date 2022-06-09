@@ -4,18 +4,18 @@ import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleSaleInvoiceModel } from './coreModuleSaleInvoiceModel';
 
 export class CoreModuleSaleInvoiceDetailModel extends BaseEntity<number>  {
-  FromDate: Date;
-  ExpireDate?: Date;
-  SalePrice: number;
-  EnumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
-  LinkModuleId: number;
+  fromDate: Date;
+  expireDate?: Date;
+  salePrice: number;
+  enumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
+  linkModuleId: number;
   // tslint:disable-next-line: variable-name
   virtual_Module: CoreModuleModel;
-  Description: string;
-  ErrorMessage: string;
-  HasWarning: boolean;
-  HasError: boolean;
-  LinkModuleSaleInvoiceId: number;
+  description: string;
+  errorMessage: string;
+  hasWarning: boolean;
+  hasError: boolean;
+  linkModuleSaleInvoiceId: number;
   // tslint:disable-next-line: variable-name
   virtual_ModuleSaleInvoice: CoreModuleSaleInvoiceModel;
 }

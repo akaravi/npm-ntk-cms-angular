@@ -2,20 +2,20 @@ import { EnumMenuPlaceType } from '../../enums/enumMenuPlaceType';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreCpMainMenuModel extends BaseEntity<number> {
-  Title: string;
-  TitleML: string;
-  TitleResourceLanguage: string;
-  Color: string;
-  Icon: string;
-  AddressLink: string;
-  RouteAddressLink: string;
-  RouteAddressBlankPage: boolean;
-  LinkParentId: number;
-  LinkModuleId: number;
-  Description: string;
-  ShowInMenu: number;
-  ShowInMenuOrder: number;
-  ShowInAccessAdminAllowToProfessionalData: boolean;
-  MenuPlaceType: EnumMenuPlaceType;
-  Children: CoreCpMainMenuModel[];
+  title: string;
+  titleML: string;
+  titleResourceLanguage: string;
+  color: string;
+  icon: string;
+  addressLink: string;
+  routeAddressLink: string;
+  routeAddressBlankPage: boolean;
+  linkParentId: number;
+  linkModuleId: number;
+  description: string;
+  showInMenu: number;
+  showInMenuOrder: number;
+  showInAccessAdminAllowToProfessionalData: boolean;
+  menuPlaceType: EnumMenuPlaceType;
+  children: CoreCpMainMenuModel[];
 }

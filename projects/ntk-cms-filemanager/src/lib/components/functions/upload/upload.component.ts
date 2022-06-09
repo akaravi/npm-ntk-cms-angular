@@ -112,10 +112,10 @@ export class UploadComponent implements OnInit, AfterViewInit {
     if (!model.uploadResponse) {
     }
     const ret = model.uploadResponse as ErrorExceptionResult<FileUploadModel>;
-    if (!ret.IsSuccess) {
+    if (!ret.isSuccess) {
 
     }
-    this.createFile.emit({ fileName: model.fileName, uploadFileGUID: ret.Item.FileKey });
+    this.createFile.emit({ fileName: model.fileName, uploadFileGUID: ret.item.fileKey });
   }
   public onValidationError(error: ValidationError): void {
     alert(`Validation Error ${error.error} in ${error.file.name}`);

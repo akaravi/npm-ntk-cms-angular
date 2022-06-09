@@ -2,21 +2,21 @@ import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateAccountAgencyModel extends BaseModuleEntity<string> {
-  MainAdminRecordStatus = EnumRecordStatus.Pending;
-  LinkCmsUserId: number;
-  Title: string;
-  Description: string;
-  LinkLocationId?: number;
-  LinkLocationIdTitle: string;
-  LinkLocationIdParentTitle: string;
-  Geolocationlatitude?: number;
-  Geolocationlongitude?: number;
+  mainAdminRecordStatus = EnumRecordStatus.Pending;
+  linkCmsUserId: number;
+  title: string;
+  description: string;
+  linkLocationId?: number;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
+  geolocationlatitude?: number;
+  geolocationlongitude?: number;
 
-  Address: string;
-  PhoneNumber: string;
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  address: string;
+  phoneNumber: string;
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 
-  LinkExtraImageIds: string;
-  LinkExtraImageIdsSrc: string[];
+  linkExtraImageIds: string;
+  linkExtraImageIdsSrc: string[];
 }

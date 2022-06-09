@@ -5,14 +5,14 @@ import { DataProviderPlanPriceModel } from './dataProviderPlanPriceModel';
 import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
 
 export class DataProviderPlanModel extends BaseModuleEntity<number> {
-  Title: string;
-  Description: string;
-  LinkPlanCategoryId: number;
-  PlanCategory: DataProviderPlanCategoryModel;
+  title: string;
+  description: string;
+  linkPlanCategoryId: number;
+  planCategory: DataProviderPlanCategoryModel;
   virtual_PlanCategory: DataProviderPlanCategoryModel;
-  PlanClients: DataProviderPlanClientModel[];
-  PlanSources: DataProviderPlanSourceModel[];
-  PlanPrices: DataProviderPlanPriceModel[];
-  LinkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  planClients: DataProviderPlanClientModel[];
+  planSources: DataProviderPlanSourceModel[];
+  planPrices: DataProviderPlanPriceModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }

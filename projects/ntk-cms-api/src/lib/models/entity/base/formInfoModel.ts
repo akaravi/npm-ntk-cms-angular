@@ -1,13 +1,13 @@
 import { EnumFormSubmitedStatus } from '../../enums/enumFormSubmitedStatus';
 
 export class FormInfoModel {
-  FormTitle = '';
-  FormDescription = '';
-  FormAlert = '';
-  FormError = '';
-  FormErrorStatus = false;
-  FormSubmitAllow = true;
-  FormSubmitedStatus: EnumFormSubmitedStatus = EnumFormSubmitedStatus.none;
-  ButtonSubmittedEnabled = true;
+  formTitle = '';
+  formDescription = '';
+  formAlert = '';
+  formError = '';
+  formErrorStatus = false;
+  formSubmitAllow = true;
+  formSubmitedStatus: EnumFormSubmitedStatus = EnumFormSubmitedStatus.none;
+  buttonSubmittedEnabled = true;
   viewlodingEnabled = false;
 }

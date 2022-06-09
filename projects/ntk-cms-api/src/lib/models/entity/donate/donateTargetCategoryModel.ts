@@ -3,16 +3,16 @@ import { DonateSponsorModel } from './donateSponsorModel';
 import { DonateTargetModel } from './donateTargetModel';
 
 export class DonateTargetCategoryModel extends BaseModuleEntity<number> {
-  Title: string;
-  LinkMainImageId?: number;
-  Description: string;
-  FontIcon: string;
-  LinkParentId?: number;
+  title: string;
+  linkMainImageId?: number;
+  description: string;
+  fontIcon: string;
+  linkParentId?: number;
   // tslint:disable-next-line: variable-name
   virtual_TargetCategory: DonateTargetCategoryModel;
-  TargetCategory: DonateTargetCategoryModel;
-  Children: DonateTargetCategoryModel[];
-  Targets: DonateTargetModel[];
-  Sponsors: DonateSponsorModel[];
-  LinkMainImageIdSrc: string;
+  targetCategory: DonateTargetCategoryModel;
+  children: DonateTargetCategoryModel[];
+  targets: DonateTargetModel[];
+  sponsors: DonateSponsorModel[];
+  linkMainImageIdSrc: string;
 }

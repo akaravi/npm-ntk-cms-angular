@@ -1,5 +1,5 @@
 export class AuthUserChangePasswordModel {
-  OldPassword: string;
-  NewPassword: string;
-  LinkUserId?: number;
+  oldPassword: string;
+  newPassword: string;
+  linkUserId?: number;
 }

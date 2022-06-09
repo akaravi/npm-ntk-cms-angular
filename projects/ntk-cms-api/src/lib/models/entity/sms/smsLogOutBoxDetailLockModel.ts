@@ -2,13 +2,13 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsLogOutBoxDetailModel } from './smsLogOutBoxDetailModel';
 
 export class SmsLogOutBoxDetailLockModel extends BaseModuleEntity<string> {
-  LockDate: Date;
-  ProcessType: string;
-  DefaultApiNumber?: string;
-  ProcessId: number;
-  ProcessIdSecond?: number;
-  LinkOutBoxDetailId: string;
-  OutBoxDetail: SmsLogOutBoxDetailModel;
+  lockDate: Date;
+  processType: string;
+  defaultApiNumber?: string;
+  processId: number;
+  processIdSecond?: number;
+  linkOutBoxDetailId: string;
+  outBoxDetail: SmsLogOutBoxDetailModel;
   // tslint:disable-next-line: variable-name
   virtual_OutBoxDetail: SmsLogOutBoxDetailModel;
 }

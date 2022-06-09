@@ -1,12 +1,12 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class BiographyContentSimilarModel {
-  LinkSourceId: number;
-  LinkDestinationId: number;
+  linkSourceId: number;
+  linkDestinationId: number;
   // tslint:disable-next-line: variable-name
   virtual_Source?: any;
-  Source?: any;
+  source?: any;
   // tslint:disable-next-line: variable-name
   virtual_Destination?: any;
-  Destination?: any;
+  destination?: any;
 }

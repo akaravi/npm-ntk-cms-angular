@@ -18,7 +18,7 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   officeNo: string;
   address: string;
   linkMainImageId?: number;
-  LinkMainImageIdSrc: string;
+  linkMainImageIdSrc: string;
   linkFileIds: string;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
@@ -34,6 +34,6 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   otherInfo8: string;
   otherInfo9: string;
   otherInfo10: string;
-  LinkLocationIdTitle: string;
-  LinkLocationIdParentTitle: string;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
 }

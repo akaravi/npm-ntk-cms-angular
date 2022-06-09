@@ -4,10 +4,10 @@ import { BlogCategoryModel } from './blogCategoryModel';
 import { BlogShareServerCategoryModel } from './blogShareServerCategoryModel';
 
 export class BlogShareReceiverCategoryModel extends BaseModuleEntity<number> {
-  FromDate?: Date;
-  LinkShareReciverCategoryId: number;
-  LinkShareServerCategoryId: number;
-  ExpireDate?: Date;
-  ShareServerCategory: BlogShareServerCategoryModel;
-  ShareReciverCategory: BlogCategoryModel;
+  fromDate?: Date;
+  linkShareReciverCategoryId: number;
+  linkShareServerCategoryId: number;
+  expireDate?: Date;
+  shareServerCategory: BlogShareServerCategoryModel;
+  shareReciverCategory: BlogCategoryModel;
 }

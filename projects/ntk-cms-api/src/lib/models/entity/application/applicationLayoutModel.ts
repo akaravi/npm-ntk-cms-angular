@@ -3,16 +3,16 @@ import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';
 import { ApplicationSourceModel } from './applicationSourceModel';
 
 export class ApplicationLayoutModel extends BaseModuleEntity<number>  {
-  Title: string;
-  LinkMainImageId ?: number;
-  ClassName: string;
-  LinkSourceId ?: number;
+  title: string;
+  linkMainImageId ?: number;
+  className: string;
+  linkSourceId ?: number;
   // tslint:disable-next-line: variable-name
   virtual_Source: ApplicationSourceModel;
-  Source: ApplicationSourceModel;
-  JsonFormDefaultValue: string;
-  JsonFormAdminSystemValue: string;
-  LinkModuleFilePreviewImageId ?: number;
-  LayoutValues: ApplicationLayoutValueModel[];
-  LinkMainImageIdSrc: string;
+  source: ApplicationSourceModel;
+  jsonFormDefaultValue: string;
+  jsonFormAdminSystemValue: string;
+  linkModuleFilePreviewImageId ?: number;
+  layoutValues: ApplicationLayoutValueModel[];
+  linkMainImageIdSrc: string;
 }

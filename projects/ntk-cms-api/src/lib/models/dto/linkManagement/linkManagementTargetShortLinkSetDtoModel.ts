@@ -1,7 +1,7 @@
 export class LinkManagementTargetShortLinkSetDtoModel {
-  CaptchaKey: string;
-  CaptchaText: string;
-  UrlAddress: string;
-  Description: string;
-  UploadFileGUID: string;
+  captchaKey: string;
+  captchaText: string;
+  urlAddress: string;
+  description: string;
+  uploadFileGUID: string;
 }

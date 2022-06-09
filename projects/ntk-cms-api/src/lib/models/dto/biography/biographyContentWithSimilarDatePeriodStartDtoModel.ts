@@ -1,5 +1,5 @@
 export class BiographyContentWithSimilarDatePeriodStartDtoModel {
-  TagIds: number[];
-  SearchDayMin: number;
-  SearchDayMax: number;
+  tagIds: number[];
+  searchDayMin: number;
+  searchDayMax: number;
 }

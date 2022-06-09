@@ -3,6 +3,6 @@ import { BankPaymentPublicConfigModel } from './bankPaymentPublicConfigModel';
 
 
 export class BankPaymentPublicConfigAliasJsonModel extends BankPaymentPublicConfigModel {
-  PublicConfigJsonFormatter: GetPropertiesInfoModel[];
+  publicConfigJsonFormatter: GetPropertiesInfoModel[];
 
 }

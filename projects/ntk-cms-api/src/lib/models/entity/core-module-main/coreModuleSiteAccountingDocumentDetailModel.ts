@@ -2,26 +2,26 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreModuleSiteAccountingDocumentDetailTypeModel } from './coreModuleSiteAccountingDocumentDetailTypeModel';
 import { CoreModuleSiteAccountingDocumentModel } from './coreModuleSiteAccountingDocumentModel';
 export class CoreModuleSiteAccountingDocumentDetailModel extends BaseModuleEntity<number> {
-  Number: string;
-  Description:string;
-  Debtor: number;
-  Creditor: number;
-  LinkCmsUserId?: number;
-  LinkDocumentDetailTypeId?: number;
+  number: string;
+  description:string;
+  debtor: number;
+  creditor: number;
+  linkCmsUserId?: number;
+  linkDocumentDetailTypeId?: number;
   virtual_DocumentDetailType: CoreModuleSiteAccountingDocumentDetailTypeModel;
-  DocumentDetailType: CoreModuleSiteAccountingDocumentDetailTypeModel;
-  LinkDocumentId?:number;
+  documentDetailType: CoreModuleSiteAccountingDocumentDetailTypeModel;
+  linkDocumentId?:number;
   virtual_Document:CoreModuleSiteAccountingDocumentModel;
-  Document:CoreModuleSiteAccountingDocumentModel;
+  document:CoreModuleSiteAccountingDocumentModel;
   virtual_Parent:CoreModuleSiteAccountingDocumentDetailModel;
-  Parent:CoreModuleSiteAccountingDocumentDetailModel;
-  IsAccepted:boolean;
-  AcceptDate?:Date;
-  UserAcceptor?:number;
-  IsBankAccepted:boolean;
-  BankAcceptDate:Date;
-  UserBankAcceptor?:number;
-  CardNumber:string;
-  AccountNumber:string;
-  DocumentDetails:CoreModuleSiteAccountingDocumentDetailModel[]
+  parent:CoreModuleSiteAccountingDocumentDetailModel;
+  isAccepted:boolean;
+  acceptDate?:Date;
+  userAcceptor?:number;
+  isBankAccepted:boolean;
+  bankAcceptDate:Date;
+  userBankAcceptor?:number;
+  cardNumber:string;
+  accountNumber:string;
+  documentDetails:CoreModuleSiteAccountingDocumentDetailModel[]
 }

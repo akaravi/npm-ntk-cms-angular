@@ -3,12 +3,12 @@ import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetCategoryModel } from './linkManagementTargetCategoryModel';
 
 export class LinkManagementBillboardTargetCategoryModel extends BaseModuleEntity<number> {
-  LinkTargetCategoryId: number;
+  linkTargetCategoryId: number;
   // tslint:disable-next-line: variable-name
   virtual_TargetCategory: LinkManagementTargetCategoryModel;
-  TargetCategory: LinkManagementTargetCategoryModel;
-  LinkManagementBillboardId: number;
+  targetCategory: LinkManagementTargetCategoryModel;
+  linkManagementBillboardId: number;
   // tslint:disable-next-line: variable-name
   virtual_Billboard: LinkManagementBillboardModel;
-  Billboard: LinkManagementBillboardModel;
+  billboard: LinkManagementBillboardModel;
 }

@@ -1,5 +1,5 @@
 ﻿export class BaseModuleConfigSiteAccessValuesModel {
-  MainDataContentRowCount: number;
+  mainDataContentRowCount: number;
 
 }
 

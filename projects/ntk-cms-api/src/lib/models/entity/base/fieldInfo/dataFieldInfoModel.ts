@@ -1,18 +1,18 @@
 import { FieldInfoModel } from './fieldInfoModel';
 
 export class DataFieldInfoModel {
-  FieldName: string;
-  FieldType: string;
-  FieldTypeClass: string;
-  FieldTitle: string;
-  FieldDescription: string;
-  FieldScriptDescription: string;
-  FieldDefaultValue: string;
-  FieldValue: string;
-  FieldTypeFullName: string;
-  AccessSearchField = false;
-  AccessWatchField = false;
-  AccessEditField = false;
-  AccessAddField = false;
+  fieldName: string;
+  fieldType: string;
+  fieldTypeClass: string;
+  fieldTitle: string;
+  fieldDescription: string;
+  fieldScriptDescription: string;
+  fieldDefaultValue: string;
+  fieldValue: string;
+  fieldTypeFullName: string;
+  accessSearchField = false;
+  accessWatchField = false;
+  accessEditField = false;
+  accessAddField = false;
   fieldsInfo: FieldInfoModel[];
 }
