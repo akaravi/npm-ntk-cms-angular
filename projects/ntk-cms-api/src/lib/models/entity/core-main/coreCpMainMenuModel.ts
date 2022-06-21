@@ -7,7 +7,7 @@ export class CoreCpMainMenuModel extends BaseEntity<number> {
   titleResourceLanguage: string;
   color: string;
   icon: string;
-  addressLink: string;
+
   routeAddressLink: string;
   routeAddressBlankPage: boolean;
   linkParentId: number;
