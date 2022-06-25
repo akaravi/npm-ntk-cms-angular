@@ -94,6 +94,11 @@ export * from './lib/service/polling/_export';
 export * from './lib/models/entity/polling/_export';
 // polling
 
+// contact
+export * from './lib/service/contact/_export';
+export * from './lib/models/entity/contact/_export';
+// contact
+
 // ticketing
 export * from './lib/service/ticketing/_export';
 export * from './lib/models/entity/ticketing/_export';
