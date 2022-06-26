@@ -20,3 +20,6 @@ export * from './smsMainApiPathAndApiNumberModel';
 export * from './smsMainApiNumberModel';
 export * from './smsMainApiNumberPermissionModel';
 export * from './smsMainCustomerCreditModel';
+export * from './smsMainMessageCategoryModel';
+export * from './smsMainMessageContentModel';
+

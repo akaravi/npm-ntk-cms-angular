@@ -16,3 +16,5 @@ export * from './smsMainApiPathSuperSeder.service';
 export * from './smsMainApiNumber.service';
 export * from './smsMainApiNumberPermission.service';
 export * from './SmsMainCustomerCredit.service';
+export * from './smsMainMessageContent.service';
+export * from './smsMainMessageCategory.service';

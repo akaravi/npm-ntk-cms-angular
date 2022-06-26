@@ -1,8 +1,9 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { ContactContentModel } from './contactContentModel';
+import { SmsMainMessageContentModel } from './smsMainMessageContentModel';
 
-export class ContactCategoryModel extends BaseModuleEntity<string>  {
+
+export class SmsMainMessageCategoryModel extends BaseModuleEntity<string>  {
   title: string;
   titleResourceLanguage: string;
   contentCount: number;
@@ -10,11 +11,11 @@ export class ContactCategoryModel extends BaseModuleEntity<string>  {
   fontIcon: string;
   linkParentIdNode: string;
   linkParentId: string;
-  children: ContactCategoryModel[];
-  category: ContactCategoryModel;
+  children: SmsMainMessageCategoryModel[];
+  category: SmsMainMessageCategoryModel;
   // tslint:disable-next-line: variable-name
-  virtual_Category: ContactCategoryModel;
-  contents: ContactContentModel[];
+  virtual_Category: SmsMainMessageCategoryModel;
+  contents: SmsMainMessageContentModel[];
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 }

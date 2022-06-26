@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class ContactContentService extends ApiCmsServerBase<ContactContentModel, number>  {
+export class ContactContentService extends ApiCmsServerBase<ContactContentModel, string>  {
   getModuleControllerUrl(): string {
     return 'ContactContent';
   }

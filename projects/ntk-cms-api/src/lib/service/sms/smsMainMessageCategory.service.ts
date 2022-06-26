@@ -1,18 +1,19 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ContactCategoryModel } from '../../models/entity/contact/contactCategoryModel';
+
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { SmsMainMessageCategoryModel } from '../../models/entity/sms/smsMainMessageCategoryModel';
 
 
 @Injectable()
-export class ContactCategoryService extends ApiCmsServerBase<ContactCategoryModel, string>  {
+export class SmsMainMessageCategoryService extends ApiCmsServerBase<SmsMainMessageCategoryModel, string>  {
   getModuleControllerUrl(): string {
-    return 'ContactCategory';
+    return 'SmsMainMessageCategory';
   }
 
-  ServiceMove(OldId: string, NewId: string): Observable<ErrorExceptionResult<ContactCategoryModel>> {
+  ServiceMove(OldId: string, NewId: string): Observable<ErrorExceptionResult<SmsMainMessageCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',

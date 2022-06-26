@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ContactCategoryModel } from './contactCategoryModel';
 
 
-export class ContactContentModel extends BaseModuleEntity<number> {
+export class ContactContentModel extends BaseModuleEntity<string> {
 
   title: string;
   numbers: string;
@@ -11,7 +11,7 @@ export class ContactContentModel extends BaseModuleEntity<number> {
   virtual_Category: ContactCategoryModel;
   category: ContactCategoryModel;
 
-  linkCategoryId?: number;
+  linkCategoryId?: string;
 
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
