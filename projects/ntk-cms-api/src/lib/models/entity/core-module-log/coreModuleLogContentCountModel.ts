@@ -5,6 +5,6 @@ export class CoreModuleLogContentCountModel extends BaseModuleEntity<string> {
   linkMemberUserId?: number;
   moduleName: string;
   moduleEntityName: string;
-  moduleEntityId: number;
+  moduleEntityId: string;
   rowCount: number;
 }

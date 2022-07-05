@@ -4,7 +4,7 @@ export class CoreModuleLogReportAbuseModel extends BaseModuleEntity<string> {
   linkMemberUserId?: number;
   moduleName: string;
   moduleEntityName: string;
-  moduleEntityId: number;
+  moduleEntityId: string;
 
   subjectBody: string;
   subjectUrl: string;

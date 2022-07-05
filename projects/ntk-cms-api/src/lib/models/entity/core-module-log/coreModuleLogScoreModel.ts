@@ -5,7 +5,7 @@ export class CoreModuleLogScoreModel extends BaseModuleEntity<string> {
     linkMemberUserId?: number;
     moduleName: string;
     moduleEntityName: string;
-    moduleEntityId: number;
+    moduleEntityId: string;
     scorePercent: number;
 }
 

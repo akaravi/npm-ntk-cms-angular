@@ -5,7 +5,7 @@ export class CoreModuleLogLikeModel extends BaseModuleEntity<string> {
   linkMemberUserId?: number;
   moduleName: string;
   moduleEntityName: string;
-  moduleEntityId: number;
+  moduleEntityId: string;
   liked: boolean;
   existBeforAndChangeNow: boolean;
 }
