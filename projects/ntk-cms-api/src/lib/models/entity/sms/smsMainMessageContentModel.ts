@@ -6,7 +6,7 @@ import { SmsMainMessageCategoryModel } from './smsMainMessageCategoryModel';
 export class SmsMainMessageContentModel extends BaseModuleEntity<string> {
 
   title: string;
-  numbers: string;
+  messageBody: string;
 
   // tslint:disable-next-line: variable-name
   virtual_Category: SmsMainMessageCategoryModel;
