@@ -5,6 +5,7 @@ export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   numberChar: string;
   firstSubmit: Date;
   usanceDate: Date;
+  expireDate: Date;
   saleStatus: boolean;
   isPublic: boolean;
   priority?: number;

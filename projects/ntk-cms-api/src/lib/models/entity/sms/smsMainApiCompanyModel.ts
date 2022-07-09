@@ -4,6 +4,8 @@ import { SmsMainApiPathModel } from './smsMainApiPathModel';
 export class SmsMainApiPathCompanyModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
+  checkCredit:boolean;
+  calculateCredit:boolean;
   serviceAvailableCredit: number;
   serviceSumCredit: number;
   userAvailableCredit: number;
