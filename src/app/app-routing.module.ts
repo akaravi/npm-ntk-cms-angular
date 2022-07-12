@@ -30,6 +30,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/smartModalTest/smartModalTest.module').then((m) => m.SmartModalTestModule),
   },
+  {
+    path: 'cronEditTest',
+    loadChildren: () =>
+      import('./pages/cron-editor-test/cron-editor-test.module').then((m) => m.CronEditorTestModule),
+  },
 ];
 
 @NgModule({

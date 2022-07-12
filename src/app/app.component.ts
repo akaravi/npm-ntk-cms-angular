@@ -14,5 +14,6 @@ export class AppComponent {
     { title: 'fileuploader Test', link: 'fileuploaderTest' },
     { title: 'smartLoader Test', link: 'smartLoaderTest' },
     { title: 'smartModal Test', link: 'smartModalTest' },
+    { title: 'Cron Edit Test', link: 'cronEditTest' },
   ];
 }

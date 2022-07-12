@@ -365,6 +365,46 @@
           }
         }
       }
+    },
+    "ngx-ntk-cron-editor": {
+      "projectType": "library",
+      "root": "projects/ngx-ntk-cron-editor",
+      "sourceRoot": "projects/ngx-ntk-cron-editor/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
+            "project": "projects/ngx-ntk-cron-editor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-ntk-cron-editor/src/test.ts",
+            "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-ntk-cron-editor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
+              "projects/ngx-ntk-cron-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
 
 

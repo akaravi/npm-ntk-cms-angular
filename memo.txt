@@ -11,7 +11,7 @@ ng generate library ntk-cms-fileuploader
 ng generate library ntk-cms-module
 ng generate library ngx-ntk-smart-module
 ng generate library ngx-ntk-query-builder
-
+ng generate library ngx-ntk-cron-editor
 =========================================First Time npm
 npm adduser
 npm login
@@ -66,6 +66,12 @@ npm publish
 cd ..
 cd ..
 =========================================
+ng build ngx-ntk-cron-editor --prod
+cd dist/ngx-ntk-cron-editor
+npm publish
+cd ..
+cd ..
+=========================================
 Test All
 ng build ntk-cms-api --prod
 ng build ntk-cms-filemanager --prod
@@ -73,7 +79,7 @@ ng build ntk-cms-fileuploader --prod
 ng build ntk-cms-module --prod
 ng build ngx-ntk-smart-module --prod
 ng build ngx-ntk-query-builder --prod
-
+ng build ngx-ntk-cron-editor --prod
 
 
 

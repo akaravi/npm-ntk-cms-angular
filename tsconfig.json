@@ -19,14 +19,39 @@
     "strictFunctionTypes": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": ["es2018", "dom"],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "paths": {
-      "ntk-cms-api": ["dist/ntk-cms-api/ntk-cms-api", "dist/ntk-cms-api"],
-      "ntk-cms-filemanager": ["dist/ntk-cms-filemanager/ntk-cms-filemanager", "dist/ntk-cms-filemanager"],
-      "ntk-cms-fileuploader": ["dist/ntk-cms-fileuploader/ntk-cms-fileuploader", "dist/ntk-cms-fileuploader"],
-      "ngx-ntk-smart-module": ["dist/ngx-ntk-smart-module/ngx-ntk-smart-module", "dist/ngx-ntk-smart-module"],
-      "ntk-cms-module": ["dist/ntk-cms-module/ntk-cms-module", "dist/ntk-cms-module"],
-      "ngx-ntk-query-builder": ["dist/ngx-ntk-query-builder/ngx-ntk-query-builder", "dist/ngx-ntk-query-builder"]
+      "ntk-cms-api": [
+        "dist/ntk-cms-api/ntk-cms-api",
+        "dist/ntk-cms-api"
+      ],
+      "ntk-cms-filemanager": [
+        "dist/ntk-cms-filemanager/ntk-cms-filemanager",
+        "dist/ntk-cms-filemanager"
+      ],
+      "ntk-cms-fileuploader": [
+        "dist/ntk-cms-fileuploader/ntk-cms-fileuploader",
+        "dist/ntk-cms-fileuploader"
+      ],
+      "ngx-ntk-smart-module": [
+        "dist/ngx-ntk-smart-module/ngx-ntk-smart-module",
+        "dist/ngx-ntk-smart-module"
+      ],
+      "ntk-cms-module": [
+        "dist/ntk-cms-module/ntk-cms-module",
+        "dist/ntk-cms-module"
+      ],
+      "ngx-ntk-query-builder": [
+        "dist/ngx-ntk-query-builder/ngx-ntk-query-builder",
+        "dist/ngx-ntk-query-builder"
+      ],
+      "ngx-ntk-cron-editor": [
+        "dist/ngx-ntk-cron-editor/ngx-ntk-cron-editor",
+        "dist/ngx-ntk-cron-editor"
+      ]
     }
   },
   "angularCompilerOptions": {
