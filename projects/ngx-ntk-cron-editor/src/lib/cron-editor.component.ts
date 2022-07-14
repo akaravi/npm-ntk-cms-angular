@@ -48,7 +48,9 @@ export class CronEditorComponent implements OnInit, OnChanges {
       this.handleModelChange(this.cron);
     }
   }
-
+  public onActionTabClick(tab: string) {
+    this.activeTab = tab;
+  }
   public setActiveTab(tab: string) {
     if (!this.disabled) {
       this.activeTab = tab;
@@ -374,7 +376,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
     this.state.validation.errorMessage = '';
 
     if (!cron) {
-      this.state.validation.errorMessage = {key: 'VALIDATION_MESSAGE.NULL'};
+      this.state.validation.errorMessage = { key: 'VALIDATION_MESSAGE.NULL' };
       return;
     }
 
@@ -391,7 +393,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
     }
 
     if (cronParts.length !== expected) {
-      this.state.validation.errorMessage = {key: 'VALIDATION_MESSAGE.SEGMENTS', params: {n: expected}};
+      this.state.validation.errorMessage = { key: 'VALIDATION_MESSAGE.SEGMENTS', params: { n: expected } };
       return;
     }
 

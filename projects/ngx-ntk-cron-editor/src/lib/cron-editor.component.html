@@ -1,5 +1,5 @@
 <mat-tab-group>
-  <mat-tab label="{{'TABS.MINUTES' | prefix | translate}}" *ngIf="!options.hideMinutesTab">
+  <mat-tab label="{{'TABS.MINUTES' | prefix | translate}}" *ngIf="!options.hideMinutesTab" (click)="onActionTabClick('minutes')">
     <!-- Minutes-->
     <div class="well well-small">
       {{'MINUTES.EVERY' | prefix | translate}}
@@ -18,7 +18,7 @@
       </select>
     </div>
   </mat-tab>
-  <mat-tab label="{{'TABS.HOURLY' | prefix | translate}}" *ngIf="!options.hideHourlyTab">
+  <mat-tab label="{{'TABS.HOURLY' | prefix | translate}}" *ngIf="!options.hideHourlyTab"  (click)="onActionTabClick('hourly')">
     <!-- Hourly-->
     <div class="well well-small">
       {{'HOURLY.EVERY' | prefix | translate}}
@@ -44,7 +44,7 @@
     </div>
 
   </mat-tab>
-  <mat-tab label="{{'TABS.DAILY' | prefix | translate}}" *ngIf="!options.hideDailyTab">
+  <mat-tab label="{{'TABS.DAILY' | prefix | translate}}" *ngIf="!options.hideDailyTab" (click)="onActionTabClick('daily')">
     <!-- Daily-->
 
     <div class="well well-small">
@@ -75,7 +75,7 @@
       </cron-time-picker>
     </div>
   </mat-tab>
-  <mat-tab label="{{'TABS.WEEKLY' | prefix | translate}}" *ngIf="!options.hideWeeklyTab">
+  <mat-tab label="{{'TABS.WEEKLY' | prefix | translate}}" *ngIf="!options.hideWeeklyTab" (click)="onActionTabClick('weekly')">
 
 
     <!-- Weekly-->
@@ -129,7 +129,7 @@
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="{{'TABS.MONTHLY' | prefix | translate}}" *ngIf="!options.hideMonthlyTab">
+  <mat-tab label="{{'TABS.MONTHLY' | prefix | translate}}" *ngIf="!options.hideMonthlyTab" (click)="onActionTabClick('monthly')">
 
 
     <!-- Monthly-->
@@ -205,7 +205,7 @@
     </div>
 
   </mat-tab>
-  <mat-tab label="{{'TABS.YEARLY' | prefix | translate}}" *ngIf="!options.hideYearlyTab">
+  <mat-tab label="{{'TABS.YEARLY' | prefix | translate}}" *ngIf="!options.hideYearlyTab"  (click)="onActionTabClick('yearly')">
 
     <!-- Yearly-->
 
@@ -271,7 +271,7 @@
     </div>
 
   </mat-tab>
-  <mat-tab label="{{'TABS.ADVANCED' | prefix | translate}}" *ngIf="!options.hideAdvancedTab">
+  <mat-tab label="{{'TABS.ADVANCED' | prefix | translate}}" *ngIf="!options.hideAdvancedTab"   (click)="onActionTabClick('advanced')">
     <!-- Advanced-->
 
     {{'ADVANCED.CRON' | prefix | translate}}

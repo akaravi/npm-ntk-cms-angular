@@ -8,6 +8,7 @@ export class SmsApiSendMessageDtoModel {
   message: string;
   sendByQeue: boolean;
   isFlash: boolean;
-  scheduleSend: Date;
+  scheduleSendStart: Date;
+  scheduleSendExpire: Date;
   scheduleCron: string;
 }
