@@ -48,9 +48,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
       this.handleModelChange(this.cron);
     }
   }
-  public onActionTabClick(tab: string) {
-    this.activeTab = tab;
-  }
+
   public setActiveTab(tab: string) {
     if (!this.disabled) {
       this.activeTab = tab;
