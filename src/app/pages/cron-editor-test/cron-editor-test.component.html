@@ -1,45 +1,49 @@
-<div>
-  <mat-toolbar class="toolbar">
-    <span>Angular Material Cron Editor Demo</span>
-    <span class="spacer"></span>
-    <button mat-icon-button>
-      <a href="https://www.npmjs.com/package/mat-cron-editor"><fa-icon [icon]="faNpm" size="3x"></fa-icon></a>
-    </button>
-    <button mat-icon-button>
-      <a href="https://github.com/sethbrotherton/ng-cron-editor"><fa-icon [icon]="faGithub" size="3x"></fa-icon></a>
-    </button>
-  </mat-toolbar>
-  <div class="flex-container">
-    <h3>Cron Editor Options</h3>
-    <div class="row">
-      <mat-checkbox
-        *ngFor="let setting of otherSettings"
-        [checked]="cronOptions[setting]"
-        (change)="updateSetting($event, setting)"
-      >{{setting}}</mat-checkbox>
+<div class="container">
+  <div class="row row-title">
+    <div class="col-sm-11">
+      <h1 class="d-inline-block">{{'TITLE' | translate}}</h1>
     </div>
-    <div class="row">
-      <mat-checkbox
-        class="spacer"
-        *ngFor="let setting of betweenSettings"
-        [checked]="cronOptions[setting]"
-        (change)="updateSetting($event, setting)"
-      >{{setting}}</mat-checkbox>
+    <div class="col-sm-1">
+
     </div>
-    <br>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <mat-form-field>
-        <mat-label>Default Cron</mat-label>
-        <input matInput [value]="cronOptions.defaultCron" [disabled]="true" #defaultCron>
-      </mat-form-field>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <code>ngx-ntk-cron-editor</code> {{'LIBRARY_IS' | translate}}
     </div>
-    <mat-cron-editor
-      (cronEvent)="showCron($event)"
-      [cronOptions]="cronOptions"
-    ></mat-cron-editor>
-    <br>
-    <h2>Resulting Cron: {{resultingCron}}</h2>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-2">
+        <h4>{{'OPTIONS' | translate}}</h4>
+        <label class="advanced-cron-editor-label"><input type="checkbox" name="cronOptions.use24HourTime"
+          [(ngModel)]="cronOptions.use24HourTime">use24HourTime: {{cronOptions.use24HourTime}}</label>
+
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideMinutesTab">hideMinutesTab: {{cronOptions.hideMinutesTab}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideHourlyTab">hideHourlyTab: {{cronOptions.hideHourlyTab}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideDailyTab">hideDailyTab: {{cronOptions.hideDailyTab}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideWeeklyTab">hideWeeklyTab: {{cronOptions.hideWeeklyTab}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideAdvancedTab">hideAdvancedTab: {{cronOptions.hideAdvancedTab}}</label>
+
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.hideSeconds">hideSeconds: {{cronOptions.hideSeconds}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.removeSeconds">removeSeconds: {{cronOptions.removeSeconds}}</label>
+        <label class="advanced-cron-editor-label"><input type="checkbox"
+          [(ngModel)]="cronOptions.removeYears">removeYears: {{cronOptions.removeYears}}</label>
+    </div>
+    <div class="col-md-10">
+        <cron-editor [(cron)]="cronExpression" [disabled]="isCronDisabled" [options]="cronOptions"></cron-editor>
+        <hr />
+        <p>{{'RESULT' | translate}} </p>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" [(ngModel)]="cronExpression">
+        </div>
+    </div>
   </div>
 </div>
-
-

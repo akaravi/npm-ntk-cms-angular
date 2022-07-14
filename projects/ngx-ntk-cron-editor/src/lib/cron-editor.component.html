@@ -1,0 +1,285 @@
+<mat-tab-group>
+  <mat-tab label="{{'TABS.MINUTES' | prefix | translate}}" *ngIf="!options.hideMinutesTab">
+    <!-- Minutes-->
+    <div class="well well-small">
+      {{'MINUTES.EVERY' | prefix | translate}}
+      <select class="minutes" [disabled]="disabled || activeTab !== 'minutes'" (change)="regenerateCron()"
+        [(ngModel)]="state.minutes.minutes" [ngClass]="options.formSelectClass">
+        <option *ngFor="let minute of selectOptions.minutes" [ngValue]="minute">
+          {{minute}}
+        </option>
+      </select> {{'MINUTES.MINUTES' | prefix | translate}}
+      <span *ngIf="!options.hideSeconds">{{'MINUTES.ON_SECOND' | prefix | translate}}</span>
+      <select class="seconds" *ngIf="!options.hideSeconds" [disabled]="disabled || activeTab !== 'minutes'"
+        (change)="regenerateCron()" [(ngModel)]="state.minutes.seconds" [ngClass]="options.formSelectClass">
+        <option *ngFor="let second of selectOptions.seconds" [ngValue]="second">
+          {{second}}
+        </option>
+      </select>
+    </div>
+  </mat-tab>
+  <mat-tab label="{{'TABS.HOURLY' | prefix | translate}}" *ngIf="!options.hideHourlyTab">
+    <!-- Hourly-->
+    <div class="well well-small">
+      {{'HOURLY.EVERY' | prefix | translate}}
+      <select class="hours" [disabled]="disabled || activeTab !== 'hourly'" (change)="regenerateCron()"
+        [(ngModel)]="state.hourly.hours" [ngClass]="options.formSelectClass">
+        <option *ngFor="let hour of selectOptions.hours" [ngValue]="hour">
+          {{hour}}
+        </option>
+      </select> {{'HOURLY.HOURS' | prefix | translate}} {{'HOURLY.ON_MINUTE' | prefix | translate}}
+      <select class="minutes" [disabled]="disabled || activeTab !== 'hourly'" (change)="regenerateCron()"
+        [(ngModel)]="state.hourly.minutes" [ngClass]="options.formSelectClass">
+        <option *ngFor="let minute of selectOptions.fullMinutes" [ngValue]="minute">
+          {{minute}}
+        </option>
+      </select>
+      <span *ngIf="!options.hideSeconds">{{'HOURLY.ON_SECOND' | prefix | translate}}</span>
+      <select class="seconds" *ngIf="!options.hideSeconds" [disabled]="disabled || activeTab !== 'hourly'"
+        (change)="regenerateCron()" [(ngModel)]="state.hourly.seconds" [ngClass]="options.formSelectClass">
+        <option *ngFor="let second of selectOptions.seconds" [ngValue]="second">
+          {{second}}
+        </option>
+      </select>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="{{'TABS.DAILY' | prefix | translate}}" *ngIf="!options.hideDailyTab">
+    <!-- Daily-->
+
+    <div class="well well-small">
+      <input type="radio" [name]="'daily-radio-' + id" value="everyDays" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.daily.subTab" value="everyDays" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.daily.subTab" [ngClass]="state.formRadioClass" checked="checked">
+      {{'DAILY.EVERY' | prefix | translate}}
+      <select class="days" [disabled]="disabled || activeTab !== 'daily' || state.daily.subTab !== 'everyDays'"
+        (change)="regenerateCron()" [(ngModel)]="state.daily.everyDays.days" [ngClass]="options.formSelectClass">
+        <option *ngFor="let monthDay of selectOptions.monthDays" [ngValue]="monthDay">
+          {{monthDay}}
+        </option>
+      </select> {{'DAILY.DAYS' | prefix | translate}}
+
+      <cron-time-picker [disabled]="disabled || activeTab !== 'daily' || state.daily.subTab !== 'everyDays'"
+        (change)="regenerateCron()" [(time)]="state.daily.everyDays" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>
+    </div>
+
+    <div class="well well-small">
+      <input type="radio" [name]="'daily-radio-' + id" value="everyWeekDay" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.daily.subTab" [ngClass]="state.formRadioClass">
+      {{'DAILY.WORKING_DAY' | prefix | translate}}
+      <cron-time-picker [disabled]="disabled || activeTab !== 'daily' || state.daily.subTab !== 'everyWeekDay'"
+        (change)="regenerateCron()" [(time)]="state.daily.everyWeekDay" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>
+    </div>
+  </mat-tab>
+  <mat-tab label="{{'TABS.WEEKLY' | prefix | translate}}" *ngIf="!options.hideWeeklyTab">
+
+
+    <!-- Weekly-->
+
+    <div class="well well-small">
+      <div class="row">
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.MON"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.MON' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.TUE"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.TUE' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.WED"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.WED' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.THU"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.THU' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.FRI"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.FRI' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.SAT"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.SAT' | prefix | translate}}</label>
+        </div>
+        <div class="col-sm-6">
+          <label class="advanced-cron-editor-label"><input type="checkbox"
+              [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()" [(ngModel)]="state.weekly.SUN"
+              [ngClass]="options.formCheckboxClass"> {{'WEEK.SUN' | prefix | translate}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          {{'WEEKLY.AT' | prefix | translate}}
+          <cron-time-picker [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
+            [(time)]="state.weekly" [selectClass]="options.formSelectClass" [use24HourTime]="options.use24HourTime"
+            [hideSeconds]="options.hideSeconds">
+          </cron-time-picker>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="{{'TABS.MONTHLY' | prefix | translate}}" *ngIf="!options.hideMonthlyTab">
+
+
+    <!-- Monthly-->
+
+    <div class="well well-small">
+      <input type="radio" [name]="'monthly-radio-' + id" value="specificDay" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.subTab" [ngClass]="state.formRadioClass"> {{'MONTHLY.ON'
+      | prefix | translate}}
+      <select class="month-days"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificDay.day" [ngClass]="options.formSelectClass">
+        <option *ngFor="let monthDaysWithLast of selectOptions.monthDaysWithLasts" [ngValue]="monthDaysWithLast">
+          {{monthDayDisplay(monthDaysWithLast) | prefix | translate : ({n: monthDaysWithLast})}}
+        </option>
+      </select> {{'MONTHLY.OF_EVERY' | prefix | translate}}
+      <select class="months-small"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificDay.months" [ngClass]="options.formSelectClass">
+        <option *ngFor="let month of selectOptions.months" [ngValue]="month">
+          {{month}}
+        </option>
+      </select> {{'MONTHLY.MONTHS' | prefix | translate}} {{'MONTHLY.AT' | prefix | translate}}
+      <cron-time-picker [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificDay'"
+        (change)="regenerateCron()" [(time)]="state.monthly.specificDay" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>&nbsp;
+      <label class="advanced-cron-editor-label"><input type="checkbox"
+          [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificDay'"
+          (change)="regenerateCron()" [(ngModel)]="state.monthly.runOnWeekday" [ngClass]="options.formCheckboxClass">
+        {{'MONTHLY.NEAREST_WEEKDAY' | prefix | translate}}</label>
+    </div>
+    <div class="well well-small">
+      <input type="radio" [name]="'monthly-radio-' + id" value="specificWeekDay" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.subTab" [ngClass]="state.formRadioClass">
+      {{'MONTHLY.ON' | prefix | translate}}
+      <select class="day-order-in-month"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificWeekDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificWeekDay.monthWeek"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let monthWeek of selectOptions.monthWeeks" [ngValue]="monthWeek">
+          {{monthWeekDisplay(monthWeek) | prefix | translate}}
+        </option>
+      </select>
+      <select class="week-days"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificWeekDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificWeekDay.day" [ngClass]="options.formSelectClass">
+        <option *ngFor="let day of selectOptions.days" [ngValue]="day">
+          {{dayDisplay(day) | prefix | translate}}
+        </option>
+      </select> {{'MONTHLY.OF_EVERY' | prefix | translate}}
+      <select class="months-small"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificWeekDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificWeekDay.months"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let month of selectOptions.months" [ngValue]="month">
+          {{month}}
+        </option>
+      </select> {{'MONTHLY.MONTHS' | prefix | translate}} {{'MONTHLY.STARTING_IN' | prefix | translate}}
+      <select class="months"
+        [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificWeekDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.monthly.specificWeekDay.startMonth"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let month of selectOptions.months" [ngValue]="month">
+          {{monthDisplay(month) | prefix | translate}}
+        </option>
+      </select>
+
+      {{'MONTHLY.AT' | prefix | translate}}
+      <cron-time-picker [disabled]="disabled || activeTab !== 'monthly' || state.monthly.subTab !== 'specificWeekDay'"
+        (change)="regenerateCron()" [(time)]="state.monthly.specificWeekDay" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="{{'TABS.YEARLY' | prefix | translate}}" *ngIf="!options.hideYearlyTab">
+
+    <!-- Yearly-->
+
+    <div class="well well-small">
+      <input type="radio" [name]="'yearly-radio-' + id" value="specificMonthDay" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.subTab" [ngClass]="state.formRadioClass">
+      {{'YEARLY.EVERY' | prefix | translate}}
+      <select class="months"
+        [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.specificMonthDay.month"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let month of selectOptions.months" [ngValue]="month">
+          {{monthDisplay(month) | prefix | translate}}
+        </option>
+      </select> {{'YEARLY.ON' | prefix | translate}}
+      <select class="month-days"
+        [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthDay'"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.specificMonthDay.day" [ngClass]="options.formSelectClass">
+        <option *ngFor="let monthDaysWithLast of selectOptions.monthDaysWithLasts" [ngValue]="monthDaysWithLast">
+          {{monthDayDisplay(monthDaysWithLast) | prefix | translate : ({n: monthDaysWithLast})}}
+        </option>
+      </select> {{'YEARLY.AT' | prefix | translate}}
+      <cron-time-picker [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthDay'"
+        (change)="regenerateCron()" [(time)]="state.yearly.specificMonthDay" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>&nbsp;
+      <label class="advanced-cron-editor-label"><input type="checkbox" (change)="regenerateCron()"
+          [(ngModel)]="state.yearly.runOnWeekday" [ngClass]="options.formCheckboxClass"> {{'YEARLY.NEAREST_WEEKDAY' |
+        prefix | translate}}</label>
+    </div>
+    <div class="well well-small">
+      <input type="radio" [name]="'yearly-radio-' + id" value="specificMonthWeek" [disabled]="disabled"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.subTab" [ngClass]="state.formRadioClass">
+      {{'YEARLY.ON' | prefix | translate}}
+      <select class="day-order-in-month"
+        [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthWeek'"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.specificMonthWeek.monthWeek"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let monthWeek of selectOptions.monthWeeks" [ngValue]="monthWeek">
+          {{monthWeekDisplay(monthWeek) | prefix | translate}}
+        </option>
+      </select>
+      <select class="week-days"
+        [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthWeek'"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.specificMonthWeek.day"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let day of selectOptions.days" [ngValue]="day">
+          {{dayDisplay(day) | prefix | translate}}
+        </option>
+      </select> {{'YEARLY.OF' | prefix | translate}}
+      <select class="months"
+        [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthWeek'"
+        (change)="regenerateCron()" [(ngModel)]="state.yearly.specificMonthWeek.month"
+        [ngClass]="options.formSelectClass">
+        <option *ngFor="let month of selectOptions.months" [ngValue]="month">
+          {{monthDisplay(month) | prefix | translate}}
+        </option>
+      </select> {{'YEARLY.AT' | prefix | translate}}
+      <cron-time-picker [disabled]="disabled || activeTab !== 'yearly' || state.yearly.subTab !== 'specificMonthWeek'"
+        (change)="regenerateCron()" [(time)]="state.yearly.specificMonthWeek" [selectClass]="options.formSelectClass"
+        [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
+      </cron-time-picker>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="{{'TABS.ADVANCED' | prefix | translate}}" *ngIf="!options.hideAdvancedTab">
+    <!-- Advanced-->
+
+    {{'ADVANCED.CRON' | prefix | translate}}
+    <input type="text" class="advanced-cron-editor-input" ng-disabled="disabled || activeTab !== 'advanced'"
+      (change)="regenerateCron()" [(ngModel)]="state.advanced.expression" [ngClass]="options.formInputClass">
+  </mat-tab>
+</mat-tab-group>
+
+<div class="row" *ngIf="!state.validation.isValid">
+  <code>{{state.validation.errorMessage.key | prefix | translate : state.validation.errorMessage.params}}</code>
+</div>
