@@ -33,6 +33,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
   private isDirty: boolean;
 
   public ngOnInit() {
+    this.activeTab = "minutes";
     if (this.options.removeSeconds) {
       this.options.hideSeconds = true;
     }
@@ -49,9 +50,30 @@ export class CronEditorComponent implements OnInit, OnChanges {
     }
   }
 
-  public setActiveTab(tab: string) {
+  public setActiveTab(select: any) {
     if (!this.disabled) {
-      this.activeTab = tab;
+      switch (select.index) {
+        case 0:
+          this.activeTab = "minutes";
+          break;
+        case 1:
+          this.activeTab = "hourly";
+          break;
+        case 2:
+          this.activeTab = "daily";
+          break;
+        case 3:
+          this.activeTab = "weekly";
+          break;
+        case 4:
+          this.activeTab = "monthly";
+          break;
+        case 5:
+          this.activeTab = "yearly";
+          break;
+        default:
+          break;
+      }
       this.regenerateCron();
     }
   }

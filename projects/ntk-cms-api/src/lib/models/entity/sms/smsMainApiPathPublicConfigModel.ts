@@ -7,6 +7,9 @@ export class SmsMainApiPathPublicConfigModel extends BaseModuleEntity<string> {
   webServiceUrl: string;
   publicConfigJsonValues: string;
   memo: string;
+  abilityCreditCheck:boolean;
+  abilityDelivery:boolean;
+  abilityReceive:boolean;
   privateSiteConfigs: SmsMainApiPathModel[];
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
