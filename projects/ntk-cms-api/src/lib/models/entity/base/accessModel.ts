@@ -5,12 +5,15 @@ export class AccessModel {
   moduleEntityName: string;
   accessDeleteRow = false;
   accessWatchRow = false;
+  accessCountRow = false;
   accessEditRow = false;
   accessAddRow = false;
   accessRowInPanelDemo = false;
   accessRowWatchInSharingCategory = false;
   accessWatchRowOtherSiteId = false;
   accessWatchRowOtherCreatedBy = false;
+  accessCountRowOtherSiteId = false;
+  accessCountRowOtherCreatedBy = false;
   accessEditRowOtherSiteId = false;
   accessEditRowOtherCreatedBy = false;
   accessDeleteRowOtherCreatedBy = false;
