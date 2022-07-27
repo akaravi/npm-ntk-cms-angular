@@ -5,6 +5,7 @@ export class CoreCurrencyModel extends BaseEntity<number> {
   titleML: string;
   titleResourceLanguage: string;
   symbol: string;
+  isDefault:boolean;
   exchangeBuyRatio: number;
   exchangeSaleRatio: number;
   linkMainImageId?: number;
