@@ -21,9 +21,14 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   rentPriceMax?: number;
   depositPriceMin?: number;
   depositPriceMax?: number;
+  periodPriceMin?: number;
+  periodPriceMax?: number;
   propertyDetailValues: EstatePropertyDetailValueModel[];
   propertyDetailGroups: EstatePropertyDetailGroupModel[];
   urlViewContent: string;
   urlViewContentQRCodeBase64: string;
+  linkCoreCurrencyId: number;
+  currencyTitle: string;
+  currencySymbol:string;
 }
 

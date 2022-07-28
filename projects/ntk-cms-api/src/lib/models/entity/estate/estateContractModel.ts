@@ -12,6 +12,10 @@ export class EstateContractModel extends BaseModuleEntity<string> {
   rentPrice?: number;
   depositPriceByAgreement: boolean;
   depositPrice?: number;
+  periodPriceByAgreement: boolean;
+  periodPrice?: number;
+  periodCount?: number;
   linkCoreCurrencyId: number;
   currencyTitle: string;
+  currencySymbol:string;
 }

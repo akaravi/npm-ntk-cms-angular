@@ -14,5 +14,8 @@ export class EstateBillboardModel extends BaseModuleEntity<string> {
   linkMainImageIdSrc: string;
   urlViewContent: string;
   urlViewContentQRCodeBase64: string;
+  linkCoreCurrencyId: number;
+  currencyTitle: string;
+  currencySymbol:string;
 }
 
