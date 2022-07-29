@@ -19,6 +19,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   isSoldIt: boolean;
   reviewDataAfterSoldIt?: Date;
   linkLocationId: number;
+  linkLocationCountryId: number;
   description: string;
   viewConfigHiddenInList: boolean;
   linkPropertyTypeLanduseId: string;
@@ -73,6 +74,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   uploadFileGUID: string[];
   urlViewContent: string;
   urlViewContentQRCodeBase64: string;
+  linkLocationCountryIdTitle: string;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   favorited: boolean;
