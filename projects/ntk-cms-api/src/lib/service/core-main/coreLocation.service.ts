@@ -80,4 +80,21 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
         }),
       );
   }
+  ServiceGetAllCountry(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllCountry', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
