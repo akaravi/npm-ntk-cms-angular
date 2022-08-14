@@ -210,7 +210,7 @@
       <ng-template #itIsFolder><i class="fas fa-3x fa-folder child"></i></ng-template>
       <ng-template #showFile>
         <i *ngIf="!node.downloadThumbnailSrc || node.downloadThumbnailSrc?.length==0" class="fas fa-3x fa-file child"></i>
-        <img *ngIf="node.downloadThumbnailSrc?.length>0"  src="{{node.downloadThumbnailSrc}}" class="fas fa-3x  child"/>
+        <img *ngIf="node.downloadThumbnailSrc?.length>0"  src="{{node.downloadThumbnailSrc}}" class="child thumbnail" />
       </ng-template>
     </div>
     <div class="file-name">
