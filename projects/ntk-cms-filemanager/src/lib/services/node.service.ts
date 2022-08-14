@@ -179,6 +179,7 @@ export class NodeService {
       size: node.size,
       Extension: node.Extension,
       downloadLinksrc: node.downloadLinksrc,
+      downloadThumbnailSrc:node.downloadThumbnailSrc,
     } as NodeInterface;
   }
   private getNodesFromServer_orginal(path: string): Observable<any> {
@@ -384,6 +385,7 @@ export class NodeService {
             CreatedDate: element.createdDate,
             UpdatedDate: element.updatedDate,
             downloadLinksrc: element.downloadLinksrc,
+            downloadThumbnailSrc: element.downloadThumbnailSrc,
             size: element.fileSize,
             Extension: element.extension
           };

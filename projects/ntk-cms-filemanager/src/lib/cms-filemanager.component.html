@@ -77,7 +77,7 @@
     (closeDialog)="handleNewFolderDialog(false)"
     (createDir)="handleFileManagerClickEvent({type: 'createFolder', payload: $event})">
   </lib-filemanager-newfolder>
-  
+
 
   <lib-filemanager-loading-overlay *ngIf="loading"
     [loadingOverlayTemplate]="loadingOverlayTemplate ? loadingOverlayTemplate : defaultLoadingOverlayTemplate">
@@ -94,7 +94,7 @@
       {{'filemanager.no_results' | translate}}
     </h2>
     <div style="text-align: center" *ngIf="searchModal.hasData()">{{searchModal.getData().searchString}}</div>
-  
+
     <div *ngIf="searchModal.hasData() && searchModal.getData().response.length !== 0">
       <table style="margin: 0 auto">
         <tr>
@@ -121,7 +121,7 @@
       <h2 class="modal-title" style="margin-top: 20px">
         {{'filemanager.processing_request' | translate}}...
       </h2>
-  
+
       <div style="text-align: center; height: 70px">
         <i class="fas fa-spinner fa-spin fa-4x"></i>
       </div>
@@ -132,7 +132,7 @@
       {{'filemanager.something_went_wrong_with_your_request' | translate}}...
     </h2>
   </ntk-smart-modal>
-  
+
   <ntk-smart-modal *ngIf="selectedNode" identifier="confirmDeleteModal" #deleteModal [dismissable]="false"
     [closable]="false">
     <h2 class="modal-title">
@@ -140,9 +140,9 @@
       <span *ngIf="selectedNode.isFolder">{{'filemanager.folder' | translate}}</span>
       <span *ngIf="!selectedNode.isFolder">{{'filemanager.file' | translate}}</span>
     </h2>
-  
+
     <div style="width: 100%; margin: 5px auto; text-align: center">{{selectedNode.name}}</div>
-  
+
     <div class="rename-button">
       <button type="button" class="button big" (click)="handleFileManagerClickEvent({type: 'remove'})">
         <span> {{'filemanager.yes_delete_this' | translate}} </span>
@@ -168,7 +168,7 @@
     <input type="text" class="rename-input" [value]="selectedNode.name" #renameInput
       (keyup.enter)="handleFileManagerClickEvent({type: 'rename', value: renameInput.value})">
     <br>
-  
+
     <div class="rename-button">
       <button type="button" class="button big"
         (click)="handleFileManagerClickEvent({type: 'rename', value: renameInput.value})"
@@ -179,7 +179,7 @@
         {{'filemanager.cancel' | translate}}
       </button>
     </div>
-  
+
   </ntk-smart-modal>
 
 </ng-template>
@@ -204,11 +204,14 @@
   </div>
 </ng-template>
 <ng-template let-node #defaultFolderContentTemplate>
-  <div class="file-manager-item">
-    <div class="file-preview">
-      <div *ngIf="node.isFolder; then itIsFolder else showFile"></div>
+  <div class="file-manager-item" >
+    <div class="file-preview" [ngStyle]="node.downloadThumbnailSrc?.length>0 ? 'background-image:url('+node.downloadThumbnailSrc+') ;background-repeat:no-repeat;background-size: contain;background-position: center center': ''" >
+      <div *ngIf="node.isFolder; then itIsFolder else showFile" ></div>
       <ng-template #itIsFolder><i class="fas fa-3x fa-folder child"></i></ng-template>
-      <ng-template #showFile><i class="fas fa-3x fa-file child"></i></ng-template>
+      <ng-template #showFile>
+        <i *ngIf="!node.downloadThumbnailSrc || node.downloadThumbnailSrc?.length==0" class="fas fa-3x fa-file child"></i>
+        <img *ngIf="node.downloadThumbnailSrc?.length>0"  src="{{node.downloadThumbnailSrc}}" class="fas fa-3x  child"/>
+      </ng-template>
     </div>
     <div class="file-name">
       {{node.name}}

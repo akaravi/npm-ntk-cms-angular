@@ -247,6 +247,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
             id: next.item.id,
             name: next.item.fileName,
             downloadLinksrc: next.item.downloadLinksrc,
+            downloadThumbnailSrc:next.item.downloadThumbnailSrc,
             size: next.item.size,
             Extension: next.item.extension,
             isFolder: false
@@ -440,6 +441,23 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     }
     console.log('HighestZIndex', highest);
     return highest;
+  }
+  AllowViewImage(node: NodeInterface): boolean {
+    if (
+      node.isFolder ||
+      !node.Extension ||
+      node.Extension.length === 0 ||
+      !node.downloadLinksrc ||
+      node.downloadLinksrc.length === 0
+    ) {
+      return false;
+    }
+    if (node.Extension.toLowerCase() === 'png' || node.Extension.toLowerCase() === 'jpeg'
+      || node.Extension.toLowerCase() === 'gif'
+      || node.Extension.toLowerCase() === 'jpg') {
+      return true;
+    }
+    return false;
   }
 
 }

@@ -6,8 +6,8 @@
 
     <div class="side-view-preview-content">
       <div *ngIf="AllowViewImage(node)" class="side-view-preview-content">
-        <img src="{{node.downloadLinksrc}}" loading="lazy" alt="..." class="mb-3"
-          style="max-width: -webkit-fill-available">
+        <img src="{{node.downloadThumbnailSrc}}" loading="lazy" alt="..." class="mb-3"
+          style="max-width: -webkit-fill-available"/>
       </div>
       <div *ngIf="AllowPlayMP3(node)" class="side-view-preview-content">
         <audio controls>

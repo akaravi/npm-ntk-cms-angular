@@ -15,4 +15,5 @@ export interface NodeInterface {
   CreatedDate?: Date;
   UpdatedDate?: Date;
   downloadLinksrc?: string;
+  downloadThumbnailSrc?: string;
 }
