@@ -205,7 +205,7 @@
 </ng-template>
 <ng-template let-node #defaultFolderContentTemplate>
   <div class="file-manager-item" >
-    <div class="file-preview" [ngStyle]="node.downloadThumbnailSrc?.length>0 ? 'background-image:url('+node.downloadThumbnailSrc+') ;background-repeat:no-repeat;background-size: contain;background-position: center center': ''" >
+    <div class="file-preview" >
       <div *ngIf="node.isFolder; then itIsFolder else showFile" ></div>
       <ng-template #itIsFolder><i class="fas fa-3x fa-folder child"></i></ng-template>
       <ng-template #showFile>
