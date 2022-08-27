@@ -24,6 +24,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   viewConfigHiddenInList: boolean;
   linkPropertyTypeLanduseId: string;
   linkPropertyTypeUsageId: string;
+  linkPropertyProjectId: string;
   propertyTypeLanduse: EstatePropertyTypeLanduseModel;
   propertyTypeUsage: EstatePropertyTypeUsageModel;
 
