@@ -1,4 +1,3 @@
-import { BaseEntity } from '../base/baseEntity';
 import { NewsCategoryModel } from './newsCategoryModel';
 import { NewsContentTagModel } from './newsContentTagModel';
 import { NewsContentSimilarModel } from './newsContentSimilarModel';
