@@ -10,6 +10,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<number> {
   linkLocationId?:number;
   keyword: string;
   linkFileIds: string;
+  linkExtraImageIds?: string;
   linkFilePodcastId?: number;
   linkFileMovieId?: number;
   linkMainImageId?: number;
@@ -26,4 +27,5 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<number> {
   linkFilePodcastIdSrc: string;
   linkFileMovieIdSrc: string;
   linkFileIdsSrc: string[];
+  linkExtraImageIdsSrc: string[];
 }
