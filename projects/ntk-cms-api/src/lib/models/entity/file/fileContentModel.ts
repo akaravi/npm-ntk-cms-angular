@@ -31,6 +31,7 @@ export class FileContentModel extends BaseModuleEntity<number> {
   linkMainImageIdSrc: string;
   downloadLinksrc: string;
   downloadLinksrcByDomain: string;
+  downloadThumbnailSrc : string;
   extension: string;
   fileExist: boolean;
   fileExistChecked: Date;
