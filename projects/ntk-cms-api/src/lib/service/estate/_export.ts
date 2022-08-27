@@ -21,4 +21,5 @@ export * from './estatePropertyTypeUsage.service';
 export * from './estatePropertyShareAgency.service';
 export * from './estatePropertyShareAgent.service';
 export * from './estatePropertyShareSite.service';
+export * from './estatePropertyProject.service';
 

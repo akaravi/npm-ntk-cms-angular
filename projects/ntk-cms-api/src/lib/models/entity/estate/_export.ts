@@ -21,4 +21,5 @@ export * from './estatePropertyTypeLanduseModel';
 export * from './estatePropertyShareAgencyModel';
 export * from './estatePropertyShareAgentModel';
 export * from './estatePropertyShareSiteModel';
+export * from './estatePropertyProjectModel';
 
