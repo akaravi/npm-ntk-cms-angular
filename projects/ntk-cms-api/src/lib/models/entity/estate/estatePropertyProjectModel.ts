@@ -1,7 +1,7 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class EstatePropertyProjectModel extends BaseModuleEntity<number> {
+export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
   body: string;
