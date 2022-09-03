@@ -1,8 +1,8 @@
-import { MemberUserModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberHistoryModel } from './memberHistoryModel';
 import { MemberPropertyDetailValueModel } from './memberPropertyDetailValueModel';
 import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
+import { MemberUserModel } from './memberUserModel';
 
 export class MemberPropertyModel extends BaseModuleEntity<number> {
   linkMemberUserId: number;

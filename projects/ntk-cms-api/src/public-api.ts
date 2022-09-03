@@ -141,6 +141,7 @@ export * from './lib/models/entity/article/_export';
 // member
 export * from './lib/service/member/_export';
 export * from './lib/models/entity/member/_export';
+export * from './lib/models/enums/member/_export';
 // member
 
 // donate

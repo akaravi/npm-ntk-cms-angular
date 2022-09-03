@@ -1,5 +1,5 @@
-import { MemberUserModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { MemberUserModel } from './memberUserModel';
 
 export class MemberUserSiteModel extends BaseModuleEntity<number> {
   linkCmsSiteId: number;

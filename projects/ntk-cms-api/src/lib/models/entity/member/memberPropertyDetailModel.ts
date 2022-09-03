@@ -1,5 +1,5 @@
-import { EnumInputDataType } from '../../Enums/member/enumInputDataType';
-import { EnumUiPropertyDesign } from '../../Enums/member/enumUiPropertyDesign';
+import { EnumInputDataType } from '../../enums/core/enumInputDataType';
+import { EnumUiPropertyDesign } from '../../enums/member/enumUiPropertyDesign';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyDetailGroupModel } from './memberPropertyDetailGroupModel';
 import { MemberPropertyTypeModel } from './memberPropertyTypeModel';

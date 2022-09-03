@@ -1,4 +1,4 @@
 export enum EnumUiPropertyDesign {
-    Normal = 0,
-    Input = 1,
+  Normal = 0,
+  Input = 1,
 }

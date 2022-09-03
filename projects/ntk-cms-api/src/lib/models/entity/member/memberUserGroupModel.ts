@@ -1,6 +1,6 @@
-import { MemberUserModel } from 'dist/ntk-cms-api/fesm2015/ntk-cms-api';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberGroupModel } from './memberGroupModel';
+import { MemberUserModel } from './memberUserModel';
 
 export class MemberUserGroupModel extends BaseModuleEntity<number> {
   memberUser_Id: number;
