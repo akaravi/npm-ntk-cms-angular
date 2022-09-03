@@ -1,5 +1,8 @@
 import { EnumGenderType } from '../../enums/enumGenderType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { MemberPropertyModel } from './memberPropertyModel';
+import { MemberUserGroupModel } from './memberUserGroupModel';
+import { MemberUserSiteModel } from './memberUserSiteModel';
 
 export class MemberUserModel extends BaseModuleEntity<number> {
   linkCmsUserId?: number;
@@ -9,7 +12,7 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   firstName: string;
   lastName: string;
   linkLocationId?: number;
-  dateBirth?: string;
+  dateBirth?: Date;
   birthPlace: string;
   nationalCode: string;
   email: string;
@@ -18,7 +21,6 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   officeNo: string;
   address: string;
   linkMainImageId?: number;
-  linkMainImageIdSrc: string;
   linkFileIds: string;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
@@ -36,4 +38,8 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   otherInfo10: string;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
+
+  memberUserGroup: MemberUserGroupModel[];
+  memberPropertes: MemberPropertyModel[];
+  memberUserSites: MemberUserSiteModel[];
 }
