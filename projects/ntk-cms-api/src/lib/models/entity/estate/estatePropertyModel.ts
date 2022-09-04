@@ -1,3 +1,4 @@
+import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
 import { EnumRecordStatus } from '../../enums/enumRecordStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
@@ -12,6 +13,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   caseCode: string;
   mainAdminRecordStatus = EnumRecordStatus.Pending;
   createdYaer?: number;
+  createdYaerType: DateTypeEnum;
   partition: number;
   area: number;
   linkCmsUserId?: number;
