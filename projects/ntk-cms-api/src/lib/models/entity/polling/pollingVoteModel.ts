@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
-export class PollingVoteModel extends BaseModuleEntity<string> {
+export class PollingVoteModel extends BaseModuleEntity<number> {
   linkPollingContentId: number;
   linkPollingOptionId: number;
   optionScore: number;
