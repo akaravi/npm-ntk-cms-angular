@@ -5,7 +5,7 @@ import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
 import { MemberUserModel } from './memberUserModel';
 
 export class MemberPropertyModel extends BaseModuleEntity<number> {
-  linkMemberUserId: number;
+  linkMemberId: number;
   title: string;
   description: string;
   linkCmsUserId: number;

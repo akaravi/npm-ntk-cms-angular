@@ -42,4 +42,5 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   memberUserGroup: MemberUserGroupModel[];
   memberPropertes: MemberPropertyModel[];
   memberUserSites: MemberUserSiteModel[];
+
 }

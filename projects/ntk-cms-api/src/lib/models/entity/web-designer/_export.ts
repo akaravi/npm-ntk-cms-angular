@@ -1,5 +1,6 @@
 export * from './webDesignerConfigurationModel';
 export * from './webDesignerLogPageSafeModel';
+export * from './webDesignerLogMemberInfoModel';
 export * from './webDesignerMainIntroModel';
 export * from './webDesignerMainMenuModel';
 export * from './webDesignerMainPageModel';

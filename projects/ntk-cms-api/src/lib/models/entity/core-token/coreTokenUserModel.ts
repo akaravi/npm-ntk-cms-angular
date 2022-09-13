@@ -4,7 +4,7 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreTokenUserModel  extends BaseEntity<string>   {
   linkUserId: number;
-  linkMemberUserId: number;
+  linkMemberId: string;
   linkSiteId: number;
   deviceClientMAC: string;
   linkDeviceId: number;

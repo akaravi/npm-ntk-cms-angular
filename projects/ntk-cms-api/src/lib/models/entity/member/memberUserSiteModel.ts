@@ -4,7 +4,7 @@ import { MemberUserModel } from './memberUserModel';
 export class MemberUserSiteModel extends BaseModuleEntity<number> {
   linkCmsSiteId: number;
 
-  linkMemberUserId: number;
+  linkMemberId: string;
 
   memberUser: MemberUserModel;
 }

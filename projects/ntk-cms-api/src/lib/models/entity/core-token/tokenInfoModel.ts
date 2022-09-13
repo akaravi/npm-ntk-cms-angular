@@ -9,6 +9,7 @@ export class TokenInfoModel {
   siteId: number;
   userId: number;
   memberId: number;
+  memberUserId: string;
   deviceId: number;
   applicationId: number;
   userGroupId: number;

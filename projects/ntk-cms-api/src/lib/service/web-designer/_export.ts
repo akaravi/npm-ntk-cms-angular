@@ -1,6 +1,7 @@
 export * from './webDesignerEnum.service';
 export * from './webDesignerConfiguration.service';
 export * from './webDesignerLogPageSafe.service';
+export * from './webDesignerLogMemberInfo.service';
 export * from './webDesignerMainIntro.service';
 export * from './webDesignerMainMenu.service';
 export * from './webDesignerMainPage.service';

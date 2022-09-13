@@ -16,7 +16,7 @@ export class TicketingTaskModel extends BaseModuleEntity<number>  {
   email: string;
   priority: EnumTicketingDepartemenPriority;
   linkCmsUserId?: number;
-  linkMemberUserId?: number;
+  linkMemberId: string;
   linkTicketingDepartemenId?: number;
   ticketStatus: EnumTicketStatus;
   userIpAddress: string;

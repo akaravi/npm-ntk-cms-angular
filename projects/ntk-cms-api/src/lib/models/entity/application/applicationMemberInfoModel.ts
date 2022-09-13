@@ -17,9 +17,12 @@ export class ApplicationMemberInfoModel extends BaseModuleEntity<string>  {
   appBuildVer: number;
   appSourceVer: string;
   deviceIP: string;
-  locationLat: string;
-  locationLong: string;
   scorePercent: number;
   scoreComment: string;
+  linkLocationId?:number;
+  geolocationlatitude?: number;
+  geolocationlongitude?: number;
+  linkLocationIdTitle:string;
+  linkLocationIdParentTitle:string;
 }
 

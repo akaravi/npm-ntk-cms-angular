@@ -7,7 +7,7 @@ import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorM
 import { TicketingTaskModel } from './ticketingTaskModel';
 
 export class TicketingAnswerModel extends BaseModuleEntity<number> {
-  linkMemberUserId?: number;
+  linkMemberId: string;
   linkTaskId: number;
   htmlBody: string;
   // tslint:disable-next-line: variable-name

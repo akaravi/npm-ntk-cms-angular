@@ -6,7 +6,7 @@ export class CoreLogSmsModel extends BaseEntity<string>{
   sendStatusType: EnumSendSmsStatusType;
   linkSiteId?: number;
   linkUserId?: number;
-  linkMemberUserId?: number;
+  linkMemberId: string;
   moduleName: string;
   moduleEntityName: string;
   moduleEntityId: string;

@@ -2,7 +2,7 @@ import { BaseEntity } from '../base/baseEntity';
 
 export class CoreLogErrorModel extends BaseEntity<string>{
   linkUserId?: number;
-  linkMemberUserId?: number;
+  linkMemberId: string;
   moduleName: string;
   moduleEntityName: string;
   moduleEntityId: number;
