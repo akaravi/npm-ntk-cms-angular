@@ -2,6 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstateBillboardModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
+  descriptionHidden: string;
   includeAllSite: boolean;
   speedView: number;
   reloadViewPerMin: number;

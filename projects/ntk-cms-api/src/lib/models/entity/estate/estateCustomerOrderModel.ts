@@ -4,6 +4,7 @@ import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel
 export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
+  descriptionHidden: string;
   linkEstateUserId: string;
   areaAddress: string;
   includeAllSite: boolean;
@@ -29,6 +30,8 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   urlViewContentQRCodeBase64: string;
   linkCoreCurrencyId: number;
   currencyTitle: string;
-  currencySymbol:string;
+  currencySymbol: string;
+  contactMobiles: string;
+  contactMobileList: string[];
 }
 

@@ -23,6 +23,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkLocationId: number;
   linkLocationCountryId: number;
   description: string;
+  descriptionHidden: string;
   viewConfigHiddenInList: boolean;
   linkPropertyTypeLanduseId: string;
   linkPropertyTypeUsageId: string;
