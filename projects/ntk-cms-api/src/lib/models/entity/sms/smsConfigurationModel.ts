@@ -3,27 +3,37 @@ import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModule
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteStorageValuesModel';
 
-export class SmsModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
-{
+export class SmsModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel {
+  messageTextFilteringCheck: boolean;
+  messageTextFiltering: string;
+  messageTextForbiddenCheck: boolean;
+  messageTextForbidden: string;
+  messageNumberFilteringCheck: boolean;
+  messageNumberFiltering: string;
+  messageNumberForbiddenCheck: boolean;
+  messageNumberForbidden: string;
+  messageNumberHiddenCharSymbol:string;
+  messageNumberHiddenCharIndexes:number[];
+}
+
+export class SmsModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {
 
 }
 
-export class SmsModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
-{
 
+export class SmsModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
+  userFreePanelDay: number;
+  userFreePanelCredit: number;
+  messageTextFilteringCheck: boolean;
+  messageTextFiltering: string;
+  messageTextForbiddenCheck: boolean;
+  messageTextForbidden: string;
+  messageNumberFilteringCheck: boolean;
+  messageNumberFiltering: string;
+  messageNumberForbiddenCheck: boolean;
+  messageNumberForbidden: string;
 }
 
-/// <summary>
-/// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
-/// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
-/// </summary>
-export class SmsModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
-{
-
-
-}
-
-export class SmsModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
-{
+export class SmsModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel {
 
 }
