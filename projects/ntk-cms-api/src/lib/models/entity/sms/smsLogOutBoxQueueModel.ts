@@ -15,4 +15,5 @@ export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   queueLockerId:string;
   queueCompleted:boolean;
   queueCompleteDate:Date;
+  queueLockerMicroservice:string;
 }

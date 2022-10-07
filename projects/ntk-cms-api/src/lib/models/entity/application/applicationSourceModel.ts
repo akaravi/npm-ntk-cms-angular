@@ -31,14 +31,23 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   defaultConfigRuntimeSiteJsonValues: string;
   buildKey1String: string;
   buildKey1Value: string;
+  buildKey1Files: string;
+
   buildKey2String: string;
   buildKey2Value: string;
+  buildKey2Files: string;
+
   buildKey3String: string;
   buildKey3Value: string;
+  buildKey3Files: string;
+
   buildKey4String: string;
   buildKey4Value: string;
+  buildKey4Files: string;
+
   buildKey5String: string;
   buildKey5Value: string;
+  buildKey5Files: string;
   isPublish: boolean;
   sourceNameGit: string;
   oSType: EnumOperatingSystemType;
