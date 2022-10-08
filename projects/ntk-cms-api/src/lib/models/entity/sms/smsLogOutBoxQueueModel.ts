@@ -10,6 +10,8 @@ export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   textFiltering: boolean;
   numberFilteringChar: string;
   textFilteringChar: string;
+  queueCountRun:number;
+  queueAllowNextRun:Date;
   queueLockedRun?:Date;
   queueLockerExpire?:Date;
   queueLockerId:string;
