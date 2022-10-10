@@ -1,3 +1,4 @@
+
 import { BaseModuleEntity } from './../base/baseModuleEntity';
 import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
 import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberModel';
@@ -82,4 +83,13 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
 
   hookAddressAPI:string;
   hookAddressAPIById:string;
+  //ُ Status
+  statusOutOfServiceActive:boolean;
+  statusOutOfServiceExpire?:Date;
+  statusNotStableActive:boolean;
+  statusNotStableExpire?:Date;
+  statusNotStableCount:number;
+  statusNotStableCountLimit:number;
+  statusNotStableRunForMin:number;
+  //ُ Status
 }

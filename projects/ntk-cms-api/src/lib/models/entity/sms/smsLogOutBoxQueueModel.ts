@@ -6,8 +6,10 @@ export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   linkFromNumber:string;
   scheduleSendStart: Date;
   toNumbers: string;
-  numberFiltering: boolean;
-  textFiltering: boolean;
+  statusNumberFiltering: boolean;
+  statusTextFiltering: boolean;
+  statusNotStableApi:boolean;
+  statusOutOfServiceApi:boolean;
   numberFilteringChar: string;
   textFilteringChar: string;
   queueCountRun:number;

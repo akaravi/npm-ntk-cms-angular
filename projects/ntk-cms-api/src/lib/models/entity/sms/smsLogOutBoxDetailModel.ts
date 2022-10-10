@@ -7,6 +7,7 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   linkOutBoxId: string;
   receiverNumber: string;
   credit: number;
+  giveBackCredit: number;
   senderNumber: string;
   isSended: boolean;
   getApiOnSendInfo: string;
@@ -20,4 +21,6 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   virtual_OutBox: SmsLogOutBoxModel;
   outBox: SmsLogOutBoxModel;
   outBoxDetailLocks: SmsLogOutBoxDetailLockModel;
+  slaLinkId: string;
+  slaChanceCount: number;
 }
