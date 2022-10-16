@@ -3,7 +3,7 @@ import { SmsLogOutBoxDetailBulkModel } from './smsLogOutBoxDetailBulkModel';
 import { SmsLogOutBoxDetailModel } from './smsLogOutBoxDetailModel';
 
 export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
-  linkApiId: string;
+  linkApiPathId: string;
   linkApiNumberId: string;
   sendDate: Date;
   message: string;

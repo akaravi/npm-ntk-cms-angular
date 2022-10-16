@@ -5,7 +5,7 @@ import { SmsLogOutBoxModel } from './smsLogOutBoxModel';
 export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   recordDetailStatus: number;
   linkOutBoxId: string;
-  linkApiId: string;
+  linkApiPathId: string;
   linkApiNumberId: string;
   receiverNumber: string;
   credit: number;

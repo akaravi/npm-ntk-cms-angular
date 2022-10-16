@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsLogOutBoxDetailModel } from './smsLogOutBoxDetailModel';
 
 export class SmsLogApiPathModel extends BaseModuleEntity<string> {
-  linkApiId: string;
+  linkApiPathId: string;
   linkOutBoxId:string;
   linkOutBoxDetailId:string;
   statusOutOfServiceActive: boolean;
