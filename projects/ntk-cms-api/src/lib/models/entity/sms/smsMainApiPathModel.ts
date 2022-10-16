@@ -84,8 +84,11 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   hookAddressAPI:string;
   hookAddressAPIById:string;
   //ُ Status
+  statusOutOfServiceMonitorApiChar:string;
   statusOutOfServiceActive:boolean;
   statusOutOfServiceExpire?:Date;
+
+  statusNotStableMonitorApiChar:string;
   statusNotStableActive:boolean;
   statusNotStableExpire?:Date;
   statusNotStableCount:number;

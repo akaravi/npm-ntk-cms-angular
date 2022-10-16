@@ -1,10 +1,12 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { SmsLogOutBoxDetailLockModel } from './smsLogOutBoxDetailLockModel';
+import { SmsLogApiPathModel } from './smsLogApiPathModel';
 import { SmsLogOutBoxModel } from './smsLogOutBoxModel';
 
 export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   recordDetailStatus: number;
   linkOutBoxId: string;
+  linkApiId: string;
+  linkApiNumberId: string;
   receiverNumber: string;
   credit: number;
   giveBackCredit: number;
@@ -16,11 +18,12 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   getApiOnDeliveryInfo: string;
   userDelete?: boolean;
   adminuserDelete?: boolean;
-  apiNumber: string;
+
+
   // tslint:disable-next-line: variable-name
   virtual_OutBox: SmsLogOutBoxModel;
   outBox: SmsLogOutBoxModel;
-  outBoxDetailLocks: SmsLogOutBoxDetailLockModel;
+  outBoxDetailLocks: SmsLogApiPathModel;
   slaLinkId: string;
   slaChanceCount: number;
 }
