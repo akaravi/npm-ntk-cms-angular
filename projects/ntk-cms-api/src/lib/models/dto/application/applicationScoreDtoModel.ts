@@ -1,5 +1,5 @@
 export class ApplicationScoreDtoModel {
-  linkApiId: number;
+  linkApiPathId: number;
   appMemberId: string;
   scoreComment: string;
   scorePercent: number;

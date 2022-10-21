@@ -6,6 +6,6 @@ export class SmsApiSendResultModel {
   toNumber:string;
   fromNumber:string;
   sendId:string;
-  linkApiId:string;
+  linkApiPathId:string;
   linkApiNumberId:string;
 }
