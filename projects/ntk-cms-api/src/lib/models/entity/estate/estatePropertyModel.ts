@@ -53,7 +53,8 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   /// </summary>
 
   scoreSumPercent: number;
-
+  adsActive:boolean;
+  adsExpireDate:Date;
   viewCount: number;
   // * AboutAgent */
   aboutAgentTel: string;
