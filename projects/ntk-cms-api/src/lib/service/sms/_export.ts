@@ -20,3 +20,4 @@ export * from './smsMainMessageContent.service';
 export * from './smsMainMessageCategory.service';
 export * from './smsLogOutBoxQueue.service';
 export * from './smsLogApiPath.service';
+export * from './smsLogOutBoxTaskScheduler.service';
