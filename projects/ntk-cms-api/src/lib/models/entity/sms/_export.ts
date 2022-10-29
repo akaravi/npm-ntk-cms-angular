@@ -22,3 +22,4 @@ export * from './smsMainMessageCategoryModel';
 export * from './smsMainMessageContentModel';
 export * from './smsLogOutBoxQueueModel';
 export * from './smsLogOutBoxTaskSchedulerModel';
+export * from './smsLogOutBoxScheduleRunInfoModel';

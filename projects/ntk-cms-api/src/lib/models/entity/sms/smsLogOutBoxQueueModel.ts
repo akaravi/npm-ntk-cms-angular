@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { SmsLogOutBoxScheduleRunInfoModel } from './smsLogOutBoxScheduleRunInfoModel';
 export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   message: string;
   isFlash: boolean;
@@ -20,4 +21,5 @@ export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   queueCompleted:boolean;
   queueCompleteDate:Date;
   queueLockerMicroservice:string;
+  scheduleRunInfos:SmsLogOutBoxScheduleRunInfoModel[];
 }

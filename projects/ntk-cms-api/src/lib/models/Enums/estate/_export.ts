@@ -1,3 +1,4 @@
-export * from './enumEstateUserType';
+export * from './estateUserTypeEnum';
+export * from './activityStatusEnum';
 
 

@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { SmsLogOutBoxScheduleRunInfoModel } from './smsLogOutBoxScheduleRunInfoModel';
 export class SmsLogOutBoxTaskSchedulerModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkFromNumber: string;
@@ -11,6 +12,11 @@ export class SmsLogOutBoxTaskSchedulerModel extends BaseModuleEntity<string> {
   scheduleSendStart:Date;
   scheduleSendExpire:Date;
   scheduleSendAllowNextRun: Date;
+  scheduleLockerId:string;
+  scheduleLockerExpire?:Date;
+  ScheduleLockedRun?:Date;
   scheduleCron: string;
-
+  scheduleCountRun:number;
+  scheduleLockedRunIsSuccess:boolean;
+  scheduleRunInfos:SmsLogOutBoxScheduleRunInfoModel[];
 }
