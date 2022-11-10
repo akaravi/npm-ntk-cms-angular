@@ -36,4 +36,5 @@ export * from './enumSendSmsStatusType';
 export * from './enumFormSubmitedStatus';
 export * from './enumManageUserAccessDataTypes';
 export * from './enumSiteStatus';
+export * from './errorTypeEnum';
 
