@@ -1,7 +1,5 @@
 export * from './enumApiReceiveMethod';
 export * from './enumDayOfWeek';
-
-
 export * from './enumClauseType';
 export * from './enumDeviceType';
 export * from './enumActionGoStep';

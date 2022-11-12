@@ -12,30 +12,8 @@ export class EstateEnumService extends ApiServerBase {
     return 'EstateEnum';
   }
 
-  ServiceEnumInputDataType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumInputDataType', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-   ServiceEnumUiPropertyDesign(): Observable<ErrorExceptionResult<EnumInfoModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUiPropertyDesign', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+ 
+ 
     ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumEstateUserType', {
@@ -48,5 +26,16 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
-
+  ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstatePropertyExpertPriceTypeEnum', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }
