@@ -1,4 +1,4 @@
-import { EnumManageUserAccessUserTypes } from '../../enums/enumManageUserAccessUserTypes';
+import { EnumManageUserAccessUserTypes } from '../../enums/base/enumManageUserAccessUserTypes';
 import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
 import { BaseEntity } from '../base/baseEntity';

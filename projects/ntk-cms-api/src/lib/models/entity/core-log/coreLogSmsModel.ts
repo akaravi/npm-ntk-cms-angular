@@ -1,4 +1,4 @@
-import { EnumSendSmsStatusType } from '../../enums/enumSendSmsStatusType';
+import { EnumSendSmsStatusType } from '../../enums/base/enumSendSmsStatusType';
 import { BaseEntity } from '../base/baseEntity';
 
 

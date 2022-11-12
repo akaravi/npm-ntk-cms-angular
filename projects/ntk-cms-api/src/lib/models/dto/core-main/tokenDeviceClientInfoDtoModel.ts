@@ -1,5 +1,5 @@
-import { EnumDeviceType } from '../../enums/enumDeviceType';
-import { EnumOperatingSystemType } from '../../enums/enumOperatingSystemType';
+import { EnumDeviceType } from '../../enums/base/enumDeviceType';
+import { EnumOperatingSystemType } from '../../enums/base/enumOperatingSystemType';
 
 export class TokenDeviceClientInfoDtoModel {
   securityKey: string;

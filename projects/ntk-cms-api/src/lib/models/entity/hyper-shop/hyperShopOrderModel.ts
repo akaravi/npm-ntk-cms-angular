@@ -1,6 +1,6 @@
 
-import { EnumHyperShopOrderType } from '../../enums/enumHyperShopOrderType';
-import { EnumHyperShopPaymentType } from '../../enums/enumHyperShopPaymentType';
+import { EnumHyperShopOrderType } from '../../enums/base/enumHyperShopOrderType';
+import { EnumHyperShopPaymentType } from '../../enums/base/enumHyperShopPaymentType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { HyperShopOrderContentModel } from './hyperShopOrderContentModel';
 

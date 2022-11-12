@@ -1,4 +1,4 @@
-import { EnumHyperShopConnectionType } from '../../enums/enumHyperShopConnectionType';
+import { EnumHyperShopConnectionType } from '../../enums/base/enumHyperShopConnectionType';
 import { BaseModuleConfigAdminMainValuesModel } from '../base-config/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';

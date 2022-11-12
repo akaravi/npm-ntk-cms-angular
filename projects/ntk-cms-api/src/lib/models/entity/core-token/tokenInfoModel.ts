@@ -1,5 +1,5 @@
-import { EnumManageUserAccessAreaTypes } from '../../enums/enumManageUserAccessAreaTypes';
-import { EnumManageUserAccessUserTypes } from '../../enums/enumManageUserAccessUserTypes';
+import { EnumManageUserAccessAreaTypes } from '../../enums/base/enumManageUserAccessAreaTypes';
+import { EnumManageUserAccessUserTypes } from '../../enums/base/enumManageUserAccessUserTypes';
 export class TokenInfoModel {
 
   token: string;

@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstateAccountAgencyModel extends BaseModuleEntity<string> {

@@ -1,5 +1,5 @@
 import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
-import { EnumRecordStatus } from '../../enums/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';

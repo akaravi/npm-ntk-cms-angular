@@ -7,7 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-import { EnumRecordStatus } from '../../models/enums/enumRecordStatus';
+import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 
 

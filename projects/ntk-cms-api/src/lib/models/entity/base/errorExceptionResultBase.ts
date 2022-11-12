@@ -1,4 +1,4 @@
-import { ErrorTypeEnum } from "../../enums/errorTypeEnum";
+import { ErrorTypeEnum } from "../../enums/base/errorTypeEnum";
 
 export class ErrorExceptionResultBase {
   status = 0;

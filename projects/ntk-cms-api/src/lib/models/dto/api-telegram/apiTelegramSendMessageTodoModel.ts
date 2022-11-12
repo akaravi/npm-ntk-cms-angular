@@ -1,6 +1,6 @@
 import { EnumParseMode } from "../../enums/api-telegram/enumParseMode";
-import { EnumDayOfWeek } from "../../enums/enumDayOfWeek";
-import { EnumScheduleCronType } from "../../enums/enumScheduleCronType";
+import { EnumDayOfWeek } from "../../enums/base/enumDayOfWeek";
+import { EnumScheduleCronType } from "../../enums/base/enumScheduleCronType";
 
 export class ApiTelegramSendMessageTodoModel  {
   scheduleCronType: EnumScheduleCronType

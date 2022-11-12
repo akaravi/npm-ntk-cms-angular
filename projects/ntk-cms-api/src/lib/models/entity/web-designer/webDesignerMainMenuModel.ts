@@ -1,4 +1,4 @@
-import { EnumMenuPlaceType } from '../../enums/enumMenuPlaceType';
+import { EnumMenuPlaceType } from '../../enums/base/enumMenuPlaceType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class WebDesignerMainMenuModel  extends BaseModuleEntity<string>{

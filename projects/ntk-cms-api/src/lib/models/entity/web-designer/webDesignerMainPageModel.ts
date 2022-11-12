@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { EnumPageAbilityType } from '../../enums/enumPageAbilityType';
+import { EnumPageAbilityType } from '../../enums/base/enumPageAbilityType';
 
 export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
     linkFavFileId?: number;

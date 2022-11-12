@@ -1,4 +1,4 @@
-import { EnumFormSubmitedStatus } from '../../enums/enumFormSubmitedStatus';
+import { EnumFormSubmitedStatus } from '../../enums/base/enumFormSubmitedStatus';
 
 export class FormInfoModel {
   formTitle = '';

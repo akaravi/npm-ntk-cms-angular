@@ -7,7 +7,7 @@ export * from './lib/ntk-cms-api.module';
 // base
 export * from './lib/reducers/_export';
 export * from './lib/common/_export';
-export * from './lib/models/enums/_export';
+export * from './lib/models/enums/base/_export';
 export * from './lib/models/entity/base/_export';
 // base
 // core Serve
@@ -22,6 +22,7 @@ export * from './lib/models/entity/core-log/_export';
 export * from './lib/models/entity/core-token/_export';
 
 export * from './lib/models/dto/core-main/_export';
+export * from './lib/models/enums/core/_export';
 // core Serve
 // core Module Serve
 export * from './lib/service/core-module-main/_export';
@@ -81,6 +82,7 @@ export * from './lib/models/dto/bankPayment/_export';
 export * from './lib/models/entity/sms/_export';
 export * from './lib/service/sms/_export';
 export * from './lib/models/dto/sms/_export';
+export * from './lib/models/enums/sms/_export';
 // sms
 
 // application

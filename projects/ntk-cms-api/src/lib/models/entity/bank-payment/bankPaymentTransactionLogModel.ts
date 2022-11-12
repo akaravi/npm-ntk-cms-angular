@@ -1,4 +1,4 @@
-import { EnumTransactionRecordStatus } from '../../enums/enumTransactionRecordStatus';
+import { EnumTransactionRecordStatus } from '../../enums/base/enumTransactionRecordStatus';
 import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 

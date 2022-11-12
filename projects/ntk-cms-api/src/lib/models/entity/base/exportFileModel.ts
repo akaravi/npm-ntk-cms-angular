@@ -1,5 +1,5 @@
-import { EnumExportFileType } from '../../enums/enumExportFileType';
-import { EnumExportReceiveMethod } from '../../enums/enumExportReceiveMethod';
+import { EnumExportFileType } from '../../enums/base/enumExportFileType';
+import { EnumExportReceiveMethod } from '../../enums/base/enumExportReceiveMethod';
 
 export class ExportFileModel {
   fileType: EnumExportFileType;

@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
 
 export class BaseEntity<TKey> {
   id: TKey;

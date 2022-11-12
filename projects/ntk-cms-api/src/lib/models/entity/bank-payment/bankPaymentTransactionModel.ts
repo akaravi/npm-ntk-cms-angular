@@ -1,5 +1,5 @@
-import { EnumTransactionBankStatus } from '../../enums/enumTransactionBankStatus';
-import { EnumTransactionRecordStatus } from '../../enums/enumTransactionRecordStatus';
+import { EnumTransactionBankStatus } from '../../enums/base/enumTransactionBankStatus';
+import { EnumTransactionRecordStatus } from '../../enums/base/enumTransactionRecordStatus';
 import { BaseEntity } from '../base/baseEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';

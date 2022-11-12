@@ -1,4 +1,4 @@
-import { EnumDeviceStatus } from '../../enums/enumDeviceStatus';
+import { EnumDeviceStatus } from '../../enums/base/enumDeviceStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 

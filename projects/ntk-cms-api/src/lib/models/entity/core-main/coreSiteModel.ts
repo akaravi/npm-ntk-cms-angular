@@ -4,8 +4,8 @@ import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreModuleSiteModel } from './coreModuleSiteModel';
 import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
 import { CoreDeviceModel } from './coreDeviceModel';
-import { EnumSiteStatus } from '../../enums/enumSiteStatus';
-import { EnumLanguage } from '../../enums/enumLanguage';
+import { EnumSiteStatus } from '../../enums/base/enumSiteStatus';
+import { EnumLanguage } from '../../enums/base/enumLanguage';
 import { Data } from '@angular/router';
 
 export class CoreSiteModel extends BaseEntity<number> {

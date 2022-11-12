@@ -1,4 +1,4 @@
-import { EnumLocationType } from '../../enums/enumLocationType';
+import { EnumLocationType } from '../../enums/base/enumLocationType';
 import { BaseEntity } from '../base/baseEntity';
 
 export class CoreLocationModel extends BaseEntity<number> {

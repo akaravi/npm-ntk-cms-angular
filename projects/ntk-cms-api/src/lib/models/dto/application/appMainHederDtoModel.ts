@@ -1,4 +1,4 @@
-import { EnumDeviceStatus } from '../../enums/enumDeviceStatus';
+import { EnumDeviceStatus } from '../../enums/base/enumDeviceStatus';
 
 export class AppMainHederDtoModel {
     deviceId: string;

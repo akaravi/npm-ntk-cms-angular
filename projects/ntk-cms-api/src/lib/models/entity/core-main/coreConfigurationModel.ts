@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
 import { BaseModuleConfigAdminMainValuesModel } from '../base-config/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
