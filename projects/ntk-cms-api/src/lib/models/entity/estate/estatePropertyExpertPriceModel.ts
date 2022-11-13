@@ -2,29 +2,29 @@ import { EstatePropertyExpertPriceTypeEnum } from '../../enums/estate/estateProp
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 export class EstatePropertyExpertPriceModel extends BaseModuleEntity<string> {
-  ExpertPriceType: EstatePropertyExpertPriceTypeEnum;
-  Description: string;
-  LinkLocationId: number;
-  LinkLocationCountryId: number;
-  LinkPropertyTypeUsageId: string;
-  LinkPropertyTypeLanduseId: string;
-  LinkContractTypeId: string;
-  LinkCoreCurrencyId: number;
-  CountRow: number;
+  expertPriceType: EstatePropertyExpertPriceTypeEnum;
+  description: string;
+  linkLocationId: number;
+  linkLocationCountryId: number;
+  linkPropertyTypeUsageId: string;
+  linkPropertyTypeLanduseId: string;
+  linkContractTypeId: string;
+  linkCoreCurrencyId: number;
+  countRow: number;
 
-  SalePriceMin: number;
-  SalePriceMax: number;
-  SalePriceAverage: number;
+  salePriceMin: number;
+  salePriceMax: number;
+  salePriceAverage: number;
 
-  RentPriceMin: number;
-  RentPriceMax: number;
-  RentPriceAverage: number;
+  rentPriceMin: number;
+  rentPriceMax: number;
+  rentPriceAverage: number;
 
-  DepositPriceMin: number;
-  DepositPriceMax: number;
-  DepositPriceAverage: number;
+  depositPriceMin: number;
+  depositPriceMax: number;
+  depositPriceAverage: number;
 
-  PeriodPriceMin: number;
-  PeriodPriceMax: number;
-  PeriodPriceAverage: number;
+  periodPriceMin: number;
+  periodPriceMax: number;
+  periodPriceAverage: number;
 }
