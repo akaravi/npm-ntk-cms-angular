@@ -18,6 +18,7 @@ export * from './coreSiteUser.service';
 export * from './coreUser.service';
 export * from './coreUserGroup.service';
 export * from './coreDevice.service';
+export * from './coreUserSupportAccess.service';
 /** */
 export * from './coreModuleSaleSerial.service';
 export * from './coreModuleSaleItem.service';

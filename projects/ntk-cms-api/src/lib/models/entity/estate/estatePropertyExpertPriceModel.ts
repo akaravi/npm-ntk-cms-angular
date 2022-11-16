@@ -10,6 +10,7 @@ export class EstatePropertyExpertPriceModel extends BaseModuleEntity<string> {
   linkPropertyTypeLanduseId: string;
   linkContractTypeId: string;
   linkCoreCurrencyId: number;
+  createdYaer?:number;
   countRow: number;
 
   salePriceMin: number;

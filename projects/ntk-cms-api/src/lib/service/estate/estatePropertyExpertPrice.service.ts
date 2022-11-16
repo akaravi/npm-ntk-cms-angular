@@ -5,6 +5,9 @@ import { EstatePriceInquiryDtoModel } from '../../models/dto/estate/estatePriceI
 import { map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+
+
 
 @Injectable()
 export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePropertyExpertPriceModel, string>  {
@@ -27,7 +30,8 @@ export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePro
         }),
       );
   }
-  ServicePriceInquiryCalculate(model: EstatePriceInquiryDtoModel): Observable<ErrorExceptionResult<EstatePropertyExpertPriceModel>> {
+
+  ServicePriceInquiryCalculate(model: EstatePriceInquiryDtoModel): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new EstatePriceInquiryDtoModel();
     }
@@ -39,7 +43,7 @@ export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePro
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }

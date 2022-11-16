@@ -5,6 +5,7 @@ export class EstateContractTypeModel extends BaseModuleEntity<string> {
   titleML: string;
   titleResourceLanguage: string;
   contentCount: number;
+  allowPriceInquiryCalculate:boolean;
   titleSoldIt: string;
   titleSoldItML: string;
   titleSoldItResourceLanguage: string;

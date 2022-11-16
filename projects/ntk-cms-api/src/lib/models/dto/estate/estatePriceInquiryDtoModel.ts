@@ -1,8 +1,9 @@
 
 export class EstatePriceInquiryDtoModel{
-     LinkLocationId :number;
-     LinkPropertyTypeUsageId :string;
-     LinkPropertyTypeLanduseId :string;
-     LinkContractTypeId :string;
-     LinkCoreCurrencyId ?:number;
+     createdYaer?:number;
+     linkLocationId :number;
+     linkPropertyTypeUsageId :string;
+     linkPropertyTypeLanduseId :string;
+     linkContractTypeId :string;
+     linkCoreCurrencyId ?:number;
 }
