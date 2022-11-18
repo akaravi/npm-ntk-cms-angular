@@ -7,6 +7,7 @@ export * from './coreGuide.service';
 export * from './CoreCurrency.service';
 export * from './coreLocation.service';
 export * from './coreModule.service';
+export * from './coreModuleEntity.service';
 export * from './coreModuleProcess.service';
 export * from './coreModuleProcessCustomize.service';
 export * from './coreModuleSite.service';

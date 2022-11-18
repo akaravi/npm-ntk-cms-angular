@@ -5,6 +5,7 @@ export * from './coreDeviceModel';
 export * from './coreGuideModel';
 export * from './coreLocationModel';
 export * from './coreModuleModel';
+export * from './coreModuleEntityModel';
 export * from './coreModuleProcessCustomizeModel';
 export * from './coreModuleProcessModel';
 export * from './coreModuleSiteModel';

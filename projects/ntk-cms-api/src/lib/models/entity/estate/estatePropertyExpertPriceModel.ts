@@ -6,6 +6,10 @@ export class EstatePropertyExpertPriceModel extends BaseModuleEntity<string> {
   description: string;
   linkLocationId: number;
   linkLocationCountryId: number;
+  linkLocationCountryIdTitle: string;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
+  
   linkPropertyTypeUsageId: string;
   linkPropertyTypeLanduseId: string;
   linkContractTypeId: string;
