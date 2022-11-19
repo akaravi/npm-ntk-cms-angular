@@ -14,8 +14,21 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
   getModuleControllerUrl(): string {
     return 'EstateProperty';
   }
+  ServiceActionSendSmsToCustomerOrder(Id: string): Observable<ErrorExceptionResultBase> {
 
-  ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSmsToCustomerOrder/' + Id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
+  ServiceFavoriteAdd(Id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
@@ -30,7 +43,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       );
   }
 
-  ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
+  ServiceFavoriteRemove(Id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
