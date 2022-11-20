@@ -12,26 +12,9 @@ export class CoreSiteUserService extends ApiCmsServerBase<CoreSiteUserModel, num
     return 'CoreSiteUser';
   }
 
-  ServiceGetAllSiteUser(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
-    if (model == null) {
-      model = new FilterModel();
-    }
-
+  ServiceGetAllSiteCurrentUser(): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSiteUser', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceGetCurrentSiteUsers(): Observable<ErrorExceptionResult<CoreSiteUserModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrentSiteUsers', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSiteCurrentUser', {
         headers: this.getHeaders(),
       })
       .pipe(
