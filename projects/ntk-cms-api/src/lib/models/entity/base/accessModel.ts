@@ -9,7 +9,8 @@ export class AccessModel {
   accessEditRow = false;
   accessAddRow = false;
   accessExportFile=false;
-
+  accessRowInPanelDemo = false;
+  accessRowWatchInSharingCategory = false;
   accessWatchRowOtherSiteId = false;
   accessWatchRowOtherCreatedBy = false;
   accessCountRowOtherSiteId = false;
