@@ -8,8 +8,8 @@ export class AccessModel {
   accessCountRow = false;
   accessEditRow = false;
   accessAddRow = false;
-  accessRowInPanelDemo = false;
-  accessRowWatchInSharingCategory = false;
+  accessExportFile=false;
+
   accessWatchRowOtherSiteId = false;
   accessWatchRowOtherCreatedBy = false;
   accessCountRowOtherSiteId = false;

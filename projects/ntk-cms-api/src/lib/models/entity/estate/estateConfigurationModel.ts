@@ -19,7 +19,10 @@ export class EstateModuleConfigSiteAccessValuesModel extends BaseModuleConfigSit
 /// </summary>
 export class EstateModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
 {
-
+    aboutAgentMobiles:string;
+    aboutAgentTels:string;
+    aboutCustomerMobiles:string;
+    aboutCustomerTels:string;
 
 }
 

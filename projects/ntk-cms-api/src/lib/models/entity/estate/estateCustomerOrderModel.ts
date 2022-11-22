@@ -33,5 +33,6 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   currencySymbol: string;
   contactMobiles: string;
   contactMobileList: string[];
+  lastResultRowCount?:number;
 }
 

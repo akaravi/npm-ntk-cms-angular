@@ -10,6 +10,7 @@ export class CoreUserSupportAccessModel extends BaseEntity<number> {
   accessCountRow = false;
   accessEditRow = false;
   accessAddRow = false;
+  accessExportFile = false;
   accessRowInPanelDemo = false;
   accessRowWatchInSharingCategory = false;
   accessWatchRowOtherSiteId = false;
