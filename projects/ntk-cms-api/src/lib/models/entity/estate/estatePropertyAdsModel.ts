@@ -1,5 +1,4 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-
 export class EstatePropertyAdsModel extends BaseModuleEntity<string> {
   title: string;
   description: string;

@@ -1,6 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
+//@@tag-Version-2211261
 export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
@@ -33,6 +34,8 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   currencySymbol: string;
   contactMobiles: string;
   contactMobileList: string[];
-  lastResultRowCount?:number;
+  lastResultRowCount?: number;
+  /**Action */
+  actionSendSmsToCustomer: boolean;
 }
 

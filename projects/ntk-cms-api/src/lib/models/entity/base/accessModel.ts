@@ -1,8 +1,10 @@
 import { DataFieldInfoModel } from './fieldInfo/dataFieldInfoModel';
-
+//@@tag-Version-2201011
 export class AccessModel {
   moduleName: string;
   moduleEntityName: string;
+  versionModel:string;
+  versionService:string;
   accessDeleteRow = false;
   accessWatchRow = false;
   accessCountRow = false;
@@ -20,3 +22,4 @@ export class AccessModel {
   accessDeleteRowOtherCreatedBy = false;
   fieldsInfo: DataFieldInfoModel[];
 }
+

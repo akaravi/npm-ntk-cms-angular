@@ -1,5 +1,5 @@
 import { ErrorTypeEnum } from "../../enums/base/errorTypeEnum";
-
+//@@tag-Version-2201011
 export class ErrorExceptionResultBase {
   status = 0;
   isSuccess = true;

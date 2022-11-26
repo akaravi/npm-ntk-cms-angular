@@ -1,5 +1,4 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { EstatePropertyDetailModel } from './estatePropertyDetailModel';
 import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
 
 export class EstatePropertyTypeUsageModel extends BaseModuleEntity<string> {

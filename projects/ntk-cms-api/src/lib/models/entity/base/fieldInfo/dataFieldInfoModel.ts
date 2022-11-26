@@ -14,5 +14,6 @@ export class DataFieldInfoModel {
   accessWatchField = false;
   accessEditField = false;
   accessAddField = false;
+  accessExportField = false;
   fieldsInfo: FieldInfoModel[];
 }

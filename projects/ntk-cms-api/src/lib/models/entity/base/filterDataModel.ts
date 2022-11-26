@@ -1,8 +1,6 @@
 import { EnumClauseType } from '../../enums/base/enumClauseType';
 import { EnumFilterDataModelSearchTypes } from '../../enums/base/enumFilterDataModelSearchTypes';
-
-
-
+//@@tag-Version-2201011
 export class FilterDataModel {
   constructor() {
     this.filters = new Array<FilterDataModel>();

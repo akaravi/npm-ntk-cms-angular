@@ -1,5 +1,5 @@
 import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
-
+//@@tag-Version-2201011
 export class BaseEntity<TKey> {
   id: TKey;
   createdDate: Date;

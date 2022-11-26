@@ -1,8 +1,7 @@
 import { FilterDataModel } from './filterDataModel';
 import { ExportFileModel } from './exportFileModel';
 import { EnumSortType } from '../../enums/base/enumSortType';
-
-
+//@@tag-Version-2201011
 export class FilterModel {
   constructor() {
     this.filters = new Array<FilterDataModel>();
