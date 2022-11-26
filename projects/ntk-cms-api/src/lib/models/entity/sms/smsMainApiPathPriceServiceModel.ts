@@ -2,7 +2,7 @@ import { SmsMessageTypeEnum } from '../../enums/sms/smsMessageType.enum';
 import { SmsOutBoxTypeEnum } from '../../enums/sms/smsOutBoxType.enum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
-
+//@@tag-Version-2201011
 export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkCoreUserId?: number;

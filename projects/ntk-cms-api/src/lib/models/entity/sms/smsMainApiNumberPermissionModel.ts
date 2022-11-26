@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiNumberModel } from './smsMainApiNumberModel';
-
+//@@tag-Version-2201011
 export class SmsMainApiNumberPermissionModel extends BaseModuleEntity<string> {
   linkApiNumberId: string;
   linkCoreUserId?: number;

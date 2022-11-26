@@ -1,5 +1,5 @@
 import { EnumInputDataType } from '../../enums/core/enumInputDataType';
-
+//@@tag-Version-2201011
 export class EstatePropertyDetailModel {
   id: string;
   title: string;

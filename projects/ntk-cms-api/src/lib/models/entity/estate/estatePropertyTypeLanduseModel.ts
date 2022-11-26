@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstatePropertyDetailModel } from './estatePropertyDetailModel';
 import { EstatePropertyTypeModel } from './estatePropertyTypeModel';
-
+//@@tag-Version-2201011
 export class EstatePropertyTypeLanduseModel extends BaseModuleEntity<string> {
   title: string;
   titleML: string;

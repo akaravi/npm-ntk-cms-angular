@@ -1,6 +1,6 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-
+//@@tag-Version-2201011
 export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;

@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberModel';
-
+//@@tag-Version-2201011
 export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   numberChar: string;
   firstSubmit: Date;

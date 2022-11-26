@@ -1,5 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsLogOutBoxScheduleRunInfoModel } from './smsLogOutBoxScheduleRunInfoModel';
+//@@tag-Version-2201011
 export class SmsLogOutBoxTaskSchedulerModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkFromNumber: string;

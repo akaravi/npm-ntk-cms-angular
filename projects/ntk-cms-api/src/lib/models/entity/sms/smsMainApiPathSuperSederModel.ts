@@ -1,7 +1,7 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
-
+//@@tag-Version-2201011
 export class SmsMainApiPathSuperSederModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkApiPathSuperSederId: string;

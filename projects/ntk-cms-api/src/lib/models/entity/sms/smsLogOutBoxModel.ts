@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsLogOutBoxDetailBulkModel } from './smsLogOutBoxDetailBulkModel';
 import { SmsLogOutBoxDetailModel } from './smsLogOutBoxDetailModel';
-
+//@@tag-Version-2201011
 export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkApiNumberId: string;

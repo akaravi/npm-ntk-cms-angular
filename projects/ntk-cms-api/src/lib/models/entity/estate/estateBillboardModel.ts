@@ -1,4 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+//@@tag-Version-2201011
 export class EstateBillboardModel extends BaseModuleEntity<string> {
   title: string;
   description: string;

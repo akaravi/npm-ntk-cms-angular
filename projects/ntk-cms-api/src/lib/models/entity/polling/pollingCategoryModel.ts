@@ -1,7 +1,7 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { PollingContentModel } from './pollingContentModel';
-
+//@@tag-Version-2201011
 export class PollingCategoryModel extends BaseModuleEntity<number>  {
   title: string;
   titleResourceLanguage: string;

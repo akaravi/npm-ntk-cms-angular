@@ -4,7 +4,7 @@ import { NewsContentSimilarModel } from './newsContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsCommentModel } from './newsCommentModel';
 import { NewsContentCategoryModel } from './newsContentCategoryModel';
-
+//@@tag-Version-2201011
 export class NewsContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
   title: string;

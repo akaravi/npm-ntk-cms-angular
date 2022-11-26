@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractTypeModel } from './estateContractTypeModel';
-
+//@@tag-Version-2201011
 export class EstateContractModel extends BaseModuleEntity<string> {
   description: string;
   linkEstateContractTypeId: string;

@@ -1,7 +1,7 @@
 import { ActivityStatusEnum } from '../../enums/estate/activityStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateActivityTypeModel } from './estateActivityTypeModel';
-
+//@@tag-Version-2201011
 export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   title: string;
   linkPropertyId: string;

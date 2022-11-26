@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsContentModel } from './newsContentModel';
-
+//@@tag-Version-2201011
 export class NewsCommentModel extends BaseModuleEntity<number> {
   linkContentId: number;
   linkParentId: number;

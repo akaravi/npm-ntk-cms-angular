@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { NewsContentCategoryModel } from './newsContentCategoryModel';
 import { NewsContentModel } from './newsContentModel';
-
+//@@tag-Version-2201011
 export class NewsCategoryModel extends BaseModuleEntity<number> {
   title: string;
   titleResourceLanguage: string;

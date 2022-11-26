@@ -1,8 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainMessageCategoryModel } from './smsMainMessageCategoryModel';
-
-
-
+//@@tag-Version-2201011
 export class SmsMainMessageContentModel extends BaseModuleEntity<string> {
 
   title: string;

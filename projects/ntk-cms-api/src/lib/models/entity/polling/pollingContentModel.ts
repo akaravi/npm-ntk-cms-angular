@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { PollingCategoryModel } from './pollingCategoryModel';
 import { PollingOptionModel } from './pollingOptionModel';
-
+//@@tag-Version-2201011
 export class PollingContentModel extends BaseModuleEntity<number> {
   expireDate?: Date;
   title: string;

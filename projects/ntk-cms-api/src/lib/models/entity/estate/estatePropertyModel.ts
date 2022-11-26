@@ -6,8 +6,7 @@ import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
 import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
 import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
-
-
+//@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;
   caseCode: string;

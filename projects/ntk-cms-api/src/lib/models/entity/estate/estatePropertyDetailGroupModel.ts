@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstatePropertyDetailModel } from './estatePropertyDetailModel';
-
+//@@tag-Version-2201011
 export class EstatePropertyDetailGroupModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
