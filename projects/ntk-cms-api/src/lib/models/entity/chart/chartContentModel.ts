@@ -5,7 +5,7 @@ import { ChartContentSimilarModel } from './chartContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ChartCommentModel } from './chartCommentModel';
 import { ChartContentCategoryModel } from './chartContentCategoryModel';
-
+//@@tag-Version-2201011
 export class ChartContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
   title: string;

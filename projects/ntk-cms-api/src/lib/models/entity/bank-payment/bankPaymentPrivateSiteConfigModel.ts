@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentPublicConfigModel } from './bankPaymentPublicConfigModel';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
-
+//@@tag-Version-2201011
 export class BankPaymentPrivateSiteConfigModel extends BaseEntity<number> {
   title: string;
   currencyUnitRatioByShop: number;

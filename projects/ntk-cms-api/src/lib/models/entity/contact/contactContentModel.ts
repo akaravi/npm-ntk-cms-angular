@@ -1,7 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ContactCategoryModel } from './contactCategoryModel';
-
-
+//@@tag-Version-2201011
 export class ContactContentModel extends BaseModuleEntity<string> {
 
   title: string;

@@ -1,8 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateSponsorModel } from './donateSponsorModel';
-import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
-
+//@@tag-Version-2201011
 export class DonateTransactionModel extends BaseModuleEntity<number> {
   linkCmsUserId?: number;
   linkSponsorId?: number;

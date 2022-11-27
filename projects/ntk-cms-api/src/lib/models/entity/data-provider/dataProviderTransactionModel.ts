@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-
+//@@tag-Version-2201011
 export class DataProviderTransactionModel extends BaseModuleEntity<number> {
   description: string;
   linkClientId: number;

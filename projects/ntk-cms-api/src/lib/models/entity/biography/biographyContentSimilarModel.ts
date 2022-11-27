@@ -1,5 +1,4 @@
-import { BaseModuleEntity } from '../base/baseModuleEntity';
-
+//@@tag-Version-2201011
 export class BiographyContentSimilarModel {
   linkSourceId: number;
   linkDestinationId: number;

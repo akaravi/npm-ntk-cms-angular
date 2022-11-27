@@ -1,5 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
-
+//@@tag-Version-2201011
 export class CoreUserSupportAccessModel extends BaseEntity<number> {
   linkSiteId:number;
   linkUserId:number;

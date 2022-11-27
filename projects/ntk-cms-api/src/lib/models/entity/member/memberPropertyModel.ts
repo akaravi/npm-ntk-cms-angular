@@ -3,7 +3,7 @@ import { MemberHistoryModel } from './memberHistoryModel';
 import { MemberPropertyDetailValueModel } from './memberPropertyDetailValueModel';
 import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
 import { MemberUserModel } from './memberUserModel';
-
+//@@tag-Version-2201011
 export class MemberPropertyModel extends BaseModuleEntity<number> {
   linkMemberId: number;
   title: string;

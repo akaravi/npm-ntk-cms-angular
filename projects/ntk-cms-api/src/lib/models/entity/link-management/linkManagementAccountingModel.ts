@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingDetailModel } from './linkManagementAccountingDetailModel';
 import { LinkManagementMemberModel } from './linkManagementMemberModel';
-
+//@@tag-Version-2201011
 export class LinkManagementAccountingModel extends BaseModuleEntity<number> {
   beginDate: Date;
   endDate?: Date;

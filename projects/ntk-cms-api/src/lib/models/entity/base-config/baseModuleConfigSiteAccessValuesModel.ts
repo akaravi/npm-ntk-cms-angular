@@ -1,4 +1,5 @@
-﻿export class BaseModuleConfigSiteAccessValuesModel {
+﻿//@@tag-Version-2201011
+export class BaseModuleConfigSiteAccessValuesModel {
   mainDataContentRowCount: number;
 
 }

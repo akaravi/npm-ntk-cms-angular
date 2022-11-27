@@ -2,6 +2,7 @@ import { EnumManageUserAccessUserTypes } from '../../enums/base/enumManageUserAc
 import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
 import { BaseEntity } from '../base/baseEntity';
+//@@tag-Version-2201011
 export class CoreUserGroupModel  extends BaseEntity<number>  {
     titleML: string;
     title: string;

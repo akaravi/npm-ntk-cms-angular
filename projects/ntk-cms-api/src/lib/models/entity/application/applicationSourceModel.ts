@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationLayoutModel } from './applicationLayoutModel';
 import { ApplicationSourceSiteCategoryModel } from './applicationSourceSiteCategoryModel';
-
+//@@tag-Version-2201011
 export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   title: string;
   titleML: string;

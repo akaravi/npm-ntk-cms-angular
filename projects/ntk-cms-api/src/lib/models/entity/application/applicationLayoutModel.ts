@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';
 import { ApplicationSourceModel } from './applicationSourceModel';
-
+//@@tag-Version-2201011
 export class ApplicationLayoutModel extends BaseModuleEntity<number>  {
   title: string;
   linkMainImageId ?: number;

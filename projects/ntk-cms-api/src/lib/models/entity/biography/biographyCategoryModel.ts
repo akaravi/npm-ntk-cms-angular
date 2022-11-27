@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyContentCategoryModel } from './biographyContentCategoryModel';
 import { BiographyContentModel } from './biographyContentModel';
-
+//@@tag-Version-2201011
 export class BiographyCategoryModel extends BaseModuleEntity<number> {
   title: string;
   titleResourceLanguage: string;

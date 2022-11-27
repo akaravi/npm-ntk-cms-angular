@@ -1,9 +1,6 @@
-import { BaseEntity } from '../base/baseEntity';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreModuleSiteAccountingDocumentDetailModel } from './coreModuleSiteAccountingDocumentDetailModel';
-import { CoreModuleTagCategoryModel } from './coreModuleTagCategoryModel';
-
-
+//@@tag-Version-2201011
 export class CoreModuleSiteAccountingDocumentModel extends BaseModuleEntity<number> {
   actionDate?: Date;
   number: string;

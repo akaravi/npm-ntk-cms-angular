@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetCategoryModel } from './linkManagementTargetCategoryModel';
-
+//@@tag-Version-2201011
 export class LinkManagementBillboardTargetCategoryModel extends BaseModuleEntity<number> {
   linkTargetCategoryId: number;
   // tslint:disable-next-line: variable-name

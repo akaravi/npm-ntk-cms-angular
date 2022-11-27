@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateSponsorModel } from './donateSponsorModel';
 import { DonateTargetModel } from './donateTargetModel';
-
+//@@tag-Version-2201011
 export class DonateTargetCategoryModel extends BaseModuleEntity<number> {
   title: string;
   linkMainImageId?: number;

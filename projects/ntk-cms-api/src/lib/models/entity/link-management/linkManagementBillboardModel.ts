@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardPatternModel } from './linkManagementBillboardPatternModel';
 import { LinkManagementBillboardTargetCategoryModel } from './linkManagementBillboardTargetCategoryModel';
 import { LinkManagementMemberModel } from './linkManagementMemberModel';
-
+//@@tag-Version-2201011
 export class LinkManagementBillboardModel extends BaseModuleEntity<number> {
   title: string;
   bgColor: string;

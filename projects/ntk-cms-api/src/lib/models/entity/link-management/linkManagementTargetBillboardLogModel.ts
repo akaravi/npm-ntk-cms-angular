@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
-
+//@@tag-Version-2201011
 export class LinkManagementTargetBillboardLogModel extends BaseModuleEntity<string> {
   clickPrice: number;
   viewPrice: number;

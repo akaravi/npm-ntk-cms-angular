@@ -1,5 +1,5 @@
 import { FieldInfoModel } from './fieldInfoModel';
-
+//@@tag-Version-2201011
 export class DataFieldInfoModel {
   fieldName: string;
   fieldType: string;

@@ -1,7 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DataProviderPlanModel } from './dataProviderPlanModel';
-
-
+//@@tag-Version-2201011
 export class DataProviderPlanCategoryModel extends BaseModuleEntity<number> {
   title: string;
   linkMainImageId?: number;

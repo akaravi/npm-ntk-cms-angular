@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BlogContentModel } from './blogContentModel';
-
+//@@tag-Version-2201011
 export class BlogContentOtherInfoModel extends BaseModuleEntity<number> {
   title: string;
   htmlBody: string;

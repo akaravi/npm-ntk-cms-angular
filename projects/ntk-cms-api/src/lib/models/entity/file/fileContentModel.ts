@@ -1,6 +1,6 @@
 import { FileCategoryModel } from './fileCategoryModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-
+//@@tag-Version-2201011
 export class FileContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
   fileName: string;

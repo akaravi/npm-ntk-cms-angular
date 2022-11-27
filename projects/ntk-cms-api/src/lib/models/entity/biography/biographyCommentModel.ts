@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyContentModel } from './biographyContentModel';
-
+//@@tag-Version-2201011
 export class BiographyCommentModel extends BaseModuleEntity<number> {
   linkContentId: number;
   linkParentId: number;

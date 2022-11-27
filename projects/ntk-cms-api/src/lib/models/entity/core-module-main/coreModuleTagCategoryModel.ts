@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreModuleTagModel } from './coreModuleTagModel';
-
+//@@tag-Version-2201011
 export class CoreModuleTagCategoryModel extends BaseModuleEntity<number> {
   title: string;
   titleResourceLanguage: string;

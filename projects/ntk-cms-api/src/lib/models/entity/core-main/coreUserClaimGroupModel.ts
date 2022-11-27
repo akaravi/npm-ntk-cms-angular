@@ -1,7 +1,7 @@
 import { EnumUserClaimGroupActionType } from '../../enums/core/enumUserClaimGroupActionType';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
-
+//@@tag-Version-2201011
 export class CoreUserClaimGroupModel extends BaseEntity<number> {
   title: string;
   titleML: string;

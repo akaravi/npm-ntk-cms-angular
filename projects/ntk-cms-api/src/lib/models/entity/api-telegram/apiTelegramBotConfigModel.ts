@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from "../base/baseModuleEntity";
 import { ApiTelegramLogInputModel } from "./apiTelegramLogInputModel";
 import { ApiTelegramLogOutputModel } from "./apiTelegramLogOutputModel";
-
+//@@tag-Version-2201011
 export class ApiTelegramBotConfigModel extends BaseModuleEntity<number>{
   title: string;
   username: string;

@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimTypeModel } from './coreUserClaimTypeModel';
 import { CoreUserModel } from './coreUserModel';
-
+//@@tag-Version-2201011
 export class CoreUserClaimContentModel extends BaseEntity<number> {
   title: string;
   titleML: string;

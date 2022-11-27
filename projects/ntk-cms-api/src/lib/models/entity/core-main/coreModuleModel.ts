@@ -1,4 +1,5 @@
 import { BaseEntity } from '../base/baseEntity';
+//@@tag-Version-2201011
 export class CoreModuleModel extends BaseEntity<number>{
   title: string;
   titleML: string;

@@ -2,7 +2,7 @@ import { EnumCmsModuleSaleItemType } from '../../enums/core/enumCmsModuleSaleIte
 import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
-
+//@@tag-Version-2201011
 export class CoreModuleSaleItemModel extends BaseEntity<number>  {
   linkModuleSaleHeader: number;
   expireDate: Date;

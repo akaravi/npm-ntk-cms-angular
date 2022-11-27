@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ChartContentCategoryModel } from './chartContentCategoryModel';
 import { ChartContentModel } from './chartContentModel';
-
+//@@tag-Version-2201011
 export class ChartCategoryModel extends BaseModuleEntity<number> {
   title: string;
   titleResourceLanguage: string;

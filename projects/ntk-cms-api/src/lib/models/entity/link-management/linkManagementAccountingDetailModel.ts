@@ -1,7 +1,7 @@
 import { EnumSharingAccountingType } from '../../enums/linkManagement/enumSharingAccountingType';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingModel } from './linkManagementAccountingModel';
-
+//@@tag-Version-2201011
 export class LinkManagementAccountingDetailModel extends BaseModuleEntity<number> {
   linkManagementAccountingId: number;
   // tslint:disable-next-line: variable-name

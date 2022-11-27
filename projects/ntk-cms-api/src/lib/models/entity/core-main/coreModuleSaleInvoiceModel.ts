@@ -3,7 +3,7 @@ import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 import { CoreModuleSaleInvoiceDetailModel } from './coreModuleSaleInvoiceDetailModel';
 import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 import { CoreSiteModel } from './coreSiteModel';
-
+//@@tag-Version-2201011
 export class CoreModuleSaleInvoiceModel extends BaseEntity<number>  {
   linkSiteIdBuyer: number;
   // tslint:disable-next-line: variable-name

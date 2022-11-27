@@ -2,7 +2,7 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreUserGroupModel } from './coreUserGroupModel';
 import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
 import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
-
+//@@tag-Version-2201011
 export class CoreModuleSaleHeaderGroupModel extends BaseEntity<number>  {
   title: string;
   titleML: string;

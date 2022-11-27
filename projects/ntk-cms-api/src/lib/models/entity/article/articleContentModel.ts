@@ -5,7 +5,7 @@ import { ArticleContentSimilarModel } from './articleContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ArticleCommentModel } from './articleCommentModel';
 import { ArticleContentCategoryModel } from './articleContentCategoryModel';
-
+//@@tag-Version-2201011
 export class ArticleContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
   title: string;

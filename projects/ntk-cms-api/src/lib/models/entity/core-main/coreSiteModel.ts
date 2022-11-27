@@ -7,7 +7,7 @@ import { CoreDeviceModel } from './coreDeviceModel';
 import { EnumSiteStatus } from '../../enums/base/enumSiteStatus';
 import { EnumLanguage } from '../../enums/base/enumLanguage';
 import { Data } from '@angular/router';
-
+//@@tag-Version-2201011
 export class CoreSiteModel extends BaseEntity<number> {
   currentSiteDomainUrl: string;
   mainImageSrc: string;

@@ -2,7 +2,7 @@ import { EnumTransactionLogPublicType } from '../../enums/donate/enumTransaction
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
-
+//@@tag-Version-2201011
 export class DonateTargetModel extends BaseModuleEntity<number>{
   title: string;
   description: string;

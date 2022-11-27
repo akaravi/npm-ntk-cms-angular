@@ -5,7 +5,7 @@ import { MemberUserModel } from '../member/memberUserModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
-
+//@@tag-Version-2201011
 export class TicketingAnswerModel extends BaseModuleEntity<number> {
   linkMemberId: string;
   linkTaskId: number;

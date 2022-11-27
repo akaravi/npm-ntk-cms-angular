@@ -3,7 +3,7 @@ import { EnumUiPropertyDesign } from '../../enums/member/enumUiPropertyDesign';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyDetailGroupModel } from './memberPropertyDetailGroupModel';
 import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
-
+//@@tag-Version-2201011
 export class MemberPropertyDetailModel extends BaseModuleEntity<number> {
   title: string;
   iconFont: string;

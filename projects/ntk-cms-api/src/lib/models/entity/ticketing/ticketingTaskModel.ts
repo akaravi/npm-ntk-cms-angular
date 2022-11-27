@@ -6,7 +6,7 @@ import { CoreUserModel } from '../core-main/coreUserModel';
 import { MemberUserModel } from '../member/memberUserModel';
 import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
-
+//@@tag-Version-2201011
 export class TicketingTaskModel extends BaseModuleEntity<number>  {
   expireDate?: Date;
   title: string;

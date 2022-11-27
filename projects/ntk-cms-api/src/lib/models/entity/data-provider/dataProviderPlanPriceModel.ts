@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DataProviderPlanModel } from './dataProviderPlanModel';
-
+//@@tag-Version-2201011
 export class DataProviderPlanPriceModel extends BaseModuleEntity<number> {
   title: string;
   description: string;

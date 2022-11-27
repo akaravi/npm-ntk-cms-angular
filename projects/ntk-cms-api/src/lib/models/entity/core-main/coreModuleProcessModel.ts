@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleProcessCustomizeModel } from './coreModuleProcessCustomizeModel';
-
+//@@tag-Version-2201011
 export class CoreModuleProcessModel extends BaseEntity<number>  {
   titleML: string;
   title: string;

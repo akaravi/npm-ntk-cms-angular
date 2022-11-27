@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardTargetCategoryModel } from './linkManagementBillboardTargetCategoryModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
-
+//@@tag-Version-2201011
 export class LinkManagementTargetCategoryModel extends BaseModuleEntity<number> {
   title: string;
   linkMainImageId?: number;

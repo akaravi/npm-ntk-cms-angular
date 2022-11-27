@@ -1,6 +1,7 @@
 import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
 import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
+//@@tag-Version-2201011
 export class CoreSiteCategoryCmsModuleModel  extends BaseEntity<number> {
 
   linkCmsSiteCategoryId: number;

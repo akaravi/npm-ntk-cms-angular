@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { FileContentModel } from './fileContentModel';
-
+//@@tag-Version-2201011
 export class FileCategoryModel extends BaseModuleEntity<number> {
   title: string;
   titleResourceLanguage: string;

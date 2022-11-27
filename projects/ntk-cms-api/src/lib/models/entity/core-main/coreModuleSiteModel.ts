@@ -1,7 +1,7 @@
 import { CoreSiteModel } from './coreSiteModel';
 import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
-
+//@@tag-Version-2201011
 export class CoreModuleSiteModel extends BaseEntity<number>  {
   expireDate?: Date;
   linkSiteId: number;

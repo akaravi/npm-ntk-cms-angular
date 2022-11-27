@@ -3,6 +3,7 @@ import { EnumManageUserAccessUserTypes } from '../../enums/base/enumManageUserAc
 import { EnumMicroServiceConnectionType } from '../../enums/base/enumMicroServiceConnectionType';
 import { EnumMicroServiceConnectionStatus } from '../../enums/base/enumMicroServiceConnectionStatus';
 import { BaseEntity } from '../base/baseEntity';
+//@@tag-Version-2201011
 export class CoreTokenMicroServiceModel extends BaseEntity<string>   {
     linkUserId?: number;
     linkSiteId?: number;

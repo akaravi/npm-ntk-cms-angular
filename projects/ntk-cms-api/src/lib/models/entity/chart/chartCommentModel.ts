@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ChartContentModel } from './chartContentModel';
-
+//@@tag-Version-2201011
 export class ChartCommentModel extends BaseModuleEntity<number> {
   linkContentId: number;
   linkParentId: number;

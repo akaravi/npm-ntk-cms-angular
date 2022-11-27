@@ -2,7 +2,7 @@ import { BaseModuleEntity } from "../base/baseModuleEntity";
 import { UniversalMenuMenuItemProcessModel } from "./universalMenuMenuItemProcessModel";
 import { UniversalMenuPlatformModel } from "./universalMenuPlatformModel";
 import { UniversalMenuProcessModel } from "./universalMenuProcessModel";
-
+//@@tag-Version-2201011
 export class UniversalMenuMenuItemModel extends BaseModuleEntity<number>{
   title: string;
   key: string;

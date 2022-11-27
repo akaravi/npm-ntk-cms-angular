@@ -2,7 +2,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateTargetModel } from './donateTargetModel';
 import { DonateTargetPeriodSponsorModel } from './donateTargetPeriodSponsorModel';
 import { DonateTransactionModel } from './donateTransactionModel';
-
+//@@tag-Version-2201011
 export class DonateTargetPeriodModel extends BaseModuleEntity<number> {
   title: string;
   description: string;

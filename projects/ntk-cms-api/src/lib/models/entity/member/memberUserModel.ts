@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyModel } from './memberPropertyModel';
 import { MemberUserGroupModel } from './memberUserGroupModel';
 import { MemberUserSiteModel } from './memberUserSiteModel';
-
+//@@tag-Version-2201011
 export class MemberUserModel extends BaseModuleEntity<number> {
   linkCmsUserId?: number;
   deviceId: string;

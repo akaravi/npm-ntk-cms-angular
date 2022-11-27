@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
-
+//@@tag-Version-2201011
 export class TicketingDepartemenOperatorModel extends BaseModuleEntity<number>  {
     linkDepartemenId: number;
     linkUserId: number;

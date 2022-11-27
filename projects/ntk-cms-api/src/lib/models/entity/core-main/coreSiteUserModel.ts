@@ -2,7 +2,7 @@ import { BaseEntity } from '../base/baseEntity';
 import { CoreSiteModel } from './coreSiteModel';
 import { CoreUserModel } from './coreUserModel';
 import { CoreUserGroupModel } from './coreUserGroupModel';
-
+//@@tag-Version-2201011
 export class CoreSiteUserModel extends BaseEntity<number>  {
   expireDate?: Date;
   linkSiteId: number;

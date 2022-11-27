@@ -5,7 +5,7 @@ import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';
 import { TicketingFaqModel } from './ticketingFaqModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
-
+//@@tag-Version-2201011
 export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
     title: string;
     defaultAnswerBody: string;

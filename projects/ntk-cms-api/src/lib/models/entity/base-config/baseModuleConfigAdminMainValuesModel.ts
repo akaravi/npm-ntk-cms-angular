@@ -1,3 +1,4 @@
+//@@tag-Version-2201011
 export class BaseModuleConfigAdminMainValuesModel {
   accessBuy: boolean;
   accessFree: boolean;

@@ -1,7 +1,7 @@
 import { EnumDeviceStatus } from '../../enums/base/enumDeviceStatus';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
-
+//@@tag-Version-2201011
 export class ApplicationMemberInfoModel extends BaseModuleEntity<string>  {
   linkUserId?: number;
   linkMemberId?: number;

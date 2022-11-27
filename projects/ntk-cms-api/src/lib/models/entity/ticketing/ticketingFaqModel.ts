@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { TicketingDepartemenModel } from './ticketingDepartemenModel';
-
+//@@tag-Version-2201011
 export class TicketingFaqModel extends BaseModuleEntity<number>  {
     question: string;
     answer: string;

@@ -1,4 +1,5 @@
 import { HyperShopOrderModel } from './hyperShopOrderModel';
+//@@tag-Version-2201011
 export class HyperShopOrderContentModel {
 
     linkOrderId: number;

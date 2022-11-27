@@ -1,7 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingModel } from './linkManagementAccountingModel';
-import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
-
+//@@tag-Version-2201011
 export class LinkManagementMemberModel extends BaseModuleEntity<number> {
   isInBlackList: boolean;
   description: string;

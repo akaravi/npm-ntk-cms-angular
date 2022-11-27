@@ -4,7 +4,7 @@ import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { BiographyCommentModel } from './biographyCommentModel';
 import { BiographyContentCategoryModel } from './biographyContentCategoryModel';
-
+//@@tag-Version-2201011
 export class BiographyContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
   title: string;

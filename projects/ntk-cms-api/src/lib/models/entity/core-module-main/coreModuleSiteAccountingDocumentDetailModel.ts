@@ -1,6 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreModuleSiteAccountingDocumentDetailTypeModel } from './coreModuleSiteAccountingDocumentDetailTypeModel';
 import { CoreModuleSiteAccountingDocumentModel } from './coreModuleSiteAccountingDocumentModel';
+//@@tag-Version-2201011
 export class CoreModuleSiteAccountingDocumentDetailModel extends BaseModuleEntity<number> {
   number: string;
   description:string;

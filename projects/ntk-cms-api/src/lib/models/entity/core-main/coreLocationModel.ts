@@ -1,6 +1,6 @@
 import { EnumLocationType } from '../../enums/base/enumLocationType';
 import { BaseEntity } from '../base/baseEntity';
-
+//@@tag-Version-2201011
 export class CoreLocationModel extends BaseEntity<number> {
   title: string;
   titleML: string;

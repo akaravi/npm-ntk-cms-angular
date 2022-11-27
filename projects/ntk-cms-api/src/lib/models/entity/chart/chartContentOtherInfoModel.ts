@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ChartContentModel } from './chartContentModel';
-
+//@@tag-Version-2201011
 export class ChartContentOtherInfoModel extends BaseModuleEntity<number> {
   title: string;
   htmlBody: string;

@@ -1,7 +1,6 @@
 
 import { BaseEntity } from '../base/baseEntity';
-
-
+//@@tag-Version-2201011
 export class CoreGuideModel extends BaseEntity<number> {
   key: string;
   titleFa: string;

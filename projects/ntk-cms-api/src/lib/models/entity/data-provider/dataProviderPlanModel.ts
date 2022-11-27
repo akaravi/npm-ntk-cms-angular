@@ -3,7 +3,7 @@ import { DataProviderPlanCategoryModel } from './dataProviderPlanCategoryModel';
 import { DataProviderPlanClientModel } from './dataProviderPlanClientModel';
 import { DataProviderPlanPriceModel } from './dataProviderPlanPriceModel';
 import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
-
+//@@tag-Version-2201011
 export class DataProviderPlanModel extends BaseModuleEntity<number> {
   title: string;
   description: string;
