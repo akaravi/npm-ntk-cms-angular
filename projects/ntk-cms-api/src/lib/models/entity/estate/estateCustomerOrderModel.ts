@@ -7,6 +7,7 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   description: string;
   descriptionHidden: string;
   linkEstateUserId: string;
+  linkEstateCustomerCategoryId: string;
   areaAddress: string;
   includeAllSite: boolean;
   linkPropertyIds: string[];

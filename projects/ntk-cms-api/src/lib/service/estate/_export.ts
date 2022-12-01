@@ -25,3 +25,4 @@ export * from './estatePropertyProject.service';
 export * from './estateActivityType.service';
 export * from './estatePropertyExpertPrice.service';
 export * from './estateCustomerOrderResult.service';
+export * from './estateCustomerCategory.service';

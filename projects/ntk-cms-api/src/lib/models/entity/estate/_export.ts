@@ -25,3 +25,4 @@ export * from './estatePropertyProjectModel';
 export * from './estateActivityTypeModel';
 export * from './estatePropertyExpertPriceModel';
 export * from './estateCustomerOrderResultModel';
+export * from './estateCustomerCategoryModel';
