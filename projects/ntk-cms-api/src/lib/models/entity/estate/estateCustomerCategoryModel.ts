@@ -3,8 +3,6 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstateCustomerCategoryModel extends BaseModuleEntity<string>
 {
   title: string;
-  titleML: string;
-  titleResourceLanguage: string;
   description: string;
   iconFont: string;
   iconColor: string;
