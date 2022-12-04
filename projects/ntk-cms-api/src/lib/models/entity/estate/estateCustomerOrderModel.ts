@@ -38,5 +38,6 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   lastResultRowCount?: number;
   /**Action */
   actionSendSmsToCustomer: boolean;
+  actionSendSmsToContactNumber: string;
 }
 

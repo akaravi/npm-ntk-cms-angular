@@ -86,4 +86,5 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   actionSendSmsToCustomer: boolean;
   actionSendSmsToAgent: boolean;
   actionSendSmsToCustomerOrder: boolean;
+  actionSendSmsToContactNumber: string;
 }
