@@ -38,6 +38,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   geolocationlongitude?: number;
 
   address: string;
+  addressHidden: string;
   linkMainImageId?: number;
   linkExtraImageIds: string;
   linkFileIds: string;

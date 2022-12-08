@@ -5,6 +5,8 @@ import { EstateActivityTypeModel } from './estateActivityTypeModel';
 export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   title: string;
   linkPropertyId: string;
+  linkCustomerOrderId:string;
+  linkAgentId:string;
   linkActivityTypeId: string;
   linkFileIds: string;
   activityType: EstateActivityTypeModel;
