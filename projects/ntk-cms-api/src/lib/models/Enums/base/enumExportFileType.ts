@@ -3,4 +3,5 @@ export enum EnumExportFileType {
   Excel = 1,
   PDF = 2,
   Text = 3,
+  Report = 4,
 }

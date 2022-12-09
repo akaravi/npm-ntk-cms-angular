@@ -4,12 +4,9 @@ export class CoreLogReportDataModel extends BaseEntity<string>{
   linkSiteId?: number;
   linkUserId?: number;
   linkMemberId: string;
-  moduleName: string;
-  moduleEntityName: string;
+  linkEntityReportFileId: string;
   moduleEntityId: string;
-
-  expireDate?: Date;
-  reportFile: string;
+  expireDate: Date;
+  reportFileId: number;
   reportData: string;
-
 }
