@@ -7,6 +7,7 @@ export class CoreModuleEntityReportFileModel extends BaseEntity<string>{
   title: string;
   titleML: string;
   titleResourceLanguage: string;
+  description:string;
   linkImageId?: number;
   linkImageIdSrc: string;
   linkFileId: number;
