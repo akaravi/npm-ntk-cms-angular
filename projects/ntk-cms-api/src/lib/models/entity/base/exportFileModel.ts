@@ -4,4 +4,5 @@ import { EnumExportReceiveMethod } from '../../enums/base/enumExportReceiveMetho
 export class ExportFileModel {
   fileType: EnumExportFileType;
   recieveMethod: EnumExportReceiveMethod;
+  reportFormatFileId:string;
 }
