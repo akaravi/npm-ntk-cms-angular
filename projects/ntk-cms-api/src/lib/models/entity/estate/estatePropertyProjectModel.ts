@@ -37,6 +37,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
 
   uploadFileGUID: string[];
   urlViewContent: string;
+  urlViewContentShort: string;
   urlViewContentQRCodeBase64: string;
   linkLocationCountryIdTitle: string;
   linkLocationIdTitle: string;

@@ -46,5 +46,6 @@ export class ChartContentModel extends BaseModuleEntity<number> {
   linkFileMovieIdSrc: string;
   linkFileIdsSrc: string[];
   urlViewContent: string;
+  urlViewContentShort: string;
   urlViewContentQRCodeBase64: string;
 }

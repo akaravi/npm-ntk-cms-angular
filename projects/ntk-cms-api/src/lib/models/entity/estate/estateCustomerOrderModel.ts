@@ -30,6 +30,7 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   propertyDetailValues: EstatePropertyDetailValueModel[];
   propertyDetailGroups: EstatePropertyDetailGroupModel[];
   urlViewContent: string;
+  urlViewContentShort: string;
   urlViewContentQRCodeBase64: string;
   linkCoreCurrencyId: number;
   currencyTitle: string;

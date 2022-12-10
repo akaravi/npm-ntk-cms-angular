@@ -146,6 +146,24 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
+  ServiceExportFileGetOne(id:TKey,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+    // this.loadingStatus=true;
+    if (model == null) {
+      model = new FilterModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile'+ id, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheckExportFile(ret);
+        }),
+      );
+  }
   ServiceAdd(model: TModel): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
