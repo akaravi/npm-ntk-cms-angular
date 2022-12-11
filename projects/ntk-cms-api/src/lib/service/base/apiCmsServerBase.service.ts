@@ -10,10 +10,11 @@ import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorEx
 import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
+import { IApiCmsServerBase } from './iApiCmsServerBase';
 
 
 @Injectable()
-export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
+export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IApiCmsServerBase {
   ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
@@ -142,6 +143,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
+  
   ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
@@ -160,6 +162,7 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
         }),
       );
   }
+  
   ServiceExportFileGetOne(id:TKey,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
