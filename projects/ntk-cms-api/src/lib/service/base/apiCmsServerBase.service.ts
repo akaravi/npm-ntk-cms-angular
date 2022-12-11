@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
+import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 
 
 @Injectable()
@@ -17,6 +18,19 @@ export class ApiCmsServerBase<TModel, TKey> extends ApiServerBase  {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ViewModel', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetAllReportFile(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllReportFile', {
         headers: this.getHeaders(),
       })
       .pipe(
