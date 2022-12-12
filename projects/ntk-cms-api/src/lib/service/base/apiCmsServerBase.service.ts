@@ -11,6 +11,8 @@ import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
+import { CoreModuleLogMemoModel } from '../../models/entity/core-module-log/coreModuleLogMemoModel';
+import { ExportFileModel } from '../../models/entity/base/exportFileModel';
 
 
 @Injectable()
@@ -28,10 +30,10 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  ServiceGetAllReportFile(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>> {
+  ServiceReportFileGetAll(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllReportFile', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportFileGetAll', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -163,14 +165,14 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
       );
   }
   
-  ServiceExportFileGetOne(id:TKey,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceExportFileGetOne(id:TKey,model: ExportFileModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
-      model = new FilterModel();
+      model = new ExportFileModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile'+ id, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile/'+ id, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -257,6 +259,20 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoAdd', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceMemoGetAll(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/'+ id, {
         headers: this.getHeaders(),
       })
       .pipe(
