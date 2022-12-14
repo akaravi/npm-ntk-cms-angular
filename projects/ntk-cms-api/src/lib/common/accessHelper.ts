@@ -15,10 +15,17 @@ export class AccessHelper {
     this.AccessWatchFields = {};
     this.AccessSearchFields = {};
     access.fieldsInfo.filter((item) => {
-      this.AccessAddFields[item.fieldName.toLowerCase()] = item.accessAddField;
-      this.AccessEditFields[item.fieldName.toLowerCase()] = item.accessEditField;
-      this.AccessWatchFields[item.fieldName.toLowerCase()] = item.accessWatchField;
-      this.AccessSearchFields[item.fieldName.toLowerCase()] = item.accessSearchField;
+      this.AccessAddFields[this.toLowerCaseFirstChar(item.fieldName)] = item.accessAddField;
+      this.AccessEditFields[this.toLowerCaseFirstChar(item.fieldName)] = item.accessEditField;
+      this.AccessWatchFields[this.toLowerCaseFirstChar(item.fieldName)] = item.accessWatchField;
+      this.AccessSearchFields[this.toLowerCaseFirstChar(item.fieldName)] = item.accessSearchField;
     });
+  }
+  toLowerCaseFirstChar(str: string) {
+    if (!str || str.length == 0)
+      return '';
+    if (str.length == 1)
+      return str.toLowerCase();
+    return str[0].toLowerCase() + str.slice(1);
   }
 }

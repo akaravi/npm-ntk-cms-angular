@@ -12,6 +12,7 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   areaAddress: string;
   includeAllSite: boolean;
   linkPropertyIds: string[];
+  linkPropertyIdsIgnored: string[];
   linkLocationIds: number[];
   linkPropertyTypeLanduseId: string;
   linkPropertyTypeUsageId: string;
