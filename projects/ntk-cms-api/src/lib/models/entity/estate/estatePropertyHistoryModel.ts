@@ -14,4 +14,5 @@ export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   appointmentDateFrom: Date;
   appointmentDateTo: Date;
   description: string;
+  descriptionHidden: string;
 }
