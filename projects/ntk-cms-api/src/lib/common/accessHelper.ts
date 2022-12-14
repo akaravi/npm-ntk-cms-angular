@@ -21,7 +21,7 @@ export class AccessHelper {
       this.AccessSearchFields[this.toLowerCaseFirstChar(item.fieldName)] = item.accessSearchField;
     });
   }
-  toLowerCaseFirstChar(str: string) {
+  private toLowerCaseFirstChar(str: string) {
     if (!str || str.length == 0)
       return '';
     if (str.length == 1)
