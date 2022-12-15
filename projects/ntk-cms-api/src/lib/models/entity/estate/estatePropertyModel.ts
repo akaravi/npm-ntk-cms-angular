@@ -17,6 +17,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   area: number;
   linkCmsUserId?: number;
   linkEstateUserId: string;
+  linkEstateAgencyId: string;
   isSoldIt: boolean;
   reviewDataAfterSoldIt?: Date;
   linkLocationId: number;
