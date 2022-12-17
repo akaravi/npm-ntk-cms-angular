@@ -31,7 +31,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   propertyTypeLanduse: EstatePropertyTypeLanduseModel;
   propertyTypeUsage: EstatePropertyTypeUsageModel;
 
-  sharingKey: number;
+  sharingKey: string;
   sharingId: number;
   /// <summary>
   /// موقعیت جغرافیایی
