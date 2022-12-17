@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-//@@tag-Version-2201011
+//@@tag-Version-2212171
 export class EstateAccountUserModel extends BaseModuleEntity<string> {
   linkCmsUserId: number;
   title: string;
@@ -19,5 +19,9 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 
-
+  accessWatchRowSite:boolean;
+  accessWatchRowOtherAgency:boolean;
+  accessWatchRowOtherAgent:boolean;
+  accessAllowShareRowWatchOtherAgency:boolean;
+  accessAllowShareRowWatchOtherAgent:boolean;
 }
