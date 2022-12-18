@@ -2,7 +2,7 @@ export * from './estateConfiguration.service';
 export * from './estateEnum.service';
 export * from './estateAccountAgency.service';
 export * from './estateAccountAgencyAds.service';
-export * from './estateAccountAgencyTypeUser.service';
+export * from './estateAccountAgencyUser.service';
 export * from './estateAccountUser.service';
 export * from './estateContract.service';
 export * from './estateContractType.service';
