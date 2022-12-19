@@ -1,23 +1,25 @@
 export enum EnumManageUserAccessUserTypes {
-  AccessDenay = 0,
+  None = 0,
+  //////////////////////////////////////////////// سورس برنامه
+  All = 99,
+  SystemPayment = 101,
+  System = 104,
   //////////////////////////////////////////////// مدیریت سی ام اس
   AdminMainCms = 1,
   SupportMainCms = 2,
   MonitoringMainCms = 3,
   DemoMainCms = 4,
-  //////////////////////////////////////////////// نماینده فروش
-  AdminResellerCms = 31,
-  SupportResellerCms = 32,
-  MonitoringResellerCms = 33,
-  DemoResellerCms = 34,
+  ResellerMainCms = 5,
   //////////////////////////////////////////////// مدیران سایت
   AdminCpSite = 11,
   SupportCpSite = 12,
-  MonitoringCpSite = 13,
+  MonitoringCpCms = 13,
   DemoCpSite = 14,
+  ResellerCpSite = 15,
+  ResellerEmployeeCpSite = 16,
   //////////////////////////////////////////////// کاربران  وب سایت
   GuestViewerWebSite = 21,
   UserLoginWebSite = 22,
-  DemoUserLoginWebSite = 23,
+  DemoUserLoginWebSite = 23
   ////////////////////////////////////////////////
 }
