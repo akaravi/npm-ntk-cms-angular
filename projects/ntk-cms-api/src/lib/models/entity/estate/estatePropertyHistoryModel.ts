@@ -9,6 +9,7 @@ export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   linkAgentId:string;
   linkActivityTypeId: string;
   linkFileIds: string;
+  linkFileIdsSrc: string[];
   activityType: EstateActivityTypeModel;
   activityStatus: ActivityStatusEnum;
   appointmentDateFrom: Date;
