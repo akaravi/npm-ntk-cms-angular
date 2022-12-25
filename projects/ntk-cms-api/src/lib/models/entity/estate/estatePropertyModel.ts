@@ -9,6 +9,7 @@ import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 //@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;
+  priority?:number;
   caseCode: string;
   mainAdminRecordStatus = EnumRecordStatus.Pending;
   createdYaer?: number;
