@@ -1,4 +1,3 @@
-
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
@@ -8,6 +7,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
+import { EstatePropertySerachDtoModel } from '../../models/dto/estate/estatePropertySerachDtoModel';
+import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 
 @Injectable()
 export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string>  {
@@ -105,6 +106,22 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
+  ServiceGetAllWithFilter(model: EstatePropertySerachDtoModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new EstatePropertySerachDtoModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/' , model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllWithBillboardId(BillboardId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new FilterModel();
@@ -140,6 +157,24 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         // catchError(this.handleError)
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  
+  ServiceGetAllWithCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+    // this.loadingStatus=true;
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderIdExportFile/'+ CustomerOrderId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheckExportFile(ret);
         }),
       );
   }
