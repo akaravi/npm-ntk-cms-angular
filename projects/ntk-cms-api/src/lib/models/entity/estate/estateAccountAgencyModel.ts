@@ -14,15 +14,16 @@ export class EstateAccountAgencyModel extends BaseModuleEntity<string> {
 
   address: string;
   phoneNumber: string;
+  mobileNumber: string;
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 
   linkExtraImageIds: string;
   linkExtraImageIdsSrc: string[];
 
-  accessWatchRowSite:boolean;
-  accessWatchRowOtherAgency:boolean;
-  accessWatchRowOtherAgent:boolean;
-  accessAllowShareRowWatchOtherAgency:boolean;
-  accessAllowShareRowWatchOtherAgent:boolean;
+  accessWatchRowSite: boolean;
+  accessWatchRowOtherAgency: boolean;
+  accessWatchRowOtherAgent: boolean;
+  accessAllowShareRowWatchOtherAgency: boolean;
+  accessAllowShareRowWatchOtherAgent: boolean;
 }

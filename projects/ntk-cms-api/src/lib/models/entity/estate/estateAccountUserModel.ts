@@ -15,6 +15,7 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   serialRfId: string;
   serialNumber: string;
   phoneNumber: string;
+  mobileNumber: string;
   address: string;
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
