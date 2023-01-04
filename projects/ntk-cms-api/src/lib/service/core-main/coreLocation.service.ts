@@ -12,6 +12,32 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
   getModuleControllerUrl(): string {
     return 'CoreLocation';
   }
+  ServiceGetOneIncludeChild(id: number): Observable<ErrorExceptionResult<CoreLocationModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneIncludeChild/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetOneIncludeParent(id: number): Observable<ErrorExceptionResult<CoreLocationModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneIncludeParent/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreLocationModel>> {
     if (model == null) {
       model = new FilterModel();
