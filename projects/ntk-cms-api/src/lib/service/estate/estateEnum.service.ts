@@ -12,11 +12,11 @@ export class EstateEnumService extends ApiServerBase {
     return 'EstateEnum';
   }
 
- 
- 
-    ServiceEnumEstateUserType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+
+
+  ServiceEstateUserTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumEstateUserType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstateUserTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -29,6 +29,18 @@ export class EstateEnumService extends ApiServerBase {
   ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstatePropertyExpertPriceTypeEnum', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceEstateActivityStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstateActivityStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

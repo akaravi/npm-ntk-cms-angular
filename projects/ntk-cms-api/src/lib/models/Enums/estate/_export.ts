@@ -1,4 +1,4 @@
-export * from './estateUserTypeEnum';
-export * from './activityStatusEnum';
+export * from './estateActivityStatusEnum';
 export * from './estatePropertyExpertPriceTypeEnum';
+export * from './estateUserTypeEnum';
 

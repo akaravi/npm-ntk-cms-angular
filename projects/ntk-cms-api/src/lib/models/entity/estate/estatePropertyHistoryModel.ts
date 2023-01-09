@@ -1,4 +1,5 @@
-import { ActivityStatusEnum } from '../../enums/estate/activityStatusEnum';
+
+import { EstateActivityStatusEnum } from '../../enums/estate/estateActivityStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateActivityTypeModel } from './estateActivityTypeModel';
 //@@tag-Version-2201011
@@ -12,7 +13,7 @@ export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   linkFileIds: string;
   linkFileIdsSrc: string[];
   activityType: EstateActivityTypeModel;
-  activityStatus: ActivityStatusEnum;
+  activityStatus: EstateActivityStatusEnum;
   appointmentDateFrom: Date;
   appointmentDateTo: Date;
   description: string;
