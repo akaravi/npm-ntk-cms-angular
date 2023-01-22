@@ -27,7 +27,8 @@ ng lint ntk-cms-filemanager
 ========================================= For New Ver
 ========================================= For New Ver
 ========================================= For New Ver
-ng build ntk-cms-api --prod
+===  ng build ntk-cms-api --prod
+npm run build ntk-cms-api --prod
 cd dist/ntk-cms-api
 npm publish
 
