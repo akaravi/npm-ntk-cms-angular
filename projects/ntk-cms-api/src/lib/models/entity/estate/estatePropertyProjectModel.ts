@@ -4,6 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;
+  linkPropertyCompanyId: string;
   mainAdminRecordStatus: string;
   description: string;
   address:string;
