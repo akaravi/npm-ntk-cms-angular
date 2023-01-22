@@ -29,6 +29,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkPropertyTypeLanduseId: string;
   linkPropertyTypeUsageId: string;
   linkPropertyProjectId: string;
+  linkPropertyCompanyId: string;
   propertyTypeLanduse: EstatePropertyTypeLanduseModel;
   propertyTypeUsage: EstatePropertyTypeUsageModel;
 
