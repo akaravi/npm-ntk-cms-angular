@@ -1,10 +1,9 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
-export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
+export class EstatePropertyCompanyModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;
-  linkPropertyCompanyId: string;
   mainAdminRecordStatus: string;
   description: string;
   address:string;
@@ -24,8 +23,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   viewConfigHiddenInList:boolean;
   favorited: boolean;
   source: string;
-  fromDate: Date;
-  expireDate: Date;
+
   linkLocationCountryId: number;
 
 
@@ -48,5 +46,6 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   aboutTel: string;
   aboutMobile: string;
   // * About */
+
 
 }

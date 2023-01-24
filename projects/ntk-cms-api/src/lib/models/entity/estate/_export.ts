@@ -22,6 +22,7 @@ export * from './estatePropertyShareAgencyModel';
 export * from './estatePropertyShareAgentModel';
 export * from './estatePropertyShareSiteModel';
 export * from './estatePropertyProjectModel';
+export * from './estatePropertyCompanyModel';
 export * from './estateActivityTypeModel';
 export * from './estatePropertyExpertPriceModel';
 export * from './estateCustomerOrderResultModel';
