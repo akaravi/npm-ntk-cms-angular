@@ -1,6 +1,6 @@
 {
   "name": "ntk-cms-module",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Ntk Cms Modules ",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -16,6 +16,6 @@
     "@angular/core": ">=8.0.0"
   },
   "dependencies": {
-    "tslib": ">=2.0.0"
+    "tslib": "^2.0.0"
   }
 }
