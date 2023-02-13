@@ -29,3 +29,4 @@ export * from './coreUserClaimTypeModel';
 export * from './coreCurrencyModel';
 export * from './coreUserSupportAccessModel';
 export * from './coreModuleEntityReportFileModel';
+export * from './file360ViewModel';

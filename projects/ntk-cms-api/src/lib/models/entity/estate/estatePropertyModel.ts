@@ -6,10 +6,11 @@ import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
 import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
 import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
+import { File360ViewModel } from '../core-main/file360ViewModel';
 //@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;
-  priority?:number;
+  priority?: number;
   caseCode: string;
   mainAdminRecordStatus = EnumRecordStatus.Pending;
   createdYaer?: number;
@@ -44,8 +45,10 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   address: string;
   addressHidden: string;
   linkMainImageId?: number;
+
   linkExtraImageIds: string;
   linkFileIds: string;
+  file360Views: File360ViewModel[];
   /// <summary>
   /// تعداد مجموع آرا
   /// </summary>
@@ -57,8 +60,8 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   /// </summary>
 
   scoreSumPercent: number;
-  adsActive:boolean;
-  adsExpireDate:Date;
+  adsActive: boolean;
+  adsExpireDate: Date;
   viewCount: number;
   // * AboutAgent */
   aboutAgentTel: string;
