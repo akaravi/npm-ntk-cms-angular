@@ -4,5 +4,6 @@ export class File360ViewModel {
   htmlBody: string;
   linkFileId: number;
   linkFileIdSrc: string;
+  linkFileIdThumbnailSrc:string;
   configDataJson: string;
 }
