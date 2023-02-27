@@ -1,5 +1,6 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { File360TourModel } from '../core-main/file360TourModel';
 import { File360ViewModel } from '../core-main/file360ViewModel';
 //@@tag-Version-2201011
 export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
@@ -20,6 +21,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   linkFileMovieId?: number;
   linkMainImageId?: number;
   file360Views: File360ViewModel[];
+  file360Tour:File360TourModel;
   scoreClick: number;
   scoreSumPercent: number;
   viewCount: number;

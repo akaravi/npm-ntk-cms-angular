@@ -30,3 +30,7 @@ export * from './coreCurrencyModel';
 export * from './coreUserSupportAccessModel';
 export * from './coreModuleEntityReportFileModel';
 export * from './file360ViewModel';
+export * from './file360TourHotSpotModel';
+export * from './file360TourModel';
+export * from './file360TourScenesModel';
+export * from './file360TourDefaultModel';

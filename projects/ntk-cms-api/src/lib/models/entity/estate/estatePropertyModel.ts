@@ -7,6 +7,7 @@ import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel
 import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
 import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
 import { File360ViewModel } from '../core-main/file360ViewModel';
+import { File360TourModel } from '../core-main/file360TourModel';
 //@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;
@@ -49,6 +50,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkExtraImageIds: string;
   linkFileIds: string;
   file360Views: File360ViewModel[];
+  file360Tour:File360TourModel;
   /// <summary>
   /// تعداد مجموع آرا
   /// </summary>

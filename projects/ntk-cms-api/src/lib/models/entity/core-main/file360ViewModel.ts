@@ -1,3 +1,5 @@
+import { File360TourHotSpotModel } from "./file360TourHotSpotModel";
+
 export class File360ViewModel {
   title: string;
   description: string;
@@ -6,4 +8,6 @@ export class File360ViewModel {
   linkFileIdSrc: string;
   linkFileIdThumbnailSrc:string;
   configDataJson: string;
+  hotSpots:File360TourHotSpotModel[];
 }
+
