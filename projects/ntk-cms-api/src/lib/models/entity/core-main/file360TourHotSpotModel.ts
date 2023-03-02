@@ -1,4 +1,5 @@
 export class File360TourHotSpotModel{
+  guid:string;
   pitch:number;
   yaw:number;
   type:string;
