@@ -4,5 +4,25 @@
         "hypershop",
         "Karavi",
         "Typscript"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#55e300",
+        "activityBar.background": "#55e300",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#4087ff",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#55e300",
+        "statusBar.background": "#42b000",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#55e300",
+        "statusBarItem.remoteBackground": "#42b000",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#42b000",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#42b00099",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#42b000"
 }

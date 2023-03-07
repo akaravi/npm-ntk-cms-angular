@@ -1,7 +1,7 @@
 //@@tag-Version-2201011
 export class FieldInfoModel {
   fieldName: string;
-  fieldType: string;
+  fieldTypeString: string;
   fieldTypeClass: string;
   fieldTitle: string;
   fieldDescription: string;
