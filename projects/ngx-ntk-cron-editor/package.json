@@ -16,7 +16,6 @@
     "@angular/material": ">=6.0.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
 
   }
 }

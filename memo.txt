@@ -84,6 +84,18 @@ ng build ngx-ntk-query-builder --prod
 ng build ngx-ntk-cron-editor --prod
 
 
+OR
+
+
+ng build ntk-cms-api --configuration production
+ng build ntk-cms-filemanager --configuration production
+ng build ntk-cms-fileuploader --configuration production
+ng build ntk-cms-module  --configuration production
+ng build ngx-ntk-smart-module  --configuration production
+ng build ngx-ntk-query-builder  --configuration production
+ng build ngx-ntk-cron-editor  --configuration production
+
+
 
 
 

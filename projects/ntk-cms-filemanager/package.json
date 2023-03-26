@@ -20,10 +20,11 @@
     "rxjs": ">=6.6.0",
     "ngx-ntk-smart-module": ">=1.1.6",
     "ntk-cms-api": ">=1.2.138",
-    "ngx-awesome-uploader": ">=10.0.2"
+    "ngx-awesome-uploader": ">=10.0.2",
+    "@ngx-translate/core": ">=11.0.0",
+    "@ngx-translate/http-loader": "^3.0.1"
   },
   "dependencies": {
-    "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1"
+
   }
 }
