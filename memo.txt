@@ -8,7 +8,6 @@ cd npm-ntk-cms-angular
 ng generate library ntk-cms-api
 ng generate library ntk-cms-filemanager
 ng generate library ntk-cms-fileuploader
-ng generate library ntk-cms-module
 ng generate library ngx-ntk-smart-module
 ng generate library ngx-ntk-query-builder
 ng generate library ngx-ntk-cron-editor
@@ -49,12 +48,7 @@ cd dist/ntk-cms-fileuploader
 npm publish
 cd ..
 cd ..
-=========================================
-ng build ntk-cms-module --prod
-cd dist/ntk-cms-module
-npm publish
-cd ..
-cd ..
+
 =========================================
 ng build ngx-ntk-smart-module --prod
 cd dist/ngx-ntk-smart-module
@@ -75,22 +69,10 @@ cd ..
 cd ..
 =========================================
 Test All
-ng build ntk-cms-api --prod
-ng build ntk-cms-filemanager --prod
-ng build ntk-cms-fileuploader --prod
-ng build ntk-cms-module --prod
-ng build ngx-ntk-smart-module --prod
-ng build ngx-ntk-query-builder --prod
-ng build ngx-ntk-cron-editor --prod
-
-
-OR
-
 
 ng build ntk-cms-api --configuration production
 ng build ntk-cms-filemanager --configuration production
 ng build ntk-cms-fileuploader --configuration production
-ng build ntk-cms-module  --configuration production
 ng build ngx-ntk-smart-module  --configuration production
 ng build ngx-ntk-query-builder  --configuration production
 ng build ngx-ntk-cron-editor  --configuration production

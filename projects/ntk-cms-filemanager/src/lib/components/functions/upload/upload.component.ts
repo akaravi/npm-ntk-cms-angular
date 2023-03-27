@@ -5,7 +5,7 @@ import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-awesome
 import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { ErrorExceptionResult, FileUploadModel } from 'projects/ntk-cms-api/src/public-api';
+import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 
 @Component({
   selector: 'lib-filemanager-upload',

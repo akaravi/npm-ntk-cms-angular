@@ -17,7 +17,7 @@ import { NodeInterface } from './interfaces/node.interface';
 import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './services/file-manager-store.service';
-import { NtkSmartModalService } from 'projects/ngx-ntk-smart-module/src/public-api';
+import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'cms-file-manager',

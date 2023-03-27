@@ -6,8 +6,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { FileManagerStoreService } from './file-manager-store.service';
-import { NtkSmartModalService } from 'projects/ngx-ntk-smart-module/src/public-api';
-import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'projects/ntk-cms-api/src/public-api';
+import { NtkSmartModalService } from 'ngx-ntk-smart-module';
+import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'ntk-cms-api';
 
 @Injectable()
 export class NodeClickedService {

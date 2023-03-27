@@ -5,7 +5,7 @@ import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './file-manager-store.service';
 import { map } from 'rxjs/operators';
-import { FileCategoryService, FileContentService } from 'projects/ntk-cms-api/src/public-api';
+import { FileCategoryService, FileContentService } from 'ntk-cms-api';
 
 /*
 {

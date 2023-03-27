@@ -17,7 +17,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
-import { FileCategoryService, FileContentService } from 'projects/ntk-cms-api/src/public-api';
+import { FileCategoryService, FileContentService } from 'ntk-cms-api';
 import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-api';
 
 

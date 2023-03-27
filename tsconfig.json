@@ -40,10 +40,7 @@
         "dist/ngx-ntk-smart-module/ngx-ntk-smart-module",
         "dist/ngx-ntk-smart-module"
       ],
-      "ntk-cms-module": [
-        "dist/ntk-cms-module/ntk-cms-module",
-        "dist/ntk-cms-module"
-      ],
+   
       "ngx-ntk-query-builder": [
         "dist/ngx-ntk-query-builder/ngx-ntk-query-builder",
         "dist/ngx-ntk-query-builder"
