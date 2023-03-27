@@ -7,7 +7,7 @@ export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {
     super();
   }
-  ApiPath = 'https://apifile.ir/api/v1/upload/';
+  ApiPath = 'https://apifile.ir/api/v2/upload/';
   public uploadFile(fileItem: FilePreviewModel): Observable<UploadResponse> {
     const form = new FormData();
     form.append('file', fileItem.file);

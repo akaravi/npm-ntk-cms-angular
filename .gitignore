@@ -60,3 +60,5 @@ node_modules
 /projects/ntk-cms-fileuploader/package-lock.json
 /projects/ntk-cms-module/package-lock.json
 /projects/ngx-ntk-smart-module/package-lock.json
+/.angular/
+.angular/*

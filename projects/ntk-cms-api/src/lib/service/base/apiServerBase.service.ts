@@ -14,7 +14,7 @@ export class ApiServerBase {
     this.childConstructor();
     this.headers = new Map<string, string>();
   }
-  public baseUrl = 'https://apicms.ir/api/v1/';
+  public baseUrl = 'https://apicms.ir/api/v2/';
   public userToken = '';
   public deviceToken = '';
   public configApiRetry = 0;

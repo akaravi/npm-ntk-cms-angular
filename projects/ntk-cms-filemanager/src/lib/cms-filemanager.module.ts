@@ -14,11 +14,12 @@ import { UploadComponent } from './components/functions/upload/upload.component'
 import { NewFolderComponent } from './components/functions/new-folder/new-folder.component';
 import { SideViewComponent } from './components/side-view/side-view.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
-import { FileCategoryService, FileContentService } from 'ntk-cms-api';
+import { FileCategoryService, FileContentService } from 'projects/ntk-cms-api/src/public-api';
+import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-api';
+
 
 export function CreateTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json');

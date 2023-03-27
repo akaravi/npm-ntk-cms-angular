@@ -14,10 +14,10 @@ import {
 import { TreeModel } from './models/tree.model';
 import { NodeService } from './services/node.service';
 import { NodeInterface } from './interfaces/node.interface';
-import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './services/file-manager-store.service';
+import { NtkSmartModalService } from 'projects/ngx-ntk-smart-module/src/public-api';
 
 @Component({
   selector: 'cms-file-manager',
