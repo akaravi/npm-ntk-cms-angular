@@ -183,5 +183,10 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
   getRuleOptions(rule: Rule): any {
     return this.fieldMap[rule.field].options ? this.fieldMap[rule.field].options : [];
   }
-
+  convertToRuleSet(model: RuleSet | Rule): RuleSet {
+    return model as RuleSet;
+  }
+  convertToRule(model: RuleSet | Rule): Rule {
+    return model as Rule;
+  }
 }
