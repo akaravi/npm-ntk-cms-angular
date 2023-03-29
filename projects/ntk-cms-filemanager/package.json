@@ -25,8 +25,6 @@
     "@ngx-translate/http-loader": "^3.0.1"
   },
   "dependencies": {
-    "tslib": "^2.0.0",
-    "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1"
+
   }
 }
