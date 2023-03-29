@@ -15,7 +15,7 @@ import { NtkSmartLoaderService } from './ntk-smart-loader.service';
   selector: 'ntk-smart-loader',
   template: `
     <div class="loader-container {{customClass}}" [ngClass]="{'active': loading}"
-         [style.z-index]="layerPosition - 1" *ngIf="visible">
+         [style.z-index]="(layerPosition - 1)" *ngIf="visible">
       <ng-content></ng-content>
     </div>
   `

@@ -18,7 +18,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FilePickerModule } from 'ngx-awesome-uploader';
 import { FileCategoryService, FileContentService } from 'ntk-cms-api';
-import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-api';
+import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 
 
 export function CreateTranslateLoader(http: HttpClient): any {
