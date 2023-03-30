@@ -175,10 +175,10 @@ export class NodeService {
       pathToParent: pathToParentVar,
       name: node.name || node.id,
       children: cachedNode ? cachedNode.children : {},
-      CreatedDate: node.CreatedDate,
-      UpdatedDate: node.UpdatedDate,
+      createdDate: node.createdDate,
+      updatedDate: node.updatedDate,
       size: node.size,
-      Extension: node.Extension,
+      extension: node.extension,
       downloadLinksrc: node.downloadLinksrc,
       downloadThumbnailSrc:node.downloadThumbnailSrc,
     } as NodeInterface;
@@ -354,8 +354,8 @@ export class NodeService {
             pathToParent: '',
             isFolder: true,
             isExpanded: false,
-            CreatedDate: element.createdDate,
-            UpdatedDate: element.updatedDate,
+            createdDate: element.createdDate,
+            updatedDate: element.updatedDate,
             downloadLinksrc: element.linkMainImageIdSrc,
           };
           item.pathToNode = '/' + item.pathToNode;
@@ -383,12 +383,12 @@ export class NodeService {
             pathToParent: '',
             isFolder: false,
             isExpanded: false,
-            CreatedDate: element.createdDate,
-            UpdatedDate: element.updatedDate,
+            createdDate: element.createdDate,
+            updatedDate: element.updatedDate,
             downloadLinksrc: element.downloadLinksrc,
             downloadThumbnailSrc: element.downloadThumbnailSrc,
             size: element.fileSize,
-            Extension: element.extension
+            extension: element.extension
           };
           item.pathToNode = '/' + item.pathToNode;
           item.pathToNode = item.pathToNode.replace('//', '/');

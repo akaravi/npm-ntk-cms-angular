@@ -117,6 +117,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
+    debugger
   }
 
   ngOnInit(): void {
@@ -249,7 +250,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
             downloadLinksrc: next.item.downloadLinksrc,
             downloadThumbnailSrc:next.item.downloadThumbnailSrc,
             size: next.item.size,
-            Extension: next.item.extension,
+            extension: next.item.extension,
             isFolder: false
           };
           this.selectedNode = selectedModel;
@@ -372,6 +373,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
 
   fmShowHide(act: boolean): void {
+    debugger
     this.openForm = act;
   }
   onActionOpen(status: boolean): void {
@@ -417,11 +419,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     if (
       !model ||
       model.isFolder ||
-      !model.Extension ||
-      model.Extension.length === 0 ||
+      !model.extension ||
+      model.extension.length === 0 ||
       !this.configSelectFileType ||
       this.configSelectFileType.length === 0 ||
-      this.configSelectFileType.find((t) => (t && model.Extension && t.toLowerCase() === model.Extension.toLowerCase()))
+      this.configSelectFileType.find((t) => (t && model.extension && t.toLowerCase() === model.extension.toLowerCase()))
     ) {
       return true;
     }
@@ -445,16 +447,16 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   AllowViewImage(node: NodeInterface): boolean {
     if (
       node.isFolder ||
-      !node.Extension ||
-      node.Extension.length === 0 ||
+      !node.extension ||
+      node.extension.length === 0 ||
       !node.downloadLinksrc ||
       node.downloadLinksrc.length === 0
     ) {
       return false;
     }
-    if (node.Extension.toLowerCase() === 'png' || node.Extension.toLowerCase() === 'jpeg'
-      || node.Extension.toLowerCase() === 'gif'
-      || node.Extension.toLowerCase() === 'jpg') {
+    if (node.extension.toLowerCase() === 'png' || node.extension.toLowerCase() === 'jpeg'
+      || node.extension.toLowerCase() === 'gif'
+      || node.extension.toLowerCase() === 'jpg') {
       return true;
     }
     return false;

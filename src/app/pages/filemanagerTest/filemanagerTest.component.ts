@@ -39,30 +39,31 @@ export class FileManagerTestComponent {
         searchFiles: 'FileCategory/GetAll',
       },
       options: {
-        title: 'Hello World 1',
+        title: 'Select File',
         allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
       },
     };
+
     const treeConfig2: ConfigInterface = {
       baseURL: 'https://apicms.ir/api/v2/',
       baseUploadURL: 'https://apifile.ir/api/v2/',
       api: {
         listFile: 'FileContent/GetAll',
-        listFolder: 'FileCategory/GetAll',
-        uploadFile: 'upload',
-        downloadFile: 'download',
-        deleteFile: 'FileContent',
-        deleteFolder: 'FileCategory',
-        createFolder: 'FileCategory',
-        createFile: 'FileContent',
-        getOneFile: 'FileContent',
-        getOneFolder: 'FileCategory',
-        renameFile: 'FileContent',
-        renameFolder: 'FileCategory',
-        searchFiles: 'FileCategory/GetAll',
+      listFolder: 'FileCategory/GetAll',
+      uploadFile: 'upload',
+      downloadFile: 'download',
+      deleteFile: 'FileContent',
+      deleteFolder: 'FileCategory',
+      createFolder: 'FileCategory',
+      createFile: 'FileContent',
+      getOneFile: 'FileContent',
+      getOneFolder: 'FileCategory',
+      renameFile: 'FileContent',
+      renameFolder: 'FileCategory',
+      searchFiles: 'FileCategory/GetAll',
       },
       options: {
         title: 'Hello World 2',
@@ -83,6 +84,7 @@ export class FileManagerTestComponent {
   selected2: NodeInterface;
   selected3: NodeInterface;
   // noinspection JSUnusedLocalSymbols
+
   onActionFileSelect1(event: NodeInterface): void {
     console.log(event);
     this.selected1 = event;

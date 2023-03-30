@@ -9,11 +9,11 @@ export interface NodeInterface {
   name?: string;
   children?: any;
 
-  Extension?: string;
+  extension?: string;
   size?: number;
   parentId?: number;
-  CreatedDate?: Date;
-  UpdatedDate?: Date;
+  createdDate?: Date;
+  updatedDate?: Date;
   downloadLinksrc?: string;
   downloadThumbnailSrc?: string;
 }
