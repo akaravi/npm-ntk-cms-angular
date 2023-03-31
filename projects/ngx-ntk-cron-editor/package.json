@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-cron-editor",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Angular cron editor",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -12,7 +12,6 @@
   "peerDependencies": {
     "@angular/common": ">=7.0.0",
     "@angular/core": ">=7.0.0",
-    "@ngx-translate/core": ">=11.0.0",
     "@angular/material": ">=6.0.0"
   },
   "dependencies": {

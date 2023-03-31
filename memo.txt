@@ -67,7 +67,7 @@ cd dist/ngx-ntk-cron-editor
 npm publish
 cd ..
 cd ..
-=========================================
+==================================================================================
 Test All
 
 ng build ntk-cms-api --configuration production
@@ -77,10 +77,27 @@ ng build ntk-cms-fileuploader --configuration production
 ng build ngx-ntk-query-builder  --configuration production
 ng build ngx-ntk-cron-editor  --configuration production
 
+====build all
+cd dist
+cd ntk-cms-api
+npm publish
+cd ..
+cd ngx-ntk-smart-module
+npm publish
+cd ..
+
+cd ntk-cms-fileuploader
+npm publish
+cd ..
+cd ngx-ntk-query-builder
+npm publish
+cd ..
+cd ngx-ntk-cron-editor
+npm publish
+cd ..
 
 
-
-
+==================================================================================
 
 
 

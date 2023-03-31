@@ -13,7 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     CommonModule,
     FormsModule,
-    TranslateModule.forChild(),
+    TranslateModule.forRoot({extend: true}),
     MatTabsModule
   ],
   exports: [CronEditorComponent]
