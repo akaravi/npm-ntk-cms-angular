@@ -86,6 +86,10 @@ cd ngx-ntk-smart-module
 npm publish
 cd ..
 
+cd ntk-cms-filemanager
+npm publish
+cd ..
+
 cd ntk-cms-fileuploader
 npm publish
 cd ..

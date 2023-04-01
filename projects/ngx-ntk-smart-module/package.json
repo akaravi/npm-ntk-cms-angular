@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-smart-module",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Ntk Cms Modal ",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -13,10 +13,10 @@
   ],
   "exports": {
     "./loader": {
-      "sass": "./assets/ngx-ntk-smart-loader.scss"
+      "sass": "./src/assets/ngx-ntk-smart-loader.scss"
     },
     "./modal": {
-      "sass": "./assets/ngx-ntk-smart-modal.scss"
+      "sass": "./src/assets/ngx-ntk-smart-modal.scss"
     }
   },
   "peerDependencies": {

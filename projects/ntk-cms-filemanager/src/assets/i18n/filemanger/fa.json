@@ -4,6 +4,8 @@
     "close": "بستن",
     "confirm": "تایید",
     "create_new_folder": "ساخت فولدر جدید",
+    "create_new_file": "فایل جدید",
+    "created_date":"تاریخ ساخت",
     "delete": "حذف",
     "download": "دانلود",
     "file_name": "نام فایل",

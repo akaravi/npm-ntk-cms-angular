@@ -1,6 +1,6 @@
 {
   "name": "ntk-cms-filemanager",
-  "version": "1.2.25",
+  "version": "1.2.29",
   "description": "Ntk Cms Api And Model For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -11,12 +11,9 @@
     "news",
     "api"
   ],
-  "scripts": {
-    "extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/ --clean --sort --format namespaced-json -m _"
-  },
   "exports": {
     "./filemanager": {
-      "sass": "./assets/ntk-cms-filemanager.scss"
+      "sass": "./src/assets/ntk-cms-filemanager.scss"
     }
   },
   "peerDependencies": {
