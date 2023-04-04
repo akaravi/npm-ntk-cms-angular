@@ -1,5 +1,6 @@
-import { EnumManageUserAccessAreaTypes } from '../../enums/base/enumManageUserAccessAreaTypes';
-import { EnumManageUserAccessUserTypes } from '../../enums/base/enumManageUserAccessUserTypes';
+import { EnumManageUserAccessAreaTypes } from "../../enums/base/enumManageUserAccessAreaTypes";
+import { EnumManageUserAccessUserTypes } from "../../enums/base/enumManageUserAccessUserTypes";
+
 //@@tag-Version-2201011
 export class TokenInfoModel {
 

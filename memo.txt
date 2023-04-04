@@ -1,7 +1,7 @@
  npm i --legacy-peer-deps
 
-
-
+برای رفع مشکل نام فولدر ها
+git config core.ignorecase false
  =========================================First Time Proje
 ng new npm-ntk-cms-angular --create-application=false
 cd npm-ntk-cms-angular
