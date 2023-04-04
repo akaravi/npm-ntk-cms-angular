@@ -29,7 +29,6 @@ ng lint ntk-cms-filemanager
 ng build ntk-cms-api --configuration production
 cd dist/ntk-cms-api
 npm publish
-
 cd ..
 cd ..
 

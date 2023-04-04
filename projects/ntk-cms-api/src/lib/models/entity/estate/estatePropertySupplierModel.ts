@@ -6,6 +6,7 @@ import { File360ViewModel } from '../core-main/file360ViewModel';
 export class EstatePropertySupplierModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;
+  linkEstatePropertySupplierCategoryIds:string[]
   mainAdminRecordStatus: string;
   description: string;
   address:string;
