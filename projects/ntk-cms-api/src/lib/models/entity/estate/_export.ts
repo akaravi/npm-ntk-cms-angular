@@ -27,3 +27,4 @@ export * from './estateActivityTypeModel';
 export * from './estatePropertyExpertPriceModel';
 export * from './estateCustomerOrderResultModel';
 export * from './estateCustomerCategoryModel';
+export * from './estatePropertySupplierModel';

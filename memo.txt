@@ -26,8 +26,7 @@ ng lint ntk-cms-filemanager
 ========================================= For New Ver
 ========================================= For New Ver
 ========================================= For New Ver
-===  ng build ntk-cms-api --prod
-npm run build ntk-cms-api --prod
+ng build ntk-cms-api --configuration production
 cd dist/ntk-cms-api
 npm publish
 
@@ -36,33 +35,33 @@ cd ..
 
 
 =========================================
-ng build ntk-cms-filemanager --prod
+ng build ntk-cms-filemanager --configuration production
 cd dist/ntk-cms-filemanager
 npm publish
 cd ..
 cd ..
 
 =========================================
-ng build ntk-cms-fileuploader --prod
+ng build ntk-cms-fileuploader --configuration production
 cd dist/ntk-cms-fileuploader
 npm publish
 cd ..
 cd ..
 
 =========================================
-ng build ngx-ntk-smart-module --prod
+ng build ngx-ntk-smart-module --configuration production
 cd dist/ngx-ntk-smart-module
 npm publish
 cd ..
 cd ..
 =========================================
-ng build ngx-ntk-query-builder --prod
+ng build ngx-ntk-query-builder --configuration production
 cd dist/ngx-ntk-query-builder
 npm publish
 cd ..
 cd ..
 =========================================
-ng build ngx-ntk-cron-editor --prod
+ng build ngx-ntk-cron-editor --configuration production
 cd dist/ngx-ntk-cron-editor
 npm publish
 cd ..
