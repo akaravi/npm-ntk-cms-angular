@@ -8,4 +8,9 @@ export class EstatePropertySupplierCategoryModel extends BaseModuleEntity<string
   iconColor: string;
   linkMainImageId: number;
   linkMainImageIdSrc: string;
+  linkParentIdNode: string;
+  linkParentId: string;
+  children: EstatePropertySupplierCategoryModel[];
+  category: EstatePropertySupplierCategoryModel;
+  virtual_Category: EstatePropertySupplierCategoryModel;
 }
