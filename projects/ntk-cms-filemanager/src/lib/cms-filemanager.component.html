@@ -109,9 +109,9 @@
             <ng-template #file>
               <i class="fas fa-file search-output-icon"></i>
             </ng-template>
-            <span style="text-overflow: ellipsis">{{item.name}}</span>
+            <span style="text-overflow: ellipsis;direction: ltr;">{{item.name}}</span>
           </td>
-          <td class="table-item-short">{{item.size}}</td>
+          <td class="table-item-short" style="direction: ltr;">{{item.size}}</td>
         </tr>
       </table>
     </div>
@@ -141,13 +141,13 @@
       <span *ngIf="!selectedNode.isFolder">{{'filemanager.file' | translate}}</span>
     </h2>
 
-    <div style="width: 100%; margin: 5px auto; text-align: center">{{selectedNode.name}}</div>
+    <div style="width: 100%; margin: 5px auto; text-align: center;direction: ltr;">{{selectedNode.name}}</div>
 
     <div class="rename-button">
       <button type="button" class="button big" (click)="handleFileManagerClickEvent({type: 'remove'})">
         <span> {{'filemanager.yes_delete_this' | translate}} </span>
-        <span *ngIf="selectedNode.isFolder"> {{'filemanager.folder' | translate}} </span>
-        <span *ngIf="!selectedNode.isFolder"> {{'filemanager.file' | translate}} </span>
+        <!-- <span *ngIf="selectedNode.isFolder"> {{'filemanager.folder' | translate}} </span>
+        <span *ngIf="!selectedNode.isFolder"> {{'filemanager.file' | translate}} </span> -->
       </button>
       <button type="button" class="button big" (click)="deleteModal.close()">
         {{'filemanager.cancel'|translate}}
@@ -158,10 +158,10 @@
     <h2 class="modal-title">
       {{'filemanager.rename_file' | translate}}
     </h2>
-    <p class="rename-name">
+    <p class="rename-name" >
       {{'filemanager.old_name' | translate}}
     </p>
-    <span style="margin: 8px">{{selectedNode.name}}</span>
+    <span style="margin: 8px;direction: ltr;">{{selectedNode.name}}</span>
     <p class="rename-name">
       {{'filemanager.new_name' | translate}}
     </p>
@@ -213,7 +213,7 @@
         <img *ngIf="node.downloadThumbnailSrc?.length>0"  src="{{node.downloadThumbnailSrc}}" class="child thumbnail" />
       </ng-template>
     </div>
-    <div class="file-name">
+    <div class="file-name" >
       {{node.name}}
     </div>
   </div>
