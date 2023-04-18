@@ -1,8 +1,8 @@
 <div class="backdrop" (click)="newClickedAction()"></div>
 <div class="upload-background">
   <div class="row" style="flex-direction: column;">
-    
-    <ngx-awesome-uploader class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="3" [fileMaxSize]="700" [uploadType]="'multi'"
+
+    <ngx-awesome-uploader class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="fileUplodMaxCount" [fileMaxSize]="700" [uploadType]="'multi'"
       (validationError)="onValidationError($event)" [fileExtensions]="fileExtensions"
       [enableCropper]="false" (uploadSuccess)="onUploadSuccess($event)" (removeSuccess)="onRemoveSuccess($event)"
       (fileAdded)="onFileAdded($event)" [customValidator]="myCustomValidator" [captions]="captions"

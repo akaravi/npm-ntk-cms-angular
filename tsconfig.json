@@ -17,7 +17,7 @@
     "allowJs": true,
     "checkJs": false,
     "strictFunctionTypes": true,
-    "target": "ES2022",
+    "target": "es2020",
     "module": "es2020",
     "lib": [
       "es2018",
@@ -40,7 +40,7 @@
         "dist/ngx-ntk-smart-module/ngx-ntk-smart-module",
         "dist/ngx-ntk-smart-module"
       ],
-   
+
       "ngx-ntk-query-builder": [
         "dist/ngx-ntk-query-builder/ngx-ntk-query-builder",
         "dist/ngx-ntk-query-builder"

@@ -44,6 +44,9 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
+        fileUplodMaxCount:20,
+        fileUplodExtensions:[],
+        fileUplodTypeAccept:''
       },
     };
 
@@ -71,6 +74,9 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
+        fileUplodMaxCount:20,
+        fileUplodExtensions:[],
+        fileUplodTypeAccept:''
       },
     };
 

@@ -117,7 +117,6 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
-    debugger
   }
 
   ngOnInit(): void {
@@ -373,7 +372,6 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
 
   fmShowHide(act: boolean): void {
-    debugger
     this.openForm = act;
   }
   onActionOpen(status: boolean): void {

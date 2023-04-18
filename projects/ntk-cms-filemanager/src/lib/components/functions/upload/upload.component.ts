@@ -48,7 +48,10 @@ export class UploadComponent implements OnInit, AfterViewInit {
     private nodeService: NodeService) {
     this.adapter.baseUploadURL = this.nodeService.serviceTree.config.baseUploadURL;
     this.adapter.routeUpload = this.nodeService.serviceTree.config.api.uploadFile;
-
+    if (this.nodeService.serviceTree.config.options.fileUplodMaxCount > 0)
+      this.fileUplodMaxCount = this.nodeService.serviceTree.config.options.fileUplodMaxCount;
+    this.fileTypeAccept = this.nodeService.serviceTree.config.options.fileUplodTypeAccept;
+    this.fileExtensions = this.nodeService.serviceTree.config.options.fileUplodExtensions;
   }
 
 
@@ -64,6 +67,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
   @Input() openDirectUploadSave = false;
   @Input() openDirectUploadView = false;
   adapter = new FileUploaderPickerAdapter(this.http);
+  fileUplodMaxCount = 20;
   fileTypeAccept = ''; // '.jpg, .png'
   fileExtensions: string[] = []; // ['pdf', 'jpg', 'jpeg', 'png', 'mp4', 'css']
   counter = 0;

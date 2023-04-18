@@ -26,5 +26,8 @@ export interface ConfigInterface {
     showFilesInsideTree: boolean;
     showSelectFile: boolean;
     showSelectFolder: boolean;
+    fileUplodMaxCount:number;
+    fileUplodTypeAccept:string;
+    fileUplodExtensions: string[];
   }
 }
