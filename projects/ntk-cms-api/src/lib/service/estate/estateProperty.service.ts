@@ -160,7 +160,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  
+
   ServiceGetAllWithCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
@@ -168,6 +168,43 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderIdExportFile/'+ CustomerOrderId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheckExportFile(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithResponsibleUserId(userId: number, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    if (!userId || userId< 0) {
+      userId = 0;
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserId/' + userId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+
+  ServiceGetAllWithResponsibleUserIdExportFile(userId: number,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+    // this.loadingStatus=true;
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserIdExportFile/'+ userId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
