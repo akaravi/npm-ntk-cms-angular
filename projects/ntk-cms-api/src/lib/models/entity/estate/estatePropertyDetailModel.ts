@@ -18,6 +18,7 @@ export class EstatePropertyDetailModel {
   isHistoryable: boolean;
   isSearchable: boolean;
   showInFormOrder?: number;
+  ShowInFastSearch: boolean;
   linkPropertyTypeLanduseId: string;
   linkPropertyDetailGroupId: string;
   configValueDefaultValueJson: string;
