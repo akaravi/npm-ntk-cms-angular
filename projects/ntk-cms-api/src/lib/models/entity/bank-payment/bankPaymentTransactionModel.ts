@@ -4,7 +4,7 @@ import { BaseEntity } from '../base/baseEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
 import { BankPaymentTransactionLogModel } from './bankPaymentTransactionLogModel';
-//@@tag-Version-2201011
+//@@tag-Version-2305051
 export class BankPaymentTransactionModel extends BaseEntity<number> {
   linkSiteIdBuyer: number;
   linkSiteIdSaller: number;
@@ -41,4 +41,5 @@ export class BankPaymentTransactionModel extends BaseEntity<number> {
   modelShopInvoiceSaleRelease: boolean;
   modelShopInvoiceSaleReleaseDate: Date;
   transactionLogs: BankPaymentTransactionLogModel;
+  paymentTransactionUrl:string;
 }
