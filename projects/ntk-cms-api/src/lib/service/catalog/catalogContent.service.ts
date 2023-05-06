@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
 
 @Injectable()
-export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel, number>  {
+export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel, string>  {
   getModuleControllerUrl(): string {
     return 'CatalogContent';
   }
@@ -32,7 +32,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       );
   }
 
-  ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
+  ServiceFavoriteAdd(Id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
@@ -47,7 +47,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       );
   }
 
-  ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
+  ServiceFavoriteRemove(Id: string): Observable<ErrorExceptionResultBase> {
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 
 @Injectable()
-export class CatalogContentOtherInfoService extends ApiCmsServerBase<CatalogContentOtherInfoModel, number>  {
+export class CatalogContentOtherInfoService extends ApiCmsServerBase<CatalogContentOtherInfoModel, string>  {
   getModuleControllerUrl(): string {
     return 'CatalogContentOtherInfo';
   }

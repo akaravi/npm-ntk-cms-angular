@@ -6,12 +6,12 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class CatalogCategoryService extends ApiCmsServerBase<CatalogCategoryModel, number>  {
+export class CatalogCategoryService extends ApiCmsServerBase<CatalogCategoryModel, string>  {
   getModuleControllerUrl(): string {
     return 'CatalogCategory';
   }
 
-  ServiceMove(OldId: number, NewId: number): Observable<ErrorExceptionResult<CatalogCategoryModel>> {
+  ServiceMove(OldId: string, NewId: string): Observable<ErrorExceptionResult<CatalogCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
