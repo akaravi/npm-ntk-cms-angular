@@ -73,6 +73,10 @@ export * from './lib/models/entity/chart/_export';
 export * from './lib/service/blog/_export';
 export * from './lib/models/entity/blog/_export';
 // blog Service
+// catalog Service
+export * from './lib/service/catalog/_export';
+export * from './lib/models/entity/catalog/_export';
+// catalog Service
 // bankPayment Service
 export * from './lib/service/bank-payment/_export';
 export * from './lib/models/entity/bank-payment/_export';
