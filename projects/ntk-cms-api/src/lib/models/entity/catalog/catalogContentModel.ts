@@ -3,6 +3,8 @@ import { CatalogCategoryModel } from './catalogCategoryModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { File360ViewModel } from '../core-main/file360ViewModel';
 import { File360TourModel } from '../core-main/file360TourModel';
+import { CatalogContentOtherInfoModel } from './catalogContentOtherInfoModel';
+import { CatalogContentPageModel } from './catalogContentPageModel';
 
 //@@tag-Version-2201011
 export class CatalogContentModel extends BaseModuleEntity<string> {
@@ -36,7 +38,8 @@ export class CatalogContentModel extends BaseModuleEntity<string> {
   virtual_Category: CatalogCategoryModel;
   category: CatalogCategoryModel;
   linkContentCategoryIds: string[];
-  otherInfos: string;
+  otherInfos: CatalogContentOtherInfoModel[];
+  contentPages:CatalogContentPageModel[];
   contentAndParameterValues: any;
   linkMainImageIdSrc: string;
   linkFilePodcastIdSrc: string;

@@ -1,7 +1,8 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CatalogContentModel } from './catalogContentModel';
 //@@tag-Version-2201011
-export class CatalogContentOtherInfoModel extends BaseModuleEntity<string> {
+export class CatalogContentOtherInfoModel  {
+  id:string;
   title: string;
   htmlBody: string;
   source: string;
