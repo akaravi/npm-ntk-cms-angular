@@ -39,7 +39,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiAbilityLengthMinToSend: number;
   apiAbilityLengthMaxToSend: number;
   apiAbilitySendByQueue:boolean;
-  ApiAbilitySendByDirect:boolean;
+  apiAbilitySendByDirect:boolean;
   apiPathSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathPermissions: SmsMainApiPathPermissionModel[];
