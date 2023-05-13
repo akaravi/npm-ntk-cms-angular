@@ -1,9 +1,10 @@
 
+//@@tag-Version-2305111
 export class SmsApiSendMessageTestDtoModel {
   linkApiPathId: string;
   fromNumber: string;
   toNumber: string;
   message: string;
-  sendByQeue: boolean;
+  sendByQueue: boolean;
   isFlash: boolean;
 }

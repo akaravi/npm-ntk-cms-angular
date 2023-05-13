@@ -7,7 +7,7 @@ import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceMod
 import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
 import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
-//@@tag-Version-2201011
+//@@tag-Version-2305111
 export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   title: string;
   description?: any;
@@ -38,6 +38,8 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiAbilityRegulatorDenayToSend: string;
   apiAbilityLengthMinToSend: number;
   apiAbilityLengthMaxToSend: number;
+  apiAbilitySendByQueue:boolean;
+  ApiAbilitySendByDirect:boolean;
   apiPathSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathPermissions: SmsMainApiPathPermissionModel[];
