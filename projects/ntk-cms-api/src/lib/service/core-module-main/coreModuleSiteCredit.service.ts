@@ -9,6 +9,7 @@ import { CoreModuleSiteCreditCalculateDtoModel } from '../../models/dto/core-mod
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 import { CoreModuleSiteCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
+import { CoreModuleSiteCreditDirectAddDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditDirectAddDtoModel';
 
 @Injectable()
 export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSiteCreditModel, number>  {
@@ -29,6 +30,23 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       );
   }
 
+  ServiceDirectAddCredit(model: CoreModuleSiteCreditDirectAddDtoModel):
+    Observable<ErrorExceptionResult<CoreModuleSiteCreditModel>> {
+    if (!model) {
+      model = new CoreModuleSiteCreditDirectAddDtoModel();
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DirectAddCredit', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
   ServiceOrderCalculate(model: CoreModuleSiteCreditCalculateDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
@@ -47,6 +65,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
         }),
       );
   }
+
   ServiceOrderPayment(model: CoreModuleSiteCreditPaymentDtoModel):
     Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     if (!model) {

@@ -11,7 +11,7 @@ import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
 export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   title: string;
   description?: any;
-  apiDefaultNumber?: any;
+  //apiDefaultNumber?: any;
   apiIdentity: number;
   apiReceiveKey: string;
   priority: number;
