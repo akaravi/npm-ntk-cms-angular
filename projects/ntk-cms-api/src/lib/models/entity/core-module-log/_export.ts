@@ -6,4 +6,6 @@ export * from './coreModuleLogMemoModel';
 export * from './coreModuleLogContentCountModel';
 export * from './coreModuleLogSiteCreditBlockedModel';
 export * from './coreModuleLogSiteUserCreditBlockedModel';
+export * from './coreModuleLogSiteCreditModel';
+export * from './coreModuleLogSiteUserCreditModel';
 

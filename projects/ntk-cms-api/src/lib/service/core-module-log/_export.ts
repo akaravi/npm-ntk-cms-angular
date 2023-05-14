@@ -6,4 +6,5 @@ export * from './coreModuleLogMemo.service';
 export * from './coreModuleLogContentCount.service';
 export * from './coreModuleLogSiteCreditBlocked.service';
 export * from './coreModuleLogSiteUserCreditBlocked.service';
-
+export * from './coreModuleLogSiteCredit.service';
+export * from './coreModuleLogSiteUserCredit.service';
