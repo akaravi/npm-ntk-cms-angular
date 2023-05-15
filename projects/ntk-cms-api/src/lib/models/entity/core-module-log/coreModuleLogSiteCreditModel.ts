@@ -4,7 +4,7 @@ export class CoreModuleLogSiteCreditModel extends BaseModuleEntity<string> {
   linkModuleId:number;
   transactionId: number;
   transactionCredit: number;
-  stratTransactionCredit: number;
+  startTransactionCredit: number;
   endTransactionCredit: number;
   endTransactionDate: Date;
   description:string;

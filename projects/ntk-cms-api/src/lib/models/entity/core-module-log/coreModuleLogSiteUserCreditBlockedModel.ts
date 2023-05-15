@@ -5,7 +5,7 @@ export class CoreModuleLogSiteUserCreditBlockedModel extends BaseModuleEntity<st
   linkUserId:number;
   transactionId: number;
   transactionCredit: number;
-  stratTransactionCredit: number;
+  startTransactionCredit: number;
   endTransactionCredit: number;
   endTransactionDate: Date;
 }
