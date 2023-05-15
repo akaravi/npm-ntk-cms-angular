@@ -1,4 +1,4 @@
-export class CoreModuleSiteCreditDirectAddDtoModel{
+export class CoreModuleSiteCreditChargeDirectDtoModel{
   linkSiteId: number;
   linkModuleId: number;
   credit: number;

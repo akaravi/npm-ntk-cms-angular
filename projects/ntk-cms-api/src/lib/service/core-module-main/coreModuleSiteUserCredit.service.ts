@@ -9,7 +9,7 @@ import { CoreModuleSiteUserCreditCalculateDtoModel } from '../../models/dto/core
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 import { CoreModuleSiteUserCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
-import { CoreModuleSiteUserCreditDirectAddDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditDirectAddDtoModel';
+import { CoreModuleSiteUserCreditChargeDirectDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditChargeDirectDtoModel';
 
 
 
@@ -32,13 +32,13 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModule
       );
   }
 
-  ServiceDirectAddCredit(model: CoreModuleSiteUserCreditDirectAddDtoModel):
+  ServiceChargeDirect(model: CoreModuleSiteUserCreditChargeDirectDtoModel):
     Observable<ErrorExceptionResult<CoreModuleSiteUserCreditModel>> {
     if (!model) {
-      model = new CoreModuleSiteUserCreditDirectAddDtoModel();
+      model = new CoreModuleSiteUserCreditChargeDirectDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DirectAddCredit', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ChargeDirect', model, {
         headers: this.getHeaders(),
       })
       .pipe(
