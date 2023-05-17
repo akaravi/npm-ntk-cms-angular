@@ -1,6 +1,6 @@
 import { FilterModel } from "../../entity/base/filterModel";
 
-export class EstatePropertyHistorySerachDtoModel extends FilterModel {
+export class EstatePropertyHistorySearchDtoModel extends FilterModel {
   onDateTimeFrom: Date;
   onDateTimeTo: Date;
 }

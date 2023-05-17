@@ -1,6 +1,7 @@
 import { FilterModel } from "../../entity/base/filterModel";
+import { EstatePropertyDetailValueModel } from "../../entity/estate/estatePropertyDetailValueModel";
 
-export class EstatePropertySerachDtoModel extends FilterModel {
+export class EstatePropertySearchDtoModel extends FilterModel {
     linkPropertyTypeLanduseId: string;
     linkPropertyTypeUsageId: string;
     linkContractTypeId: string;
@@ -17,5 +18,5 @@ export class EstatePropertySerachDtoModel extends FilterModel {
     periodPriceMax?: number;
     linkLocationIds: number[];
     linkCoreCurrencyId: number;
-
+    propertyDetailValues: EstatePropertyDetailValueModel[];
 }

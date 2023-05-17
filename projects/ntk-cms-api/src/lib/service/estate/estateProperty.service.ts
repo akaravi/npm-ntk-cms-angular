@@ -7,7 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
-import { EstatePropertySerachDtoModel } from '../../models/dto/estate/estatePropertySerachDtoModel';
+import { EstatePropertySearchDtoModel } from '../../models/dto/estate/estatePropertySearchDtoModel';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 
 @Injectable()
@@ -106,9 +106,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithFilter(model: EstatePropertySerachDtoModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithFilter(model: EstatePropertySearchDtoModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new EstatePropertySerachDtoModel();
+      model = new EstatePropertySearchDtoModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/' , model, {
