@@ -2,6 +2,7 @@ import { FilterModel } from "../../entity/base/filterModel";
 import { EstatePropertyDetailValueModel } from "../../entity/estate/estatePropertyDetailValueModel";
 
 export class EstatePropertySearchDtoModel extends FilterModel {
+  caseCode:string;
     linkPropertyTypeLanduseId: string;
     linkPropertyTypeUsageId: string;
     linkContractTypeId: string;
