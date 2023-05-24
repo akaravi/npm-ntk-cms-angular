@@ -7,11 +7,13 @@ import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleM
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 import { CoreModuleLogMemoModel } from '../../models/entity/core-module-log/coreModuleLogMemoModel';
 import { ExportFileModel } from '../../models/entity/base/exportFileModel';
+import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModuleShowKeyDtoModel';
+import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
 
 
 
 export interface IApiCmsServerBase{
-  
+
     ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase>;
     ServiceMemoGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
 
@@ -22,4 +24,6 @@ export interface IApiCmsServerBase{
     ServiceReportFileGetAll(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>>;
     ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile>;
     ServiceExportFileGetOne(id:any,model: ExportFileModel): Observable<ErrorExceptionResultExportFile>;
+    ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel):  Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> ;
+    ServiceShowKeyGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>>;
   }

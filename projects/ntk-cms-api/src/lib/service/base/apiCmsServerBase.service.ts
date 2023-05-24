@@ -287,7 +287,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
   }
 
 
-  ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyAdd', model, {
