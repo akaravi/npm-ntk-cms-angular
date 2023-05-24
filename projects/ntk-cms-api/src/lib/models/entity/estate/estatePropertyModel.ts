@@ -36,7 +36,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   propertyTypeUsage: EstatePropertyTypeUsageModel;
 /**ViewContent */
 viewContentHidden:boolean;
-
+siteAdminViewContentHidden:boolean;
 /**ViewContent */
   sharingKey: string;
   sharingId: number;
