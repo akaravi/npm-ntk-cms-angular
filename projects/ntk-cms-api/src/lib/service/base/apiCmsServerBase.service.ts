@@ -13,6 +13,8 @@ import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/c
 import { IApiCmsServerBase } from './iApiCmsServerBase';
 import { CoreModuleLogMemoModel } from '../../models/entity/core-module-log/coreModuleLogMemoModel';
 import { ExportFileModel } from '../../models/entity/base/exportFileModel';
+import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModuleShowKeyDtoModel';
+import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
 
 
 @Injectable()
@@ -145,7 +147,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  
+
   ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
@@ -164,7 +166,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  
+
   ServiceExportFileGetOne(id:TKey,model: ExportFileModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
@@ -273,6 +275,36 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/'+ id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+
+
+  ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyAdd', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceShowKeyGetAll(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyGetAll/'+ id, {
         headers: this.getHeaders(),
       })
       .pipe(

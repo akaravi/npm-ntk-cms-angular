@@ -34,7 +34,10 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkPropertyCompanyId: string;
   propertyTypeLanduse: EstatePropertyTypeLanduseModel;
   propertyTypeUsage: EstatePropertyTypeUsageModel;
+/**ViewContent */
+viewContentHidden:boolean;
 
+/**ViewContent */
   sharingKey: string;
   sharingId: number;
   /// <summary>
