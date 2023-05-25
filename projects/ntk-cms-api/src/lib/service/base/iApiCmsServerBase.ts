@@ -14,8 +14,7 @@ import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/c
 
 export interface IApiCmsServerBase{
 
-    ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase>;
-    ServiceMemoGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
+
 
     ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase>;
     ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase>;
@@ -24,6 +23,10 @@ export interface IApiCmsServerBase{
     ServiceReportFileGetAll(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>>;
     ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile>;
     ServiceExportFileGetOne(id:any,model: ExportFileModel): Observable<ErrorExceptionResultExportFile>;
+
+    ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase>;
+    ServiceMemoGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
+
     ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel):  Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> ;
     ServiceShowKeyGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>>;
   }
