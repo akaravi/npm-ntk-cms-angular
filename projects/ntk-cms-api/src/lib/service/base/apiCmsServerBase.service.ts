@@ -271,7 +271,35 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  ServiceMemoGetAll(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+  ServiceMemoDelete(id: string): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoDelete/'+ id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceMemoGetAll(): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceMemoGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/'+ id, {

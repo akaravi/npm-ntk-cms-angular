@@ -25,7 +25,9 @@ export interface IApiCmsServerBase{
     ServiceExportFileGetOne(id:any,model: ExportFileModel): Observable<ErrorExceptionResultExportFile>;
 
     ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase>;
-    ServiceMemoGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
+    ServiceMemoDelete(id: string): Observable<ErrorExceptionResultBase>;
+    ServiceMemoGetAll(): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
+    ServiceMemoGetAllEntity(id: any): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>>;
 
     ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel):  Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> ;
     ServiceShowKeyGetAll(id: any): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>>;
