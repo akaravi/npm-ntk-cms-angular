@@ -31,6 +31,19 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModule
         }),
       );
   }
+  ServiceGetAllCredit(): Observable<ErrorExceptionResult<CoreModuleSiteUserCreditModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllCredit/', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
   ServiceChargeDirect(model: CoreModuleSiteUserCreditChargeDirectDtoModel):
     Observable<ErrorExceptionResult<CoreModuleSiteUserCreditModel>> {
