@@ -97,8 +97,10 @@ siteAdminViewContentHidden:boolean;
   linkLocationIdParentTitle: string;
   favorited: boolean;
   /**Action */
-  actionSendSmsToCustomer: boolean;
-  actionSendSmsToAgent: boolean;
+  actionSendSmsToMe: boolean;
+  actionSendSmsToEstateCustomer: boolean;
+  actionSendSmsToEstateAgency: boolean;
+  actionSendSmsToEstateUser: boolean;
   actionSendSmsToCustomerOrder: boolean;
   actionSendSmsToContactNumber: string;
 }
