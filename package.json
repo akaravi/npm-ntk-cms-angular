@@ -28,7 +28,7 @@
     "ng-packagr": "^15.2.4",
     "ngx-awesome-uploader": "^15.0.0",
     "ngx-ntk-smart-module": "^1.1.10",
-    "ntk-cms-api": "^1.2.146",
+    "ntk-cms-api": "^1.2.176",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.13.0"
