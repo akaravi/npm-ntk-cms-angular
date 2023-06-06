@@ -43,6 +43,14 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   lastResultRowCount?: number;
   resultSortColumn:string;
   resultSortType:EnumSortType;
+/**عجله در خرید*/
+priorityRushToBuy: number;
+/**تصمیم در خرید*/
+priorityPurchaseDecision: number;
+/**توان نقدینگی*/
+priorityLiquidityPower: number;
+/**توان خرید*/
+priorityPurchasingPower: number;
   /**Action */
   actionSendSmsToCustomer: boolean;
   actionSendSmsToContactNumber: string;
