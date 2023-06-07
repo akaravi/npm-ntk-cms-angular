@@ -11,7 +11,9 @@ import { File360TourModel } from '../core-main/file360TourModel';
 //@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;
-  priority?: number;
+  scoreEstateLocation: number;
+  scoreEstateBuild: number;
+  scoreEstatePrice: number;
   caseCode: string;
   mainAdminRecordStatus = EnumRecordStatus.Pending;
   createdYaer?: number;
