@@ -5,4 +5,5 @@ export * from './estateModuleSalePropertyAdsPaymentDtoModel';
 export * from './estatePriceInquiryDtoModel';
 export * from './estatePropertySearchDtoModel';
 export * from './estatePropertyHistorySearchDtoModel';
+export * from './estateCustomerOrderSearchDtoModel'
 
