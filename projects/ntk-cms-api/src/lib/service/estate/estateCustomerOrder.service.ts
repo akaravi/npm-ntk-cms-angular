@@ -7,11 +7,27 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EstateCustomerOrderSearchDtoModel } from '../../models/dto/estate/estateCustomerOrderSearchDtoModel';
+import { EstateCustomerOrderActionSendSmsDtoModel } from '../../models/dto/estate/estateCustomerOrderActionSendSmsDtoModel';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 @Injectable()
 export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerOrderModel, string>  {
   getModuleControllerUrl(): string {
     return 'EstateCustomerOrder';
+  }
+  ServiceActionSendSms(model: EstateCustomerOrderActionSendSmsDtoModel): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/',model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
   }
   ServiceGetAllWithFilter(model: EstateCustomerOrderSearchDtoModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {

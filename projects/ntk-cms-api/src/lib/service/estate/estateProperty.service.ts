@@ -9,6 +9,7 @@ import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
 import { EstatePropertySearchDtoModel } from '../../models/dto/estate/estatePropertySearchDtoModel';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { EstatePropertyActionSendSmsDtoModel } from '../../models/dto/estate/estatePropertyActionSendSmsDtoModel';
 
 @Injectable()
 export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string>  {
@@ -19,6 +20,20 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSmsToCustomerOrder/' + Id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultBaseCheck(ret);
+        }),
+      );
+  }
+  ServiceActionSendSms(model: EstatePropertyActionSendSmsDtoModel): Observable<ErrorExceptionResultBase> {
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/',model, {
         headers: this.getHeaders(),
       })
       .pipe(

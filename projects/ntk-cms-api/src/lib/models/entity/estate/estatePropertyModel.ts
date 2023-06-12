@@ -98,11 +98,5 @@ siteAdminViewContentHidden:boolean;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   favorited: boolean;
-  /**Action */
-  actionSendSmsToMe: boolean;
-  actionSendSmsToEstateCustomer: boolean;
-  actionSendSmsToEstateAgency: boolean;
-  actionSendSmsToEstateUser: boolean;
-  actionSendSmsToCustomerOrder: boolean;
-  actionSendSmsToContactNumber: string;
+
 }

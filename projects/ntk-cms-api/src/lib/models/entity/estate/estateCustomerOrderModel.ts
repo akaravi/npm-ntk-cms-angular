@@ -51,8 +51,6 @@ scorePurchaseDecision: number;
 scoreLiquidityPower: number;
 /**توان خرید*/
 scorePurchasingPower: number;
-  /**Action */
-  actionSendSmsToCustomer: boolean;
-  actionSendSmsToContactNumber: string;
+
 }
 
