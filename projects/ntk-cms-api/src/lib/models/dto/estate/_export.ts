@@ -9,3 +9,5 @@ export * from './estateCustomerOrderSearchDtoModel';
 export * from './estatePropertyActionSendSmsDtoModel';
 export * from './estateCustomerOrderActionSendSmsDtoModel';
 
+export * from './estateAccountAgencySearchDtoModel';
+export * from './estateAccountUserSearchDtoModel';
