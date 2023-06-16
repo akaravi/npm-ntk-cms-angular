@@ -22,7 +22,9 @@ export class EstatePropertyDetailModel {
   linkPropertyTypeLanduseId: string;
   linkPropertyDetailGroupId: string;
   configValueDefaultValueJson: string;
-  configValueDefaultValue: string[];
+  configValueDefaultValues: string[];
+  configValueNullValueJson: string;
+  configValueNullValues: string[];
   configValueForceUseDefaultValue: boolean;
   configValueMultipleChoice: boolean;
   configValueIntValueMin: number;
