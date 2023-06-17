@@ -7,4 +7,10 @@ export class EstatePropertyActionSendSmsDtoModel{
   actionSendSmsToEstateUser: boolean;
   actionSendSmsToCustomerOrder: boolean;
   actionSendSmsToContactNumber: string;
+  /**Action */
+  actionSendSmsToAreaEstateAgency: boolean;
+actionSendSmsToAreaEstateUser: boolean;
+/**Action */
+actionSendSmsToAllAreaEstateAgency: boolean;
+actionSendSmsToAllAreaEstateUser: boolean;
 }
