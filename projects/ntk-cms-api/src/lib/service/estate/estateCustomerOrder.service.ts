@@ -64,6 +64,23 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         }),
       );
   }
+  ServiceGetAllWithResponsiblePropertyId(propertyId: string, model: FilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsiblePropertyId/' + propertyId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 
   ServiceGetAllWithResponsibleUserIdExportFile(userId: number, model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
