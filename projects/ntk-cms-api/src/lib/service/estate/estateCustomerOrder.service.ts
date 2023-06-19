@@ -64,13 +64,13 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         }),
       );
   }
-  ServiceGetAllWithResponsiblePropertyId(propertyId: string, model: FilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverPropertyId(propertyId: string, model: FilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsiblePropertyId/' + propertyId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverPropertyId/' + propertyId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -81,13 +81,13 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         }),
       );
   }
-  ServiceGetAllWithResponsiblePropertyIdHaveHistory(propertyId: string, model: FilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverPropertyIdHaveHistory(propertyId: string, model: FilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsiblePropertyIdHaveHistory/' + propertyId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverPropertyIdHaveHistory/' + propertyId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -156,7 +156,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCustomerOrderId(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderId(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -164,7 +164,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       CustomerOrderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderId/' + CustomerOrderId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderId/' + CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -175,7 +175,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCustomerOrderIdHaveHistory(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderIdHaveHistory(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new FilterModel();
     }
@@ -183,7 +183,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       CustomerOrderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderIdHaveHistory/' + CustomerOrderId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdHaveHistory/' + CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -194,13 +194,13 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithCoverCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderIdExportFile/'+ CustomerOrderId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdExportFile/'+ CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
