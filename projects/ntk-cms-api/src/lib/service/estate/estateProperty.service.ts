@@ -175,7 +175,25 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-
+  ServiceGetAllWithCustomerOrderIdHaveHistory(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    if (!CustomerOrderId || CustomerOrderId.length === 0) {
+      CustomerOrderId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCustomerOrderIdHaveHistory/' + CustomerOrderId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllWithCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
