@@ -27,9 +27,13 @@ export * from './lib/models/enums/core/_export';
 // core Module Serve
 export * from './lib/service/core-module-main/_export';
 export * from './lib/service/core-module-log/_export';
+export * from './lib/service/core-module-data/_export';
+
 
 export * from './lib/models/entity/core-module-main/_export';
 export * from './lib/models/entity/core-module-log/_export';
+export * from './lib/models/entity/core-module-data/_export';
+
 
 export * from './lib/models/dto/core-module/_export';
 // core Module Serve
