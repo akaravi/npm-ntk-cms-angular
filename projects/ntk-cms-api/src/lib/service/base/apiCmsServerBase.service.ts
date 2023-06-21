@@ -11,10 +11,12 @@ import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
-import { CoreModuleLogMemoModel } from '../../models/entity/core-module-log/coreModuleLogMemoModel';
+import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/coreModuleDataMemoModel';
 import { ExportFileModel } from '../../models/entity/base/exportFileModel';
 import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModuleShowKeyDtoModel';
 import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
+import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
+import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModuleCommentDtoModel';
 
 
 @Injectable()
@@ -285,7 +287,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  ServiceMemoGetAll(): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+  ServiceMemoGetAll(): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/', {
@@ -299,7 +301,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  ServiceMemoGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+  ServiceMemoGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/'+ id, {
@@ -313,8 +315,66 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
+/**comment */
 
+ServiceCommentAdd(model: CoreModuleCommentDtoModel): Observable<ErrorExceptionResultBase> {
+  // this.loadingStatus=true;
+  return this.http
+    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentAdd', model, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      retry(this.configApiRetry),
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return this.errorExceptionResultCheck(ret);
+      }),
+    );
+}
+ServiceCommentDelete(id: string): Observable<ErrorExceptionResultBase> {
+  // this.loadingStatus=true;
+  return this.http
+    .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentDelete/'+ id, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      retry(this.configApiRetry),
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return this.errorExceptionResultCheck(ret);
+      }),
+    );
+}
+ServiceCommentGetAll(): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
+  // this.loadingStatus=true;
+  return this.http
+    .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentGetAll/', {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      retry(this.configApiRetry),
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return this.errorExceptionResultCheck(ret);
+      }),
+    );
+}
+ServiceCommentGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
+  // this.loadingStatus=true;
+  return this.http
+    .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentGetAll/'+ id, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      retry(this.configApiRetry),
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return this.errorExceptionResultCheck(ret);
+      }),
+    );
+}
 
+/**comment */
   ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
     // this.loadingStatus=true;
     return this.http

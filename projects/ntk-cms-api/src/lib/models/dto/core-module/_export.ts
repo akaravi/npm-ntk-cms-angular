@@ -5,6 +5,7 @@ export * from './coreModuleSiteUserCreditPaymentDtoModel';
 export * from './coreModuleFavoriteDtoModel';
 export * from './coreModuleReportAbuseDtoModel';
 export * from './coreModuleMemoDtoModel';
+export * from './coreModuleCommentDtoModel';
 export * from './coreModuleShowKeyDtoModel';
 export * from './coreModuleSiteCreditChargeDirectDtoModel';
 export * from './coreModuleSiteUserCreditChargeDirectDtoModel';

@@ -1,7 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { CoreModuleLogMemoModel } from '../../models/entity/core-module-log/coreModuleLogMemoModel';
+import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
@@ -9,10 +9,10 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleLogMemoService extends ApiCmsServerBase<CoreModuleLogMemoModel, string>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleLogMemo';
+export class CoreModuleDataCommentService extends ApiCmsServerBase<CoreModuleDataCommentModel, string>  {  getModuleControllerUrl(): string {
+    return 'CoreModuleDataComment';
   }
-  ServiceAddMemo(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResult<CoreModuleLogMemoModel>> {
+  ServiceAddMemo(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
     if (model == null) {
       model = new CoreModuleMemoDtoModel();
     }
