@@ -98,5 +98,7 @@ siteAdminViewContentHidden:boolean;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   favorited: boolean;
-
+/**Acton */
+actionCreateCmsUserId:boolean;
+/**Acton */
 }

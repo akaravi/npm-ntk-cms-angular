@@ -8,6 +8,7 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   description: string;
   descriptionHidden: string;
   caseCode: string;
+  linkCmsUserId?: number;
   linkEstateUserId: string;
   linkEstateAgencyId: string;
   linkEstateCustomerCategoryId: string;
@@ -52,6 +53,8 @@ scorePurchaseDecision: number;
 scoreLiquidityPower: number;
 /**توان خرید*/
 scorePurchasingPower: number;
-
+/**Acton */
+actionCreateCmsUserId:boolean;
+/**Acton */
 }
 
