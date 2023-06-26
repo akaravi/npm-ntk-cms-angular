@@ -45,8 +45,13 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiPathPermissions: SmsMainApiPathPermissionModel[];
   apiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
   apiPathPriceServices: SmsMainApiPathPriceServiceModel[];
+  /**متغیر های ارسال */
   apiSendMessageIsOn: boolean;
-
+  apiSendMessageAddTextFirst:string;
+  apiSendMessageAddTextEnd:string;
+  sendMessageAddTextFirst:string;
+  sendMessageAddTextEnd:string;
+/**متغیر های ارسال */
   apiDeliveryIsOn: boolean;
 
   apiCreditBackIsOn: boolean;
