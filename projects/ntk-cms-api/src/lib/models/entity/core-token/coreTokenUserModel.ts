@@ -10,7 +10,7 @@ export class CoreTokenUserModel  extends BaseEntity<string>   {
   linkDeviceId: number;
   linkApplicationId: number;
   token: string;
-  expireDate: Date;
+  tokenExpireDate: Date;
   userAccessAreaType: EnumManageUserAccessAreaTypes;
   userAccessUserType: EnumManageUserAccessUserTypes;
   userAccessAreaTypeTitle: string;
