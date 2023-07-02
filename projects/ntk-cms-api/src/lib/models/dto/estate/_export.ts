@@ -10,3 +10,4 @@ export * from './estatePropertyActionSendSmsDtoModel';
 export * from './estateCustomerOrderActionSendSmsDtoModel';
 export * from './estateAccountAgencyFilterModel';
 export * from './estateAccountUserFilterModel';
+export * from './estateCustomerOrderFilterModel';
