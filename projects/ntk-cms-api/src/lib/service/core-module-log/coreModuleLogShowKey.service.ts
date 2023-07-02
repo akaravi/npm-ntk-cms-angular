@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
 import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModuleShowKeyDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -9,7 +10,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleLogShowKeyService extends ApiCmsServerBase<CoreModuleLogShowKeyModel, string>  {  getModuleControllerUrl(): string {
+export class CoreModuleLogShowKeyService extends ApiCmsServerBase<CoreModuleLogShowKeyModel, string,FilterModel>  {  getModuleControllerUrl(): string {
     return 'CoreModuleLogShowKey';
   }
   ServiceAddShowKey(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {

@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { DonateTransactionModel } from '../../models/entity/donate/donateTransactionModel';
 import { DonateModuleCalculateDtoModel } from '../../models/dto/donate/donateModuleCalculateDtoModel';
 import { DonateModulePaymentDtoModel } from '../../models/dto/donate/donateModulePaymentDtoModel';
@@ -11,7 +12,7 @@ import { map, retry } from 'rxjs/operators';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 
 @Injectable()
-export class DonateTransactionService extends ApiCmsServerBase<DonateTransactionModel, number>  {
+export class DonateTransactionService extends ApiCmsServerBase<DonateTransactionModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'DonateTransaction';
   }

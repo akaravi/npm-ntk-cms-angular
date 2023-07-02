@@ -1,6 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -8,7 +9,7 @@ import { SmsMainMessageCategoryModel } from '../../models/entity/sms/smsMainMess
 
 
 @Injectable()
-export class SmsMainMessageCategoryService extends ApiCmsServerBase<SmsMainMessageCategoryModel, string>  {
+export class SmsMainMessageCategoryService extends ApiCmsServerBase<SmsMainMessageCategoryModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'SmsMainMessageCategory';
   }

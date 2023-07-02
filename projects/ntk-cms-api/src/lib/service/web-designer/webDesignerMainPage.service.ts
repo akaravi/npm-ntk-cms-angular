@@ -4,6 +4,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { WebDesignerMainPageModel } from '../../models/entity/web-designer/webDesignerMainPageModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { GetAllDefaultPagesBySiteCategoryDtoModel } from '../../models/dto/webDesigner/getAllDefaultPagesBySiteCategoryDtoModel';
@@ -11,7 +12,7 @@ import { WebDesignerPageAutoAddDtoModel } from '../../models/dto/webDesigner/web
 
 
 @Injectable()
-export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string>  {
+export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainPage';
   }

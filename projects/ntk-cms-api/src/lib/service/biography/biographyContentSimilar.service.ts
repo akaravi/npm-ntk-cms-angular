@@ -2,6 +2,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { BiographyContentSimilarModel } from '../../models/entity/biography/biographyContentSimilarModel';
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
@@ -9,7 +10,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 
 @Injectable()
-export class BiographyContentSimilarService extends ApiCmsServerBase<BiographyContentSimilarModel, number>  {
+export class BiographyContentSimilarService extends ApiCmsServerBase<BiographyContentSimilarModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BiographyContentSimilar';
   }

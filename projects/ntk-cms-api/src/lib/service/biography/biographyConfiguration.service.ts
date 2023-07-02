@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   BiographyModuleConfigAdminMainValuesModel,
   BiographyModuleConfigSiteAccessValuesModel,

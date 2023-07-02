@@ -1,11 +1,11 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSaleHeaderModel } from '../../models/entity/core-main/coreModuleSaleHeaderModel';
 import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/coreModuleSaleInvoiceDetailModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSaleHeaderCalculateDtoModel } from '../../models/dto/core-main/coreModuleSaleHeaderCalculateDtoModel';
 import { CoreModuleSaleHeaderPaymentDtoModel } from '../../models/dto/core-main/coreModuleSaleHeaderPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
@@ -13,7 +13,7 @@ import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../model
 
 
 @Injectable()
-export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSaleHeaderModel, number>  {
+export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSaleHeaderModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreModuleSaleHeader';
   }

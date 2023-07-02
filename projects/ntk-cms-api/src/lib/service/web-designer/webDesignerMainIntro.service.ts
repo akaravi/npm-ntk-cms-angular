@@ -1,10 +1,11 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { WebDesignerMainIntroModel } from '../../models/entity/web-designer/webDesignerMainIntroModel';
 
 
 @Injectable()
-export class WebDesignerMainIntroService extends ApiCmsServerBase<WebDesignerMainIntroModel, string>  {
+export class WebDesignerMainIntroService extends ApiCmsServerBase<WebDesignerMainIntroModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainIntro';
   }

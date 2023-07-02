@@ -6,14 +6,14 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 import { Injectable } from '@angular/core';
-import { UniversalMenuMenuItemModel } from '../../models/entity/universal-menu/universalMenuMenuItemModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { UniversalMenuMenuItemModel } from '../../models/entity/universal-menu/universalMenuMenuItemModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()
-export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenuMenuItemModel, number>  {
+export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenuMenuItemModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'UniversalMenuMenuItem';
   }

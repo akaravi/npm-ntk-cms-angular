@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
-import { EstatePropertySearchDtoModel } from '../../models/dto/estate/estatePropertySearchDtoModel';
+
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EstatePropertyActionSendSmsDtoModel } from '../../models/dto/estate/estatePropertyActionSendSmsDtoModel';
+import { EstatePropertyFilterModel } from '../../models/dto/estate/estatePropertyFilterModel';
 
 @Injectable()
-export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string>  {
+export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string, EstatePropertyFilterModel>  {
   getModuleControllerUrl(): string {
     return 'EstateProperty';
   }
@@ -33,7 +33,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
   ServiceActionSendSms(model: EstatePropertyActionSendSmsDtoModel): Observable<ErrorExceptionResultBase> {
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/',model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -73,9 +73,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceFavoriteList(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
@@ -105,9 +105,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceReportAbuseList(model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceReportAbuseList(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList', model, {
@@ -121,12 +121,12 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithFilter(model: EstatePropertySearchDtoModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithFilter(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new EstatePropertySearchDtoModel();
+      model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/' , model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -137,9 +137,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithBillboardId(BillboardId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithBillboardId(BillboardId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     if (!BillboardId || BillboardId.length === 0) {
       BillboardId = '00';
@@ -156,9 +156,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCoverCustomerOrderId(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderId(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     if (!CustomerOrderId || CustomerOrderId.length === 0) {
       CustomerOrderId = '00';
@@ -175,9 +175,9 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCoverCustomerOrderIdHaveHistory(CustomerOrderId: string, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderIdHaveHistory(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     if (!CustomerOrderId || CustomerOrderId.length === 0) {
       CustomerOrderId = '00';
@@ -194,13 +194,13 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithCoverCustomerOrderIdExportFile(CustomerOrderId: string,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithCoverCustomerOrderIdExportFile(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdExportFile/'+ CustomerOrderId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdExportFile/' + CustomerOrderId, model, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -211,11 +211,11 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithResponsibleUserId(userId: number, model: FilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithResponsibleUserId(userId: number, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
-    if (!userId || userId< 0) {
+    if (!userId || userId < 0) {
       userId = 0;
     }
     return this.http
@@ -231,13 +231,13 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       );
   }
 
-  ServiceGetAllWithResponsibleUserIdExportFile(userId: number,model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithResponsibleUserIdExportFile(userId: number, model: EstatePropertyFilterModel): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
-      model = new FilterModel();
+      model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserIdExportFile/'+ userId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserIdExportFile/' + userId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

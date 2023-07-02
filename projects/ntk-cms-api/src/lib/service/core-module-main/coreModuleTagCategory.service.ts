@@ -2,14 +2,14 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreModuleTagCategoryModel } from '../../models/entity/core-module-main/coreModuleTagCategoryModel';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number>  {  getModuleControllerUrl(): string {
+export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number,FilterModel>  {  getModuleControllerUrl(): string {
     return 'CoreModuleTagCategory';
   }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleTagCategoryModel>> {

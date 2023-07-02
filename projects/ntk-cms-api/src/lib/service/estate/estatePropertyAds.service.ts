@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropertyAdsModel';
 import { EstateModuleSalePropertyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
@@ -11,7 +12,7 @@ import { EstateModuleSalePropertyAdsCalculateDtoModel } from '../../models/dto/e
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
 
 @Injectable()
-export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAdsModel, string>  {
+export class EstatePropertyAdsService extends ApiCmsServerBase<EstatePropertyAdsModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'EstatePropertyAds';
   }

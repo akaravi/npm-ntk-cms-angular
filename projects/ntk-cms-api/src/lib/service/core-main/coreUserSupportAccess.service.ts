@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreUserSupportAccessService extends ApiCmsServerBase<CoreUserSupportAccessModel, number>  {
+export class CoreUserSupportAccessService extends ApiCmsServerBase<CoreUserSupportAccessModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreUserSupportAccess';
   }
- 
+
 }

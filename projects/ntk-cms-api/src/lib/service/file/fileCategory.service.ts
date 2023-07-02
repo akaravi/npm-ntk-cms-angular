@@ -6,12 +6,13 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { FileCompressDtoModel } from '../../models/dto/file/fileCompressDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
-export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number>  {
+export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'FileCategory';
   }

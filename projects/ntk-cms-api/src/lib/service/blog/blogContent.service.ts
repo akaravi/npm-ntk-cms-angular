@@ -11,7 +11,7 @@ import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/core
 
 
 @Injectable()
-export class BlogContentService extends ApiCmsServerBase<BlogContentModel, number>  {
+export class BlogContentService extends ApiCmsServerBase<BlogContentModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BlogContent';
   }

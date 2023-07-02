@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { DataProviderTransactionModel } from '../../models/entity/data-provider/dataProviderTransactionModel';
 import { DataProviderModuleCalculateDtoModel } from '../../models/dto/data-provider/dataProviderModuleCalculateDtoModel';
 import { DataProviderModulePaymentDtoModel } from '../../models/dto/data-provider/dataProviderModulePaymentDtoModel';
@@ -11,7 +12,7 @@ import { map, retry } from 'rxjs/operators';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 
 @Injectable()
-export class DataProviderTransactionService extends ApiCmsServerBase<DataProviderTransactionModel, number>  {
+export class DataProviderTransactionService extends ApiCmsServerBase<DataProviderTransactionModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'DataProviderTransaction';
   }

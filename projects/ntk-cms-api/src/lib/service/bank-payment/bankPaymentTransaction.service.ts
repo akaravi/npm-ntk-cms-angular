@@ -1,6 +1,7 @@
 import { BankPaymentTransactionModel } from '../../models/entity/bank-payment/bankPaymentTransactionModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -8,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 export class BankPaymentTransactionService
-  extends ApiCmsServerBase<BankPaymentTransactionModel, number>
+  extends ApiCmsServerBase<BankPaymentTransactionModel, number,FilterModel>
    {
   getModuleControllerUrl(): string {
     return 'BankPaymentTransaction';

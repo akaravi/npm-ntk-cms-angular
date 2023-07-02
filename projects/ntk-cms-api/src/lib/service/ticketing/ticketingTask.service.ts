@@ -5,11 +5,12 @@ import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskM
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
-export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number>  {
+export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'TicketingTask';
   }

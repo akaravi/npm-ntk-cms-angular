@@ -3,6 +3,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { BankPaymentPrivateSiteConfigModel } from '../../models/entity/bank-payment/bankPaymentPrivateSiteConfigModel';
 import { BankPaymentInjectOnlineTransactionDtoModel } from '../../models/dto/bankPayment/bankPaymentInjectOnlineTransactionDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
@@ -10,7 +11,7 @@ import { BankPaymentPrivateSiteConfigAliasJsonModel } from '../../models/entity/
 
 
 @Injectable()
-export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number>  {
+export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }

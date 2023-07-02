@@ -6,11 +6,12 @@ import { ArticleContentTagModel } from '../../models/entity/article/articleConte
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
-export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTagModel, number>  {
+export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTagModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ArticleContentTag';
   }

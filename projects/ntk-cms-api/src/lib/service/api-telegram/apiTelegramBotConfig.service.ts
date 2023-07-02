@@ -3,6 +3,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiTelegramBotConfigModel } from '../../models/entity/api-telegram/apiTelegramBotConfigModel';
 
 import { ApiTelegramRenderInfoModel } from '../../models/dto/api-telegram/apiTelegramRenderInfoModel';
@@ -11,7 +12,7 @@ import { ApiTelegramSendMessageTodoModel } from '../../models/dto/api-telegram/a
 
 
 @Injectable()
-export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number>  {
+export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ApiTelegramBotConfig';
   }

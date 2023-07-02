@@ -1,13 +1,14 @@
 import { TicketingAnswerModel } from '../../models/entity/ticketing/ticketingAnswerModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class TicketingAnswerService extends ApiCmsServerBase<TicketingAnswerModel, number>  {
+export class TicketingAnswerService extends ApiCmsServerBase<TicketingAnswerModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'TicketingAnswer';
   }

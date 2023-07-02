@@ -8,11 +8,12 @@ import { LinkManagementTargetShortLinkSetResponceModel } from '../../models/dto/
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { LinkManagementTargetModel } from '../../models/entity/link-management/linkManagementTargetModel';
 
 
 @Injectable()
-export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagementTargetModel, number>  {
+export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagementTargetModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'LinkManagementTarget';
   }

@@ -11,7 +11,7 @@ import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()
-export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number>  {
+export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreCpMainMenu';
   }

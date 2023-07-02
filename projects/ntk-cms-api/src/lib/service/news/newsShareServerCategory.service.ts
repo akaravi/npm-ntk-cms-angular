@@ -9,7 +9,7 @@ import { NewsShareServerCategoryModel } from '../../models/entity/news/newsShare
 
 
 @Injectable()
-export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number>  {
+export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'NewsShareServerCategory';
   }

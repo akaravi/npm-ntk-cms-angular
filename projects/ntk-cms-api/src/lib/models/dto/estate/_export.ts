@@ -3,11 +3,10 @@ export * from './estateModuleSaleAccountAgencyAdsPaymentDtoModel';
 export * from './estateModuleSalePropertyAdsCalculateDtoModel';
 export * from './estateModuleSalePropertyAdsPaymentDtoModel';
 export * from './estatePriceInquiryDtoModel';
-export * from './estatePropertySearchDtoModel';
-export * from './estatePropertyHistorySearchDtoModel';
-export * from './estateCustomerOrderSearchDtoModel';
+export * from './estatePropertyFilterModel';
+export * from './estatePropertyHistoryFilterModel';
+export * from './estatePropertyFilterModel';
 export * from './estatePropertyActionSendSmsDtoModel';
 export * from './estateCustomerOrderActionSendSmsDtoModel';
-
-export * from './estateAccountAgencySearchDtoModel';
-export * from './estateAccountUserSearchDtoModel';
+export * from './estateAccountAgencyFilterModel';
+export * from './estateAccountUserFilterModel';

@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleLogReportAbuseModel } from '../../models/entity/core-module-log/coreModuleLogReportAbuseModel';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -9,7 +10,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleLogReportAbuseService extends ApiCmsServerBase<CoreModuleLogReportAbuseModel, string>  {  getModuleControllerUrl(): string {
+export class CoreModuleLogReportAbuseService extends ApiCmsServerBase<CoreModuleLogReportAbuseModel, string,FilterModel>  {  getModuleControllerUrl(): string {
     return 'CoreModuleLogReportAbuse';
   }
   ServiceAddReportAbuse(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<CoreModuleLogReportAbuseModel>> {

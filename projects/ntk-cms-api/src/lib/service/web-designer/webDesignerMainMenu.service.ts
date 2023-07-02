@@ -1,7 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { WebDesignerMainMenuModel } from '../../models/entity/web-designer/webDesignerMainMenuModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { WebDesignerMainMenuModel } from '../../models/entity/web-designer/webDesignerMainMenuModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 
 @Injectable()
-export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string>  {
+export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainMenu';
   }

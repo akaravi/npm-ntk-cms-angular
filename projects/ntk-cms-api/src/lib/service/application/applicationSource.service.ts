@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { catchError, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ApplicationSourceModel } from '../../models/entity/application/applicationSourceModel';
@@ -7,7 +8,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 @Injectable()
-export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number>  {
+export class ApplicationSourceService extends ApiCmsServerBase<ApplicationSourceModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ApplicationSource';
   }

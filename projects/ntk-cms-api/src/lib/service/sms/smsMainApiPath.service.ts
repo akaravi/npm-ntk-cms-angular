@@ -1,6 +1,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { SmsMainApiPathModel } from '../../models/entity/sms/smsMainApiPathModel';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 
@@ -12,7 +13,7 @@ import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMe
 
 
 @Injectable()
-export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel, string> {
+export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel, string,FilterModel> {
   getModuleControllerUrl(): string {
     return 'SmsMainApiPath';
   }

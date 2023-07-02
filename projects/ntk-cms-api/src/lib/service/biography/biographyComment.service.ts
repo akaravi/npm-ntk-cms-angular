@@ -5,10 +5,11 @@ import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class BiographyCommentService extends ApiCmsServerBase<BiographyCommentModel, number>  {
+export class BiographyCommentService extends ApiCmsServerBase<BiographyCommentModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BiographyComment';
   }

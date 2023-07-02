@@ -11,7 +11,7 @@ import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/core
 
 
 @Injectable()
-export class ChartContentService extends ApiCmsServerBase<ChartContentModel, number>  {
+export class ChartContentService extends ApiCmsServerBase<ChartContentModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ChartContent';
   }

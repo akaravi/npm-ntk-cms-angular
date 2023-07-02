@@ -1,5 +1,6 @@
 // import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 // import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 // import { SmsMainApiPathPrivateSiteConfigModel } from '../../models/entity/sms/smsMainApiPathPrivateSiteConfigModel';
 // import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 // import { Observable } from 'rxjs';

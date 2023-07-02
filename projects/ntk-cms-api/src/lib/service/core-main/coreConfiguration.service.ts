@@ -1,5 +1,6 @@
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   CoreModuleConfigAdminMainValuesModel,
   CoreModuleConfigSiteAccessValuesModel,

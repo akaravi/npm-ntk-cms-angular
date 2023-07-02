@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyDetailModel } from '../../models/entity/estate/estatePropertyDetailModel';
 import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { Observable } from 'rxjs';
@@ -8,7 +9,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { map, retry } from 'rxjs/operators';
 
 @Injectable()
-export class EstatePropertyDetailService extends ApiCmsServerBase<EstatePropertyDetailModel, string>  {
+export class EstatePropertyDetailService extends ApiCmsServerBase<EstatePropertyDetailModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'EstatePropertyDetail';
   }

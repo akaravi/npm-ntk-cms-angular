@@ -8,7 +8,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class TicketingFaqService extends ApiCmsServerBase<TicketingFaqModel, number>  {
+export class TicketingFaqService extends ApiCmsServerBase<TicketingFaqModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'TicketingFaq';
   }

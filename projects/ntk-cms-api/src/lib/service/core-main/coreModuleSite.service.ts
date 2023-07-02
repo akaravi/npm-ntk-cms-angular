@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number>  {
+export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreModuleSite';
   }

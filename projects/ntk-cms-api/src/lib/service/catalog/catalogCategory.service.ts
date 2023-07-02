@@ -4,9 +4,10 @@ import { retry, catchError, map } from 'rxjs/operators';
 import { CatalogCategoryModel } from '../../models/entity/catalog/catalogCategoryModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 @Injectable()
-export class CatalogCategoryService extends ApiCmsServerBase<CatalogCategoryModel, string>  {
+export class CatalogCategoryService extends ApiCmsServerBase<CatalogCategoryModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CatalogCategory';
   }

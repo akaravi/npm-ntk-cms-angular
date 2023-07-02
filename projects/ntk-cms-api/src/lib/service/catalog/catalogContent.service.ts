@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
 
 @Injectable()
-export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel, string>  {
+export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CatalogContent';
   }

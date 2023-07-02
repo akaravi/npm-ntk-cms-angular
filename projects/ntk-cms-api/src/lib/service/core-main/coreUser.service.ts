@@ -11,7 +11,7 @@ import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartMo
 
 
 @Injectable()
-export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number>  {
+export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number,FilterModel>  {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
   CurrentUserObs = this.CurrentUser.asObservable(); getModuleControllerUrl(): string {
     return 'CoreUser';

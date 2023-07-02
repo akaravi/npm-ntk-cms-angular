@@ -1,14 +1,14 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { SmsLogOutBoxTaskSchedulerModel } from '../../models/entity/sms/smsLogOutBoxTaskSchedulerModel';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class SmsLogOutBoxTaskSchedulerService extends ApiCmsServerBase<SmsLogOutBoxTaskSchedulerModel, string> {
+export class SmsLogOutBoxTaskSchedulerService extends ApiCmsServerBase<SmsLogOutBoxTaskSchedulerModel, string,FilterModel> {
   getModuleControllerUrl(): string {
     return 'SmsLogOutBoxTaskScheduler';
   }

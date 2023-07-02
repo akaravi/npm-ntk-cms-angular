@@ -5,15 +5,15 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { BuilderInfoStatusDtoModel } from '../../models/dto/application/builderInfoStatusDtoModel';
 import { UploadApplictionDtoModel } from '../../models/dto/application/uploadApplictionDtoModel';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfoModel';
 
 
 @Injectable()
-export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number>  {
+export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'Application';
   }

@@ -9,7 +9,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number>  {
+export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'TicketingDepartemenOperator';
   }

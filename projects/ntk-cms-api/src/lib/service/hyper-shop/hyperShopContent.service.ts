@@ -9,7 +9,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 @Injectable()
-export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string> {
+export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string,FilterModel> {
   getModuleControllerUrl(): string {
     return 'HyperShopContent';
   }

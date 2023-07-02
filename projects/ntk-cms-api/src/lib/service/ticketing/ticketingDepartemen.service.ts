@@ -1,8 +1,8 @@
 import { TicketingDepartemenModel } from '../../models/entity/ticketing/ticketingDepartemenModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { TicketingFaqModel } from '../../models/entity/ticketing/ticketingFaqModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { TicketingFaqModel } from '../../models/entity/ticketing/ticketingFaqModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepartemenModel, number>  {
+export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepartemenModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'TicketingDepartemen';
   }

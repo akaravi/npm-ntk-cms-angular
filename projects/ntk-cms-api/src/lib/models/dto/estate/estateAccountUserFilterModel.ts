@@ -1,6 +1,6 @@
 import { FilterModel } from "../../entity/base/filterModel";
 
-export class EstateAccountAgencySearchDtoModel extends FilterModel{
+export class EstateAccountUserFilterModel extends FilterModel{
   locationListIds:number[];
   linkLocationWorkAreaIds:number[];
 }

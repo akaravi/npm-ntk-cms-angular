@@ -1,10 +1,11 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSaleItemModel } from '../../models/entity/core-main/coreModuleSaleItemModel';
 
 
 @Injectable()
-export class CoreModuleSaleItemService extends ApiCmsServerBase<CoreModuleSaleItemModel, number>  {
+export class CoreModuleSaleItemService extends ApiCmsServerBase<CoreModuleSaleItemModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreModuleSaleItem';
   }

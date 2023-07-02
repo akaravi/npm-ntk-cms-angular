@@ -6,10 +6,11 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class NewsCategoryService extends ApiCmsServerBase<NewsCategoryModel, number>  {
+export class NewsCategoryService extends ApiCmsServerBase<NewsCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'NewsCategory';
   }

@@ -1,5 +1,6 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSaleSerialModel } from '../../models/entity/core-main/coreModuleSaleSerialModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -10,7 +11,7 @@ import { CoreModuleSaleInvoiceModel } from '../../models/entity/core-main/coreMo
 
 
 @Injectable()
-export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSaleSerialModel, number>  {
+export class CoreModuleSaleSerialService extends ApiCmsServerBase<CoreModuleSaleSerialModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreModuleSaleSerial';
   }

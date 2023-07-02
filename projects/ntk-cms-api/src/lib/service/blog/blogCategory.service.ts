@@ -3,13 +3,12 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { retry, catchError, map } from 'rxjs/operators';
 import { BlogCategoryModel } from '../../models/entity/blog/blogCategoryModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-
-
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class BlogCategoryService extends ApiCmsServerBase<BlogCategoryModel, number>  {
+export class BlogCategoryService extends ApiCmsServerBase<BlogCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BlogCategory';
   }

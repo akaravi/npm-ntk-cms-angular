@@ -1,14 +1,14 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import {  map, retry } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
-
 import { Injectable } from '@angular/core';
 
 
+
 @Injectable()
-export class ChartShareServerCategoryService extends ApiCmsServerBase<any, number>  {
+export class ChartShareServerCategoryService extends ApiCmsServerBase<any, number, FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ChartShareServerCategory';
   }

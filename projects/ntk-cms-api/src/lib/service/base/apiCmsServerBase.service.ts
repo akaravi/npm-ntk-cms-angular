@@ -3,9 +3,9 @@ import { retry, catchError } from 'rxjs/operators';
 import { ApiServerBase } from './apiServerBase.service';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EnumRecordStatus } from '../../models/enums/base/enumRecordStatus';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
@@ -20,7 +20,7 @@ import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModu
 
 
 @Injectable()
-export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IApiCmsServerBase {
+export class ApiCmsServerBase<TModel, TKey,TFilterModel>  extends ApiServerBase implements IApiCmsServerBase {
   ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
@@ -48,12 +48,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
       );
   }
 
-  ServiceGetAll(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
-    // this.loadingStatus=true;
-    if (model == null) {
-      model = new FilterModel();
-    }
-
+  ServiceGetAll(model: TFilterModel): Observable<ErrorExceptionResult<TModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll', model, {
         headers: this.getHeaders(),
@@ -66,12 +61,7 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
         }),
       );
   }
-  ServiceGetAllEditor(model: FilterModel): Observable<ErrorExceptionResult<TModel>> {
-    // this.loadingStatus=true;
-    if (model == null) {
-      model = new FilterModel();
-    }
-
+  ServiceGetAllEditor(model: TFilterModel): Observable<ErrorExceptionResult<TModel>> {
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAllEditor', model, {
         headers: this.getHeaders(),
@@ -100,11 +90,6 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
   }
 
   ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase> {
-    // this.loadingStatus=true;
-    if (model == null) {
-      model = new FilterModel();
-    }
-
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Count', model, {
         headers: this.getHeaders(),
@@ -132,11 +117,6 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
       );
   }
   ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase> {
-    // this.loadingStatus=true;
-    if (model == null) {
-      model = new FilterModel();
-    }
-
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/exist', model, {
         headers: this.getHeaders(),
@@ -151,11 +131,6 @@ export class ApiCmsServerBase<TModel, TKey>  extends ApiServerBase implements IA
   }
 
   ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile> {
-    // this.loadingStatus=true;
-    if (model == null) {
-      model = new FilterModel();
-    }
-
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile', model, {
         headers: this.getHeaders(),

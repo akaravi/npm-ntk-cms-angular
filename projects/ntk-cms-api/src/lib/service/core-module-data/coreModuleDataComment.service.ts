@@ -1,6 +1,7 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
@@ -9,7 +10,7 @@ import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class CoreModuleDataCommentService extends ApiCmsServerBase<CoreModuleDataCommentModel, string>  {  getModuleControllerUrl(): string {
+export class CoreModuleDataCommentService extends ApiCmsServerBase<CoreModuleDataCommentModel, string,FilterModel>  {  getModuleControllerUrl(): string {
     return 'CoreModuleDataComment';
   }
   ServiceAddMemo(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {

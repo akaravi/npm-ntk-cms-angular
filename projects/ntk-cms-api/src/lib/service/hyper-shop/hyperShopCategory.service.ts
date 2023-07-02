@@ -8,7 +8,7 @@ import { HyperShopCategoryModel } from '../../models/entity/hyper-shop/hyperShop
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategoryModel, string> {
+export class HyperShopCategoryService extends  ApiCmsServerBase<HyperShopCategoryModel, string,FilterModel> {
   getModuleControllerUrl(): string {
     return 'HyperShopCategory';
   }

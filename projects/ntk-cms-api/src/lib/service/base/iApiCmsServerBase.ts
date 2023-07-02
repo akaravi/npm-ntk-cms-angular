@@ -12,11 +12,7 @@ import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/c
 import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModuleCommentDtoModel';
 import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
 
-
-
 export interface IApiCmsServerBase{
-
-
 
     ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase>;
     ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase>;

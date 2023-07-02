@@ -5,11 +5,12 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 
 
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { UniversalMenuMenuItemProcessModel } from '../../models/entity/universal-menu/universalMenuMenuItemProcessModel';
 
 
 @Injectable()
-export class UniversalMenuMenuItemProcessService extends ApiCmsServerBase<UniversalMenuMenuItemProcessModel, number>  {
+export class UniversalMenuMenuItemProcessService extends ApiCmsServerBase<UniversalMenuMenuItemProcessModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'UniversalMenuMenuItemProcess';
   }

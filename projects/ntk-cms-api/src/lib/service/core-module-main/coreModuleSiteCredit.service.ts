@@ -2,6 +2,7 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { CoreModuleSiteCreditModel } from '../../models/entity/core-module-main/coreModuleSiteCreditModel';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -12,7 +13,7 @@ import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../..
 import { CoreModuleSiteCreditChargeDirectDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditChargeDirectDtoModel';
 
 @Injectable()
-export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSiteCreditModel, number>  {
+export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSiteCreditModel, number,FilterModel>  {
     getModuleControllerUrl(): string {
       return 'CoreModuleSiteCredit';
     }

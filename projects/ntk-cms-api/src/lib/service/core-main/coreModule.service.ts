@@ -10,7 +10,7 @@ import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()
-export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number>  {
+export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreModule';
   }

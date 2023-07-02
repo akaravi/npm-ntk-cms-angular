@@ -1,14 +1,14 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { SmsLogOutBoxQueueModel } from '../../models/entity/sms/smsLogOutBoxQueueModel';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class SmsLogOutBoxQueueService extends ApiCmsServerBase<SmsLogOutBoxQueueModel, string> {
+export class SmsLogOutBoxQueueService extends ApiCmsServerBase<SmsLogOutBoxQueueModel, string,FilterModel> {
   getModuleControllerUrl(): string {
     return 'SmsLogOutBoxQueue';
   }

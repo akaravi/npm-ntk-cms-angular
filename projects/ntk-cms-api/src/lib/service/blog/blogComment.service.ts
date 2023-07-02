@@ -3,12 +3,12 @@ import { BlogCommentModel } from '../../models/entity/blog/blogCommentModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, number>  {
+export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BlogComment';
   }

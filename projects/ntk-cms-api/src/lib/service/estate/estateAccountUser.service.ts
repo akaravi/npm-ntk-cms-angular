@@ -1,22 +1,24 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstateAccountUserModel } from '../../models/entity/estate/estateAccountUserModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable, map, retry } from 'rxjs';
-import { EstateAccountUserSearchDtoModel } from '../../models/dto/estate/estateAccountUserSearchDtoModel';
+import { EstateAccountUserFilterModel } from '../../models/dto/estate/estateAccountUserFilterModel';
+
 
 @Injectable()
-export class EstateAccountUserService extends ApiCmsServerBase<EstateAccountUserModel, string>  {
+export class EstateAccountUserService extends ApiCmsServerBase<EstateAccountUserModel, string, EstateAccountUserFilterModel>  {
   getModuleControllerUrl(): string {
     return 'EstateAccountUser';
   }
-  ServiceGetAllWithFilter(model: EstateAccountUserSearchDtoModel): Observable<ErrorExceptionResult<EstateAccountUserModel>> {
+  ServiceGetAllWithFilter(model: EstateAccountUserFilterModel): Observable<ErrorExceptionResult<EstateAccountUserModel>> {
     if (model == null) {
-      model = new EstateAccountUserSearchDtoModel();
+      model = new EstateAccountUserFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/' , model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

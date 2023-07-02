@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
@@ -11,7 +12,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel, number>  {
+export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'HyperShopOrder';
   }

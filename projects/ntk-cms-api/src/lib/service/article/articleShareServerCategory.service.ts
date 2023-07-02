@@ -10,7 +10,7 @@ import { ArticleShareServerCategoryModel } from '../../models/entity/article/art
 
 
 @Injectable()
-export class ArticleShareServerCategoryService extends ApiCmsServerBase<ArticleShareServerCategoryModel, number>  {
+export class ArticleShareServerCategoryService extends ApiCmsServerBase<ArticleShareServerCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'ArticleShareServerCategory';
   }

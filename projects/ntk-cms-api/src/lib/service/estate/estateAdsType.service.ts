@@ -1,8 +1,8 @@
 
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { EstateAdsTypeModel } from '../../models/entity/estate/estateAdsTypeModel';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { EstateAdsTypeModel } from '../../models/entity/estate/estateAdsTypeModel';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { EstateModuleSalePropertyAdsPaymentDtoModel } from '../../models/dto/est
 import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropertyAdsModel';
 
 @Injectable()
-export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string>  {
+export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'EstateAdsType';
   }

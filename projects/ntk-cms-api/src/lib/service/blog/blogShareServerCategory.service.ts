@@ -3,14 +3,13 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import {  map, retry } from 'rxjs/operators';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
-
 import { Injectable } from '@angular/core';
 import { BlogShareServerCategoryModel } from '../../models/entity/blog/blogShareServerCategoryModel';
 
 
 
 @Injectable()
-export class BlogShareServerCategoryService extends ApiCmsServerBase<BlogShareServerCategoryModel, number>  {
+export class BlogShareServerCategoryService extends ApiCmsServerBase<BlogShareServerCategoryModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'BlogShareServerCategory';
   }

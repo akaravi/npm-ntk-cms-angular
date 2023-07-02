@@ -15,7 +15,7 @@ import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core-
 
 
 @Injectable()
-export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number>  {
+export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number,FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreSite';
   }

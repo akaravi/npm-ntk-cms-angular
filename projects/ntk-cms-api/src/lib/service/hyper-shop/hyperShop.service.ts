@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { UniversalActionModel } from '../../models/dto/core-main/universalActionModel';

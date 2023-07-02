@@ -4,6 +4,7 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
@@ -244,5 +245,5 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-  
+
 }
