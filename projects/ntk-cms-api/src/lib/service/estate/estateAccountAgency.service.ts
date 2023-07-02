@@ -12,20 +12,20 @@ export class EstateAccountAgencyService extends ApiCmsServerBase<EstateAccountAg
   getModuleControllerUrl(): string {
     return 'EstateAccountAgency';
   }
-  ServiceGetAllWithFilter(model: EstateAccountAgencyFilterModel): Observable<ErrorExceptionResult<EstateAccountAgencyModel>> {
-    if (model == null) {
-      model = new EstateAccountAgencyFilterModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+  // ServiceGetAllWithFilter(model: EstateAccountAgencyFilterModel): Observable<ErrorExceptionResult<EstateAccountAgencyModel>> {
+  //   if (model == null) {
+  //     model = new EstateAccountAgencyFilterModel();
+  //   }
+  //   return this.http
+  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
+  //       headers: this.getHeaders(),
+  //     })
+  //     .pipe(
+  //       retry(this.configApiRetry),
+  //       // catchError(this.handleError)
+  //       map((ret: any) => {
+  //         return this.errorExceptionResultCheck(ret);
+  //       }),
+  //     );
+  // }
 }

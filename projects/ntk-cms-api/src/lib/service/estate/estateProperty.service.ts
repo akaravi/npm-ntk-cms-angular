@@ -121,22 +121,22 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  ServiceGetAllWithFilter(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
-    if (model == null) {
-      model = new EstatePropertyFilterModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+  // ServiceGetAllWithFilter(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  //   if (model == null) {
+  //     model = new EstatePropertyFilterModel();
+  //   }
+  //   return this.http
+  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
+  //       headers: this.getHeaders(),
+  //     })
+  //     .pipe(
+  //       retry(this.configApiRetry),
+  //       // catchError(this.handleError)
+  //       map((ret: any) => {
+  //         return this.errorExceptionResultCheck(ret);
+  //       }),
+  //     );
+  // }
   ServiceGetAllWithBillboardId(BillboardId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();

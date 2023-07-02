@@ -12,20 +12,20 @@ export class EstatePropertyHistoryService extends ApiCmsServerBase<EstatePropert
   getModuleControllerUrl(): string {
     return 'EstatePropertyHistory';
   }
-  ServiceGetAllWithFilterOnDate(model: EstatePropertyHistoryFilterModel): Observable<ErrorExceptionResult<EstatePropertyHistoryModel>> {
-    if (model == null) {
-      model = new EstatePropertyHistoryFilterModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilterOnDate/', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+  // ServiceGetAllWithFilterOnDate(model: EstatePropertyHistoryFilterModel): Observable<ErrorExceptionResult<EstatePropertyHistoryModel>> {
+  //   if (model == null) {
+  //     model = new EstatePropertyHistoryFilterModel();
+  //   }
+  //   return this.http
+  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilterOnDate/', model, {
+  //       headers: this.getHeaders(),
+  //     })
+  //     .pipe(
+  //       retry(this.configApiRetry),
+  //       // catchError(this.handleError)
+  //       map((ret: any) => {
+  //         return this.errorExceptionResultCheck(ret);
+  //       }),
+  //     );
+  // }
 }

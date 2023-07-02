@@ -29,22 +29,22 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         }),
       );
   }
-  ServiceGetAllWithFilter(model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
-    if (model == null) {
-      model = new EstateCustomerOrderFilterModel();
-    }
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+  // ServiceGetAllWithFilter(model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  //   if (model == null) {
+  //     model = new EstateCustomerOrderFilterModel();
+  //   }
+  //   return this.http
+  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
+  //       headers: this.getHeaders(),
+  //     })
+  //     .pipe(
+  //       retry(this.configApiRetry),
+  //       // catchError(this.handleError)
+  //       map((ret: any) => {
+  //         return this.errorExceptionResultCheck(ret);
+  //       }),
+  //     );
+  // }
   ServiceGetAllWithResponsibleUserId(userId: number, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
