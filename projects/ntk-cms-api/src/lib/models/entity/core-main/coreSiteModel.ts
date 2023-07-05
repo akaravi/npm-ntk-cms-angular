@@ -109,6 +109,7 @@ pwaShortName: string;
   aboutUsLinkCompanyAuthorSite: string;
   aboutUsLinkCompanyPublisherSite: string;
   aboutUsPrivacyPolicyHtmlBody: string;
+  aboutUsLicensesHtmlBody: string;
 
   /*
   AboutUs

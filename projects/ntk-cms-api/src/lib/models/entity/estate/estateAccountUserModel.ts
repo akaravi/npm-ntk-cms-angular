@@ -8,7 +8,10 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
-  linkLocationWorkAreaIds:number[];
+  linkLocationWorkAreaIds: number[];
+  notificationWorkAreaEstate: boolean;
+  notificationWorkAreaCustomerOrder: boolean;
+
   geolocationlatitude?: number;
   geolocationlongitude?: number;
   dateManufacture?: Date;
@@ -21,9 +24,9 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 
-  accessWatchRowSite:boolean;
-  accessWatchRowOtherAgency:boolean;
-  accessWatchRowOtherAgent:boolean;
-  accessAllowShareRowWatchOtherAgency:boolean;
-  accessAllowShareRowWatchOtherAgent:boolean;
+  accessWatchRowSite: boolean;
+  accessWatchRowOtherAgency: boolean;
+  accessWatchRowOtherAgent: boolean;
+  accessAllowShareRowWatchOtherAgency: boolean;
+  accessAllowShareRowWatchOtherAgent: boolean;
 }

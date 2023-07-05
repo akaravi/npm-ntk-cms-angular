@@ -1,16 +1,16 @@
-export class EstateCustomerOrderActionSendSmsDtoModel{
-  id:string ;
+export class EstateCustomerOrderActionSendSmsDtoModel {
+  id: string;
   /**Action */
   actionSendSmsToMe: boolean;
   actionSendSmsToEstateCustomer: boolean;
   actionSendSmsToEstateAgency: boolean;
-  actionSendSmsToEstateUser: boolean;
+  actionSendSmsToEstateAgent: boolean;
   actionSendSmsToContactNumber: string;
-/**Action */
-actionSendSmsToAreaEstateAgency: boolean;
-actionSendSmsToAreaEstateUser: boolean;
-/**Action */
-actionSendSmsToAllAreaEstateAgency: boolean;
-actionSendSmsToAllAreaEstateUser: boolean;
+  /**Action */
+  actionSendSmsToAreaEstateAgency: boolean;
+  actionSendSmsToAreaEstateAgent: boolean;
+  /**Action */
+  actionSendSmsToAllAreaEstateAgency: boolean;
+  actionSendSmsToAllAreaEstateAgentt: boolean;
 
 }
