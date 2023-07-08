@@ -110,7 +110,7 @@ pwaShortName: string;
   aboutUsLinkCompanyPublisherSite: string;
   aboutUsPrivacyPolicyHtmlBody: string;
   aboutUsLicensesHtmlBody: string;
-
+  aboutUsSupportHtmlBody:string;
   /*
   AboutUs
     */

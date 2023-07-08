@@ -34,3 +34,4 @@ export * from './file360TourHotSpotModel';
 export * from './file360TourModel';
 export * from './file360TourScenesModel';
 export * from './file360TourDefaultModel';
+export * from './coreSiteSupportModel';

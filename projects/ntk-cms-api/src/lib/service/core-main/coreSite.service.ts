@@ -12,6 +12,7 @@ import { ShareInfoModel } from '../../models/dto/core-main/shareInfoModel';
 import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
 import { ProcessModuleSiteDataInfoOutputModel } from '../../models/dto/core-main/processModuleSiteDataInfoOutputModel';
 import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core-main/processModuleSiteDataOptimazeOutputModel';
+import { CoreSiteSupportModel } from '../../models/entity/core-main/coreSiteSupportModel';
 
 
 @Injectable()
@@ -74,6 +75,19 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number,Filt
   ServiceCurrectSite(): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrectSite', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceSupportSite(): Observable<ErrorExceptionResult<CoreSiteSupportModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SupportSite', {
         headers: this.getHeaders(),
       })
       .pipe(
