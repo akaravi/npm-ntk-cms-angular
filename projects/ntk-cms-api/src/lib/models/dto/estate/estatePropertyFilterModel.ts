@@ -2,6 +2,8 @@ import { FilterModel } from "../../entity/base/filterModel";
 import { EstatePropertyDetailValueModel } from "../../entity/estate/estatePropertyDetailValueModel";
 
 export class EstatePropertyFilterModel extends FilterModel {
+  onDateTimeFrom: Date;
+  onDateTimeTo: Date;
   caseCode:string;
     linkPropertyTypeLanduseId: string;
     linkPropertyTypeUsageId: string;
