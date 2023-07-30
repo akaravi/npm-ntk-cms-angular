@@ -26,3 +26,5 @@ export * from './ressellerChartModel';
 export * from './processModuleSiteDataInfoOutputModel';
 export * from './processModuleSiteDataRemoveOutputModel';
 export * from './processModuleSiteDataOptimazeOutputModel';
+export * from './cmsNotificationModel';
+export * from './cmsNotificationSendDtoModel';
