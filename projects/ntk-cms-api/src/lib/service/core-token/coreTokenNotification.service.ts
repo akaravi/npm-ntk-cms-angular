@@ -13,13 +13,13 @@ export class CoreTokenNotificationService extends ApiCmsServerBase<CoreTokenNoti
     return 'CoreTokenNotification';
   }
 
-  ServiceSendMessage(model: CmsNotificationSendDtoModel):
+  ServiceSendNotification(model: CmsNotificationSendDtoModel):
   Observable<ErrorExceptionResult<CoreTokenNotificationModel>> {
   if (!model) {
     model = new CmsNotificationSendDtoModel();
   }
   return this.http
-    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage', model, {
+    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotification', model, {
       headers: this.getHeaders(),
     })
     .pipe(
