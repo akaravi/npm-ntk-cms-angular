@@ -40,3 +40,5 @@ export * from './enumNotificationConnectionStatus';
 export * from './enumMicroServiceConnectionStatus';
 export * from './enumMicroServiceConnectionType';
 export * from './enumMicroServiceModuleType';
+export * from './notificationConnectionTypeEnum';
+
