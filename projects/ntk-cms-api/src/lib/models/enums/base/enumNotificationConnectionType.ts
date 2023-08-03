@@ -1,5 +1,6 @@
 export enum EnumNotificationConnectionType {
-  restApi = 0,
-  signalr = 1,
-  webSoocket = 2
+	restApi = 0,
+	Signalr = 1,
+	FireBase = 2,
+	WebSoocket = 3,
 }
