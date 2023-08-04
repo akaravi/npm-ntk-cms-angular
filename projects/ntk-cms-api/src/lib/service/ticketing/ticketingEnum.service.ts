@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
+import { InfoModelEnum } from '../../models/entity/base/infoModelEnum';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
@@ -13,7 +13,7 @@ export class TicketingEnumService extends ApiServerBase {
     return 'ticketingEnum';
   }
 
-  ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketingDepartemenPriorityEnum', {
         headers: this.getHeaders(),
@@ -26,7 +26,7 @@ export class TicketingEnumService extends ApiServerBase {
       );
   }
 
-  ServiceEnumTicketStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceEnumTicketStatus(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketStatusEnum', {
         headers: this.getHeaders(),
@@ -38,7 +38,7 @@ export class TicketingEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumAnswerStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceEnumAnswerStatus(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AnswerStatusEnum', {
         headers: this.getHeaders(),

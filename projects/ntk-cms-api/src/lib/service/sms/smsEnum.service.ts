@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
+import { InfoModelEnum } from '../../models/entity/base/infoModelEnum';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
@@ -13,7 +13,7 @@ export class SmsEnumService extends ApiServerBase {
     return 'SmsEnum';
   }
 
-  ServiceSmsApiNumberPermissionAccessStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsApiNumberPermissionAccessStatusEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsApiNumberPermissionAccessStatusEnum', {
         headers: this.getHeaders(),
@@ -25,7 +25,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsApiNumberPermissionActionEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsApiNumberPermissionActionEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsApiNumberPermissionActionEnum', {
         headers: this.getHeaders(),
@@ -37,7 +37,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsApiPathPermissionAccessStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsApiPathPermissionAccessStatusEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsApiPathPermissionAccessStatusEnum', {
         headers: this.getHeaders(),
@@ -49,7 +49,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsApiPathPermissionActionEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsApiPathPermissionActionEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsApiPathPermissionActionEnum', {
         headers: this.getHeaders(),
@@ -61,7 +61,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsMessageTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsMessageTypeEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsMessageTypeEnum', {
         headers: this.getHeaders(),
@@ -73,7 +73,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsOutBoxTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsOutBoxTypeEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsOutBoxTypeEnum', {
         headers: this.getHeaders(),
@@ -85,7 +85,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsProcessFlowRecordStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsProcessFlowRecordStatusEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsProcessFlowRecordStatusEnum', {
         headers: this.getHeaders(),
@@ -97,7 +97,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsProcessFlowSmsStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsProcessFlowSmsStatusEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsProcessFlowSmsStatusEnum', {
         headers: this.getHeaders(),
@@ -109,7 +109,7 @@ export class SmsEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceSmsRecordStatusOutBoxEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceSmsRecordStatusOutBoxEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SmsRecordStatusOutBoxEnum', {
         headers: this.getHeaders(),

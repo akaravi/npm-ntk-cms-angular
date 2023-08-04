@@ -1,5 +1,5 @@
 //@@tag-Version-2201011
-export class EnumInfoModel {
+export class InfoModelEnum {
   key: string;
   value: number;
   title: string;
