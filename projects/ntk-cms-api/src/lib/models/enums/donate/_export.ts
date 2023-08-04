@@ -1,3 +1,3 @@
-export * from './enumTransactionLogPublicType';
+export * from './transactionLogPublicTypeEnum';
 
 

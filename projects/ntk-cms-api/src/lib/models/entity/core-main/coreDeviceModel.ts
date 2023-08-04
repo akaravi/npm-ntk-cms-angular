@@ -1,5 +1,5 @@
-import { EnumOperatingSystemType } from '../../enums/base/enumOperatingSystemType';
-import { EnumDeviceType } from '../../enums/base/enumDeviceType';
+import { EnumOperatingSystemType } from '../../enums/base/operatingSystemTypeEnum';
+import { EnumDeviceType } from '../../enums/base/deviceTypeEnum';
 import { CoreSiteModel } from './coreSiteModel';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011

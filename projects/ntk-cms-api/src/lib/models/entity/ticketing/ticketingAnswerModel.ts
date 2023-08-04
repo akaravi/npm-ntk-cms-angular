@@ -1,4 +1,4 @@
-import { EnumAnswerStatus } from '../../enums/ticketing/enumAnswerStatus';
+import { EnumAnswerStatus } from '../../enums/ticketing/answerStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../core-main/coreUserModel';
 import { MemberUserModel } from '../member/memberUserModel';

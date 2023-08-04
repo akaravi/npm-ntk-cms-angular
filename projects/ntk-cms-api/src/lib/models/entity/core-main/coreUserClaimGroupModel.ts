@@ -1,4 +1,4 @@
-import { EnumUserClaimGroupActionType } from '../../enums/core/enumUserClaimGroupActionType';
+import { EnumUserClaimGroupActionType } from '../../enums/core/userClaimGroupActionTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 //@@tag-Version-2201011

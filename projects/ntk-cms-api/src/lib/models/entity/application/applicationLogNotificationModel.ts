@@ -1,4 +1,4 @@
-import { EnumNotificationType } from '../../enums/base/enumNotificationType';
+import { EnumNotificationType } from '../../enums/base/notificationTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationMemberInfoModel } from './applicationMemberInfoModel';

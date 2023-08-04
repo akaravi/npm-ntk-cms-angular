@@ -1,4 +1,4 @@
-import { EnumDeviceStatus } from '../../enums/base/enumDeviceStatus';
+import { EnumDeviceStatus } from '../../enums/base/deviceStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 //@@tag-Version-2201011
@@ -19,10 +19,10 @@ export class ApplicationMemberInfoModel extends BaseModuleEntity<string>  {
   deviceIP: string;
   scorePercent: number;
   scoreComment: string;
-  linkLocationId?:number;
+  linkLocationId?: number;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationIdTitle:string;
-  linkLocationIdParentTitle:string;
+  linkLocationIdTitle: string;
+  linkLocationIdParentTitle: string;
 }
 

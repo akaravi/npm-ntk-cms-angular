@@ -1,5 +1,5 @@
-import { SmsMessageTypeEnum } from '../../enums/sms/smsMessageType.enum';
-import { SmsOutBoxTypeEnum } from '../../enums/sms/smsOutBoxType.enum';
+import { SmsMessageTypeEnum } from '../../enums/sms/smsMessageTypeEnum';
+import { SmsOutBoxTypeEnum } from '../../enums/sms/smsOutBoxTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
 //@@tag-Version-2201011

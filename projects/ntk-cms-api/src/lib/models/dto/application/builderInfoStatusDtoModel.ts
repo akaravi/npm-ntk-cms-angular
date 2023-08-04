@@ -1,4 +1,4 @@
-import { EnumBuildStatusType } from '../../enums/base/enumBuildStatusType';
+import { EnumBuildStatusType } from '../../enums/base/buildStatusTypeEnum';
 
 export class BuilderInfoStatusDtoModel {
     id: number;

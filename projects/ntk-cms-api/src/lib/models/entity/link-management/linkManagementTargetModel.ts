@@ -1,5 +1,5 @@
-import { EnumManagementContentSettingType } from '../../enums/linkManagement/enumManagementContentSettingType';
-import { EnumSharingPriceType } from '../../enums/linkManagement/enumSharingPriceType';
+import { EnumManagementContentSettingType } from '../../enums/linkManagement/managementContentSettingTypeEnum';
+import { EnumSharingPriceType } from '../../enums/linkManagement/sharingPriceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class LinkManagementTargetModel extends BaseModuleEntity<number> {

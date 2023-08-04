@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
 
 export class CoreUserClaimCheckModel {
   recordStatus = EnumRecordStatus.Available;
@@ -10,8 +10,8 @@ export class CoreUserClaimCheckModel {
   approvedResult: string;
   approveCheckDate?: Date;
   approvedExpireDate?: Date;
-  typeLinkMainImageId:number;
-  typeLinkMainImageIdSrc:string;
-  linkFileContentId:number;
-  linkFileContentIdSrc:string;
+  typeLinkMainImageId: number;
+  typeLinkMainImageIdSrc: string;
+  linkFileContentId: number;
+  linkFileContentIdSrc: string;
 }

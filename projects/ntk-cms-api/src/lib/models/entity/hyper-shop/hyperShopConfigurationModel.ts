@@ -1,17 +1,15 @@
-import { EnumHyperShopConnectionType } from '../../enums/base/enumHyperShopConnectionType';
+import { EnumHyperShopConnectionType } from '../../enums/base/hyperShopConnectionTypeEnum';
 import { BaseModuleConfigAdminMainValuesModel } from '../base-config/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteStorageValuesModel';
 
-export class HyperShopModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
-{
+export class HyperShopModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel {
   DefaultCategorySiteId: number;
   DefaultSourceApplicationId: number;
 }
 
-export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
-{
+export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {
   /// <summary>
   /// تمام مدارک درگاه اشتراکی تایید شده است
   /// </summary>
@@ -26,8 +24,7 @@ export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfig
 /// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
-export class HyperShopModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
-{
+export class HyperShopModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
   hyperShopConnectionType: EnumHyperShopConnectionType;
   /// <summary>
   /// پرداخت در محل فعال است
@@ -56,7 +53,6 @@ export class HyperShopModuleConfigSiteValuesModel extends BaseModuleConfigSiteVa
 
 }
 
-export class HyperShopModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
-{
+export class HyperShopModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel {
 
 }

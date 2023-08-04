@@ -1,4 +1,4 @@
-import { EnumSharingAccountingType } from '../../enums/linkManagement/enumSharingAccountingType';
+import { EnumSharingAccountingType } from '../../enums/linkManagement/sharingAccountingTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingModel } from './linkManagementAccountingModel';
 //@@tag-Version-2201011

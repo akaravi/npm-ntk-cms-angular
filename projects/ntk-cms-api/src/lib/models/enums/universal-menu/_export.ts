@@ -1,3 +1,3 @@
-export * from './enumUniversalMenuPlatformType';
-export * from './enumUniversalMenuRenderType';
+export * from './universalMenuPlatformTypeEnum';
+export * from './universalMenuRenderTypeEnum';
 

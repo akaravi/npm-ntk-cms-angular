@@ -1,4 +1,4 @@
-import { EnumCmsModuleSaleItemType } from '../../enums/core/enumCmsModuleSaleItemType';
+import { EnumCmsModuleSaleItemType } from '../../enums/core/cmsModuleSaleItemTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleSaleInvoiceModel } from './coreModuleSaleInvoiceModel';

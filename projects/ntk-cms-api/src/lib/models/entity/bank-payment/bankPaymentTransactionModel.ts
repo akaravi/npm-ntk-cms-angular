@@ -1,5 +1,5 @@
-import { EnumTransactionBankStatus } from '../../enums/base/enumTransactionBankStatus';
-import { EnumTransactionRecordStatus } from '../../enums/base/enumTransactionRecordStatus';
+import { EnumTransactionBankStatus } from '../../enums/base/transactionBankStatusEnum';
+import { EnumTransactionRecordStatus } from '../../enums/base/transactionRecordStatusEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
@@ -41,5 +41,5 @@ export class BankPaymentTransactionModel extends BaseEntity<number> {
   modelShopInvoiceSaleRelease: boolean;
   modelShopInvoiceSaleReleaseDate: Date;
   transactionLogs: BankPaymentTransactionLogModel;
-  paymentTransactionUrl:string;
+  paymentTransactionUrl: string;
 }

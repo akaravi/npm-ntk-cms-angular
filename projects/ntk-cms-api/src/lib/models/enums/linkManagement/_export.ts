@@ -1,3 +1,3 @@
-export * from './enumManagementContentSettingType';
-export * from './enumSharingAccountingType';
-export * from './enumSharingPriceType';
+export * from './managementContentSettingTypeEnum';
+export * from './sharingAccountingTypeEnum';
+export * from './sharingPriceTypeEnum';

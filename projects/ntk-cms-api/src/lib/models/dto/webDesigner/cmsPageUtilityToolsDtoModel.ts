@@ -1,4 +1,4 @@
-import { EnumCmsPageUtilityToolsAction } from '../../enums/base/enumCmsPageUtilityToolsAction';
+import { EnumCmsPageUtilityToolsAction } from '../../enums/base/cmsPageUtilityToolsActionEnum';
 export class CmsPageUtilityToolsDtoModel {
     action: EnumCmsPageUtilityToolsAction;
     pageId?: number;

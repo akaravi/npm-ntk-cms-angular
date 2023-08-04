@@ -1,4 +1,4 @@
-import { EnumPaymentMethod } from '../../enums/core/enumPaymentMethod';
+import { EnumPaymentMethod } from '../../enums/core/paymentMethodEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class BlogShareMainAdminSettingModel extends BaseModuleEntity<number> {

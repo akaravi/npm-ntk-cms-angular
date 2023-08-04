@@ -1,4 +1,4 @@
-import { EnumGenderType } from '../../enums/base/enumGenderType';
+import { EnumGenderType } from '../../enums/base/genderTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreUserModel extends BaseEntity<number> {

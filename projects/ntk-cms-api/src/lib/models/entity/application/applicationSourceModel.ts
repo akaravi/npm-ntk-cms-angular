@@ -1,4 +1,4 @@
-import { EnumOperatingSystemType } from '../../enums/base/enumOperatingSystemType';
+import { EnumOperatingSystemType } from '../../enums/base/operatingSystemTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationLayoutModel } from './applicationLayoutModel';

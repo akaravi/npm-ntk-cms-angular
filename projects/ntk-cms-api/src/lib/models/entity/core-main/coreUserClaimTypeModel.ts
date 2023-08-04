@@ -1,4 +1,4 @@
-import { EnumUserClaimKinds } from '../../enums/core/enumUserClaimKinds';
+import { EnumUserClaimKinds } from '../../enums/core/userClaimKindsEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 import { CoreUserClaimContentModel } from './coreUserClaimContentModel';

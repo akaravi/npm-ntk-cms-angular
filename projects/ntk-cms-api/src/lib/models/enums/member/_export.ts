@@ -1,3 +1,3 @@
 
-export * from './enumUiPropertyDesign';
+export * from './uiPropertyDesignEnum';
 

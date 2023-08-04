@@ -1,5 +1,5 @@
-import { EnumBuildStatusType } from '../../enums/base/enumBuildStatusType';
-import { EnumLanguage } from '../../enums/base/enumLanguage';
+import { EnumBuildStatusType } from '../../enums/base/buildStatusTypeEnum';
+import { EnumLanguage } from '../../enums/base/languageEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';

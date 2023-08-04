@@ -1,6 +1,6 @@
 
-import { EnumHyperShopOrderType } from '../../enums/base/enumHyperShopOrderType';
-import { EnumHyperShopPaymentType } from '../../enums/base/enumHyperShopPaymentType';
+import { EnumHyperShopOrderType } from '../../enums/base/hyperShopOrderTypeEnum';
+import { EnumHyperShopPaymentType } from '../../enums/base/hyperShopPaymentTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { HyperShopOrderContentModel } from './hyperShopOrderContentModel';
 //@@tag-Version-2201011

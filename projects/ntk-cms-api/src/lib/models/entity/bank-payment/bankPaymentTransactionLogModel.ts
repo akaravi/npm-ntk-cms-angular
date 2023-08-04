@@ -1,4 +1,4 @@
-import { EnumTransactionRecordStatus } from '../../enums/base/enumTransactionRecordStatus';
+import { EnumTransactionRecordStatus } from '../../enums/base/transactionRecordStatusEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 //@@tag-Version-2201011

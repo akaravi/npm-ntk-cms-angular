@@ -1,5 +1,5 @@
-import { EnumClauseType } from '../../enums/base/enumClauseType';
-import { EnumFilterDataModelSearchTypes } from '../../enums/base/enumFilterDataModelSearchTypes';
+import { EnumClauseType } from '../../enums/base/clauseTypeEnum';
+import { EnumFilterDataModelSearchTypes } from '../../enums/base/filterDataModelSearchTypesEnum';
 //@@tag-Version-2201011
 export class FilterDataModel {
   constructor() {
@@ -21,9 +21,9 @@ export class FilterDataModel {
   // EnumValue: string;
   // SingleValue: number;
   // DecimalValue: number;
-   latitudeValue: number;
-   longitudeValue: number;
-   latitudeLongitudeDistanceValue: number;
+  latitudeValue: number;
+  longitudeValue: number;
+  latitudeLongitudeDistanceValue: number;
   // LatitudeLongitudeSortType: string;
   // HierarchyIdLevel: number;
   // ObjectIdContainValues: string[] = new Array<string>();

@@ -1,5 +1,5 @@
-import { EnumManageUserAccessAreaTypes } from "../../enums/base/enumManageUserAccessAreaTypes";
-import { EnumManageUserAccessUserTypes } from "../../enums/base/enumManageUserAccessUserTypes";
+import { EnumManageUserAccessAreaTypes } from "../../enums/base/manageUserAccessAreaTypesEnum";
+import { EnumManageUserAccessUserTypes } from "../../enums/base/manageUserAccessUserTypesEnum";
 
 //@@tag-Version-2201011
 export class TokenInfoModel {
@@ -36,5 +36,5 @@ export class TokenInfoModel {
   email: string;
   emailConfirmed: boolean;
   linkMainImageIdSrc: string;
-  direction: string ;
+  direction: string;
 }

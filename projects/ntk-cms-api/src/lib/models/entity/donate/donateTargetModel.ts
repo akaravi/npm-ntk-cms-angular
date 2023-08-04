@@ -1,4 +1,4 @@
-import { EnumTransactionLogPublicType } from '../../enums/donate/enumTransactionLogPublicType';
+import { EnumTransactionLogPublicType } from '../../enums/donate/transactionLogPublicTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';

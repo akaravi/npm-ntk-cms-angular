@@ -1,4 +1,4 @@
-import { EnumMenuPlaceType } from '../../enums/base/enumMenuPlaceType';
+import { EnumMenuPlaceType } from '../../enums/base/menuPlaceTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreCpMainMenuModel extends BaseEntity<number> {

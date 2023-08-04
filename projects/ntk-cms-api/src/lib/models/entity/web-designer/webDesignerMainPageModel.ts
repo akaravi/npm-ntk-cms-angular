@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { EnumPageAbilityType } from '../../enums/base/enumPageAbilityType';
+import { EnumPageAbilityType } from '../../enums/base/pageAbilityTypeEnum';
 //@@tag-Version-2201011
-export class WebDesignerMainPageModel  extends BaseModuleEntity<string> {
+export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     linkFavFileId?: number;
     title: string;
     keyword: string;

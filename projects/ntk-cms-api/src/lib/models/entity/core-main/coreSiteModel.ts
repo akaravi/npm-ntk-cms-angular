@@ -4,8 +4,8 @@ import { CoreSiteUserModel } from './coreSiteUserModel';
 import { CoreModuleSiteModel } from './coreModuleSiteModel';
 import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
 import { CoreDeviceModel } from './coreDeviceModel';
-import { EnumSiteStatus } from '../../enums/base/enumSiteStatus';
-import { EnumLanguage } from '../../enums/base/enumLanguage';
+import { EnumSiteStatus } from '../../enums/base/siteStatusEnum';
+import { EnumLanguage } from '../../enums/base/languageEnum';
 import { Data } from '@angular/router';
 //@@tag-Version-2201011
 export class CoreSiteModel extends BaseEntity<number> {
@@ -52,8 +52,8 @@ export class CoreSiteModel extends BaseEntity<number> {
   /*
  Pwa
    */
-    pwaName: string;
-pwaShortName: string;
+  pwaName: string;
+  pwaShortName: string;
   pwaDescription: string;
   pwaDisplay: string;
   pwaThemeColor: string;
@@ -110,7 +110,7 @@ pwaShortName: string;
   aboutUsLinkCompanyPublisherSite: string;
   aboutUsPrivacyPolicyHtmlBody: string;
   aboutUsLicensesHtmlBody: string;
-  aboutUsSupportHtmlBody:string;
+  aboutUsSupportHtmlBody: string;
   /*
   AboutUs
     */

@@ -4,7 +4,7 @@ import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-import { EnumManageUserAccessDataTypes } from '../../models/enums/base/enumManageUserAccessDataTypes';
+import { EnumManageUserAccessDataTypes } from '../../models/enums/base/manageUserAccessDataTypesEnum';
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 

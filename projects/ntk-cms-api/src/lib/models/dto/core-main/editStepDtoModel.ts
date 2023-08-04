@@ -1,4 +1,4 @@
-import { EnumActionGoStep } from '../../enums/base/enumActionGoStep';
+import { EnumActionGoStep } from '../../enums/base/actionGoStepEnum';
 export class EditStepDtoModel<TKey>{
   id: TKey;
   centerId: TKey;

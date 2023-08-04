@@ -1,4 +1,4 @@
-import { EnumSendSmsStatusType } from '../../enums/base/enumSendSmsStatusType';
+import { EnumSendSmsStatusType } from '../../enums/base/sendSmsStatusTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreLogSmsModel extends BaseEntity<string>{

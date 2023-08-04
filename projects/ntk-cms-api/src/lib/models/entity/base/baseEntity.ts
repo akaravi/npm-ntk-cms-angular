@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
 //@@tag-Version-2201011
 export class BaseEntity<TKey> {
   id: TKey;

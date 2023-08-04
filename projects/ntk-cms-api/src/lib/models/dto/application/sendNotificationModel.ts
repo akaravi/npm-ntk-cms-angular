@@ -1,4 +1,4 @@
-import { EnumScheduleCronType } from '../../enums/base/enumScheduleCronType';
+import { EnumScheduleCronType } from '../../enums/base/scheduleCronTypeEnum';
 import { RenderModelApplicationSendNotificationInput } from './renderModelApplicationSendNotificationInput';
 
 export class SendNotificationModel extends RenderModelApplicationSendNotificationInput {

@@ -1,5 +1,5 @@
 import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
-import { EnumRecordStatus } from '../../enums/base/enumRecordStatus';
+import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
@@ -36,10 +36,10 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkPropertyCompanyId: string;
   propertyTypeLanduse: EstatePropertyTypeLanduseModel;
   propertyTypeUsage: EstatePropertyTypeUsageModel;
-/**ViewContent */
-viewContentHidden:boolean;
-siteAdminViewContentHidden:boolean;
-/**ViewContent */
+  /**ViewContent */
+  viewContentHidden: boolean;
+  siteAdminViewContentHidden: boolean;
+  /**ViewContent */
   sharingKey: string;
   sharingId: number;
   /// <summary>
@@ -55,7 +55,7 @@ siteAdminViewContentHidden:boolean;
   linkExtraImageIds: string;
   linkFileIds: string;
   file360Views: File360ViewModel[];
-  file360Tour:File360TourModel;
+  file360Tour: File360TourModel;
   /// <summary>
   /// تعداد مجموع آرا
   /// </summary>
@@ -98,7 +98,7 @@ siteAdminViewContentHidden:boolean;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   favorited: boolean;
-/**Acton */
-actionCreateCmsUserId:boolean;
-/**Acton */
+  /**Acton */
+  actionCreateCmsUserId: boolean;
+  /**Acton */
 }

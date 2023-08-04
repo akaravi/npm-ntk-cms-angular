@@ -1,4 +1,4 @@
-import { EnumGenderType } from '../../enums/base/enumGenderType';
+import { EnumGenderType } from '../../enums/base/genderTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyModel } from './memberPropertyModel';
 import { MemberUserGroupModel } from './memberUserGroupModel';

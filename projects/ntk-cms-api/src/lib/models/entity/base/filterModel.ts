@@ -1,6 +1,6 @@
 import { FilterDataModel } from './filterDataModel';
 import { ExportFileModel } from './exportFileModel';
-import { EnumSortType } from '../../enums/base/enumSortType';
+import { EnumSortType } from '../../enums/base/sortTypeEnum';
 //@@tag-Version-2201011
 export class FilterModel {
   constructor() {

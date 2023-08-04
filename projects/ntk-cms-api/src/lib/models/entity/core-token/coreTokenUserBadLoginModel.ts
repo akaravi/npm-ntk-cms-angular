@@ -1,4 +1,4 @@
-import { EnumManageUserAccessAreaTypes } from '../../enums/base/enumManageUserAccessAreaTypes';
+import { EnumManageUserAccessAreaTypes } from '../../enums/base/manageUserAccessAreaTypesEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreTokenUserBadLoginModel extends BaseEntity<string>  {
