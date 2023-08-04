@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { InfoModelEnum } from '../../models/entity/base/infoModelEnum';
+import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
@@ -15,7 +15,7 @@ export class EstateEnumService extends ApiServerBase {
 
 
 
-  ServiceEstateUserTypeEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
+  ServiceEstateUserTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstateUserTypeEnum', {
         headers: this.getHeaders(),
@@ -27,7 +27,7 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
+  ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PropertyExpertPriceTypeEnumEstate', {
         headers: this.getHeaders(),
@@ -39,7 +39,7 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEstateActivityStatusEnum(): Observable<ErrorExceptionResult<InfoModelEnum>> {
+  ServiceEstateActivityStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActivityStatusEnumEstate', {
         headers: this.getHeaders(),

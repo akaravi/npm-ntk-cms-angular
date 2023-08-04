@@ -7,7 +7,7 @@ export * from './accessModel';
 export * from './baseEntity';
 export * from './baseModuleEntity';
 export * from './captchaModel';
-export * from './infoModelEnum';
+export * from './infoEnumModel';
 export * from './errorExceptionResult';
 export * from './errorExceptionResultBase';
 export * from './errorExceptionResultExportFile';

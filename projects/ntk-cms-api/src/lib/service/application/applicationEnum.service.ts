@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { InfoModelEnum } from '../../models/entity/base/infoModelEnum';
+import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
@@ -13,7 +13,7 @@ export class ApplicationEnumService extends ApiServerBase {
     return 'ApplicationEnum';
   }
 
-  ServiceEnumNotificationType(): Observable<ErrorExceptionResult<InfoModelEnum>> {
+  ServiceNotificationTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/NotificationTypeEnum', {
         headers: this.getHeaders(),
@@ -25,9 +25,9 @@ export class ApplicationEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceEnumOSType(): Observable<ErrorExceptionResult<InfoModelEnum>> {
+  ServiceOSTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumOSType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OSTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
