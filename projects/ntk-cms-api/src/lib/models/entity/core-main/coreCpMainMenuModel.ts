@@ -1,4 +1,4 @@
-import { EnumMenuPlaceType } from '../../enums/base/menuPlaceTypeEnum';
+import { MenuPlaceTypeEnum } from '../../enums/base/menuPlaceTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreCpMainMenuModel extends BaseEntity<number> {
@@ -16,6 +16,6 @@ export class CoreCpMainMenuModel extends BaseEntity<number> {
   showInMenu: number;
   showInMenuOrder: number;
   showInAccessAdminAllowToProfessionalData: boolean;
-  menuPlaceType: EnumMenuPlaceType;
+  menuPlaceType: MenuPlaceTypeEnum;
   children: CoreCpMainMenuModel[];
 }

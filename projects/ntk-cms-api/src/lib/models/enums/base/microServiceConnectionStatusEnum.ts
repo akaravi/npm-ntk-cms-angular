@@ -1,5 +1,5 @@
-export enum EnumMicroServiceConnectionStatus {
+export enum MicroServiceConnectionStatusEnum {
   Connected = 0,
-        Diconnect = 1,
-        Standby = 2
+  Diconnect = 1,
+  Standby = 2
 }

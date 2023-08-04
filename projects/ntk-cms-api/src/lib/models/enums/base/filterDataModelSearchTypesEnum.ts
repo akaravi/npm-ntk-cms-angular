@@ -1,4 +1,4 @@
-export enum EnumFilterDataModelSearchTypes {
+export enum FilterDataModelSearchTypesEnum {
   Equal = 0,
   NotEqual = 1,
   LessThan = 2,

@@ -1,9 +1,9 @@
-import { EnumTransactionRecordStatus } from '../../enums/base/transactionRecordStatusEnum';
+import { TransactionRecordStatusEnum } from '../../enums/base/transactionRecordStatusEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { BankPaymentTransactionModel } from './bankPaymentTransactionModel';
 //@@tag-Version-2201011
 export class BankPaymentTransactionLogModel extends BaseEntity<number> {
-  transactionStatus: EnumTransactionRecordStatus;
+  transactionStatus: TransactionRecordStatusEnum;
   linkTransactionId: number;
 
   // tslint:disable-next-line: variable-name

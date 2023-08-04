@@ -1,4 +1,4 @@
-export  enum EnumSharingAccountingType {
+export enum SharingAccountingTypeEnum {
   PaymentDebtor = 0,
   PaymentCreditor = 1,
   ClickDebtor = 2,

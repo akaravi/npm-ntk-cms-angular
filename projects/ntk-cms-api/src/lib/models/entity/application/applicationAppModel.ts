@@ -1,5 +1,5 @@
-import { EnumBuildStatusType } from '../../enums/base/buildStatusTypeEnum';
-import { EnumLanguage } from '../../enums/base/languageEnum';
+import { BuildStatusTypeEnum } from '../../enums/base/buildStatusTypeEnum';
+import { LanguageEnum } from '../../enums/base/languageEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';
@@ -8,7 +8,7 @@ import { ApplicationThemeConfigModel } from './applicationThemeConfigModel';
 //@@tag-Version-2201011
 export class ApplicationAppModel extends BaseModuleEntity<number>  {
   appKey: string;
-  lang: EnumLanguage;
+  lang: LanguageEnum;
   expireDate?: Date;
   linkFileIdIcon?: number;
   linkFileIdLogo?: number;
@@ -29,7 +29,7 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   forceUpdate: boolean;
   allowDirectShareApp: boolean;
   lastBuildAppKey: string;
-  lastBuildStatus: EnumBuildStatusType;
+  lastBuildStatus: BuildStatusTypeEnum;
   lastNotificationOrderDate?: Date;
   lastBuildOrderDate?: Date;
   lastBuildRunDate?: Date;

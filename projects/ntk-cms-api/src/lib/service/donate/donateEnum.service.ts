@@ -15,7 +15,7 @@ export class DonateEnumService extends ApiServerBase {
 
   ServiceEnumTransactionLogPublicType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionLogPublicType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionLogPublicTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

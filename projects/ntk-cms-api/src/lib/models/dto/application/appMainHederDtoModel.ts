@@ -1,4 +1,4 @@
-import { EnumDeviceStatus } from '../../enums/base/deviceStatusEnum';
+import { DeviceStatusEnum } from '../../enums/base/deviceStatusEnum';
 
 export class AppMainHederDtoModel {
     deviceId: string;
@@ -8,7 +8,7 @@ export class AppMainHederDtoModel {
     locationLong: string;
     locationLat: string;
     country: string;
-    deviceStatus: EnumDeviceStatus;
+    deviceStatus: DeviceStatusEnum;
     simCard: string;
     language: string;
     appSourceVer: string;

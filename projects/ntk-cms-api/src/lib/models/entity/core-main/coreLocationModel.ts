@@ -1,4 +1,4 @@
-import { EnumLocationType } from '../../enums/base/locationTypeEnum';
+import { LocationTypeEnum } from '../../enums/base/locationTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreLocationModel extends BaseEntity<number> {
@@ -9,7 +9,7 @@ export class CoreLocationModel extends BaseEntity<number> {
   linkParentIdNode: string;
   geoLocationLatitude: string;
   geoLocationLongitude: string;
-  locationType: EnumLocationType;
+  locationType: LocationTypeEnum;
   // tslint:disable-next-line: variable-name
   virtual_Parent: CoreLocationModel;
   parent: CoreLocationModel;

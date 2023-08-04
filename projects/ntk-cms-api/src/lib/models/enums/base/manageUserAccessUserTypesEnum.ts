@@ -1,4 +1,4 @@
-export enum EnumManageUserAccessUserTypes {
+export enum ManageUserAccessUserTypesEnum {
   None = 0,
   //////////////////////////////////////////////// سورس برنامه
   All = 99,

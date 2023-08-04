@@ -15,7 +15,7 @@ export class BankPaymentEnumService extends ApiServerBase {
 
   ServiceEnumTransactionRecordStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionRecordStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionRecordStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -25,9 +25,9 @@ export class BankPaymentEnumService extends ApiServerBase {
         }),
       );
   }
-   ServiceEnumTransactionBankStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
+  ServiceEnumTransactionBankStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTransactionBankStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionBankStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -15,7 +15,7 @@ export class ApiTelegramEnumService extends ApiServerBase {
 
   ServiceEnumNotificationType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumNotificationType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/NotificationTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

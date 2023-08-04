@@ -7,7 +7,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-import { EnumRecordStatus } from '../../models/enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../models/enums/base/recordStatusEnum';
 import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
@@ -102,7 +102,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         }),
       );
   }
-  ServiceSetStatus(id: TKey, recordStatus: EnumRecordStatus): Observable<ErrorExceptionResult<TModel>> {
+  ServiceSetStatus(id: TKey, recordStatus: RecordStatusEnum): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetStatus/' + id + "/" + recordStatus, {

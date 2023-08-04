@@ -1,4 +1,4 @@
-import { EnumNotificationType } from '../../enums/base/notificationTypeEnum';
+import { NotificationTypeEnum } from '../../enums/base/notificationTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationMemberInfoModel } from './applicationMemberInfoModel';
@@ -10,7 +10,7 @@ export class ApplicationLogNotificationModel extends BaseModuleEntity<string>  {
     application: ApplicationAppModel;
     title: string;
     content: string;
-    contentType: EnumNotificationType;
+    contentType: NotificationTypeEnum;
     contentJson: string;
     contentJsonClass: string;
     smallImageId: number;

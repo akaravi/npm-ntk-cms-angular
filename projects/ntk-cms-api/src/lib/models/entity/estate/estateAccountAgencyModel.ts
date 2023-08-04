@@ -1,8 +1,8 @@
-import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2212171
 export class EstateAccountAgencyModel extends BaseModuleEntity<string> {
-  mainAdminRecordStatus = EnumRecordStatus.Pending;
+  mainAdminRecordStatus = RecordStatusEnum.Pending;
   linkCmsUserId: number;
   title: string;
   description: string;

@@ -7,5 +7,5 @@ export class ErrorExceptionResultBase {
   errorMessage: string;
   totalRowCount: number;
   errorType: ErrorTypeEnum;
-  errorTypeTitle:string;
+  errorTypeTitle: string;
 }

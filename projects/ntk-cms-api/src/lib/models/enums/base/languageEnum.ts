@@ -1,4 +1,4 @@
-export enum EnumLanguage {
+export enum LanguageEnum {
   None = 0,
   fa = 1,
   en = 2,

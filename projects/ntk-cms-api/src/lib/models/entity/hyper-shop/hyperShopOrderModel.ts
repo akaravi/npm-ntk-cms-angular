@@ -1,12 +1,12 @@
 
-import { EnumHyperShopOrderType } from '../../enums/base/hyperShopOrderTypeEnum';
-import { EnumHyperShopPaymentType } from '../../enums/base/hyperShopPaymentTypeEnum';
+import { HyperShopOrderTypeEnum } from '../../enums/base/hyperShopOrderTypeEnum';
+import { HyperShopPaymentTypeEnum } from '../../enums/base/hyperShopPaymentTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { HyperShopOrderContentModel } from './hyperShopOrderContentModel';
 //@@tag-Version-2201011
 export class HyperShopOrderModel extends BaseModuleEntity<number>{
-  paymentType: EnumHyperShopPaymentType;
-  orderType: EnumHyperShopOrderType;
+  paymentType: HyperShopPaymentTypeEnum;
+  orderType: HyperShopOrderTypeEnum;
   systemTransactionId: number;
   systemPaymentIsSuccess: number;
   systemMicroServiceOrderId: string;

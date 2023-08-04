@@ -1,9 +1,9 @@
-import { EnumParseMode } from "../../enums/api-telegram/parseModeEnum";
-import { EnumDayOfWeek } from "../../enums/base/dayOfWeekEnum";
-import { EnumScheduleCronType } from "../../enums/base/scheduleCronTypeEnum";
+import { ParseModeEnum } from "../../enums/api-telegram/parseModeEnum";
+import { DayOfWeekEnum } from "../../enums/base/dayOfWeekEnum";
+import { ScheduleCronTypeEnum } from "../../enums/base/scheduleCronTypeEnum";
 
 export class ApiTelegramSendMessageTodoModel {
-  scheduleCronType: EnumScheduleCronType
+  scheduleCronType: ScheduleCronTypeEnum
   cronOnceDate: Date;
   cronHourlyMinute: number;
   cronDailyHour: number;
@@ -15,7 +15,7 @@ export class ApiTelegramSendMessageTodoModel {
   cronWeeklyHour: number;
   cronWeeklyMinute: number;
   cronYearlyMonth: number;
-  cronYearlyDay: EnumDayOfWeek;
+  cronYearlyDay: DayOfWeekEnum;
   cronYearlyHour: number;
   cronYearlyMinute: number;
   title: string;
@@ -31,5 +31,5 @@ export class ApiTelegramSendMessageTodoModel {
   lastName: number;
   universalMenuId?: number;
   phoneNumber: string;
-  messageParseMode: EnumParseMode;
+  messageParseMode: ParseModeEnum;
 }

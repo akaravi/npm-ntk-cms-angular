@@ -1,4 +1,4 @@
-export enum EnumTransactionRecordStatus {
+export enum TransactionRecordStatusEnum {
   None = 0,
   SendUserToBank = 1,
   BackUserFromBank = 2,

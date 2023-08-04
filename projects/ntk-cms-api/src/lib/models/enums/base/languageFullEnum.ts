@@ -1,4 +1,4 @@
-export enum EnumLanguageFull {
+export enum LanguageFullEnum {
   None = 0, fa_IR = 1, en_US = 2
   , af_ZA
   , am_ET

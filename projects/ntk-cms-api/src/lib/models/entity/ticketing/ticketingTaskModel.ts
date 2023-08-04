@@ -1,6 +1,6 @@
 
-import { EnumTicketingDepartemenPriority } from '../../enums/ticketing/ticketingDepartemenPriorityEnum';
-import { EnumTicketStatus } from '../../enums/ticketing/ticketStatusEnum';
+import { TicketingDepartemenPriorityEnum } from '../../enums/ticketing/ticketingDepartemenPriorityEnum';
+import { TicketStatusEnum } from '../../enums/ticketing/ticketStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../core-main/coreUserModel';
 import { MemberUserModel } from '../member/memberUserModel';
@@ -14,11 +14,11 @@ export class TicketingTaskModel extends BaseModuleEntity<number>  {
   fullName: string;
   phoneNo: string;
   email: string;
-  priority: EnumTicketingDepartemenPriority;
+  priority: TicketingDepartemenPriorityEnum;
   linkCmsUserId?: number;
   linkMemberId: string;
   linkTicketingDepartemenId?: number;
-  ticketStatus: EnumTicketStatus;
+  ticketStatus: TicketStatusEnum;
   userIpAddress: string;
   deviceInformation: string;
   // tslint:disable-next-line: variable-name

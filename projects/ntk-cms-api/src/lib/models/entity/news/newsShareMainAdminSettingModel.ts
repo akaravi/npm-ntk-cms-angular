@@ -1,11 +1,11 @@
-import { EnumPaymentMethod } from '../../enums/core/paymentMethodEnum';
+import { PaymentMethodEnum } from '../../enums/core/paymentMethodEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class NewsShareMainAdminSettingModel extends BaseModuleEntity<number> {
   adminMainPriceFixed?: number;
   adminMainPricePercent?: number;
   description: string;
-  paymentMethod: EnumPaymentMethod;
+  paymentMethod: PaymentMethodEnum;
   reciverPriceCost?: number;
   title: string;
 }

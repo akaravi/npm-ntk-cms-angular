@@ -1,4 +1,4 @@
-export enum EnumSendSmsStatusType {
+export enum SendSmsStatusTypeEnum {
   none = 0,
   Sending = 1,
   Sended = 2,

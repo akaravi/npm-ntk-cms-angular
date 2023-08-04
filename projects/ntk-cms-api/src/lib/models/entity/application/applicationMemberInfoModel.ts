@@ -1,11 +1,11 @@
-import { EnumDeviceStatus } from '../../enums/base/deviceStatusEnum';
+import { DeviceStatusEnum } from '../../enums/base/deviceStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 //@@tag-Version-2201011
 export class ApplicationMemberInfoModel extends BaseModuleEntity<string>  {
   linkUserId?: number;
   linkMemberId?: number;
-  deviceStatus: EnumDeviceStatus;
+  deviceStatus: DeviceStatusEnum;
   deviceId: string;
   deviceBrand: string;
   simCard: string;

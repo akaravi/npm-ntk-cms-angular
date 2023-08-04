@@ -15,7 +15,7 @@ export class WebDesignerEnumService extends ApiServerBase {
 
   ServiceEnumPageAbilityType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumPageAbilityType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PageAbilityTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -27,7 +27,7 @@ export class WebDesignerEnumService extends ApiServerBase {
   }
   ServiceEnumCmsSiteMenuAreaType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumCmsSiteMenuAreaType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CmsSiteMenuAreaTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

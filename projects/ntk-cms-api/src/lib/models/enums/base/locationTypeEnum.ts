@@ -1,4 +1,4 @@
-export enum EnumLocationType {
+export enum LocationTypeEnum {
   Country = 1,
   State = 2,
   Province = 3,

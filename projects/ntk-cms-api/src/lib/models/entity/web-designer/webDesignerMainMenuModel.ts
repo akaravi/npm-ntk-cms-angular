@@ -1,4 +1,4 @@
-import { EnumMenuPlaceType } from '../../enums/base/menuPlaceTypeEnum';
+import { MenuPlaceTypeEnum } from '../../enums/base/menuPlaceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class WebDesignerMainMenuModel extends BaseModuleEntity<string>{
@@ -12,6 +12,6 @@ export class WebDesignerMainMenuModel extends BaseModuleEntity<string>{
   linkParentId: string;
   description: string;
   showInMenuOrder: number;
-  menuPlaceType: EnumMenuPlaceType;
+  menuPlaceType: MenuPlaceTypeEnum;
   children: WebDesignerMainMenuModel[];
 }

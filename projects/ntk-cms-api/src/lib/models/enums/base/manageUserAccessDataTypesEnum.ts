@@ -1,4 +1,4 @@
-export enum EnumManageUserAccessDataTypes {
+export enum ManageUserAccessDataTypesEnum {
   None = 0,
   All = 1,
   Viewer = 2,

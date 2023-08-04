@@ -1,4 +1,4 @@
-import { EnumInputDataType } from '../../enums/core/inputDataTypeEnum';
+import { InputDataTypeEnum } from '../../enums/core/inputDataTypeEnum';
 //@@tag-Version-2201011
 export class EstatePropertyDetailModel {
   id: string;
@@ -6,7 +6,7 @@ export class EstatePropertyDetailModel {
   description: string;
   iconFont: string;
   iconColor: string;
-  inputDataType: EnumInputDataType;
+  inputDataType: InputDataTypeEnum;
 
   invisibleForEndUser: boolean;
 

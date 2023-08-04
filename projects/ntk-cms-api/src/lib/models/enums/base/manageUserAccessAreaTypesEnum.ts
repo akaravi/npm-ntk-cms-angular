@@ -1,4 +1,4 @@
-export enum EnumManageUserAccessAreaTypes {
+export enum ManageUserAccessAreaTypesEnum {
   None = 0,
   All = 1,
   BackgroundSystem = 2,

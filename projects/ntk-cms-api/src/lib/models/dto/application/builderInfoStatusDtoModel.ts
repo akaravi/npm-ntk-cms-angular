@@ -1,8 +1,8 @@
-import { EnumBuildStatusType } from '../../enums/base/buildStatusTypeEnum';
+import { BuildStatusTypeEnum } from '../../enums/base/buildStatusTypeEnum';
 
 export class BuilderInfoStatusDtoModel {
     id: number;
-    buildStatusType: EnumBuildStatusType;
+    buildStatusType: BuildStatusTypeEnum;
     errorMessage: string;
     buildAppKey: string;
     uploadFileGUID: string;

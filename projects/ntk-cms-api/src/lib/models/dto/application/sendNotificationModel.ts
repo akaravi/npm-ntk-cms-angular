@@ -1,10 +1,10 @@
-import { EnumScheduleCronType } from '../../enums/base/scheduleCronTypeEnum';
+import { ScheduleCronTypeEnum } from '../../enums/base/scheduleCronTypeEnum';
 import { RenderModelApplicationSendNotificationInput } from './renderModelApplicationSendNotificationInput';
 
 export class SendNotificationModel extends RenderModelApplicationSendNotificationInput {
     scheduleCronTypeInt: number;
     cronWeeklyDayOfWeekInt: number;
-    scheduleCronType: EnumScheduleCronType;
+    scheduleCronType: ScheduleCronTypeEnum;
     cronOnceDate?: string;
     cronHourlyMinute: number;
     cronDailyHour: number;

@@ -1,12 +1,12 @@
-import { EnumDeviceType } from '../../enums/base/deviceTypeEnum';
-import { EnumOperatingSystemType } from '../../enums/base/operatingSystemTypeEnum';
+import { DeviceTypeEnum } from '../../enums/base/deviceTypeEnum';
+import { OperatingSystemTypeEnum } from '../../enums/base/operatingSystemTypeEnum';
 
 export class TokenDeviceClientInfoDtoModel {
   securityKey: string;
   clientMACAddress: string;
   notificationId: string;
-  oSType: EnumOperatingSystemType;
-  deviceType: EnumDeviceType;
+  oSType: OperatingSystemTypeEnum;
+  deviceType: DeviceTypeEnum;
   packageName: string;
   appBuildVer: number;
   appSourceVer: string;

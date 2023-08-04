@@ -1,4 +1,4 @@
-import { EnumUserClaimKinds } from '../../enums/core/userClaimKindsEnum';
+import { UserClaimKindsEnum } from '../../enums/core/userClaimKindsEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 import { CoreUserClaimContentModel } from './coreUserClaimContentModel';
@@ -9,7 +9,7 @@ export class CoreUserClaimTypeModel extends BaseEntity<number> {
   titleResourceLanguage: string;
   description: string;
   dismissOnEdit: boolean;
-  kind: EnumUserClaimKinds;
+  kind: UserClaimKindsEnum;
   userClaims: CoreUserClaimContentModel[];
   userClaimGroupDetails: CoreUserClaimGroupDetailModel[];
   linkMainImageId: number;

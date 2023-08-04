@@ -1,4 +1,4 @@
-export enum EnumMenuPlaceType {
+export enum MenuPlaceTypeEnum {
   All = 0,
   MenuUp = 1,
   MenuDown = 2,

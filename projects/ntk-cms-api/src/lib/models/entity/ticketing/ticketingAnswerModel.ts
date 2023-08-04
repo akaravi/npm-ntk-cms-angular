@@ -1,4 +1,4 @@
-import { EnumAnswerStatus } from '../../enums/ticketing/answerStatusEnum';
+import { AnswerStatusEnum } from '../../enums/ticketing/answerStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { CoreUserModel } from '../core-main/coreUserModel';
 import { MemberUserModel } from '../member/memberUserModel';
@@ -12,7 +12,7 @@ export class TicketingAnswerModel extends BaseModuleEntity<number> {
   htmlBody: string;
   // tslint:disable-next-line: variable-name
   virtual_Ticket: TicketingTaskModel;
-  answerStatus: EnumAnswerStatus;
+  answerStatus: AnswerStatusEnum;
   ticket: TicketingTaskModel;
   linkTicketingDepartemenId?: number;
   // tslint:disable-next-line: variable-name

@@ -1,4 +1,4 @@
-export enum EnumFileType{
+export enum FileTypeEnum{
 	photo = 1,
         video = 2,
         document = 3,

@@ -29,7 +29,7 @@ export class EstateEnumService extends ApiServerBase {
   }
   ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstatePropertyExpertPriceTypeEnum', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PropertyExpertPriceTypeEnumEstate', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -41,7 +41,7 @@ export class EstateEnumService extends ApiServerBase {
   }
   ServiceEstateActivityStatusEnum(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstateActivityStatusEnum', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActivityStatusEnumEstate', {
         headers: this.getHeaders(),
       })
       .pipe(

@@ -1,4 +1,4 @@
-import { EnumGenderType } from '../../enums/base/genderTypeEnum';
+import { GenderTypeEnum } from '../../enums/base/genderTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyModel } from './memberPropertyModel';
 import { MemberUserGroupModel } from './memberUserGroupModel';
@@ -8,7 +8,7 @@ export class MemberUserModel extends BaseModuleEntity<number> {
   linkCmsUserId?: number;
   deviceId: string;
   joinId: string;
-  gender: EnumGenderType;
+  gender: GenderTypeEnum;
   firstName: string;
   lastName: string;
   linkLocationId?: number;

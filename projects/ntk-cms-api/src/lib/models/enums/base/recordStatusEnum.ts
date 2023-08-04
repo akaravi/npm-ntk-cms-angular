@@ -1,4 +1,4 @@
-export enum EnumRecordStatus {
+export enum RecordStatusEnum {
   Available = 1,
   Disable = 2,
   Deleted = 3,

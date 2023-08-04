@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 import { BaseModuleConfigAdminMainValuesModel } from '../base-config/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
@@ -26,7 +26,7 @@ export class CoreModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesM
   domainsGoogleSitekey: string;
   domainsGoogleSecretkey: string;
   userRegidteryBool: boolean;
-  userRegidteryRecordStatus: EnumRecordStatus;
+  userRegidteryRecordStatus: RecordStatusEnum;
   userRegidteryExpireDateDay: number;
   rssCount: number;
 }

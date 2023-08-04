@@ -1,5 +1,5 @@
-import { EnumTicketAccessStatus } from '../../enums/ticketing/ticketAccessStatusEnum';
-import { EnumTicketingDepartemenPriority } from '../../enums/ticketing/ticketingDepartemenPriorityEnum';
+import { TicketAccessStatusEnum } from '../../enums/ticketing/ticketAccessStatusEnum';
+import { TicketingDepartemenPriorityEnum } from '../../enums/ticketing/ticketingDepartemenPriorityEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { TicketingAnswerModel } from './ticketingAnswerModel';
 import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorModel';
@@ -9,8 +9,8 @@ import { TicketingTaskModel } from './ticketingTaskModel';
 export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
     title: string;
     defaultAnswerBody: string;
-    priority: EnumTicketingDepartemenPriority;
-    accessToChangeType: EnumTicketAccessStatus;
+    priority: TicketingDepartemenPriorityEnum;
+    accessToChangeType: TicketAccessStatusEnum;
     tickets: TicketingTaskModel[];
     ticketAnswers: TicketingAnswerModel[];
     faqs: TicketingFaqModel[];

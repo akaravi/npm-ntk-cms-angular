@@ -1,4 +1,4 @@
-import {  map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { EnumInfoModel } from '../../models/entity/base/enumInfoModel';
@@ -15,7 +15,7 @@ export class LinkManagementEnumService extends ApiServerBase {
 
   ServiceEnumSharingPriceType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumSharingPriceType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SharingPriceTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -27,7 +27,7 @@ export class LinkManagementEnumService extends ApiServerBase {
   }
   ServiceEnumManagementContentSettingType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumManagementContentSettingType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ManagementContentSettingTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -39,7 +39,7 @@ export class LinkManagementEnumService extends ApiServerBase {
   }
   ServiceEnumSharingAccountingType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumSharingAccountingType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SharingAccountingTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

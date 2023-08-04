@@ -1,4 +1,4 @@
-export enum EnumBuildStatusType {
+export enum BuildStatusTypeEnum {
   BuildOrder = 1,
   BuildMSMQAdd = 2,
   BuildMSMQAddError = 3,

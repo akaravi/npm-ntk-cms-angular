@@ -1,4 +1,4 @@
-import { EnumHyperShopConnectionType } from '../../enums/base/hyperShopConnectionTypeEnum';
+import { HyperShopConnectionTypeEnum } from '../../enums/base/hyperShopConnectionTypeEnum';
 import { BaseModuleConfigAdminMainValuesModel } from '../base-config/baseModuleConfigAdminMainValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
@@ -25,7 +25,7 @@ export class HyperShopModuleConfigSiteAccessValuesModel extends BaseModuleConfig
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
 export class HyperShopModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
-  hyperShopConnectionType: EnumHyperShopConnectionType;
+  hyperShopConnectionType: HyperShopConnectionTypeEnum;
   /// <summary>
   /// پرداخت در محل فعال است
   /// </summary>

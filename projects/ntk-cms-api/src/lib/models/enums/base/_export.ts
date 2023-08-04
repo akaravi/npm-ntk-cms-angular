@@ -34,7 +34,6 @@ export * from './manageUserAccessDataTypesEnum';
 export * from './siteStatusEnum';
 export * from './errorTypeEnum';
 export * from './notificationModuleTypeEnum';
-export * from './enumNotificationConnectionType';
 export * from './notificationConnectionStatusEnum';
 export * from './microServiceConnectionStatusEnum';
 export * from './microServiceConnectionTypeEnum';

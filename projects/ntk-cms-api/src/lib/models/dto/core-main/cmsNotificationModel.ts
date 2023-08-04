@@ -1,4 +1,4 @@
-import { EnumNotificationType } from "../../enums/base/notificationTypeEnum";
+import { NotificationTypeEnum } from "../../enums/base/notificationTypeEnum";
 
 export class CmsNotificationModel {
   icon!: string;
@@ -7,7 +7,7 @@ export class CmsNotificationModel {
   title!: string;
   clickAction!: string;
   renotify: boolean;
-  contentType: EnumNotificationType;
+  contentType: NotificationTypeEnum;
   content: string;
   contentJson: string;
   contentJsonClass: string;

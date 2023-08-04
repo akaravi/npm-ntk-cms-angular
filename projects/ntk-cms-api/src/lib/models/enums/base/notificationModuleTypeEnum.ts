@@ -1,4 +1,4 @@
-export enum EnumNotificationModuleType {
+export enum NotificationModuleTypeEnum {
   Core = 0,
-        hyperShop = 1,
+  hyperShop = 1,
 }

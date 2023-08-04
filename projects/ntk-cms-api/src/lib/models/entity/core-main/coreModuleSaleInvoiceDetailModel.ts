@@ -1,4 +1,4 @@
-import { EnumCmsModuleSaleItemType } from '../../enums/core/cmsModuleSaleItemTypeEnum';
+import { CmsModuleSaleItemTypeEnum } from '../../enums/core/cmsModuleSaleItemTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { CoreModuleModel } from './coreModuleModel';
 import { CoreModuleSaleInvoiceModel } from './coreModuleSaleInvoiceModel';
@@ -7,7 +7,7 @@ export class CoreModuleSaleInvoiceDetailModel extends BaseEntity<number>  {
   fromDate: Date;
   expireDate?: Date;
   salePrice: number;
-  enumCmsModuleSaleItemType: EnumCmsModuleSaleItemType;
+  enumCmsModuleSaleItemType: CmsModuleSaleItemTypeEnum;
   linkModuleId: number;
   // tslint:disable-next-line: variable-name
   virtual_Module: CoreModuleModel;

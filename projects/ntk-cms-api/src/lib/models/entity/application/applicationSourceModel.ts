@@ -1,4 +1,4 @@
-import { EnumOperatingSystemType } from '../../enums/base/operatingSystemTypeEnum';
+import { OperatingSystemTypeEnum } from '../../enums/base/operatingSystemTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationLayoutModel } from './applicationLayoutModel';
@@ -50,7 +50,7 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   buildKey5Files: string;
   isPublish: boolean;
   sourceNameGit: string;
-  oSType: EnumOperatingSystemType;
+  oSType: OperatingSystemTypeEnum;
   updateSourceByGit: boolean;
   isAbilityGradleBuild: boolean;
   linkMainImageIdSrc: string;

@@ -1,4 +1,4 @@
-import { EnumSortType } from '../../enums/base/sortTypeEnum';
+import { SortTypeEnum } from '../../enums/base/sortTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
@@ -43,7 +43,7 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   contactMobileList: string[];
   lastResultRowCount?: number;
   resultSortColumn: string;
-  resultSortType: EnumSortType;
+  resultSortType: SortTypeEnum;
   accessPublicView: boolean;
   /**عجله در خرید*/
   scoreRushToBuy: number;

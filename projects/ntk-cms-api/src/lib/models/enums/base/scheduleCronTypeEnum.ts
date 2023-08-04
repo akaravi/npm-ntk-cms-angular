@@ -1,4 +1,4 @@
-export enum EnumScheduleCronType {
+export enum ScheduleCronTypeEnum {
   None = 0,
   Once = 1,
   Hourly = 2,

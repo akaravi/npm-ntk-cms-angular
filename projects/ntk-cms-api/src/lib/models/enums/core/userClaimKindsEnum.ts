@@ -1,4 +1,4 @@
-export enum EnumUserClaimKinds {
+export enum UserClaimKindsEnum {
   /// <summary>
   /// کد ملی
   /// </summary>

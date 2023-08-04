@@ -15,7 +15,7 @@ export class TicketingEnumService extends ApiServerBase {
 
   ServiceEnumTicketingDepartemenPriority(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTicketingDepartemenPriority', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketingDepartemenPriorityEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -28,7 +28,7 @@ export class TicketingEnumService extends ApiServerBase {
 
   ServiceEnumTicketStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumTicketStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -40,7 +40,7 @@ export class TicketingEnumService extends ApiServerBase {
   }
   ServiceEnumAnswerStatus(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumAnswerStatus', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AnswerStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

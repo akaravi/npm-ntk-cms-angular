@@ -1,4 +1,4 @@
-export enum EnumHyperShopOrderType {
+export enum HyperShopOrderTypeEnum {
   Open = 0,
   Payment = 1,
   StartDelivery = 2,

@@ -1,5 +1,5 @@
-import { EnumOperatingSystemType } from '../../enums/base/operatingSystemTypeEnum';
-import { EnumDeviceType } from '../../enums/base/deviceTypeEnum';
+import { OperatingSystemTypeEnum } from '../../enums/base/operatingSystemTypeEnum';
+import { DeviceTypeEnum } from '../../enums/base/deviceTypeEnum';
 import { CoreSiteModel } from './coreSiteModel';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
@@ -7,8 +7,8 @@ export class CoreDeviceModel extends BaseEntity<number>  {
     securityKey: string;
     expireDate?: Date;
     description: string;
-    oSType: EnumOperatingSystemType;
-    deviceType: EnumDeviceType;
+    oSType: OperatingSystemTypeEnum;
+    deviceType: DeviceTypeEnum;
     packageName: string;
     deviceIPsAllow: string;
     linkApplicationId?: number;

@@ -1,4 +1,4 @@
-export enum EnumNotificationType {
+export enum NotificationTypeEnum {
   Message = 0,
   Link = 1,
   Ads = 2,

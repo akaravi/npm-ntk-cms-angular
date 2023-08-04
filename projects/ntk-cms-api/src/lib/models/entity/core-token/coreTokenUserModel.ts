@@ -1,5 +1,5 @@
-import { EnumManageUserAccessAreaTypes } from '../../enums/base/manageUserAccessAreaTypesEnum';
-import { EnumManageUserAccessUserTypes } from '../../enums/base/manageUserAccessUserTypesEnum';
+import { ManageUserAccessAreaTypesEnum } from '../../enums/base/manageUserAccessAreaTypesEnum';
+import { ManageUserAccessUserTypesEnum } from '../../enums/base/manageUserAccessUserTypesEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreTokenUserModel extends BaseEntity<string>   {
@@ -11,8 +11,8 @@ export class CoreTokenUserModel extends BaseEntity<string>   {
   linkApplicationId: number;
   token: string;
   tokenExpireDate: Date;
-  userAccessAreaType: EnumManageUserAccessAreaTypes;
-  userAccessUserType: EnumManageUserAccessUserTypes;
+  userAccessAreaType: ManageUserAccessAreaTypesEnum;
+  userAccessUserType: ManageUserAccessUserTypesEnum;
   userAccessAreaTypeTitle: string;
   userAccessUserTypeTitle: string;
   userAccessAdminAllowToAllData: boolean;

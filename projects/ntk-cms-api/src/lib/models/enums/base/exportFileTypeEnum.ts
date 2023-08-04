@@ -1,4 +1,4 @@
-export enum EnumExportFileType {
+export enum ExportFileTypeEnum {
   None = 0,
   Excel = 1,
   PDF = 2,

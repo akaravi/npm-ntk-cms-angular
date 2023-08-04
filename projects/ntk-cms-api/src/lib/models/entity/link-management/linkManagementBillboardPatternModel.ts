@@ -1,12 +1,12 @@
-import { EnumManagementContentSettingType } from '../../enums/linkManagement/managementContentSettingTypeEnum';
-import { EnumSharingPriceType } from '../../enums/linkManagement/sharingPriceTypeEnum';
+import { ManagementContentSettingTypeEnum } from '../../enums/linkManagement/managementContentSettingTypeEnum';
+import { SharingPriceTypeEnum } from '../../enums/linkManagement/sharingPriceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';
 //@@tag-Version-2201011
 export class LinkManagementBillboardPatternModel extends BaseModuleEntity<number> {
-  sharingLinkType: EnumSharingPriceType;
-  settingType: EnumManagementContentSettingType;
+  sharingLinkType: SharingPriceTypeEnum;
+  settingType: ManagementContentSettingTypeEnum;
   title: string;
   clickPrice: number;
   viewPrice: number;

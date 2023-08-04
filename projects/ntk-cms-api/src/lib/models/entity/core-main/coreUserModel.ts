@@ -1,4 +1,4 @@
-import { EnumGenderType } from '../../enums/base/genderTypeEnum';
+import { GenderTypeEnum } from '../../enums/base/genderTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreUserModel extends BaseEntity<number> {
@@ -13,7 +13,7 @@ export class CoreUserModel extends BaseEntity<number> {
   name: string;
   lastName: string;
   birthDay: Date;
-  gender: EnumGenderType;
+  gender: GenderTypeEnum;
   companyName: string;
   address: string;
   postalCode: string;

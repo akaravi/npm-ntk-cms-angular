@@ -1,6 +1,6 @@
 import { FilterDataModel } from './filterDataModel';
 import { ExportFileModel } from './exportFileModel';
-import { EnumSortType } from '../../enums/base/sortTypeEnum';
+import { SortTypeEnum } from '../../enums/base/sortTypeEnum';
 //@@tag-Version-2201011
 export class FilterModel {
   constructor() {
@@ -13,7 +13,7 @@ export class FilterModel {
   skipRowData = 0;
   currentPageNumber = 1;
   rowPerPage = 20;
-  sortType: EnumSortType = 1;
+  sortType: SortTypeEnum = 1;
   sortColumn: string;
   exportFile: ExportFileModel;
 }

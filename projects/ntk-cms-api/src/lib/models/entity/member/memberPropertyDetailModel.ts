@@ -1,5 +1,5 @@
-import { EnumInputDataType } from '../../enums/core/inputDataTypeEnum';
-import { EnumUiPropertyDesign } from '../../enums/member/uiPropertyDesignEnum';
+import { InputDataTypeEnum } from '../../enums/core/inputDataTypeEnum';
+import { UiPropertyDesignEnum } from '../../enums/member/uiPropertyDesignEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { MemberPropertyDetailGroupModel } from './memberPropertyDetailGroupModel';
 import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
@@ -7,7 +7,7 @@ import { MemberPropertyTypeModel } from './memberPropertyTypeModel';
 export class MemberPropertyDetailModel extends BaseModuleEntity<number> {
   title: string;
   iconFont: string;
-  inputDataType: EnumInputDataType;
+  inputDataType: InputDataTypeEnum;
   unit: string;
   invisibleForEndUser: boolean;
   invisibleForSubmiter: boolean;
@@ -26,6 +26,6 @@ export class MemberPropertyDetailModel extends BaseModuleEntity<number> {
   showInFormOrder: number;
   jsonDefaultValue: string;
 
-  uiDesignType: EnumUiPropertyDesign;
+  uiDesignType: UiPropertyDesignEnum;
   uiDesignColor: string;
 }

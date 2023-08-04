@@ -1,4 +1,4 @@
-import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 //@@tag-Version-2201011
 export class BaseEntity<TKey> {
   id: TKey;
@@ -6,7 +6,7 @@ export class BaseEntity<TKey> {
   createdBy: number;
   updatedDate: Date;
   updatedBy: number;
-  recordStatus = EnumRecordStatus.Available;
+  recordStatus = RecordStatusEnum.Available;
 
   //region AntiInjection
   antiInjectionRun: boolean;

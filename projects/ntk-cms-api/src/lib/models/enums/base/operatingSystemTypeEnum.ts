@@ -1,4 +1,4 @@
-export enum EnumOperatingSystemType {
+export enum OperatingSystemTypeEnum {
   none = 0,
   Windows = 1,
   AppleMacOS = 2,

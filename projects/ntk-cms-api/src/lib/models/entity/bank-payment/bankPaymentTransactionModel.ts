@@ -1,5 +1,5 @@
-import { EnumTransactionBankStatus } from '../../enums/base/transactionBankStatusEnum';
-import { EnumTransactionRecordStatus } from '../../enums/base/transactionRecordStatusEnum';
+import { TransactionBankStatusEnum } from '../../enums/base/transactionBankStatusEnum';
+import { TransactionRecordStatusEnum } from '../../enums/base/transactionRecordStatusEnum';
 import { BaseEntity } from '../base/baseEntity';
 import { GetPropertiesInfoModel } from '../base/fieldInfo/getPropertiesInfoModel';
 import { BankPaymentPrivateSiteConfigModel } from './bankPaymentPrivateSiteConfigModel';
@@ -12,8 +12,8 @@ export class BankPaymentTransactionModel extends BaseEntity<number> {
   moduleEntityName: string;
   moduleEntityId: string;
 
-  transactionStatus: EnumTransactionRecordStatus;
-  bankStatus: EnumTransactionBankStatus;
+  transactionStatus: TransactionRecordStatusEnum;
+  bankStatus: TransactionBankStatusEnum;
   currencyUnit: string;
   currencyUnitRatioByShop: number;
   successStatusMessage: string;

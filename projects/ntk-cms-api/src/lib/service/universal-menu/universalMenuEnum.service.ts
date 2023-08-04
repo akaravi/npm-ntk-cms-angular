@@ -15,7 +15,7 @@ export class UniversalMenuEnumService extends ApiServerBase {
 
   ServiceEnumUniversalMenuPlatformType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUniversalMenuPlatformType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UniversalMenuPlatformTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -27,7 +27,7 @@ export class UniversalMenuEnumService extends ApiServerBase {
   }
   ServiceEnumUniversalMenuRenderType(): Observable<ErrorExceptionResult<EnumInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EnumUniversalMenuRenderType', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UniversalMenuRenderTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

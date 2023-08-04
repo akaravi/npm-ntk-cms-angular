@@ -1,5 +1,5 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { EnumPageAbilityType } from '../../enums/base/pageAbilityTypeEnum';
+import { PageAbilityTypeEnum } from '../../enums/base/pageAbilityTypeEnum';
 //@@tag-Version-2201011
 export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     linkFavFileId?: number;
@@ -9,7 +9,7 @@ export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     pageDependencyIsDefaultPage: boolean;
     pageDependencyIsDefaultPageLinkSiteCategoryId?: number;
     pageJsonValue: string;
-    pageAbilityType: EnumPageAbilityType;
+    pageAbilityType: PageAbilityTypeEnum;
     export1: string;
     export2: string;
     export3: string;

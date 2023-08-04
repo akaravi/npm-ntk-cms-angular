@@ -1,4 +1,4 @@
-export  enum EnumManagementContentSettingType {
+export enum ManagementContentSettingTypeEnum {
   Rss = 0,
   Html = 1,
   Banner = 2,

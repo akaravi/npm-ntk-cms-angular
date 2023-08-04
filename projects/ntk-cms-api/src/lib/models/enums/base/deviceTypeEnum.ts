@@ -1,4 +1,4 @@
-export enum EnumDeviceType {
+export enum DeviceTypeEnum {
   none = 0,
   WebSite = 1,
   Windows = 2,

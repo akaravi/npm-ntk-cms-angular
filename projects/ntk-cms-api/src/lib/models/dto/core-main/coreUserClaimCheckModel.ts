@@ -1,7 +1,7 @@
-import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 
 export class CoreUserClaimCheckModel {
-  recordStatus = EnumRecordStatus.Available;
+  recordStatus = RecordStatusEnum.Available;
   isApproved: boolean;
   typeTitle: string;
   typeDescription: string;

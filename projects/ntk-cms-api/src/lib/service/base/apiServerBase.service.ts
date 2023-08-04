@@ -4,7 +4,7 @@ import { Observable, Subscription, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-import { EnumManageUserAccessDataTypes } from '../../models/enums/base/manageUserAccessDataTypesEnum';
+import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
 import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
@@ -23,7 +23,7 @@ export class ApiServerBase {
   keyBaseUrl = 'baseUrl';
   private headers: Map<string, string>;
   private accessLoad = false;
-  private accessDataType: EnumManageUserAccessDataTypes;
+  private accessDataType: ManageUserAccessDataTypesEnum;
   setConfig(url: string, apiRetry = 1): void {
     this.baseUrl = url;
     localStorage.setItem(this.keyBaseUrl, url);
@@ -49,7 +49,7 @@ export class ApiServerBase {
   setAccessLoad(status: boolean = true): void {
     this.accessLoad = status;
   }
-  setAccessDataType(status: EnumManageUserAccessDataTypes): void {
+  setAccessDataType(status: ManageUserAccessDataTypesEnum): void {
     this.accessDataType = status;
   }
 

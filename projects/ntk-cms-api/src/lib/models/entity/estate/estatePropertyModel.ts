@@ -1,5 +1,5 @@
 import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
-import { EnumRecordStatus } from '../../enums/base/recordStatusEnum';
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
@@ -15,7 +15,7 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   scoreEstateBuild: number;
   scoreEstatePrice: number;
   caseCode: string;
-  mainAdminRecordStatus = EnumRecordStatus.Pending;
+  mainAdminRecordStatus = RecordStatusEnum.Pending;
   createdYaer?: number;
   createdYaerType: DateTypeEnum;
   partition: number;

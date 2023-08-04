@@ -1,5 +1,5 @@
-import { EnumMessageType } from "../../enums/api-telegram/messageTypeEnum";
-import { EnumUpdateType } from "../../enums/api-telegram/updateTypeEnum";
+import { MessageTypeEnum } from "../../enums/api-telegram/messageTypeEnum";
+import { UpdateTypeEnum } from "../../enums/api-telegram/updateTypeEnum";
 import { BaseModuleEntity } from "../base/baseModuleEntity";
 //@@tag-Version-2201011
 export class ApiTelegramLogInputModel extends BaseModuleEntity<string>{
@@ -8,8 +8,8 @@ export class ApiTelegramLogInputModel extends BaseModuleEntity<string>{
   username: string;
   firstName: string;
   lastName: string;
-  updateType: EnumUpdateType;
-  messageType: EnumMessageType;
+  updateType: UpdateTypeEnum;
+  messageType: MessageTypeEnum;
   messageId: string;
   linkBotConfigId: number;
   contentMessage: string;

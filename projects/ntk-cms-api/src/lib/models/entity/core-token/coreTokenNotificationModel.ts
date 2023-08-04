@@ -1,9 +1,9 @@
-import { EnumNotificationType } from '../../enums/base/notificationTypeEnum';
-import { EnumManageUserAccessUserTypes } from '../../enums/base/manageUserAccessUserTypesEnum';
-import { EnumNotificationConnectionType } from '../../enums/base/enumNotificationConnectionType';
-import { EnumNotificationConnectionStatus } from '../../enums/base/notificationConnectionStatusEnum';
+import { NotificationTypeEnum } from '../../enums/base/notificationTypeEnum';
+import { ManageUserAccessUserTypesEnum } from '../../enums/base/manageUserAccessUserTypesEnum';
+import { NotificationConnectionTypeEnum } from '../../enums/base/notificationConnectionTypeEnum1';
+import { NotificationConnectionStatusEnum } from '../../enums/base/notificationConnectionStatusEnum';
 import { BaseEntity } from '../base/baseEntity';
-import { EnumManageUserAccessAreaTypes } from '../../enums/base/manageUserAccessAreaTypesEnum';
+import { ManageUserAccessAreaTypesEnum } from '../../enums/base/manageUserAccessAreaTypesEnum';
 //@@tag-Version-2201011
 export class CoreTokenNotificationModel extends BaseEntity<string>   {
     linkUserId?: number;
@@ -12,11 +12,11 @@ export class CoreTokenNotificationModel extends BaseEntity<string>   {
     userToken: string;
     connectionId: string;
     deviceId: string;
-    deviceType: EnumNotificationType;
-    userType: EnumManageUserAccessUserTypes;
-    areaType: EnumManageUserAccessAreaTypes;
-    deviceConnectionType: EnumNotificationConnectionType;
-    deviceConnectionState: EnumNotificationConnectionStatus;
+    deviceType: NotificationTypeEnum;
+    userType: ManageUserAccessUserTypesEnum;
+    areaType: ManageUserAccessAreaTypesEnum;
+    deviceConnectionType: NotificationConnectionTypeEnum;
+    deviceConnectionState: NotificationConnectionStatusEnum;
 
     usedUsername: string;
     iP: string;

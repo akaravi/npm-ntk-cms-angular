@@ -1,4 +1,4 @@
-import { EnumSharingAccountingType } from '../../enums/linkManagement/sharingAccountingTypeEnum';
+import { SharingAccountingTypeEnum } from '../../enums/linkManagement/sharingAccountingTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementAccountingModel } from './linkManagementAccountingModel';
 //@@tag-Version-2201011
@@ -7,7 +7,7 @@ export class LinkManagementAccountingDetailModel extends BaseModuleEntity<number
   // tslint:disable-next-line: variable-name
   virtual_Accounting: LinkManagementAccountingModel;
   accounting: LinkManagementAccountingModel;
-  accountingType: EnumSharingAccountingType;
+  accountingType: SharingAccountingTypeEnum;
   linkExternalShopInvoiceSaleDetailId?: number;
   rowNumber: number;
   description: string;

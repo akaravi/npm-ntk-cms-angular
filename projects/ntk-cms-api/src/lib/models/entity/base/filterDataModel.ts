@@ -1,5 +1,5 @@
-import { EnumClauseType } from '../../enums/base/clauseTypeEnum';
-import { EnumFilterDataModelSearchTypes } from '../../enums/base/filterDataModelSearchTypesEnum';
+import { ClauseTypeEnum } from '../../enums/base/clauseTypeEnum';
+import { FilterDataModelSearchTypesEnum } from '../../enums/base/filterDataModelSearchTypesEnum';
 //@@tag-Version-2201011
 export class FilterDataModel {
   constructor() {
@@ -10,8 +10,8 @@ export class FilterDataModel {
   values: any[];
   propertyName: string;
   propertyAnyName: string;
-  clauseType: EnumClauseType;
-  searchType: EnumFilterDataModelSearchTypes;
+  clauseType: ClauseTypeEnum;
+  searchType: FilterDataModelSearchTypesEnum;
   // StringValue: string;
   // StringContainValues: string[] = new Array<string>();
   // IntValue: number;

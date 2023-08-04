@@ -1,4 +1,4 @@
-export enum EnumTransactionBankStatus {
+export enum TransactionBankStatusEnum {
   None = 0,
   Error = 1,
   Paid = 2,

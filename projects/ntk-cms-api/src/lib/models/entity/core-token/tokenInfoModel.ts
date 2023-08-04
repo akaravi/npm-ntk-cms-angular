@@ -1,5 +1,5 @@
-import { EnumManageUserAccessAreaTypes } from "../../enums/base/manageUserAccessAreaTypesEnum";
-import { EnumManageUserAccessUserTypes } from "../../enums/base/manageUserAccessUserTypesEnum";
+import { ManageUserAccessAreaTypesEnum } from "../../enums/base/manageUserAccessAreaTypesEnum";
+import { ManageUserAccessUserTypesEnum } from "../../enums/base/manageUserAccessUserTypesEnum";
 
 //@@tag-Version-2201011
 export class TokenInfoModel {
@@ -17,8 +17,8 @@ export class TokenInfoModel {
   userGroupId: number;
   userAccessAdminAllowToProfessionalData: boolean;
   userAccessAdminAllowToAllData: boolean;
-  userAccessUserType: EnumManageUserAccessUserTypes;
-  userAccessAreaType: EnumManageUserAccessAreaTypes;
+  userAccessUserType: ManageUserAccessUserTypesEnum;
+  userAccessAreaType: ManageUserAccessAreaTypesEnum;
   userAccessUserTypeTitle: string;
   userAccessUserAreaTitle: string;
   username: string;

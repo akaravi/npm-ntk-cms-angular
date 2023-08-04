@@ -1,4 +1,4 @@
-import { EnumTransactionLogPublicType } from '../../enums/donate/transactionLogPublicTypeEnum';
+import { TransactionLogPublicTypeEnum } from '../../enums/donate/transactionLogPublicTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
@@ -7,7 +7,7 @@ export class DonateTargetModel extends BaseModuleEntity<number>{
   title: string;
   description: string;
   isPublic: boolean;
-  transactionLogPublic: EnumTransactionLogPublicType;
+  transactionLogPublic: TransactionLogPublicTypeEnum;
   toWebAddress: string;
   hashMd5: string;
   keyCode: string;

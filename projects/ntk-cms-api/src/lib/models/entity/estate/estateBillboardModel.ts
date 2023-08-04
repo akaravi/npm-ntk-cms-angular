@@ -1,4 +1,4 @@
-import { EnumSortType } from '../../enums/base/sortTypeEnum';
+import { SortTypeEnum } from '../../enums/base/sortTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class EstateBillboardModel extends BaseModuleEntity<string> {
@@ -22,6 +22,6 @@ export class EstateBillboardModel extends BaseModuleEntity<string> {
   currencyTitle: string;
   currencySymbol: string;
   resultSortColumn: string;
-  resultSortType: EnumSortType;
+  resultSortType: SortTypeEnum;
 }
 
