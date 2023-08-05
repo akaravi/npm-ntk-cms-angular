@@ -7,4 +7,5 @@ export class TokenDeviceModel {
   currentSiteDomainUrl: string;
   deviceToken: string;
   tokenExpireDate: Date;
+  notificationFCMPublicKey: string;
 }

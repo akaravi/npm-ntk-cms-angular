@@ -28,3 +28,4 @@ export * from './processModuleSiteDataRemoveOutputModel';
 export * from './processModuleSiteDataOptimazeOutputModel';
 export * from './cmsNotificationModel';
 export * from './cmsNotificationSendDtoModel';
+export * from './tokenDeviceSetNotificationIdDtoModel';

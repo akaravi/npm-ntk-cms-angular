@@ -20,6 +20,7 @@ import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core-main/authUser
 import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
 import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core-main/authUserForgetPasswordEntryPinCodeModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
+import { TokenDeviceSetNotificationIdDtoModel } from '../../models/dto/core-main/tokenDeviceSetNotificationIdDtoModel';
 
 
 @Injectable()
@@ -64,7 +65,14 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-
+  ServiceCurrentDeviceToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
+    return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentDeviceToken', { headers: this.getHeaders() }).pipe(
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
   ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/captcha').pipe(
       // catchError(this.handleError)
@@ -84,7 +92,17 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-
+  ServiceSetTokenDeviceNotificationId(model: TokenDeviceSetNotificationIdDtoModel): Observable<ErrorExceptionResultBase> {
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
+      // catchError(this.handleError)
+      map((ret: any) => {
+        if (ret.isSuccess) {
+          this.setToken('', ret.deviceToken, '');
+        }
+        return ret;
+      }),
+    );
+  }
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signup', model).pipe(
       // catchError(this.handleError)
