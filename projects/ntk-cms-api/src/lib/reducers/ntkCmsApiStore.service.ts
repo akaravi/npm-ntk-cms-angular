@@ -4,10 +4,12 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
 import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
 import { AppStore } from './reducer.factory';
+import { TokenDeviceModel } from '../models/entity/core-token/tokenDeviceModel';
 
 const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,
   tokenInfo: new TokenInfoModel(),
+  deviceTokenInfo: new TokenDeviceModel(),
   inProcessingList: []
 };
 
@@ -82,6 +84,8 @@ export function stateReducer(state: NtkCmsApiStoreInterface = initialState, acti
       return { ...state, isLoading: action.payload };
     case SET_TOKEN_INFO:
       return { ...state, tokenInfo: action.payload };
+    case SET_DEVICE_TOKEN_INFO:
+      return { ...state, deviceTokenInfo: action.payload };
     case SET_IN_PROCESSING_LIST:
       return { ...state, inProcessingList: action.payload };
     default:
@@ -98,6 +102,7 @@ export interface ActionInterface {
 
 export const SET_LOADING_STATE = 'SET_LOADING_STATE';
 export const SET_TOKEN_INFO = 'SET_TOKEN_INFO';
+export const SET_DEVICE_TOKEN_INFO = 'SET_DEVICE_TOKEN_INFO';
 export const SET_IN_PROCESSING_LIST = 'SET_IN_PROCESSING_LIST';
 
 
@@ -110,9 +115,13 @@ export class SetTokenInfoState implements ActionInterface {
   readonly type = SET_TOKEN_INFO;
   payload: TokenInfoModel;
 }
+export class SetDeviceTokenInfoState implements ActionInterface {
+  readonly type = SET_DEVICE_TOKEN_INFO;
+  payload: TokenDeviceModel;
+}
 export class SetInProcessingList implements ActionInterface {
   readonly type = SET_IN_PROCESSING_LIST;
   payload: Array<string>;
 }
 
-export type Actions = SetLoadingState | SetTokenInfoState|SetInProcessingList;
+export type Actions = SetLoadingState | SetDeviceTokenInfoState | SetTokenInfoState | SetInProcessingList;

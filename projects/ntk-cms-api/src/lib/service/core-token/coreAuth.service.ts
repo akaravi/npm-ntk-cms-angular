@@ -17,7 +17,7 @@ import { AuthUserSignOutModel } from '../../models/dto/core-main/authUserSignOut
 import { AuthUserForgetPasswordModel } from '../../models/dto/core-main/authUserForgetPasswordModel';
 import { Injectable } from '@angular/core';
 import { AuthUserSignInBySmsDtoModel } from '../../models/dto/core-main/authUserSignInBySmsDtoModel';
-import { SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
+import { SET_DEVICE_TOKEN_INFO, SET_TOKEN_INFO } from '../../reducers/ntkCmsApiStore.service';
 import { AuthUserForgetPasswordEntryPinCodeModel } from '../../models/dto/core-main/authUserForgetPasswordEntryPinCodeModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 import { TokenDeviceSetNotificationIdDtoModel } from '../../models/dto/core-main/tokenDeviceSetNotificationIdDtoModel';
@@ -45,6 +45,17 @@ export class CoreAuthService extends ApiServerBase {
       this.setToken('', model.deviceToken, '');
     }
     this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
+  }
+  SetCurrentDeviceTokenInfo(model: TokenDeviceModel | null): any {
+    if (model == null) {
+      this.removeToken();
+      this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: new TokenDeviceModel() });
+      return;
+    }
+    if (model.deviceToken) {
+      this.setDeviceToken(model.deviceToken);
+    }
+    this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: model });
   }
 
   CurrentTokenInfoRenew(): void {

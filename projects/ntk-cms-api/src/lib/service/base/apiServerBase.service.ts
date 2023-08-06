@@ -81,7 +81,13 @@ export class ApiServerBase {
     if (deviceToken && deviceToken.length > 0) {
       localStorage.setItem(this.keyDeviceToken, deviceToken);
     }
-    // localStorage.setItem('refreshToken', refreshToken);
+  }
+  setDeviceToken(deviceToken: string): void {
+    if (!deviceToken || deviceToken.length === 0) {
+      localStorage.removeItem(this.keyDeviceToken);
+      return;
+    }
+    localStorage.setItem(this.keyDeviceToken, deviceToken);
   }
   removeToken(): void {
     localStorage.removeItem(this.keyUserToken);
