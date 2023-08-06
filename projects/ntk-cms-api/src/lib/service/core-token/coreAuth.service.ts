@@ -76,7 +76,7 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-  ServiceCurrentDeviceToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
+  ServiceCurrentDeviceToken(): Observable<ErrorExceptionResult<TokenDeviceModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentDeviceToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
