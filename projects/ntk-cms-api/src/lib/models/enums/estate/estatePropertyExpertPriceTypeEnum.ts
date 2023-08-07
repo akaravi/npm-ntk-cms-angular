@@ -1,4 +1,4 @@
-export enum PropertyExpertPriceTypeEnumEstate {
+export enum EstatePropertyExpertPriceTypeEnum {
   AutoWeek = 11,
   AutoMonth = 12,
   AutoYear = 13,

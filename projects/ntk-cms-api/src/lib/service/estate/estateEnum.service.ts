@@ -29,7 +29,7 @@ export class EstateEnumService extends ApiServerBase {
   }
   ServiceEstatePropertyExpertPriceTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PropertyExpertPriceTypeEnumEstate', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstatePropertyExpertPriceTypeEnum', {
         headers: this.getHeaders(),
       })
       .pipe(

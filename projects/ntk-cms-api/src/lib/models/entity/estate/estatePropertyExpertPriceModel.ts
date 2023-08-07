@@ -1,8 +1,8 @@
-import { PropertyExpertPriceTypeEnumEstate } from '../../enums/estate/estatePropertyExpertPriceTypeEnum';
+import { EstatePropertyExpertPriceTypeEnum } from '../../enums/estate/estatePropertyExpertPriceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class EstatePropertyExpertPriceModel extends BaseModuleEntity<string> {
-  expertPriceType: PropertyExpertPriceTypeEnumEstate;
+  expertPriceType: EstatePropertyExpertPriceTypeEnum;
   description: string;
   linkLocationId: number;
   linkLocationCountryId: number;
