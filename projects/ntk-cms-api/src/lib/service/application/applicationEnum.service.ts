@@ -25,17 +25,6 @@ export class ApplicationEnumService extends ApiServerBase {
         }),
       );
   }
-  ServiceOSTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OSTypeEnum', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        // catchError(this.handleError)
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+
 
 }
