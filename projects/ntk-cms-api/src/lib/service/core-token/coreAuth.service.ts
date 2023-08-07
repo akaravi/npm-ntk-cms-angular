@@ -72,6 +72,7 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
+        this.setToken(ret.item.token, ret.item.deviceToken, '');
         return ret;
       }),
     );
@@ -80,6 +81,7 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentDeviceToken', { headers: this.getHeaders() }).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
+        this.setDeviceToken(ret.item.deviceToken);
         return ret;
       }),
     );
@@ -96,9 +98,7 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
-        if (ret.isSuccess) {
-          this.setToken('', ret.deviceToken, '');
-        }
+        this.setDeviceToken(ret.item.deviceToken);
         return ret;
       }),
     );
@@ -107,9 +107,6 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
       // catchError(this.handleError)
       map((ret: any) => {
-        if (ret.isSuccess) {
-          this.setToken('', ret.deviceToken, '');
-        }
         return ret;
       }),
     );
