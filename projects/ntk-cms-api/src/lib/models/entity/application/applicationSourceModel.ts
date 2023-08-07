@@ -50,7 +50,7 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   buildKey5Files: string;
   isPublish: boolean;
   sourceNameGit: string;
-  oSType: OperatingSystemTypeEnum;
+  osType: OperatingSystemTypeEnum;
   updateSourceByGit: boolean;
   isAbilityGradleBuild: boolean;
   linkMainImageIdSrc: string;

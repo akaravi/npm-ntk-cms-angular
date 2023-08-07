@@ -7,7 +7,7 @@ export class CoreDeviceModel extends BaseEntity<number>  {
     securityKey: string;
     expireDate?: Date;
     description: string;
-    oSType: OperatingSystemTypeEnum;
+    osType: OperatingSystemTypeEnum;
     deviceType: DeviceTypeEnum;
     packageName: string;
     deviceIPsAllow: string;

@@ -5,7 +5,7 @@ export class TokenDeviceClientInfoDtoModel {
   securityKey: string;
   clientMACAddress: string;
   notificationId: string;
-  oSType: OperatingSystemTypeEnum;
+  osType: OperatingSystemTypeEnum;
   deviceType: DeviceTypeEnum;
   packageName: string;
   appBuildVer: number;
