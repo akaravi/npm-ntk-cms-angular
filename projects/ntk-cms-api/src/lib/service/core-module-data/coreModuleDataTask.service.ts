@@ -2,24 +2,24 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/coreModuleDataMemoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
+import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreModuleDataTaskDtoModel';
+import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
 
 
 @Injectable()
-export class CoreModuleDataMemoService extends ApiCmsServerBase<CoreModuleDataMemoModel, string, FilterModel>  {
+export class CoreModuleDataTaskService extends ApiCmsServerBase<CoreModuleDataTaskModel, string, FilterModel>  {
   getModuleControllerUrl(): string {
-    return 'CoreModuleDataMemo';
+    return 'CoreModuleDataTask';
   }
-  ServiceAddMemo(model: CoreModuleDataMemoDtoModel): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
+  ServiceAddTask(model: CoreModuleDataTaskDtoModel): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
     if (model == null) {
-      model = new CoreModuleDataMemoDtoModel();
+      model = new CoreModuleDataTaskDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddMemo', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddTask', model, {
         headers: this.getHeaders(),
       })
       .pipe(

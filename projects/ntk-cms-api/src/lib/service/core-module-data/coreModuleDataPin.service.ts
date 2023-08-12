@@ -2,24 +2,24 @@
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/coreModuleDataMemoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
+import { CoreModuleDataPinDtoModel } from '../../models/dto/core-module/coreModuleDataPinDtoModel';
+import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/coreModuleDataPinModel';
 
 
 @Injectable()
-export class CoreModuleDataMemoService extends ApiCmsServerBase<CoreModuleDataMemoModel, string, FilterModel>  {
+export class CoreModuleDataPinService extends ApiCmsServerBase<CoreModuleDataPinModel, string, FilterModel>  {
   getModuleControllerUrl(): string {
-    return 'CoreModuleDataMemo';
+    return 'CoreModuleDataPin';
   }
-  ServiceAddMemo(model: CoreModuleDataMemoDtoModel): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
+  ServiceAddPin(model: CoreModuleDataPinDtoModel): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
     if (model == null) {
-      model = new CoreModuleDataMemoDtoModel();
+      model = new CoreModuleDataPinDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddMemo', model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddPin', model, {
         headers: this.getHeaders(),
       })
       .pipe(

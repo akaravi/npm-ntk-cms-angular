@@ -8,7 +8,6 @@ import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { RecordStatusEnum } from '../../models/enums/base/recordStatusEnum';
-import { CoreModuleMemoDtoModel } from '../../models/dto/core-module/coreModuleMemoDtoModel';
 import { CoreModuleEntityReportFileModel } from '../../models/entity/core-main/coreModuleEntityReportFileModel';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
 import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/coreModuleDataMemoModel';
@@ -17,6 +16,11 @@ import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModu
 import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
 import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
 import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModuleCommentDtoModel';
+import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/coreModuleDataPinModel';
+import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
+import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
+import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreModuleDataTaskDtoModel';
+import { CoreModuleDataPinDtoModel } from '../../models/dto/core-module/coreModuleDataPinDtoModel';
 
 
 @Injectable()
@@ -234,7 +238,8 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         }),
       );
   }
-  ServiceMemoAdd(model: CoreModuleMemoDtoModel): Observable<ErrorExceptionResultBase> {
+  /**Memo */
+  ServiceMemoAdd(model: CoreModuleDataMemoDtoModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoAdd', model, {
@@ -290,6 +295,123 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         }),
       );
   }
+  /**Memo */
+  /**Pin */
+  ServicePinAdd(model: CoreModuleDataPinDtoModel): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinAdd', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServicePinDelete(id: string): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinDelete/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServicePinGetAll(): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinGetAll/', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServicePinGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinGetAll/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  /**Pin */
+  /**Task */
+  ServiceTaskAdd(model: CoreModuleDataTaskDtoModel): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskAdd', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceTaskDelete(id: string): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskDelete/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceTaskGetAll(): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskGetAll/', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceTaskGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskGetAll/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  /**Task */
   /**comment */
 
   ServiceCommentAdd(model: CoreModuleCommentDtoModel): Observable<ErrorExceptionResultBase> {
