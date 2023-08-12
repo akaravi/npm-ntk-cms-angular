@@ -9,13 +9,14 @@ import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/co
 import { ExportFileModel } from '../../models/entity/base/exportFileModel';
 import { CoreModuleShowKeyDtoModel } from '../../models/dto/core-module/coreModuleShowKeyDtoModel';
 import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
-import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModuleCommentDtoModel';
+
 import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data/coreModuleDataCommentModel';
 import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreModuleDataTaskDtoModel';
 import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
 import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
 import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/coreModuleDataPinModel';
 import { CoreModuleDataPinDtoModel } from '../../models/dto/core-module/coreModuleDataPinDtoModel';
+import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/coreModuleDataCommentDtoModel';
 
 export interface IApiCmsServerBase {
 
@@ -45,7 +46,7 @@ export interface IApiCmsServerBase {
   ServiceTaskGetAllEntity(id: any): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>>;
   /**task */
   /**Comment */
-  ServiceCommentAdd(model: CoreModuleCommentDtoModel): Observable<ErrorExceptionResultBase>;
+  ServiceCommentAdd(model: CoreModuleDataCommentDtoModel): Observable<ErrorExceptionResultBase>;
   ServiceCommentDelete(id: string): Observable<ErrorExceptionResultBase>;
   ServiceCommentGetAll(): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>>;
   ServiceCommentGetAllEntity(id: any): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>>;

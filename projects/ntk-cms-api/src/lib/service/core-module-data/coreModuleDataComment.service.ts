@@ -6,7 +6,8 @@ import { CoreModuleDataCommentModel } from '../../models/entity/core-module-data
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleCommentDtoModel } from '../../models/dto/core-module/coreModuleCommentDtoModel';
+import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/coreModuleDataCommentDtoModel';
+
 
 
 @Injectable()
@@ -14,9 +15,9 @@ export class CoreModuleDataCommentService extends ApiCmsServerBase<CoreModuleDat
   getModuleControllerUrl(): string {
     return 'CoreModuleDataComment';
   }
-  ServiceAddComment(model: CoreModuleCommentDtoModel): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
+  ServiceAddComment(model: CoreModuleDataCommentDtoModel): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
     if (model == null) {
-      model = new CoreModuleCommentDtoModel();
+      model = new CoreModuleDataCommentDtoModel();
     }
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddComment', model, {

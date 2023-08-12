@@ -7,7 +7,7 @@ export * from './coreModuleReportAbuseDtoModel';
 export * from './coreModuleDataMemoDtoModel';
 export * from './coreModuleDataTaskDtoModel';
 export * from './coreModuleDataPinDtoModel';
-export * from './coreModuleCommentDtoModel';
+export * from './coreModuleDataCommentDtoModel';
 export * from './coreModuleShowKeyDtoModel';
 export * from './coreModuleSiteCreditChargeDirectDtoModel';
 export * from './coreModuleSiteUserCreditChargeDirectDtoModel';
