@@ -28,6 +28,8 @@ export * from './estateActivityType.service';
 export * from './estatePropertyExpertPrice.service';
 export * from './estateCustomerOrderResult.service';
 export * from './estateCustomerCategory.service';
+export * from './estateCategoryRack.service';
+export * from './estateCategoryZone.service';
 export * from './estatePropertySupplierCategory.service';
 export * from './estateAccountUserWorkArea.service';
 export * from './estateAccountAgencyWorkArea.service';

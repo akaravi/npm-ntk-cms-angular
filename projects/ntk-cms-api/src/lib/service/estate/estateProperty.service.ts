@@ -121,23 +121,8 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         }),
       );
   }
-  // ServiceGetAllWithFilter(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
-  //   if (model == null) {
-  //     model = new EstatePropertyFilterModel();
-  //   }
-  //   return this.http
-  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
-  //       headers: this.getHeaders(),
-  //     })
-  //     .pipe(
-  //       retry(this.configApiRetry),
-  //       // catchError(this.handleError)
-  //       map((ret: any) => {
-  //         return this.errorExceptionResultCheck(ret);
-  //       }),
-  //     );
-  // }
-  ServiceGetAllWithBillboardId(BillboardId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+
+  ServiceGetAllWithCoverBillboardId(BillboardId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -145,7 +130,45 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       BillboardId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithBillboardId/' + BillboardId, model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverBillboardId/' + BillboardId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithCoverCategoryRackFolderId(RackFolderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new EstatePropertyFilterModel();
+    }
+    if (!RackFolderId || RackFolderId.length === 0) {
+      RackFolderId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryRackFolderId/' + RackFolderId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithCoverCategoryZoneId(ZoneId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+    if (model == null) {
+      model = new EstatePropertyFilterModel();
+    }
+    if (!ZoneId || ZoneId.length === 0) {
+      ZoneId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryZoneId/' + ZoneId, model, {
         headers: this.getHeaders(),
       })
       .pipe(

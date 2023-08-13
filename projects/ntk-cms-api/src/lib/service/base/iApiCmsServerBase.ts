@@ -15,7 +15,6 @@ import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreMod
 import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
 import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
 import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/coreModuleDataPinModel';
-import { CoreModuleDataPinDtoModel } from '../../models/dto/core-module/coreModuleDataPinDtoModel';
 import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/coreModuleDataCommentDtoModel';
 
 export interface IApiCmsServerBase {
@@ -34,7 +33,8 @@ export interface IApiCmsServerBase {
   ServiceMemoGetAllEntity(id: any): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>>;
   /**memo */
   /**Pin */
-  ServicePinAdd(model: CoreModuleDataPinDtoModel): Observable<ErrorExceptionResultBase>;
+  ServicePinAdd(id: string): Observable<ErrorExceptionResultBase>;
+  ServicePinCheck(id: string): Observable<ErrorExceptionResultBase>;
   ServicePinDelete(id: string): Observable<ErrorExceptionResultBase>;
   ServicePinGetAll(): Observable<ErrorExceptionResult<CoreModuleDataPinModel>>;
   ServicePinGetAllEntity(id: any): Observable<ErrorExceptionResult<CoreModuleDataPinModel>>;

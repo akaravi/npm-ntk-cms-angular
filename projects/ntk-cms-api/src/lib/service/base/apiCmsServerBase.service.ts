@@ -298,10 +298,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
   }
   /**Memo */
   /**Pin */
-  ServicePinAdd(model: CoreModuleDataPinDtoModel): Observable<ErrorExceptionResultBase> {
+  ServicePinAdd(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinAdd', model, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinAdd/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -316,6 +316,20 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinDelete/' + id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServicePinCheck(id: string): Observable<ErrorExceptionResultBase> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinCheck/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(

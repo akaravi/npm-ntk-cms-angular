@@ -4,8 +4,13 @@ export class EstateContractTypeModel extends BaseModuleEntity<string> {
   title: string;
   titleML: string;
   titleResourceLanguage: string;
+
+  orderTitle: string;
+  orderTitleML: string;
+  orderTitleResourceLanguage: string;
+
   contentCount: number;
-  allowPriceInquiryCalculate:boolean;
+  allowPriceInquiryCalculate: boolean;
   titleSoldIt: string;
   titleSoldItML: string;
   titleSoldItResourceLanguage: string;
