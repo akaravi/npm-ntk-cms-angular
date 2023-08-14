@@ -1,6 +1,6 @@
 import { EstateCustomerOrderModel } from "./estateCustomerOrderModel";
 
-export class EstateCategoryRackFolderModel extends EstateCustomerOrderModel {
+export class EstateCategoryRackFolderOrderModel extends EstateCustomerOrderModel {
   uid: string;
   iconFont: string;
   iconColor: string;

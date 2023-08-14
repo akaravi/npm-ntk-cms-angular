@@ -1,5 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { EstateCategoryRackFolderModel } from './estateCategoryRackFolderModel';
+import { EstateCategoryRackFolderOrderModel } from './estateCategoryRackFolderOrderModel';
+import { EstateCategoryRackFolderPropertyModel } from './estateCategoryRackFolderPropertyModel';
+
 //@@tag-Version-2212011
 export class EstateCategoryRackModel extends BaseModuleEntity<string>
 {
@@ -9,5 +11,6 @@ export class EstateCategoryRackModel extends BaseModuleEntity<string>
   iconColor: string;
   linkMainImageId: number;
   linkMainImageIdSrc: string;
-  rackFolder: EstateCategoryRackFolderModel[]
+  rackFolderProperties: EstateCategoryRackFolderPropertyModel[];
+  rackFolderOrders: EstateCategoryRackFolderOrderModel[];
 }
