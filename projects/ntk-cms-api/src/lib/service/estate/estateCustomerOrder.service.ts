@@ -29,22 +29,7 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         }),
       );
   }
-  // ServiceGetAllWithFilter(model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
-  //   if (model == null) {
-  //     model = new EstateCustomerOrderFilterModel();
-  //   }
-  //   return this.http
-  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithFilter/', model, {
-  //       headers: this.getHeaders(),
-  //     })
-  //     .pipe(
-  //       retry(this.configApiRetry),
-  //       // catchError(this.handleError)
-  //       map((ret: any) => {
-  //         return this.errorExceptionResultCheck(ret);
-  //       }),
-  //     );
-  // }
+
   ServiceGetAllWithResponsibleUserId(userId: number, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
@@ -113,6 +98,44 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
         // catchError(this.handleError)
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithCoverCategoryRackFolderId(RackFolderId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+    if (model == null) {
+      model = new EstateCustomerOrderFilterModel();
+    }
+    if (!RackFolderId || RackFolderId.length === 0) {
+      RackFolderId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryRackFolderId/' + RackFolderId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetAllWithCoverCategoryZoneId(ZoneId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+    if (model == null) {
+      model = new EstateCustomerOrderFilterModel();
+    }
+    if (!ZoneId || ZoneId.length === 0) {
+      ZoneId = '00';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryZoneId/' + ZoneId, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }
