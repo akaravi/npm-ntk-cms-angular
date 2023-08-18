@@ -12,6 +12,7 @@ export class ApplicationSourceModel extends BaseModuleEntity<number>  {
   defaultAppId?: number;
   className: string;
   packageName: string;
+  checkUpdate: boolean;
   forceUpdate: boolean;
   linkLastSuccessfullyBuildFileId?: number;
   lastSuccessfullyBuildDate?: string;

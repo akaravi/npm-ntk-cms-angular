@@ -76,6 +76,8 @@ export class ApplicationAppModel extends BaseModuleEntity<number>  {
   downloadLinkUpdateSrc: string;
   downloadLinkSrcQRCodeBase64: string;
   linkFileIdSplashScreenSrc: string;
+  favorited: boolean;
+  scored: boolean;
   /*
   AboutUs
     */
