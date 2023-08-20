@@ -28,6 +28,9 @@
         "dist/ntk-cms-api/ntk-cms-api",
         "dist/ntk-cms-api"
       ],
+      "ngx-ntk-mat-color-picker": [
+        "dist/ngx-ntk-mat-color-picker"
+      ],
       "ntk-cms-filemanager": [
         "dist/ntk-cms-filemanager/ntk-cms-filemanager",
         "dist/ntk-cms-filemanager"
