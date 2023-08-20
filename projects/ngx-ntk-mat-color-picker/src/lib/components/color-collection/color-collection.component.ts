@@ -16,15 +16,12 @@ export class NgxMatColorCollectionComponent implements OnInit {
   @Output() colorChanged: EventEmitter<Color> = new EventEmitter<Color>();
 
   @Input()
-  set color(c: Color | string) {
-
+  set color(c: Color) {
     if (c) {
-      if (typeof c == 'string' && c.indexOf('#') == 0) {
+      if (typeof c === 'string')
         this.selectedColor = c;
-      }
-      else if (typeof c === typeof Color) {
-        this.selectedColor = (c as Color).toHexString();
-      }
+      else
+        this.selectedColor = c.toHexString();
     }
   }
 

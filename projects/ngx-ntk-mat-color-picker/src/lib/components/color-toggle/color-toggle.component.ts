@@ -1,7 +1,15 @@
-import { AfterContentInit, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterContentInit, ChangeDetectorRef, Component, ContentChild, Directive, Input, OnChanges, OnDestroy,
+  OnInit, SimpleChanges, ViewChild, ViewEncapsulation
+} from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { merge, of, Subscription } from 'rxjs';
+import { Subscription, merge, of } from 'rxjs';
 import { NgxMatColorPickerComponent } from '../color-picker/color-picker.component';
+
+@Directive({
+  selector: '[ngxMatColorpickerToggleIcon]',
+})
+export class NgxMatColorpickerToggleIcon { }
 
 @Component({
   selector: 'ngx-ntk-mat-color-toggle',
@@ -37,6 +45,12 @@ export class NgxMatColorToggleComponent implements OnInit, AfterContentInit, OnC
   }
   private _disabled: boolean;
 
+  /** Whether ripples on the toggle should be disabled. */
+  @Input() disableRipple: boolean;
+
+  /** Custom icon set by the consumer. */
+  @ContentChild(NgxMatColorpickerToggleIcon) _customIcon: NgxMatColorpickerToggleIcon;
+
   @ViewChild('button') _button: MatButton;
 
   constructor(private _cd: ChangeDetectorRef) { }
@@ -66,14 +80,10 @@ export class NgxMatColorToggleComponent implements OnInit, AfterContentInit, OnC
   }
 
   private _watchStateChanges() {
-    const disabled$ = this.picker ? this.picker._disabledChange : of();
-    const inputDisabled$ = this.picker && this.picker._pickerInput ?
-      this.picker._pickerInput._disabledChange : of();
-
-    const pickerToggled$ = this.picker ?
-      merge(this.picker.openedStream, this.picker.closedStream) : of();
+    const disabled$ = this.picker ? this.picker._disabledChange : of(false);
+    const inputDisabled$ = this.picker && this.picker._pickerInput ? this.picker._pickerInput._disabledChange : of(false);
+    const pickerToggled$ = this.picker ? merge(this.picker.openedStream, this.picker.closedStream) : of();
     this._stateChanges.unsubscribe();
-
     this._stateChanges = merge(disabled$, inputDisabled$, pickerToggled$).subscribe(() => this._cd.markForCheck());
   }
 

@@ -1,17 +1,17 @@
 {
   "name": "ngx-ntk-mat-color-picker",
-  "version": "1.0.1",
+  "version": "15.0.5",
   "description": "Angular Material Color Picker",
   "author": "Alireza-Karavi",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/h2qutc/ngx-mat-datetime-picker.git"
+    "url": "https://github.com/akaravi"
   },
   "bugs": {
-    "url": "https://github.com/h2qutc/ngx-mat-datetime-picker/issues"
+    "url": "https://github.com/akaravi"
   },
-  "homepage": "https://github.com/h2qutc/ngx-mat-datetime-picker",
+  "homepage": "https://ntk.ir",
   "keywords": [
     "NTK",
     "KARAVI",
@@ -26,12 +26,12 @@
     "ngx-material-color-picker"
   ],
   "peerDependencies": {
-    "@angular/platform-browser": "0.0.0-NG",
-    "@angular/common": "0.0.0-NG",
-    "@angular/core": "0.0.0-NG",
-    "@angular/forms": "0.0.0-NG",
-    "@angular/material": "0.0.0-PLACEHOLDER",
-    "@angular/cdk": "0.0.0-PLACEHOLDER",
-    "tslib": "0.0.0-TSLIB"
-  }
+    "@angular/platform-browser": "^15.0.0",
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/forms": "^15.0.0",
+    "@angular/material": "^15.0.0",
+    "@angular/cdk": "^15.0.0"
+  },
+  "dependencies": {}
 }

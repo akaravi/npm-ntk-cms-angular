@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'fileuploaderTest',
-    loadChildren: () =>      import('./pages/fileuploaderTest/fileuploaderTest.module').then((m) => m.FileuploaderTestModule ),
+    loadChildren: () => import('./pages/fileuploaderTest/fileuploaderTest.module').then((m) => m.FileuploaderTestModule),
   },
   {
     path: 'apiTest',
@@ -35,10 +35,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/cron-editor-test/cron-editor-test.module').then((m) => m.CronEditorTestModule),
   },
+  {
+    path: 'matColorPicker',
+    loadChildren: () =>
+      import('./pages/mat-color-picker-test/mat-color-picker-test.module').then((m) => m.MatColorPickerModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

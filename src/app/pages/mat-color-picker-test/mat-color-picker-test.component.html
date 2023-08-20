@@ -1,0 +1,66 @@
+<mat-card class="zone zone-value">
+  <mat-card-content>
+    <div class="row" [style.background-color]="colorCtr.value?.rgba">HEX: {{colorCtr.value?.hex}}</div>
+    <div class="row">RGBA: {{colorCtr.value?.rgba}}</div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="zone zone-picker">
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" [disabled]="disabled">
+      <ngx-ntk-mat-color-toggle matSuffix [for]="picker"></ngx-ntk-mat-color-toggle>
+      <ngx-ntk-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-ntk-mat-color-picker>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="zone zone-config">
+  <div class="config-wrapper">
+    <span class="label">disabled (Default: false) </span>
+    <mat-radio-group aria-label="Select an option" [color]="color" [ngModel]="disabled"
+      (ngModelChange)="onDisabledChanged($event)">
+      <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.value">
+        {{option.label}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="config-wrapper">
+    <span class="label">touchUi (Default: false) </span>
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="touchUi" [color]="color">
+      <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.value">
+        {{option.label}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="config-wrapper">
+    <span class="label">color (Default: primary) </span>
+    <mat-form-field [color]="color">
+      <mat-label>Select color</mat-label>
+      <mat-select [(ngModel)]="color">
+        <mat-option *ngFor="let item of listColors" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</mat-card>
+
+<pre><code ngxMatHighlight class="language-typescript">{{code6}}</code></pre>
+<pre><code ngxMatHighlight class="html">{{code3}}</code></pre>
+
+<h2>Color picker with custom icon</h2>
+<pre><code ngxMatHighlight class="language-html">{{code7}}</code></pre>
+
+<mat-card class="zone zone-picker">
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput [ngxMatColorPicker]="pickerCustomIcon" [formControl]="colorCtr" [disabled]="disabled">
+      <ngx-ntk-mat-color-toggle matSuffix [for]="pickerCustomIcon">
+        <mat-icon ngxMatColorpickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </ngx-ntk-mat-color-toggle>
+      <ngx-ntk-mat-color-picker #pickerCustomIcon [touchUi]="touchUi" [color]="color"></ngx-ntk-mat-color-picker>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>

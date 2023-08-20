@@ -72,6 +72,7 @@ cd dist/ngx-ntk-mat-color-picker
 npm publish
 cd ..
 cd ..
+
 ==================================================================================
 Test All
 
