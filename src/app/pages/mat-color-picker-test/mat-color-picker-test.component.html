@@ -8,7 +8,7 @@
 <mat-card class="zone zone-picker">
   <mat-card-content>
     <mat-form-field>
-      <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" [disabled]="disabled">
+      <input matInput [ngxMatColorPicker]="picker" [(ngModel)]="myColor" [formControl]="colorCtr" [disabled]="disabled">
       <ngx-ntk-mat-color-toggle matSuffix [for]="picker"></ngx-ntk-mat-color-toggle>
       <ngx-ntk-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-ntk-mat-color-picker>
     </mat-form-field>

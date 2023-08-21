@@ -105,6 +105,11 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
   get value(): Color | null { return this._value; }
   set value(value: Color | null) {
     const oldValue = this.value;
+
+    if (typeof value === 'string') {
+      var h = this.hexToRgb(value);
+      value = new Color(h.r, h.g, h.b);
+    }
     this._value = value;
     this._formatValue(value);
 
@@ -113,6 +118,7 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
     }
 
   }
+
   private _value: Color | null;
 
   /** Emits when a `change` event is fired on this `<input>`. */
@@ -152,7 +158,14 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
       throw createMissingDateImplError('MAT_COLOR_FORMATS');
     }
   }
-
+  hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
   /** Returns the palette used by the input's form field, if any. */
   public getThemePalette(): ThemePalette {
     return this._formField ? this._formField.color : undefined;

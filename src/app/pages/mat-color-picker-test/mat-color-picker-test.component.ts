@@ -13,7 +13,7 @@ export class MatColorPickerComponent {
   public disabled = false;
   public color: ThemePalette = 'primary';
   public touchUi = false;
-
+  public myColor = 'c0aca7';
   colorCtr: AbstractControl = new FormControl(new Color(0, 255, 255), [Validators.required]);
 
   public options = [
