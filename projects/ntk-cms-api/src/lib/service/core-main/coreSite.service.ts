@@ -20,9 +20,7 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, Fil
   getModuleControllerUrl(): string {
     return 'CoreSite';
   }
-  getModuleCashService(): string[] {
-    return ['ServiceGetOneById'];
-  }
+
   ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataOptimaze/' + linkSiteId, {

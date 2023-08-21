@@ -79,17 +79,11 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         }),
       );
   }
-  ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TModel>> {
+  ServiceGetOneById(id: TKey, cashApiSeconds?: number): Observable<ErrorExceptionResult<TModel>> {
     //! optimaze call api
-    const serviceName = 'ServiceGetOneById';
-    const serviceNameKay = serviceName + '_' + id;
-    if (this.getModuleCashService().includes(serviceName)) {
-      do {
-        if (this.cachApiResult[serviceNameKay]?.isSuccess)
-          return of(this.cachApiResult[serviceNameKay]);
-      } while (this.cachApiCallDate[serviceNameKay] && (new Date().getTime() - this.cachApiCallDate[serviceNameKay].getTime()) > this.cashApiSeconds);
-      this.cachApiCallDate[serviceNameKay] = new Date();
-    }
+    const serviceNameKay = 'ServiceGetOneById' + '_' + id;
+    if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
+      return of(this.cachApiResult[serviceNameKay]);
     //! optimaze call api
     // this.loadingStatus=true;
     return this.http
@@ -101,8 +95,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         // catchError(this.handleError)
         map((ret: any) => {
           //! optimaze call api
-          if (this.getModuleCashService().includes(serviceName))
+          if (cashApiSeconds > 0) {
             this.cachApiResult[serviceNameKay] = ret;
+            this.cachApiResult[serviceNameKay].dateResult = new Date();
+          }
           //! optimaze call api
           return this.errorExceptionResultCheck(ret);
         }),

@@ -17,9 +17,7 @@ export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number, Fil
   getModuleControllerUrl(): string {
     return 'CoreUser';
   }
-  getModuleCashService(): string[] {
-    return ['ServiceGetOneById'];
-  }
+
   ServiceGetRessellerChart(linkUserId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRessellerChart/' + linkUserId, {

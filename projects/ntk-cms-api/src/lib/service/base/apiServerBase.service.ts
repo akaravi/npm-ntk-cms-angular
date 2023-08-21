@@ -1,3 +1,4 @@
+import { I } from '@angular/cdk/keycodes';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
@@ -30,8 +31,17 @@ export class ApiServerBase {
     this.configApiRetry = apiRetry;
   }
   cachApiResult = [];
-  cachApiCallDate = [];
-  cashApiSeconds = 20;
+  cashApiIsValid(serviceNameKay: string, cashApiSeconds?: number): boolean {
+    if (cashApiSeconds > 0) {
+      if (!this.cachApiResult[serviceNameKay])
+        return false;
+      if (!this.cachApiResult[serviceNameKay].isSuccess)
+        return false;
+      if (this.cachApiResult[serviceNameKay].dateResult && (new Date().getTime() - this.cachApiResult[serviceNameKay].dateResult) < cashApiSeconds)
+        return true;
+    }
+    return false;
+  }
   childConstructor(): any {
     // test
   }
@@ -45,9 +55,7 @@ export class ApiServerBase {
   getModuleControllerUrl(): string {
     return 'Empty';
   }
-  getModuleCashService(): string[] {
-    return [];
-  }
+
   setHeaders(key: string, value: string): void {
     this.headers.set(key, value);
   }
