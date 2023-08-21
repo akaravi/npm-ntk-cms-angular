@@ -16,11 +16,14 @@ import { CoreSiteSupportModel } from '../../models/entity/core-main/coreSiteSupp
 
 
 @Injectable()
-export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number,FilterModel>  {
+export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, FilterModel>  {
   getModuleControllerUrl(): string {
     return 'CoreSite';
   }
-    ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
+  getModuleCashService(): string[] {
+    return ['ServiceGetOneById'];
+  }
+  ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataOptimaze/' + linkSiteId, {
         headers: this.getHeaders(),

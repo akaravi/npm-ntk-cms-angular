@@ -1,7 +1,7 @@
 import { map } from 'rxjs/operators';
 import { retry, catchError } from 'rxjs/operators';
 import { ApiServerBase } from './apiServerBase.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
@@ -80,6 +80,17 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       );
   }
   ServiceGetOneById(id: TKey): Observable<ErrorExceptionResult<TModel>> {
+    //! optimaze call api
+    const serviceName = 'ServiceGetOneById';
+    const serviceNameKay = serviceName + '_' + id;
+    if (this.getModuleCashService().includes(serviceName)) {
+      do {
+        if (this.cachApiResult[serviceNameKay]?.isSuccess)
+          return of(this.cachApiResult[serviceNameKay]);
+      } while (this.cachApiCallDate[serviceNameKay] && (new Date().getTime() - this.cachApiCallDate[serviceNameKay].getTime()) > this.cashApiSeconds);
+      this.cachApiCallDate[serviceNameKay] = new Date();
+    }
+    //! optimaze call api
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
@@ -89,6 +100,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         retry(this.configApiRetry),
         // catchError(this.handleError)
         map((ret: any) => {
+          //! optimaze call api
+          if (this.getModuleCashService().includes(serviceName))
+            this.cachApiResult[serviceNameKay] = ret;
+          //! optimaze call api
           return this.errorExceptionResultCheck(ret);
         }),
       );

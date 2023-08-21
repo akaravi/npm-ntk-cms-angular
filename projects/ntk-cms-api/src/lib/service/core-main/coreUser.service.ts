@@ -11,10 +11,14 @@ import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartMo
 
 
 @Injectable()
-export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number,FilterModel>  {
+export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number, FilterModel>  {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
-  CurrentUserObs = this.CurrentUser.asObservable(); getModuleControllerUrl(): string {
+  CurrentUserObs = this.CurrentUser.asObservable();
+  getModuleControllerUrl(): string {
     return 'CoreUser';
+  }
+  getModuleCashService(): string[] {
+    return ['ServiceGetOneById'];
   }
   ServiceGetRessellerChart(linkUserId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
     return this.http

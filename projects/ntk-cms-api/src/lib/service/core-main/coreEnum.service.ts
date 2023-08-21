@@ -1,11 +1,9 @@
 import { catchError, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-
 
 @Injectable()
 export class CoreEnumService extends ApiServerBase {
@@ -14,6 +12,14 @@ export class CoreEnumService extends ApiServerBase {
   }
 
   ServiceRecordStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+    //! optimaze call api
+    const serviceName = 'ServiceRecordStatusEnum';
+    do {
+      if (this.cachApiResult[serviceName]?.isSuccess)
+        return of(this.cachApiResult[serviceName]);
+    } while (this.cachApiCallDate[serviceName] && (new Date().getTime() - this.cachApiCallDate[serviceName].getTime()) > this.cashApiSeconds);
+    this.cachApiCallDate[serviceName] = new Date();
+    //! optimaze call api
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/RecordStatusEnum', {
         headers: this.getHeaders(),
@@ -21,6 +27,9 @@ export class CoreEnumService extends ApiServerBase {
       .pipe(
         // catchError(this.handleError)
         map((ret: any) => {
+          //! optimaze call api
+          this.cachApiResult[serviceName] = ret;
+          //! optimaze call api
           return this.errorExceptionResultCheck(ret);
         }),
       );

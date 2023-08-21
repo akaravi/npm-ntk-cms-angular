@@ -29,7 +29,9 @@ export class ApiServerBase {
     localStorage.setItem(this.keyBaseUrl, url);
     this.configApiRetry = apiRetry;
   }
-
+  cachApiResult = [];
+  cachApiCallDate = [];
+  cashApiSeconds = 20;
   childConstructor(): any {
     // test
   }
@@ -42,6 +44,9 @@ export class ApiServerBase {
   }
   getModuleControllerUrl(): string {
     return 'Empty';
+  }
+  getModuleCashService(): string[] {
+    return [];
   }
   setHeaders(key: string, value: string): void {
     this.headers.set(key, value);
