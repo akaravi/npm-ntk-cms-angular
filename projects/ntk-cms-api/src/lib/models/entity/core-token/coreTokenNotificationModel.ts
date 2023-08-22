@@ -19,6 +19,6 @@ export class CoreTokenNotificationModel extends BaseEntity<string>   {
   deviceConnectionState: NotificationConnectionStatusEnum;
 
   usedUsername: string;
-  iP: string;
+  deviceIP: string;
   description: string;
 }

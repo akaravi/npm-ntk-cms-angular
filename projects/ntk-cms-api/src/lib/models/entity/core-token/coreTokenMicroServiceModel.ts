@@ -14,6 +14,6 @@ export class CoreTokenMicroServiceModel extends BaseEntity<string>   {
     deviceConnectionState: MicroServiceConnectionStatusEnum;
     requestDate: string;
     usedUsername: string;
-    iP: string;
+    deviceIP: string;
     description: string;
 }
