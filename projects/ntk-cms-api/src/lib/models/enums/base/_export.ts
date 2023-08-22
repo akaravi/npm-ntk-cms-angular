@@ -39,4 +39,4 @@ export * from './microServiceConnectionStatusEnum';
 export * from './microServiceConnectionTypeEnum';
 export * from './microServiceModuleTypeEnum';
 export * from './notificationConnectionTypeEnum';
-
+export * from './sendNotificationStatusTypeEnum';

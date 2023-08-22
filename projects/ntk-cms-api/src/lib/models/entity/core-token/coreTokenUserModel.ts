@@ -20,5 +20,4 @@ export class CoreTokenUserModel extends BaseEntity<string>   {
   rememberOnDevice: boolean;
   browserLanguage: string;
   userLanguage: number;
-
 }

@@ -11,6 +11,6 @@ export class CoreTokenUserBadLoginModel extends BaseEntity<string>  {
   usedPwd: string;
   linkUserId?: number;
   linkSiteId?: number;
-
   linkMemberId: string;
+  deviceIp: string;
 }

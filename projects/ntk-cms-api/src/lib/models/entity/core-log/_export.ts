@@ -4,4 +4,4 @@ export * from './coreLogSmsModel';
 export * from './coreLogCurrencyModel';
 export * from './coreLogMemberModel';
 export * from './coreLogReportDataModel';
-
+export * from './coreLogNotificationModel';
