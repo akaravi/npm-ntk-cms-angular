@@ -13,4 +13,6 @@ export class CmsNotificationModel {
   contentJsonClass: string;
   smallImageId?: number;
   bigImageId?: number;
+  smallImageIdSrc: string;
+  bigImageIdSrc: string;
 }
