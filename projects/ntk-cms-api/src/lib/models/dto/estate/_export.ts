@@ -11,3 +11,6 @@ export * from './estateCustomerOrderActionSendSmsDtoModel';
 export * from './estateAccountAgencyFilterModel';
 export * from './estateAccountUserFilterModel';
 export * from './estateCustomerOrderFilterModel';
+export * from './estatePropertyCompanyFilterModel';
+export * from './estatePropertySupplierFilterModel';
+export * from './estatePropertyProjectFilterModel';
