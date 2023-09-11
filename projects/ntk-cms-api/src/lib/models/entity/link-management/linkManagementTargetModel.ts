@@ -33,5 +33,8 @@ export class LinkManagementTargetModel extends BaseModuleEntity<number> {
   urlViewContent: string;
   urlViewContentShort: string;
   urlViewContentQRCodeBase64: string;
+  moduleName: string;
+  moduleEntityName: string;
+  moduleEntityId: string;
 }
 
