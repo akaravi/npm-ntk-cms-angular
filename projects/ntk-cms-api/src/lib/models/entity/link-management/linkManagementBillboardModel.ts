@@ -1,6 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { LinkManagementBillboardCategoryModel } from './linkManagementBillboardCategoryModel';
 import { LinkManagementBillboardPatternModel } from './linkManagementBillboardPatternModel';
-import { LinkManagementBillboardTargetCategoryModel } from './linkManagementBillboardTargetCategoryModel';
+
 import { LinkManagementMemberModel } from './linkManagementMemberModel';
 //@@tag-Version-2201011
 export class LinkManagementBillboardModel extends BaseModuleEntity<number> {
@@ -19,7 +20,7 @@ export class LinkManagementBillboardModel extends BaseModuleEntity<number> {
   // tslint:disable-next-line: variable-name
   virtual_BillboardPattern: LinkManagementBillboardPatternModel;
   billboardPattern: LinkManagementBillboardPatternModel;
-  billboardTargetCategories: LinkManagementBillboardTargetCategoryModel[];
+  billboardCategories: LinkManagementBillboardCategoryModel[];
   linkMainImageIdSrc: string;
   linkFileIdsSrc: string[];
   billboardScript: string;

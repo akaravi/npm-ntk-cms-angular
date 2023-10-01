@@ -3,9 +3,9 @@ export * from './linkManagementAccountingDetailModel';
 export * from './linkManagementAccountingModel';
 export * from './linkManagementBillboardModel';
 export * from './linkManagementBillboardPatternModel';
-export * from './linkManagementBillboardTargetCategoryModel';
+export * from './linkManagementBillboardCategoryModel';
 export * from './linkManagementMemberModel';
 export * from './linkManagementTargetBillboardLogModel';
-export * from './linkManagementTargetCategoryModel';
+export * from './linkManagementCategoryModel';
 export * from './linkManagementTargetModel';
-
+export * from './linkManagementTargetCategoryModel'

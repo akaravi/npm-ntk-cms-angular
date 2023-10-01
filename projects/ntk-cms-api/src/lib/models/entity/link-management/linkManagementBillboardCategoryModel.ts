@@ -1,14 +1,15 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
-import { LinkManagementTargetCategoryModel } from './linkManagementTargetCategoryModel';
+import { LinkManagementCategoryModel } from './linkManagementCategoryModel';
 //@@tag-Version-2201011
-export class LinkManagementBillboardTargetCategoryModel extends BaseModuleEntity<number> {
-  linkTargetCategoryId: number;
+export class LinkManagementBillboardCategoryModel extends BaseModuleEntity<number> {
+  linkCategoryId: number;
   // tslint:disable-next-line: variable-name
-  virtual_TargetCategory: LinkManagementTargetCategoryModel;
-  targetCategory: LinkManagementTargetCategoryModel;
+  virtual_Category: LinkManagementCategoryModel;
+  category: LinkManagementCategoryModel;
   linkManagementBillboardId: number;
   // tslint:disable-next-line: variable-name
   virtual_Billboard: LinkManagementBillboardModel;
   billboard: LinkManagementBillboardModel;
 }
+
