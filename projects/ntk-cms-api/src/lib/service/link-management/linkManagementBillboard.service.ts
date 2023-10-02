@@ -6,9 +6,10 @@ import { LinkManagementBillboardModel } from '../../models/entity/link-managemen
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { LinkManagementBillboardFilterModel } from '../../models/filters/link-management/linkManagementBillboardFilterModel';
 
 @Injectable()
-export class LinkManagementBillboardService extends ApiCmsServerBase<LinkManagementBillboardModel, number,FilterModel>  {
+export class LinkManagementBillboardService extends ApiCmsServerBase<LinkManagementBillboardModel, number,LinkManagementBillboardFilterModel>  {
   getModuleControllerUrl(): string {
     return 'LinkManagementBillboard';
   }

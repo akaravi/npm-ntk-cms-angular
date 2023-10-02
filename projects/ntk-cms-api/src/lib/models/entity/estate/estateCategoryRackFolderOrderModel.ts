@@ -1,4 +1,5 @@
-import { EstateCustomerOrderFilterModel } from "../../dto/estate/estateCustomerOrderFilterModel";
+import { EstateCustomerOrderFilterModel } from "../../filters/estate/estateCustomerOrderFilterModel";
+
 
 export class EstateCategoryRackFolderOrderModel extends EstateCustomerOrderFilterModel {
   uid: string;

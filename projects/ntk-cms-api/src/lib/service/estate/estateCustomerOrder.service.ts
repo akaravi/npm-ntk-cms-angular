@@ -5,10 +5,10 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-
 import { EstateCustomerOrderActionSendSmsDtoModel } from '../../models/dto/estate/estateCustomerOrderActionSendSmsDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EstateCustomerOrderFilterModel } from '../../models/dto/estate/estateCustomerOrderFilterModel';
+import { EstateCustomerOrderFilterModel } from '../../models/filters/estate/estateCustomerOrderFilterModel';
+
 
 @Injectable()
 export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerOrderModel, string, EstateCustomerOrderFilterModel>  {

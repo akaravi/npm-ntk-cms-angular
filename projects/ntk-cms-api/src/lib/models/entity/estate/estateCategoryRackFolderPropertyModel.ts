@@ -1,4 +1,5 @@
-import { EstatePropertyFilterModel } from "../../dto/estate/estatePropertyFilterModel";
+import { EstatePropertyFilterModel } from "../../filters/estate/estatePropertyFilterModel";
+
 
 export class EstateCategoryRackFolderPropertyModel extends EstatePropertyFilterModel {
   uid: string;

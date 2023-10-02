@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
-
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EstatePropertyActionSendSmsDtoModel } from '../../models/dto/estate/estatePropertyActionSendSmsDtoModel';
-import { EstatePropertyFilterModel } from '../../models/dto/estate/estatePropertyFilterModel';
+import { EstatePropertyFilterModel } from '../../models/filters/estate/estatePropertyFilterModel';
+
 
 @Injectable()
 export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string, EstatePropertyFilterModel>  {

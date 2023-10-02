@@ -1,5 +1,5 @@
-import { ManagementContentSettingTypeEnum } from '../../enums/linkManagement/managementContentSettingTypeEnum';
-import { SharingPriceTypeEnum } from '../../enums/linkManagement/sharingPriceTypeEnum';
+import { ManagementContentSettingTypeEnum } from '../../enums/link-management/managementContentSettingTypeEnum';
+import { SharingPriceTypeEnum } from '../../enums/link-management/sharingPriceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { LinkManagementBillboardModel } from './linkManagementBillboardModel';
 import { LinkManagementTargetModel } from './linkManagementTargetModel';

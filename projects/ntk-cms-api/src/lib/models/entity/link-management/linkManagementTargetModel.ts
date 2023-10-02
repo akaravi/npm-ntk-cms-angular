@@ -1,6 +1,7 @@
-import { ManagementContentSettingTypeEnum } from '../../enums/linkManagement/managementContentSettingTypeEnum';
-import { SharingPriceTypeEnum } from '../../enums/linkManagement/sharingPriceTypeEnum';
+import { ManagementContentSettingTypeEnum } from '../../enums/link-management/managementContentSettingTypeEnum';
+import { SharingPriceTypeEnum } from '../../enums/link-management/sharingPriceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { LinkManagementTargetCategoryModel } from './linkManagementTargetCategoryModel';
 //@@tag-Version-2201011
 export class LinkManagementTargetModel extends BaseModuleEntity<number> {
   title: string;
@@ -10,8 +11,8 @@ export class LinkManagementTargetModel extends BaseModuleEntity<number> {
   currentClickCount: number;
   currentViewCount: number;
   linkManagementMemberId?: number;
-  linkTargetCategoryId?: number;
   linkBillboardPatternId?: number;
+  targetCategories: LinkManagementTargetCategoryModel[];
   webAddress: string;
   smallPreview: string;
   shareBeginDate?: Date;

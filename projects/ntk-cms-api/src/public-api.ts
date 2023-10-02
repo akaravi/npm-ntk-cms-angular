@@ -47,8 +47,9 @@ export * from './lib/models/dto/file/_export';
 // linkManagement Service
 export * from './lib/service/link-management/_export';
 export * from './lib/models/entity/link-management/_export';
-export * from './lib/models/dto/linkManagement/_export';
-export * from './lib/models/enums/linkManagement/_export';
+export * from './lib/models/dto/link-management/_export';
+export * from './lib/models/filters/link-management/_export';
+export * from './lib/models/enums/link-management/_export';
 // linkManagement Service
 
 // api-telegram Service
@@ -134,6 +135,7 @@ export * from './lib/service/estate/_export';
 export * from './lib/models/entity/estate/_export';
 export * from './lib/models/enums/estate/_export';
 export * from './lib/models/dto/estate/_export';
+export * from './lib/models/filters/estate/_export';
 // estate
 
 // webDesigner
