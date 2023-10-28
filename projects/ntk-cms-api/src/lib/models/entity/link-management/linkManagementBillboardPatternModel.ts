@@ -16,6 +16,7 @@ export class LinkManagementBillboardPatternModel extends BaseModuleEntity<number
   linkBackgroundId?: number;
   linkFileIds: string;
   patternScript: string;
+  patternScriptExample: string;
   targets: LinkManagementTargetModel[];
   billboards: LinkManagementBillboardModel[];
   linkMainImageIdSrc: string;

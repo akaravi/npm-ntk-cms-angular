@@ -7,13 +7,14 @@ export class EstatePropertyTypeLanduseModel extends BaseModuleEntity<string> {
   titleML: string;
   titleResourceLanguage: string;
   contentCount: number;
-  createdYearActive:boolean;
+  createdYearActive: boolean;
   titleCreatedYaer: string;
   titleCreatedYaerML: string;
-  titleCreatedYaerResourceLanguage:  string;
+  titleCreatedYaerResourceLanguage: string;
+  partitionActive: boolean;
   titlePartition: string;
   titlePartitionML: string;
-  titlePartitionResourceLanguage:  string;
+  titlePartitionResourceLanguage: string;
   description: string;
   iconFont: string;
   iconColor: string;
