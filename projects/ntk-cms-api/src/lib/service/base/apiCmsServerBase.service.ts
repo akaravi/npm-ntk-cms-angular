@@ -193,7 +193,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       );
   }
 
-  ServiceEdit(model: TModel): Observable<ErrorExceptionResult<TModel>> {
+  ServiceEdit(model: TModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/', model, {
