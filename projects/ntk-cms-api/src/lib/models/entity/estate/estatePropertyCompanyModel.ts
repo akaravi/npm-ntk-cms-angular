@@ -8,6 +8,7 @@ export class EstatePropertyCompanyModel extends BaseModuleEntity<string> {
   linkCmsUserId?: number;
   mainAdminRecordStatus: string;
   description: string;
+  descriptionHidden: string;
   address: string;
   phoneNumber: string;
   mobileNumber: string;

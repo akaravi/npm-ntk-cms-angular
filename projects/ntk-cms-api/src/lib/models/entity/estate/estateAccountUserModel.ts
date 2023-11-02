@@ -4,6 +4,7 @@ export class EstateAccountUserModel extends BaseModuleEntity<string> {
   linkCmsUserId: number;
   title: string;
   description: string;
+  descriptionHidden: string;
   joinId: string;
   linkLocationId?: number;
   linkLocationIdTitle: string;

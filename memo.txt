@@ -26,6 +26,7 @@ ng test ntk-cms-filemanager
 ng lint ntk-cms-filemanager
 ========================================= For New Ver
 ========================================= For New Ver
+%AppData%\npm
 ========================================= For New Ver
 ng build ntk-cms-api --configuration production
 cd dist/ntk-cms-api

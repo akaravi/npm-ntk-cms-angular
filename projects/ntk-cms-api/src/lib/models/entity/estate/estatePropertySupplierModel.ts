@@ -9,6 +9,7 @@ export class EstatePropertySupplierModel extends BaseModuleEntity<string> {
   linkEstatePropertySupplierCategoryIds: string[]
   mainAdminRecordStatus: string;
   description: string;
+  descriptionHidden: string;
   address: string;
   phoneNumber: string;
   mobileNumber: string;

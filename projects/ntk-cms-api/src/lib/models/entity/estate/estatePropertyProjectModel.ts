@@ -9,6 +9,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   linkPropertyCompanyId: string;
   mainAdminRecordStatus: string;
   description: string;
+  descriptionHidden: string;
   address:string;
   body: string;
   geolocationlatitude?: number;
