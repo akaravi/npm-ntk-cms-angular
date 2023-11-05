@@ -41,7 +41,7 @@ export class EstateEnumService extends ApiServerBase {
   }
   ServiceEstateActivityStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActivityStatusEnumEstate', {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/EstateActivityStatusEnum', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -51,4 +51,5 @@ export class EstateEnumService extends ApiServerBase {
         }),
       );
   }
+  
 }
