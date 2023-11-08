@@ -24,4 +24,5 @@ export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     linkPageDependencyGuId?: string;
     linkPageTemplateGuId?: string;
     thumbnailImageSrc: string;
+    htmlBuilderUrl:string
 }
