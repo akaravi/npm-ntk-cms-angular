@@ -1,4 +1,5 @@
 
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { File360TourModel } from '../core-main/file360TourModel';
 import { File360ViewModel } from '../core-main/file360ViewModel';
@@ -7,7 +8,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;
   linkPropertyCompanyId: string;
-  mainAdminRecordStatus: string;
+  mainAdminRecordStatus = RecordStatusEnum.Pending;
   description: string;
   descriptionHidden: string;
   address:string;
