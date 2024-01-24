@@ -1,19 +1,15 @@
 import { InputDataTypeEnum } from '../../enums/core/inputDataTypeEnum';
-//@@tag-Version-2201011
-export class EstatePropertyDetailModel {
-  id: string;
+import { BaseModuleEntity } from '../base/_export';
+//@@tag-Version-2401241
+export class EstatePropertyDetailModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
   iconFont: string;
   iconColor: string;
   inputDataType: InputDataTypeEnum;
-
   invisibleForEndUser: boolean;
-
   invisibleForSubmiter: boolean;
-
   unit: string;
-
   required: boolean;
   isHistoryable: boolean;
   isSearchable: boolean;
