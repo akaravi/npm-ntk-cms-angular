@@ -18,7 +18,7 @@ import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/cor
 import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/coreModuleDataCommentDtoModel';
 
 export interface IApiCmsServerBase {
-
+  ServiceViewModel(): Observable<ErrorExceptionResultBase>;
   ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase>;
   ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase>;
   ServiceDelete(id: any): Observable<ErrorExceptionResultBase>;

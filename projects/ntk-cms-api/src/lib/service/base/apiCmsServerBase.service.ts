@@ -26,7 +26,7 @@ import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/core
 
 @Injectable()
 export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase implements IApiCmsServerBase {
-  ServiceViewModel(): Observable<ErrorExceptionResult<TModel>> {
+  ServiceViewModel(): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ViewModel', {
@@ -35,7 +35,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       .pipe(
         // catchError(this.handleError)
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return this.errorExceptionResultBaseCheck(ret);
         }),
       );
   }

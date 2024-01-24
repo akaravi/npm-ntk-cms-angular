@@ -6,5 +6,5 @@ export class ErrorExceptionResult<T> extends ErrorExceptionResultBase {
   item: T;
   currentPageNumber: number;
   rowPerPage: number;
-  access: AccessModel = new AccessModel();
+
 }
