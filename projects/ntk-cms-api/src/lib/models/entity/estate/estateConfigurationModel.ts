@@ -17,6 +17,7 @@ export class EstateModuleConfigSiteAccessValuesModel extends BaseModuleConfigSit
 /// </summary>
 export class EstateModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
   autoArchiveDataDay: number;
+  autoContractByCallDataDay: number;
   aboutAgentMobiles: string;
   aboutAgentTels: string;
   aboutCustomerMobiles: string;
