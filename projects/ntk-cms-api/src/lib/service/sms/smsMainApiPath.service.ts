@@ -10,6 +10,8 @@ import { map, retry } from 'rxjs/operators';
 import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
 import { SmsApiSendMessageDtoModel } from '../../models/dto/sms/smsApiSendMessageDtoModel';
 import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMessageTestDtoModel';
+import { SmsApiGetBalanceDtoModel } from '../../models/dto/sms/smsApiGetBalanceDtoModel';
+import { SmsApiGetBalanceResultModel } from '../../models/dto/sms/smsApiGetBalanceResultModel';
 
 
 @Injectable()
@@ -54,6 +56,23 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
 
     return this.http
       .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetBalance(model: SmsApiGetBalanceDtoModel): Observable<ErrorExceptionResult<SmsApiGetBalanceResultModel>> {
+    if (model == null) {
+      model = new SmsApiGetBalanceDtoModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetBalance', model, {
         headers: this.getHeaders(),
       })
       .pipe(
