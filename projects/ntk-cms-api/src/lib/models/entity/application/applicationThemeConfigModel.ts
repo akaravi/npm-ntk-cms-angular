@@ -1,9 +1,9 @@
-import { ThemeConfigLayoutModel } from './themeConfigLayoutModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { ApplicationAppModel } from './applicationAppModel';
 import { ApplicationSourceModel } from './applicationSourceModel';
+import { ThemeConfigLayoutModel } from './themeConfigLayoutModel';
 //@@tag-Version-2201011
-export class ApplicationThemeConfigModel extends BaseModuleEntity<number>  {
+export class ApplicationThemeConfigModel extends BaseModuleEntity<number> {
   title: string;
   titleML: string;
   titleResourceLanguage: string;

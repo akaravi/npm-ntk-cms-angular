@@ -3,7 +3,7 @@ import { ReceiverNotificationStatusTypeEnum } from '../../enums/base/receiverNot
 import { SendNotificationStatusTypeEnum } from '../../enums/base/sendNotificationStatusTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
-export class CoreLogNotificationModel extends BaseEntity<string>{
+export class CoreLogNotificationModel extends BaseEntity<string> {
   sendStatusType: SendNotificationStatusTypeEnum;
   receiverStatusType: ReceiverNotificationStatusTypeEnum;
   linkSiteId?: number;

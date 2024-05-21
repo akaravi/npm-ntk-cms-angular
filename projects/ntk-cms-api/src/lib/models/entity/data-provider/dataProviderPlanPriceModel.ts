@@ -8,7 +8,7 @@ export class DataProviderPlanPriceModel extends BaseModuleEntity<number> {
   linkMainImageIdSrc: string;
   periodDay: number;
   price: number;
-  linkPlanId:number;
+  linkPlanId: number;
   plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;
 

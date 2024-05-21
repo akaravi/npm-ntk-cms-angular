@@ -6,7 +6,7 @@ import { SmsMainCustomerCreditModel } from '../../models/entity/sms/smsMainCusto
 
 
 @Injectable()
-export class SmsMainCustomerCreditService extends ApiCmsServerBase<SmsMainCustomerCreditModel, string,FilterModel> {
+export class SmsMainCustomerCreditService extends ApiCmsServerBase<SmsMainCustomerCreditModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'SmsMainCustomerCredit';
   }

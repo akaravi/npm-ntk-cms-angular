@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
-import {ru} from '../translations/ru';
-import {en} from '../translations/en';
-import {ngxTranslatePrefix} from '../pipes/prefix.pipe';
 import Utils from '../Utils';
+import { ngxTranslatePrefix } from '../pipes/prefix.pipe';
+import { en } from '../translations/en';
+import { ru } from '../translations/ru';
 
 export interface CronEditorTranslateOptions {
   existent?: CronEditorTranslateOptionExistent[];
@@ -23,7 +23,7 @@ export interface CronEditorTranslateOptionCustom {
 }
 
 function getPatchedTranslations(translations: object, patch?: object): object {
-  return patch == null ? translations : {[ngxTranslatePrefix]: Utils.merge({}, translations[ngxTranslatePrefix], patch)};
+  return patch == null ? translations : { [ngxTranslatePrefix]: Utils.merge({}, translations[ngxTranslatePrefix], patch) };
 }
 
 @Injectable()
@@ -47,7 +47,7 @@ export class CronEditorTranslateService {
     }
     if (options.custom != null) {
       for (const option of options.custom) {
-        this.translate.setTranslation(option.lang, {[ngxTranslatePrefix]: option.translations});
+        this.translate.setTranslation(option.lang, { [ngxTranslatePrefix]: option.translations });
       }
     }
   }

@@ -6,8 +6,8 @@ export class File360ViewModel {
   htmlBody: string;
   linkFileId: number;
   panorama: string;
-  preview:string;
+  preview: string;
   configDataJson: string;
-  hotSpots:File360TourHotSpotModel[];
+  hotSpots: File360TourHotSpotModel[];
 }
 

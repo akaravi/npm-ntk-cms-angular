@@ -1,3 +1,3 @@
-export class ApiTelegramRenderInfoModel{
-  
+export class ApiTelegramRenderInfoModel {
+
 }

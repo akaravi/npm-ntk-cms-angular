@@ -11,13 +11,13 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { TreeModel } from './models/tree.model';
-import { NodeService } from './services/node.service';
-import { NodeInterface } from './interfaces/node.interface';
-import { NodeClickedService } from './services/node-clicked.service';
 import { TranslateService } from '@ngx-translate/core';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './services/file-manager-store.service';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
+import { NodeInterface } from './interfaces/node.interface';
+import { TreeModel } from './models/tree.model';
+import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
+import { NodeClickedService } from './services/node-clicked.service';
+import { NodeService } from './services/node.service';
 
 @Component({
   selector: 'cms-file-manager',
@@ -247,7 +247,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
             id: next.item.id,
             name: next.item.fileName,
             downloadLinksrc: next.item.downloadLinksrc,
-            downloadThumbnailSrc:next.item.downloadThumbnailSrc,
+            downloadThumbnailSrc: next.item.downloadThumbnailSrc,
             size: next.item.size,
             extension: next.item.extension,
             isFolder: false

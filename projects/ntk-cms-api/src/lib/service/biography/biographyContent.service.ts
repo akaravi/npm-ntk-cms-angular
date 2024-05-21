@@ -1,23 +1,23 @@
-import { BiographyContentWithSimilarLocationPeriodDtoModel } from './../../models/dto/biography/biographyContentWithSimilarLocationPeriodDtoModel';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { catchError, map, retry } from 'rxjs/operators';
-import { BiographyContentModel } from '../../models/entity/biography/biographyContentModel';
-import { Observable } from 'rxjs';
-import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { BiographyContentWithDatePeriodEndDtoModel } from '../../models/dto/biography/biographyContentWithDatePeriodEndDtoModel';
 import { BiographyContentWithSimilarDatePeriodEndDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodEndDtoModel';
 import { BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel';
 import { BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodStartDayOfYearDtoModel';
 import { BiographyContentWithSimilarDatePeriodStartDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodStartDtoModel';
 import { BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel } from '../../models/dto/biography/biographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel';
+import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { BiographyContentModel } from '../../models/entity/biography/biographyContentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { BiographyContentWithSimilarLocationPeriodDtoModel } from './../../models/dto/biography/biographyContentWithSimilarLocationPeriodDtoModel';
 
 
 @Injectable()
-export class BiographyContentService extends ApiCmsServerBase<BiographyContentModel, number, FilterModel>  {
+export class BiographyContentService extends ApiCmsServerBase<BiographyContentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BiographyContent';
   }

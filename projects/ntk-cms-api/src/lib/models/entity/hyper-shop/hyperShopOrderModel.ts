@@ -4,7 +4,7 @@ import { HyperShopPaymentTypeEnum } from '../../enums/base/hyperShopPaymentTypeE
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { HyperShopOrderContentModel } from './hyperShopOrderContentModel';
 //@@tag-Version-2201011
-export class HyperShopOrderModel extends BaseModuleEntity<number>{
+export class HyperShopOrderModel extends BaseModuleEntity<number> {
   paymentType: HyperShopPaymentTypeEnum;
   orderType: HyperShopOrderTypeEnum;
   systemTransactionId: number;

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import {
-  ComponentOptionModel,
   ConfigInterface,
   DownloadModeEnum,
   NodeInterface,
-  TreeModel,
+  TreeModel
 } from 'projects/ntk-cms-filemanager/src/public-api';
 
 @Component({
@@ -44,9 +43,9 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
-        fileUplodMaxCount:20,
-        fileUplodExtensions:[],
-        fileUplodTypeAccept:''
+        fileUplodMaxCount: 20,
+        fileUplodExtensions: [],
+        fileUplodTypeAccept: ''
       },
     };
 
@@ -55,18 +54,18 @@ export class FileManagerTestComponent {
       baseUploadURL: 'https://apifile.ir/api/v2/',
       api: {
         listFile: 'FileContent/GetAll',
-      listFolder: 'FileCategory/GetAll',
-      uploadFile: 'upload',
-      downloadFile: 'download',
-      deleteFile: 'FileContent',
-      deleteFolder: 'FileCategory',
-      createFolder: 'FileCategory',
-      createFile: 'FileContent',
-      getOneFile: 'FileContent',
-      getOneFolder: 'FileCategory',
-      renameFile: 'FileContent',
-      renameFolder: 'FileCategory',
-      searchFiles: 'FileCategory/GetAll',
+        listFolder: 'FileCategory/GetAll',
+        uploadFile: 'upload',
+        downloadFile: 'download',
+        deleteFile: 'FileContent',
+        deleteFolder: 'FileCategory',
+        createFolder: 'FileCategory',
+        createFile: 'FileContent',
+        getOneFile: 'FileContent',
+        getOneFolder: 'FileCategory',
+        renameFile: 'FileContent',
+        renameFolder: 'FileCategory',
+        searchFiles: 'FileCategory/GetAll',
       },
       options: {
         title: 'Hello World 2',
@@ -74,9 +73,9 @@ export class FileManagerTestComponent {
         showFilesInsideTree: false,
         showSelectFile: true,
         showSelectFolder: false,
-        fileUplodMaxCount:20,
-        fileUplodExtensions:[],
-        fileUplodTypeAccept:''
+        fileUplodMaxCount: 20,
+        fileUplodExtensions: [],
+        fileUplodTypeAccept: ''
       },
     };
 

@@ -1,15 +1,14 @@
-import { map, retry } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { ApiServerBase } from '../base/apiServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { HyperShopContentModel } from '../../models/entity/hyper-shop/hyperShopContentModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 @Injectable()
-export class HyperShopContentService extends  ApiCmsServerBase<HyperShopContentModel, string,FilterModel> {
+export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'HyperShopContent';
   }

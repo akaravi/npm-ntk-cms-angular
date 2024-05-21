@@ -1,7 +1,7 @@
-import { HttpRequest, HttpClient,  HttpEventType, HttpHeaders } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
+import { HttpClient, HttpEventType, HttpRequest } from '@angular/common/http';
+import { FilePickerAdapter, FilePreviewModel, UploadResponse, UploadStatus } from 'ngx-awesome-uploader';
 import { Observable, of } from 'rxjs';
-import { FilePickerAdapter, UploadResponse, UploadStatus, FilePreviewModel } from 'ngx-awesome-uploader';
+import { catchError, map } from 'rxjs/operators';
 
 export class FileUploaderPickerAdapter extends FilePickerAdapter {
   constructor(private http: HttpClient) {

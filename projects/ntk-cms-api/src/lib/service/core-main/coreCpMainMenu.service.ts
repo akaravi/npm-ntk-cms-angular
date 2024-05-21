@@ -1,17 +1,17 @@
 
-import { Observable, BehaviorSubject } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreCpMainMenuModel } from '../../models/entity/core-main/coreCpMainMenuModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { Injectable } from '@angular/core';
-import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()
-export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number,FilterModel>  {
+export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreCpMainMenu';
   }

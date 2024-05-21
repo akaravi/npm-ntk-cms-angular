@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   EstateModuleConfigAdminMainValuesModel,
   EstateModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class EstateConfigurationService extends
   ApiServerConfigSiteBase<EstateModuleConfigAdminMainValuesModel,
-  EstateModuleConfigSiteValuesModel,
-  EstateModuleConfigSiteAccessValuesModel,
-  EstateModuleSiteStorageValuesModel> {
+    EstateModuleConfigSiteValuesModel,
+    EstateModuleConfigSiteAccessValuesModel,
+    EstateModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'Estate';
   }

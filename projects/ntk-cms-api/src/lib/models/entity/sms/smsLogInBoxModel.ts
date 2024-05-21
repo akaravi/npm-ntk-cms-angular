@@ -12,6 +12,6 @@ export class SmsLogInBoxModel extends BaseModuleEntity<string> {
   isRead: boolean;
   isProcessed: boolean;
   credit: number;
-  relayUrlStatus:boolean;
-  relayUrlResult:string;
+  relayUrlStatus: boolean;
+  relayUrlResult: string;
 }

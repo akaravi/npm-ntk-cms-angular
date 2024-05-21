@@ -1,16 +1,16 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { map, retry } from 'rxjs/operators';
-import { NewsContentTagModel } from '../../models/entity/news/newsContentTagModel';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { NewsContentTagModel } from '../../models/entity/news/newsContentTagModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel, number,FilterModel>  {
+export class NewsContentTagService extends ApiCmsServerBase<NewsContentTagModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'NewsContentTag';
   }

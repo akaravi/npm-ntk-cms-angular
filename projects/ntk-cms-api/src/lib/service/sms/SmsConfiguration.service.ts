@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   SmsModuleConfigAdminMainValuesModel,
   SmsModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class SmsConfigurationService extends
   ApiServerConfigSiteBase<SmsModuleConfigAdminMainValuesModel,
-  SmsModuleConfigSiteValuesModel,
-  SmsModuleConfigSiteAccessValuesModel,
-  SmsModuleSiteStorageValuesModel> {
+    SmsModuleConfigSiteValuesModel,
+    SmsModuleConfigSiteAccessValuesModel,
+    SmsModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'sms';
   }

@@ -2,7 +2,7 @@ import { BaseModuleEntity } from "../base/baseModuleEntity";
 import { ApiTelegramLogInputModel } from "./apiTelegramLogInputModel";
 import { ApiTelegramLogOutputModel } from "./apiTelegramLogOutputModel";
 //@@tag-Version-2201011
-export class ApiTelegramBotConfigModel extends BaseModuleEntity<number>{
+export class ApiTelegramBotConfigModel extends BaseModuleEntity<number> {
   title: string;
   username: string;
   botToken: string;
@@ -18,6 +18,6 @@ export class ApiTelegramBotConfigModel extends BaseModuleEntity<number>{
   urlViewContent: string;
   urlViewContentShort: string;
   urlViewContentQRCodeBase64: string;
-  hookAddressAPI:string;
-  hookAddressAPIById:string;
+  hookAddressAPI: string;
+  hookAddressAPIById: string;
 }

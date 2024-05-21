@@ -1,16 +1,16 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { WebDesignerMainMenuModel } from '../../models/entity/web-designer/webDesignerMainMenuModel';
 import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
 import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { WebDesignerMainMenuModel } from '../../models/entity/web-designer/webDesignerMainMenuModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string,FilterModel>  {
+export class WebDesignerMainMenuService extends ApiCmsServerBase<WebDesignerMainMenuModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainMenu';
   }

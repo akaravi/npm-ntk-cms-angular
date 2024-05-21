@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { NodeInterface } from '../../../interfaces/node.interface';
 
-import { NodeService } from '../../../services/node.service';
-import { NodeClickedService } from '../../../services/node-clicked.service';
-import { FileManagerStoreService, SET_PATH, SET_SELECTED_NODE } from '../../../services/file-manager-store.service';
 import { DownloadModeEnum } from '../../../enums/download-mode.enum';
+import { FileManagerStoreService, SET_PATH, SET_SELECTED_NODE } from '../../../services/file-manager-store.service';
+import { NodeClickedService } from '../../../services/node-clicked.service';
+import { NodeService } from '../../../services/node.service';
 
 @Component({
   selector: 'lib-filemanager-node',

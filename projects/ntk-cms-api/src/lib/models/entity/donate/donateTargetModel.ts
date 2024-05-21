@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateTargetCategoryModel } from './donateTargetCategoryModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
 //@@tag-Version-2201011
-export class DonateTargetModel extends BaseModuleEntity<number>{
+export class DonateTargetModel extends BaseModuleEntity<number> {
   title: string;
   description: string;
   isPublic: boolean;

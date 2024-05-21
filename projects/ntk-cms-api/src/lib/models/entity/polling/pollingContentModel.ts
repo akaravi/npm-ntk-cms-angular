@@ -15,7 +15,7 @@ export class PollingContentModel extends BaseModuleEntity<number> {
   fromDate?: string;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   linkCategoryId?: number;

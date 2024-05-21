@@ -7,7 +7,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class CoreLogMemberService extends ApiCmsServerBase<CoreLogMemberModel, string,FilterModel>  {
+export class CoreLogMemberService extends ApiCmsServerBase<CoreLogMemberModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreLogMember';
   }

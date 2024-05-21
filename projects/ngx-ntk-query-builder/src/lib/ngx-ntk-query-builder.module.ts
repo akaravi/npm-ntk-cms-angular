@@ -1,10 +1,10 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
 
 
 export function CreateTranslateLoader(http: HttpClient): any {

@@ -6,8 +6,8 @@ export class CoreModuleDataCommentModel extends BaseModuleEntity<string> {
   moduleEntityId: string;
   linkParentId: string;
   writer: string;
-  comment:string;
-  viewPrivate:boolean;
-  sumLikeClick:number;
-  sumDisLikeClick:number;
+  comment: string;
+  viewPrivate: boolean;
+  sumLikeClick: number;
+  sumDisLikeClick: number;
 }

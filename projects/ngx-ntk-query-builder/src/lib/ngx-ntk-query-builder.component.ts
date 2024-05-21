@@ -1,8 +1,8 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { Field, QueryBuilderFieldMap, Rule, RuleSet, QueryBuilderSettings } from './interfaces/ngx-ntk-query-builder.interfaces';
-import { OperatorsService } from './services/operators.service';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { Field, QueryBuilderFieldMap, QueryBuilderSettings, Rule, RuleSet } from './interfaces/ngx-ntk-query-builder.interfaces';
+import { OperatorsService } from './services/operators.service';
 
 @Component({
   selector: 'ngx-ntk-query-builder',

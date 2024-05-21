@@ -1,15 +1,15 @@
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
-  Injectable,
-  ComponentFactoryResolver,
   ApplicationRef,
-  Injector,
+  ComponentFactoryResolver,
   EmbeddedViewRef,
   Inject,
+  Injectable,
+  Injector,
+  PLATFORM_ID,
   TemplateRef,
-  Type,
-  PLATFORM_ID
+  Type
 } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 
 import { ModalInstance } from './modal-instance';

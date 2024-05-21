@@ -7,7 +7,7 @@ import { UniversalMenuSessionModel } from '../../models/entity/universal-menu/un
 
 
 @Injectable()
-export class UniversalMenuSessionService extends ApiCmsServerBase<UniversalMenuSessionModel, string,FilterModel>  {
+export class UniversalMenuSessionService extends ApiCmsServerBase<UniversalMenuSessionModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'UniversalMenuSession';
   }

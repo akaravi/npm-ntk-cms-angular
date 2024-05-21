@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   ContactModuleConfigAdminMainValuesModel,
   ContactModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class ContactConfigurationService extends
   ApiServerConfigSiteBase<ContactModuleConfigAdminMainValuesModel,
-  ContactModuleConfigSiteValuesModel,
-  ContactModuleConfigSiteAccessValuesModel,
-  ContactModuleSiteStorageValuesModel> {
+    ContactModuleConfigSiteValuesModel,
+    ContactModuleConfigSiteAccessValuesModel,
+    ContactModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'contact';
   }

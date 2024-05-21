@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NodeService } from '../../../services/node.service';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-awesome-uploader';
-import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
+import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
+import { NodeService } from '../../../services/node.service';
+import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
 
 @Component({
   selector: 'lib-filemanager-upload',

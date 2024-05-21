@@ -6,7 +6,7 @@ import { TicketingDepartemenOperatorModel } from './ticketingDepartemenOperatorM
 import { TicketingFaqModel } from './ticketingFaqModel';
 import { TicketingTaskModel } from './ticketingTaskModel';
 //@@tag-Version-2201011
-export class TicketingDepartemenModel extends BaseModuleEntity<number>  {
+export class TicketingDepartemenModel extends BaseModuleEntity<number> {
     title: string;
     defaultAnswerBody: string;
     priority: TicketingDepartemenPriorityEnum;

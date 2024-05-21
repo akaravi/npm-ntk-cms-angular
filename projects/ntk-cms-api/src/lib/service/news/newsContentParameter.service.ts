@@ -5,7 +5,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class NewsContentParameterService extends ApiCmsServerBase<any, number, FilterModel>  {
+export class NewsContentParameterService extends ApiCmsServerBase<any, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'NewsContentParameter';
   }

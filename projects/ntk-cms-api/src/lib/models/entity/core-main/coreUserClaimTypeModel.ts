@@ -1,7 +1,7 @@
 import { UserClaimKindsEnum } from '../../enums/core/userClaimKindsEnum';
 import { BaseEntity } from '../base/baseEntity';
-import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 import { CoreUserClaimContentModel } from './coreUserClaimContentModel';
+import { CoreUserClaimGroupDetailModel } from './coreUserClaimGroupDetailModel';
 //@@tag-Version-2201011
 export class CoreUserClaimTypeModel extends BaseEntity<number> {
   title: string;

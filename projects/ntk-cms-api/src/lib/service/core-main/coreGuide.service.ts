@@ -1,16 +1,16 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreGuideModel } from '../../models/entity/core-main/coreGuideModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
-import { map, retry } from 'rxjs/operators';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreGuideModel } from '../../models/entity/core-main/coreGuideModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number,FilterModel>  {
+export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreGuide';
   }

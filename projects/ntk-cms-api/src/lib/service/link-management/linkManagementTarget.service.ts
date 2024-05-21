@@ -1,19 +1,19 @@
 
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, catchError, retry } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 import { LinkManagementTargetShortLinkGetDtoModel } from '../../models/dto/link-management/linkManagementTargetShortLinkGetDtoModel';
 import { LinkManagementTargetShortLinkGetResponceModel } from '../../models/dto/link-management/linkManagementTargetShortLinkGetResponceModel';
 import { LinkManagementTargetShortLinkSetDtoModel } from '../../models/dto/link-management/linkManagementTargetShortLinkSetDtoModel';
 import { LinkManagementTargetShortLinkSetResponceModel } from '../../models/dto/link-management/linkManagementTargetShortLinkSetResponceModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { Injectable } from '@angular/core';
 import { LinkManagementTargetModel } from '../../models/entity/link-management/linkManagementTargetModel';
 import { LinkManagementTargetFilterModel } from '../../models/filters/link-management/linkManagementTargetFilterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagementTargetModel, number, LinkManagementTargetFilterModel>  {
+export class LinkManagementTargetService extends ApiCmsServerBase<LinkManagementTargetModel, number, LinkManagementTargetFilterModel> {
   getModuleControllerUrl(): string {
     return 'LinkManagementTarget';
   }

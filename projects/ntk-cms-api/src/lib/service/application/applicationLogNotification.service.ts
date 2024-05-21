@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 import { SendNotificationModel } from '../../models/dto/application/sendNotificationModel';
 import { ApplicationLogNotificationModel } from '../../models/entity/application/applicationLogNotificationModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string,FilterModel>  {
+export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ApplicationLogNotification';
   }

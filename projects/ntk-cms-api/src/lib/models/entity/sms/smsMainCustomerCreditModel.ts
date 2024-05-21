@@ -7,10 +7,10 @@ export class SmsMainCustomerCreditModel extends BaseModuleEntity<string> {
   creditor: number;
   isAccepted: boolean;
   acceptDate?: Date;
-  userAcceptor?:number;
-  isBankAccepted:boolean;
-  bankAcceptDate?:Date;
-  userBankAcceptor?:number;
-  cardNumber:string;
-  accountNumber:string;
+  userAcceptor?: number;
+  isBankAccepted: boolean;
+  bankAcceptDate?: Date;
+  userBankAcceptor?: number;
+  cardNumber: string;
+  accountNumber: string;
 }

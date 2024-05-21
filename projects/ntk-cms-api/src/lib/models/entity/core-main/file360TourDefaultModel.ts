@@ -1,5 +1,5 @@
-export class File360TourDefaultModel{
-  firstScene :string;
+export class File360TourDefaultModel {
+  firstScene: string;
   author: string;
-  sceneFadeDuration:number;
+  sceneFadeDuration: number;
 }

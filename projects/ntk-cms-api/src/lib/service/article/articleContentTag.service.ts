@@ -1,17 +1,16 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { catchError, map, retry } from 'rxjs/operators';
-import { SearchTagModel } from '../../models/entity/base/searchModel';
-import { ArticleContentTagModel } from '../../models/entity/article/articleContentTagModel';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ArticleContentTagModel } from '../../models/entity/article/articleContentTagModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTagModel, number,FilterModel>  {
+export class ArticleContentTagService extends ApiCmsServerBase<ArticleContentTagModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ArticleContentTag';
   }

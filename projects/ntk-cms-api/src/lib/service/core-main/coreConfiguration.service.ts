@@ -1,24 +1,23 @@
-import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { IpModel } from '../../models/dto/core-main/ipModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import {
   CoreModuleConfigAdminMainValuesModel,
   CoreModuleConfigSiteAccessValuesModel,
   CoreModuleConfigSiteValuesModel,
   CoreModuleSiteStorageValuesModel
 } from '../../models/entity/core-main/coreConfigurationModel';
-import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { map } from 'rxjs/operators';
-import { IpModel } from '../../models/dto/core-main/ipModel';
+import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
 
 @Injectable()
 export class CoreConfigurationService extends
   ApiServerConfigSiteBase<CoreModuleConfigAdminMainValuesModel,
-  CoreModuleConfigSiteValuesModel,
-  CoreModuleConfigSiteAccessValuesModel,
-  CoreModuleSiteStorageValuesModel>   {
+    CoreModuleConfigSiteValuesModel,
+    CoreModuleConfigSiteAccessValuesModel,
+    CoreModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'Core';
   }
@@ -36,7 +35,7 @@ export class CoreConfigurationService extends
   }
   ServiceIp(): Observable<IpModel> {
     return this.http
-      .get(this.getBaseUrl()  + 'ip', {
+      .get(this.getBaseUrl() + 'ip', {
         headers: this.getHeaders(),
       })
       .pipe(

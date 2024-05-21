@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   ChartModuleConfigAdminMainValuesModel,
   ChartModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class ChartConfigurationService extends
   ApiServerConfigSiteBase<ChartModuleConfigAdminMainValuesModel,
-  ChartModuleConfigSiteValuesModel,
-  ChartModuleConfigSiteAccessValuesModel,
-  ChartModuleSiteStorageValuesModel> {
+    ChartModuleConfigSiteValuesModel,
+    ChartModuleConfigSiteAccessValuesModel,
+    ChartModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'chart';
   }

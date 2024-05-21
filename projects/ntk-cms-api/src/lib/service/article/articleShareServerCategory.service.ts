@@ -1,8 +1,8 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import {  map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
 import { ArticleShareServerCategoryModel } from '../../models/entity/article/articleShareServerCategoryModel';
@@ -10,7 +10,7 @@ import { ArticleShareServerCategoryModel } from '../../models/entity/article/art
 
 
 @Injectable()
-export class ArticleShareServerCategoryService extends ApiCmsServerBase<ArticleShareServerCategoryModel, number,FilterModel>  {
+export class ArticleShareServerCategoryService extends ApiCmsServerBase<ArticleShareServerCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ArticleShareServerCategory';
   }

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
-import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
-import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
-import { AppStore } from './reducer.factory';
 import { TokenDeviceModel } from '../models/entity/core-token/tokenDeviceModel';
+import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
+import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
+import { AppStore } from './reducer.factory';
 
 const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,

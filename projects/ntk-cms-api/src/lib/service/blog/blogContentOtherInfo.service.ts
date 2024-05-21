@@ -1,15 +1,15 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { BlogContentOtherInfoModel } from '../../models/entity/blog/blogContentOtherInfoModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class BlogContentOtherInfoService extends ApiCmsServerBase<BlogContentOtherInfoModel, number,FilterModel>  {
+export class BlogContentOtherInfoService extends ApiCmsServerBase<BlogContentOtherInfoModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BlogContentOtherInfo';
   }

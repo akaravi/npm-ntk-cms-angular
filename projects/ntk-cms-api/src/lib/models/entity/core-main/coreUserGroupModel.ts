@@ -1,9 +1,9 @@
 import { ManageUserAccessUserTypesEnum } from '../../enums/base/manageUserAccessUserTypesEnum';
-import { CoreSiteUserModel } from './coreSiteUserModel';
-import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
 import { BaseEntity } from '../base/baseEntity';
+import { CoreCpMainMenuCmsUserGroupModel } from './coreCpMainMenuCmsUserGroupModel';
+import { CoreSiteUserModel } from './coreSiteUserModel';
 //@@tag-Version-2201011
-export class CoreUserGroupModel extends BaseEntity<number>  {
+export class CoreUserGroupModel extends BaseEntity<number> {
     titleML: string;
     title: string;
     titleResourceLanguage: string;

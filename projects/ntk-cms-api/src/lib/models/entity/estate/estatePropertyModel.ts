@@ -1,13 +1,13 @@
-import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
 import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
+import { DateTypeEnum } from '../../enums/core/dateTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { File360TourModel } from '../core-main/file360TourModel';
+import { File360ViewModel } from '../core-main/file360ViewModel';
 import { EstateContractModel } from './estateContractModel';
 import { EstatePropertyDetailGroupModel } from './estatePropertyDetailGroupModel';
 import { EstatePropertyDetailValueModel } from './estatePropertyDetailValueModel';
 import { EstatePropertyTypeLanduseModel } from './estatePropertyTypeLanduseModel';
 import { EstatePropertyTypeUsageModel } from './estatePropertyTypeUsageModel';
-import { File360ViewModel } from '../core-main/file360ViewModel';
-import { File360TourModel } from '../core-main/file360TourModel';
 //@@tag-Version-2201011
 export class EstatePropertyModel extends BaseModuleEntity<string> {
   title: string;

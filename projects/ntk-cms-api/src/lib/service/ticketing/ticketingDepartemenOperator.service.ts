@@ -1,15 +1,15 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 import { TicketingDepartemenOperatorModel } from '../../models/entity/ticketing/ticketingDepartemenOperatorModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
-import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
-export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number,FilterModel>  {
+export class TicketingDepartemenOperatorService extends ApiCmsServerBase<TicketingDepartemenOperatorModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'TicketingDepartemenOperator';
   }

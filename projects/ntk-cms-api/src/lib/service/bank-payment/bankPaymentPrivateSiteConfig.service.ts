@@ -1,17 +1,17 @@
-import { Observable } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { map, retry } from 'rxjs/operators';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { BankPaymentPrivateSiteConfigModel } from '../../models/entity/bank-payment/bankPaymentPrivateSiteConfigModel';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { BankPaymentInjectOnlineTransactionDtoModel } from '../../models/dto/bankPayment/bankPaymentInjectOnlineTransactionDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
 import { BankPaymentPrivateSiteConfigAliasJsonModel } from '../../models/entity/bank-payment/bankPaymentPrivateSiteConfigAliasJsonModel';
+import { BankPaymentPrivateSiteConfigModel } from '../../models/entity/bank-payment/bankPaymentPrivateSiteConfigModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number,FilterModel>  {
+export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
@@ -30,7 +30,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   }
 
   ServiceTestPay(model: BankPaymentInjectOnlineTransactionDtoModel):
-   Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     if (model == null) {
       model = new BankPaymentInjectOnlineTransactionDtoModel();
     }
@@ -49,7 +49,7 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   }
 
   ServiceGoToBankPaymentWebSite(model: BankPaymentInjectOnlineTransactionDtoModel):
-  Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>>{
+    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
     if (model == null) {
       model = new BankPaymentInjectOnlineTransactionDtoModel();
     }
@@ -67,9 +67,9 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
       );
   }
   ServicePaymentGatewayList():
-   Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+    Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayList',  {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayList', {
         headers: this.getHeaders(),
       })
       .pipe(
@@ -81,17 +81,17 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
       );
   }
   ServicePaymentGatewayCoreList():
-  Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
-   return this.http
-     .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayCoreList',  {
-       headers: this.getHeaders(),
-     })
-     .pipe(
-       retry(this.configApiRetry),
-       // catchError(this.handleError)
-       map((ret: any) => {
-         return this.errorExceptionResultCheck(ret);
-       }),
-     );
- }
+    Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayCoreList', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
 }

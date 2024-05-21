@@ -1,6 +1,5 @@
-import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
-export class ArticleContentSimilarModel  {
+export class ArticleContentSimilarModel {
   linkSourceId: number;
   linkDestinationId: number;
   // tslint:disable-next-line: variable-name

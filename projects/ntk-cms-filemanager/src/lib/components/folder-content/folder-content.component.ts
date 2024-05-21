@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
-import { NodeService } from '../../services/node.service';
 import { NodeInterface } from '../../interfaces/node.interface';
 import { FileManagerStoreService } from '../../services/file-manager-store.service';
+import { NodeService } from '../../services/node.service';
 
 @Component({
   selector: 'lib-filemanager-folder-content',

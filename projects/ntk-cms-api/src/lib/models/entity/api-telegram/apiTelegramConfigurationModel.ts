@@ -3,13 +3,11 @@ import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModule
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteStorageValuesModel';
 
-export class ApiTelegramModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
-{
+export class ApiTelegramModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel {
 
 }
 
-export class ApiTelegramModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
-{
+export class ApiTelegramModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {
 
 }
 
@@ -17,14 +15,12 @@ export class ApiTelegramModuleConfigSiteAccessValuesModel extends BaseModuleConf
 /// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
-export class ApiTelegramModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
-{
+export class ApiTelegramModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
 
 
 }
 
-export class ApiTelegramModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
-{
+export class ApiTelegramModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel {
   updatedNewsContent: Date;
   updatedNewsCategory: Date;
 }

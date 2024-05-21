@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {QueryBuilderFieldMap, Rule} from '../interfaces/ngx-ntk-query-builder.interfaces';
+import { QueryBuilderFieldMap, Rule } from '../interfaces/ngx-ntk-query-builder.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -73,8 +73,8 @@ export class OperatorsService {
     in: 'In',
     not_in: 'Not in'
   };
-  constructor(    private translate: TranslateService,
-    ) { }
+  constructor(private translate: TranslateService,
+  ) { }
 
   getOperators(rule: Rule, fieldMap: QueryBuilderFieldMap): string[] {
 

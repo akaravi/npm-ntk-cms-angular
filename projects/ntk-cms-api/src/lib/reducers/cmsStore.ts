@@ -1,8 +1,6 @@
 // Import the core angular services.
-import { BehaviorSubject } from 'rxjs';
-import { distinctUntilChanged } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 // ----------------------------------------------------------------------------------- //
 // ----------------------------------------------------------------------------------- //

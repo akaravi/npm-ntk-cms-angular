@@ -1,17 +1,17 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { catchError, map, retry } from 'rxjs/operators';
-import { NewsContentModel } from '../../models/entity/news/newsContentModel';
-import { Observable } from 'rxjs';
-import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { NewsContentModel } from '../../models/entity/news/newsContentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class NewsContentService extends ApiCmsServerBase<NewsContentModel, number,FilterModel>  {
+export class NewsContentService extends ApiCmsServerBase<NewsContentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'NewsContent';
   }

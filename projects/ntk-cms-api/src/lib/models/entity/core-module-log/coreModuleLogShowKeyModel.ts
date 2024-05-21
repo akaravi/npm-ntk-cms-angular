@@ -6,5 +6,5 @@ export class CoreModuleLogShowKeyModel extends BaseModuleEntity<string> {
   moduleEntityId: string;
   subjectTitle: string;
   expireDateTime: Date;
-  showKey:number;
+  showKey: number;
 }

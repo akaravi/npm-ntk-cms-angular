@@ -1,14 +1,14 @@
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { map, catchError, retry } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleSiteModel } from '../../models/entity/core-main/coreModuleSiteModel';
-import { Injectable } from '@angular/core';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number,FilterModel>  {
+export class CoreModuleSiteService extends ApiCmsServerBase<CoreModuleSiteModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreModuleSite';
   }

@@ -1,8 +1,8 @@
-import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
-import { CoreModuleModel } from './coreModuleModel';
 import { BaseEntity } from '../base/baseEntity';
+import { CoreModuleModel } from './coreModuleModel';
+import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
 //@@tag-Version-2201011
-export class CoreSiteCategoryCmsModuleModel  extends BaseEntity<number> {
+export class CoreSiteCategoryCmsModuleModel extends BaseEntity<number> {
 
   linkCmsSiteCategoryId: number;
   // tslint:disable-next-line: variable-name

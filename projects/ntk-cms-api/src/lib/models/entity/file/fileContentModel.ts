@@ -1,5 +1,5 @@
-import { FileCategoryModel } from './fileCategoryModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { FileCategoryModel } from './fileCategoryModel';
 //@@tag-Version-2201011
 export class FileContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -31,7 +31,7 @@ export class FileContentModel extends BaseModuleEntity<number> {
   linkMainImageIdSrc: string;
   downloadLinksrc: string;
   downloadLinksrcByDomain: string;
-  downloadThumbnailSrc : string;
+  downloadThumbnailSrc: string;
   extension: string;
   fileExist: boolean;
   fileExistChecked: Date;

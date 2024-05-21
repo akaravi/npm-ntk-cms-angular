@@ -3,7 +3,7 @@ import { UniversalMenuMenuItemProcessModel } from "./universalMenuMenuItemProces
 import { UniversalMenuPlatformModel } from "./universalMenuPlatformModel";
 import { UniversalMenuProcessModel } from "./universalMenuProcessModel";
 //@@tag-Version-2201011
-export class UniversalMenuMenuItemModel extends BaseModuleEntity<number>{
+export class UniversalMenuMenuItemModel extends BaseModuleEntity<number> {
   title: string;
   key: string;
   linkPlatformId?: number;

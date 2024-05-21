@@ -1,4 +1,4 @@
-export class CoreSiteSupportModel{
-  title:string;
-  supportHtmlBody:string;
+export class CoreSiteSupportModel {
+  title: string;
+  supportHtmlBody: string;
 }

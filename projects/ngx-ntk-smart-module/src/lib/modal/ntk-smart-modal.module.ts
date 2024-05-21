@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { NtkSmartModalStackService } from './ntk-smart-modal-stack.service';
 import { NtkSmartModalComponent } from './ntk-smart-modal.component';
 import { NtkSmartModalService } from './ntk-smart-modal.service';

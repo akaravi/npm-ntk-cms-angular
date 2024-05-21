@@ -1,17 +1,18 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreModuleTagCategoryModel } from '../../models/entity/core-module-main/coreModuleTagCategoryModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreModuleTagCategoryModel } from '../../models/entity/core-module-main/coreModuleTagCategoryModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleTagCategory';
-  }
+export class CoreModuleTagCategoryService extends ApiCmsServerBase<CoreModuleTagCategoryModel, number, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreModuleTagCategory';
+    }
   ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleTagCategoryModel>> {
     if (model == null) {
       model = new FilterModel();

@@ -51,7 +51,7 @@ colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.
     ],
     ...
  })
- export class AppModule { }`;
+ export  class AppModule { }`;
 
   public code4 =
     `export const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
@@ -67,7 +67,7 @@ colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.
     ],
     ...
   })
-export class AppModule { }`;
+export  class AppModule { }`;
 
   public code5 = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">';
 

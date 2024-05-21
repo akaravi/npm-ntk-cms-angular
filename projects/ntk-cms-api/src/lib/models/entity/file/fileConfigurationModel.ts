@@ -3,13 +3,11 @@ import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModule
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteStorageValuesModel';
 
-export class ModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
-{
+export class ModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel {
   allCateSizeUploadMB: number;
 }
 
-export class ModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
-{
+export class ModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {
 
 }
 
@@ -17,13 +15,11 @@ export class ModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAcces
 /// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
-export class ModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
-{
+export class ModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
 
 
 }
 
-export class ModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
-{
+export class ModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel {
   sumSizeUploadMB: number;
 }

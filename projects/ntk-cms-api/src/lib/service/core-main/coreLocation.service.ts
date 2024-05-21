@@ -1,14 +1,14 @@
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, catchError, retry } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreLocationModel } from '../../models/entity/core-main/coreLocationModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, number,FilterModel>  {
+export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreLocation';
   }

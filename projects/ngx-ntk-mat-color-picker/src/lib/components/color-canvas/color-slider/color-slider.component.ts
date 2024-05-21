@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
-import { Color } from '../../../models';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { getColorAtPosition } from '../../../helpers';
+import { Color } from '../../../models';
 import { NgxMatBaseColorCanvas } from '../base-color-canvas';
 
 @Component({

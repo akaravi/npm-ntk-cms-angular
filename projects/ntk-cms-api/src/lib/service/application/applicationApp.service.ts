@@ -1,19 +1,19 @@
-import { ApplicationScoreDtoModel } from '../../models/dto/application/applicationScoreDtoModel';
-import { ApplicationAppModel } from '../../models/entity/application/applicationAppModel';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ApplicationScoreDtoModel } from '../../models/dto/application/applicationScoreDtoModel';
 import { BuilderInfoStatusDtoModel } from '../../models/dto/application/builderInfoStatusDtoModel';
-import { UploadApplictionDtoModel } from '../../models/dto/application/uploadApplictionDtoModel';
 import { ScoreClickInfoModel } from '../../models/dto/application/scoreClickInfoModel';
+import { UploadApplictionDtoModel } from '../../models/dto/application/uploadApplictionDtoModel';
+import { ApplicationAppModel } from '../../models/entity/application/applicationAppModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number,FilterModel>  {
+export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'Application';
   }

@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, TemplateRef} from '@angular/core';
-import {timer} from 'rxjs';
-import {TranslateService} from '@ngx-translate/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'lib-filemanager-loading-overlay',

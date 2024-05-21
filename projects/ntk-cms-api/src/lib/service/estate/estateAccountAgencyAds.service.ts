@@ -1,18 +1,18 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { EstateAccountAgencyAdsModel } from '../../models/entity/estate/estateAccountAgencyAdsModel';
-import { EstateModuleSaleAccountAgencyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsPaymentDtoModel';
-import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { EstateModuleSaleAccountAgencyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsCalculateDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
+import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
+import { EstateModuleSaleAccountAgencyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsCalculateDtoModel';
+import { EstateModuleSaleAccountAgencyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSaleAccountAgencyAdsPaymentDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { EstateAccountAgencyAdsModel } from '../../models/entity/estate/estateAccountAgencyAdsModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstateAccountAgencyAdsService extends ApiCmsServerBase<EstateAccountAgencyAdsModel, string,FilterModel>  {
+export class EstateAccountAgencyAdsService extends ApiCmsServerBase<EstateAccountAgencyAdsModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'EstateAccountAgencyAds';
   }

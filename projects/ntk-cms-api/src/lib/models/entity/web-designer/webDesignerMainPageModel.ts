@@ -1,5 +1,5 @@
-import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { PageAbilityTypeEnum } from '../../enums/base/pageAbilityTypeEnum';
+import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     linkFavFileId?: number;
@@ -24,7 +24,7 @@ export class WebDesignerMainPageModel extends BaseModuleEntity<string> {
     linkPageDependencyGuId?: string;
     linkPageTemplateGuId?: string;
     thumbnailImageSrc: string;
-    htmlBuilderUrl:string;
-    htmlPreviewUrl:string;
-    htmlPreviewByMasterUrl:string;
+    htmlBuilderUrl: string;
+    htmlPreviewUrl: string;
+    htmlPreviewByMasterUrl: string;
 }

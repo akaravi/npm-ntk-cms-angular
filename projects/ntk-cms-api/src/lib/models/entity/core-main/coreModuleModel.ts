@@ -1,12 +1,12 @@
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
-export class CoreModuleModel extends BaseEntity<number>{
+export class CoreModuleModel extends BaseEntity<number> {
   title: string;
   titleML: string;
   titleResourceLanguage?: any;
   className: string;
-  needSiteCreditAccount:boolean;
-  needSiteUserCreditAccount:boolean;
+  needSiteCreditAccount: boolean;
+  needSiteUserCreditAccount: boolean;
   description: string;
   administratorIsActivate: boolean;
   moduleConfigAdminMainJson?: any;

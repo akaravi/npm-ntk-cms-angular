@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {NodeClickedService} from '../../services/node-clicked.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NodeClickedService } from '../../services/node-clicked.service';
 
 @Component({
   selector: 'lib-filemanager-navigation',

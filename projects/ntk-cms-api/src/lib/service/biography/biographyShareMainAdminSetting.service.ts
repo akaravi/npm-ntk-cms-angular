@@ -7,7 +7,7 @@ import { BiographyShareMainAdminSettingModel } from '../../models/entity/biograp
 
 
 @Injectable()
-export class BiographyShareMainAdminSettingService extends ApiCmsServerBase<BiographyShareMainAdminSettingModel, number,FilterModel>  {
+export class BiographyShareMainAdminSettingService extends ApiCmsServerBase<BiographyShareMainAdminSettingModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BiographyShareMainAdminSetting';
   }

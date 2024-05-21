@@ -1,14 +1,14 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { PollingCategoryModel } from '../../models/entity/polling/pollingCategoryModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { PollingCategoryModel } from '../../models/entity/polling/pollingCategoryModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number,FilterModel>  {
+export class PollingCategoryService extends ApiCmsServerBase<PollingCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'PollingCategory';
   }

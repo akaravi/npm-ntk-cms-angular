@@ -1,8 +1,8 @@
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreUserSupportAccessModel extends BaseEntity<number> {
-  linkSiteId:number;
-  linkUserId:number;
+  linkSiteId: number;
+  linkUserId: number;
   moduleName: string;
   moduleEntityName: string;
   accessDeleteRow = false;

@@ -1,5 +1,4 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { CatalogContentModel } from './catalogContentModel';
 //@@tag-Version-2201011
 export class CatalogCategoryModel extends BaseModuleEntity<string> {
   title: string;
@@ -13,7 +12,7 @@ export class CatalogCategoryModel extends BaseModuleEntity<string> {
   category: CatalogCategoryModel;
   // tslint:disable-next-line: variable-name
   virtual_Category: CatalogCategoryModel;
-  
+
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 }

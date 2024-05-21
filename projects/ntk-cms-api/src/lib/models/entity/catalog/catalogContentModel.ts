@@ -1,8 +1,7 @@
-import { BaseEntity } from '../base/baseEntity';
-import { CatalogCategoryModel } from './catalogCategoryModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { File360ViewModel } from '../core-main/file360ViewModel';
 import { File360TourModel } from '../core-main/file360TourModel';
+import { File360ViewModel } from '../core-main/file360ViewModel';
+import { CatalogCategoryModel } from './catalogCategoryModel';
 import { CatalogContentOtherInfoModel } from './catalogContentOtherInfoModel';
 import { CatalogContentPageModel } from './catalogContentPageModel';
 
@@ -14,7 +13,7 @@ export class CatalogContentModel extends BaseModuleEntity<string> {
   fromDate: Date;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   keyword: string;
@@ -23,7 +22,7 @@ export class CatalogContentModel extends BaseModuleEntity<string> {
   linkFileMovieId?: number;
   linkMainImageId?: number;
   file360Views: File360ViewModel[];
-  file360Tour:File360TourModel;
+  file360Tour: File360TourModel;
   scoreClick: number;
   scoreSumPercent: number;
   viewCount: number;
@@ -39,7 +38,7 @@ export class CatalogContentModel extends BaseModuleEntity<string> {
   category: CatalogCategoryModel;
   linkContentCategoryIds: string[];
   otherInfos: CatalogContentOtherInfoModel[];
-  contentPages:CatalogContentPageModel[];
+  contentPages: CatalogContentPageModel[];
   contentAndParameterValues: any;
   linkMainImageIdSrc: string;
   linkFilePodcastIdSrc: string;

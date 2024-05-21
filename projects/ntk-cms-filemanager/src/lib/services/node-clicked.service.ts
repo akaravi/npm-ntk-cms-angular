@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { NodeInterface } from '../interfaces/node.interface';
-import { NodeService } from './node.service';
-import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { first } from 'rxjs/operators';
-import { FileManagerStoreService } from './file-manager-store.service';
+import { Injectable } from '@angular/core';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { FileCategoryModel, FileCategoryService, FileContentModel, FileContentService } from 'ntk-cms-api';
+import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
+import { NodeInterface } from '../interfaces/node.interface';
+import { TreeModel } from '../models/tree.model';
+import { FileManagerStoreService } from './file-manager-store.service';
+import { NodeService } from './node.service';
 
 @Injectable()
 export class NodeClickedService {

@@ -2,7 +2,7 @@
 // import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
 // import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 
-// export class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<string> {
+// export  class SmsMainApiPathPrivateSiteConfigModel extends BaseModuleEntity<string> {
 //   Title: string;
 //   IsPublic: boolean;
 //   MaxProcessFlowAmount: number;

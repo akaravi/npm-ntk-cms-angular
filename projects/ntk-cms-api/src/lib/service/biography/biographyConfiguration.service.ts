@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   BiographyModuleConfigAdminMainValuesModel,
   BiographyModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class BiographyConfigurationService extends
   ApiServerConfigSiteBase<BiographyModuleConfigAdminMainValuesModel,
-  BiographyModuleConfigSiteValuesModel,
-  BiographyModuleConfigSiteAccessValuesModel,
-  BiographyModuleSiteStorageValuesModel> {
+    BiographyModuleConfigSiteValuesModel,
+    BiographyModuleConfigSiteAccessValuesModel,
+    BiographyModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'biography';
   }

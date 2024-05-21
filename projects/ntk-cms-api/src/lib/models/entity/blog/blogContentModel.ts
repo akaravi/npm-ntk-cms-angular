@@ -1,10 +1,9 @@
-import { BaseEntity } from '../base/baseEntity';
-import { BlogCategoryModel } from './blogCategoryModel';
-import { BlogContentTagModel } from './blogContentTagModel';
-import { BlogContentSimilarModel} from './blogContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { BlogCategoryModel } from './blogCategoryModel';
 import { BlogCommentModel } from './blogCommentModel';
 import { BlogContentCategoryModel } from './blogContentCategoryModel';
+import { BlogContentSimilarModel } from './blogContentSimilarModel';
+import { BlogContentTagModel } from './blogContentTagModel';
 //@@tag-Version-2201011
 export class BlogContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -14,7 +13,7 @@ export class BlogContentModel extends BaseModuleEntity<number> {
   fromDate: Date;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   keyword: string;

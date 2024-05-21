@@ -1,14 +1,14 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BlogCommentModel } from '../../models/entity/blog/blogCommentModel';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
+import { BlogCommentModel } from '../../models/entity/blog/blogCommentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, number,FilterModel>  {
+export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BlogComment';
   }

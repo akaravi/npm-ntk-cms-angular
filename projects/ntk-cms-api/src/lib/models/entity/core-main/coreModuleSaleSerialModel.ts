@@ -3,7 +3,7 @@ import { CoreModuleSaleHeaderModel } from './coreModuleSaleHeaderModel';
 import { CoreModuleSaleInvoiceModel } from './coreModuleSaleInvoiceModel';
 import { CoreSiteModel } from './coreSiteModel';
 //@@tag-Version-2201011
-export class CoreModuleSaleSerialModel extends BaseEntity<number>  {
+export class CoreModuleSaleSerialModel extends BaseEntity<number> {
   datePeriodStart: Date;
   datePeriodEnd: Date;
   hasUsed: boolean;

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   LinkManagementModuleConfigAdminMainValuesModel,
   LinkManagementModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class LinkManagementConfigurationService extends
   ApiServerConfigSiteBase<LinkManagementModuleConfigAdminMainValuesModel,
-  LinkManagementModuleConfigSiteValuesModel,
-  LinkManagementModuleConfigSiteAccessValuesModel,
-  LinkManagementModuleSiteStorageValuesModel> {
+    LinkManagementModuleConfigSiteValuesModel,
+    LinkManagementModuleConfigSiteAccessValuesModel,
+    LinkManagementModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'linkManagement';
   }

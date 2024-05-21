@@ -6,7 +6,7 @@ import { SmsMainMessageContentModel } from '../../models/entity/sms/smsMainMessa
 
 
 @Injectable()
-export class SmsMainMessageContentService extends ApiCmsServerBase<SmsMainMessageContentModel, string,FilterModel>  {
+export class SmsMainMessageContentService extends ApiCmsServerBase<SmsMainMessageContentModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'SmsMainMessageContent';
   }

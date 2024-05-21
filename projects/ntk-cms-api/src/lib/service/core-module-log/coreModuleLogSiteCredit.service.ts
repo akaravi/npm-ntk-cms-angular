@@ -7,7 +7,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class CoreModuleLogSiteCreditService extends ApiCmsServerBase<CoreModuleLogSiteCreditModel, string,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleLogSiteCredit';
-  }
+export class CoreModuleLogSiteCreditService extends ApiCmsServerBase<CoreModuleLogSiteCreditModel, string, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreModuleLogSiteCredit';
+    }
 }

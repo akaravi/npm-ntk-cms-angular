@@ -1,23 +1,22 @@
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
-import { ApiServerBase } from './apiServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { map, retry } from 'rxjs/operators';
 import { BaseModuleConfigAdminMainValuesModel } from '../../models/entity/base-config/baseModuleConfigAdminMainValuesModel';
-import { BaseModuleSiteStorageValuesModel } from '../../models/entity/base-config/baseModuleSiteStorageValuesModel';
 import { BaseModuleConfigSiteAccessValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteAccessValuesModel';
 import { BaseModuleConfigSiteValuesModel } from '../../models/entity/base-config/baseModuleConfigSiteValuesModel';
-import { BaseModuleSiteCheckUserModel } from '../../models/entity/base-config/baseModuleSiteCheckUserModel';
 import { BaseModuleSiteCheckSiteModel } from '../../models/entity/base-config/baseModuleSiteCheckSiteModel';
+import { BaseModuleSiteCheckUserModel } from '../../models/entity/base-config/baseModuleSiteCheckUserModel';
+import { BaseModuleSiteStorageValuesModel } from '../../models/entity/base-config/baseModuleSiteStorageValuesModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ApiServerBase } from './apiServerBase.service';
 
 
 export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMainValuesModel,
   TSiteConfig extends BaseModuleConfigSiteValuesModel,
   TSiteAccess extends BaseModuleConfigSiteAccessValuesModel,
   TSiteStorage extends BaseModuleSiteStorageValuesModel> extends ApiServerBase {
-    getModuleControllerUrl(): string {
-      return 'Empty';
-    }
+  getModuleControllerUrl(): string {
+    return 'Empty';
+  }
 
   ServiceSiteConfigDefault(): Observable<ErrorExceptionResult<TSiteConfig>> {
     return this.http

@@ -1,19 +1,19 @@
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { retry, catchError, map } from 'rxjs/operators';
 
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 
 
 import { Injectable } from '@angular/core';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { UniversalMenuMenuItemModel } from '../../models/entity/universal-menu/universalMenuMenuItemModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 
 
 @Injectable()
-export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenuMenuItemModel, number,FilterModel>  {
+export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenuMenuItemModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'UniversalMenuMenuItem';
   }

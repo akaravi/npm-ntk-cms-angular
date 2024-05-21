@@ -1,6 +1,6 @@
 
 export class SmsApiGetBalanceResultModel {
-  
-  info:string;
-  status:string;
+
+  info: string;
+  status: string;
 }

@@ -5,7 +5,8 @@ import { CoreTokenActivationModel } from '../../models/entity/core-token/coreTok
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreTokenActivationService extends ApiCmsServerBase<CoreTokenActivationModel, string,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreTokenActivation';
-  }
+export class CoreTokenActivationService extends ApiCmsServerBase<CoreTokenActivationModel, string, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreTokenActivation';
+    }
 }

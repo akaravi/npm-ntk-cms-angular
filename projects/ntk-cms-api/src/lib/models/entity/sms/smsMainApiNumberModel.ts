@@ -12,7 +12,7 @@ export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   deliveryRelayStatus: boolean;
   deliveryRelayUrl: string;
   smsRelayStatus: boolean;
-  smsRelayUrl:string;
-  actionMemo:string;
+  smsRelayUrl: string;
+  actionMemo: string;
   apiPathAndApiNumbers: SmsMainApiPathAndApiNumberModel[];
 }

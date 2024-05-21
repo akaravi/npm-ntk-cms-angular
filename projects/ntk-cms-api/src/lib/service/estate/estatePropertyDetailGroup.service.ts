@@ -1,16 +1,16 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyDetailGroupModel } from '../../models/entity/estate/estatePropertyDetailGroupModel';
-import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
-import { Observable } from 'rxjs';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { map, retry } from 'rxjs/operators';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePropertyDetailGroupModel, string,FilterModel>  {
+export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePropertyDetailGroupModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyDetailGroup';
   }
@@ -19,7 +19,7 @@ export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePro
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllFastSearch/' , model, {
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllFastSearch/', model, {
         headers: this.getHeaders(),
       })
       .pipe(

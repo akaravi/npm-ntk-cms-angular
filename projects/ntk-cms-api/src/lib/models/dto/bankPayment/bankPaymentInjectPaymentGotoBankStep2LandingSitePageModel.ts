@@ -1,5 +1,4 @@
-export class BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel
-{
+export class BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel {
   urlToPay: string;
   transactionId: number;
   amount: number;

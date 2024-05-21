@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   DonateModuleConfigAdminMainValuesModel,
   DonateModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class DonateConfigurationService extends
   ApiServerConfigSiteBase<DonateModuleConfigAdminMainValuesModel,
-  DonateModuleConfigSiteValuesModel,
-  DonateModuleConfigSiteAccessValuesModel,
-  DonateModuleSiteStorageValuesModel> {
+    DonateModuleConfigSiteValuesModel,
+    DonateModuleConfigSiteAccessValuesModel,
+    DonateModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'Donate';
   }

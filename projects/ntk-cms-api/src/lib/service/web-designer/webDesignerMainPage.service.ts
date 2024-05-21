@@ -1,18 +1,18 @@
-import { CmsPageUtilityToolsDtoModel } from '../../models/dto/webDesigner/cmsPageUtilityToolsDtoModel';
-import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { map, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { WebDesignerMainPageModel } from '../../models/entity/web-designer/webDesignerMainPageModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { CmsPageUtilityToolsDtoModel } from '../../models/dto/webDesigner/cmsPageUtilityToolsDtoModel';
 import { GetAllDefaultPagesBySiteCategoryDtoModel } from '../../models/dto/webDesigner/getAllDefaultPagesBySiteCategoryDtoModel';
 import { WebDesignerPageAutoAddDtoModel } from '../../models/dto/webDesigner/webDesignerPageAutoAddDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { WebDesignerMainPageModel } from '../../models/entity/web-designer/webDesignerMainPageModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string,FilterModel>  {
+export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainPage';
   }

@@ -1,5 +1,5 @@
 //@@tag-Version-2201011
-export class BlogContentTagModel  {
+export class BlogContentTagModel {
   linkContentId: number;
   linkTagId: number;
   // tslint:disable-next-line: variable-name

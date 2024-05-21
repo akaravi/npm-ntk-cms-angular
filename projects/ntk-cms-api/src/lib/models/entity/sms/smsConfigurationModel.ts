@@ -12,8 +12,8 @@ export class SmsModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMa
   messageNumberFiltering: string;
   messageNumberForbiddenCheck: boolean;
   messageNumberForbidden: string;
-  messageNumberHiddenCharSymbol:string;
-  messageNumberHiddenCharIndexes:number[];
+  messageNumberHiddenCharSymbol: string;
+  messageNumberHiddenCharIndexes: number[];
 }
 
 export class SmsModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {

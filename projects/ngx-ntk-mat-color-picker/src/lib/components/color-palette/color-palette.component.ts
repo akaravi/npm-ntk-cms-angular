@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter, Input } from '@angular/core';
-import { Color } from '../../models';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { Color } from '../../models';
 
 @Component({
   selector: 'ngx-ntk-mat-color-palette',

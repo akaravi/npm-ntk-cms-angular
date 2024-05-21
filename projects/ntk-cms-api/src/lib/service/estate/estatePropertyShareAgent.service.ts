@@ -1,8 +1,8 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyShareAgentModel } from '../../models/entity/estate/estatePropertyShareAgentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 
 
 @Injectable()
-export class EstatePropertyShareAgentService extends ApiCmsServerBase<EstatePropertyShareAgentModel, string,FilterModel>  {
+export class EstatePropertyShareAgentService extends ApiCmsServerBase<EstatePropertyShareAgentModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyShareAgent';
   }

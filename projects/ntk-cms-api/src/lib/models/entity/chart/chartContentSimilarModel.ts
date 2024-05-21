@@ -1,5 +1,5 @@
 //@@tag-Version-2201011
-export class ChartContentSimilarModel  {
+export class ChartContentSimilarModel {
   linkSourceId: number;
   linkDestinationId: number;
   // tslint:disable-next-line: variable-name

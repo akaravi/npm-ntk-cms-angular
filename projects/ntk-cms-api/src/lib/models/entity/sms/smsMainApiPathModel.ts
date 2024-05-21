@@ -38,8 +38,8 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiAbilityRegulatorDenayToSend: string;
   apiAbilityLengthMinToSend: number;
   apiAbilityLengthMaxToSend: number;
-  apiAbilitySendByQueue:boolean;
-  apiAbilitySendByDirect:boolean;
+  apiAbilitySendByQueue: boolean;
+  apiAbilitySendByDirect: boolean;
   apiPathSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
   apiPathPermissions: SmsMainApiPathPermissionModel[];
@@ -47,11 +47,11 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiPathPriceServices: SmsMainApiPathPriceServiceModel[];
   /**متغیر های ارسال */
   apiSendMessageIsOn: boolean;
-  apiSendMessageAddTextFirst:string;
-  apiSendMessageAddTextEnd:string;
-  sendMessageAddTextFirst:string;
-  sendMessageAddTextEnd:string;
-/**متغیر های ارسال */
+  apiSendMessageAddTextFirst: string;
+  apiSendMessageAddTextEnd: string;
+  sendMessageAddTextFirst: string;
+  sendMessageAddTextEnd: string;
+  /**متغیر های ارسال */
   apiDeliveryIsOn: boolean;
 
   apiCreditBackIsOn: boolean;
@@ -88,18 +88,18 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 
-  hookAddressAPI:string;
-  hookAddressAPIById:string;
+  hookAddressAPI: string;
+  hookAddressAPIById: string;
   //ُ Status
-  statusOutOfServiceMonitorApiChar:string;
-  statusOutOfServiceActive:boolean;
-  statusOutOfServiceExpire?:Date;
+  statusOutOfServiceMonitorApiChar: string;
+  statusOutOfServiceActive: boolean;
+  statusOutOfServiceExpire?: Date;
 
-  statusNotStableMonitorApiChar:string;
-  statusNotStableActive:boolean;
-  statusNotStableExpire?:Date;
-  statusNotStableCount:number;
-  statusNotStableCountLimit:number;
-  statusNotStableRunForMin:number;
+  statusNotStableMonitorApiChar: string;
+  statusNotStableActive: boolean;
+  statusNotStableExpire?: Date;
+  statusNotStableCount: number;
+  statusNotStableCountLimit: number;
+  statusNotStableRunForMin: number;
   //ُ Status
 }

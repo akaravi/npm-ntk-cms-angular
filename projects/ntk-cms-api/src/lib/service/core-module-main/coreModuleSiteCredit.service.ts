@@ -1,22 +1,22 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreModuleSiteCreditModel } from '../../models/entity/core-module-main/coreModuleSiteCreditModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleSiteCreditCalculateDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditCalculateDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
-import { CoreModuleSiteCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
+import { CoreModuleSiteCreditCalculateDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditCalculateDtoModel';
 import { CoreModuleSiteCreditChargeDirectDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditChargeDirectDtoModel';
+import { CoreModuleSiteCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteCreditPaymentDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreModuleSiteCreditModel } from '../../models/entity/core-module-main/coreModuleSiteCreditModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSiteCreditModel, number,FilterModel>  {
-    getModuleControllerUrl(): string {
-      return 'CoreModuleSiteCredit';
-    }
+export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSiteCreditModel, number, FilterModel> {
+  getModuleControllerUrl(): string {
+    return 'CoreModuleSiteCredit';
+  }
   ServiceGetCredit(LinkModuleId: number): Observable<ErrorExceptionResult<CoreModuleSiteCreditModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCredit/' + LinkModuleId, {

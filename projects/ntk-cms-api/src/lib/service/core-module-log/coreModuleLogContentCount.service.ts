@@ -7,7 +7,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class CoreModuleLogContentCountService extends ApiCmsServerBase<CoreModuleLogContentCountModel, string,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleLogContentCount';
-  }
+export class CoreModuleLogContentCountService extends ApiCmsServerBase<CoreModuleLogContentCountModel, string, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreModuleLogContentCount';
+    }
 }

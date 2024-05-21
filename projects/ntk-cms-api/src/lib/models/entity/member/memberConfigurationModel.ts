@@ -3,13 +3,11 @@ import { BaseModuleConfigSiteAccessValuesModel } from '../base-config/baseModule
 import { BaseModuleConfigSiteValuesModel } from '../base-config/baseModuleConfigSiteValuesModel';
 import { BaseModuleSiteStorageValuesModel } from '../base-config/baseModuleSiteStorageValuesModel';
 
-export class MemberModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel
-{
+export class MemberModuleConfigAdminMainValuesModel extends BaseModuleConfigAdminMainValuesModel {
 
 }
 
-export class MemberModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel
-{
+export class MemberModuleConfigSiteAccessValuesModel extends BaseModuleConfigSiteAccessValuesModel {
 
 }
 
@@ -17,13 +15,11 @@ export class MemberModuleConfigSiteAccessValuesModel extends BaseModuleConfigSit
 /// با ثبت یک هایپر شاپ باید یک ردیف خام با مقادیر اولیه در بانک ثبت شود
 /// این کار باید از سمت سرور انجام شود و کلاینت اجازه ویرایش یا حذف این ردیف را نداشته باشد
 /// </summary>
-export class MemberModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel
-{
+export class MemberModuleConfigSiteValuesModel extends BaseModuleConfigSiteValuesModel {
 
 
 }
 
-export class MemberModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel
-{
+export class MemberModuleSiteStorageValuesModel extends BaseModuleSiteStorageValuesModel {
 
 }

@@ -1,7 +1,7 @@
 import { MenuPlaceTypeEnum } from '../../enums/base/menuPlaceTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
-export class WebDesignerMainMenuModel extends BaseModuleEntity<string>{
+export class WebDesignerMainMenuModel extends BaseModuleEntity<string> {
   title: string;
   titleML: string;
   titleResourceLanguage: string;

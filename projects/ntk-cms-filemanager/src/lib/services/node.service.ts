@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { NodeInterface } from '../interfaces/node.interface';
-import { Observable } from 'rxjs';
-import { TreeModel } from '../models/tree.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './file-manager-store.service';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 import { FileCategoryService, FileContentService } from 'ntk-cms-api';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { NodeInterface } from '../interfaces/node.interface';
+import { TreeModel } from '../models/tree.model';
+import { FileManagerStoreService, SET_LOADING_STATE, SET_PATH, SET_SELECTED_NODE } from './file-manager-store.service';
 
 /*
 {
@@ -134,7 +134,7 @@ export class NodeService {
     }
 
     const cachedNode = this.findNodeByPath_orginal(node.path);
-    return  {
+    return {
       id: node.id,
       isFolder: node.dir,
       isExpanded: cachedNode ? cachedNode.isExpanded : false,
@@ -167,7 +167,7 @@ export class NodeService {
     // node.children = cachedNode ? cachedNode.children : {};
     // node.name = node.name ? node.name : node.id + '';
     // return node;
-    return  {
+    return {
       id: node.id,
       isFolder: node.isFolder,
       isExpanded: cachedNode ? cachedNode.isExpanded : false,
@@ -180,7 +180,7 @@ export class NodeService {
       size: node.size,
       extension: node.extension,
       downloadLinksrc: node.downloadLinksrc,
-      downloadThumbnailSrc:node.downloadThumbnailSrc,
+      downloadThumbnailSrc: node.downloadThumbnailSrc,
     } as NodeInterface;
   }
   private getNodesFromServer_orginal(path: string): Observable<any> {

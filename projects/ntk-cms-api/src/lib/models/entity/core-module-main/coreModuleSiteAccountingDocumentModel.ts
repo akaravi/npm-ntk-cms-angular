@@ -9,6 +9,6 @@ export class CoreModuleSiteAccountingDocumentModel extends BaseModuleEntity<numb
   sumCreditor: number;
   sumRemaining: number;
   linkUserId?: number;
-  isAutoAccept:boolean;
-  documentDetails:CoreModuleSiteAccountingDocumentDetailModel[];
+  isAutoAccept: boolean;
+  documentDetails: CoreModuleSiteAccountingDocumentDetailModel[];
 }

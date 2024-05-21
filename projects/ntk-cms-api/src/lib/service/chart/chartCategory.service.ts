@@ -1,8 +1,8 @@
-import {  Observable } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { retry, catchError, map } from 'rxjs/operators';
-import { ChartCategoryModel } from '../../models/entity/chart/chartCategoryModel';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ChartCategoryModel } from '../../models/entity/chart/chartCategoryModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 import { Injectable } from '@angular/core';
@@ -10,7 +10,7 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class ChartCategoryService extends ApiCmsServerBase<ChartCategoryModel, number,FilterModel>  {
+export class ChartCategoryService extends ApiCmsServerBase<ChartCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ChartCategory';
   }

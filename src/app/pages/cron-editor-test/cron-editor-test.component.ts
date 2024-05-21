@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { CronEditorTranslateService, CronOptions } from 'projects/ngx-ntk-cron-editor/src/public-api';
 
 
@@ -39,14 +39,14 @@ export class CronEditorTestComponent {
   };
 
   constructor(private translate: TranslateService,
-              private cronEditorTranslateService: CronEditorTranslateService) {
+    private cronEditorTranslateService: CronEditorTranslateService) {
     // translate.setTranslation('en', en);
     // translate.setTranslation('ru', ru);
     translate.use('en');
     cronEditorTranslateService.init({
       existent: [
-        {lang: 'en', useExistent: 'en'},
-        {lang: 'ru', useExistent: 'ru'}
+        { lang: 'en', useExistent: 'en' },
+        { lang: 'ru', useExistent: 'ru' }
       ]
     });
   }

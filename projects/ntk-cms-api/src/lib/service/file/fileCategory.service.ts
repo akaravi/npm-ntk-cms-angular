@@ -1,18 +1,18 @@
 import { Observable } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { retry, catchError, map } from 'rxjs/operators';
-import { FileCategoryModel } from '../../models/entity/file/fileCategoryModel';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FileCategoryModel } from '../../models/entity/file/fileCategoryModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { FileCompressDtoModel } from '../../models/dto/file/fileCompressDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number,FilterModel>  {
+export class FileCategoryService extends ApiCmsServerBase<FileCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'FileCategory';
   }

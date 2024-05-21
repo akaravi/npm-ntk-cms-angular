@@ -1,5 +1,5 @@
 //@@tag-Version-2201011
-export class ChartContentTagModel  {
+export class ChartContentTagModel {
   linkContentId: number;
   linkTagId: number;
   // tslint:disable-next-line: variable-name

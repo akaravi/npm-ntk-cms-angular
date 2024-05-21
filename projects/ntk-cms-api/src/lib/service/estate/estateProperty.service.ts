@@ -1,18 +1,18 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
-import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { EstatePropertyActionSendSmsDtoModel } from '../../models/dto/estate/estatePropertyActionSendSmsDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
 import { EstatePropertyFilterModel } from '../../models/filters/estate/estatePropertyFilterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string, EstatePropertyFilterModel>  {
+export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string, EstatePropertyFilterModel> {
   getModuleControllerUrl(): string {
     return 'EstateProperty';
   }

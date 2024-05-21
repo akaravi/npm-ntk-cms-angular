@@ -1,5 +1,4 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { LinkManagementTargetModel } from './linkManagementTargetModel';
 //@@tag-Version-2201011
 export class LinkManagementCategoryModel extends BaseModuleEntity<number> {
   title: string;

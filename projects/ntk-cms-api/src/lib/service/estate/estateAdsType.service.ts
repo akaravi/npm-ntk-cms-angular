@@ -1,19 +1,15 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstateAdsTypeModel } from '../../models/entity/estate/estateAdsTypeModel';
-import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { map, retry } from 'rxjs/operators';
-import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
-import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
-import { EstateModuleSalePropertyAdsCalculateDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsCalculateDtoModel';
-import { EstateModuleSalePropertyAdsPaymentDtoModel } from '../../models/dto/estate/estateModuleSalePropertyAdsPaymentDtoModel';
 import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropertyAdsModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string,FilterModel>  {
+export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'EstateAdsType';
   }

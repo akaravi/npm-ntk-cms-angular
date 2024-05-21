@@ -1,7 +1,7 @@
 import { ManageUserAccessAreaTypesEnum } from '../../enums/base/manageUserAccessAreaTypesEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
-export class CoreTokenUserBadLoginModel extends BaseEntity<string>  {
+export class CoreTokenUserBadLoginModel extends BaseEntity<string> {
   userAccessAreaType: ManageUserAccessAreaTypesEnum;
   deviceClientMAC: string;
   linkDeviceId?: number;

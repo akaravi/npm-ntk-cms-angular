@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CronOptions } from './CronOptions';
 
-import { MonthWeeks, Months } from './enums';
 import Utils from './Utils';
+import { MonthWeeks, Months } from './enums';
 
 @Component({
   selector: 'cron-editor',
@@ -82,7 +82,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
     return 'WEEK.' + day;
   }
 
-  public monthWeekDisplay(monthWeekNumber: number|any): string {
+  public monthWeekDisplay(monthWeekNumber: number | any): string {
     return 'MONTH_WEEK.' + MonthWeeks[monthWeekNumber];
   }
 

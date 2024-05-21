@@ -1,15 +1,15 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import {  map, retry } from 'rxjs/operators';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { NewsShareServerCategoryModel } from '../../models/entity/news/newsShareServerCategoryModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 
 @Injectable()
-export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number,FilterModel>  {
+export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'NewsShareServerCategory';
   }

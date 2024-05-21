@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FilePreviewModel } from 'ngx-awesome-uploader/lib/file-preview.model';
+import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
 
 @Component({
   // tslint:disable-next-line: component-selector

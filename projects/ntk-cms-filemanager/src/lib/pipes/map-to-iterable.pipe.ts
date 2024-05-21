@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'mapToIterablePipe'
@@ -8,7 +8,7 @@ export class MapToIterablePipe implements PipeTransform {
     const a = [];
     for (const keyItem in dict) {
       if (dict.hasOwnProperty(keyItem)) {
-        a.push({key: keyItem, val: dict[keyItem]});
+        a.push({ key: keyItem, val: dict[keyItem] });
       }
     }
 

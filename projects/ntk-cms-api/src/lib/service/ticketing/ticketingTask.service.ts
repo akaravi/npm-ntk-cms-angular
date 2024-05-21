@@ -1,16 +1,16 @@
-import { TicketingTaskDtoModel } from './../../models/dto/ticketing/ticketingTaskDtoModel';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { map, retry } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { TicketingTaskDtoModel } from './../../models/dto/ticketing/ticketingTaskDtoModel';
 
 
 @Injectable()
-export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number,FilterModel>  {
+export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'TicketingTask';
   }

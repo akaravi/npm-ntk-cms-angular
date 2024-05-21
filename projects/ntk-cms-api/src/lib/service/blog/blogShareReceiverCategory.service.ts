@@ -7,7 +7,7 @@ import { BlogShareReceiverCategoryModel } from '../../models/entity/blog/blogSha
 
 
 @Injectable()
-export class BlogShareReceiverCategoryService extends ApiCmsServerBase<BlogShareReceiverCategoryModel, number,FilterModel>  {
+export class BlogShareReceiverCategoryService extends ApiCmsServerBase<BlogShareReceiverCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BlogShareReceiverCategory';
   }

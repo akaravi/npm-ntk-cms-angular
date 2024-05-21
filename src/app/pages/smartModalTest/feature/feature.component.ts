@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, VERSION, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
 import { NtkSmartModalService } from 'projects/ngx-ntk-smart-module/src/public-api';
 
 @Component({

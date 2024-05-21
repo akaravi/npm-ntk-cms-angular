@@ -1,18 +1,19 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreModuleLogReportAbuseModel } from '../../models/entity/core-module-log/coreModuleLogReportAbuseModel';
-import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { CoreModuleReportAbuseDtoModel } from '../../models/dto/core-module/coreModuleReportAbuseDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreModuleLogReportAbuseModel } from '../../models/entity/core-module-log/coreModuleLogReportAbuseModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreModuleLogReportAbuseService extends ApiCmsServerBase<CoreModuleLogReportAbuseModel, string,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreModuleLogReportAbuse';
-  }
+export class CoreModuleLogReportAbuseService extends ApiCmsServerBase<CoreModuleLogReportAbuseModel, string, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreModuleLogReportAbuse';
+    }
   ServiceAddReportAbuse(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<CoreModuleLogReportAbuseModel>> {
     if (model == null) {
       model = new CoreModuleReportAbuseDtoModel();

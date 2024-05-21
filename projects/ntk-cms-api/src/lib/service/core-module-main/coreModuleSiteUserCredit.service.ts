@@ -1,24 +1,24 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreModuleSiteUserCreditModel } from '../../models/entity/core-module-main/coreModuleSiteUserCreditModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { Observable } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { map, retry } from 'rxjs/operators';
-import { CoreModuleSiteUserCreditCalculateDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditCalculateDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep1CalculateModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep1CalculateModel';
-import { CoreModuleSiteUserCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditPaymentDtoModel';
 import { BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel } from '../../models/dto/bankPayment/bankPaymentInjectPaymentGotoBankStep2LandingSitePageModel';
+import { CoreModuleSiteUserCreditCalculateDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditCalculateDtoModel';
 import { CoreModuleSiteUserCreditChargeDirectDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditChargeDirectDtoModel';
+import { CoreModuleSiteUserCreditPaymentDtoModel } from '../../models/dto/core-module/coreModuleSiteUserCreditPaymentDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreModuleSiteUserCreditModel } from '../../models/entity/core-module-main/coreModuleSiteUserCreditModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 
 @Injectable()
-export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModuleSiteUserCreditModel, number,FilterModel>  {
-    getModuleControllerUrl(): string {
-      return 'CoreModuleSiteUserCredit';
-    }
+export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<CoreModuleSiteUserCreditModel, number, FilterModel> {
+  getModuleControllerUrl(): string {
+    return 'CoreModuleSiteUserCredit';
+  }
   ServiceGetCredit(LinkModuleId: number): Observable<ErrorExceptionResult<CoreModuleSiteUserCreditModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCredit/' + LinkModuleId, {

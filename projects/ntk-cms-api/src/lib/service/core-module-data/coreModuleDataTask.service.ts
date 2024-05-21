@@ -1,16 +1,16 @@
 
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreModuleDataTaskDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreModuleDataTaskService extends ApiCmsServerBase<CoreModuleDataTaskModel, string, FilterModel>  {
+export class CoreModuleDataTaskService extends ApiCmsServerBase<CoreModuleDataTaskModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreModuleDataTask';
   }

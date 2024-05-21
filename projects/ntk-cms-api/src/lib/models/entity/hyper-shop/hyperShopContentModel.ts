@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
-export class HyperShopContentModel  extends BaseModuleEntity<string>{
+export class HyperShopContentModel extends BaseModuleEntity<string> {
   code: string;
   name: string;
   unit: string;

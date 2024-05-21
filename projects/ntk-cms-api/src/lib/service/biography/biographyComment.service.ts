@@ -1,15 +1,15 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { BiographyCommentModel } from '../../models/entity/biography/biographyCommentModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { BiographyCommentModel } from '../../models/entity/biography/biographyCommentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class BiographyCommentService extends ApiCmsServerBase<BiographyCommentModel, number,FilterModel>  {
+export class BiographyCommentService extends ApiCmsServerBase<BiographyCommentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BiographyComment';
   }

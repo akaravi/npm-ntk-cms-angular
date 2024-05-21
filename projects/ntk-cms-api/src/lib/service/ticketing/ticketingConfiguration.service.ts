@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   TicketingModuleConfigAdminMainValuesModel,
   TicketingModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class TicketingConfigurationService extends
   ApiServerConfigSiteBase<TicketingModuleConfigAdminMainValuesModel,
-  TicketingModuleConfigSiteValuesModel,
-  TicketingModuleConfigSiteAccessValuesModel,
-  TicketingModuleSiteStorageValuesModel> {
+    TicketingModuleConfigSiteValuesModel,
+    TicketingModuleConfigSiteAccessValuesModel,
+    TicketingModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'ticketing';
   }

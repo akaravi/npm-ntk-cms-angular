@@ -1,18 +1,18 @@
-import { Observable } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { retry, catchError, map } from 'rxjs/operators';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { ApiTelegramBotConfigModel } from '../../models/entity/api-telegram/apiTelegramBotConfigModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { ApiTelegramRenderInfoModel } from '../../models/dto/api-telegram/apiTelegramRenderInfoModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ApiTelegramSendMessageTodoModel } from '../../models/dto/api-telegram/apiTelegramSendMessageTodoModel';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
 
 @Injectable()
-export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number,FilterModel>  {
+export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ApiTelegramBotConfig';
   }
@@ -34,7 +34,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetUpdatesAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsync/' + id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -47,7 +47,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetUpdatesAsyncLast(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsyncLast/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsyncLast/' + id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -60,7 +60,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceGetMeAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetMeAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetMeAsync/' + id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -73,7 +73,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceSetWebhookAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsync/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsync/' + id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),
@@ -86,7 +86,7 @@ export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBot
   ServiceSetWebhookAsyncEmpty(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsyncEmpty/'+id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsyncEmpty/' + id, { headers: this.getHeaders(), },
       )
       .pipe(
         retry(this.configApiRetry),

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
-import { NodeInterface } from '../../interfaces/node.interface';
 import { DownloadModeEnum } from '../../enums/download-mode.enum';
+import { NodeInterface } from '../../interfaces/node.interface';
 import { FileManagerStoreService } from '../../services/file-manager-store.service';
 
 @Component({

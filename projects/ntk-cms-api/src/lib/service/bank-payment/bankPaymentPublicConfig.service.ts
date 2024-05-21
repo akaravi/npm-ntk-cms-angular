@@ -1,17 +1,16 @@
-import { BankPaymentPublicConfigModel } from '../../models/entity/bank-payment/bankPaymentPublicConfigModel';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { BankPaymentPublicConfigAliasJsonModel } from '../../models/entity/bank-payment/bankPaymentPublicConfigAliasJsonModel';
+import { BankPaymentPublicConfigModel } from '../../models/entity/bank-payment/bankPaymentPublicConfigModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
 export class BankPaymentPublicConfigService
-  extends ApiCmsServerBase<BankPaymentPublicConfigModel, number,FilterModel>
-{
+  extends ApiCmsServerBase<BankPaymentPublicConfigModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BankPaymentPublicConfig';
   }

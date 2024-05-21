@@ -2,7 +2,7 @@ import { ManageUserAccessAreaTypesEnum } from '../../enums/base/manageUserAccess
 import { ManageUserAccessUserTypesEnum } from '../../enums/base/manageUserAccessUserTypesEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
-export class CoreTokenUserModel extends BaseEntity<string>   {
+export class CoreTokenUserModel extends BaseEntity<string> {
   linkUserId: number;
   linkMemberId: string;
   linkSiteId: number;

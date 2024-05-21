@@ -1,7 +1,7 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { PollingContentModel } from './pollingContentModel';
 //@@tag-Version-2201011
-export class PollingOptionModel   extends BaseModuleEntity<number> {
+export class PollingOptionModel extends BaseModuleEntity<number> {
     option: string;
     optionAnswer: string;
     isCorrectAnswer: boolean;

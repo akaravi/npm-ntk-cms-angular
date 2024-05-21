@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstateAdsTypeModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
-  paymentForMainSite:boolean;
+  paymentForMainSite: boolean;
   stationLevel: number;
   viewLevel: number;
   dayOfActivity: number;

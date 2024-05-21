@@ -4,6 +4,6 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class EstateAccountAgencyUserModel extends BaseModuleEntity<string> {
   linkEstateAccountAgencyId: string;
   linkEstateAccountUserId: string;
-  accessShareAgencyToUser:boolean;
-  accessShareUserToAgency:boolean;
+  accessShareAgencyToUser: boolean;
+  accessShareUserToAgency: boolean;
 }

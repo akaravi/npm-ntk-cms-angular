@@ -1,9 +1,9 @@
-import { NewsCategoryModel } from './newsCategoryModel';
-import { NewsContentTagModel } from './newsContentTagModel';
-import { NewsContentSimilarModel } from './newsContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { NewsCategoryModel } from './newsCategoryModel';
 import { NewsCommentModel } from './newsCommentModel';
 import { NewsContentCategoryModel } from './newsContentCategoryModel';
+import { NewsContentSimilarModel } from './newsContentSimilarModel';
+import { NewsContentTagModel } from './newsContentTagModel';
 //@@tag-Version-2201011
 export class NewsContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -13,7 +13,7 @@ export class NewsContentModel extends BaseModuleEntity<number> {
   fromDate: Date;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   keyword: string;

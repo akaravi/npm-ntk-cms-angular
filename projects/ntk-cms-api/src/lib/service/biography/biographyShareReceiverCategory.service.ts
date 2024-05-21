@@ -7,7 +7,7 @@ import { BiographyShareReceiverCategoryModel } from '../../models/entity/biograp
 
 
 @Injectable()
-export class BiographyShareReceiverCategoryService extends ApiCmsServerBase<BiographyShareReceiverCategoryModel, number,FilterModel>  {
+export class BiographyShareReceiverCategoryService extends ApiCmsServerBase<BiographyShareReceiverCategoryModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'BiographyShareReceiverCategory';
   }

@@ -1,19 +1,18 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { catchError, map, retry } from 'rxjs/operators';
-import { FileContentModel } from '../../models/entity/file/fileContentModel';
-import { Observable } from 'rxjs';
-import { ScoreClickDtoModel } from '../../models/dto/core-main/scoreClickDtoModel';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { Injectable } from '@angular/core';
-import { FileUploadByUrlDtoModel } from '../../models/dto/file/fileUploadByUrlDtoModel';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { FileCopyCutDtoModel } from '../../models/dto/file/fileCopyCutDtoModel';
 import { FileDownloadDtoModel } from '../../models/dto/file/fileDownloadDtoModel';
+import { FileUploadByUrlDtoModel } from '../../models/dto/file/fileUploadByUrlDtoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { FileContentModel } from '../../models/entity/file/fileContentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class FileContentService extends ApiCmsServerBase<FileContentModel, number,FilterModel>  {
+export class FileContentService extends ApiCmsServerBase<FileContentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'FileContent';
   }

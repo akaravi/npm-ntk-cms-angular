@@ -1,6 +1,6 @@
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2212111
-export class CoreLogReportDataModel extends BaseEntity<string>{
+export class CoreLogReportDataModel extends BaseEntity<string> {
   linkSiteId?: number;
   linkUserId?: number;
   linkMemberId: string;

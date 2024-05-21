@@ -17,5 +17,5 @@ export class EstateContractModel extends BaseModuleEntity<string> {
   periodCount?: number;
   linkCoreCurrencyId: number;
   currencyTitle: string;
-  currencySymbol:string;
+  currencySymbol: string;
 }

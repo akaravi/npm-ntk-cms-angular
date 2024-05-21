@@ -3,8 +3,7 @@ import { EstateCategoryRackFolderOrderModel } from './estateCategoryRackFolderOr
 import { EstateCategoryRackFolderPropertyModel } from './estateCategoryRackFolderPropertyModel';
 
 //@@tag-Version-2212011
-export class EstateCategoryRackModel extends BaseModuleEntity<string>
-{
+export class EstateCategoryRackModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
   iconFont: string;

@@ -3,14 +3,14 @@ import { DataFieldInfoModel } from './fieldInfo/dataFieldInfoModel';
 export class AccessModel {
   moduleName: string;
   moduleEntityName: string;
-  versionModel:string;
-  versionService:string;
+  versionModel: string;
+  versionService: string;
   accessDeleteRow = false;
   accessWatchRow = false;
   accessCountRow = false;
   accessEditRow = false;
   accessAddRow = false;
-  accessExportFile=false;
+  accessExportFile = false;
   accessRowInPanelDemo = false;
   accessRowWatchInSharingCategory = false;
   accessWatchRowOtherSiteId = false;

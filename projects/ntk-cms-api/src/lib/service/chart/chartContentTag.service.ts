@@ -1,16 +1,16 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { map, retry } from 'rxjs/operators';
-import { ChartContentTagModel } from '../../models/entity/chart/chartContentTagModel';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { ChartContentTagModel } from '../../models/entity/chart/chartContentTagModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class ChartContentTagService extends ApiCmsServerBase<ChartContentTagModel, number,FilterModel>  {
+export class ChartContentTagService extends ApiCmsServerBase<ChartContentTagModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ChartContentTag';
   }

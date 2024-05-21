@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  ErrorExceptionResult,
-  TokenInfoModel,
   AuthUserSignInModel,
   CaptchaModel,
   CoreAuthService,
+  ErrorExceptionResult,
+  TokenInfoModel,
 } from 'projects/ntk-cms-api/src/public-api';
 
 @Component({

@@ -1,12 +1,11 @@
-import { BaseEntity } from '../base/baseEntity';
-import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
-import { CoreSiteUserModel } from './coreSiteUserModel';
-import { CoreModuleSiteModel } from './coreModuleSiteModel';
-import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
-import { CoreDeviceModel } from './coreDeviceModel';
-import { SiteStatusEnum } from '../../enums/base/siteStatusEnum';
 import { LanguageEnum } from '../../enums/base/languageEnum';
-import { Data } from '@angular/router';
+import { SiteStatusEnum } from '../../enums/base/siteStatusEnum';
+import { BaseEntity } from '../base/baseEntity';
+import { CoreDeviceModel } from './coreDeviceModel';
+import { CoreModuleSiteModel } from './coreModuleSiteModel';
+import { CoreSiteCategoryModel } from './coreSiteCategoryModel';
+import { CoreSiteDomainAliasModel } from './coreSiteDomainAliasModel';
+import { CoreSiteUserModel } from './coreSiteUserModel';
 //@@tag-Version-2201011
 export class CoreSiteModel extends BaseEntity<number> {
   currentSiteDomainUrl: string;

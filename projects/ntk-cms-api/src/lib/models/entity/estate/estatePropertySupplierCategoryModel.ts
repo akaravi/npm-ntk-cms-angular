@@ -1,7 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2212011
-export class EstatePropertySupplierCategoryModel extends BaseModuleEntity<string>
-{
+export class EstatePropertySupplierCategoryModel extends BaseModuleEntity<string> {
   title: string;
   description: string;
   iconFont: string;

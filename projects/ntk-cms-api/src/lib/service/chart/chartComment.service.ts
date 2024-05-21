@@ -1,15 +1,15 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { ChartCommentModel } from '../../models/entity/chart/chartCommentModel';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { ChartCommentModel } from '../../models/entity/chart/chartCommentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 
 
 @Injectable()
-export class ChartCommentService extends ApiCmsServerBase<ChartCommentModel, number,FilterModel>  {
+export class ChartCommentService extends ApiCmsServerBase<ChartCommentModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'ChartComment';
   }

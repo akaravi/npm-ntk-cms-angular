@@ -1,9 +1,9 @@
-import { OperatingSystemTypeEnum } from '../../enums/base/operatingSystemTypeEnum';
 import { DeviceTypeEnum } from '../../enums/base/deviceTypeEnum';
-import { CoreSiteModel } from './coreSiteModel';
+import { OperatingSystemTypeEnum } from '../../enums/base/operatingSystemTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
+import { CoreSiteModel } from './coreSiteModel';
 //@@tag-Version-2201011
-export class CoreDeviceModel extends BaseEntity<number>  {
+export class CoreDeviceModel extends BaseEntity<number> {
     securityKey: string;
     expireDate?: Date;
     description: string;

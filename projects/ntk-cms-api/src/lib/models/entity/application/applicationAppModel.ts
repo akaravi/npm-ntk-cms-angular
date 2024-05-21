@@ -6,7 +6,7 @@ import { ApplicationLayoutValueModel } from './applicationLayoutValueModel';
 import { ApplicationSourceModel } from './applicationSourceModel';
 import { ApplicationThemeConfigModel } from './applicationThemeConfigModel';
 //@@tag-Version-2201011
-export class ApplicationAppModel extends BaseModuleEntity<number>  {
+export class ApplicationAppModel extends BaseModuleEntity<number> {
   appKey: string;
   lang: LanguageEnum;
   expireDate?: Date;

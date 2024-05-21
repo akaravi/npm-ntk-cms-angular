@@ -1,18 +1,19 @@
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreUserClaimContentModel } from '../../models/entity/core-main/coreUserClaimContentModel';
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { CoreUserClaimCheckDtoModel } from '../../models/dto/core-main/coreUserClaimCheckDtoModel';
 import { CoreUserClaimCheckModel } from '../../models/dto/core-main/coreUserClaimCheckModel';
-import { map, retry } from 'rxjs/operators';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserClaimContentModel } from '../../models/entity/core-main/coreUserClaimContentModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number,FilterModel>  {  getModuleControllerUrl(): string {
-    return 'CoreUserClaimContent';
-  }
+export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number, FilterModel> {
+    getModuleControllerUrl(): string {
+      return 'CoreUserClaimContent';
+    }
   ServiceClaimCheck(model: CoreUserClaimCheckDtoModel): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
     if (model == null) {
       model = new CoreUserClaimCheckDtoModel();

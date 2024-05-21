@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { NodeService } from '../../services/node.service';
 import { FileManagerStoreService, SET_PATH } from '../../services/file-manager-store.service';
+import { NodeService } from '../../services/node.service';
 
 @Component({
   selector: 'lib-filemanager-nav-bar',

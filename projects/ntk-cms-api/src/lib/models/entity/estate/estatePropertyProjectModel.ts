@@ -11,11 +11,11 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   mainAdminRecordStatus = RecordStatusEnum.Pending;
   description: string;
   descriptionHidden: string;
-  address:string;
+  address: string;
   body: string;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   keyword: string;
   linkFileIds: string;
   linkExtraImageIds?: string;
@@ -23,11 +23,11 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   linkFileMovieId?: number;
   linkMainImageId?: number;
   file360Views: File360ViewModel[];
-  file360Tour:File360TourModel;
+  file360Tour: File360TourModel;
   scoreClick: number;
   scoreSumPercent: number;
   viewCount: number;
-  viewConfigHiddenInList:boolean;
+  viewConfigHiddenInList: boolean;
   favorited: boolean;
   source: string;
   fromDate: Date;

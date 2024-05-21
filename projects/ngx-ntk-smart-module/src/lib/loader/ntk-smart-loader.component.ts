@@ -1,11 +1,11 @@
 import {
+  ChangeDetectorRef,
   Component,
-  OnInit,
+  EventEmitter,
   Input,
   OnDestroy,
-  ChangeDetectorRef,
-  Output,
-  EventEmitter
+  OnInit,
+  Output
 } from '@angular/core';
 
 import { LoaderInstance } from './loader-instance';

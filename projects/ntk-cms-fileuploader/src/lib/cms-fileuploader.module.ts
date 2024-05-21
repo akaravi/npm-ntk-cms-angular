@@ -1,10 +1,8 @@
-import { CmsFileUploaderComponent } from './cms-fileuploader.component';
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 import { FilePickerModule } from 'ngx-awesome-uploader';
+import { CmsFileUploaderComponent } from './cms-fileuploader.component';
 
 
 @NgModule({

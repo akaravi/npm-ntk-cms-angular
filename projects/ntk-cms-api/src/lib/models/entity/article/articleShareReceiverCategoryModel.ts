@@ -10,5 +10,5 @@ export class ArticleShareReceiverCategoryModel extends BaseModuleEntity<number> 
   expireDate?: Date;
   shareServerCategory: ArticleShareServerCategoryModel;
   shareReciverCategory: ArticleCategoryModel;
-  
+
 }

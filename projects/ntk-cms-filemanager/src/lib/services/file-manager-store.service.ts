@@ -1,9 +1,9 @@
-import { Injectable, isDevMode } from '@angular/core';
-import { AppStore } from '../reducers/reducer.factory';
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 import { NodeInterface } from '../interfaces/node.interface';
 import { StateInterface } from '../interfaces/state.interface';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import { AppStore } from '../reducers/reducer.factory';
 
 const initialState: StateInterface = {
   path: '',

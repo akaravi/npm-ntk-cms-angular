@@ -4,7 +4,7 @@ import { CoreModuleSaleInvoiceDetailModel } from './coreModuleSaleInvoiceDetailM
 import { CoreModuleSaleSerialModel } from './coreModuleSaleSerialModel';
 import { CoreSiteModel } from './coreSiteModel';
 //@@tag-Version-2201011
-export class CoreModuleSaleInvoiceModel extends BaseEntity<number>  {
+export class CoreModuleSaleInvoiceModel extends BaseEntity<number> {
   linkSiteIdBuyer: number;
   // tslint:disable-next-line: variable-name
   virtual_SiteBuyer: CoreSiteModel;

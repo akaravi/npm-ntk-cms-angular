@@ -1,7 +1,7 @@
 import { ReportFileTypeEnum } from '../../enums/core/reportFileTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
-export class CoreModuleEntityReportFileModel extends BaseEntity<string>{
+export class CoreModuleEntityReportFileModel extends BaseEntity<string> {
   linkModuleEntityId: number;
   reportFileType: ReportFileTypeEnum;
   title: string;

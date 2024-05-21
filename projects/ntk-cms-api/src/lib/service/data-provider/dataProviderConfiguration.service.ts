@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import {
   DataProviderModuleConfigAdminMainValuesModel,
   DataProviderModuleConfigSiteAccessValuesModel,
@@ -11,9 +10,9 @@ import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service
 @Injectable()
 export class DataProviderConfigurationService extends
   ApiServerConfigSiteBase<DataProviderModuleConfigAdminMainValuesModel,
-  DataProviderModuleConfigSiteValuesModel,
-  DataProviderModuleConfigSiteAccessValuesModel,
-  DataProviderModuleSiteStorageValuesModel> {
+    DataProviderModuleConfigSiteValuesModel,
+    DataProviderModuleConfigSiteAccessValuesModel,
+    DataProviderModuleSiteStorageValuesModel> {
   getModuleControllerUrl(): string {
     return 'DataProvider';
   }

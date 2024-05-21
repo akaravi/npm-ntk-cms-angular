@@ -26,7 +26,7 @@ export class Color {
         this.rgba = this.toRgba();
     }
 
-    public toHex(allow3Char?: boolean, ): string {
+    public toHex(allow3Char?: boolean,): string {
         return rgbToHex(this.r, this.g, this.b, allow3Char);
     }
 

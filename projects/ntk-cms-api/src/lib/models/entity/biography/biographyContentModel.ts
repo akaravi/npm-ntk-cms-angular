@@ -1,9 +1,9 @@
-import { BiographyCategoryModel } from './biographyCategoryModel';
-import { BiographyContentTagModel } from './biographyContentTagModel';
-import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { BiographyCategoryModel } from './biographyCategoryModel';
 import { BiographyCommentModel } from './biographyCommentModel';
 import { BiographyContentCategoryModel } from './biographyContentCategoryModel';
+import { BiographyContentSimilarModel } from './biographyContentSimilarModel';
+import { BiographyContentTagModel } from './biographyContentTagModel';
 //@@tag-Version-2201011
 export class BiographyContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -13,7 +13,7 @@ export class BiographyContentModel extends BaseModuleEntity<number> {
   fromDate: Date;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   keyword: string;

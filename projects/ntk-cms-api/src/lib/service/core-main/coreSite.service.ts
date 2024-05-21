@@ -1,22 +1,21 @@
-import { Observable } from 'rxjs';
-import { map, catchError, retry } from 'rxjs/operators';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core-main/coreSiteAddFirstSiteDtoModel';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { CoreSiteSearchModel } from '../../models/dto/core-main/coreSiteSearchModel';
-import { DomainModel } from '../../models/dto/core-main/domainModel';
-import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { Injectable } from '@angular/core';
-import { ShareInfoModel } from '../../models/dto/core-main/shareInfoModel';
-import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
+import { Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { CoreSiteAddFirstSiteDtoModel } from '../../models/dto/core-main/coreSiteAddFirstSiteDtoModel';
+import { CoreSiteSearchModel } from '../../models/dto/core-main/coreSiteSearchModel';
 import { ProcessModuleSiteDataInfoOutputModel } from '../../models/dto/core-main/processModuleSiteDataInfoOutputModel';
 import { ProcessModuleSiteDataOptimazeOutputModel } from '../../models/dto/core-main/processModuleSiteDataOptimazeOutputModel';
+import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
+import { ShareInfoModel } from '../../models/dto/core-main/shareInfoModel';
+import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { CoreSiteSupportModel } from '../../models/entity/core-main/coreSiteSupportModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, FilterModel>  {
+export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, FilterModel> {
   getModuleControllerUrl(): string {
     return 'CoreSite';
   }
@@ -76,6 +75,19 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, Fil
   ServiceCurrectSite(): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrectSite', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceMasterSiteInfo(linkSiteId: number): Observable<ErrorExceptionResult<CoreSiteModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MasterSiteInfo/' + linkSiteId, {
         headers: this.getHeaders(),
       })
       .pipe(

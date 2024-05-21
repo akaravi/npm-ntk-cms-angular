@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CmsFileManagerModule } from 'projects/ntk-cms-filemanager/src/public-api';
 import { FileManagerTestComponent } from './filemanagerTest.component';
 import { FilemanagerTestRoutes } from './filemanagerTest.routing';
-import { CmsFileManagerModule } from 'projects/ntk-cms-filemanager/src/public-api';
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import { CmsFileManagerModule } from 'projects/ntk-cms-filemanager/src/public-ap
 
   ],
 
-  declarations: [ FileManagerTestComponent],
+  declarations: [FileManagerTestComponent],
 })
-export class FilemanagerTestModule {}
+export class FilemanagerTestModule { }

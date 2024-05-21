@@ -1,8 +1,8 @@
 import { BaseEntity } from '../base/baseEntity';
 import { CoreSiteModel } from './coreSiteModel';
 //@@tag-Version-2201011
-export class CoreSiteDomainAliasModel extends BaseEntity<number>  {
-cmsSite: CoreSiteModel;
+export class CoreSiteDomainAliasModel extends BaseEntity<number> {
+  cmsSite: CoreSiteModel;
   subDomain: string;
   domain: string;
   redirect: string;

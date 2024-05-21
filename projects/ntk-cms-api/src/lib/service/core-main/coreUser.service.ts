@@ -1,17 +1,17 @@
 
-import { Observable, BehaviorSubject } from 'rxjs';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { catchError, map, retry } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { Injectable } from '@angular/core';
 import { RessellerChartModel } from '../../models/dto/core-main/ressellerChartModel';
 
 
 @Injectable()
-export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number, FilterModel>  {
+export class CoreUserService extends ApiCmsServerBase<CoreUserModel, number, FilterModel> {
   CurrentUser = new BehaviorSubject<CoreUserModel>(new CoreUserModel());
   CurrentUserObs = this.CurrentUser.asObservable();
   getModuleControllerUrl(): string {

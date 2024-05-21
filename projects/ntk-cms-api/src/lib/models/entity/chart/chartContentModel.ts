@@ -1,10 +1,9 @@
-import { BaseEntity } from '../base/baseEntity';
-import { ChartCategoryModel } from './chartCategoryModel';
-import { ChartContentTagModel } from './chartContentTagModel';
-import { ChartContentSimilarModel } from './chartContentSimilarModel';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { ChartCategoryModel } from './chartCategoryModel';
 import { ChartCommentModel } from './chartCommentModel';
 import { ChartContentCategoryModel } from './chartContentCategoryModel';
+import { ChartContentSimilarModel } from './chartContentSimilarModel';
+import { ChartContentTagModel } from './chartContentTagModel';
 //@@tag-Version-2201011
 export class ChartContentModel extends BaseModuleEntity<number> {
   linkCategoryId: number;
@@ -14,7 +13,7 @@ export class ChartContentModel extends BaseModuleEntity<number> {
   fromDate: Date;
   geolocationlatitude?: number;
   geolocationlongitude?: number;
-  linkLocationId?:number;
+  linkLocationId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
   keyword: string;
