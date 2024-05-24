@@ -61,6 +61,7 @@ cd dist/ngx-ntk-query-builder
 npm publish
 cd ..
 cd ..
+
 =========================================
 ng build ngx-ntk-cron-editor --configuration production
 cd dist/ngx-ntk-cron-editor
