@@ -15,11 +15,9 @@ import { OperatorsService } from './services/operators.service';
   }]
 })
 export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
-
   @Input() fieldMap: QueryBuilderFieldMap = {};
   @Input() settings: QueryBuilderSettings = {};
   @Input() disabled = false;
-
   @Input() data: RuleSet = this.getEmptyRuleSetData();
   @Input() parent: RuleSet;
   @Input() index: number;
@@ -40,7 +38,6 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     translate.setDefaultLang('en');
     translate.use('en');
   }
-
   ngOnInit(): void {
     if (typeof this.fieldMap !== 'object') {
       throw new Error('fieldMap must be an object');
@@ -50,35 +47,26 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
       throw new Error('settings must be an object');
     }
   }
-
   /**** ControlValueAccessor START ****/
-
   onChange = (data: RuleSet) => { };
   onTouched = () => { };
-
   writeValue(data: any): void {
     this.data = data || this.getEmptyRuleSetData();
   }
-
   registerOnChange(fn: (data: RuleSet) => void): void {
     this.onChange = fn;
   }
-
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
-
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
-
   /**** ControlValueAccessor END ****/
-
   addRule(): void {
     if (this.disabled) {
       return;
     }
-
     this.data.rules.push({
       field: this.getFields()[0].value,
       type: this.getFields()[0].type,

@@ -6,11 +6,9 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
 
-
 export function CreateTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, '/assets/i18n/querybuilder/', '.json');
 }
-
 @NgModule({
   declarations: [
     NgxQueryBuilderComponent
