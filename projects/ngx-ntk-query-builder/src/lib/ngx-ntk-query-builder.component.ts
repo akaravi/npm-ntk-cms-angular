@@ -1,7 +1,7 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { Field, QueryBuilderFieldMap, QueryBuilderSettings, Rule, RuleSet } from './interfaces/ngx-ntk-query-builder.interfaces';
+import { QueryField, QueryBuilderFieldMap, QueryBuilderSettings, QueryRule, QueryRuleSet } from './interfaces/ngx-ntk-query-builder.interfaces';
 import { OperatorsService } from './services/operators.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
   @Input() fieldMap: QueryBuilderFieldMap = {};
   @Input() settings: QueryBuilderSettings = {};
   @Input() disabled = false;
-  @Input() data: RuleSet = this.getEmptyRuleSetData();
-  @Input() parent: RuleSet;
+  @Input() data: QueryRuleSet = this.getEmptyRuleSetData();
+  @Input() parent: QueryRuleSet;
   @Input() index: number;
   // private privateLanguage = 'en';
   @Input() set language(value: string) {
@@ -48,12 +48,12 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     }
   }
   /**** ControlValueAccessor START ****/
-  onChange = (data: RuleSet) => { };
+  onChange = (data: QueryRuleSet) => { };
   onTouched = () => { };
   writeValue(data: any): void {
     this.data = data || this.getEmptyRuleSetData();
   }
-  registerOnChange(fn: (data: RuleSet) => void): void {
+  registerOnChange(fn: (data: QueryRuleSet) => void): void {
     this.onChange = fn;
   }
   registerOnTouched(fn: () => void): void {
@@ -123,10 +123,10 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
   }
 
-  changeField(rule: Rule, index: number): void {
-    (this.data.rules[index] as Rule).type = this.fieldMap[rule.field].type;
-    (this.data.rules[index] as Rule).operator = this.operatorsService.getDefaultOperator();
-    (this.data.rules[index] as Rule).value = undefined;
+  changeField(rule: QueryRule, index: number): void {
+    (this.data.rules[index] as QueryRule).type = this.fieldMap[rule.field].type;
+    (this.data.rules[index] as QueryRule).operator = this.operatorsService.getDefaultOperator();
+    (this.data.rules[index] as QueryRule).value = undefined;
 
     this.onChange(this.data);
     this.onTouched();
@@ -137,11 +137,11 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     return !!this.parent;
   }
 
-  getEmptyRuleSetData(): RuleSet {
+  getEmptyRuleSetData(): QueryRuleSet {
     return { condition: 'and', rules: [] };
   }
 
-  getFields(): Field[] {
+  getFields(): QueryField[] {
     return Object.keys(this.fieldMap).map((value) => {
       const field = this.fieldMap[value];
       field.value = value;
@@ -149,7 +149,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     });
   }
 
-  getInputType(rule: Rule): string {
+  getInputType(rule: QueryRule): string {
 
     if (!this.fieldMap[rule.field]) {
       throw new Error(`No configuration for field '${rule.field}' was found!`);
@@ -168,13 +168,13 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     return type;
   }
 
-  getRuleOptions(rule: Rule): any {
+  getRuleOptions(rule: QueryRule): any {
     return this.fieldMap[rule.field].options ? this.fieldMap[rule.field].options : [];
   }
-  convertToRuleSet(model: RuleSet | Rule): RuleSet {
-    return model as RuleSet;
+  convertToRuleSet(model: QueryRuleSet | QueryRule): QueryRuleSet {
+    return model as QueryRuleSet;
   }
-  convertToRule(model: RuleSet | Rule): Rule {
-    return model as Rule;
+  convertToRule(model: QueryRuleSet | QueryRule): QueryRule {
+    return model as QueryRule;
   }
 }

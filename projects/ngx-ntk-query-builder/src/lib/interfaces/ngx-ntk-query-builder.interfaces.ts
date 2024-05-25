@@ -1,32 +1,32 @@
 export interface QueryBuilderFieldMap {
-  [key: string]: Field;
+  [key: string]: QueryField;
 }
 
 export interface QueryBuilderSettings {
   allowRuleSets?: boolean;
 }
 
-export interface Rule {
+export interface QueryRule {
   field: string;
   type: string;
   operator: string;
   value?: any;
 }
 
-export interface RuleSet {
+export interface QueryRuleSet {
   condition: string;
-  rules: Array<RuleSet | Rule>;
+  rules: Array<QueryRuleSet | QueryRule>;
 }
 
-export interface Field {
+export interface QueryField {
   name: string;
   type: string;
   value?: string;
   options?: SelectOption[];
-  settings?: FieldSettings;
+  settings?: QueryFieldSettings;
 }
 
-export interface FieldSettings {
+export interface QueryFieldSettings {
   nullableOperators?: boolean;
   emptyOperators?: boolean;
 }

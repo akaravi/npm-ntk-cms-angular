@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { QueryBuilderFieldMap, Rule } from '../interfaces/ngx-ntk-query-builder.interfaces';
+import { QueryBuilderFieldMap, QueryRule } from '../interfaces/ngx-ntk-query-builder.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -76,7 +76,7 @@ export class OperatorsService {
   constructor(private translate: TranslateService,
   ) { }
 
-  getOperators(rule: Rule, fieldMap: QueryBuilderFieldMap): string[] {
+  getOperators(rule: QueryRule, fieldMap: QueryBuilderFieldMap): string[] {
 
     if (!this.getAvailableTypes().includes(rule.type)) {
       console.error('Type of rule is not valid. Please use one of the following types: ' + this.getAvailableTypes().join(', '));
