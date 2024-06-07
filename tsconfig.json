@@ -21,7 +21,13 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "ntk-cms-api": ["dist/ntk-cms-api/ntk-cms-api", "dist/ntk-cms-api"],
+      "ntk-cms-api": [
+        "dist/ntk-cms-api/ntk-cms-api",
+        "dist/ntk-cms-api"
+      ],
+      "ngx-ntk-file-picker": [
+        "dist/ngx-ntk-file-picker"
+      ],
       "ngx-ntk-mat-color-picker": ["dist/ngx-ntk-mat-color-picker"],
       "ntk-cms-filemanager": ["dist/ntk-cms-filemanager/ntk-cms-filemanager", "dist/ntk-cms-filemanager"],
       "ntk-cms-fileuploader": ["dist/ntk-cms-fileuploader/ntk-cms-fileuploader", "dist/ntk-cms-fileuploader"],

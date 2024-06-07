@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-awesome-uploader';
+import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-ntk-file-picker';
 import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';

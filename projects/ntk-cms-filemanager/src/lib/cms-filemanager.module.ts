@@ -3,7 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FilePickerModule } from 'ngx-awesome-uploader';
+import { FilePickerModule } from 'ngx-ntk-file-picker';
 import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 import { FileCategoryService, FileContentService } from 'ntk-cms-api';
 import { CmsFileManagerComponent } from './cms-filemanager.component';

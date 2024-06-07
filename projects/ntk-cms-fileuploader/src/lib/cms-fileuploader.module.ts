@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FilePickerModule } from 'ngx-awesome-uploader';
+import { FilePickerModule } from 'ngx-ntk-file-picker';
 import { CmsFileUploaderComponent } from './cms-fileuploader.component';
 
 

@@ -1,0 +1,38 @@
+{
+  "name": "ngx-ntk-file-picker",
+  "version": "17.0.1",
+  "description": "Angular Library for uploading files with Real-Time Progress bar, File Preview, Drag && Drop and Custom Template with Multi Language support",
+  "author": "Alireza-Karavi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi"
+  },
+  "homepage": "https://ntk.ir",
+  "keywords": [
+    "NTK",
+    "KARAVI",
+    "angular",
+    "ngx",
+    "angular",
+    "file uploader",
+    "angular file uploader",
+    "awesome uploader",
+    "drag and drop",
+    "image cropper",
+    "angular image uploader",
+    "angular uploader",
+    "angular file upload"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "mrmime": "1.0.0"
+  }
+}

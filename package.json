@@ -26,7 +26,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "^5.2.3",
     "ng-packagr": "^15.2.4",
-    "ngx-awesome-uploader": "15.0.0",
+    "ngx-ntk-file-picker": "17.0.1",
     "ngx-ntk-smart-module": "^1.1.10",
     "ntk-cms-api": "^1.2.176",
     "rxjs": "~7.8.0",

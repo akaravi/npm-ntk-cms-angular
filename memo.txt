@@ -12,6 +12,7 @@ ng generate library ngx-ntk-smart-module
 ng generate library ngx-ntk-query-builder
 ng generate library ngx-ntk-cron-editor
 ng generate library ngx-ntk-mat-color-picker
+ng generate library ngx-ntk-file-picker
 =========================================First Time npm
 npm adduser
 npm login
@@ -74,6 +75,16 @@ cd dist/ngx-ntk-mat-color-picker
 npm publish
 cd ..
 cd ..
+
+
+=========================================
+ng build ngx-ntk-file-picker --configuration production
+cd dist/ngx-ntk-file-picker
+npm publish
+cd ..
+cd ..
+
+
 
 ==================================================================================
 Test All

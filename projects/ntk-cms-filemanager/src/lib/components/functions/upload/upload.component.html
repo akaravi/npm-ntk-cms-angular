@@ -2,12 +2,12 @@
 <div class="upload-background">
   <div class="row" style="flex-direction: column;">
 
-    <ngx-awesome-uploader class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="fileUplodMaxCount" [fileMaxSize]="700" [uploadType]="'multi'"
+    <ngx-ntk-file-picker class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="fileUplodMaxCount" [fileMaxSize]="700" [uploadType]="'multi'"
       (validationError)="onValidationError($event)" [fileExtensions]="fileExtensions"
       [enableCropper]="false" (uploadSuccess)="onUploadSuccess($event)" (removeSuccess)="onRemoveSuccess($event)"
       (fileAdded)="onFileAdded($event)" [customValidator]="myCustomValidator" [captions]="captions"
       [accept]="fileTypeAccept">
-    </ngx-awesome-uploader>
+    </ngx-ntk-file-picker>
     <h2>{{openSelectFileDescription}}</h2>
   </div>
   <div class="row">
