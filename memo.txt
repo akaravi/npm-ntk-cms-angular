@@ -119,6 +119,9 @@ cd ..
 cd ngx-ntk-cron-editor
 npm publish
 cd ..
+cd ngx-ntk-mat-color-picker
+npm publish
+cd ..
 cd ngx-ntk-file-picker
 npm publish
 cd ..
