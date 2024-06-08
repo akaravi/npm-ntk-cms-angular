@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-query-builder",
-  "version": "1.0.35",
+  "version": "18.0.10",
   "description": "Angular query builder",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -10,8 +10,8 @@
     "query builder"
   ],
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0"
+    "@angular/common": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0 || ^14.0 || ^15.0 || ^16.0 || ^17.0 || ^18.0",
+    "@angular/core": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0 || ^14.0 || ^15.0 || ^16.0 || ^17.0 || ^18.0"
   },
   "dependencies": {
     "@ngx-translate/core": "^10.0.2",
