@@ -1,22 +1,52 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CronEditorComponent } from './cron-editor.component';
 import { PrefixPipe } from './pipes/prefix.pipe';
-import { CronEditorTranslateService } from './services/cron-editor-translate.service';
 import { TimePickerComponent } from './time-picker/time-picker.component';
+
+export function CreateTranslateLoader(http: HttpClient): any {
+  return new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json');
+}
+
 @NgModule({
-  providers: [CronEditorTranslateService],
-  declarations: [CronEditorComponent, TimePickerComponent, PrefixPipe],
   imports: [
+    HttpClientModule,
     CommonModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (CreateTranslateLoader),
+        deps: [HttpClient]
+      }
+    }
+    ),
     FormsModule,
-    TranslateModule.forRoot({ extend: true }),
+
     MatTabsModule
   ],
-  exports: [CronEditorComponent]
+  declarations: [
+    CronEditorComponent,
+    TimePickerComponent,
+    PrefixPipe
+  ],
+  exports: [
+    CronEditorComponent
+  ],
+  providers: [
+    TranslateService
+  ],
 })
+
 export class CronEditorModule {
+  static forRoot(): ModuleWithProviders<CronEditorModule> {
+    return {
+      ngModule: CronEditorModule,
+      providers: [TranslateService]
+    };
+  }
 }

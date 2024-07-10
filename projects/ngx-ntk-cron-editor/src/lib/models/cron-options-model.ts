@@ -1,4 +1,4 @@
-export interface CronOptions {
+export interface CronOptionsModel {
     formInputClass: string;
     formSelectClass: string;
     formRadioClass: string;

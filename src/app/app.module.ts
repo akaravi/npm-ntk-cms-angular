@@ -25,7 +25,8 @@ export function CreateTranslateLoader(http: HttpClient): any {
         provide: TranslateLoader,
         useFactory: (CreateTranslateLoader),
         deps: [HttpClient]
-      }
+      },
+      defaultLanguage: 'en'
     })
   ],
   providers: [],

@@ -3,5 +3,9 @@
   "dest": "../../dist/ngx-ntk-cron-editor",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "src/assets",
+    "src/assets/i18n/cron"
+  ]
 }
