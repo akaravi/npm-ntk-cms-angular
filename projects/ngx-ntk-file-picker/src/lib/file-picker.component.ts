@@ -30,7 +30,7 @@ import { FilePickerAdapter } from './file-picker.adapter';
 import { DEFAULT_CROPPER_OPTIONS } from './file-picker.constants';
 import { FilePreviewModel } from './file-preview.model';
 import { GET_FILE_CATEGORY_TYPE } from './file-upload.utils';
-import { FileValidatorService } from './services/file-validator/file-validator.service';
+import { FileValidatorService } from './services/file-validator.service';
 import { UploaderCaptions } from './uploader-captions';
 import { FileValidationTypes, ValidationError } from './validation-error.model';
 

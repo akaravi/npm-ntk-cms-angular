@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FileValidatorService } from './file-validator.service';
+import { FileValidatorService } from './file-validator/file-validator.service';
 
 describe('FileValidatorService', () => {
   let service: FileValidatorService;
