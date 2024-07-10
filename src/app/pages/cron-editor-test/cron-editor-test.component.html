@@ -15,35 +15,35 @@
   <hr>
   <div class="row">
     <div class="col-md-2">
-        <h4>{{'OPTIONS' | translate}}</h4>
-        <label class="advanced-cron-editor-label"><input type="checkbox" name="cronOptions.use24HourTime"
+      <h4>{{'OPTIONS' | translate}}</h4>
+      <label class="advanced-cron-editor-label"><input type="checkbox" name="cronOptions.use24HourTime"
           [(ngModel)]="cronOptions.use24HourTime">use24HourTime: {{cronOptions.use24HourTime}}</label>
-
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br>
+      <label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideMinutesTab">hideMinutesTab: {{cronOptions.hideMinutesTab}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br> <label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideHourlyTab">hideHourlyTab: {{cronOptions.hideHourlyTab}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideDailyTab">hideDailyTab: {{cronOptions.hideDailyTab}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideWeeklyTab">hideWeeklyTab: {{cronOptions.hideWeeklyTab}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideAdvancedTab">hideAdvancedTab: {{cronOptions.hideAdvancedTab}}</label>
 
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.hideSeconds">hideSeconds: {{cronOptions.hideSeconds}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.removeSeconds">removeSeconds: {{cronOptions.removeSeconds}}</label>
-        <label class="advanced-cron-editor-label"><input type="checkbox"
+      <br><label class="advanced-cron-editor-label"><input type="checkbox"
           [(ngModel)]="cronOptions.removeYears">removeYears: {{cronOptions.removeYears}}</label>
     </div>
     <div class="col-md-10">
-        <cron-editor [(cron)]="cronExpression" [disabled]="isCronDisabled" [options]="cronOptions"></cron-editor>
-        <hr />
-        <p>{{'RESULT' | translate}} </p>
-        <div class="form-group mx-sm-3 mb-2">
-          <input type="text" class="form-control" [(ngModel)]="cronExpression">
-        </div>
+      <cron-editor [(cron)]="cronExpression" [disabled]="isCronDisabled" [options]="cronOptions"></cron-editor>
+      <hr />
+      <p>{{'RESULT' | translate}} </p>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" [(ngModel)]="cronExpression">
+      </div>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import Utils from '../Utils';
 import { ngxTranslatePrefix } from '../pipes/prefix.pipe';
 import { en } from '../translations/en';
+import { fa } from '../translations/fa';
 import { ru } from '../translations/ru';
 
 export interface CronEditorTranslateOptions {
@@ -13,7 +14,7 @@ export interface CronEditorTranslateOptions {
 
 export interface CronEditorTranslateOptionExistent {
   lang: string;
-  useExistent: 'ru' | 'en';
+  useExistent: 'ru' | 'en' | 'fa';
   patch?: object;
 }
 
@@ -41,6 +42,9 @@ export class CronEditorTranslateService {
             break;
           case 'ru':
             this.translate.setTranslation(option.lang, getPatchedTranslations(ru, option.patch));
+            break;
+          case 'fa':
+            this.translate.setTranslation(option.lang, getPatchedTranslations(fa, option.patch));
             break;
         }
       }

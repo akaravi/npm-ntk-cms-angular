@@ -42,9 +42,10 @@ export class CronEditorTestComponent {
     private cronEditorTranslateService: CronEditorTranslateService) {
     // translate.setTranslation('en', en);
     // translate.setTranslation('ru', ru);
-    translate.use('en');
+    translate.use('fa');
     cronEditorTranslateService.init({
       existent: [
+        { lang: 'fa', useExistent: 'fa' },
         { lang: 'en', useExistent: 'en' },
         { lang: 'ru', useExistent: 'ru' }
       ]
