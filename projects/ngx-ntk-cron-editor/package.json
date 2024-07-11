@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-cron-editor",
-  "version": "18.0.13",
+  "version": "18.0.15",
   "description": "Angular cron editor",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -9,11 +9,6 @@
     "KARAVI",
     "cron job"
   ],
-  "exports": {
-    "./src/assets/cron": {
-      "sass": "./src/assets/ntk-cms-filemanager.scss"
-    }
-  },
   "peerDependencies": {
     "@angular/common": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0 || ^14.0 || ^15.0 || ^16.0 || ^17.0 || ^18.0",
     "@angular/core": "^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0 || ^14.0 || ^15.0 || ^16.0 || ^17.0 || ^18.0",

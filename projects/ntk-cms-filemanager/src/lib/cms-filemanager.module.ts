@@ -19,9 +19,6 @@ import { NodeListerComponent } from './components/tree/node-lister/node-lister.c
 import { TreeComponent } from './components/tree/tree.component';
 import { FileSizePipe } from './pipes/file-size.pipe';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
-
-
-
 @NgModule({
   imports: [
     HttpClientModule,

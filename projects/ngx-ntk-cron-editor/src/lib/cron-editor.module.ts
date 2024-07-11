@@ -6,10 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CronEditorComponent } from './cron-editor.component';
-import { PrefixPipe } from './pipes/prefix.pipe';
 import { TimePickerComponent } from './time-picker/time-picker.component';
-
-
 @NgModule({
   imports: [
     HttpClientModule,
@@ -28,10 +25,10 @@ import { TimePickerComponent } from './time-picker/time-picker.component';
   declarations: [
     CronEditorComponent,
     TimePickerComponent,
-    PrefixPipe
   ],
   exports: [
-    CronEditorComponent
+    CronEditorComponent,
+    TimePickerComponent,
   ],
   providers: [
     TranslateService

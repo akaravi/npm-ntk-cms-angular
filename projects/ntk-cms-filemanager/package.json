@@ -1,15 +1,13 @@
 {
   "name": "ntk-cms-filemanager",
-  "version": "18.0.12",
+  "version": "18.0.14",
   "description": "Ntk Cms Api And Model For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
   "keywords": [
     "NTK",
     "KARAVI",
-    "SMS",
-    "news",
-    "api"
+    "file manage"
   ],
   "exports": {
     "./filemanager": {

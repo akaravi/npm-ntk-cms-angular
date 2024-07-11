@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CronOptionsModel } from './models/cron-options-model';
-
 import { TranslateService } from '@ngx-translate/core';
-import Utils from './Utils';
-import { MonthWeeks, Months } from './enums';
-
+import { CronOptionsModel } from './models/cron-options-model';
+import { MonthWeeks, Months } from './models/enums';
+import Utils from './poco/Utils';
 @Component({
   selector: 'cron-editor',
   templateUrl: './cron-editor.component.html',
@@ -21,25 +19,20 @@ export class CronEditorComponent implements OnInit, OnChanges {
   }
   @Input() public disabled: boolean;
   @Input() public options: CronOptionsModel;
-
   @Input() get cron(): string { return this.localCron; }
   set cron(value: string) {
     this.localCron = value;
     this.cronChange.emit(this.localCron);
   }
-
   // the name is an Angular convention, @Input variable name + "Change" suffix
   @Output() cronChange = new EventEmitter();
-
   public activeTab: string;
   public selectOptions = this.getSelectOptions();
   public state: any;
-
   private localCron: string;
   private isDirty: boolean;
   constructor(
     public translate: TranslateService,
-
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
