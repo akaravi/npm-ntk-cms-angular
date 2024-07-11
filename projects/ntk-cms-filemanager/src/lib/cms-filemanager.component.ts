@@ -84,17 +84,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   openFilemanagerButtonLabel: string;
-  // private privateLanguage = 'en';
   @Input() set language(value: string) {
-    // this.privateLanguage = value;
     if (value && value.length > 0) {
       this.translate.use(value);
     }
   }
-
-  // get language(): string {
-  //   return this.privateLanguage;
-  // }
 
   selectedNode: NodeInterface;
   sideMenuClosed = true;
@@ -115,8 +109,8 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     private cdr: ChangeDetectorRef,
     private el: ElementRef
   ) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+
+
   }
 
   ngOnInit(): void {

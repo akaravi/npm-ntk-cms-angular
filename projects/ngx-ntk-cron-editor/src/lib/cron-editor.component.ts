@@ -12,7 +12,6 @@ export class CronEditorComponent implements OnInit, OnChanges {
   static nextId = 0;
   id = ++CronEditorComponent.nextId;
   @Input() set language(value: string) {
-    // this.privateLanguage = value;
     if (value && value.length > 0) {
       this.translate.use(value);
     }
@@ -34,8 +33,7 @@ export class CronEditorComponent implements OnInit, OnChanges {
   constructor(
     public translate: TranslateService,
   ) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+
   }
   public ngOnInit() {
     this.activeTab = "minutes";
