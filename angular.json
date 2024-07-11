@@ -28,7 +28,27 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-ntk-cron-editor/src/assets/",
+                "output": "assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-ntk-query-builder/src/assets/",
+                "output": "assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-ntk-smart-module/src/assets/",
+                "output": "assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ntk-cms-filemanager/src/assets/",
+                "output": "assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -286,7 +306,6 @@
         }
       }
     },
-
     "ngx-ntk-query-builder": {
       "projectType": "library",
       "root": "projects/ngx-ntk-query-builder",
@@ -433,8 +452,6 @@
         }
       }
     }
-
-
   },
   "defaultProject": "npm-ntk-cms-angular",
   "cli": {

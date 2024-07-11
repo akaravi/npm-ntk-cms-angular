@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-export const ngxTranslatePrefix = 'cron';
+export const ngxTranslatePrefix = 'CRON';
 
 @Pipe({
   name: 'prefix'

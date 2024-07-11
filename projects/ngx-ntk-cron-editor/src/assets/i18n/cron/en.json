@@ -1,5 +1,5 @@
 {
-  "cron": {
+  "CRON": {
     "TABS": {
       "MINUTES": "Minutes",
       "HOURLY": "Hourly",
