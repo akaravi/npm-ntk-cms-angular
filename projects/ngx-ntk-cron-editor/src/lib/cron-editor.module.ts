@@ -9,9 +9,6 @@ import { CronEditorComponent } from './cron-editor.component';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { TimePickerComponent } from './time-picker/time-picker.component';
 
-export function CreateTranslateLoader(http: HttpClient): any {
-  return new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json');
-}
 
 @NgModule({
   imports: [
@@ -20,13 +17,12 @@ export function CreateTranslateLoader(http: HttpClient): any {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (CreateTranslateLoader),
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json'),
         deps: [HttpClient]
       }
     }
     ),
     FormsModule,
-
     MatTabsModule
   ],
   declarations: [

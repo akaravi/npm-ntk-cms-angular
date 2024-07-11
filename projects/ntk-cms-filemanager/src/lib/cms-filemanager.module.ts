@@ -21,9 +21,6 @@ import { FileSizePipe } from './pipes/file-size.pipe';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 
 
-export function CreateTranslateLoader(http: HttpClient): any {
-  return new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json');
-}
 
 @NgModule({
   imports: [
@@ -32,7 +29,7 @@ export function CreateTranslateLoader(http: HttpClient): any {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (CreateTranslateLoader),
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json'),
         deps: [HttpClient]
       }
     }),

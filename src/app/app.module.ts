@@ -8,9 +8,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-api';
 
-export function CreateTranslateLoader(http: HttpClient): any {
-  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
-}
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +18,7 @@ export function CreateTranslateLoader(http: HttpClient): any {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (CreateTranslateLoader),
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/', '.json'),
         deps: [HttpClient]
       },
       defaultLanguage: 'en'
