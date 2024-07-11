@@ -17,9 +17,7 @@ export function CreateTranslateLoader(http: HttpClient): any {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    NtkSmartModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -27,7 +25,9 @@ export function CreateTranslateLoader(http: HttpClient): any {
         deps: [HttpClient]
       },
       defaultLanguage: 'en'
-    })
+    }),
+    AppRoutingModule,
+    NtkSmartModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,9 +16,10 @@ import { MatColorPickerRoutes } from './mat-color-picker-test.routing';
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule,
     MatColorPickerRoutes,
     FormsModule,
-    TranslateModule.forRoot({ extend: true }),
+    
     NgxMatColorPickerModule,
     MatCardModule,
     FormsModule,

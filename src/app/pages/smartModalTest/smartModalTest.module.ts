@@ -6,10 +6,12 @@ import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { FeatureComponent } from './feature/feature.component';
 import { SmartModalTestComponent } from './smartModalTest.component';
 import { SmartModalTestRoutes } from './smartModalTest.routing';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule,
     SmartModalTestRoutes,
     NtkSmartModalModule.forRoot()
   ],

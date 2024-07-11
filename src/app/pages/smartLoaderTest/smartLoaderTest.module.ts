@@ -8,10 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { MultiComponent } from './multi/multi.component';
 import { SmartLoaderTestComponent } from './smartLoaderTest.component';
 import { SmartLoaderTestRoutes } from './smartLoaderTest.routing';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule,
     FormsModule,
     SmartLoaderTestRoutes,
     NtkSmartLoaderModule.forRoot()

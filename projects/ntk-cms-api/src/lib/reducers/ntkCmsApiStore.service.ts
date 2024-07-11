@@ -61,6 +61,14 @@ export class NtkCmsApiStoreService {
       }
     }
   }
+  processInRun(name: string): boolean {
+    if (this.state?.ntkCmsAPiState?.inProcessingList) {
+      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
+      if (index >= 0)
+        return true;
+    }
+    return false;
+  }
   processStop(name: string): void {
     if (this.state?.ntkCmsAPiState?.inProcessingList) {
       const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);

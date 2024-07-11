@@ -9,9 +9,9 @@ import { CronEditorTestRoutes } from './cron-editor-test.routing';
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule,
     CronEditorTestRoutes,
     FormsModule,
-    TranslateModule.forRoot({ extend: true }),
     CronEditorModule
   ],
 
