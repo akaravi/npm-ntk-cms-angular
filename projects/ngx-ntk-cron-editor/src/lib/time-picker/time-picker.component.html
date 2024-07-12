@@ -17,5 +17,5 @@
 <!-- am/pm -->
 <select class="timeFormControl" (change)="change.emit()" [(ngModel)]="time.hourTypes" [disabled]="disabled" *ngIf="!use24HourTime"
   [ngClass]="selectClass">
-  <option *ngFor="let hourType of hourTypes" [ngValue]="hourType">{{'CRON.HOUR_TYPES.' + hourType |  translate}}</option>
+  <option *ngFor="let hourType of hourTypes" [ngValue]="hourType">{{ hourType}}</option>
 </select>
