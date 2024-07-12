@@ -20,7 +20,6 @@ import { TimePickerComponent } from './time-picker/time-picker.component';
     }
     ),
     FormsModule,
-    MatTabsModule
   ],
   declarations: [
     CronEditorComponent,

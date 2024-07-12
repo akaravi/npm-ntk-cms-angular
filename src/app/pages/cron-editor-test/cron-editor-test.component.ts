@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { CronOptionModel } from 'projects/ngx-ntk-cron-editor/src/public-api';
 
@@ -14,15 +15,15 @@ export class CronEditorTestComponent {
 
   // Hangfire 1.7+ compatible expression: '3 2 12 1/1 ?'
   // Quartz compatible expression: '4 3 2 12 1/1 ? *'
-  public cronExpression = '0 12 1W 1/1 ?';
+  public cronExpression = "0 12 1W 1/1 ?";
   public isCronDisabled = false;
   public cronOptions: CronOptionModel = {
-    formInputClass: 'form-control cron-editor-input',
-    formSelectClass: 'form-control cron-editor-select',
-    formRadioClass: 'cron-editor-radio',
-    formCheckboxClass: 'cron-editor-checkbox',
+    formInputClass: "form-control cron-editor-input",
+    formSelectClass: "form-select cron-editor-select",
+    formRadioClass: "cron-editor-radio",
+    formCheckboxClass: "form-check-input cron-editor-checkbox",
 
-    defaultTime: '10:00:00',
+    defaultTime: "10:00:00",
     use24HourTime: true,
 
     hideMinutesTab: false,
@@ -35,15 +36,13 @@ export class CronEditorTestComponent {
 
     hideSeconds: true,
     removeSeconds: true,
-    removeYears: true
+    removeYears: true,
   };
 
-  constructor(private translate: TranslateService,
-  ) {
-    // translate.setTranslation('en', en);
-    // translate.setTranslation('ru', ru);
-    translate.use('en');
-    // cronEditorTranslateService.init();
-  }
+  activeTab: "default" | "reactiveForm" | "ngModel" = "default";
+
+  cronForm = new FormGroup({
+    cron: new FormControl<string>(this.cronExpression),
+  });
 
 }
