@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { CronOptionsModel } from 'projects/ngx-ntk-cron-editor/src/public-api';
+import { CronOptionModel } from 'projects/ngx-ntk-cron-editor/src/public-api';
 
 
 // import {en} from './translations/en';
@@ -16,7 +16,7 @@ export class CronEditorTestComponent {
   // Quartz compatible expression: '4 3 2 12 1/1 ? *'
   public cronExpression = '0 12 1W 1/1 ?';
   public isCronDisabled = false;
-  public cronOptions: CronOptionsModel = {
+  public cronOptions: CronOptionModel = {
     formInputClass: 'form-control cron-editor-input',
     formSelectClass: 'form-control cron-editor-select',
     formRadioClass: 'cron-editor-radio',
