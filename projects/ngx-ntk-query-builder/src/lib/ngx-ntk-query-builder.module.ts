@@ -14,7 +14,7 @@ import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
   imports: [
     CommonModule,
     FormsModule,
-    TranslateModule.forRoot({
+    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/querybuilder/', '.json'),

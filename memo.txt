@@ -37,13 +37,6 @@ cd ..
 
 
 =========================================
-ng build ntk-cms-filemanager --configuration production
-cd dist/ntk-cms-filemanager
-npm publish
-cd ..
-cd ..
-
-=========================================
 ng build ntk-cms-fileuploader --configuration production
 cd dist/ntk-cms-fileuploader
 npm publish
@@ -57,12 +50,6 @@ npm publish
 cd ..
 cd ..
 
-=========================================
-ng build ngx-ntk-query-builder --configuration production
-cd dist/ngx-ntk-query-builder
-npm publish
-cd ..
-cd ..
 
 =========================================
 ng build ngx-ntk-cron-editor --configuration production
@@ -87,18 +74,35 @@ cd ..
 cd ..
 
 
+=========================================
+ng build ngx-ntk-query-builder --configuration production
+cd dist/ngx-ntk-query-builder
+npm publish
+cd ..
+cd ..
+
+
+
+========================================= need other npm !!!!!!!!!!!!!!!!!!!!!!!!!!
+ng build ntk-cms-filemanager --configuration production
+cd dist/ntk-cms-filemanager
+npm publish
+cd ..
+cd ..
+
+
 
 ==================================================================================
 Test All
 
 ng build ntk-cms-api --configuration production
 ng build ngx-ntk-smart-module  --configuration production
-ng build ntk-cms-filemanager --configuration production
 ng build ntk-cms-fileuploader --configuration production
 ng build ngx-ntk-query-builder  --configuration production
 ng build ngx-ntk-cron-editor  --configuration production
 ng build ngx-ntk-mat-color-picker  --configuration production
 ng build ngx-ntk-file-picker  --configuration production
+ng build ntk-cms-filemanager --configuration production
 ====build all
 cd dist
 cd ntk-cms-api
@@ -107,11 +111,6 @@ cd ..
 cd ngx-ntk-smart-module
 npm publish
 cd ..
-
-cd ntk-cms-filemanager
-npm publish
-cd ..
-
 cd ntk-cms-fileuploader
 npm publish
 cd ..
@@ -127,6 +126,11 @@ cd ..
 cd ngx-ntk-file-picker
 npm publish
 cd ..
+cd ntk-cms-filemanager
+npm publish
+cd ..
+cd ..
+
 
 ==================================================================================
 

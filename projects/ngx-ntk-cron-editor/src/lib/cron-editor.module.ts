@@ -10,7 +10,7 @@ import { TimePickerComponent } from './time-picker/time-picker.component';
   imports: [
     HttpClientModule,
     CommonModule,
-    TranslateModule.forRoot({
+    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json'),

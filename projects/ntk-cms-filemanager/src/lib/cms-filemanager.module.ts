@@ -23,7 +23,7 @@ import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
   imports: [
     HttpClientModule,
     CommonModule,
-    TranslateModule.forRoot({
+    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json'),
