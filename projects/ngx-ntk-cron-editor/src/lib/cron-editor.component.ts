@@ -16,6 +16,7 @@ import { distinctUntilChanged } from "rxjs";
 import { CronOptionModel, defaultCronOptions } from "./models/cron-options-model";
 import { Days, Months, MonthWeeks } from "./models/enums";
 import Utils from "./poco/Utils";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "cron-editor",
@@ -33,7 +34,11 @@ export class CronEditorComponent implements OnInit, OnChanges, ControlValueAcces
 
   static nextId = 0;
   id = ++CronEditorComponent.nextId;
-
+  @Input() set language(value: string) {
+    if (value && value.length > 0) {
+      this.translate.use(value);      
+    }
+  }
   @Input() public disabled: boolean;
 
   // @Input({
@@ -62,7 +67,13 @@ export class CronEditorComponent implements OnInit, OnChanges, ControlValueAcces
 
   private localCron: string;
   private isDirty: boolean;
+  constructor(
+    public translate: TranslateService,
+  ) {
 
+    if(this.translate.currentLang)
+    this.translate.use(this.translate.currentLang);
+  }
   public ngOnInit() {
     if (this.options.removeSeconds) {
       this.options.hideSeconds = true;

@@ -27,7 +27,11 @@ import { NodeService } from './services/node.service';
   providers: [NodeService, NodeClickedService, FileManagerStoreService]
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
-
+  @Input() set language(value: string) {
+    if (value && value.length > 0) {
+      this.translate.use(value);
+    }
+  }
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
   @Input() folderContentBackTemplate: TemplateRef<any>;
@@ -84,11 +88,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   openFilemanagerButtonLabel: string;
-  @Input() set language(value: string) {
-    if (value && value.length > 0) {
-      this.translate.use(value);
-    }
-  }
+
 
   selectedNode: NodeInterface;
   sideMenuClosed = true;
@@ -109,8 +109,8 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     private cdr: ChangeDetectorRef,
     private el: ElementRef
   ) {
-
-
+    if(this.translate.currentLang)
+      this.translate.use(this.translate.currentLang);
   }
 
   ngOnInit(): void {

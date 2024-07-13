@@ -3,49 +3,49 @@
   <li class="nav-item" *ngIf="!options.hideMinutesTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'minutes' }" aria-controls="minutes" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('minutes')">
-      Minutes
+      {{'CRON.TABS.MINUTES'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideHourlyTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'hourly' }" aria-controls="hourly" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('hourly')">
-      Hourly
+      {{'CRON.TABS.HOURLY'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideDailyTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'daily' }" aria-controls="daily" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('daily')">
-      Daily
+      {{'CRON.TABS.DAILY'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideWeeklyTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'weekly' }" aria-controls="weekly" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('weekly')">
-      Weekly
+      {{'CRON.TABS.WEEKLY'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideMonthlyTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'monthly' }" aria-controls="monthly" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('monthly')">
-      Monthly
+      {{'CRON.TABS.MONTHLY'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideYearlyTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'yearly' }" aria-controls="yearly" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('yearly')">
-      Yearly
+      {{'CRON.TABS.YEARLY'|translate}}
     </a>
   </li>
 
   <li class="nav-item" *ngIf="!options.hideAdvancedTab">
     <a class="nav-link" [ngClass]="{ active: activeTab === 'advanced' }" aria-controls="advanced" role="tab"
       data-bs-toggle="tab" (click)="setActiveTab('advanced')">
-      Advanced
+      {{'CRON.TABS.ADVANCED'|translate}}
     </a>
   </li>
 </ul>
@@ -58,15 +58,15 @@
         <!-- Minutes-->
         <div class="tab-pane" *ngIf="!options.hideMinutesTab" [ngClass]="{ active: activeTab === 'minutes' }">
           <div class="card card-body bg-light">
-            Every
+            {{'CRON.MINUTES.EVERY'|translate}}
             <select class="minutes" [disabled]="disabled || activeTab !== 'minutes'" (change)="regenerateCron()"
               [(ngModel)]="state.minutes.minutes" [ngClass]="options.formSelectClass">
               <option *ngFor="let minute of selectOptions.minutes" [ngValue]="minute">
                 {{ minute | number:'2.0' }}
               </option>
             </select>
-            minute(s)
-            <span *ngIf="!options.hideSeconds">on second</span>
+            {{'CRON.MINUTES.MINUTES'|translate}}
+            <span *ngIf="!options.hideSeconds">{{'CRON.MINUTES.ON_SECOND'|translate}}</span>
             <select class="seconds" *ngIf="!options.hideSeconds" [disabled]="disabled || activeTab !== 'minutes'"
               (change)="regenerateCron()" [(ngModel)]="state.minutes.seconds" [ngClass]="options.formSelectClass">
               <option *ngFor="let second of selectOptions.seconds" [ngValue]="second">

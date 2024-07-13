@@ -21,7 +21,7 @@ import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-ap
         useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/', '.json'),
         deps: [HttpClient]
       },
-      defaultLanguage: 'en'
+      defaultLanguage: 'fa'
     }),
     AppRoutingModule,
     NtkSmartModalModule.forRoot(),
