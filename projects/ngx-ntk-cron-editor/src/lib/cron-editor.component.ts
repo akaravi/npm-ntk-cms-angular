@@ -17,6 +17,8 @@ import { CronOptionModel, defaultCronOptions } from "./models/cron-options-model
 import { Days, Months, MonthWeeks } from "./models/enums";
 import Utils from "./poco/Utils";
 import { TranslateService } from "@ngx-translate/core";
+import { TranslateHttpLoaderFactory } from "./cron-editor.module";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "cron-editor",
@@ -34,10 +36,19 @@ export class CronEditorComponent implements OnInit, OnChanges, ControlValueAcces
 
   static nextId = 0;
   id = ++CronEditorComponent.nextId;
+  // @Input() set language(value: string) {
+  //   if (value && value.length > 0) {
+  //     this.translate.use(value);      
+  //   }
+  // }
+  private _language = 'en';
   @Input() set language(value: string) {
-    if (value && value.length > 0) {
-      this.translate.use(value);      
-    }
+    this._language = value;
+    this.translate.use(this.language);
+  }
+
+  get language(): string {
+    return this._language;
   }
   @Input() public disabled: boolean;
 
@@ -68,13 +79,15 @@ export class CronEditorComponent implements OnInit, OnChanges, ControlValueAcces
   private localCron: string;
   private isDirty: boolean;
   constructor(
-    public translate: TranslateService,
+    private translate: TranslateService,
   ) {
-
-    if(this.translate.currentLang)
-    this.translate.use(this.translate.currentLang);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+    // if(this.translate.currentLang)
+    // this.translate.use(this.translate.currentLang);
   }
   public ngOnInit() {
+ 
     if (this.options.removeSeconds) {
       this.options.hideSeconds = true;
     }
