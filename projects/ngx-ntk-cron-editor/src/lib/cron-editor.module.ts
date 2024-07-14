@@ -6,6 +6,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CronEditorComponent } from './cron-editor.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
+
 @NgModule({
   imports: [
     HttpClientModule,

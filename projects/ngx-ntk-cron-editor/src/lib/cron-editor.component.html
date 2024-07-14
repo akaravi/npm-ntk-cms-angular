@@ -79,14 +79,15 @@
         <!-- Hourly-->
         <div class="tab-pane" *ngIf="!options.hideHourlyTab" [ngClass]="{ active: activeTab === 'hourly' }">
           <div class="card card-body bg-light">
-            Every
+            {{'CRON.HOURLY.EVERY'|translate}}
             <select class="hours" [disabled]="disabled || activeTab !== 'hourly'" (change)="regenerateCron()"
               [(ngModel)]="state.hourly.hours" [ngClass]="options.formSelectClass">
               <option *ngFor="let hour of selectOptions.hours" [ngValue]="hour">
                 {{ hour }}
               </option>
             </select>
-            hour(s) on minute
+            {{'CRON.HOURLY.HOURS'|translate}}
+            {{'CRON.HOURLY.ON_MINUTE'|translate}}
             <select class="minutes" [disabled]="disabled || activeTab !== 'hourly'" (change)="regenerateCron()"
               [(ngModel)]="state.hourly.minutes" [ngClass]="options.formSelectClass">
               <option *ngFor="let minute of selectOptions.fullMinutes" [ngValue]="minute">
@@ -108,7 +109,7 @@
           <div class="card card-body bg-light">
             <input type="radio" name="daily-radio" value="everyDays" [disabled]="disabled" (change)="regenerateCron()"
               [(ngModel)]="state.daily.subTab" [ngClass]="state.formRadioClass" checked="checked" />
-            Every
+            {{'CRON.DAILY.EVERY'|translate}}
             <select class="days" [disabled]="
                 disabled ||
                 activeTab !== 'daily' ||
@@ -119,8 +120,7 @@
                 {{ monthDay }}
               </option>
             </select>
-            day(s) at
-
+            {{'CRON.DAILY.DAYS'|translate}}
             <cron-time-picker [disabled]="
                 disabled ||
                 activeTab !== 'daily' ||
@@ -133,7 +133,7 @@
           <div class="card card-body bg-light">
             <input type="radio" name="daily-radio" value="everyWeekDay" [disabled]="disabled"
               (change)="regenerateCron()" [(ngModel)]="state.daily.subTab" [ngClass]="state.formRadioClass" />
-            Every working day at
+            {{'CRON.DAILY.WORKING_DAY'|translate}}
             <cron-time-picker [disabled]="
                 disabled ||
                 activeTab !== 'daily' ||
@@ -152,48 +152,48 @@
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.MON" [ngClass]="options.formCheckboxClass" />
-                  Monday</label>
+                    {{'CRON.WEEK.MON'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.TUE" [ngClass]="options.formCheckboxClass" />
-                  Tuesday</label>
+                    {{'CRON.WEEK.TUE'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.WED" [ngClass]="options.formCheckboxClass" />
-                  Wednesday</label>
+                    {{'CRON.WEEK.WED'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.THU" [ngClass]="options.formCheckboxClass" />
-                  Thursday</label>
+                    {{'CRON.WEEK.THU'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.FRI" [ngClass]="options.formCheckboxClass" />
-                  Friday</label>
+                    {{'CRON.WEEK.FRI'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.SAT" [ngClass]="options.formCheckboxClass" />
-                  Saturday</label>
+                    {{'CRON.WEEK.SAT'|translate}}</label>
               </div>
               <div class="col-sm-6">
                 <label class="advanced-cron-editor-label"><input type="checkbox"
                     [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                     [(ngModel)]="state.weekly.SUN" [ngClass]="options.formCheckboxClass" />
-                  Sunday</label>
+                    {{'CRON.WEEK.SUN'|translate}}</label>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6">
-                at
+                {{'CRON.WEEKLY.AT'|translate}}
                 <cron-time-picker [disabled]="disabled || activeTab !== 'weekly'" (change)="regenerateCron()"
                   [(time)]="state.weekly" [selectClass]="options.formSelectClass"
                   [use24HourTime]="options.use24HourTime" [hideSeconds]="options.hideSeconds">
