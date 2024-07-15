@@ -7,18 +7,12 @@ import {
   Output,
   SimpleChanges,
 } from "@angular/core";
-
-
-
-
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { distinctUntilChanged } from "rxjs";
 import { CronOptionModel, defaultCronOptions } from "./models/cron-options-model";
 import { Days, Months, MonthWeeks } from "./models/enums";
 import Utils from "./poco/Utils";
 import { TranslateService } from "@ngx-translate/core";
-import { TranslateHttpLoaderFactory } from "./cron-editor.module";
-import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "cron-editor",
