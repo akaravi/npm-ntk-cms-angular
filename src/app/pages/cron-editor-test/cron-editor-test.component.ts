@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { CronEditorTranslateService } from 'projects/ngx-ntk-cron-editor/src/lib/services/cron-editor-translate.service';
 import { CronOptionModel } from 'projects/ngx-ntk-cron-editor/src/public-api';
 
 
@@ -44,5 +45,17 @@ export class CronEditorTestComponent {
   cronForm = new FormGroup({
     cron: new FormControl<string>(this.cronExpression),
   });
-
+  constructor(private translate: TranslateService,
+    private cronEditorTranslateService: CronEditorTranslateService) {
+// translate.setTranslation('en', en);
+// translate.setTranslation('ru', ru);
+translate.use('ru');
+cronEditorTranslateService.init({
+existent: [
+  {lang: 'fa', useExistent: 'fa'},
+{lang: 'en', useExistent: 'en'},
+{lang: 'ru', useExistent: 'ru'}
+]
+});
+}
 }

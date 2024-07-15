@@ -6,6 +6,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CronEditorComponent } from './cron-editor.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
+import { CronEditorTranslateService } from './services/cron-editor-translate.service';
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json');
@@ -15,15 +16,16 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     CommonModule,
     //TranslateModule.forRoot({}),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (TranslateHttpLoaderFactory) ,
-        deps: [HttpClient]
-      },
-      //extend: true
-    }
-    ),
+    // TranslateModule.forRoot({
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: (TranslateHttpLoaderFactory) ,
+    //     deps: [HttpClient]
+    //   },
+    //   //extend: true
+    // }
+    //),
+    TranslateModule.forRoot({extend: false}),
     FormsModule,
   ],
   declarations: [
@@ -35,7 +37,7 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     TimePickerComponent,
   ],
   providers: [
-    TranslateService
+    CronEditorTranslateService
   ],
 })
 
