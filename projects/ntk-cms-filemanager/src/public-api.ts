@@ -15,3 +15,4 @@ export * from './lib/components/functions/new-folder/new-folder.component';
 export * from './lib/components/functions/node/node.component';
 export * from './lib/components/functions/loading-overlay/loading-overlay.component';
 export * from './lib/components/functions/upload/upload.component';
+export * from './lib/services/translateUi.service';

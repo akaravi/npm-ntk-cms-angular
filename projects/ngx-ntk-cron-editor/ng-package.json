@@ -8,7 +8,6 @@
     "."
   ],
   "assets": [
-    "src/assets",
-    "src/assets/i18n/cron"
+    "src/assets"
   ]
 }

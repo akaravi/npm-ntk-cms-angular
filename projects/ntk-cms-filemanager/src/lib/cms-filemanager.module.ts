@@ -19,17 +19,12 @@ import { NodeListerComponent } from './components/tree/node-lister/node-lister.c
 import { TreeComponent } from './components/tree/tree.component';
 import { FileSizePipe } from './pipes/file-size.pipe';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
+import { TranslateUiService } from './services/translateUi.service';
 @NgModule({
   imports: [
     HttpClientModule,
     CommonModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/assets/i18n/filemanger/', '.json'),
-        deps: [HttpClient]
-      }
-    }),
+    TranslateModule,
     NtkSmartModalModule.forRoot(),
     FilePickerModule
   ],
@@ -62,9 +57,9 @@ import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
     SideViewComponent,
   ],
   providers: [
-    TranslateService,
     FileContentService,
-    FileCategoryService
+    FileCategoryService,
+    TranslateUiService
   ]
 
 })

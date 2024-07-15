@@ -9,7 +9,6 @@
   ],
   "assets": [
     "src/assets",
-    "src/assets/i18n/filemanger",
     "styles.scss"
   ]
 }

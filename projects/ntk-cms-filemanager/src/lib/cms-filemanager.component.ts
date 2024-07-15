@@ -18,6 +18,7 @@ import { TreeModel } from './models/tree.model';
 import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
 import { NodeClickedService } from './services/node-clicked.service';
 import { NodeService } from './services/node.service';
+import { TranslateUiService } from './services/translateUi.service';
 
 @Component({
   selector: 'cms-file-manager',
@@ -27,10 +28,17 @@ import { NodeService } from './services/node.service';
   providers: [NodeService, NodeClickedService, FileManagerStoreService]
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
+
+  private _language = 'en';
   @Input() set language(value: string) {
     if (value && value.length > 0) {
-      this.translate.use(value);
+      this._language = value;
+      this.translateUiService.init(value);
+      this.translate.use(this.language);
     }
+  }
+  get language(): string {
+    return this._language;
   }
   @Input() iconTemplate: TemplateRef<any>;
   @Input() folderContentTemplate: TemplateRef<any>;
@@ -107,10 +115,10 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     public ngxSmartModalService: NtkSmartModalService,
     public translate: TranslateService,
     private cdr: ChangeDetectorRef,
-    private el: ElementRef
+    private el: ElementRef,
+    private translateUiService: TranslateUiService,
   ) {
-    if(this.translate.currentLang)
-      this.translate.use(this.translate.currentLang);
+  
   }
 
   ngOnInit(): void {

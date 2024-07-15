@@ -16,16 +16,6 @@ import { TranslateUiService } from './services/translateUi.service';
   imports: [
     HttpClientModule,
     CommonModule,
-    //TranslateModule.forRoot({}),
-    // TranslateModule.forRoot({
-    //   loader: {
-    //     provide: TranslateLoader,
-    //     useFactory: (TranslateHttpLoaderFactory) ,
-    //     deps: [HttpClient]
-    //   },
-    //   //extend: true
-    // }
-    //),
     TranslateModule,
     FormsModule,
   ],
