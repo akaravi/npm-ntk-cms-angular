@@ -1,5 +1,5 @@
 // Import the core angular services.
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
 // ----------------------------------------------------------------------------------- //
@@ -7,7 +7,7 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 
 export class CmsStore<TStateModel = any> {
   private state: TStateModel;
-  private sub: Subject<TStateModel> = new Subject<TStateModel>();
+  //private sub: Subject<TStateModel> = new Subject<TStateModel>();
   private stateSubject: BehaviorSubject<TStateModel>;
   constructor(initialState: TStateModel) {
     this.state = initialState;
@@ -21,7 +21,7 @@ export class CmsStore<TStateModel = any> {
   setState(partialState: Partial<TStateModel>): void {
     const currentState = this.getStateSnapshot();
     this.state = Object.assign({}, currentState, partialState);
-    this.sub.next(this.state);
+    //this.sub.next(this.state);
     this.stateSubject.next(this.state);
   }
   getStateDirect(): Observable<TStateModel> {
@@ -31,7 +31,7 @@ export class CmsStore<TStateModel = any> {
     if (typeof mapFn !== 'function') {
       throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
     }
-    return this.sub.asObservable()
+    return this.stateSubject.asObservable()
       .pipe(map(mapFn))
       .pipe(distinctUntilChanged());
   }

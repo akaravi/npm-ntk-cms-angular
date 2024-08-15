@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { Actions, AppStoreModel, initialState, stateReducer } from './reducer.factory';
 
@@ -9,7 +9,7 @@ import { Actions, AppStoreModel, initialState, stateReducer } from './reducer.fa
 })
 export class NtkCmsApiStoreService {
   private state: AppStoreModel;
-  private sub: Subject<AppStoreModel> = new Subject<AppStoreModel>();
+  //private sub: Subject<AppStoreModel> = new Subject<AppStoreModel>();
   private stateSubject: BehaviorSubject<AppStoreModel>;
   constructor() {
     this.state = {
@@ -24,14 +24,14 @@ export class NtkCmsApiStoreService {
   }
   setState(param: Actions): void {
     Object.assign(this.state.ntkCmsAPiState, stateReducer(this.state.ntkCmsAPiState, param));
-    this.sub.next(this.state);
+    //this.sub.next(this.state);
     this.stateSubject.next(this.state);
   }
   getState<R>(mapFn: (value: AppStoreModel, index: number) => R): Observable<R> {
     if (typeof mapFn !== 'function') {
       throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
     }
-    return this.sub.asObservable()
+    return this.stateSubject.asObservable()
       .pipe(map(mapFn))
       .pipe(distinctUntilChanged());
   }
