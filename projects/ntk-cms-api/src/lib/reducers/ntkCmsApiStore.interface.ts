@@ -1,9 +1,10 @@
+import { ProcessInfoModel } from '../models/entity/base/processInfoModel';
 import { TokenDeviceModel } from '../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
 
 export interface NtkCmsApiStoreInterface {
-  tokenInfo: TokenInfoModel;
-  deviceTokenInfo: TokenDeviceModel;
-  isLoading: boolean;
-  inProcessingList: Array<string>;
+  tokenInfoStore: TokenInfoModel;
+  deviceTokenInfoStore: TokenDeviceModel;
+  isLoadingStore: boolean;
+  processInfoStore: Map<string, ProcessInfoModel>;
 }
