@@ -19,7 +19,6 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModel } from '../../models/entity/core-token/tokenInfoModel';
-
 import { SET_DEVICE_TOKEN_INFO, SET_TOKEN_INFO } from '../../reducers/reducer.factory';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
