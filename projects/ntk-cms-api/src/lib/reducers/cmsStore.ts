@@ -1,14 +1,16 @@
 // Import the core angular services.
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
 // ----------------------------------------------------------------------------------- //
 // ----------------------------------------------------------------------------------- //
 
-export class CmsStore<StateType = any> {
-  private stateSubject: BehaviorSubject<StateType>;
+export class CmsStore<TState = any> {
+  private state: TState;
+  private sub: Subject<TState> = new Subject<TState>();
+  private stateSubject: BehaviorSubject<TState>;
   // I initialize the simple store with the givne initial state value.
-  constructor(initialState: StateType) {
+  constructor(initialState: TState) {
     this.stateSubject = new BehaviorSubject(initialState);
   }
 
@@ -18,23 +20,23 @@ export class CmsStore<StateType = any> {
 
   // I get the current state as a stream (will always emit the current state value as
   // the first item in the stream).
-  public getState(): Observable<StateType> {
+  public getState(): Observable<TState> {
     return (this.stateSubject.pipe(distinctUntilChanged()));
   }
 
 
   // I get the current state snapshot.
-  public getStateSnapshot(): StateType {
+  public getStateSnapshot(): TState {
     return (this.stateSubject.getValue());
   }
 
 
   // I return the given top-level state key as a stream (will always emit the current
   // key value as the first item in the stream).
-  public select<K extends keyof StateType>(key: K): Observable<StateType[K]> {
+  public select<K extends keyof TState>(key: K): Observable<TState[K]> {
     const selectStream = this.stateSubject.pipe(
       map(
-        (state: StateType) => {
+        (state: TState) => {
 
           return (state[key]);
 
@@ -51,7 +53,7 @@ export class CmsStore<StateType = any> {
   // --
   // CAUTION: Partial<T> does not currently project against "undefined" values. This is
   // a known type safety issue in TypeScript.
-  public setState(partialState: Partial<StateType>): void {
+  public setState(partialState: Partial<TState>): void {
 
     const currentState = this.getStateSnapshot();
     const nextState = Object.assign({}, currentState, partialState);

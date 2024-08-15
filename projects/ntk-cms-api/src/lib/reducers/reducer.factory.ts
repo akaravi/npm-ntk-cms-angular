@@ -1,5 +1,5 @@
 import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
 
-export interface AppStore {
+export interface AppStoreModel {
   ntkCmsAPiState: NtkCmsApiStoreInterface;
   }

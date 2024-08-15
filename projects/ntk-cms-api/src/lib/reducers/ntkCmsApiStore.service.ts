@@ -4,7 +4,7 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { TokenDeviceModel } from '../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModel } from '../models/entity/core-token/tokenInfoModel';
 import { NtkCmsApiStoreInterface } from './ntkCmsApiStore.interface';
-import { AppStore } from './reducer.factory';
+import { AppStoreModel } from './reducer.factory';
 
 const initialState: NtkCmsApiStoreInterface = {
   isLoading: true,
@@ -17,16 +17,14 @@ const initialState: NtkCmsApiStoreInterface = {
   providedIn: 'root',
 })
 export class NtkCmsApiStoreService {
-  private state: AppStore;
-  private sub: Subject<AppStore> = new Subject<AppStore>();
-  private stateSubject: BehaviorSubject<AppStore>;
-
+  private state: AppStoreModel;
+  private sub: Subject<AppStoreModel> = new Subject<AppStoreModel>();
+  private stateSubject: BehaviorSubject<AppStoreModel>;
   constructor() {
     this.state = {
       ntkCmsAPiState: initialState,
     };
     this.stateSubject = new BehaviorSubject(this.state);
-
     // @ts-ignore
     window.getInfo = () => this.state;
   }
@@ -38,7 +36,7 @@ export class NtkCmsApiStoreService {
     this.stateSubject.next(this.state);
   }
 
-  getState<R>(mapFn: (value: AppStore, index: number) => R): Observable<R> {
+  getState<R>(mapFn: (value: AppStoreModel, index: number) => R): Observable<R> {
     if (typeof mapFn !== 'function') {
       throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
     }
@@ -46,41 +44,10 @@ export class NtkCmsApiStoreService {
       .pipe(map(mapFn))
       .pipe(distinctUntilChanged());
   }
-  public getStateSnapshot(): AppStore {
+  public getStateSnapshot(): AppStoreModel {
     return (this.stateSubject.getValue());
   }
-  processStart(name: string): void {
-    if (this.state?.ntkCmsAPiState?.inProcessingList) {
-      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
-      if (index < 0) {
-        // console.log('processStart 1', this.state.ntkCmsAPiState.inProcessingList);
-        const list = [...this.state.ntkCmsAPiState.inProcessingList];
-        list.push(name);
-        // console.log('processStart 2', this.state.ntkCmsAPiState.inProcessingList);
-        this.setState({ type: SET_IN_PROCESSING_LIST, payload: list });
-      }
-    }
-  }
-  processInRun(name: string): boolean {
-    if (this.state?.ntkCmsAPiState?.inProcessingList) {
-      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
-      if (index >= 0)
-        return true;
-    }
-    return false;
-  }
-  processStop(name: string): void {
-    if (this.state?.ntkCmsAPiState?.inProcessingList) {
-      const index = this.state.ntkCmsAPiState.inProcessingList.indexOf(name);
-      if (index >= 0) {
-        // console.log('processStop 1', this.state.ntkCmsAPiState.inProcessingList);
-        const list = [...this.state.ntkCmsAPiState.inProcessingList];
-        list.splice(index, 1);
-        // console.log('processStop 2', this.state.ntkCmsAPiState.inProcessingList);
-        this.setState({ type: SET_IN_PROCESSING_LIST, payload: list });
-      }
-    }
-  }
+
 }
 
 
