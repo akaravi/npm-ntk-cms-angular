@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthEmailConfirmDtoModel } from '../../models/dto/core-main/authEmailConfirmDtoModel';
 import { AuthMobileConfirmDtoModel } from '../../models/dto/core-main/authMobileConfirmDtoModel';
@@ -19,19 +19,21 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModel } from '../../models/entity/core-token/tokenInfoModel';
-import { SET_DEVICE_TOKEN_INFO, SET_TOKEN_INFO } from '../../reducers/reducer.factory';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
+  public tokenInfoSubject: BehaviorSubject<TokenInfoModel>=new BehaviorSubject(new TokenInfoModel);
+  public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel>=new BehaviorSubject(new TokenDeviceModel);
   getModuleControllerUrl(): string {
     return 'auth';
   }
   SetCurrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       this.removeToken();
-      this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
+      //this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
+      this.tokenInfoSubject.next(new TokenInfoModel());
       return;
     }
     if (model.token && model.deviceToken && model.refreshToken) {
@@ -44,18 +46,21 @@ export class CoreAuthService extends ApiServerBase {
     else if (model.deviceToken) {
       this.setToken('', model.deviceToken, '');
     }
-    this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
+    //this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
+    this.tokenInfoSubject.next(model);
   }
   SetCurrentDeviceTokenInfo(model: TokenDeviceModel | null): any {
     if (model == null) {
       this.removeToken();
-      this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: new TokenDeviceModel() });
+      //this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: new TokenDeviceModel() });
+      this.tokenDeviceSubject.next(new TokenDeviceModel());
       return;
     }
     if (model.deviceToken) {
       this.setDeviceToken(model.deviceToken);
     }
-    this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: model });
+    //this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: model });
+    this.tokenDeviceSubject.next(model);
   }
 
   CurrentTokenInfoRenew(): void {

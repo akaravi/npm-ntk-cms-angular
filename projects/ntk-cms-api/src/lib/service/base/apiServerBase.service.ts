@@ -5,12 +5,12 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
-import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
+//import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
 @Injectable()
 export class ApiServerBase {
-  constructor(@Inject(HttpClient) public http: HttpClient, public cmsApiStore: NtkCmsApiStoreService) {
+  constructor(@Inject(HttpClient) public http: HttpClient) {
     this.childConstructor();
     this.headers = new Map<string, string>();
   }
