@@ -56,5 +56,9 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   /**Acton */
   actionCreateCmsUserId: boolean;
   /**Acton */
+  historyTotalCount: number;
+  historyEstateUserCount: number;
+  historyEstateAgencyCount: number;
+  historyEstatePropertyCount: number;
 }
 
