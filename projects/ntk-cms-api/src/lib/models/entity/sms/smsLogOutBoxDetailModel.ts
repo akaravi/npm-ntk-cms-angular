@@ -16,6 +16,7 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   getApiOnSendIdentity: string;
   getApiDeliveryStatus?: number;
   getApiDeliveryStatusTitle:string;
+  recordDetailStatusTitle:string
   getApiOnDeliveryInfo: string;
   userDelete?: boolean;
   adminuserDelete?: boolean;
