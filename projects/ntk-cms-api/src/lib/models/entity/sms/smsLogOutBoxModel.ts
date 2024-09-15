@@ -15,6 +15,7 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   receiverNumberHidden: boolean;
   engineApiAllowToChange: boolean;
   outBoxType: number;
+  outBoxTypeTitle:string;
   outBoxDetails?: SmsLogOutBoxDetailModel[];
   outBoxDetailBulks?: SmsLogOutBoxDetailBulkModel[];
 }
