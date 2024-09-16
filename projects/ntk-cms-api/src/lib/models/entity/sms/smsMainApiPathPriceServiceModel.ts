@@ -9,14 +9,27 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   linkCoreSiteId?: number;
   linkCoreUserGroupId?: number;
   linkCoreSiteCategoryId?: number;
-  regulatorNumber: string;
-  servicePrice: number;
-  endUserPrice: number;
-  messageLength: number;
+
+  regulatorNumberJson: string;
+  regulatorNumberList: string[];
+
+  servicePricePerPage: number;
+  servicMessageLengthPaginationJson:string;
+
+  endUserPricePerPage: number;
+  endUserMessageLengthPaginationJson:string;
+
   messageType: SmsMessageTypeEnum;
-  outBoxType: SmsOutBoxTypeEnum;
+
+  outBoxTypeJson: string;
+  outBoxTypeList: SmsOutBoxTypeEnum[];
+
   userVoicePrice: number;
   // tslint:disable-next-line: variable-name
   virtual_ApiPath: SmsMainApiPathModel;
   apiPath: SmsMainApiPathModel;
+}
+export class MessageLengthPaginationModel{
+  pageCount:number;
+  messageMinLength:number;
 }
