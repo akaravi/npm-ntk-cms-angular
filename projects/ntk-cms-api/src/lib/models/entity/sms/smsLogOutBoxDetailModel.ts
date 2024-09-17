@@ -9,6 +9,7 @@ export class SmsLogOutBoxDetailModel extends BaseModuleEntity<string> {
   linkApiNumberId: string;
   receiverNumber: string;
   credit: number;
+  pageCount:number;
   giveBackCredit: number;
   senderNumber: string;
   isSended: boolean;

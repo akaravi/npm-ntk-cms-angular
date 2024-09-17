@@ -14,10 +14,10 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   regulatorNumberList: string[];
 
   servicePricePerPage: number;
-  servicMessageLengthPaginationJson:string;
+  serviceMessageLengthPaginationJson: string;
 
   endUserPricePerPage: number;
-  endUserMessageLengthPaginationJson:string;
+  endUserMessageLengthPaginationJson: string;
 
   messageType: SmsMessageTypeEnum;
 
@@ -29,7 +29,8 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   virtual_ApiPath: SmsMainApiPathModel;
   apiPath: SmsMainApiPathModel;
 }
-export class MessageLengthPaginationModel{
-  pageCount:number;
-  messageMinLength:number;
+export class MessageLengthPaginationModel {
+  pageCount: number;
+  messageMinLength: number;
+  messageMaxLength: number;
 }
