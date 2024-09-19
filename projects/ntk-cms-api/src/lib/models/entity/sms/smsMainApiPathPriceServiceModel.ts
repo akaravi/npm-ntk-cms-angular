@@ -4,6 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsMainApiPathModel } from './smsMainApiPathModel';
 //@@tag-Version-2201011
 export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
+  title: string;
   linkApiPathId: string;
   linkCoreUserId?: number;
   linkCoreSiteId?: number;
@@ -15,11 +16,11 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
 
   servicePricePerPage: number;
   serviceMessageLengthPaginationJson: string;
-  serviceMessageLengthPaginationList:number[];
+  serviceMessageLengthPaginationList: number[];
 
   endUserPricePerPage: number;
   endUserMessageLengthPaginationJson: string;
-  endUserMessageLengthPaginationList:number[];
+  endUserMessageLengthPaginationList: number[];
 
   messageType: SmsMessageTypeEnum;
 
