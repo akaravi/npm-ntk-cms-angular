@@ -15,7 +15,33 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   receiverNumberHidden: boolean;
   engineApiAllowToChange: boolean;
   outBoxType: number;
-  outBoxTypeTitle:string;
+  outBoxTypeTitle: string;
   outBoxDetails?: SmsLogOutBoxDetailModel[];
   outBoxDetailBulks?: SmsLogOutBoxDetailBulkModel[];
+
+
+  /// <summary>
+  /// تعداد ردیف
+  /// </summary>
+  countRow: number;
+  /// <summary>
+  /// تعداد ارسال شده
+  /// </summary>
+  countSent: number;
+  /// <summary>
+  /// تعداد دلیور دریافتی
+  /// </summary>
+  countDelivery: number;
+  /// <summary>
+  /// تعداد برگشت اعتبار
+  /// </summary>
+  countCreditBacked: number;
+  /// <summary>
+  /// مجموع اعتبار
+  /// </summary>
+  sumCredit: number;
+  /// <summary>
+  /// مجموع اعتبار برگشت شده
+  /// </summary>
+  sumCreditBacked: number;
 }
