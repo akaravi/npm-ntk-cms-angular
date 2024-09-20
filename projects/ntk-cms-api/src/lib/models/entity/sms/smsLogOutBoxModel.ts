@@ -10,6 +10,7 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   memo: string;
   flash: number;
   creditOverPlus: number;
+  creditUserBefor: number;
   engineTryToSendCount: number;
   isAccepted: boolean;
   receiverNumberHidden: boolean;
