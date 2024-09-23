@@ -1,8 +1,8 @@
-import { SendSmsStatusTypeEnum } from '../../enums/base/sendSmsStatusTypeEnum';
+import { SendEmailStatusTypeEnum } from '../../enums/base/sendEmailStatusTypeEnum';
 import { BaseEntity } from '../base/baseEntity';
 //@@tag-Version-2201011
 export class CoreLogEmailModel extends BaseEntity<string> {
-  sendStatusType: SendSmsStatusTypeEnum;
+  sendStatusType: SendEmailStatusTypeEnum;
   linkSiteId?: number;
   linkUserId?: number;
   linkMemberId: string;
@@ -10,9 +10,11 @@ export class CoreLogEmailModel extends BaseEntity<string> {
   moduleEntityName: string;
   moduleEntityId: string;
 
-  fromNumber: string;
-  toNumber: string;
-  message: string;
+  isHtml: boolean;
+  fromEmail: string;
+  toEmail: string;
+  emailTitle: string;
+  emailBody: string;
   apiNumber?: number;
   returnApi: string;
 }
