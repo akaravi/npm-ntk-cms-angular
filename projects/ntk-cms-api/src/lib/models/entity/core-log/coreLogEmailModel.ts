@@ -13,8 +13,9 @@ export class CoreLogEmailModel extends BaseEntity<string> {
   isHtml: boolean;
   fromEmail: string;
   toEmail: string;
-  emailTitle: string;
+  emailSubject: string;
   emailBody: string;
+  emailAttachment: string;
   apiNumber?: number;
   returnApi: string;
 }
