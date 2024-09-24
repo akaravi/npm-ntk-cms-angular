@@ -194,7 +194,18 @@ export class CoreEnumService extends ApiServerBase {
         }),
       );
   }
-
+  ServiceSendEmailStatusTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendEmailStatusTypeEnum', {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceSendNotificationStatusTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotificationStatusTypeEnum', {
