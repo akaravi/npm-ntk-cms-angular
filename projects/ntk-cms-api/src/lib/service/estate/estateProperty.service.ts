@@ -9,6 +9,8 @@ import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorEx
 import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
 import { EstatePropertyFilterModel } from '../../models/filters/estate/estatePropertyFilterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 
 
 @Injectable()
@@ -231,6 +233,25 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
         // catchError(this.handleError)
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
+        }),
+      );
+  }
+  ServiceGetAllResponsibleUserId(id: string, model: FilterModel): Observable<ErrorExceptionResult<CoreUserModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    if (!id || id.length <=0) {
+      id = '';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllResponsibleUserId/' + id, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
         }),
       );
   }

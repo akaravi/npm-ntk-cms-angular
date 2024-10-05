@@ -8,6 +8,8 @@ import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorEx
 import { EstateCustomerOrderModel } from '../../models/entity/estate/estateCustomerOrderModel';
 import { EstateCustomerOrderFilterModel } from '../../models/filters/estate/estateCustomerOrderFilterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 
 
 @Injectable()
@@ -30,6 +32,25 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
       );
   }
 
+  ServiceGetAllResponsibleUserId(id: string, model: FilterModel): Observable<ErrorExceptionResult<CoreUserModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    if (!id || id.length <=0) {
+      id = '';
+    }
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllResponsibleUserId/' + id, model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
   ServiceGetAllWithResponsibleUserId(userId: number, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
