@@ -7,7 +7,7 @@ export class EstatePropertyHistoryModel extends BaseModuleEntity<string> {
   title: string;
   linkPropertyId: string;
   linkCustomerOrderId: string;
-  linkEstateUserId: string;
+  linkEstateExpertId: string;
   linkEstateAgencyId: string;
   linkActivityTypeId: string;
   linkFileIds: string;

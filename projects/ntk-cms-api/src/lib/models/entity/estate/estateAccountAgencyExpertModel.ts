@@ -1,9 +1,9 @@
 
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2212191
-export class EstateAccountAgencyUserModel extends BaseModuleEntity<string> {
+export class EstateAccountAgencyExpertModel extends BaseModuleEntity<string> {
   linkEstateAccountAgencyId: string;
-  linkEstateAccountUserId: string;
+  linkEstateExpertId: string;
   accessShareAgencyToUser: boolean;
   accessShareUserToAgency: boolean;
 }

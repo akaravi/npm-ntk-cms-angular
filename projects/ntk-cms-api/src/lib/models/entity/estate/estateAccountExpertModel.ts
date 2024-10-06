@@ -1,6 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2212171
-export class EstateAccountUserModel extends BaseModuleEntity<string> {
+export class EstateAccountExpertModel extends BaseModuleEntity<string> {
   linkCmsUserId: number;
   title: string;
   description: string;
