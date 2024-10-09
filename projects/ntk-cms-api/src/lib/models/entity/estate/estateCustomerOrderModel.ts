@@ -54,7 +54,10 @@ export class EstateCustomerOrderModel extends BaseModuleEntity<string> {
   /**توان خرید*/
   scorePurchasingPower: number;
   /**Acton */
-  actionCreateCmsUserId: boolean;
+  actionCreateNewCmsUser: boolean = false;
+  actionCreateNewCmsUserFirstName: string;
+  actionCreateNewCmsUserLastName: string;
+  actionCreateNewCmsUserMobile: string;
   /**Acton */
   historyTotalCount: number;
   historyEstateUserCount: number;

@@ -99,7 +99,10 @@ export class EstatePropertyModel extends BaseModuleEntity<string> {
   linkLocationIdParentTitle: string;
   favorited: boolean;
   /**Acton */
-  actionCreateCmsUserId: boolean;
+  actionCreateNewCmsUser: boolean = false;
+  actionCreateNewCmsUserFirstName: string;
+  actionCreateNewCmsUserLastName: string;
+  actionCreateNewCmsUserMobile: string;
   /**Acton */
   historyTotalCount: number;
   historyEstateUserCount: number;
