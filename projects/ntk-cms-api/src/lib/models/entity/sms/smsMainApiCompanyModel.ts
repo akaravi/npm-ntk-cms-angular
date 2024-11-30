@@ -13,4 +13,6 @@ export class SmsMainApiPathCompanyModel extends BaseModuleEntity<string> {
   serviceCreditLastEdit: Date;
   userCreditLastEdit: Date;
   apiPaths: SmsMainApiPathModel[];
+  linkMainImageId?: number;
+  linkMainImageIdSrc: string;
 }
