@@ -3,9 +3,9 @@ import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberMod
 //@@tag-Version-2201011
 export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   numberChar: string;
-  firstSubmit: Date;
-  usanceDate: Date;
+  accessUseStartDate: Date;
   expireDate: Date;
+  lastUseOfDate: Date;
   saleStatus: boolean;
   isPublic: boolean;
   priority?: number;
