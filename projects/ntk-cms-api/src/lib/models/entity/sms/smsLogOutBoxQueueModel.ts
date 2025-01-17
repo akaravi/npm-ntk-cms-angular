@@ -7,6 +7,7 @@ export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
   linkApiPathId: string;
   linkFromNumber: string;
   scheduleSendStart: Date;
+  scheduleSendExpire: Date;
   toNumbers: string;
   statusNumberFiltering: boolean;
   statusTextFiltering: boolean;

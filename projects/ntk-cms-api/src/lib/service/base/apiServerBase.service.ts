@@ -106,6 +106,9 @@ export class ApiServerBase {
     localStorage.removeItem(this.keyDeviceToken);
   }
   getHeaders(): any {
+    let dateTime = new Date();
+    this.headers.set('DateTime', dateTime+'');
+    this.headers.set('DateTimeZone', dateTime.getTimezoneOffset()+'');
     /*Authorization*/
     if (this.getUserToken() && this.getUserToken().length > 1) {
       this.headers.set('Authorization', this.getUserToken());
