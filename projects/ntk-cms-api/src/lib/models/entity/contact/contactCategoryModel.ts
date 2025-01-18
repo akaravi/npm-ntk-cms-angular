@@ -6,6 +6,7 @@ export class ContactCategoryModel extends BaseModuleEntity<string> {
   title: string;
   titleResourceLanguage: string;
   contentCount: number;
+  contentCountNumber:number;
   description: string;
   fontIcon: string;
   linkParentIdNode: string;
