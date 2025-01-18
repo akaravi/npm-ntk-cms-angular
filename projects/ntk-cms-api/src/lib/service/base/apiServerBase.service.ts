@@ -108,7 +108,7 @@ export class ApiServerBase {
   getHeaders(): any {
     let dateTime = new Date();
     this.headers.set('Date-Time', dateTime.toJSON());
-    this.headers.set('Date-Time-Zone', dateTime.getTimezoneOffset().toString());
+    this.headers.set('Date-Time-Zone', (dateTime.getTimezoneOffset()*-1).toString());
     /*Authorization*/
     if (this.getUserToken() && this.getUserToken().length > 1) {
       this.headers.set('Authorization', this.getUserToken());
