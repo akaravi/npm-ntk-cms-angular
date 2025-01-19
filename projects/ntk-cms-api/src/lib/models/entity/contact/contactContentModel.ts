@@ -5,7 +5,7 @@ export class ContactContentModel extends BaseModuleEntity<string> {
 
   title: string;
   numbers: string;
-  CountNumber:number;
+  countNumber:number;
   // tslint:disable-next-line: variable-name
   virtual_Category: ContactCategoryModel;
   category: ContactCategoryModel;
