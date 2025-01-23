@@ -62,7 +62,6 @@ export * from './lib/models/enums/api-telegram/_export';
 // universal-menu Service
 export * from './lib/service/universal-menu/_export';
 export * from './lib/models/entity/universal-menu/_export';
-// export * from './lib/models/dto/universal-menu/_export';
 export * from './lib/models/enums/universal-menu/_export';
 // universal-menu Service
 

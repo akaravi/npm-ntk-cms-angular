@@ -32,8 +32,3 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   virtual_ApiPath: SmsMainApiPathModel;
   apiPath: SmsMainApiPathModel;
 }
-// export class MessageLengthPaginationModel {
-//   pageCount: number;
-//   messageMinLength: number;
-//   messageMaxLength: number;
-// }

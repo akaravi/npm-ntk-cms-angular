@@ -9,9 +9,6 @@ import { TimePickerComponent } from './time-picker/time-picker.component';
 import { TranslateUiService } from './services/translateUi.service';
 
 // Required for AOT compilation
-// export function TranslateHttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http, '/assets/i18n/cron/', '.json');
-// }
 @NgModule({
   imports: [
     HttpClientModule,

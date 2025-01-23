@@ -6,12 +6,12 @@ import { SmsMainApiPathModel } from '../../models/entity/sms/smsMainApiPathModel
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { map, retry } from 'rxjs/operators';
-import { SmsApiGetBalanceDtoModel } from '../../models/dto/sms/smsApiGetBalanceDtoModel';
 import { SmsApiGetBalanceResultModel } from '../../models/dto/sms/smsApiGetBalanceResultModel';
 import { SmsApiSendMessageDtoModel } from '../../models/dto/sms/smsApiSendMessageDtoModel';
 import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMessageTestDtoModel';
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
+import { SmsApiGetTokenResultModel } from '../../models/dto/sms/smsApiGetTokenResultModel';
 
 
 @Injectable()
@@ -66,13 +66,24 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
         }),
       );
   }
-  ServiceGetBalance(model: SmsApiGetBalanceDtoModel): Observable<ErrorExceptionResult<SmsApiGetBalanceResultModel>> {
-    if (model == null) {
-      model = new SmsApiGetBalanceDtoModel();
-    }
+  ServiceGetToken(id: string): Observable<ErrorExceptionResult<SmsApiGetTokenResultModel>> {
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetBalance', model, {
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetToken/'+ id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetBalance(id: string): Observable<ErrorExceptionResult<SmsApiGetBalanceResultModel>> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetBalance/'+ id, {
         headers: this.getHeaders(),
       })
       .pipe(
