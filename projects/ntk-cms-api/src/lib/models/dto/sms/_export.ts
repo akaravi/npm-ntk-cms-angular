@@ -3,4 +3,4 @@ export * from './smsApiSendMessageTestDtoModel';
 export * from './smsApiSendResultModel';
 export  * from './smsApiGetBalanceResultModel';
 export  * from './smsApiGetTokenResultModel';
-export * from './smsApiGetReceiveInboxResultModel';
+export * from './smsApiGetReceiveInboxManuallyResultModel';
