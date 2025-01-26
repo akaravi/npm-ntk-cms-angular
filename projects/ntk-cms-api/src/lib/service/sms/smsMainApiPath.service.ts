@@ -12,6 +12,7 @@ import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMe
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
 import { SmsApiGetTokenResultModel } from '../../models/dto/sms/smsApiGetTokenResultModel';
+import { SmsApiGetReceiveInboxResultModel } from '../../models/dto/sms/smsApiGetReceiveInboxResultModel';
 
 
 @Injectable()
@@ -84,6 +85,20 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
 
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetBalance/'+ id, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+        retry(this.configApiRetry),
+        // catchError(this.handleError)
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        }),
+      );
+  }
+  ServiceGetReceiveInbox(id: string): Observable<ErrorExceptionResult<SmsApiGetReceiveInboxResultModel>> {
+
+    return this.http
+      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetReceiveInbox/'+ id, {
         headers: this.getHeaders(),
       })
       .pipe(

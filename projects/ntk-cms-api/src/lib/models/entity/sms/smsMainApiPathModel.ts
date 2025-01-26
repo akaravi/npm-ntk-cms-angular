@@ -57,7 +57,10 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiCreditBackIsOn: boolean;
   apiCreditBackCheckOnSend?: any;
   apiCreditBackCheckOnDelivery?: any;
-  apiReceiveIsOn: boolean;
+
+  apiReceiveHookIsOn: boolean;
+  apiReceiveManuallyIsOn: boolean;
+  apiReceiveManuallyAddressLink:string;
 
   apiInfoCreditCheckIsOn: boolean;
 
