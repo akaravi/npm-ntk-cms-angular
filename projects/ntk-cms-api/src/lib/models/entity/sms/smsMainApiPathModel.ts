@@ -91,8 +91,12 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   linkMainImageId?: number;
   linkMainImageIdSrc: string;
 
-  hookAddressAPI: string;
-  hookAddressAPIById: string;
+  hookAddressReceiveMessageAPI: string;
+  hookAddressReceiveMessageAPIById: string;
+
+  hookAddressReceiveDeliveryStatusAPI: string;
+  hookAddressReceiveDeliveryStatusAPIById: string;
+
   //ُ Status
   statusOutOfServiceMonitorApiChar: string;
   statusOutOfServiceActive: boolean;
