@@ -22,8 +22,9 @@ export class CoreLogNotificationModel extends BaseEntity<string> {
   renotify: boolean;
   contentType: NotificationTypeEnum;
   content: string;
+  contentAction!: string;
+  contentClassName: string;
   contentJson: string;
-  contentJsonClass: string;
   smallImageId?: number;
   bigImageId?: number;
 

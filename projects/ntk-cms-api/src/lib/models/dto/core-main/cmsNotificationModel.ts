@@ -9,8 +9,9 @@ export class CmsNotificationModel {
   renotify: boolean;
   contentType: NotificationTypeEnum;
   content: string;
+  contentAction!: string;
+  contentClassName: string;
   contentJson: string;
-  contentJsonClass: string;
   smallImageId?: number;
   bigImageId?: number;
   smallImageIdSrc: string;

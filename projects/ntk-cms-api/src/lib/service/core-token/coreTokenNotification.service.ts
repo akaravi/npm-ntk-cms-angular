@@ -31,4 +31,21 @@ export class CoreTokenNotificationService extends ApiCmsServerBase<CoreTokenNoti
         }),
       );
   }
+  ServiceGetAllOnline(model: FilterModel):
+  Observable<ErrorExceptionResult<CoreTokenNotificationModel>> {
+  if (!model) {
+    model = new FilterModel();
+  }
+  return this.http
+    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOnline', model, {
+      headers: this.getHeaders(),
+    })
+    .pipe(
+      retry(this.configApiRetry),
+      // catchError(this.handleError)
+      map((ret: any) => {
+        return this.errorExceptionResultCheck(ret);
+      }),
+    );
+}
 }
