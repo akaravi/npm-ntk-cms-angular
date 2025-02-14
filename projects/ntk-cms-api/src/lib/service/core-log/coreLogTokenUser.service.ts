@@ -1,12 +1,12 @@
 
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreTokenUserLogModel } from '../../models/entity/core-token/coreTokenUserLogModel';
+import { CoreLogTokenUserModel } from '../../models/entity/core-log/coreLogTokenUserModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreTokenUserLogService extends ApiCmsServerBase<CoreTokenUserLogModel, string, FilterModel> {
+export class CoreLogTokenUserService extends ApiCmsServerBase<CoreLogTokenUserModel, string, FilterModel> {
     getModuleControllerUrl(): string {
-      return 'CoreTokenUserLog';
+      return 'CoreLogTokenUser';
     }
 }
