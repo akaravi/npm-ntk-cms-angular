@@ -1,15 +1,15 @@
 import { ManageUserAccessAreaTypesEnum } from "../../enums/base/manageUserAccessAreaTypesEnum";
 import { ManageUserAccessUserTypesEnum } from "../../enums/base/manageUserAccessUserTypesEnum";
-import { NotificationConnectionTypeEnum } from "../../enums/base/notificationConnectionTypeEnum";
+import { ConnectionTypeEnum } from "../../enums/base/connectionTypeEnum";
 import { CmsNotificationModel } from "./cmsNotificationModel";
 
 export class CmsNotificationSendDtoModel extends CmsNotificationModel {
-  sendToConnectionType: NotificationConnectionTypeEnum[]
+  sendToConnectionType: ConnectionTypeEnum[]
   sendToAll: boolean;
   sendToLinkSiteIds: number[];
   sendToLinkAppIds: number[];
   sendToLinkUserIds: number[];
-  sendToLinkTokenNotificationIds: string[];
+  sendToLinkTokenConnectionIds: string[];
   sendToDeviceIds: string[];
   SendToUserTypes: ManageUserAccessUserTypesEnum[]
   SendToAreaTypes: ManageUserAccessAreaTypesEnum[]

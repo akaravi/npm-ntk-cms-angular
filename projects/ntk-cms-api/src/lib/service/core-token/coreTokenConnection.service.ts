@@ -5,17 +5,17 @@ import { map, retry } from 'rxjs/operators';
 import { CmsNotificationSendDtoModel } from '../../models/dto/core-main/cmsNotificationSendDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreTokenNotificationModel } from '../../models/entity/core-token/coreTokenNotificationModel';
+import { CoreTokenConnectionModel } from '../../models/entity/core-token/coreTokenConnectionModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreTokenNotificationService extends ApiCmsServerBase<CoreTokenNotificationModel, string, FilterModel> {
+export class CoreTokenConnectionService extends ApiCmsServerBase<CoreTokenConnectionModel, string, FilterModel> {
     getModuleControllerUrl(): string {
-      return 'CoreTokenNotification';
+      return 'CoreTokenConnection';
     }
 
   ServiceSendNotification(model: CmsNotificationSendDtoModel):
-    Observable<ErrorExceptionResult<CoreTokenNotificationModel>> {
+    Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
     if (!model) {
       model = new CmsNotificationSendDtoModel();
     }
@@ -31,13 +31,13 @@ export class CoreTokenNotificationService extends ApiCmsServerBase<CoreTokenNoti
         }),
       );
   }
-  ServiceGetAllOnline(model: FilterModel):
-  Observable<ErrorExceptionResult<CoreTokenNotificationModel>> {
+  ServiceGetAllLiveConnection(model: FilterModel):
+  Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
   if (!model) {
     model = new FilterModel();
   }
   return this.http
-    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOnline', model, {
+    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllLiveConnection', model, {
       headers: this.getHeaders(),
     })
     .pipe(

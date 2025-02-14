@@ -4,8 +4,8 @@ export * from './coreTokenUserLogModel';
 export * from './coreTokenUserBadLoginModel';
 export * from './coreTokenMicroServiceLogModel';
 export * from './coreTokenMicroServiceModel';
-export * from './coreTokenNotificationLogModel';
-export * from './coreTokenNotificationModel';
+export * from './coreTokenConnectionLogModel';
+export * from './coreTokenConnectionModel';
 export * from './tokenInfoModel';
 export * from './tokenDeviceModel';
 
