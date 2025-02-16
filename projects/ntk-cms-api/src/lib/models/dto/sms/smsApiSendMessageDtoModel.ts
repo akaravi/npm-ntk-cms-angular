@@ -6,7 +6,7 @@ export class SmsApiSendMessageDtoModel {
   toContactCategories: string[];
   toContactContents: string[];
   message: string;
-  sendByQeue: boolean;
+  sendByQueue: boolean;
   isFlash: boolean;
   scheduleSendStart: Date;
   scheduleSendExpire: Date;
