@@ -1,9 +1,8 @@
 import { FilterModel } from "../../entity/base/filterModel";
 
-export class EstateAccountAgencyFilterModel extends FilterModel {
+export class EstatePropertyExpertPriceFilterModel extends FilterModel {
   onDateTimeFrom: Date;
   onDateTimeTo: Date;
-  linkResponsibleUserId: number;
   linkLocationIds: number[];
-  linkLocationWorkAreaIds: number[];
+  linkCoreCurrencyId: number;
 }

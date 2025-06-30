@@ -4,14 +4,14 @@ import { map, retry } from 'rxjs/operators';
 import { EstatePriceInquiryDtoModel } from '../../models/dto/estate/estatePriceInquiryDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyExpertPriceModel } from '../../models/entity/estate/estatePropertyExpertPriceModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { EstatePropertyExpertPriceFilterModel } from '../../models/filters/estate/estatePropertyExpertPriceFilterModel';
 
 
 
 @Injectable()
-export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePropertyExpertPriceModel, string, FilterModel> {
+export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePropertyExpertPriceModel, string, EstatePropertyExpertPriceFilterModel> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyExpertPrice';
   }

@@ -4,6 +4,6 @@ export class EstateAccountExpertFilterModel extends FilterModel {
   onDateTimeFrom: Date;
   onDateTimeTo: Date;
   linkResponsibleUserId: number;
-  locationListIds: number[];
+  linkLocationIds: number[];
   linkLocationWorkAreaIds: number[];
 }

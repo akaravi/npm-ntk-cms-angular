@@ -6,4 +6,4 @@ export * from './estatePropertyFilterModel';
 export * from './estatePropertyHistoryFilterModel';
 export * from './estatePropertyProjectFilterModel';
 export * from './estatePropertySupplierFilterModel';
-
+export * from './estatePropertyExpertPriceFilterModel';
