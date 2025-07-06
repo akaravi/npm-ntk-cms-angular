@@ -26,7 +26,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -43,7 +43,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           // if (ret.item != null) {
           //   this.coreCpMainMenu.next(ret.listItems);
@@ -62,7 +62,7 @@ export class CoreCpMainMenuService extends ApiCmsServerBase<CoreCpMainMenuModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),

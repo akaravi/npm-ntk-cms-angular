@@ -26,7 +26,7 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -42,7 +42,7 @@ export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

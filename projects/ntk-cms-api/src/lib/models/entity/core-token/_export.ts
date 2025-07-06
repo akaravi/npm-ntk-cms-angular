@@ -5,4 +5,6 @@ export * from './coreTokenMicroServiceModel';
 export * from './coreTokenConnectionModel';
 export * from './tokenInfoModel';
 export * from './tokenDeviceModel';
-
+export * from './tokenInfoModelV3';
+export * from './tokenAccessModel'
+export * from './tokenJWTModel'

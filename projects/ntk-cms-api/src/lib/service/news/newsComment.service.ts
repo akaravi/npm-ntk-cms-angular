@@ -23,7 +23,7 @@ export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, numbe
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -38,7 +38,7 @@ export class NewsCommentService extends ApiCmsServerBase<NewsCommentModel, numbe
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),

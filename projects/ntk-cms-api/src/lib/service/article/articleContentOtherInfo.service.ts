@@ -23,7 +23,7 @@ export class ArticleContentOtherInfoService extends ApiCmsServerBase<ArticleCont
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -39,7 +39,7 @@ export class ArticleContentOtherInfoService extends ApiCmsServerBase<ArticleCont
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

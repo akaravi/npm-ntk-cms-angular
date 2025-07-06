@@ -23,7 +23,7 @@ export class TicketingDepartemenService extends ApiCmsServerBase<TicketingDepart
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

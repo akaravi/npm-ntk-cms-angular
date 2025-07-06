@@ -24,7 +24,7 @@ export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePro
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -40,7 +40,7 @@ export class EstatePropertyDetailGroupService extends ApiCmsServerBase<EstatePro
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),

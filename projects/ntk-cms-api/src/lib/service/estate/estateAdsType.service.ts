@@ -23,7 +23,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -37,7 +37,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -51,7 +51,7 @@ export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, s
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

@@ -26,7 +26,7 @@ export class ChartCategoryService extends ApiCmsServerBase<ChartCategoryModel, n
       )
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

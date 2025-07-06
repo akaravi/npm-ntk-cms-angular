@@ -20,7 +20,7 @@ export class TicketingAnswerService extends ApiCmsServerBase<TicketingAnswerMode
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

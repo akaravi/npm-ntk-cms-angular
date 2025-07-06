@@ -31,7 +31,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -44,7 +44,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -58,7 +58,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -71,7 +71,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -90,7 +90,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           //! optimaze call api
           if (cashApiSeconds > 0) {
@@ -110,7 +110,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -124,7 +124,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -137,7 +137,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -151,7 +151,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
         }),
@@ -170,7 +170,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
         }),
@@ -184,7 +184,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -199,7 +199,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -214,7 +214,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -228,7 +228,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -242,7 +242,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -257,7 +257,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -271,7 +271,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -285,7 +285,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -299,7 +299,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -315,7 +315,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -329,7 +329,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -343,7 +343,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -357,7 +357,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -371,7 +371,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -387,7 +387,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -401,7 +401,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -415,7 +415,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -429,7 +429,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -446,7 +446,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -460,7 +460,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -474,7 +474,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -488,7 +488,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -504,7 +504,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -518,7 +518,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

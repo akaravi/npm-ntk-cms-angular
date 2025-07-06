@@ -24,44 +24,26 @@ import { ApiServerBase } from '../base/apiServerBase.service';
 
 @Injectable()
 export class CoreAuthService extends ApiServerBase {
-  public tokenInfoSubject: BehaviorSubject<TokenInfoModel>=new BehaviorSubject(new TokenInfoModel);
-  public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel>=new BehaviorSubject(new TokenDeviceModel);
+  public tokenInfoSubject: BehaviorSubject<TokenInfoModel> = new BehaviorSubject(new TokenInfoModel);
+  public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel> = new BehaviorSubject(new TokenDeviceModel);
   getModuleControllerUrl(): string {
     return 'auth';
   }
   SetCurrentTokenInfo(model: TokenInfoModel | null): any {
     if (model == null) {
       this.removeToken();
-      //this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: new TokenInfoModel() });
       this.tokenInfoSubject.next(new TokenInfoModel());
       return;
     }
-    if (model.token && model.deviceToken && model.refreshToken) {
-      this.setToken(model.token, model.deviceToken, model.refreshToken);
-    } else if (model.token && model.deviceToken) {
-      this.setToken(model.token, model.deviceToken, '');
-    } else if (model.token) {
-      this.setToken(model.token, '', '');
+    if (model.deviceToken) {
+      this.setDeviceToken( model.deviceToken);
+    } 
+    if (model.token) {
+      this.setToken(model.token, model.refreshToken);
     }
-    else if (model.deviceToken) {
-      this.setToken('', model.deviceToken, '');
-    }
-    //this.cmsApiStore.setState({ type: SET_TOKEN_INFO, payload: model });
     this.tokenInfoSubject.next(model);
   }
-  SetCurrentDeviceTokenInfo(model: TokenDeviceModel | null): any {
-    if (model == null) {
-      this.removeToken();
-      //this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: new TokenDeviceModel() });
-      this.tokenDeviceSubject.next(new TokenDeviceModel());
-      return;
-    }
-    if (model.deviceToken) {
-      this.setDeviceToken(model.deviceToken);
-    }
-    //this.cmsApiStore.setState({ type: SET_DEVICE_TOKEN_INFO, payload: model });
-    this.tokenDeviceSubject.next(model);
-  }
+
 
   CurrentTokenInfoRenew(): void {
     this.ServiceCurrentToken().subscribe(
@@ -75,25 +57,31 @@ export class CoreAuthService extends ApiServerBase {
 
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
-        this.setToken(ret.item.token, ret.item.deviceToken, '');
+        this.setToken(ret.item.token, ret.item.deviceToken);
         return ret;
       }),
     );
   }
   ServiceCurrentDeviceToken(): Observable<ErrorExceptionResult<TokenDeviceModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentDeviceToken', { headers: this.getHeaders() }).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         this.setDeviceToken(ret.item.deviceToken);
+        if (!ret.item) {
+          this.tokenDeviceSubject.next(new TokenDeviceModel());
+        }
+        else {
+          this.tokenDeviceSubject.next(ret.item);
+        }
         return ret;
       }),
     );
   }
   ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/captcha').pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         return ret;
       }),
@@ -101,16 +89,22 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceGetTokenDevice(model: TokenDeviceClientInfoDtoModel): Observable<ErrorExceptionResult<TokenDeviceModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         this.setDeviceToken(ret.item.deviceToken);
+        if (!ret.item) {
+          this.tokenDeviceSubject.next(new TokenDeviceModel());
+        }
+        else {
+          this.tokenDeviceSubject.next(ret.item);
+        }
         return ret;
       }),
     );
   }
   ServiceSetTokenDeviceNotificationId(model: TokenDeviceSetNotificationIdDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         return ret;
       }),
@@ -118,7 +112,7 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signup', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         return ret;
       }),
@@ -127,7 +121,7 @@ export class CoreAuthService extends ApiServerBase {
 
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         if (ret.isSuccess) {
           this.SetCurrentTokenInfo(ret.item);
@@ -139,7 +133,7 @@ export class CoreAuthService extends ApiServerBase {
 
   ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signInBySms', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         if (ret.isSuccess) {
           this.SetCurrentTokenInfo(ret.item);
@@ -158,7 +152,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           if (ret.isSuccess) {
             this.SetCurrentTokenInfo(ret.item);
@@ -173,7 +167,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           return ret;
         }),
@@ -181,7 +175,7 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/forgetPassword', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         return ret;
       }),
@@ -189,7 +183,7 @@ export class CoreAuthService extends ApiServerBase {
   }
   ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
-      // catchError(this.handleError)
+
       map((ret: any) => {
         return ret;
       }),
@@ -201,7 +195,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           this.SetCurrentTokenInfo(null);
 
@@ -220,7 +214,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           return ret;
         }),
@@ -236,7 +230,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           return ret;
         }),
@@ -252,7 +246,7 @@ export class CoreAuthService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+
         map((ret: any) => {
           return ret;
         }),

@@ -24,7 +24,7 @@ export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentMo
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -39,7 +39,7 @@ export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentMo
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -54,7 +54,7 @@ export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentMo
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -69,7 +69,7 @@ export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentMo
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -85,7 +85,7 @@ export class HyperShopContentService extends ApiCmsServerBase<HyperShopContentMo
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

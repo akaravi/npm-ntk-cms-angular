@@ -25,7 +25,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -39,7 +39,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -53,7 +53,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -67,7 +67,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -81,7 +81,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -95,7 +95,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -109,7 +109,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -123,7 +123,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -137,7 +137,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -151,7 +151,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -165,7 +165,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -179,7 +179,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -192,7 +192,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -205,7 +205,7 @@ export class ApiServerConfigSiteBase<TAdminMain extends BaseModuleConfigAdminMai
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

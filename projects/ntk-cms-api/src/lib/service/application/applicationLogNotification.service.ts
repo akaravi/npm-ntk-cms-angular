@@ -25,7 +25,7 @@ export class ApplicationLogNotificationService extends ApiCmsServerBase<Applicat
       )
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

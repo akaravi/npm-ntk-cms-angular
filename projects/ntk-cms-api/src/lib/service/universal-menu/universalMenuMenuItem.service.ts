@@ -28,7 +28,7 @@ export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenu
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           // if (ret.item != null) {
           //   this.coreCpMainMenu.next(ret.listItems);
@@ -47,7 +47,7 @@ export class UniversalMenuMenuItemService extends ApiCmsServerBase<UniversalMenu
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),

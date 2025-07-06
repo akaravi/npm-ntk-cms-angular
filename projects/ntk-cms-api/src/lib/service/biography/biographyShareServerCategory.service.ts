@@ -25,7 +25,7 @@ export class BiographyShareServerCategoryService extends ApiCmsServerBase<Biogra
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

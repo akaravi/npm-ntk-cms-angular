@@ -26,7 +26,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -40,7 +40,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -54,7 +54,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -69,7 +69,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -85,7 +85,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -101,7 +101,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -117,7 +117,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -137,7 +137,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -156,7 +156,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -175,7 +175,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -194,7 +194,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -213,7 +213,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -230,7 +230,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
         }),
@@ -249,7 +249,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -268,7 +268,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -286,7 +286,7 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheckExportFile(ret);
         }),

@@ -26,7 +26,7 @@ export class TicketingDepartemenOperatorService extends ApiCmsServerBase<Ticketi
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

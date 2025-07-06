@@ -27,7 +27,7 @@ export class DonateTransactionService extends ApiCmsServerBase<DonateTransaction
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -44,7 +44,7 @@ export class DonateTransactionService extends ApiCmsServerBase<DonateTransaction
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

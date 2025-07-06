@@ -26,7 +26,7 @@ export class ArticleCategoryService extends ApiCmsServerBase<ArticleCategoryMode
       )
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

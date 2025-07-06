@@ -25,7 +25,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -40,7 +40,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -55,7 +55,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -71,7 +71,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -87,7 +87,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -103,7 +103,7 @@ export class CatalogContentService extends ApiCmsServerBase<CatalogContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

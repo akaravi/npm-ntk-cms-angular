@@ -19,7 +19,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -32,7 +32,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -49,7 +49,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -66,7 +66,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -83,7 +83,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -100,7 +100,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -117,7 +117,7 @@ export class CoreLocationService extends ApiCmsServerBase<CoreLocationModel, num
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

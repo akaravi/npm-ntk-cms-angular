@@ -24,7 +24,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -37,7 +37,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -54,7 +54,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -72,7 +72,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -90,7 +90,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<CoreModuleSite
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

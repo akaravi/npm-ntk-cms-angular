@@ -23,7 +23,7 @@ export class HyperShopCategoryService extends ApiCmsServerBase<HyperShopCategory
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -38,7 +38,7 @@ export class HyperShopCategoryService extends ApiCmsServerBase<HyperShopCategory
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

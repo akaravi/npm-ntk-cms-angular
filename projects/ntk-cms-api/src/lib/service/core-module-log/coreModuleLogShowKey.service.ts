@@ -24,7 +24,7 @@ export class CoreModuleLogShowKeyService extends ApiCmsServerBase<CoreModuleLogS
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

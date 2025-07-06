@@ -5,6 +5,8 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
+import { TokenInfoModelV3 } from '../../models/entity/core-token/tokenInfoModelV3';
+import { TokenJWTModel } from '../../models/entity/core-token/_export';
 //import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
@@ -18,6 +20,7 @@ export class ApiServerBase {
   public userToken = '';
   public deviceToken = '';
   public configApiRetry = 0;
+  keyJwt = 'jwtToken';
   keyUserToken = 'userToken';
   keyDeviceToken = 'deviceToken';
   keyBaseUrl = 'baseUrl';
@@ -83,16 +86,12 @@ export class ApiServerBase {
     }
     return '';
   }
-  setToken(userToken: string, deviceToken: string, refreshToken: string): void {
-    if ((!userToken || userToken.length === 0) && (!deviceToken || deviceToken.length === 0)) {
+  setToken(userToken: string, refreshToken: string): void {
+    if (!userToken || userToken.length === 0)  {
       localStorage.removeItem(this.keyUserToken);
-      localStorage.removeItem(this.keyDeviceToken);
       return;
     }
     localStorage.setItem(this.keyUserToken, userToken);
-    if (deviceToken && deviceToken.length > 0) {
-      localStorage.setItem(this.keyDeviceToken, deviceToken);
-    }
   }
   setDeviceToken(deviceToken: string): void {
     if (!deviceToken || deviceToken.length === 0) {
@@ -101,9 +100,24 @@ export class ApiServerBase {
     }
     localStorage.setItem(this.keyDeviceToken, deviceToken);
   }
+   setJWT(model: TokenJWTModel): void {
+    if (!model || model.accessToken?.length === 0) {
+      localStorage.removeItem(this.keyJwt);
+      localStorage.removeItem(this.keyUserToken);
+      return;
+    }
+    localStorage.setItem(this.keyJwt,JSON.stringify( model));
+    localStorage.setItem(this.keyUserToken, model.accessToken);
+  }
+  getJWT(): TokenJWTModel {
+      const token = localStorage.getItem(this.keyJwt);
+    if (token && token.length > 0) {
+      return JSON.parse( token);
+    }
+    return undefined;
+  }
   removeToken(): void {
     localStorage.removeItem(this.keyUserToken);
-    localStorage.removeItem(this.keyDeviceToken);
   }
   getHeaders(): any {
     let dateTime = new Date();

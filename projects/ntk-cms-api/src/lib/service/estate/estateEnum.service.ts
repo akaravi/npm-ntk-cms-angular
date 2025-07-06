@@ -20,7 +20,7 @@ export class EstateEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -32,7 +32,7 @@ export class EstateEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -44,7 +44,7 @@ export class EstateEnumService extends ApiServerBase {
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

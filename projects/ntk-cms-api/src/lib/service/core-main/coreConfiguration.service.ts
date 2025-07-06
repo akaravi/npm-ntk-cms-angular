@@ -27,7 +27,7 @@ export class CoreConfigurationService extends
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -39,7 +39,7 @@ export class CoreConfigurationService extends
         headers: this.getHeaders(),
       })
       .pipe(
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return ret;
         }),

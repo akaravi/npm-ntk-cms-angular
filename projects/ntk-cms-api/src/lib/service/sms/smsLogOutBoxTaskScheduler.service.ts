@@ -19,7 +19,7 @@ export class SmsLogOutBoxTaskSchedulerService extends ApiCmsServerBase<SmsLogOut
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -33,7 +33,7 @@ export class SmsLogOutBoxTaskSchedulerService extends ApiCmsServerBase<SmsLogOut
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

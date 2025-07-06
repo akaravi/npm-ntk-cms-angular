@@ -24,7 +24,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -37,7 +37,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -50,7 +50,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -67,7 +67,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -80,7 +80,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -97,7 +97,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -117,7 +117,7 @@ export class CoreModuleService extends ApiCmsServerBase<CoreModuleModel, number,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),

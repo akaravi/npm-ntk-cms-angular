@@ -23,7 +23,7 @@ export class EstatePropertyDetailService extends ApiCmsServerBase<EstateProperty
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),

@@ -25,7 +25,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -41,7 +41,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -58,7 +58,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -74,7 +74,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -91,7 +91,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -106,7 +106,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -121,7 +121,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultBaseCheck(ret);
         }),
@@ -137,7 +137,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -153,7 +153,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -169,7 +169,7 @@ export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        // catchError(this.handleError)
+        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
