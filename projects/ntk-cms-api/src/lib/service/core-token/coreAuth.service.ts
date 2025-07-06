@@ -20,6 +20,8 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModel } from '../../models/entity/core-token/tokenInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
+import { TokenJWTModel } from '../../models/entity/core-token/tokenJWTModel';
+
 
 
 @Injectable()
@@ -39,7 +41,12 @@ export class CoreAuthService extends ApiServerBase {
       this.setDeviceToken( model.deviceToken);
     } 
     if (model.token) {
-      this.setToken(model.token, model.refreshToken);
+      const jwt: TokenJWTModel = {
+          accessToken: model.token,
+          refreshToken: model.refreshToken,
+          tokenExpireDate: model.tokenExpireDate
+        };
+        this.setJWT(jwt);
     }
     this.tokenInfoSubject.next(model);
   }
@@ -59,7 +66,7 @@ export class CoreAuthService extends ApiServerBase {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
 
       map((ret: any) => {
-        this.setToken(ret.item.token, ret.item.deviceToken);
+        this.SetCurrentTokenInfo(ret.item);
         return ret;
       }),
     );

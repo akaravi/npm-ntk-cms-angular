@@ -20,8 +20,9 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceModel';
 import { TokenInfoModelV3 } from '../../models/entity/core-token/tokenInfoModelV3';
 import { ApiServerBase } from '../base/apiServerBase.service';
-import { TokenJWTModel } from 'projects/ntk-cms-api/src/public-api';
+
 import { AuthRefreshTokenModel } from '../../models/dto/core-main/authRefreshTokenModel';
+import { TokenJWTModel } from '../../models/entity/core-token/tokenJWTModel';
 
 
 @Injectable()

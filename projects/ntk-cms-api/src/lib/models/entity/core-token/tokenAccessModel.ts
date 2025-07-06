@@ -1,13 +1,14 @@
-import { ManageUserAccessAreaTypesEnum, ManageUserAccessUserTypesEnum } from "projects/ntk-cms-api/src/public-api";
+import { ManageUserAccessAreaTypesEnum, ManageUserAccessUserTypesEnum } from "../../enums/base/_export";
+
 
 
 export class TokenAccessModel {
     siteId: number;
     userId: number;
     userAccessAdminAllowToAllData: boolean;
-    userAccessAdminAllowToProfessionalData: boolean
-    userAccessUserType: ManageUserAccessUserTypesEnum
-    userAccessAreaType: ManageUserAccessAreaTypesEnum
+    userAccessAdminAllowToProfessionalData: boolean;
+    userAccessUserType: ManageUserAccessUserTypesEnum;
+    userAccessAreaType: ManageUserAccessAreaTypesEnum;
     userAccessUserTypeTitle: string;
     userAccessAreaTypeTitle: string;
 }

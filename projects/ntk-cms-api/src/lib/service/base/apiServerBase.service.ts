@@ -21,7 +21,6 @@ export class ApiServerBase {
   public deviceToken = '';
   public configApiRetry = 0;
   keyJwt = 'jwtToken';
-  keyUserToken = 'userToken';
   keyDeviceToken = 'deviceToken';
   keyBaseUrl = 'baseUrl';
   private headers: Map<string, string>;
@@ -70,9 +69,9 @@ export class ApiServerBase {
 
   getUserToken(): string | null {
     if (this.userToken && this.userToken.length > 0) { return this.userToken; }
-    const token = localStorage.getItem(this.keyUserToken);
-    if (token && token.length > 0) {
-      return token;
+    const token = this.getJWT();
+    if (token && token.accessToken.length > 0) {
+      return token.accessToken;
     }
     const title = 'تایید توکن';
     const message = 'لطفا مجددا وارد حساب کاربری خود شوید';
@@ -86,13 +85,6 @@ export class ApiServerBase {
     }
     return '';
   }
-  setToken(userToken: string, refreshToken: string): void {
-    if (!userToken || userToken.length === 0)  {
-      localStorage.removeItem(this.keyUserToken);
-      return;
-    }
-    localStorage.setItem(this.keyUserToken, userToken);
-  }
   setDeviceToken(deviceToken: string): void {
     if (!deviceToken || deviceToken.length === 0) {
       localStorage.removeItem(this.keyDeviceToken);
@@ -103,21 +95,22 @@ export class ApiServerBase {
    setJWT(model: TokenJWTModel): void {
     if (!model || model.accessToken?.length === 0) {
       localStorage.removeItem(this.keyJwt);
-      localStorage.removeItem(this.keyUserToken);
       return;
     }
     localStorage.setItem(this.keyJwt,JSON.stringify( model));
-    localStorage.setItem(this.keyUserToken, model.accessToken);
   }
   getJWT(): TokenJWTModel {
       const token = localStorage.getItem(this.keyJwt);
     if (token && token.length > 0) {
-      return JSON.parse( token);
+      var ret:TokenJWTModel= JSON.parse( token);
+      if(!ret||ret.accessToken||ret.accessToken.length==0)
+        return undefined;
+      return ret;
     }
     return undefined;
   }
   removeToken(): void {
-    localStorage.removeItem(this.keyUserToken);
+    localStorage.removeItem(this.keyJwt);
   }
   getHeaders(): any {
     let dateTime = new Date();
