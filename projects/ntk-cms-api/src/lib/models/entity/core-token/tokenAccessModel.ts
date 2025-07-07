@@ -1,4 +1,4 @@
-import { ManageUserAccessAreaTypesEnum, ManageUserAccessUserTypesEnum } from "../../enums/base/_export";
+import { LanguageEnum, ManageUserAccessAreaTypesEnum, ManageUserAccessUserTypesEnum } from "../../enums/base/_export";
 
 
 
@@ -11,4 +11,7 @@ export class TokenAccessModel {
     userAccessAreaType: ManageUserAccessAreaTypesEnum;
     userAccessUserTypeTitle: string;
     userAccessAreaTypeTitle: string;
+    userLanguage: LanguageEnum;
+    language: string;
+    direction: string;
 }

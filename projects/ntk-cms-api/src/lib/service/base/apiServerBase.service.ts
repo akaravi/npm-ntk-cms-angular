@@ -103,7 +103,7 @@ export class ApiServerBase {
       const token = localStorage.getItem(this.keyJwt);
     if (token && token.length > 0) {
       var ret:TokenJWTModel= JSON.parse( token);
-      if(!ret||ret.accessToken||ret.accessToken.length==0)
+      if(!ret||!ret.accessToken||ret.accessToken.length==0)
         return undefined;
       return ret;
     }
