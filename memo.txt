@@ -13,6 +13,7 @@ ng generate library ngx-ntk-query-builder
 ng generate library ngx-ntk-cron-editor
 ng generate library ngx-ntk-mat-color-picker
 ng generate library ngx-ntk-file-picker
+ng generate library ngx-ntk-icon-picker
 =========================================First Time npm
 npm adduser
 npm login
@@ -95,6 +96,14 @@ cd ..
 
 
 
+========================================= need other npm !!!!!!!!!!!!!!!!!!!!!!!!!!
+ng build ngx-ntk-icon-picker --configuration production
+cd dist/ngx-ntk-icon-picker
+npm publish
+cd ..
+cd ..
+
+
 ==================================================================================
 Test All
 
@@ -105,6 +114,7 @@ ng build ngx-ntk-query-builder  --configuration production
 ng build ngx-ntk-cron-editor  --configuration production
 ng build ngx-ntk-mat-color-picker  --configuration production
 ng build ngx-ntk-file-picker  --configuration production
+ng build ngx-ntk-icon-picker  --configuration production
 ng build ntk-cms-filemanager --configuration production
 ====build all
 cd dist
@@ -127,6 +137,9 @@ cd ngx-ntk-mat-color-picker
 npm publish
 cd ..
 cd ngx-ntk-file-picker
+npm publish
+cd ..
+cd ngx-ntk-icon-picker
 npm publish
 cd ..
 cd ntk-cms-filemanager

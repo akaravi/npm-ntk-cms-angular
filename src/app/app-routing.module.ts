@@ -36,9 +36,14 @@ const routes: Routes = [
       import('./pages/cron-editor-test/cron-editor-test.module').then((m) => m.CronEditorTestModule),
   },
   {
-    path: 'matColorPicker',
+    path: 'ColorPicker',
     loadChildren: () =>
-      import('./pages/mat-color-picker-test/mat-color-picker-test.module').then((m) => m.MatColorPickerModule),
+      import('./pages/color-picker-test/color-picker-test.module').then((m) => m.ColorPickerTestModule),
+  },
+    {
+    path: 'iconPicker',
+    loadChildren: () =>
+      import('./pages/icon-picker-test/icon-picker-test.module').then((m) => m.IconPickerTestModule),
   },
 ];
 

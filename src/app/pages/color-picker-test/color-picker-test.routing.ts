@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import { MatColorPickerComponent } from './mat-color-picker-test.component';
+import { ColorPickerTestComponent } from './color-picker-test.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MatColorPickerComponent,
+    component: ColorPickerTestComponent,
   },
 ];
 

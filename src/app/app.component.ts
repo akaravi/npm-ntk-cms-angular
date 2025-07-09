@@ -16,7 +16,8 @@ export class AppComponent {
     { title: 'smartLoader Test', link: 'smartLoaderTest' },
     { title: 'smartModal Test', link: 'smartModalTest' },
     { title: 'Cron Edit Test', link: 'cronEditTest' },
-    { title: 'Mat Color Picker Test', link: 'matColorPicker' },
+    { title: 'Color Picker Test', link: 'ColorPicker' },
+    { title: 'Icon Picker Test', link: 'IconPicker' },
   ];
 
   constructor(translate: TranslateService) {

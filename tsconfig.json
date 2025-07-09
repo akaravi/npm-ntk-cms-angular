@@ -28,6 +28,9 @@
       "ngx-ntk-file-picker": [
         "dist/ngx-ntk-file-picker"
       ],
+      "ngx-ntk-icon-picker": [
+        "dist/ngx-ntk-icon-picker"
+      ],
       "ngx-ntk-mat-color-picker": ["dist/ngx-ntk-mat-color-picker"],
       "ntk-cms-filemanager": ["dist/ntk-cms-filemanager/ntk-cms-filemanager", "dist/ntk-cms-filemanager"],
       "ntk-cms-fileuploader": ["dist/ntk-cms-fileuploader/ntk-cms-fileuploader", "dist/ntk-cms-fileuploader"],

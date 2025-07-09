@@ -1,0 +1,23 @@
+{
+  "name": "ngx-ntk-icon-picker",
+  "version": "18.3.1",
+  "description": "Ntk Cms Api And Model For Typscript",
+  "author": "Alireza-Karavi",
+  "license": "ISC",
+  "keywords": [
+    "NTK",
+    "KARAVI",
+    "SMS",
+    "news",
+    "api"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">=10.0.0",
+    "@angular/core": ">=10.0.0",
+    "@fortawesome/angular-fontawesome": ">=0.10.2",
+    "@fortawesome/fontawesome-svg-core": ">=6.1.1",
+    "@fortawesome/free-solid-svg-icons": ">=6.1.1",
+    "primeicons": ">=5.0.0"
+  },
+  "dependencies": {}
+}

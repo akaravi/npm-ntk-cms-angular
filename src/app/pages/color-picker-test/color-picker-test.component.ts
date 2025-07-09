@@ -5,10 +5,10 @@ import { Color } from 'projects/ngx-ntk-mat-color-picker/src/public-api';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './mat-color-picker-test.component.html',
-  styleUrls: ['./mat-color-picker-test.component.scss'],
+  templateUrl: './color-picker-test.component.html',
+  styleUrls: ['./color-picker-test.component.scss'],
 })
-export class MatColorPickerComponent {
+export class ColorPickerTestComponent {
 
   public disabled = false;
   public color: ThemePalette = 'primary';
