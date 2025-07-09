@@ -114,8 +114,7 @@ ng build ngx-ntk-query-builder  --configuration production
 ng build ngx-ntk-smart-module  --configuration production
 ng build ntk-cms-api --configuration production
 ng build ntk-cms-fileuploader --configuration production
-
-nc
+ng build ngx-ntk-file-picker  --configuration production
 ng build ntk-cms-filemanager --configuration production
 ====build all
 cd dist
