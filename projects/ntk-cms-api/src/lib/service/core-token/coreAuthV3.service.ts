@@ -27,8 +27,8 @@ import { TokenJWTModel } from '../../models/entity/core-token/tokenJWTModel';
 
 @Injectable()
 export class CoreAuthV3Service extends ApiServerBase {
-  public tokenInfoSubject: BehaviorSubject<TokenInfoModelV3> = new BehaviorSubject(new TokenInfoModelV3);
-  public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel> = new BehaviorSubject(new TokenDeviceModel);
+  // public tokenInfoSubject: BehaviorSubject<TokenInfoModelV3> = new BehaviorSubject(new TokenInfoModelV3);
+  // public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel> = new BehaviorSubject(new TokenDeviceModel);
   getModuleControllerUrl(): string {
     return 'auth';
   }
@@ -70,7 +70,7 @@ export class CoreAuthV3Service extends ApiServerBase {
       .pipe(
         map((ret: any) => {
           this.setJWT(null);
-          this.tokenInfoSubject.next(new TokenInfoModelV3());
+          //this.tokenInfoSubject.next(new TokenInfoModelV3());
           return ret;
         }),
       );
@@ -85,7 +85,7 @@ export class CoreAuthV3Service extends ApiServerBase {
   ServiceCurrentToken(): Observable<ErrorExceptionResult<TokenInfoModelV3>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentToken', { headers: this.getHeaders() }).pipe(
       map((ret: any) => {
-        this.tokenInfoSubject.next(ret.item);
+        //this.tokenInfoSubject.next(ret.item);
         return ret;
       }),
     );
@@ -94,12 +94,12 @@ export class CoreAuthV3Service extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetTokenDevice/', model).pipe(
       map((ret: any) => {
         this.setDeviceToken(ret.item.deviceToken);
-        if (!ret.item) {
-          this.tokenDeviceSubject.next(new TokenDeviceModel());
-        }
-        else {
-          this.tokenDeviceSubject.next(ret.item);
-        }
+        // if (!ret.item) {
+        //   this.tokenDeviceSubject.next(new TokenDeviceModel());
+        // }
+        // else {
+        //   this.tokenDeviceSubject.next(ret.item);
+        // }
         return ret;
       }),
     );
@@ -109,12 +109,12 @@ export class CoreAuthV3Service extends ApiServerBase {
 
       map((ret: any) => {
         this.setDeviceToken(ret.item.deviceToken);
-        if (!ret.item) {
-          this.tokenDeviceSubject.next(new TokenDeviceModel());
-        }
-        else {
-          this.tokenDeviceSubject.next(ret.item);
-        }
+        // if (!ret.item) {
+        //   this.tokenDeviceSubject.next(new TokenDeviceModel());
+        // }
+        // else {
+        //   this.tokenDeviceSubject.next(ret.item);
+        // }
         return ret;
       }),
     );

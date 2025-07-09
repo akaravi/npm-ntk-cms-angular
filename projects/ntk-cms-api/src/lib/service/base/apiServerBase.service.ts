@@ -5,7 +5,6 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
-import { TokenInfoModelV3 } from '../../models/entity/core-token/tokenInfoModelV3';
 import { TokenJWTModel } from '../../models/entity/core-token/_export';
 //import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
@@ -15,6 +14,7 @@ export class ApiServerBase {
   constructor(@Inject(HttpClient) public http: HttpClient) {
     this.childConstructor();
     this.headers = new Map<string, string>();
+
   }
   public baseUrl = 'https://apicms.ir/api/v2/';
   public userToken = '';
@@ -23,13 +23,18 @@ export class ApiServerBase {
   keyJwt = 'jwtToken';
   keyDeviceToken = 'deviceToken';
   keyBaseUrl = 'baseUrl';
+  keyBaseVer = '';
   private headers: Map<string, string>;
   private accessLoad = false;
   private accessDataType: ManageUserAccessDataTypesEnum;
-  setConfig(url: string, apiRetry = 1): void {
+  setConfig(url: string, ver = '', apiRetry = 1): void {
     this.baseUrl = url;
-    localStorage.setItem(this.keyBaseUrl, url);
+    localStorage.setItem(this.Ver + this.keyBaseUrl, url);
+    localStorage.setItem(this.keyBaseVer, ver);
     this.configApiRetry = apiRetry;
+  }
+  get Ver(): string {
+    return localStorage.getItem(this.keyBaseVer) + '';
   }
   cachApiResult = [];
   cashApiIsValid(serviceNameKay: string, cashApiSeconds?: number): boolean {
@@ -47,7 +52,7 @@ export class ApiServerBase {
     // test
   }
   getBaseUrl(): string {
-    const BaseUrl = localStorage.getItem(this.keyBaseUrl);
+    const BaseUrl = localStorage.getItem(this.Ver + this.keyBaseUrl);
     if (BaseUrl && BaseUrl.length > 0) {
       return BaseUrl;
     }
@@ -79,7 +84,7 @@ export class ApiServerBase {
   }
   getDeviceToken(): string | null {
     if (this.deviceToken && this.deviceToken.length > 0) { return this.deviceToken; }
-    const token = localStorage.getItem(this.keyDeviceToken);
+    const token = localStorage.getItem(this.Ver + this.keyDeviceToken);
     if (token && token.length > 0) {
       return token;
     }
@@ -87,35 +92,35 @@ export class ApiServerBase {
   }
   setDeviceToken(deviceToken: string): void {
     if (!deviceToken || deviceToken.length === 0) {
-      localStorage.removeItem(this.keyDeviceToken);
+      localStorage.removeItem(this.Ver + this.keyDeviceToken);
       return;
     }
-    localStorage.setItem(this.keyDeviceToken, deviceToken);
+    localStorage.setItem(this.Ver + this.keyDeviceToken, deviceToken);
   }
-   setJWT(model: TokenJWTModel): void {
+  setJWT(model: TokenJWTModel): void {
     if (!model || model.accessToken?.length === 0) {
-      localStorage.removeItem(this.keyJwt);
+      localStorage.removeItem(this.Ver + this.keyJwt);
       return;
     }
-    localStorage.setItem(this.keyJwt,JSON.stringify( model));
+    localStorage.setItem(this.Ver + this.keyJwt, JSON.stringify(model));
   }
   getJWT(): TokenJWTModel {
-      const token = localStorage.getItem(this.keyJwt);
+    const token = localStorage.getItem(this.Ver + this.keyJwt);
     if (token && token.length > 0) {
-      var ret:TokenJWTModel= JSON.parse( token);
-      if(!ret||!ret.accessToken||ret.accessToken.length==0)
+      var ret: TokenJWTModel = JSON.parse(token);
+      if (!ret || !ret.accessToken || ret.accessToken.length == 0)
         return undefined;
       return ret;
     }
     return undefined;
   }
   removeToken(): void {
-    localStorage.removeItem(this.keyJwt);
+    localStorage.removeItem(this.Ver + this.keyJwt);
   }
   getHeaders(): any {
     let dateTime = new Date();
     this.headers.set('Date-Time', dateTime.toJSON());
-    this.headers.set('Date-Time-Zone', (dateTime.getTimezoneOffset()*-1).toString());
+    this.headers.set('Date-Time-Zone', (dateTime.getTimezoneOffset() * -1).toString());
     /*Authorization*/
     if (this.getUserToken() && this.getUserToken().length > 1) {
       this.headers.set('Authorization', this.getUserToken());
