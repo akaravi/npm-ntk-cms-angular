@@ -1,6 +1,6 @@
 {
   "name": "ntk-cms-fileuploader",
-  "version": "18.3.424",
+  "version": "18.26.1",
   "description": "Ntk Cms Api Uploader File For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -15,7 +15,5 @@
     "@angular/common": ">=10.0.0",
     "@angular/core": ">=10.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
-
