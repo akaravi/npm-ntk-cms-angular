@@ -19,5 +19,7 @@
     "@fortawesome/free-solid-svg-icons": ">=6.1.1",
     "primeicons": ">=5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
 }

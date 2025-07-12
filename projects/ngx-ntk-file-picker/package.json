@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "tslib": "^2.0.0",
-    "mrmime": "1.0.0"
+    "mrmime": "2.0.1"
   }
 }

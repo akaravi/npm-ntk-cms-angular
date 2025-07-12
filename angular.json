@@ -120,15 +120,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/lib/**/*.ts",
+              "projects/lib/**/*.html"
             ]
           }
         },
@@ -173,14 +169,15 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
             "tsConfig": [
               "projects/ntk-cms-api/tsconfig.lib.json",
               "projects/ntk-cms-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ntk-cms-api/**/*.ts",
+              "projects/ntk-cms-api/**/*.html"
             ]
           }
         }
@@ -213,14 +210,15 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
             "tsConfig": [
               "projects/ntk-cms-filemanager/tsconfig.lib.json",
               "projects/ntk-cms-filemanager/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ntk-cms-filemanager/**/*.ts",
+              "projects/ntk-cms-filemanager/**/*.html"
             ]
           }
         }
@@ -253,14 +251,15 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
             "tsConfig": [
               "projects/ntk-cms-fileuploader/tsconfig.lib.json",
               "projects/ntk-cms-fileuploader/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ntk-cms-fileuploader/**/*.ts",
+              "projects/ntk-cms-fileuploader/**/*.html"
             ]
           }
         }
@@ -293,201 +292,203 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
             "tsConfig": [
               "projects/ngx-ntk-smart-module/tsconfig.lib.json",
               "projects/ngx-ntk-smart-module/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-ntk-smart-module/**/*.ts",
+              "projects/ngx-ntk-smart-module/**/*.html"
             ]
           }
         }
-      }
-    },
-    "ngx-ntk-query-builder": {
-      "projectType": "library",
-      "root": "projects/ngx-ntk-query-builder",
-      "sourceRoot": "projects/ngx-ntk-query-builder/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.lib.json",
-            "project": "projects/ngx-ntk-query-builder/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-ntk-query-builder/src/test.ts",
-            "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-ntk-query-builder/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-ntk-query-builder/tsconfig.lib.json",
-              "projects/ngx-ntk-query-builder/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-ntk-cron-editor": {
-      "projectType": "library",
-      "root": "projects/ngx-ntk-cron-editor",
-      "sourceRoot": "projects/ngx-ntk-cron-editor/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
-            "project": "projects/ngx-ntk-cron-editor/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-ntk-cron-editor/src/test.ts",
-            "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-ntk-cron-editor/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
-              "projects/ngx-ntk-cron-editor/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-ntk-mat-color-picker": {
-      "projectType": "library",
-      "root": "projects/ngx-ntk-mat-color-picker",
-      "sourceRoot": "projects/ngx-ntk-mat-color-picker/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngx-ntk-mat-color-picker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.lib.prod.json"
+      },
+      "ngx-ntk-query-builder": {
+        "projectType": "library",
+        "root": "projects/ngx-ntk-query-builder",
+        "sourceRoot": "projects/ngx-ntk-query-builder/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.lib.json",
+              "project": "projects/ngx-ntk-query-builder/ng-package.json"
             },
-            "development": {
-              "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.lib.json"
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.lib.prod.json"
+              }
             }
           },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "main": "projects/ngx-ntk-query-builder/src/test.ts",
+              "tsConfig": "projects/ngx-ntk-query-builder/tsconfig.spec.json",
+              "karmaConfig": "projects/ngx-ntk-query-builder/karma.conf.js"
+            }
+          },
+          "lint": {
+            "builder": "@angular-eslint/builder:lint",
+            "options": {
+              "tsConfig": [
+                "projects/ngx-ntk-query-builder/tsconfig.lib.json",
+                "projects/ngx-ntk-query-builder/tsconfig.spec.json"
+              ],
+              "lintFilePatterns": [
+                "projects/ngx-ntk-query-builder/**/*.ts",
+                "projects/ngx-ntk-query-builder/**/*.html"
+              ]
+            }
+          }
+        }
+      },
+      "ngx-ntk-cron-editor": {
+        "projectType": "library",
+        "root": "projects/ngx-ntk-cron-editor",
+        "sourceRoot": "projects/ngx-ntk-cron-editor/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
+              "project": "projects/ngx-ntk-cron-editor/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.lib.prod.json"
+              }
+            }
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "main": "projects/ngx-ntk-cron-editor/src/test.ts",
+              "tsConfig": "projects/ngx-ntk-cron-editor/tsconfig.spec.json",
+              "karmaConfig": "projects/ngx-ntk-cron-editor/karma.conf.js"
+            }
+          },
+          "lint": {
+            "builder": "@angular-eslint/builder:lint",
+            "options": {
+              "tsConfig": [
+                "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
+                "projects/ngx-ntk-cron-editor/tsconfig.spec.json"
+              ],
+              "lintFilePatterns": [
+                "projects/ngx-ntk-cron-editor/**/*.ts",
+                "projects/ngx-ntk-cron-editor/**/*.html"
+              ]
+            }
+          }
+        }
+      },
+      "ngx-ntk-mat-color-picker": {
+        "projectType": "library",
+        "root": "projects/ngx-ntk-mat-color-picker",
+        "sourceRoot": "projects/ngx-ntk-mat-color-picker/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "project": "projects/ngx-ntk-mat-color-picker/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.lib.prod.json"
+              },
+              "development": {
+                "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.lib.json"
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "tsConfig": "projects/ngx-ntk-mat-color-picker/tsconfig.spec.json",
+              "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+              ]
+            }
+          }
+        }
+      },
+      "ngx-ntk-file-picker": {
+        "projectType": "library",
+        "root": "projects/ngx-ntk-file-picker",
+        "sourceRoot": "projects/ngx-ntk-file-picker/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "project": "projects/ngx-ntk-file-picker/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.lib.prod.json"
+              },
+              "development": {
+                "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.lib.json"
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.spec.json",
+              "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+              ]
+            }
+          }
+        }
+      },
+      "ngx-ntk-icon-picker": {
+        "projectType": "library",
+        "root": "projects/ngx-ntk-icon-picker",
+        "sourceRoot": "projects/ngx-ntk-icon-picker/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "project": "projects/ngx-ntk-icon-picker/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.lib.prod.json"
+              },
+              "development": {
+                "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.lib.json"
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.spec.json",
+              "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+              ]
+            }
           }
         }
       }
     },
-    "ngx-ntk-file-picker": {
-      "projectType": "library",
-      "root": "projects/ngx-ntk-file-picker",
-      "sourceRoot": "projects/ngx-ntk-file-picker/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngx-ntk-file-picker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-ntk-file-picker/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-ntk-icon-picker": {
-      "projectType": "library",
-      "root": "projects/ngx-ntk-icon-picker",
-      "sourceRoot": "projects/ngx-ntk-icon-picker/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngx-ntk-icon-picker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-ntk-icon-picker/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
+    "defaultProject": "npm-ntk-cms-angular",
+    "cli": {
+      "analytics": "00b8b454-f9a5-41e6-8b2c-cdeb1e0c8179"
     }
-  },
-  "defaultProject": "npm-ntk-cms-angular",
-  "cli": {
-    "analytics": "00b8b454-f9a5-41e6-8b2c-cdeb1e0c8179"
   }
-}
