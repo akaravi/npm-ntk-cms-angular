@@ -17,7 +17,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 // TODO: fix any
 //karavi error on angular 18//import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { SafeResourceUrl } from '@angular/platform-browser';
-import { lookup } from 'mrmime';
+import { lookup } from 'mrmime';// Assuming mrmime is installed
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 import { DefaultCaptions } from './default-captions';

@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
     "@angular/animations": "~15.2.4",
     "@angular/cdk": "^15.2.4",
@@ -29,12 +34,18 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "~4.0.0",
     "force": "^0.0.3",
+    "mrmime": "^2.0.1",
     "ng-packagr": "^15.2.4",
     "ngx-bootstrap": "^10.0.0",
     "ngx-ntk-file-picker": "file:",
     "ngx-ntk-icon-picker": "file:",
     "ngx-ntk-smart-module": "file:",
+    "ngx-ntk-cron-editor": "file:",
     "ntk-cms-api": "file:",
+    "ntk-cms-filemanager": "file:",
+    "ngx-ntk-mat-color-picker": "file:",
+    "ngx-ntk-query-builder": "file:",
+    "ntk-cms-fileuploader": "file",
     "primeicons": "^5.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",

@@ -171,10 +171,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ntk-cms-api/tsconfig.lib.json",
-              "projects/ntk-cms-api/tsconfig.spec.json"
-            ],
+
             "lintFilePatterns": [
               "projects/ntk-cms-api/**/*.ts",
               "projects/ntk-cms-api/**/*.html"
@@ -212,10 +209,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ntk-cms-filemanager/tsconfig.lib.json",
-              "projects/ntk-cms-filemanager/tsconfig.spec.json"
-            ],
+
             "lintFilePatterns": [
               "projects/ntk-cms-filemanager/**/*.ts",
               "projects/ntk-cms-filemanager/**/*.html"
@@ -253,10 +247,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ntk-cms-fileuploader/tsconfig.lib.json",
-              "projects/ntk-cms-fileuploader/tsconfig.spec.json"
-            ],
+
             "lintFilePatterns": [
               "projects/ntk-cms-fileuploader/**/*.ts",
               "projects/ntk-cms-fileuploader/**/*.html"
@@ -294,10 +285,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-ntk-smart-module/tsconfig.lib.json",
-              "projects/ngx-ntk-smart-module/tsconfig.spec.json"
-            ],
+
             "lintFilePatterns": [
               "projects/ngx-ntk-smart-module/**/*.ts",
               "projects/ngx-ntk-smart-module/**/*.html"
@@ -335,10 +323,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-ntk-query-builder/tsconfig.lib.json",
-              "projects/ngx-ntk-query-builder/tsconfig.spec.json"
-            ],
+
             "lintFilePatterns": [
               "projects/ngx-ntk-query-builder/**/*.ts",
               "projects/ngx-ntk-query-builder/**/*.html"
@@ -376,10 +361,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-ntk-cron-editor/tsconfig.lib.json",
-              "projects/ngx-ntk-cron-editor/tsconfig.spec.json"
-            ],
+    
             "lintFilePatterns": [
               "projects/ngx-ntk-cron-editor/**/*.ts",
               "projects/ngx-ntk-cron-editor/**/*.html"

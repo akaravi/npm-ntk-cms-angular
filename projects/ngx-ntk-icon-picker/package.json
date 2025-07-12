@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-icon-picker",
-  "version": "18.26.1",
+  "version": "18.26.2",
   "description": "Ntk Cms Api And Model For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -20,6 +20,6 @@
     "primeicons": ">=5.0.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   }
 }
