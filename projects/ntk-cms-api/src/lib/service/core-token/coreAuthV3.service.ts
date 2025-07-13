@@ -40,7 +40,7 @@ export class CoreAuthV3Service extends ApiServerBase {
       }),
     );
   }
-  ServiceRefreshToken(model: AuthRefreshTokenModel = new AuthRefreshTokenModel()): Observable<ErrorExceptionResult<TokenInfoModelV3>> {
+  ServiceRefreshToken(model: AuthRefreshTokenModel = new AuthRefreshTokenModel()): Observable<TokenJWTModel> {
     if (model == null) {
       model = new AuthRefreshTokenModel();
     }
@@ -122,6 +122,14 @@ export class CoreAuthV3Service extends ApiServerBase {
   
   ServiceSetTokenDeviceNotificationId(model: TokenDeviceSetNotificationIdDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
+
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
+    ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
+    return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/captcha').pipe(
 
       map((ret: any) => {
         return ret;

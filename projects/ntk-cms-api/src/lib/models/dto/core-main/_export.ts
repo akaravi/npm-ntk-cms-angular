@@ -29,3 +29,4 @@ export * from './processModuleSiteDataOptimazeOutputModel';
 export * from './cmsNotificationModel';
 export * from './cmsNotificationSendDtoModel';
 export * from './tokenDeviceSetNotificationIdDtoModel';
+export * from './authRefreshTokenModel';
