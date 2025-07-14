@@ -21,7 +21,8 @@ import { TokenDeviceModel } from '../../models/entity/core-token/tokenDeviceMode
 import { TokenInfoModel } from '../../models/entity/core-token/tokenInfoModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 import { TokenJWTModel } from '../../models/entity/core-token/tokenJWTModel';
-
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
+import { ActivateCodeModel } from '../../models/entity/base/activateCodeModel';
 
 
 @Injectable()
@@ -180,7 +181,7 @@ export class CoreAuthService extends ApiServerBase {
         }),
       );
   }
-  ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
+  ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<ActivateCodeModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/forgetPassword', model).pipe(
 
       map((ret: any) => {
@@ -188,7 +189,7 @@ export class CoreAuthService extends ApiServerBase {
       }),
     );
   }
-  ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<TokenInfoModel>> {
+  ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<CoreUserModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
 
       map((ret: any) => {

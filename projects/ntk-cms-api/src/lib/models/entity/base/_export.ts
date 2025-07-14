@@ -19,4 +19,4 @@ export * from './itemState';
 export * from './PageModel';
 export * from './processInfoModel';
 export * from './searchModel';
-
+export * from './activateCodeModel'

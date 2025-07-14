@@ -23,7 +23,8 @@ import { ApiServerBase } from '../base/apiServerBase.service';
 
 import { AuthRefreshTokenModel } from '../../models/dto/core-main/authRefreshTokenModel';
 import { TokenJWTModel } from '../../models/entity/core-token/tokenJWTModel';
-
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
+import { ActivateCodeModel } from '../../models/entity/base/activateCodeModel';
 
 @Injectable()
 export class CoreAuthV3Service extends ApiServerBase {
@@ -36,6 +37,17 @@ export class CoreAuthV3Service extends ApiServerBase {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
       map((ret: any) => {
         this.setJWT(ret);
+        return ret;
+      }),
+    );
+  }
+  ServiceSigninUserBySMS(model: AuthUserSignInBySmsDtoModel): Observable<ErrorExceptionResult<TokenJWTModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signInBySms', model).pipe(
+
+      map((ret: any) => {
+        if (ret.isSuccess) {
+          this.setJWT(ret);
+        }
         return ret;
       }),
     );
@@ -119,7 +131,7 @@ export class CoreAuthV3Service extends ApiServerBase {
       }),
     );
   }
-  
+
   ServiceSetTokenDeviceNotificationId(model: TokenDeviceSetNotificationIdDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
 
@@ -128,8 +140,68 @@ export class CoreAuthV3Service extends ApiServerBase {
       }),
     );
   }
-    ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
+  ServiceCaptcha(): Observable<ErrorExceptionResult<CaptchaModel>> {
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/captcha').pipe(
+
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
+  ServiceMobileConfirm(model: AuthMobileConfirmDtoModel): Observable<ErrorExceptionResultBase> {
+    if (model == null) {
+      model = new AuthMobileConfirmDtoModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/mobileConfirm', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+  ServiceEmailConfirm(model: AuthEmailConfirmDtoModel): Observable<ErrorExceptionResultBase> {
+    if (model == null) {
+      model = new AuthEmailConfirmDtoModel();
+    }
+
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/emailConfirm', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+  ServiceChangePassword(model: AuthUserChangePasswordModel): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/changePassword', model, {
+        headers: this.getHeaders(),
+      })
+      .pipe(
+
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+  ServiceForgetPassword(model: AuthUserForgetPasswordModel): Observable<ErrorExceptionResult<ActivateCodeModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/forgetPassword', model).pipe(
+
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
+  ServiceForgetPasswordEntryPinCode(model: AuthUserForgetPasswordEntryPinCodeModel): Observable<ErrorExceptionResult<CoreUserModel>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ForgetPasswordEntryPinCode', model).pipe(
 
       map((ret: any) => {
         return ret;
