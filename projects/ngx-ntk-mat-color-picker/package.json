@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-mat-color-picker",
-  "version": "18.26.5",
+  "version": "18.26.6",
   "description": "Angular Material Color Picker",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -28,7 +28,9 @@
   "peerDependencies": {
     "@angular/common": ">=10.0.0",
     "@angular/core": ">=10.0.0",
-    "@angular/material": ">=16.0.0"
+    "@angular/material": ">=16.0.0",
+    "@angular/forms": ">=16.0.0",
+    "@angular/cdk": ">=16.0.0"
   },
   "dependencies": {}
 }

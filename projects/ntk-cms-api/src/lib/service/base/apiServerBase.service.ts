@@ -23,7 +23,7 @@ export class ApiServerBase {
   keyJwt = 'jwtToken';
   keyDeviceToken = 'deviceToken';
   keyBaseUrl = 'baseUrl';
-  keyBaseVer = '';
+  keyBaseVer = 'Ver';
   private headers: Map<string, string>;
   private accessLoad = false;
   private accessDataType: ManageUserAccessDataTypesEnum;
@@ -34,7 +34,7 @@ export class ApiServerBase {
     this.configApiRetry = apiRetry;
   }
   get Ver(): string {
-    return localStorage.getItem(this.keyBaseVer) + '';
+    return localStorage.getItem(this.keyBaseVer) + '_';
   }
   cachApiResult = [];
   cashApiIsValid(serviceNameKay: string, cashApiSeconds?: number): boolean {
