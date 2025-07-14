@@ -33,7 +33,7 @@ export class CoreAuthV3Service extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'auth';
   }
-  ServiceSigninUser(model: AuthUserSignInModel): Observable<TokenJWTModel> {
+  ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenJWTModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
       map((ret: any) => {
         this.setJWT(ret);
@@ -52,7 +52,7 @@ export class CoreAuthV3Service extends ApiServerBase {
       }),
     );
   }
-  ServiceRefreshToken(model: AuthRefreshTokenModel = new AuthRefreshTokenModel()): Observable<TokenJWTModel> {
+  ServiceRefreshToken(model: AuthRefreshTokenModel = new AuthRefreshTokenModel()): Observable<ErrorExceptionResult<TokenJWTModel>> {
     if (model == null) {
       model = new AuthRefreshTokenModel();
     }
@@ -134,6 +134,14 @@ export class CoreAuthV3Service extends ApiServerBase {
 
   ServiceSetTokenDeviceNotificationId(model: TokenDeviceSetNotificationIdDtoModel): Observable<ErrorExceptionResultBase> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetTokenDeviceNotificationId/', model).pipe(
+
+      map((ret: any) => {
+        return ret;
+      }),
+    );
+  }
+  ServiceSignupUser(model: AuthUserSignUpModel): Observable<ErrorExceptionResult<TokenInfoModelV3>> {
+    return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signup', model).pipe(
 
       map((ret: any) => {
         return ret;
