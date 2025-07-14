@@ -28,15 +28,13 @@ import { ActivateCodeModel } from '../../models/entity/base/activateCodeModel';
 
 @Injectable()
 export class CoreAuthV3Service extends ApiServerBase {
-  // public tokenInfoSubject: BehaviorSubject<TokenInfoModelV3> = new BehaviorSubject(new TokenInfoModelV3);
-  // public tokenDeviceSubject: BehaviorSubject<TokenDeviceModel> = new BehaviorSubject(new TokenDeviceModel);
   getModuleControllerUrl(): string {
     return 'auth';
   }
   ServiceSigninUser(model: AuthUserSignInModel): Observable<ErrorExceptionResult<TokenJWTModel>> {
     return this.http.post(this.getBaseUrl() + this.getModuleControllerUrl() + '/signin', model).pipe(
       map((ret: any) => {
-        this.setJWT(ret);
+        this.setJWT(ret.item);
         return ret;
       }),
     );
@@ -46,7 +44,7 @@ export class CoreAuthV3Service extends ApiServerBase {
 
       map((ret: any) => {
         if (ret.isSuccess) {
-          this.setJWT(ret);
+          this.setJWT(ret.item);
         }
         return ret;
       }),
@@ -67,7 +65,7 @@ export class CoreAuthV3Service extends ApiServerBase {
     })
       .pipe(
         map((ret: any) => {
-          this.setJWT(ret);
+          this.setJWT(ret.item);
           return ret;
         }),
       );
