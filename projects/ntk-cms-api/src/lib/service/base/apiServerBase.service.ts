@@ -4,8 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
-import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
 import { TokenJWTModel } from '../../models/entity/core-token/_export';
+import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
 //import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
 
 
@@ -78,8 +78,6 @@ export class ApiServerBase {
     if (token && token.accessToken.length > 0) {
       return token.accessToken;
     }
-    const title = 'تایید توکن';
-    const message = 'لطفا مجددا وارد حساب کاربری خود شوید';
     return '';
   }
   getDeviceToken(): string | null {
