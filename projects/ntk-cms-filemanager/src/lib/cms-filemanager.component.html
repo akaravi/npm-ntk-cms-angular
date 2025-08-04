@@ -33,7 +33,7 @@
       <div class="navigation">
         <lib-filemanager-navigation>
           <div class="button close" (click)="fmShowHide(false)" *ngIf="isPopup">
-            <i class="fas fa-2x fa-times"></i>
+            <i class="fileicon fas fa-2x fa-times"></i>
           </div>
         </lib-filemanager-navigation>
       </div>
@@ -104,10 +104,10 @@
         <tr *ngFor="let item of searchModal.getData().response" (click)="searchClicked(item)">
           <td style="cursor: pointer">
             <ng-container *ngIf="item.fileCategory === 'D'; else file">
-              <i class="fas fa-folder search-output-icon"></i>
+              <i class="fileicon fas fa-folder search-output-icon"></i>
             </ng-container>
             <ng-template #file>
-              <i class="fas fa-file search-output-icon"></i>
+              <i class="fileicon fas fa-file search-output-icon"></i>
             </ng-template>
             <span style="text-overflow: ellipsis;direction: ltr;">{{item.name}}</span>
           </td>
@@ -123,7 +123,7 @@
       </h2>
 
       <div style="text-align: center; height: 70px">
-        <i class="fas fa-spinner fa-spin fa-4x"></i>
+        <i class="fileicon fas fa-spinner fa-spin fa-4x"></i>
       </div>
     </div>
   </ntk-smart-modal>
@@ -194,10 +194,10 @@
       </ng-template>
     </ng-template>
 
-    <ng-template #showFile><i class="fas fa-file child"></i></ng-template>
-    <ng-template #isFolderExpanded><i class="fas fa-folder-open child"></i></ng-template>
-    <ng-template #isFolderClosed><i class="fas fa-folder child"></i></ng-template>
-    <ng-template #isFolderRoot><i class="fas fa-home"></i></ng-template>
+    <ng-template #showFile><i class="fileicon fas fa-file child"></i></ng-template>
+    <ng-template #isFolderExpanded><i class="fileicon fas fa-folder-open child"></i></ng-template>
+    <ng-template #isFolderClosed><i class="fileicon as fa-folder child"></i></ng-template>
+    <ng-template #isFolderRoot><i class="fileicon fas fa-home"></i></ng-template>
 
 
     <span *ngIf="!node.isRoot">{{node.name}}</span>
@@ -207,9 +207,9 @@
   <div class="file-manager-item" >
     <div class="file-preview" >
       <div *ngIf="node.isFolder; then itIsFolder else showFile" ></div>
-      <ng-template #itIsFolder><i class="fas fa-3x fa-folder child"></i></ng-template>
+      <ng-template #itIsFolder><i class="fileicon fas fa-3x fa-folder child"></i></ng-template>
       <ng-template #showFile>
-        <i *ngIf="!node.downloadThumbnailSrc || node.downloadThumbnailSrc?.length==0" class="fas fa-3x fa-file child"></i>
+        <i *ngIf="!node.downloadThumbnailSrc || node.downloadThumbnailSrc?.length==0" class="fileicon fas fa-3x fa-file child"></i>
         <img *ngIf="node.downloadThumbnailSrc?.length>0"  src="{{node.downloadThumbnailSrc}}" class="child thumbnail" />
       </ng-template>
     </div>
@@ -221,7 +221,7 @@
 <ng-template #defaultFolderContentNewTemplate>
   <div class="file-manager-item main">
     <div class="file-preview" style="width: 100%; height:100%">
-      <i class="fas fa-2x fa-plus child" style="line-height: 2;color: black;"></i>
+      <i class="fileicon fas fa-2x fa-plus child" style="line-height: 2;color: black;"></i>
       <br>
       {{'filemanager.create_new_folder' | translate}}
     </div>
@@ -230,7 +230,7 @@
 <ng-template #defaultFileContentNewTemplate>
   <div class="file-manager-item main">
     <div class="file-preview" style="width: 100%; height:100%">
-      <i class="fas fa-2x fa-upload child" style="line-height: 2;color: black;"></i>
+      <i class="fileicon fas fa-2x fa-upload child" style="line-height: 2;color: black;"></i>
       <br>
       {{'filemanager.create_new_file' | translate}}
     </div>
@@ -239,14 +239,14 @@
 <ng-template let-node #defaultFolderContentReloadTemplate>
   <div class="file-manager-item main">
     <div class="file-preview" style="width: 100%; height:100%">
-      <i class="fas fa-2x fa-sync-alt child" style="line-height: 2;color: black;"></i>
+      <i class="fileicon fas fa-2x fa-sync-alt child" style="line-height: 2;color: black;"></i>
     </div>
   </div>
 </ng-template>
 <ng-template let-node #defaultFolderContentBackTemplate>
   <div class="file-manager-item">
     <div class="file-preview" style="width: 100%; height:100%">
-      <i class="fas fa-2x fa-ellipsis-h" style="line-height: 5"></i>
+      <i class="fileicon fas fa-2x fa-ellipsis-h" style="line-height: 5"></i>
     </div>
   </div>
 </ng-template>
@@ -255,7 +255,7 @@
     <div class="file-manager-error" *ngIf="timeoutMessage">{{timeoutMessage | translate}}</div>
   </div>
   <div class="spinner">
-    <i class="fas fa-5x fa-spin fa-sync-alt"></i>
+    <i class="fileicon fas fa-5x fa-spin fa-sync-alt"></i>
   </div>
 </ng-template>
 <ng-template let-node #defaultSideViewTemplate>
