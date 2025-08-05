@@ -1,5 +1,6 @@
 
 export class SmsApiSendMessageDtoModel {
+  checkProcesses:boolean=false;
   linkApiPathId: string;
   linkFromNumber: string;
   toNumbers: string;
