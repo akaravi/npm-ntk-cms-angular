@@ -10,7 +10,8 @@ export class SmsApiSendResultModel {
   linkApiNumberId: string;
   receiverNumberCount:number;
   endUserCreditSum:number;
-  endUserMessagePageCount:number;
+  endUserMessagePageCount:number[];
+  serviceMessagePageCount:number[];
   endUserCredit:number;
   serviceCreditSum:number; 
 }
