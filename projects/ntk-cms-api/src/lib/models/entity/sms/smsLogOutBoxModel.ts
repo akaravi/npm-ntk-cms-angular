@@ -12,8 +12,7 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   creditOverPlus: number;
   creditUserBefor: number;
   engineTryToSendCount: number;
-  isAccepted: boolean;
-  receiverNumberHidden: boolean;
+  
   engineApiAllowToChange: boolean;
   outBoxType: number;
   outBoxTypeTitle: string;
