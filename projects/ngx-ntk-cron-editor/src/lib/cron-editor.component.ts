@@ -11,7 +11,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { distinctUntilChanged } from "rxjs";
 import { CronOptionModel, defaultCronOptions } from "./models/cron-options-model";
 import { Days, Months, MonthWeeks } from "./models/enums";
-import Utils from "./poco/Utils";
+import Utils from "./poco/utils";
 import { TranslateService } from "@ngx-translate/core";
 import { TranslateUiService } from "./services/translateUi.service";
 

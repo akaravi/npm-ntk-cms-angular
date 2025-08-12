@@ -1,4 +1,4 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { AbstractControl, FormControl, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Color } from 'projects/ngx-ntk-mat-color-picker/src/public-api';
@@ -8,7 +8,7 @@ import { Color } from 'projects/ngx-ntk-mat-color-picker/src/public-api';
   templateUrl: './color-picker-test.component.html',
   styleUrls: ['./color-picker-test.component.scss'],
 })
-export class ColorPickerTestComponent implements OnInit  {
+export class ColorPickerTestComponent {
 
   public disabled = false;
   public color: ThemePalette = 'primary';
@@ -81,8 +81,7 @@ export  class AppModule { }`;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
   onDisabledChanged(value: boolean) {
     if (!value) {

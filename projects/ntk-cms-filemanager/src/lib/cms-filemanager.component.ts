@@ -118,7 +118,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     private el: ElementRef,
     private translateUiService: TranslateUiService,
   ) {
-  
+
   }
 
   ngOnInit(): void {
@@ -128,11 +128,6 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       this.nodeService.startManagerAt(this.tree.currentPath + '');
       this.startManagerRuned = true;
     }
-    // this.store.dispatch({ type: SET_PATH, payload: this.tree.currentPath });
-
-    // this.nodeService.getNodes(this.tree.currentPath).then(() => {
-    //   this.store.dispatch({type: SET_SELECTED_NODE, payload: });
-    // });
 
     this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation) => {
       this.openFilemanagerButtonLabel = translation;

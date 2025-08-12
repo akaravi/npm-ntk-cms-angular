@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FilePickerModule } from 'ngx-ntk-file-picker';
 import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 import { FileCategoryService, FileContentService } from 'ntk-cms-api';
@@ -20,9 +19,11 @@ import { TreeComponent } from './components/tree/tree.component';
 import { FileSizePipe } from './pipes/file-size.pipe';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 import { TranslateUiService } from './services/translateUi.service';
+import { NodeClickedService } from './services/node-clicked.service';
+import { NodeService } from './services/node.service';
+import { FileManagerStoreService } from './services/file-manager-store.service';
 @NgModule({
   imports: [
-    HttpClientModule,
     CommonModule,
     TranslateModule,
     NtkSmartModalModule.forRoot(),
@@ -57,9 +58,13 @@ import { TranslateUiService } from './services/translateUi.service';
     SideViewComponent,
   ],
   providers: [
+    provideHttpClient(withInterceptorsFromDi()),
     FileContentService,
     FileCategoryService,
-    TranslateUiService
+    TranslateUiService,
+    NodeClickedService,
+    NodeService,
+    FileManagerStoreService
   ]
 
 })

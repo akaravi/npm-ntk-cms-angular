@@ -77,7 +77,7 @@ export class NodeClickedService {
     }
   }
 
-  public searchForString(input: string): void {
+  public searchForString_orginal(input: string): void {
     this.sideEffectHelper(
       'Search',
       new HttpParams().append('query', input),
@@ -86,6 +86,15 @@ export class NodeClickedService {
       (res) => this.searchSuccess(input, res)
     );
   }
+  public searchForString(input: string): void {
+
+
+
+  }
+
+
+
+
 
   public createFolder_orginal(currentParent: number, newDirName: string): void {
     this.sideEffectHelper(
@@ -103,6 +112,7 @@ export class NodeClickedService {
       this.serviceTree.config.api.createFolder
     );
   }
+
   public createFolder(currentParent: number, newDirName: string): void {
     const model = new FileCategoryModel();
     model.title = newDirName;

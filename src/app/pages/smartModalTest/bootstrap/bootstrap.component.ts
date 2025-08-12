@@ -12,6 +12,7 @@ export class BootstrapComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Component initialization logic can be added here
   }
 
 }

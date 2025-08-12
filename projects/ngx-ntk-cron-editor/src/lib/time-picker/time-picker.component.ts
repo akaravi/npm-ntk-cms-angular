@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import Utils from '../poco/Utils';
+import Utils from '../poco/utils';
 
 
 

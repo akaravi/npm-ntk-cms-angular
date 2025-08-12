@@ -29,7 +29,7 @@ export class SmartModalTestComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const obj: Object = {
+    const obj: object = {
       prop1: 'test',
       prop2: true,
       prop3: [{ a: 'a', b: 'b' }, { c: 'c', d: 'd' }],

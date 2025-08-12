@@ -1,10 +1,11 @@
 import { HttpClient, HttpEventType, HttpRequest } from '@angular/common/http';
+import { Inject } from '@angular/core';
 import { FilePickerAdapter, FilePreviewModel, UploadResponse, UploadStatus } from 'ngx-ntk-file-picker';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 export class FileUploaderPickerAdapter extends FilePickerAdapter {
-  constructor(private http: HttpClient) {
+  constructor(@Inject(HttpClient) private http: HttpClient) {
     super();
   }
   baseUploadURL = 'https://apifile.ir/api/v2/';

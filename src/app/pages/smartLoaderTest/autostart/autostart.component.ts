@@ -10,6 +10,7 @@ export class AutostartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Component initialization logic can be added here
   }
 
 }
