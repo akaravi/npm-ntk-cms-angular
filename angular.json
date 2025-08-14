@@ -24,11 +24,18 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ntk-cms-filemanager/src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
               "src/styles.scss",
-              "projects/ngx-ntk-smart-module/src/assets/ngx-ntk-smart-loader.scss"
+              "projects/ngx-ntk-smart-module/src/assets/ngx-ntk-smart-loader.scss",
+              "projects/ngx-ntk-smart-module/src/assets/ngx-ntk-smart-modal.scss",
+              "projects/ntk-cms-filemanager/src/assets/ntk-cms-filemanager.scss"
             ]
           },
           "configurations": {

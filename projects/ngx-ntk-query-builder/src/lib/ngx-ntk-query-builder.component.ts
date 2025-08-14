@@ -1,41 +1,50 @@
 ﻿import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { QueryField, QueryBuilderFieldMap, QueryBuilderSettings, QueryRule, QueryRuleSet } from './interfaces/ngx-ntk-query-builder.interfaces';
+import {
+  QueryBuilderFieldMap,
+  QueryBuilderSettings,
+  QueryField,
+  QueryRule,
+  QueryRuleSet,
+} from './interfaces/ngx-ntk-query-builder.interfaces';
 import { OperatorsService } from './services/operators.service';
-import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateUiService } from './services/translateUi.service';
 
 @Component({
   selector: 'ngx-ntk-query-builder',
   templateUrl: './ngx-ntk-query-builder.component.html',
   styleUrls: ['./ngx-ntk-query-builder.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => NgxQueryBuilderComponent),
-    multi: true
-  }],
-  standalone: false
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => NgxQueryBuilderComponent),
+      multi: true,
+    },
+  ],
+  standalone: false,
 })
 export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
+  private _language = 'en';
+  @Input() set language(value: string) {
+    this._language = value;
+    this.translateUiService.init(value);
+    this.translate.use(this.language);
+  }
+
+  get language(): string {
+    return this._language;
+  }
   @Input() fieldMap: QueryBuilderFieldMap = {};
   @Input() settings: QueryBuilderSettings = {};
   @Input() disabled = false;
   @Input() data: QueryRuleSet = this.getEmptyRuleSetData();
   @Input() parent: QueryRuleSet;
   @Input() index: number;
-  // private privateLanguage = 'en';
-  @Input() set language(value: string) {
-    // this.privateLanguage = value;
-    if (value && value.length > 0) {
-      this.translate.use(value);
-    }
-  }
-  // get language(): string {
-  //   return this.privateLanguage;
-  // }
+
   constructor(
     public translate: TranslateService,
+    private translateUiService: TranslateUiService,
     public operatorsService: OperatorsService
   ) {
     translate.setDefaultLang('en');
@@ -51,8 +60,8 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     }
   }
   /**** ControlValueAccessor START ****/
-  onChange = (data: QueryRuleSet) => { };
-  onTouched = () => { };
+  onChange = (data: QueryRuleSet) => {};
+  onTouched = () => {};
   writeValue(data: any): void {
     this.data = data || this.getEmptyRuleSetData();
   }
@@ -73,7 +82,7 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     this.data.rules.push({
       field: this.getFields()[0].value,
       type: this.getFields()[0].type,
-      operator: this.operatorsService.getDefaultOperator()
+      operator: this.operatorsService.getDefaultOperator(),
     });
 
     this.onChange(this.data);
@@ -128,13 +137,13 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
 
   changeField(rule: QueryRule, index: number): void {
     (this.data.rules[index] as QueryRule).type = this.fieldMap[rule.field].type;
-    (this.data.rules[index] as QueryRule).operator = this.operatorsService.getDefaultOperator();
+    (this.data.rules[index] as QueryRule).operator =
+      this.operatorsService.getDefaultOperator();
     (this.data.rules[index] as QueryRule).value = undefined;
 
     this.onChange(this.data);
     this.onTouched();
   }
-
 
   hasParentRuleSet(): boolean {
     return !!this.parent;
@@ -153,26 +162,31 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
   }
 
   getInputType(rule: QueryRule): string {
-
     if (!this.fieldMap[rule.field]) {
       throw new Error(`No configuration for field '${rule.field}' was found!`);
     }
 
     const type = this.fieldMap[rule.field].type;
 
-    if (this.operatorsService.getOperatorsWithoutInput().includes(rule.operator)) {
+    if (
+      this.operatorsService.getOperatorsWithoutInput().includes(rule.operator)
+    ) {
       return null; // No displayed input
     }
 
     if (this.operatorsService.MULTI_SELECT_OPERATORS.includes(rule.operator)) {
-      return (type === this.operatorsService.INPUT_TYPE_SELECT) ? this.operatorsService.INPUT_TYPE_MULTI_SELECT : type;
+      return type === this.operatorsService.INPUT_TYPE_SELECT
+        ? this.operatorsService.INPUT_TYPE_MULTI_SELECT
+        : type;
     }
 
     return type;
   }
 
   getRuleOptions(rule: QueryRule): any {
-    return this.fieldMap[rule.field].options ? this.fieldMap[rule.field].options : [];
+    return this.fieldMap[rule.field].options
+      ? this.fieldMap[rule.field].options
+      : [];
   }
   convertToRuleSet(model: QueryRuleSet | QueryRule): QueryRuleSet {
     return model as QueryRuleSet;
@@ -181,6 +195,3 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     return model as QueryRule;
   }
 }
-
-
-

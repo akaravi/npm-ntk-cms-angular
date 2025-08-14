@@ -9,29 +9,30 @@
   Output,
   TemplateRef,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { NodeInterface } from './interfaces/node.interface';
 import { TreeModel } from './models/tree.model';
-import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from './services/file-manager-store.service';
+import {
+  FileManagerStoreService,
+  SET_LOADING_STATE,
+  SET_SELECTED_NODE,
+} from './services/file-manager-store.service';
 import { NodeClickedService } from './services/node-clicked.service';
 import { NodeService } from './services/node.service';
 import { TranslateUiService } from './services/translateUi.service';
-import { FileContentService, FileCategoryService } from 'ntk-cms-api';
-
 
 @Component({
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],
   standalone: false,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
-
   private _language = 'en';
   @Input() set language(value: string) {
     if (value && value.length > 0) {
@@ -49,7 +50,6 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   @Input() folderContentNewFileTemplate: TemplateRef<any>;
   @Input() folderContentNewFolderTemplate: TemplateRef<any>;
   @Input() folderContentReloadTemplate: TemplateRef<any>;
-
 
   @Input() openFilemanagerButtonView = true;
   @Input() openDirectUploadSave = true;
@@ -72,7 +72,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   openPopupForm = false;
   @Output() openFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() set openForm(model: boolean) {
-    if (model !== this.openPopupForm && this.mainModal && this.mainModal.nativeElement) {
+    if (
+      model !== this.openPopupForm &&
+      this.mainModal &&
+      this.mainModal.nativeElement
+    ) {
       if (model) {
         this.mainModal.nativeElement.style.display = 'block';
         document.body.classList.add('jw-modal-open');
@@ -92,14 +96,12 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       this.nodeService.startManagerAt(this.tree.currentPath + '');
       this.startManagerRuned = true;
     }
-
   }
   get openForm(): boolean {
     return this.openPopupForm;
   }
 
   openFilemanagerButtonLabel: string;
-
 
   selectedNode: NodeInterface;
   sideMenuClosed = true;
@@ -119,10 +121,8 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     public translate: TranslateService,
     private cdr: ChangeDetectorRef,
     private el: ElementRef,
-    private translateUiService: TranslateUiService,
-  ) {
-
-  }
+    private translateUiService: TranslateUiService
+  ) {}
 
   ngOnInit(): void {
     this.nodeService.serviceTree = this.tree;
@@ -132,37 +132,44 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       this.startManagerRuned = true;
     }
 
-    this.translate.get(this.openFilemanagerButtonLabelKey).subscribe((translation) => {
-      this.openFilemanagerButtonLabel = translation;
-    });
+    this.translate
+      .get(this.openFilemanagerButtonLabelKey)
+      .subscribe((translation) => {
+        this.openFilemanagerButtonLabel = translation;
+      });
 
     this.store
-      .getState(state => state.fileManagerState.inProcessingList)
+      .getState((state) => state.fileManagerState.inProcessingList)
       .subscribe((inProcessingList: Array<string>) => {
         this.cdr.detectChanges();
       });
     this.store
-      .getState(state => state.fileManagerState.isLoading)
+      .getState((state) => state.fileManagerState.isLoading)
       .subscribe((isLoading: boolean) => {
         this.loading = isLoading;
         this.cdr.detectChanges();
       });
     this.store
-      .getState(state => state.fileManagerState.selectedNode)
+      .getState((state) => state.fileManagerState.selectedNode)
       .subscribe((selectedNode: NodeInterface) => {
         this.cdr.detectChanges();
         if (!selectedNode) {
           return;
         }
         // fixed highlighting error when closing node but not changing path
-        if ((selectedNode.isExpanded && selectedNode.pathToNode !== this.nodeService.currentPath) && !selectedNode.stayOpen) {
+        if (
+          selectedNode.isExpanded &&
+          selectedNode.pathToNode !== this.nodeService.currentPath &&
+          !selectedNode.stayOpen
+        ) {
           return;
         }
 
-        this.handleFileManagerClickEvent({ type: 'select', node: selectedNode });
+        this.handleFileManagerClickEvent({
+          type: 'select',
+          node: selectedNode,
+        });
       });
-
-
   }
   ngAfterViewInit(): void {
     // this.HighestZIndex = this.findHighestZIndex('div');
@@ -203,7 +210,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         return this.onItemClicked({
           type: event.type,
           node: this.selectedNode,
-          newName: event.value
+          newName: event.value,
         });
 
       case 'removeAsk':
@@ -214,16 +221,18 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
         this.nodeClickedService.initDelete(this.selectedNode);
         return this.onItemClicked({
           type: event.type,
-          node: this.selectedNode
+          node: this.selectedNode,
         });
 
       case 'createFolder':
-        const parentid = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
+        const parentid = this.nodeService.findNodeByPath(
+          this.nodeService.currentPath
+        ).id;
         this.nodeClickedService.createFolder(parentid, event.payload);
         return this.onItemClicked({
           type: event.type,
           parentId: parentid,
-          newDirName: event.payload
+          newDirName: event.payload,
         });
       case 'createFile':
         if (this.openDirectUploadView && !this.openDirectUploadSave) {
@@ -231,16 +240,14 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
           const selectedModel = <NodeInterface>{
             id: event.payload.uploadFileGUID,
             name: event.payload.uploadFileGUID,
-            isFolder: false
+            isFolder: false,
           };
           this.selectedNode = selectedModel;
           this.confirmSelection();
           return;
         }
 
-        const failMethod = (error: any) => {
-
-        };
+        const failMethod = (error: any) => {};
         const successMethod = (next: any) => {
           // tslint:disable-next-line: no-angle-bracket-type-assertion
           const selectedModel = <NodeInterface>{
@@ -250,7 +257,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
             downloadThumbnailSrc: next.item.downloadThumbnailSrc,
             size: next.item.size,
             extension: next.item.extension,
-            isFolder: false
+            isFolder: false,
           };
           this.selectedNode = selectedModel;
           if (this.openDirectUploadView) {
@@ -259,16 +266,23 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
           }
         };
 
+        const catid = this.nodeService.findNodeByPath(
+          this.nodeService.currentPath
+        ).id;
 
-        const catid = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
-
-        this.nodeClickedService.createFile(catid, event.payload.fileName, event.payload.uploadFileGUID, successMethod, failMethod);
+        this.nodeClickedService.createFile(
+          catid,
+          event.payload.fileName,
+          event.payload.uploadFileGUID,
+          successMethod,
+          failMethod
+        );
 
         return this.onItemClicked({
           type: event.type,
           parentId: catid,
           fileName: event.payload.fileName,
-          uploadFileGUID: event.payload.uploadFileGUID
+          uploadFileGUID: event.payload.uploadFileGUID,
         });
     }
   }
@@ -278,14 +292,21 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       return;
     }
     if (closing) {
-      const parentNode = this.nodeService.findNodeByPath(this.nodeService.currentPath);
+      const parentNode = this.nodeService.findNodeByPath(
+        this.nodeService.currentPath
+      );
       this.store.dispatch({ type: SET_SELECTED_NODE, payload: parentNode });
       this.sideMenuClosed = true;
     } else {
-      if (this.selectedNode === node && this.sideMenuClosed) { this.sideMenuClosed = false; }
-      else if (this.selectedNode === node && !this.sideMenuClosed) { this.sideMenuClosed = true; }
-      else if (this.selectedNode !== node && this.sideMenuClosed) { this.sideMenuClosed = false; }
-      else if (this.selectedNode !== node && !this.sideMenuClosed) { this.sideMenuClosed = false; }
+      if (this.selectedNode === node && this.sideMenuClosed) {
+        this.sideMenuClosed = false;
+      } else if (this.selectedNode === node && !this.sideMenuClosed) {
+        this.sideMenuClosed = true;
+      } else if (this.selectedNode !== node && this.sideMenuClosed) {
+        this.sideMenuClosed = false;
+      } else if (this.selectedNode !== node && !this.sideMenuClosed) {
+        this.sideMenuClosed = false;
+      }
     }
 
     this.selectedNode = node;
@@ -315,7 +336,10 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     const treeElement = this.getElementById(pathToNode, 'tree_');
     const fcElement = this.getElementById(pathToNode, 'fc_');
     if (!treeElement && !fcElement) {
-      console.warn('[File Manager] failed to find requested node for path:', pathToNode);
+      console.warn(
+        '[File Manager] failed to find requested node for path:',
+        pathToNode
+      );
       return;
     }
 
@@ -331,7 +355,10 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
     // parent node highlight
     let pathToParent = node.pathToParent;
-    if (pathToParent === null || node.pathToNode === this.nodeService.currentPath) {
+    if (
+      pathToParent === null ||
+      node.pathToNode === this.nodeService.currentPath
+    ) {
       return;
     }
 
@@ -341,7 +368,10 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
     const parentElement = this.getElementById(pathToParent, 'tree_');
     if (!parentElement) {
-      console.warn('[File Manager] failed to find requested parent node for path:', pathToParent);
+      console.warn(
+        '[File Manager] failed to find requested parent node for path:',
+        pathToParent
+      );
       return;
     }
 
@@ -349,14 +379,11 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   private highilghtChildElement(el: HTMLElement, light: boolean = false): void {
-    el.children[0] // appnode div wrapper
-      .children[0] // ng template first item
-      .classList.add('highlighted');
+    el.children[0].children[0].classList // appnode div wrapper // ng template first item
+      .add('highlighted');
 
     if (light) {
-      el.children[0]
-        .children[0]
-        .classList.add('light');
+      el.children[0].children[0].classList.add('light');
     }
   }
 
@@ -366,10 +393,10 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
   private removeClass(className: string): void {
-    Array.from(document.getElementsByClassName(className))
-      .map((el) => el.classList.remove(className));
+    Array.from(document.getElementsByClassName(className)).map((el) =>
+      el.classList.remove(className)
+    );
   }
-
 
   fmShowHide(act: boolean): void {
     this.openForm = act;
@@ -421,7 +448,12 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
       model.extension.length === 0 ||
       !this.configSelectFileType ||
       this.configSelectFileType.length === 0 ||
-      this.configSelectFileType.find((t) => (t && model.extension && t.toLowerCase() === model.extension.toLowerCase()))
+      this.configSelectFileType.find(
+        (t) =>
+          t &&
+          model.extension &&
+          t.toLowerCase() === model.extension.toLowerCase()
+      )
     ) {
       return true;
     }
@@ -432,7 +464,9 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     let highest = Number.MIN_SAFE_INTEGER || -(Math.pow(2, 53) - 1);
     for (let i = 0; i < this.el.nativeElement.length; i++) {
       const zindex = Number.parseInt(
-        document.defaultView.getComputedStyle(elems[i], null).getPropertyValue('z-index'),
+        document.defaultView
+          .getComputedStyle(elems[i], null)
+          .getPropertyValue('z-index'),
         10
       );
       if (zindex > highest) {
@@ -452,16 +486,14 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
     ) {
       return false;
     }
-    if (node.extension.toLowerCase() === 'png' || node.extension.toLowerCase() === 'jpeg'
-      || node.extension.toLowerCase() === 'gif'
-      || node.extension.toLowerCase() === 'jpg') {
+    if (
+      node.extension.toLowerCase() === 'png' ||
+      node.extension.toLowerCase() === 'jpeg' ||
+      node.extension.toLowerCase() === 'gif' ||
+      node.extension.toLowerCase() === 'jpg'
+    ) {
       return true;
     }
     return false;
   }
-
 }
-
-
-
-

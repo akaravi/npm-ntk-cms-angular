@@ -12,11 +12,6 @@ export interface Locale {
   data: any;
 }
 
-
-
-// @Injectable({
-//   providedIn: 'root',
-// })
 @Injectable()
 export class CmsTranslationService {
   // Private properties
@@ -37,7 +32,7 @@ export class CmsTranslationService {
 
     // add new languages to the list
     this.translate.addLangs(this.langIds);
-    firstValueFrom(this.translate.use(this.getSelectedLanguage));//در قالب جدید از روی قالب جدید اضافه کردم
+    firstValueFrom(this.translate.use(this.getSelectedLanguage)); //در قالب جدید از روی قالب جدید اضافه کردم
   }
 
   setLanguage(lang: string): string {
@@ -46,7 +41,7 @@ export class CmsTranslationService {
       localStorage.setItem(LOCALIZATION_LOCAL_STORAGE_KEY, lang);
       return lang;
     }
-    return this.getSelectedLanguage
+    return this.getSelectedLanguage;
   }
 
   /**
@@ -54,8 +49,12 @@ export class CmsTranslationService {
    */
   get getSelectedLanguage(): string {
     const browserLang = this.translate.getBrowserLang();
-    return localStorage.getItem(LOCALIZATION_LOCAL_STORAGE_KEY) || this.translate.getDefaultLang() || environment.languagesDefault || browserLang || "en";
+    return (
+      localStorage.getItem(LOCALIZATION_LOCAL_STORAGE_KEY) ||
+      this.translate.getDefaultLang() ||
+      environment.languagesDefault ||
+      browserLang ||
+      'en'
+    );
   }
-
 }
-
