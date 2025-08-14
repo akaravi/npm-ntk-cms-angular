@@ -1,49 +1,54 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strictPropertyInitialization": false,
-    "strict": false,
-    "noImplicitReturns": false,
+    "strict": false, //default is true karavi change
+    "noImplicitOverride": false, //default is true karavi change
+    "noPropertyAccessFromIndexSignature": false, //default is true //if true  settings.username This would need to be settings["username"];
+    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": false,
-    "declaration": false,
-    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    /*karavi add*/
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+
     "allowJs": true,
     "checkJs": false,
     "strictFunctionTypes": true,
-    "target": "es2020",
-    "module": "es2020",
-    "lib": ["es2018", "dom"],
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "useDefineForClassFields": false,
+    /*karavi add*/
     "paths": {
-      "ntk-cms-api": [
-        "dist/ntk-cms-api/ntk-cms-api",
-        "dist/ntk-cms-api"
+      "ngx-ntk-cron-editor": ["./dist/ngx-ntk-cron-editor"],
+      "ngx-ntk-file-picker": ["./dist/ngx-ntk-file-picker"],
+      "ngx-ntk-icon-picker": ["./dist/ngx-ntk-icon-picker"],
+      "ngx-ntk-mat-color-picker": ["./dist/ngx-ntk-mat-color-picker"],
+      "ngx-ntk-query-builder": ["./dist/ngx-ntk-query-builder"],
+      "ngx-ntk-smart-module": ["./dist/ngx-ntk-smart-module"],
+      "ntk-cms-api": ["./dist/ntk-cms-api"],
+      "ntk-cms-filemanager": ["./dist/ntk-cms-filemanager"],
+      "ntk-cms-fileuploader": [
+        "./dist/ntk-cms-fileuploader"
       ],
-      "ngx-ntk-file-picker": [
-        "dist/ngx-ntk-file-picker"
-      ],
-      "ngx-ntk-icon-picker": [
-        "dist/ngx-ntk-icon-picker"
-      ],
-      "ngx-ntk-mat-color-picker": ["dist/ngx-ntk-mat-color-picker"],
-      "ntk-cms-filemanager": ["dist/ntk-cms-filemanager/ntk-cms-filemanager", "dist/ntk-cms-filemanager"],
-      "ntk-cms-fileuploader": ["dist/ntk-cms-fileuploader/ntk-cms-fileuploader", "dist/ntk-cms-fileuploader"],
-      "ngx-ntk-smart-module": ["dist/ngx-ntk-smart-module/ngx-ntk-smart-module", "dist/ngx-ntk-smart-module"],
 
-      "ngx-ntk-query-builder": ["dist/ngx-ntk-query-builder/ngx-ntk-query-builder", "dist/ngx-ntk-query-builder"],
-      "ngx-ntk-cron-editor": ["dist/ngx-ntk-cron-editor/ngx-ntk-cron-editor", "dist/ngx-ntk-cron-editor"]
     }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictTemplates": false,
     "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true,
+    /*karavi add*/
     "fullTemplateTypeCheck": true,
     "strictAttributeTypes": false,
     "strictSafeNavigationTypes": false,
@@ -52,5 +57,70 @@
     "strictDomEventTypes": false,
     "strictLiteralTypes": false,
     "strictNullChecks": false
-  }
+    /*karavi add*/
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ntk-cms-api/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ntk-cms-api/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ntk-cms-filemanager/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ntk-cms-filemanager/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ntk-cms-fileuploader/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ntk-cms-fileuploader/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-smart-module/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-smart-module/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-query-builder/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-query-builder/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-cron-editor/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-cron-editor/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-mat-color-picker/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-mat-color-picker/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-file-picker/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-file-picker/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-icon-picker/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-ntk-icon-picker/tsconfig.spec.json"
+    },
+
+  ]
 }

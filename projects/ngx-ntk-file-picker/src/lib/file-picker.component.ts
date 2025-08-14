@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -11,6 +11,7 @@ import {
   //karavi error on angular 18// runInInjectionContext,
   TemplateRef
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FilePickerService } from './file-picker.service';
 
 import { HttpErrorResponse } from '@angular/common/http';
@@ -39,6 +40,7 @@ declare var Cropper;
   selector: 'ngx-ntk-file-picker',
   templateUrl: './file-picker.component.html',
   styleUrls: ['./file-picker.component.scss'],
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilePickerComponent implements OnInit, OnDestroy {
@@ -436,3 +438,8 @@ export class FilePickerComponent implements OnInit, OnDestroy {
   }
 
 }
+
+
+
+
+

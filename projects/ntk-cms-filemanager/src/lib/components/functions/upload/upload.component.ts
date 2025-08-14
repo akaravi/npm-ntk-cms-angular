@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+﻿import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+
+
 import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-ntk-file-picker';
 import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 import { Observable, of } from 'rxjs';
@@ -11,6 +13,7 @@ import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
   selector: 'lib-filemanager-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None
 })
 export class UploadComponent implements OnInit, AfterViewInit {
@@ -80,17 +83,17 @@ export class UploadComponent implements OnInit, AfterViewInit {
   public myFiles: FilePreviewModel[] = [];
   captions: UploaderCaptions = {
     dropzone: {
-      title: 'می توانید فایل ها را در اینجا رها کنید',
-      or: 'یا',
-      browse: 'انتخاب فایل'
+      title: 'Ù…ÛŒ ØªÙˆØ§Ù†ÛŒØ¯ ÙØ§ÛŒÙ„ Ù‡Ø§ Ø±Ø§ Ø¯Ø± Ø§ÛŒÙ†Ø¬Ø§ Ø±Ù‡Ø§ Ú©Ù†ÛŒØ¯',
+      or: 'ÛŒØ§',
+      browse: 'Ø§Ù†ØªØ®Ø§Ø¨ ÙØ§ÛŒÙ„'
     },
     cropper: {
-      crop: 'قطع کردن',
-      cancel: 'انصراف'
+      crop: 'Ù‚Ø·Ø¹ Ú©Ø±Ø¯Ù†',
+      cancel: 'Ø§Ù†ØµØ±Ø§Ù'
     },
     previewCard: {
-      remove: 'حذف',
-      uploadError: 'برروز خطا در بارگزاری فایل'
+      remove: 'Ø­Ø°Ù',
+      uploadError: 'Ø¨Ø±Ø±ÙˆØ² Ø®Ø·Ø§ Ø¯Ø± Ø¨Ø§Ø±Ú¯Ø²Ø§Ø±ÛŒ ÙØ§ÛŒÙ„'
     }
   };
   ngOnInit(): void {
@@ -138,3 +141,7 @@ export class UploadComponent implements OnInit, AfterViewInit {
     return of(false).pipe(delay(200));
   }
 }
+
+
+
+

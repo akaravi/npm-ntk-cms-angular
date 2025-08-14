@@ -1,11 +1,13 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+﻿import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
 import { timer } from 'rxjs';
 
 @Component({
   selector: 'lib-filemanager-loading-overlay',
   templateUrl: './loading-overlay.component.html',
-  styleUrls: ['./loading-overlay.component.scss']
+  styleUrls: ['./loading-overlay.component.scss'],
+  standalone: false
 })
 export class LoadingOverlayComponent implements OnInit {
   @Input() loadingOverlayTemplate: TemplateRef<any>;
@@ -23,3 +25,7 @@ export class LoadingOverlayComponent implements OnInit {
     });
   }
 }
+
+
+
+

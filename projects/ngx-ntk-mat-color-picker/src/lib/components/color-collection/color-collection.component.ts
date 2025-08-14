@@ -1,11 +1,14 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+﻿import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { BASIC_COLORS, stringInputToObject } from '../../helpers';
 import { Color } from '../../models';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'ngx-ntk-mat-color-collection',
   templateUrl: './color-collection.component.html',
   styleUrls: ['./color-collection.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None,
   host: {
     'class': 'ngx-ntk-mat-color-collection'
@@ -42,3 +45,7 @@ export class NgxMatColorCollectionComponent implements OnInit {
   }
 
 }
+
+
+
+

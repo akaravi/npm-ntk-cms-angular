@@ -1,4 +1,4 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+﻿import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -25,6 +25,7 @@ import { NtkSmartModalConfig } from './ntk-smart-modal.config';
 
 @Component({
   selector: 'ntk-smart-modal',
+  standalone:false,
   template: `
     <div *ngIf="overlayVisible"
          [style.z-index]="visible ? layerPosition-1 : -1"
@@ -116,7 +117,7 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy, AfterViewInit 
 
   public ngOnInit(): void {
     if (!this.identifier || !this.identifier.length) {
-      throw new Error('identifier field isn’t set. Please set one before calling <ngx-smart-modal> in a template.');
+      throw new Error('identifier field isnâ€™t set. Please set one before calling <ngx-smart-modal> in a template.');
     }
 
     this._sendEvent('create');
@@ -374,3 +375,8 @@ export class NtkSmartModalComponent implements OnInit, OnDestroy, AfterViewInit 
     });
   }
 }
+
+
+
+
+

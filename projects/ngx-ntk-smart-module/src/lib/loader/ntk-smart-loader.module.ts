@@ -7,17 +7,16 @@ import { NtkSmartLoaderService } from './ntk-smart-loader.service';
 @NgModule({
   declarations: [NtkSmartLoaderComponent],
   exports: [NtkSmartLoaderComponent],
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class NtkSmartLoaderModule {
-
   /**
    * Use in AppModule: new instance of NtkSmartLoader.
    */
   public static forRoot(): ModuleWithProviders<NtkSmartLoaderModule> {
     return {
       ngModule: NtkSmartLoaderModule,
-      providers: [NtkSmartLoaderService]
+      providers: [NtkSmartLoaderService],
     };
   }
 
@@ -27,8 +26,7 @@ export class NtkSmartLoaderModule {
   public static forChild(): ModuleWithProviders<NtkSmartLoaderModule> {
     return {
       ngModule: NtkSmartLoaderModule,
-      providers: [NtkSmartLoaderService]
+      providers: [NtkSmartLoaderService],
     };
   }
-
 }

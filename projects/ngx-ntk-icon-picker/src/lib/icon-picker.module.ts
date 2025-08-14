@@ -9,22 +9,25 @@ import { TextDirective } from './text.directive';
 import { SearchIconPipe } from './search-icon.pipe';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FontAwesomeModule,
-    ],
-    providers: [
-        IconPickerService
-    ],
-    declarations: [
-        IconPickerComponent,
-        IconPickerDirective,
-        TextDirective,
-        SearchIconPipe
-    ],
-    exports: [
-        IconPickerDirective
-    ]
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    IconPickerDirective,
+    TextDirective,
+    SearchIconPipe,
+  ],
+  providers: [
+    IconPickerService
+  ],
+  declarations: [
+    IconPickerComponent,
+  ],
+  exports: [
+    IconPickerComponent,
+    IconPickerDirective,
+    TextDirective,
+    SearchIconPipe,
+  ]
 })
 export class IconPickerModule {
 }

@@ -1,7 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
+﻿import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'mapToIterablePipe'
+  name: 'mapToIterablePipe',
+  standalone: false
 })
 export class MapToIterablePipe implements PipeTransform {
   transform(dict: any) {
@@ -15,3 +16,4 @@ export class MapToIterablePipe implements PipeTransform {
     return a;
   }
 }
+

@@ -1,11 +1,14 @@
-import { ChangeDetectorRef, Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
+
 import { NodeInterface } from '../../../interfaces/node.interface';
 import { FileManagerStoreService } from '../../../services/file-manager-store.service';
+
 
 @Component({
   selector: 'lib-filemanager-node-lister',
   templateUrl: './node-lister.component.html',
-  styleUrls: ['./node-lister.component.scss']
+  styleUrls: ['./node-lister.component.scss'],
+  standalone: false
 })
 export class NodeListerComponent implements OnInit {
   @ContentChild(TemplateRef, { static: false }) templateRef: TemplateRef<any>;
@@ -32,3 +35,7 @@ export class NodeListerComponent implements OnInit {
   ngOnInit() {
   }
 }
+
+
+
+

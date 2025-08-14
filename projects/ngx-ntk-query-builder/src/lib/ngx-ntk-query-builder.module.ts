@@ -9,7 +9,7 @@ import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
 
 @NgModule({
   declarations: [
-    NgxQueryBuilderComponent
+    NgxQueryBuilderComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { NgxQueryBuilderComponent } from './ngx-ntk-query-builder.component';
     }),
   ],
   exports: [
-    NgxQueryBuilderComponent
+    NgxQueryBuilderComponent,
   ],
   providers: [
     TranslateService,

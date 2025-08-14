@@ -1,10 +1,14 @@
-import { AfterViewInit, Component, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+﻿import { AfterViewInit, Component, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { getColorAtPosition, matchers, stringInputToObject } from '../../helpers';
 import { Color } from '../../models';
 import { NgxMatBaseColorCanvas } from './base-color-canvas';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NgxMatColorSliderComponent } from './color-slider/color-slider.component';
 
 const RADIUS_NOB = 5;
 
@@ -12,6 +16,7 @@ const RADIUS_NOB = 5;
   selector: 'ngx-ntk-mat-color-canvas',
   templateUrl: './color-canvas.component.html',
   styleUrls: ['./color-canvas.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None,
   host: {
     'class': 'ngx-ntk-mat-color-canvas'
@@ -147,3 +152,7 @@ export class NgxMatColorCanvasComponent extends NgxMatBaseColorCanvas
   }
 
 }
+
+
+
+

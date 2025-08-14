@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
+  standalone: true
 })
-export class TestComponent implements OnInit {
-  constructor() { }
-  ngOnInit(): void {
-    // Component initialization logic can be added here
-  }
+export class TestComponent {
+  title = 'test works!';
 }
+
+

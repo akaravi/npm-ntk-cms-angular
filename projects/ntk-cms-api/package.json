@@ -1,6 +1,6 @@
 {
   "name": "ntk-cms-api",
-  "version": "18.26.17",
+  "version": "20.25.3",
   "description": "Ntk Cms Api And Model For Typscript",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -12,9 +12,12 @@
     "api"
   ],
   "peerDependencies": {
-    "@angular/common": ">=10.0.0",
-    "@angular/core": ">=10.0.0",
+    "@angular/common": "^20.1.0",
+    "@angular/core": "^20.1.0",
     "rxjs": ">=6.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
 }

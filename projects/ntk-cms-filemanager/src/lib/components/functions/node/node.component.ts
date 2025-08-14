@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+
 import { NodeInterface } from '../../../interfaces/node.interface';
 
 import { DownloadModeEnum } from '../../../enums/download-mode.enum';
@@ -9,7 +10,8 @@ import { NodeService } from '../../../services/node.service';
 @Component({
   selector: 'lib-filemanager-node',
   templateUrl: './node.component.html',
-  styleUrls: ['./node.component.scss']
+  styleUrls: ['./node.component.scss'],
+  standalone: false
 })
 export class NodeComponent implements OnInit {
   @Input() node: NodeInterface;
@@ -107,3 +109,7 @@ export class NodeComponent implements OnInit {
     }
   }
 }
+
+
+
+

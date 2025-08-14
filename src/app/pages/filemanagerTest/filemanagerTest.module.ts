@@ -1,19 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CmsFileManagerModule } from 'projects/ntk-cms-filemanager/src/public-api';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { CmsFileManagerModule } from 'ntk-cms-filemanager';
 import { FileManagerTestComponent } from './filemanagerTest.component';
-import { FilemanagerTestRoutes } from './filemanagerTest.routing';
-import { TranslateModule } from '@ngx-translate/core';
+
+const routes: Routes = [
+  { path: '', component: FileManagerTestComponent }
+];
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    TranslateModule,
-    FilemanagerTestRoutes,
-    CmsFileManagerModule,
-
-  ],
-
-  declarations: [FileManagerTestComponent],
+    FileManagerTestComponent,
+    RouterModule.forChild(routes),
+    CmsFileManagerModule
+  ]
 })
-export class FilemanagerTestModule { }
+export class FileManagerTestModule { }

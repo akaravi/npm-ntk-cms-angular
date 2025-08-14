@@ -1,10 +1,17 @@
+﻿import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IconPickerModule } from 'ngx-ntk-icon-picker';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ModalDialogComponent } from './modal/modal.dialog';
 
 @Component({
   selector: 'app-icon-picker-test',
   templateUrl: './icon-picker-test.component.html',
-  styleUrls: ['./icon-picker-test.component.less']
+  styleUrls: ['./icon-picker-test.component.less'],
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IconPickerModule, FontAwesomeModule, ModalDialogComponent]
 })
 export class IconPickerTestComponent implements OnInit {
   myFormGroup: FormGroup;
@@ -102,3 +109,7 @@ export class IconPickerTestComponent implements OnInit {
     this.awaitingOpening = true;
   }
 }
+
+
+
+

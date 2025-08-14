@@ -1,4 +1,4 @@
-import {
+﻿import {
   Component,
   Input,
   Output,
@@ -8,6 +8,7 @@ import {
   Renderer2
 } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 import { UploadFile } from './upload-file.model';
 import { UploadEvent } from './upload-event.model';
@@ -17,12 +18,14 @@ import {
   FileSystemDirectoryEntry
 } from './dom.types';
 import { UploaderCaptions } from '../uploader-captions';
+import { CloudIconComponent } from '../icons/cloud-icon/cloud-icon.component';
 
 @Component({
   selector: 'file-drop',
   templateUrl: './file-drop.component.html',
-  styleUrls: ['./file-drop.component.scss']
-})
+  styleUrls: ['./file-drop.component.scss'],
+  standalone: false,
+  })
 export class FileComponent implements OnDestroy {
   @Input()
   captions: UploaderCaptions;
@@ -216,3 +219,8 @@ export class FileComponent implements OnDestroy {
     this.globalEnd();
   }
 }
+
+
+
+
+

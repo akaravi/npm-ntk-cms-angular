@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-import { NtkSmartLoaderService } from 'projects/ngx-ntk-smart-module/src/public-api';
+﻿import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NtkSmartLoaderService, NtkSmartLoaderModule } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'app-multi',
   templateUrl: './multi.component.html',
-  styleUrls: ['./multi.component.scss']
+  styleUrls: ['./multi.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NtkSmartLoaderModule],
+  providers: [NtkSmartLoaderService]
 })
 export class MultiComponent {
 
@@ -41,3 +45,7 @@ export class MultiComponent {
   }
 
 }
+
+
+
+

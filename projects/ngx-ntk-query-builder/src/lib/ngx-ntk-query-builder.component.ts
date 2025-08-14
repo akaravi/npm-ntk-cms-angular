@@ -1,8 +1,10 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+﻿import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { QueryField, QueryBuilderFieldMap, QueryBuilderSettings, QueryRule, QueryRuleSet } from './interfaces/ngx-ntk-query-builder.interfaces';
 import { OperatorsService } from './services/operators.service';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-ntk-query-builder',
@@ -12,7 +14,8 @@ import { OperatorsService } from './services/operators.service';
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => NgxQueryBuilderComponent),
     multi: true
-  }]
+  }],
+  standalone: false
 })
 export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
   @Input() fieldMap: QueryBuilderFieldMap = {};
@@ -178,3 +181,6 @@ export class NgxQueryBuilderComponent implements OnInit, ControlValueAccessor {
     return model as QueryRule;
   }
 }
+
+
+

@@ -1,114 +1,106 @@
-import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { CmsFileManagerModule, TreeModel, DownloadModeEnum } from 'ntk-cms-filemanager';
 import {
-  ConfigInterface,
-  DownloadModeEnum,
-  NodeInterface,
-  TreeModel
-} from 'projects/ntk-cms-filemanager/src/public-api';
+  FileCategoryModel,
+  FileContentModel,
+} from 'ntk-cms-api';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-filemanager-test',
   templateUrl: './filemanagerTest.component.html',
   styleUrls: ['./filemanagerTest.component.scss'],
+  standalone: true,
+  imports: [CommonModule, CmsFileManagerModule]
 })
-export class FileManagerTestComponent {
-  tree1: TreeModel;
-  tree2: TreeModel;
-  tree3: TreeModel;
-  // node: NodeInterface;
-  appLanguage = 'fa';
-
-  constructor() {
-    const treeConfig1: ConfigInterface = {
-      baseURL: 'https://apicms.ir/api/v2/',
-      baseUploadURL: 'https://apifile.ir/api/v2/',
-      api: {
-        listFile: 'FileContent/GetAll',
-        listFolder: 'FileCategory/GetAll',
-        uploadFile: 'upload',
-        downloadFile: 'download',
-        deleteFile: 'FileContent',
-        deleteFolder: 'FileCategory',
-        createFolder: 'FileCategory',
-        createFile: 'FileContent',
-        getOneFile: 'FileContent',
-        getOneFolder: 'FileCategory',
-        renameFile: 'FileContent',
-        renameFolder: 'FileCategory',
-        searchFiles: 'FileCategory/GetAll',
-      },
-      options: {
-        title: 'Select File',
-        allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
-        showFilesInsideTree: false,
-        showSelectFile: true,
-        showSelectFolder: false,
-        fileUplodMaxCount: 20,
-        fileUplodExtensions: [],
-        fileUplodTypeAccept: ''
-      },
-    };
-
-    const treeConfig2: ConfigInterface = {
-      baseURL: 'https://apicms.ir/api/v2/',
-      baseUploadURL: 'https://apifile.ir/api/v2/',
-      api: {
-        listFile: 'FileContent/GetAll',
-        listFolder: 'FileCategory/GetAll',
-        uploadFile: 'upload',
-        downloadFile: 'download',
-        deleteFile: 'FileContent',
-        deleteFolder: 'FileCategory',
-        createFolder: 'FileCategory',
-        createFile: 'FileContent',
-        getOneFile: 'FileContent',
-        getOneFolder: 'FileCategory',
-        renameFile: 'FileContent',
-        renameFolder: 'FileCategory',
-        searchFiles: 'FileCategory/GetAll',
-      },
-      options: {
-        title: 'Hello World 2',
-        allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
-        showFilesInsideTree: false,
-        showSelectFile: true,
-        showSelectFolder: false,
-        fileUplodMaxCount: 20,
-        fileUplodExtensions: [],
-        fileUplodTypeAccept: ''
-      },
-    };
-
-    this.tree1 = new TreeModel(treeConfig1);
-    this.tree2 = new TreeModel(treeConfig2);
-    this.tree3 = new TreeModel(treeConfig1);
+export class FileManagerTestComponent implements OnInit {
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
   }
-  // optionsFileManager: ComponentOptionModel = new ComponentOptionModel();
+
+  ngOnInit(): void {
+    this.translate.use('en');
+  }
+
+  appLanguage = 'en';
   openForm = false;
-  selected1: NodeInterface;
-  selected2: NodeInterface;
-  selected3: NodeInterface;
-  // noinspection JSUnusedLocalSymbols
+  tree1: TreeModel = new TreeModel({
+    baseURL: '',
+    baseUploadURL: '',
+    api: null,
+    options: {
+      title: 'File Manager 1',
+      allowFolderDownload: 0,
+      showFilesInsideTree: true,
+      showSelectFile: true,
+      showSelectFolder: true,
+      fileUplodMaxCount: 10,
+      fileUplodTypeAccept: '*',
+      fileUplodExtensions: []
+    }
+  });
+  tree2: TreeModel = new TreeModel({
+    baseURL: '',
+    baseUploadURL: '',
+    api: null,
+    options: {
+      title: 'File Manager 2',
+      allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
+      showFilesInsideTree: true,
+      showSelectFile: true,
+      showSelectFolder: true,
+      fileUplodMaxCount: 10,
+      fileUplodTypeAccept: '*',
+      fileUplodExtensions: []
+    }
+  });
+  tree3: TreeModel = new TreeModel({
+    baseURL: '',
+    baseUploadURL: '',
+    api: null,
+    options: {
+      title: 'File Manager 3',
+      allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
+      showFilesInsideTree: true,
+      showSelectFile: true,
+      showSelectFolder: true,
+      fileUplodMaxCount: 10,
+      fileUplodTypeAccept: '*',
+      fileUplodExtensions: []
+    }
+  });
+  selected1: any;
+  selected2: any;
+  selected3: any;
 
-  onActionFileSelect1(event: NodeInterface): void {
-    console.log(event);
-    this.selected1 = event;
+  onActionFileSelect1(model: FileContentModel | FileCategoryModel): void {
+    this.selected1 = model;
+    console.log('Selected 1:', model);
   }
-  onActionFileSelect2(event: NodeInterface): void {
-    console.log(event);
-    this.selected2 = event;
+
+  onActionFileSelect2(model: FileContentModel | FileCategoryModel): void {
+    this.selected2 = model;
+    console.log('Selected 2:', model);
   }
-  onActionFileSelect3(event: NodeInterface): void {
-    console.log(event);
-    this.selected3 = event;
+
+  onActionFileSelect3(model: FileContentModel | FileCategoryModel): void {
+    this.selected3 = model;
+    console.log('Selected 3:', model);
   }
-  onActionOpen(status: boolean): void {
-    // if (this.optionsFileManager.childMethods) {
-    //   this.optionsFileManager.childMethods.ActionOpen(status);
-    // }
-    this.openForm = status;
+
+  onActionOpen(value: boolean): void {
+    this.openForm = value;
   }
+
   onActionTest(): void {
-    this.openForm = true;
+    console.log('Test button clicked');
+  }
+
+  onActionSelect(model: FileContentModel | FileCategoryModel): void {
+    console.log('Selected:', model);
   }
 }
+
+
+

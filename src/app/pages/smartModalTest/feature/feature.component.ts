@@ -1,10 +1,13 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
-import { NtkSmartModalService } from 'projects/ngx-ntk-smart-module/src/public-api';
+﻿import { AfterViewInit, ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NtkSmartModalService, NtkSmartModalComponent, NtkSmartModalModule } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NtkSmartModalModule],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FeatureComponent implements AfterViewInit {
@@ -23,3 +26,6 @@ export class FeatureComponent implements AfterViewInit {
   }
 
 }
+
+
+

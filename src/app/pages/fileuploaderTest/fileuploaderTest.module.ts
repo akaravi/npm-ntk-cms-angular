@@ -1,18 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { FileUploaderTestComponent } from './fileuploaderTest.component';
 
-import { FileuploaderTestComponent } from './fileuploaderTest.component';
-import { FileuploaderTestRoutes } from './fileuploaderTest.routing';
-import { CmsFileUploaderModule } from 'projects/ntk-cms-fileuploader/src/public-api';
-import { TranslateModule } from '@ngx-translate/core';
+const routes: Routes = [
+  { path: '', component: FileUploaderTestComponent }
+];
 
 @NgModule({
+  declarations: [],
   imports: [
-    CommonModule,
-    TranslateModule,
-    FileuploaderTestRoutes,
-    CmsFileUploaderModule
-  ],
-  declarations: [FileuploaderTestComponent]
+    CommonModule, FileUploaderTestComponent,
+    RouterModule.forChild(routes)
+  ]
 })
-export class FileuploaderTestModule { }
+export class FileUploaderTestModule { }

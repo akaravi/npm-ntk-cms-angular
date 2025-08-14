@@ -1,3 +1,22 @@
+.top {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px 0;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
 .row {
   max-width: 800px;
   margin: 0 auto;
@@ -89,6 +108,28 @@
 
     &:after {
       border-top: 4px solid #fafafa;
+    }
+  }
+}
+
+.btn-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #536dfe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+      background: #3f51b5;
     }
   }
 }

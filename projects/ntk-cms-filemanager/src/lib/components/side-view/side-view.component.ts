@@ -1,4 +1,6 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+
+
 import { DownloadModeEnum } from '../../enums/download-mode.enum';
 import { NodeInterface } from '../../interfaces/node.interface';
 import { FileManagerStoreService } from '../../services/file-manager-store.service';
@@ -7,6 +9,7 @@ import { FileManagerStoreService } from '../../services/file-manager-store.servi
   selector: 'lib-filemanager-side-view',
   templateUrl: './side-view.component.html',
   styleUrls: ['./side-view.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None
 })
 export class SideViewComponent implements OnInit {
@@ -82,3 +85,7 @@ export class SideViewComponent implements OnInit {
     return false;
   }
 }
+
+
+
+

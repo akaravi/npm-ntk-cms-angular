@@ -1,24 +1,18 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NtkSmartModalModule } from 'projects/ngx-ntk-smart-module/src/public-api';
-import { AutostartComponent } from './autostart/autostart.component';
-import { BootstrapComponent } from './bootstrap/bootstrap.component';
-import { FeatureComponent } from './feature/feature.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { SmartModalTestComponent } from './smartModalTest.component';
-import { SmartModalTestRoutes } from './smartModalTest.routing';
-import { TranslateModule } from '@ngx-translate/core';
+
+const routes: Routes = [
+  { path: '', component: SmartModalTestComponent }
+];
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    TranslateModule,
-    SmartModalTestRoutes,
-    NtkSmartModalModule.forRoot()
-  ],
-  declarations: [SmartModalTestComponent,
-    BootstrapComponent,
-    AutostartComponent,
-    FeatureComponent
+    SmartModalTestComponent,
+    RouterModule.forChild(routes)
   ]
 })
 export class SmartModalTestModule { }

@@ -1,11 +1,11 @@
-import { Directionality } from '@angular/cdk/bidi';
+﻿import { Directionality } from '@angular/cdk/bidi';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ESCAPE, UP_ARROW } from '@angular/cdk/keycodes';
 import { Overlay, OverlayConfig, OverlayRef, PositionStrategy, ScrollStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ComponentRef, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, OnDestroy, OnInit, Optional, Output, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { CanColor, ThemePalette, mixinColor } from '@angular/material/core';
+import { ThemePalette } from '@angular/material/core';
 import { matDatepickerAnimations } from '@angular/material/datepicker';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Subject, Subscription, merge } from 'rxjs';
@@ -14,6 +14,7 @@ import { Color } from '../../models';
 import { ColorAdapter } from '../../services';
 import { NgxMatColorPaletteComponent } from '../color-palette/color-palette.component';
 import { NgxMatColorPickerInput } from './color-input.component';
+
 
 /** Injection token that determines the scroll handling while the calendar is open. */
 export const NGX_MAT_COLOR_PICKER_SCROLL_STRATEGY =
@@ -31,17 +32,16 @@ export const NGX_MAT_COLOR_PICKER_SCROLL_STRATEGY_FACTORY_PROVIDER = {
   useFactory: NGX_MAT_COLOR_PICKER_SCROLL_STRATEGY_FACTORY,
 };
 
-const _MatColorpickerContentBase = mixinColor(
-  class {
-    constructor(public _elementRef: ElementRef) { }
-  },
-);
+const _MatColorpickerContentBase = class {
+  constructor(public _elementRef: ElementRef) { }
+};
 
 
 @Component({
   selector: 'ngx-ntk-mat-color-picker-content',
   templateUrl: './color-picker-content.component.html',
   styleUrls: ['color-picker-content.component.scss'],
+  standalone: false,
   host: {
     'class': 'ngx-ntk-mat-colorpicker-content',
     '[@transformPanel]': '"enter"',
@@ -56,8 +56,7 @@ const _MatColorpickerContentBase = mixinColor(
   changeDetection: ChangeDetectionStrategy.OnPush,
   inputs: ['color']
 })
-export class NgxMatColorPickerContentComponent extends _MatColorpickerContentBase
-  implements CanColor {
+export class NgxMatColorPickerContentComponent extends _MatColorpickerContentBase {
 
   /** Reference to the internal calendar component. */
   @ViewChild(NgxMatColorPaletteComponent) _palette: NgxMatColorPaletteComponent;
@@ -77,8 +76,9 @@ export class NgxMatColorPickerContentComponent extends _MatColorpickerContentBas
   exportAs: 'ngxMatColorPicker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  standalone: false
 })
-export class NgxMatColorPickerComponent implements OnInit, OnDestroy, CanColor {
+export class NgxMatColorPickerComponent implements OnInit, OnDestroy {
 
   private _scrollStrategy: () => ScrollStrategy;
 
@@ -141,6 +141,9 @@ export class NgxMatColorPickerComponent implements OnInit, OnDestroy, CanColor {
   get _selected(): Color { return this._validSelected; }
   set _selected(value: Color) { this._validSelected = value; }
   private _validSelected: Color = null;
+
+  /** Unique ID for the color picker. */
+  id: string = `ngx-mat-color-picker-${Math.random().toString(36).substr(2, 9)}`;
 
 
   _pickerInput: NgxMatColorPickerInput;
@@ -243,6 +246,7 @@ export class NgxMatColorPickerComponent implements OnInit, OnDestroy, CanColor {
       direction: this._dir ? this._dir.value : 'ltr',
       viewContainerRef: this._viewContainerRef,
       panelClass: 'ngx-ntk-mat-colorpicker-dialog',
+      data: {}
     });
 
     this._dialogRef.afterClosed().subscribe(() => this.close());
@@ -349,10 +353,10 @@ export class NgxMatColorPickerComponent implements OnInit, OnDestroy, CanColor {
   private _setColor(): void {
     const color = this.color;
     if (this._popupComponentRef) {
-      this._popupComponentRef.instance.color = color;
+      this._popupComponentRef.instance.picker.color = color;
     }
     if (this._dialogRef) {
-      this._dialogRef.componentInstance.color = color;
+      this._dialogRef.componentInstance.picker.color = color;
     }
   }
 
@@ -394,3 +398,7 @@ export class NgxMatColorPickerComponent implements OnInit, OnDestroy, CanColor {
 
 
 }
+
+
+
+

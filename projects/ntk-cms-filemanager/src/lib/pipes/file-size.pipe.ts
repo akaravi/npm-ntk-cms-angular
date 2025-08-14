@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+﻿import { Pipe, PipeTransform } from '@angular/core';
 
 /*
  * Convert bytes into largest possible unit.
@@ -9,7 +9,10 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   {{ 1024 |  fileSize}}
  *   formats to: 1 KB
 */
-@Pipe({ name: 'fileSize' })
+@Pipe({
+  name: 'fileSize',
+  standalone: false
+})
 export class FileSizePipe implements PipeTransform {
 
   private units = [
@@ -34,3 +37,4 @@ export class FileSizePipe implements PipeTransform {
     return bytes.toFixed(+ precision) + ' ' + this.units[unit];
   }
 }
+

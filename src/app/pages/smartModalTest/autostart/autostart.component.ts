@@ -1,9 +1,14 @@
-import { Component, OnInit, VERSION } from '@angular/core';
+﻿import { Component, OnInit, VERSION } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NtkSmartModalModule } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'app-autostart',
   templateUrl: './autostart.component.html',
-  styleUrls: ['./autostart.component.scss']
+  styleUrls: ['./autostart.component.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterModule, NtkSmartModalModule]
 })
 export class AutostartComponent implements OnInit {
 
@@ -19,3 +24,5 @@ export class AutostartComponent implements OnInit {
   }
 
 }
+
+

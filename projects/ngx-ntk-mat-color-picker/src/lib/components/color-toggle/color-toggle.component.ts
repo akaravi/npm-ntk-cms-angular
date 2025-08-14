@@ -1,13 +1,16 @@
-import {
+﻿import {
   AfterContentInit, ChangeDetectorRef, Component, ContentChild, Directive, Input, OnChanges, OnDestroy,
   OnInit, SimpleChanges, ViewChild, ViewEncapsulation
 } from '@angular/core';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { Subscription, merge, of } from 'rxjs';
 import { NgxMatColorPickerComponent } from '../color-picker/color-picker.component';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Directive({
   selector: '[ngxMatColorpickerToggleIcon]',
+  standalone: false
 })
 export class NgxMatColorpickerToggleIcon { }
 
@@ -15,6 +18,7 @@ export class NgxMatColorpickerToggleIcon { }
   selector: 'ngx-ntk-mat-color-toggle',
   templateUrl: './color-toggle.component.html',
   styleUrls: ['./color-toggle.component.scss'],
+  standalone: false,
   host: {
     'class': 'ngx-ntk-mat-color-toggle',
     // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
@@ -39,6 +43,7 @@ export class NgxMatColorToggleComponent implements OnInit, AfterContentInit, OnC
     if (this._disabled == null && this.picker) {
       return this.picker.disabled;
     }
+    return !!this._disabled;
   }
   set disabled(value: boolean) {
     this._disabled = value;
@@ -88,3 +93,7 @@ export class NgxMatColorToggleComponent implements OnInit, AfterContentInit, OnC
   }
 
 }
+
+
+
+

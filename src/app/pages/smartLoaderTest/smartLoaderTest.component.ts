@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { NtkSmartLoaderService } from 'projects/ngx-ntk-smart-module/src/public-api';
+﻿import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { NtkSmartLoaderService, NtkSmartLoaderModule } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'app-smartloader-test',
   templateUrl: './smartLoaderTest.component.html',
-  styleUrls: ['./smartLoaderTest.component.scss']
+  styleUrls: ['./smartLoaderTest.component.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, NtkSmartLoaderModule],
+  providers: [NtkSmartLoaderService]
 })
 export class SmartLoaderTestComponent implements OnInit {
 
@@ -22,3 +27,7 @@ export class SmartLoaderTestComponent implements OnInit {
   }
 
 }
+
+
+
+

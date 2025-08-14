@@ -1,4 +1,5 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+﻿import { Component, NgZone, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { getColorAtPosition } from '../../../helpers';
 import { Color } from '../../../models';
 import { NgxMatBaseColorCanvas } from '../base-color-canvas';
@@ -6,7 +7,8 @@ import { NgxMatBaseColorCanvas } from '../base-color-canvas';
 @Component({
   selector: 'ngx-ntk-mat-color-slider',
   templateUrl: './color-slider.component.html',
-  styleUrls: ['./color-slider.component.scss']
+  styleUrls: ['./color-slider.component.scss'],
+  standalone: false,
 })
 export class NgxMatColorSliderComponent extends NgxMatBaseColorCanvas implements OnInit {
 
@@ -55,3 +57,5 @@ export class NgxMatColorSliderComponent extends NgxMatBaseColorCanvas implements
 
 
 }
+
+

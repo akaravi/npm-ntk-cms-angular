@@ -179,6 +179,7 @@ export class NtkSmartLoaderService {
    * @param action Name of the action.
    */
   public executeAction(id: string, action: string): void {
+    // First check if the action exists in privateActions
     if (this.privateActions.find((act) => act.identifier === id && act.action === action)) {
       switch (action) {
         case 'start':
@@ -187,6 +188,22 @@ export class NtkSmartLoaderService {
         case 'stop':
           this.stop(id);
           break;
+      }
+    } else {
+      // If no action exists, execute it directly if the loader exists
+      let loader;
+      if (loader = this._getLoader(id)) {
+        switch (action) {
+          case 'start':
+            loader.component.start();
+            break;
+          case 'stop':
+            loader.component.stop();
+            break;
+        }
+      } else {
+        // If loader doesn't exist, add the action to be executed later
+        this._addAction(id, action);
       }
     }
   }

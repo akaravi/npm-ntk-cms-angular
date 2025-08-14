@@ -1,0 +1,212 @@
+.top {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 30%;
+  min-height: 200px;
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+
+  &.item-white {
+    background: white;
+  }
+
+  &.item-blank {
+    background: transparent;
+    border: none;
+  }
+}
+
+.code-snippet {
+  width: 100%;
+  text-align: left;
+
+  pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+.btn-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #536dfe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+      background: #3f51b5;
+    }
+  }
+}
+
+// Rubik Loader
+.rubik-loader {
+  width: 40px;
+  height: 40px;
+  background: #536dfe;
+  border-radius: 4px;
+  animation: rubik-spin 1.5s ease-in-out infinite;
+}
+
+@keyframes rubik-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Jelly Loader
+#jelly-loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+#shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  animation: shadow 0.6s ease-in-out infinite;
+}
+
+#box {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #536dfe;
+  border-radius: 4px;
+  animation: jelly 0.6s ease-in-out infinite;
+}
+
+@keyframes jelly {
+  0%, 100% { transform: scale(1, 1); }
+  25% { transform: scale(1.1, 0.9); }
+  50% { transform: scale(0.9, 1.1); }
+  75% { transform: scale(1.05, 0.95); }
+}
+
+@keyframes shadow {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.2; }
+  50% { transform: translateX(-50%) scale(0.8); opacity: 0.1; }
+}
+
+// Redirecting Loader
+.body {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.body span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #536dfe;
+  border-radius: 50%;
+  animation: redirecting 1.2s linear infinite;
+}
+
+.body span:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.body span:nth-child(2) { top: 10px; right: 10px; animation-delay: 0.3s; }
+.body span:nth-child(3) { bottom: 10px; right: 10px; animation-delay: 0.6s; }
+.body span:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); animation-delay: 0.9s; }
+
+.base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #536dfe;
+  border-radius: 50%;
+}
+
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.longfazers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+.longfazers span {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: #536dfe;
+  animation: longfazers 1.2s linear infinite;
+}
+
+.longfazers span:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.longfazers span:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); animation-delay: 0.3s; }
+.longfazers span:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); animation-delay: 0.6s; }
+.longfazers span:nth-child(4) { top: 50%; left: 0; transform: translateY(-50%); animation-delay: 0.9s; }
+
+@keyframes redirecting {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@keyframes longfazers {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.5; transform: scaleY(1.5); }
+}
+
+h1 {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #536dfe;
+  white-space: nowrap;
+}

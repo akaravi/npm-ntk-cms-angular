@@ -1,13 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FilePreviewModel } from '../file-preview.model';
 import { FilePickerAdapter } from '../file-picker.adapter';
 import { UploaderCaptions } from '../uploader-captions';
 import { HttpErrorResponse } from '@angular/common/http';
+import { FilePreviewItemComponent } from './file-preview-item/file-preview-item.component';
+import { PreviewLightboxComponent } from './preview-lightbox/preview-lightbox.component';
 
 @Component({
   selector: 'file-preview-container',
   templateUrl: './file-preview-container.component.html',
   styleUrls: ['./file-preview-container.component.scss'],
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilePreviewContainerComponent implements OnInit {
@@ -27,7 +31,7 @@ export class FilePreviewContainerComponent implements OnInit {
   }
 
   public openLightbox(file: FilePreviewModel): void {
-   this.lightboxFile = file;
+    this.lightboxFile = file;
   }
 
   public closeLightbox(): void {
@@ -35,3 +39,5 @@ export class FilePreviewContainerComponent implements OnInit {
   }
 
 }
+
+

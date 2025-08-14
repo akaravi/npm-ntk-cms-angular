@@ -1,21 +1,18 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
-import { CronEditorModule } from 'projects/ngx-ntk-cron-editor/src/public-api';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { CronEditorTestComponent } from './cron-editor-test.component';
-import { CronEditorTestRoutes } from './cron-editor-test.routing';
+
+const routes: Routes = [
+  { path: '', component: CronEditorTestComponent }
+];
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    TranslateModule,
-    CronEditorTestRoutes,
-    FormsModule,
-    CronEditorModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  declarations: [CronEditorTestComponent],
+    CronEditorTestComponent,
+    RouterModule.forChild(routes)
+  ]
 })
 export class CronEditorTestModule { }

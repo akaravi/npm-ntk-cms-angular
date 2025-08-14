@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import {
   AuthUserSignInModel,
   CaptchaModel,
   CoreAuthService,
   ErrorExceptionResult,
   TokenInfoModel,
-} from 'projects/ntk-cms-api/src/public-api';
+} from 'ntk-cms-api';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-api-test',
   templateUrl: './apiTest.component.html',
   styleUrls: ['./apiTest.component.scss'],
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  providers: [CoreAuthService]
+
 })
 export class ApiTestComponent implements OnInit {
   constructor(private coreAuthService: CoreAuthService) {
@@ -62,3 +68,6 @@ export class ApiTestComponent implements OnInit {
     });
   }
 }
+
+
+

@@ -11,6 +11,7 @@ export * from './lib/services';
 
 // Export specific items that might be needed
 export { Color } from './lib/models/color.model';
-export { MAT_COLOR_FORMATS, NGX_MAT_COLOR_FORMATS, MatColorFormats } from './lib/services/color-formats';
+export { MAT_COLOR_FORMATS, NGX_MAT_COLOR_FORMATS } from './lib/services/color-formats';
+export type { MatColorFormats } from './lib/services/color-formats';
 export { NgxMatColorPickerModule } from './lib/color-picker.module';
 

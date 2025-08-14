@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthEmailConfirmDtoModel } from '../../models/dto/core-main/authEmailConfirmDtoModel';
 import { AuthMobileConfirmDtoModel } from '../../models/dto/core-main/authMobileConfirmDtoModel';
@@ -70,7 +70,7 @@ export class CoreAuthV3Service extends ApiServerBase {
   ServiceLogout(): Observable<ErrorExceptionResultBase> {
     var model = this.getJWT();
     if (!model || !model.refreshToken || model.refreshToken.length == 0)
-      return;
+      return null;
     return this.http.get(this.getBaseUrl() + this.getModuleControllerUrl() + '/signOut/' + model.refreshToken, {
       headers: this.getHeaders(),
     })

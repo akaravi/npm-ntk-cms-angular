@@ -1,94 +1,54 @@
-import { Component } from '@angular/core';
-import { AbstractControl, FormControl, Validators } from '@angular/forms';
+﻿import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { ThemePalette } from '@angular/material/core';
-import { Color } from 'projects/ngx-ntk-mat-color-picker/src/public-api';
+import { NgxMatColorPickerModule } from 'ngx-ntk-mat-color-picker';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-color-picker-test',
   templateUrl: './color-picker-test.component.html',
   styleUrls: ['./color-picker-test.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatIconModule,
+    NgxMatColorPickerModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ColorPickerTestComponent {
+  title = 'color-picker-test works!';
 
-  public disabled = false;
-  public color: ThemePalette = 'primary';
-  public touchUi = false;
-  public myColor = 'c0aca7';
-  colorCtr: AbstractControl = new FormControl(new Color(0, 255, 255), [Validators.required]);
-
-  public options = [
-    { value: true, label: 'True' },
-    { value: false, label: 'False' }
+  colorCtr = new FormControl();
+  touchUi = false;
+  color: ThemePalette = 'primary';
+  disabled = false;
+  options = [
+    { value: true, label: 'true' },
+    { value: false, label: 'false' }
   ];
-
-  public listColors = ['primary', 'accent', 'warn'];
-
-  public code3 = `<mat-form-field>
-  <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" [disabled]="disabled">
-  <ngx-ntk-mat-color-toggle matSuffix [for]="picker"></ngx-ntk-mat-color-toggle>
-  <ngx-ntk-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-ntk-mat-color-picker>
-</mat-form-field>`;
-
-  public code6 = `
-import { Color } from '@angular-material-components/color-picker';
-colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.required]);`
-
-
-  public code1 = 'npm install --save @angular-material-components/color-picker';
-
-
-  public code2 = `import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS }
-  from '@angular-material-components/color-picker'
-
-  @NgModule({
-    ...
-    imports: [
-         ...
-         NgxMatColorPickerModule
-    ],
-    providers: [
-     { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }
-    ],
-    ...
- })
- export  class AppModule { }`;
-
-  public code4 =
-    `export const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
-    display: {
-        colorInput: 'hex'
-    }
-}
-
-@NgModule({
-    ...
-    providers: [
-      { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }
-    ],
-    ...
-  })
-export  class AppModule { }`;
-
-  public code5 = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">';
-
-  public code7 = `<mat-form-field>
-  <input matInput [ngxMatColorPicker]="pickerCustomIcon" [formControl]="colorCtr" [disabled]="disabled">
-  <ngx-ntk-mat-color-toggle matSuffix [for]="pickerCustomIcon">
-    <mat-icon ngxMatColorpickerToggleIcon>keyboard_arrow_down</mat-icon>
-  </ngx-ntk-mat-color-toggle>
-  <ngx-ntk-mat-color-picker #pickerCustomIcon [touchUi]="touchUi" [color]="color"></ngx-ntk-mat-color-picker>
-</mat-form-field>`;
-
-  constructor() { }
-
-
+  listColors: ThemePalette[] = ['primary', 'accent', 'warn'];
+  code3 = '';
+  code6 = '';
+  code7 = '';
 
   onDisabledChanged(value: boolean) {
-    if (!value) {
-      this.colorCtr.enable();
-    } else {
-      this.colorCtr.disable();
-    }
+    this.disabled = value;
   }
-
 }
+
+
+

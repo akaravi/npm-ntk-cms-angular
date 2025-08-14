@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FilePickerModule } from 'ngx-ntk-file-picker';
@@ -18,17 +21,12 @@ import { NodeListerComponent } from './components/tree/node-lister/node-lister.c
 import { TreeComponent } from './components/tree/tree.component';
 import { FileSizePipe } from './pipes/file-size.pipe';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
-import { TranslateUiService } from './services/translateUi.service';
+import { FileManagerStoreService } from './services/file-manager-store.service';
 import { NodeClickedService } from './services/node-clicked.service';
 import { NodeService } from './services/node.service';
-import { FileManagerStoreService } from './services/file-manager-store.service';
+import { TranslateUiService } from './services/translateUi.service';
+
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    NtkSmartModalModule.forRoot(),
-    FilePickerModule
-  ],
   declarations: [
     CmsFileManagerComponent,
     FolderContentComponent,
@@ -44,19 +42,13 @@ import { FileManagerStoreService } from './services/file-manager-store.service';
     MapToIterablePipe,
     FileSizePipe,
   ],
-  exports: [
-    CmsFileManagerComponent,
-    FolderContentComponent,
-    NodeComponent,
-    TreeComponent,
-    NodeListerComponent,
-    NavBarComponent,
-    NavigationComponent,
-    LoadingOverlayComponent,
-    UploadComponent,
-    NewFolderComponent,
-    SideViewComponent,
+  imports: [
+    CommonModule,
+    TranslateModule,
+    NtkSmartModalModule.forRoot(),
+    FilePickerModule,
   ],
+  exports: [CmsFileManagerComponent],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
     FileContentService,
@@ -64,15 +56,14 @@ import { FileManagerStoreService } from './services/file-manager-store.service';
     TranslateUiService,
     NodeClickedService,
     NodeService,
-    FileManagerStoreService
-  ]
-
+    FileManagerStoreService,
+  ],
 })
 export class CmsFileManagerModule {
   static forRoot(): ModuleWithProviders<CmsFileManagerModule> {
     return {
       ngModule: CmsFileManagerModule,
-      providers: [TranslateService]
+      providers: [TranslateService],
     };
   }
 }

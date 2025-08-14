@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { NtkSmartLoaderService } from 'projects/ngx-ntk-smart-module/src/public-api';
+﻿import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NtkSmartLoaderService, NtkSmartLoaderModule } from 'ngx-ntk-smart-module';
 
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
-  styleUrls: ['./custom.component.scss']
+  styleUrls: ['./custom.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NtkSmartLoaderModule],
+  providers: [NtkSmartLoaderService]
 })
 export class CustomComponent implements OnInit {
 
@@ -48,3 +52,7 @@ export class CustomComponent implements OnInit {
     console.log('loader stopped', event);
   }
 }
+
+
+
+

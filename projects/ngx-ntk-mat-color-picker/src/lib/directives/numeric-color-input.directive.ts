@@ -2,7 +2,8 @@ import { Directive, HostListener } from '@angular/core';
 import { NUMERIC_REGEX } from '../helpers';
 
 @Directive({
-  selector: '[ngxMatNumericColorInput]'
+  selector: '[ngxMatNumericColorInput]',
+  standalone: false
 })
 export class NumericColorInputDirective {
 
@@ -15,7 +16,7 @@ export class NumericColorInputDirective {
 
   /**
 * Format input
-* @param input 
+* @param input
 */
   private _formatInput(input: any) {
     let val = Number(input.value.replace(NUMERIC_REGEX, ''));

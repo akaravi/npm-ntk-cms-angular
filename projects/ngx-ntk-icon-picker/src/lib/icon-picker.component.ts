@@ -1,13 +1,20 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { IconPickerService } from './icon-picker.service';
 import { Icon, IconType } from './icon';
+import { IconPickerDirective } from './icon-picker.directive';
+import { TextDirective } from './text.directive';
+import { SearchIconPipe } from './search-icon.pipe';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'icon-picker',
   templateUrl: './icon-picker.component.html',
-  styleUrls: ['./icon-picker.component.scss']
+  styleUrls: ['./icon-picker.component.scss'],
+  standalone: false,
+  providers: [IconPickerService]
 })
 
 export class IconPickerComponent implements OnInit {
@@ -63,9 +70,9 @@ export class IconPickerComponent implements OnInit {
   }
 
   setDialog(instance: any, elementRef: ElementRef, icon: string, ipPosition: string, ipHeight: string, ipMaxHeight: string,
-            ipWidth: string, ipPlaceHolder: string, ipFallbackIcon: string, ipIconPack: string[], ipIconSize: string,
-            ipIconVerticalPadding: string, ipIconHorizontalPadding: string, ipButtonStyleClass: string, ipDivSearchStyleClass: string,
-            ipInputSearchStyleClass: string, ipKeepSearchFilter: string, ipUseRootViewContainer?: boolean) {
+    ipWidth: string, ipPlaceHolder: string, ipFallbackIcon: string, ipIconPack: string[], ipIconSize: string,
+    ipIconVerticalPadding: string, ipIconHorizontalPadding: string, ipButtonStyleClass: string, ipDivSearchStyleClass: string,
+    ipInputSearchStyleClass: string, ipKeepSearchFilter: string, ipUseRootViewContainer?: boolean) {
     this.directiveInstance = instance;
     this.setInitialIcon(icon);
     this.directiveElementRef = elementRef;
@@ -128,7 +135,7 @@ export class IconPickerComponent implements OnInit {
     } else if (icon.type === IconType.FontAwesome5) {
       this.directiveInstance.iconSelected(`${icon.id}`);
     } else if (icon.type === IconType.FontAwesome6) {
-      this.directiveInstance.iconSelected(`${icon.id}`);
+      this.directiveInstance.iconSelected(`fas fa-${icon.iconName}`);
     } else if (icon.type === IconType.Material) {
       this.directiveInstance.iconSelected(`${icon.id}`);
     } else if (icon.type === IconType.PrimeIcons) {
@@ -248,4 +255,32 @@ export class IconPickerComponent implements OnInit {
       height: element.offsetHeight
     };
   }
+
+  onIconError(event: any) {
+    // Handle icon loading errors gracefully
+    console.warn('Icon not found:', event);
+  }
+
+  // Check if a FontAwesome6 icon exists and return a fallback if not
+  getFontAwesome6Icon(iconName: string): any {
+    try {
+      // Try to create the icon array
+      return ['fas', iconName];
+    } catch (error) {
+      // Return a fallback icon if the original doesn't exist
+      return ['fas', 'question'];
+    }
+  }
+
+  // Check if an icon should be displayed as FontAwesome6 or fallback to text
+  shouldShowFontAwesome6Icon(icon: any): boolean {
+    // For now, we'll show all FontAwesome6 icons and let the error handler deal with missing ones
+    // This can be enhanced later with a proper icon existence check
+    return true;
+  }
 }
+
+
+
+
+

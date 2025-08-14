@@ -1,11 +1,13 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+
 import { FileManagerStoreService, SET_PATH } from '../../services/file-manager-store.service';
 import { NodeService } from '../../services/node.service';
 
 @Component({
   selector: 'lib-filemanager-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
+  standalone: false
 })
 export class NavBarComponent implements OnInit {
   currentPath: string[];
@@ -42,3 +44,7 @@ export class NavBarComponent implements OnInit {
   }
 
 }
+
+
+
+

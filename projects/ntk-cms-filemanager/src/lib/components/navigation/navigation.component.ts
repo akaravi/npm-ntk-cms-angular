@@ -1,10 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+﻿import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+
 import { NodeClickedService } from '../../services/node-clicked.service';
 
 @Component({
   selector: 'lib-filemanager-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None
 })
 export class NavigationComponent implements OnInit {
@@ -21,3 +24,7 @@ export class NavigationComponent implements OnInit {
     this.nodeClickedService.searchForString(input);
   }
 }
+
+
+
+

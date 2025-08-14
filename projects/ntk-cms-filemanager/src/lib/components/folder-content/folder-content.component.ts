@@ -1,12 +1,15 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+﻿import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+
 import { NodeInterface } from '../../interfaces/node.interface';
 import { FileManagerStoreService } from '../../services/file-manager-store.service';
 import { NodeService } from '../../services/node.service';
 
+
 @Component({
   selector: 'lib-filemanager-folder-content',
   templateUrl: './folder-content.component.html',
-  styleUrls: ['./folder-content.component.scss']
+  styleUrls: ['./folder-content.component.scss'],
+  standalone: false
 })
 export class FolderContentComponent implements OnInit {
   @Input() folderContentTemplate: TemplateRef<any>;
@@ -55,3 +58,7 @@ export class FolderContentComponent implements OnInit {
     this.openNewFolderDialog.emit(true);
   }
 }
+
+
+
+

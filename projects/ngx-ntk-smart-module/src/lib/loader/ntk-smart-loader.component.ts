@@ -1,11 +1,11 @@
-import {
+﻿import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
   OnDestroy,
   OnInit,
-  Output
+  Output,
 } from '@angular/core';
 
 import { LoaderInstance } from './loader-instance';
@@ -13,15 +13,19 @@ import { NtkSmartLoaderService } from './ntk-smart-loader.service';
 
 @Component({
   selector: 'ntk-smart-loader',
+  standalone: false,
   template: `
-    <div class="loader-container {{customClass}}" [ngClass]="{'active': loading}"
-         [style.z-index]="(layerPosition - 1)" *ngIf="visible">
+    <div
+      class="loader-container {{ customClass }}"
+      [ngClass]="{ active: loading }"
+      [style.z-index]="layerPosition - 1"
+      *ngIf="visible"
+    >
       <ng-content></ng-content>
     </div>
-  `
+  `,
 })
 export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
-
   @Input() public identifier = '';
   @Input() public customClass = '';
   @Input() public force = false;
@@ -30,7 +34,8 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   @Input() public autostart = false;
   @Output() public onStart = new EventEmitter<NtkSmartLoaderComponent>();
   @Output() public onStop = new EventEmitter<NtkSmartLoaderComponent>();
-  @Output() public onVisibleChange = new EventEmitter<NtkSmartLoaderComponent>();
+  @Output() public onVisibleChange =
+    new EventEmitter<NtkSmartLoaderComponent>();
 
   public loading = false;
   public visible = false;
@@ -43,25 +48,38 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   private privateEnterClass = 'enter';
   private privateLeaveClass = 'leave';
 
-  constructor(public ntkSmartLoaderService: NtkSmartLoaderService, private changeDetectorRef: ChangeDetectorRef) {
-  }
+  constructor(
+    public ntkSmartLoaderService: NtkSmartLoaderService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   public ngOnInit(): void {
     try {
+      console.log(
+        'SmartLoader Component initialized with identifier:',
+        this.identifier
+      );
       const loader = new LoaderInstance(this);
 
       this.ntkSmartLoaderService.addLoader(loader, this.force);
+      console.log(
+        'Loader added to service. Stack count:',
+        this.ntkSmartLoaderService.getLoaderStackCount()
+      );
 
       this.layerPosition += this.ntkSmartLoaderService.getLoaderStackCount();
-      this.addCustomClass(this.identifier.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase());
+      this.addCustomClass(
+        this.identifier.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+      );
 
       if (this.autostart) {
+        console.log('Autostart enabled, starting loader');
         this.ntkSmartLoaderService.start(this.identifier);
-      } else {
-        this.ntkSmartLoaderService.executeAction(this.identifier, 'start');
       }
+      // Don't auto-start if autostart is false - let user control it manually
     } catch (error) {
-      throw (error);
+      console.error('Error in smart loader initialization:', error);
+      throw error;
     }
   }
 
@@ -70,11 +88,13 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
   }
 
   public start(top?: boolean): void {
+    console.log('SmartLoader start called for identifier:', this.identifier);
     this.privateIsProcessing = true;
 
     clearInterval(this.privateDebouncer);
 
     this.visible = true;
+    console.log('Loader visible set to true');
 
     setTimeout(() => {
       this.addCustomClass(this.privateEnterClass);
@@ -90,6 +110,7 @@ export class NtkSmartLoaderComponent implements OnInit, OnDestroy {
       }
 
       this.loading = true;
+      console.log('Loader loading set to true');
 
       this.onStart.emit(this);
       this.onVisibleChange.emit(this);

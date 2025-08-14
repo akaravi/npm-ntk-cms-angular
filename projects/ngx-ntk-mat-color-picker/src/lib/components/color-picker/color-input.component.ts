@@ -1,4 +1,4 @@
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+﻿import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { DOWN_ARROW } from '@angular/cdk/keycodes';
 import { Directive, ElementRef, EventEmitter, forwardRef, Inject, Input, OnDestroy, OnInit, Optional, Output } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, ValidatorFn, Validators } from '@angular/forms';
@@ -55,6 +55,7 @@ export const MAT_COLORPICKER_VALIDATORS: any = {
     '(keydown)': '_onKeydown($event)',
   },
   exportAs: 'ngxMatColorPickerInput',
+  standalone: false
 })
 export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnDestroy, Validator {
 
@@ -270,5 +271,7 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
   }
 
 }
+
+
 
 

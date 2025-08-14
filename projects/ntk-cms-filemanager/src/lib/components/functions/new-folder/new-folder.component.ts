@@ -1,10 +1,12 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+﻿import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'lib-filemanager-newfolder',
   templateUrl: './new-folder.component.html',
-  styleUrls: ['./new-folder.component.scss']
+  styleUrls: ['./new-folder.component.scss'],
+  standalone: false
 })
 export class NewFolderComponent implements OnInit {
   @Input() openDialog = false;
@@ -50,3 +52,7 @@ export class NewFolderComponent implements OnInit {
     this.closeDialog.emit();
   }
 }
+
+
+
+

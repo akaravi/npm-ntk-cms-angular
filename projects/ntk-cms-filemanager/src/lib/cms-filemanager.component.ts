@@ -1,4 +1,4 @@
-import {
+﻿import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
@@ -11,6 +11,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
 import { NtkSmartModalService } from 'ngx-ntk-smart-module';
 import { NodeInterface } from './interfaces/node.interface';
@@ -19,13 +20,15 @@ import { FileManagerStoreService, SET_LOADING_STATE, SET_SELECTED_NODE } from '.
 import { NodeClickedService } from './services/node-clicked.service';
 import { NodeService } from './services/node.service';
 import { TranslateUiService } from './services/translateUi.service';
+import { FileContentService, FileCategoryService } from 'ntk-cms-api';
+
 
 @Component({
   selector: 'cms-file-manager',
   templateUrl: './cms-filemanager.component.html',
   styleUrls: ['./cms-filemanager.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [NodeService, NodeClickedService, FileManagerStoreService]
+  standalone: false,
+  encapsulation: ViewEncapsulation.None
 })
 export class CmsFileManagerComponent implements OnInit, AfterViewInit {
 
@@ -458,3 +461,7 @@ export class CmsFileManagerComponent implements OnInit, AfterViewInit {
   }
 
 }
+
+
+
+

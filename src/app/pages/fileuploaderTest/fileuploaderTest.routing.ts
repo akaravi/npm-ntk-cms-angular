@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import { FileuploaderTestComponent } from './fileuploaderTest.component';
+import { FileUploaderTestComponent } from './fileuploaderTest.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FileuploaderTestComponent,
+    component: FileUploaderTestComponent,
   },
 ];
 

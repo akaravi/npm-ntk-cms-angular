@@ -21,7 +21,14 @@ import { RefreshIconComponent } from './file-preview-container/file-preview-item
     RefreshIconComponent,
     CloseIconComponent
   ],
-  exports: [FilePickerComponent],
+  exports: [
+    FilePickerComponent,
+    FilePreviewContainerComponent,
+    FilePreviewItemComponent,
+    PreviewLightboxComponent,
+    RefreshIconComponent,
+    CloseIconComponent
+  ],
   providers: [FilePickerService]
 })
-export class FilePickerModule {}
+export class FilePickerModule { }
