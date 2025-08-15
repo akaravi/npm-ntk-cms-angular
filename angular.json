@@ -29,6 +29,11 @@
                 "glob": "**/*",
                 "input": "projects/ntk-cms-filemanager/src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-ntk-cron-editor/src/assets",
+                "output": "assets"
               }
             ],
             "styles": [

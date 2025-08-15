@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { forkJoin, Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class TranslateUiService {
   private availableLanguages = ['en', 'fa', 'fr', 'ru'];
+  private translationPath = './assets/i18n/ngx-ntk-query-builder/';
 
   constructor(
     private translateService: TranslateService,
@@ -14,49 +17,57 @@ export class TranslateUiService {
   public init(language: string = null): void {
     if (language) {
       // Initialize one specific language
-      this.loadTranslation(language);
+      this.loadTranslation(language).subscribe(
+        (translations) => {
+          this.translateService.setTranslation(language, translations, true);
+          this.translateService.use(language);
+        },
+        (error) => {
+          console.warn(
+            `Failed to load translation for ${language}, falling back to English`
+          );
+          this.loadTranslation('en').subscribe((enTranslations) => {
+            this.translateService.setTranslation(
+              language,
+              enTranslations,
+              true
+            );
+            this.translateService.use(language);
+          });
+        }
+      );
     } else {
       // Initialize all languages
-      this.availableLanguages.forEach((lang) => {
-        this.loadTranslation(lang);
+      const loadPromises = this.availableLanguages.map((lang) =>
+        this.loadTranslation(lang).pipe(
+          catchError((error) => {
+            console.warn(`Failed to load translation for ${lang}`);
+            return of(null);
+          })
+        )
+      );
+
+      forkJoin(loadPromises).subscribe((results) => {
+        results.forEach((translations, index) => {
+          if (translations) {
+            const lang = this.availableLanguages[index];
+            this.translateService.setTranslation(lang, translations, true);
+          }
+        });
       });
     }
   }
 
-  private loadTranslation(language: string): void {
-    const translationPath = `./assets/i18n/ntk-cms-filemanager/${language}.json`;
-
-    this.http.get(translationPath).subscribe(
-      (translation: any) => {
-        this.translateService.setTranslation(language, translation, true);
-        console.log(`Translation loaded for language: ${language}`);
-      },
-      (error) => {
-        console.error(
-          `Failed to load translation for language: ${language}`,
-          error
-        );
-        // Fallback to English if translation fails
-        if (language !== 'en') {
-          this.loadTranslation('en');
-        }
-      }
-    );
+  private loadTranslation(language: string): Observable<any> {
+    return this.http.get(`${this.translationPath}${language}.json`);
   }
 
   public setLanguage(language: string): void {
-    if (this.availableLanguages.includes(language)) {
-      this.translateService.use(language);
-    } else {
-      console.warn(
-        `Language ${language} is not supported. Falling back to English.`
-      );
-      this.translateService.use('en');
-    }
+    this.translateService.use(language);
   }
 
   public getCurrentLanguage(): string {
-    return this.translateService.currentLang || 'en';
+    return this.translateService.currentLang;
   }
 
   public getAvailableLanguages(): string[] {
