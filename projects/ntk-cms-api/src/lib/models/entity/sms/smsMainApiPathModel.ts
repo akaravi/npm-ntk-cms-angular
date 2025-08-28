@@ -1,4 +1,3 @@
-
 import { BaseModuleEntity } from './../base/baseModuleEntity';
 import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
 import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberModel';
@@ -22,6 +21,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   serverConnectionPerMinute: number;
   serverAbilityMinPack: number;
   serverAbilityMaxPack: number;
+  serverDeliveryCostBase: boolean;
   apiMinPathNeedToCheckIsOn: boolean;
   apiMinPathNeedToCheck: number;
   linkApiPathCompanyId: string;
@@ -60,7 +60,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
 
   apiReceiveHookIsOn: boolean;
   apiReceiveManuallyIsOn: boolean;
-  apiReceiveManuallyAddressLink:string;
+  apiReceiveManuallyAddressLink: string;
 
   apiInfoCreditCheckIsOn: boolean;
 
@@ -75,7 +75,6 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   errorTextToStandByExit: number;
   errorTextToDisableLastGet?: any;
   errorTextToDisableLastGetDate?: any;
-
 
   isPublic: boolean;
   maxProcessFlowAmount: number;

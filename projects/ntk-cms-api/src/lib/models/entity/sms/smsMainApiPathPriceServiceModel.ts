@@ -17,10 +17,12 @@ export class SmsMainApiPathPriceServiceModel extends BaseModuleEntity<string> {
   servicePricePerPage: number;
   serviceMessageLengthPaginationJson: string;
   serviceMessageLengthPaginationList: number[];
+  serviceDeliveryCostBase: boolean;
 
   endUserPricePerPage: number;
   endUserMessageLengthPaginationJson: string;
   endUserMessageLengthPaginationList: number[];
+  endUserDeliveryCostBase: boolean;
 
   messageType: SmsMessageTypeEnum;
 
