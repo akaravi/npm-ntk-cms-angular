@@ -1,7 +1,7 @@
 export enum SendNotificationStatusTypeEnum {
   none = 0,
   Sending = 1,
-  Sended = 2,
+  Sent = 2,
   SendParameterError = 3,
   SendConnectionError = 4,
   SendServerApiError = 5,
