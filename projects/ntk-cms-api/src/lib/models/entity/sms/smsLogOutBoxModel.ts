@@ -12,13 +12,12 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   creditOverPlus: number;
   creditUserBefor: number;
   engineTryToSendCount: number;
-  
+
   engineApiAllowToChange: boolean;
   outBoxType: number;
   outBoxTypeTitle: string;
   outBoxDetails?: SmsLogOutBoxDetailModel[];
   outBoxDetailBulks?: SmsLogOutBoxDetailBulkModel[];
-
 
   /// <summary>
   /// تعداد ردیف
@@ -36,6 +35,7 @@ export class SmsLogOutBoxModel extends BaseModuleEntity<string> {
   /// تعداد برگشت اعتبار
   /// </summary>
   countCreditBacked: number;
+  countServiceCreditBacked: number;
   /// <summary>
   /// مجموع اعتبار
   /// </summary>
