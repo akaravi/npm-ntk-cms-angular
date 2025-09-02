@@ -48,24 +48,24 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
       );
   }
 
-  ServiceGoToBankPaymentWebSite(model: BankPaymentInjectOnlineTransactionDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
-    if (model == null) {
-      model = new BankPaymentInjectOnlineTransactionDtoModel();
-    }
+  // ServiceGoToBankPaymentWebSite(model: BankPaymentInjectOnlineTransactionDtoModel):
+  //   Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+  //   if (model == null) {
+  //     model = new BankPaymentInjectOnlineTransactionDtoModel();
+  //   }
 
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GoToBankPaymentWebSite', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
+  //   return this.http
+  //     .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GoToBankPaymentWebSite', model, {
+  //       headers: this.getHeaders(),
+  //     })
+  //     .pipe(
+  //       retry(this.configApiRetry),
         
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
+  //       map((ret: any) => {
+  //         return this.errorExceptionResultCheck(ret);
+  //       }),
+  //     );
+  // }
   ServicePaymentGatewayList():
     Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
     return this.http
