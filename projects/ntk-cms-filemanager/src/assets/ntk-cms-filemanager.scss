@@ -11,7 +11,6 @@ $hasAnimations: true !default;
 }
 //@import "~ngx-ntk-smart-module/src/assets/ngx-ntk-smart-modal.scss";
 
-
 ////////////
 // mixins //
 ////////////
@@ -23,7 +22,7 @@ $hasAnimations: true !default;
   box-shadow: 0 2px 3px #eee;
 }
 
-@mixin effects($property:false, $time:false) {
+@mixin effects($property: false, $time: false) {
   @if $hasAnimations {
     transition: $property $time ease;
   }
@@ -54,7 +53,6 @@ $hasAnimations: true !default;
   color: #ccc;
 }
 
-
 ////////////
 // global //
 ////////////
@@ -70,7 +68,7 @@ $hasAnimations: true !default;
 
   &:hover {
     @include effects(background-color, 0.3s);
-    @include contrast
+    @include contrast;
   }
 
   &.big {
@@ -133,7 +131,7 @@ $hasAnimations: true !default;
   overflow: auto;
 
   @include borders;
-  @include shadows
+  @include shadows;
 }
 
 .file-manager-node {
@@ -195,15 +193,15 @@ $hasAnimations: true !default;
   @include effects(border-color, 0.3s);
   @include effects(background-color, 0.3s);
 }
-.file-manager-item.main{
+.file-manager-item.main {
   padding: 10px;
-  background-color:#FFD;
+  background-color: #ffd;
 }
 .file-manager-item.highlighted {
   @include contrast;
   border-color: $main-color;
   i {
-    color: $contrast-color
+    color: $contrast-color;
   }
 
   @include effects(border-color, 0.3s);
@@ -241,7 +239,7 @@ $hasAnimations: true !default;
     @include borders;
     position: fixed;
 
-    .content{
+    .content {
       height: calc(100% - 50px);
     }
   }
@@ -271,6 +269,7 @@ $hasAnimations: true !default;
     overflow: visible;
     width: 30vw;
     max-width: 300px;
+    height: inherit;
     @include effects(width, 1s);
   }
 }
@@ -280,14 +279,16 @@ $hasAnimations: true !default;
 ///////////////////
 /* Buttons
 ------------------------------------------ */
-.qq-upload-delete, .qq-upload-pause, .qq-upload-continue {
+.qq-upload-delete,
+.qq-upload-pause,
+.qq-upload-continue {
   display: inline;
   @include borders;
 }
 
 .qq-upload-delete {
   background-color: #e65c47;
-  color: #FAFAFA;
+  color: #fafafa;
   border-color: #dc523d;
 
   @include borders;
@@ -301,7 +302,7 @@ $hasAnimations: true !default;
 }
 
 .qq-upload-cancel {
-  background-color: #F5D7D7;
+  background-color: #f5d7d7;
   border-color: #e6c8c8;
 
   @include borders;
@@ -315,7 +316,7 @@ $hasAnimations: true !default;
 }
 
 .qq-upload-retry {
-  background-color: #EBF6E0;
+  background-color: #ebf6e0;
   border-color: #d2ddc7;
 
   @include borders;
@@ -328,9 +329,10 @@ $hasAnimations: true !default;
   @include effects(background-color, 0.3s);
 }
 
-.qq-upload-pause, .qq-upload-continue {
-  background-color: #00ABC7;
-  color: #FAFAFA;
+.qq-upload-pause,
+.qq-upload-continue {
+  background-color: #00abc7;
+  color: #fafafa;
   border-color: #2dadc2;
 
   @include borders;
@@ -338,7 +340,8 @@ $hasAnimations: true !default;
   @include effects(background-color, 0.3s);
 }
 
-.qq-upload-pause:hover, .qq-upload-continue:hover {
+.qq-upload-pause:hover,
+.qq-upload-continue:hover {
   @include contrast;
   @include effects(background-color, 0.3s);
 }
@@ -398,7 +401,8 @@ $hasAnimations: true !default;
 
   font-size: 13px;
 
-  &:focus, &:focus + .navigation-search-icon {
+  &:focus,
+  &:focus + .navigation-search-icon {
     outline: none;
     border-color: $main-color;
   }
@@ -486,6 +490,7 @@ $hasAnimations: true !default;
   flex-grow: 1;
   margin-bottom: 10px;
   padding: 5px;
+  min-height: 300px;
 }
 
 ////////////
@@ -517,7 +522,6 @@ $hasAnimations: true !default;
   max-height: calc(100vh - 60px);
   max-width: 1000px;
 }
-
 
 /////////////////////
 // ngx-ntk-smart-modal //

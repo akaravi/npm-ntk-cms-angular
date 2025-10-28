@@ -7,25 +7,20 @@ import { timer } from 'rxjs';
   selector: 'lib-filemanager-loading-overlay',
   templateUrl: './loading-overlay.component.html',
   styleUrls: ['./loading-overlay.component.scss'],
-  standalone: false
+  standalone: false,
 })
 export class LoadingOverlayComponent implements OnInit {
   @Input() loadingOverlayTemplate: TemplateRef<any>;
   timeoutMessage: any;
 
-  constructor(private translateService: TranslateService) {
-
-  }
-
+  constructor(private translateService: TranslateService) {}
 
   // todo unsubscribe from 'list' event - now we are only dismissing this component
   ngOnInit() {
-    timer(2000).subscribe(() => {
-      this.timeoutMessage = this.translateService.instant('filemanager.loading_troubles');
+    timer(20000).subscribe(() => {
+      this.timeoutMessage = this.translateService.instant(
+        'filemanager.loading_troubles'
+      );
     });
   }
 }
-
-
-
-
