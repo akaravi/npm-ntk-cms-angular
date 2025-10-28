@@ -1,8 +1,15 @@
 ﻿import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
-
-import { FilePreviewModel, UploaderCaptions, ValidationError } from 'ngx-ntk-file-picker';
+import { FilePreviewModel, ValidationError } from 'ngx-ntk-file-picker';
 import { ErrorExceptionResult, FileUploadModel } from 'ntk-cms-api';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -14,13 +21,12 @@ import { FileUploaderPickerAdapter } from './fileUploaderPickerAdapter';
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss'],
   standalone: false,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class UploadComponent implements OnInit, AfterViewInit {
-
   @Input() set optionSelectFileType(model: string | string[]) {
     this.fileExtensions = [];
-    if (typeof (model) === 'string') {
+    if (typeof model === 'string') {
       this.fileTypeAccept = '.' + model;
       this.fileExtensions.push(model);
       if (this.fileExtensions.length === 0) {
@@ -29,9 +35,9 @@ export class UploadComponent implements OnInit, AfterViewInit {
 
       return;
     }
-    if (typeof (model) === typeof ([])) {
+    if (typeof model === typeof []) {
       let retOut = '';
-      model.forEach(element => {
+      model.forEach((element) => {
         this.fileExtensions.push(element);
         if (retOut.length > 0) {
           retOut = retOut + ', ';
@@ -44,23 +50,25 @@ export class UploadComponent implements OnInit, AfterViewInit {
       }
       return;
     }
-
   }
-  constructor(
-    private http: HttpClient,
-    private nodeService: NodeService) {
-    this.adapter.baseUploadURL = this.nodeService.serviceTree.config.baseUploadURL;
-    this.adapter.routeUpload = this.nodeService.serviceTree.config.api.uploadFile;
+  constructor(private http: HttpClient, public nodeService: NodeService) {
+    this.adapter.baseUploadURL =
+      this.nodeService.serviceTree.config.baseUploadURL;
+    this.adapter.routeUpload =
+      this.nodeService.serviceTree.config.api.uploadFile;
     if (this.nodeService.serviceTree.config.options.fileUplodMaxCount > 0)
-      this.fileUplodMaxCount = this.nodeService.serviceTree.config.options.fileUplodMaxCount;
-    this.fileTypeAccept = this.nodeService.serviceTree.config.options.fileUplodTypeAccept;
-    this.fileExtensions = this.nodeService.serviceTree.config.options.fileUplodExtensions;
+      this.fileUplodMaxCount =
+        this.nodeService.serviceTree.config.options.fileUplodMaxCount;
+    this.fileTypeAccept =
+      this.nodeService.serviceTree.config.options.fileUplodTypeAccept;
+    this.fileExtensions =
+      this.nodeService.serviceTree.config.options.fileUplodExtensions;
   }
-
-
 
   get getCurrentPath(): any {
-    const parentPath = this.nodeService.findNodeByPath(this.nodeService.currentPath).id;
+    const parentPath = this.nodeService.findNodeByPath(
+      this.nodeService.currentPath
+    ).id;
     return parentPath === 0 ? '' : parentPath;
   }
   @Output() createFile = new EventEmitter();
@@ -81,30 +89,11 @@ export class UploadComponent implements OnInit, AfterViewInit {
   //   this.optionUploadSuccess.emit(event);
   // }
   public myFiles: FilePreviewModel[] = [];
-  captions: UploaderCaptions = {
-    dropzone: {
-      title: 'Ù…ÛŒ ØªÙˆØ§Ù†ÛŒØ¯ ÙØ§ÛŒÙ„ Ù‡Ø§ Ø±Ø§ Ø¯Ø± Ø§ÛŒÙ†Ø¬Ø§ Ø±Ù‡Ø§ Ú©Ù†ÛŒØ¯',
-      or: 'ÛŒØ§',
-      browse: 'Ø§Ù†ØªØ®Ø§Ø¨ ÙØ§ÛŒÙ„'
-    },
-    cropper: {
-      crop: 'Ù‚Ø·Ø¹ Ú©Ø±Ø¯Ù†',
-      cancel: 'Ø§Ù†ØµØ±Ø§Ù'
-    },
-    previewCard: {
-      remove: 'Ø­Ø°Ù',
-      uploadError: 'Ø¨Ø±Ø±ÙˆØ² Ø®Ø·Ø§ Ø¯Ø± Ø¨Ø§Ø±Ú¯Ø²Ø§Ø±ÛŒ ÙØ§ÛŒÙ„'
-    }
-  };
-  ngOnInit(): void {
-  }
-  ngAfterViewInit(): void {
 
-  }
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {}
 
-  uploadFiles() {
-
-  }
+  uploadFiles() {}
   allowClose = true;
 
   newClickedAction() {
@@ -113,16 +102,17 @@ export class UploadComponent implements OnInit, AfterViewInit {
   onFileAdded(model: FilePreviewModel): void {
     console.log('onFileAdded', model);
     this.myFiles.push(model);
-
   }
   onUploadSuccess(model: FilePreviewModel): void {
     if (!model.uploadResponse) {
     }
     const ret = model.uploadResponse as ErrorExceptionResult<FileUploadModel>;
     if (!ret.isSuccess) {
-
     }
-    this.createFile.emit({ fileName: model.fileName, uploadFileGUID: ret.item.fileKey });
+    this.createFile.emit({
+      fileName: model.fileName,
+      uploadFileGUID: ret.item.fileKey,
+    });
   }
   public onValidationError(error: ValidationError): void {
     alert(`Validation Error ${error.error} in ${error.file.name}`);
@@ -141,7 +131,3 @@ export class UploadComponent implements OnInit, AfterViewInit {
     return of(false).pipe(delay(200));
   }
 }
-
-
-
-

@@ -5,7 +5,7 @@
     <ngx-ntk-file-picker class="ntk-awesome-uploader"  #uploader [adapter]="adapter" [fileMaxCount]="fileUplodMaxCount" [fileMaxSize]="700" [uploadType]="'multi'"
       (validationError)="onValidationError($event)" [fileExtensions]="fileExtensions"
       [enableCropper]="false" (uploadSuccess)="onUploadSuccess($event)" (removeSuccess)="onRemoveSuccess($event)"
-      (fileAdded)="onFileAdded($event)" [customValidator]="myCustomValidator" [captions]="captions"
+      (fileAdded)="onFileAdded($event)" [customValidator]="myCustomValidator" [captions]="nodeService.serviceTree.config.options.captions"
       [accept]="fileTypeAccept">
     </ngx-ntk-file-picker>
     <h2>{{openSelectFileDescription}}</h2>

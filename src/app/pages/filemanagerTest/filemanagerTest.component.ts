@@ -1,18 +1,19 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
-import { CmsFileManagerModule, TreeModel, DownloadModeEnum } from 'ntk-cms-filemanager';
+import { FileCategoryModel, FileContentModel } from 'ntk-cms-api';
 import {
-  FileCategoryModel,
-  FileContentModel,
-} from 'ntk-cms-api';
+  CmsFileManagerModule,
+  DownloadModeEnum,
+  TreeModel,
+} from 'ntk-cms-filemanager';
 
 @Component({
   selector: 'app-filemanager-test',
   templateUrl: './filemanagerTest.component.html',
   styleUrls: ['./filemanagerTest.component.scss'],
   standalone: true,
-  imports: [CommonModule, CmsFileManagerModule]
+  imports: [CommonModule, CmsFileManagerModule],
 })
 export class FileManagerTestComponent implements OnInit {
   constructor(private translate: TranslateService) {
@@ -37,8 +38,23 @@ export class FileManagerTestComponent implements OnInit {
       showSelectFolder: true,
       fileUplodMaxCount: 10,
       fileUplodTypeAccept: '*',
-      fileUplodExtensions: []
-    }
+      fileUplodExtensions: [],
+      captions: {
+        dropzone: {
+          title: 'Select File',
+          or: 'or',
+          browse: 'Browse',
+        },
+        cropper: {
+          crop: 'Crop',
+          cancel: 'Cancel',
+        },
+        previewCard: {
+          remove: 'Remove',
+          uploadError: 'Upload Error',
+        },
+      },
+    },
   });
   tree2: TreeModel = new TreeModel({
     baseURL: '',
@@ -52,8 +68,23 @@ export class FileManagerTestComponent implements OnInit {
       showSelectFolder: true,
       fileUplodMaxCount: 10,
       fileUplodTypeAccept: '*',
-      fileUplodExtensions: []
-    }
+      fileUplodExtensions: [],
+      captions: {
+        dropzone: {
+          title: 'Select File',
+          or: 'or',
+          browse: 'Browse',
+        },
+        cropper: {
+          crop: 'Crop',
+          cancel: 'Cancel',
+        },
+        previewCard: {
+          remove: 'Remove',
+          uploadError: 'Upload Error',
+        },
+      },
+    },
   });
   tree3: TreeModel = new TreeModel({
     baseURL: '',
@@ -67,8 +98,23 @@ export class FileManagerTestComponent implements OnInit {
       showSelectFolder: true,
       fileUplodMaxCount: 10,
       fileUplodTypeAccept: '*',
-      fileUplodExtensions: []
-    }
+      fileUplodExtensions: [],
+      captions: {
+        dropzone: {
+          title: 'Select File',
+          or: 'or',
+          browse: 'Browse',
+        },
+        cropper: {
+          crop: 'Crop',
+          cancel: 'Cancel',
+        },
+        previewCard: {
+          remove: 'Remove',
+          uploadError: 'Upload Error',
+        },
+      },
+    },
   });
   selected1: any;
   selected2: any;
@@ -101,6 +147,3 @@ export class FileManagerTestComponent implements OnInit {
     console.log('Selected:', model);
   }
 }
-
-
-

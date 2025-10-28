@@ -1,4 +1,5 @@
-import {DownloadModeEnum} from '../enums/download-mode.enum';
+import { UploaderCaptions } from 'ngx-ntk-file-picker';
+import { DownloadModeEnum } from '../enums/download-mode.enum';
 
 export interface ConfigInterface {
   baseURL: string;
@@ -22,12 +23,13 @@ export interface ConfigInterface {
   };
   options: {
     title: string;
+    captions: UploaderCaptions;
     allowFolderDownload: DownloadModeEnum;
     showFilesInsideTree: boolean;
     showSelectFile: boolean;
     showSelectFolder: boolean;
-    fileUplodMaxCount:number;
-    fileUplodTypeAccept:string;
+    fileUplodMaxCount: number;
+    fileUplodTypeAccept: string;
     fileUplodExtensions: string[];
-  }
+  };
 }
