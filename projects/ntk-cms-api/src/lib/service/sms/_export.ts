@@ -1,4 +1,5 @@
 export * from './SmsConfiguration.service';
+export * from './smsAction.service';
 export * from './smsEnum.service';
 export * from './smsLogInBox.service';
 export * from './smsLogOutBox.service';

@@ -7,12 +7,9 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { map, retry } from 'rxjs/operators';
 import { SmsApiGetBalanceResultModel } from '../../models/dto/sms/smsApiGetBalanceResultModel';
-import { SmsApiSendMessageDtoModel } from '../../models/dto/sms/smsApiSendMessageDtoModel';
-import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMessageTestDtoModel';
-import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
-import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
-import { SmsApiGetTokenResultModel } from '../../models/dto/sms/smsApiGetTokenResultModel';
 import { SmsApiGetReceiveInboxManuallyResultModel } from '../../models/dto/sms/smsApiGetReceiveInboxManuallyResultModel';
+import { SmsApiGetTokenResultModel } from '../../models/dto/sms/smsApiGetTokenResultModel';
+import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
 
 
 @Injectable()
@@ -27,46 +24,13 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceSendMessageTest(model: SmsApiSendMessageTestDtoModel): Observable<ErrorExceptionResult<SmsApiSendResultModel>> {
-    if (model == null) {
-      model = new SmsApiSendMessageTestDtoModel();
-    }
 
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessageTest', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
       );
   }
-  ServiceSendMessage(model: SmsApiSendMessageDtoModel): Observable<ErrorExceptionResult<SmsApiSendResultModel>> {
-    if (model == null) {
-      model = new SmsApiSendMessageDtoModel();
-    }
 
-    return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage', model, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
   ServiceGetToken(id: string): Observable<ErrorExceptionResult<SmsApiGetTokenResultModel>> {
 
     return this.http
@@ -75,7 +39,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -89,7 +53,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
@@ -103,7 +67,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<SmsMainApiPathModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
           return this.errorExceptionResultCheck(ret);
         }),
