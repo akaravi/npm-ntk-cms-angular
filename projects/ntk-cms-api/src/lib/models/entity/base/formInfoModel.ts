@@ -11,7 +11,9 @@ export class FormInfoModel {
       return 'success';
     } else if (this.submitResultMessageType === FormSubmitedStatusEnum.Error) {
       return 'error';
-    } else if (this.submitResultMessageType === FormSubmitedStatusEnum.Warning) {
+    } else if (
+      this.submitResultMessageType === FormSubmitedStatusEnum.Warning
+    ) {
       return 'warning';
     } else {
       return 'none';
@@ -30,4 +32,6 @@ export class ValidationModel {
   title = '';
   description = '';
   status = ValidationStatusEnum.Success;
+  linkTarget = '_blank';
+  linkSrc = '';
 }
