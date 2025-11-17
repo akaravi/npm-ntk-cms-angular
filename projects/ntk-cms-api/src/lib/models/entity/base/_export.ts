@@ -1,5 +1,5 @@
-
 export * from './accessModel';
+export * from './activateCodeModel';
 export * from './baseEntity';
 export * from './baseModuleEntity';
 export * from './captchaModel';
@@ -19,4 +19,3 @@ export * from './itemState';
 export * from './PageModel';
 export * from './processInfoModel';
 export * from './searchModel';
-export * from './activateCodeModel'

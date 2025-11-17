@@ -1,5 +1,6 @@
 export enum FormSubmitedStatusEnum {
   none = 0,
   Success = 1,
-  Error = 2,
+  Warning = 2,
+  Error = 3,
 }
