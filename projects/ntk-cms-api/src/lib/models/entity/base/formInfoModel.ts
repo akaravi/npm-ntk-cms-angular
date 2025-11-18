@@ -32,6 +32,5 @@ export class ValidationModel {
   title = '';
   description = '';
   status = ValidationStatusEnum.Success;
-  linkTarget = '_blank';
   linkSrc = '';
 }
