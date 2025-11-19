@@ -1,3 +1,4 @@
+import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
 import { SortTypeEnum } from '../../enums/base/sortTypeEnum';
 import { ExportFileModel } from './exportFileModel';
 import { FilterDataModel } from './filterDataModel';
@@ -16,4 +17,13 @@ export class FilterModel {
   sortType: SortTypeEnum = 1;
   sortColumn: string;
   exportFile: ExportFileModel;
+  /**fase searchType */
+  filterActionSearchLinkEntityId?: number;
+  filterActionSearchLinkUserId?: number;
+  filterActionSearchLinkSiteId?: number;
+  filterActionSearchLinkModuleId?: number;
+  filterActionSearchRecordStatus?: RecordStatusEnum;
+  filterActionSearchFromDate?: Date;
+  filterActionSearchToDate?: Date;
+  /**fase searchType */
 }

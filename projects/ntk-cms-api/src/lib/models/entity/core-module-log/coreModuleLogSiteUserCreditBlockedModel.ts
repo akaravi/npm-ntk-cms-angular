@@ -3,7 +3,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class CoreModuleLogSiteUserCreditBlockedModel extends BaseModuleEntity<string> {
   linkModuleId: number;
   linkUserId: number;
-  transactionId: number;
+  linkModuleBankPaymentTransactionId: number;
   transactionCredit: number;
   startTransactionCredit: number;
   endTransactionCredit: number;

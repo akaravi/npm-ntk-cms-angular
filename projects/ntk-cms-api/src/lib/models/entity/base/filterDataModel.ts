@@ -12,20 +12,7 @@ export class FilterDataModel {
   propertyAnyName: string;
   clauseType: ClauseTypeEnum;
   searchType: FilterDataModelSearchTypesEnum;
-  // StringValue: string;
-  // StringContainValues: string[] = new Array<string>();
-  // IntValue: number;
-  // IntContainValues: number[] = new Array<number>();
-  // DateTimeValue: Date;
-  // BooleanValue: boolean;
-  // EnumValue: string;
-  // SingleValue: number;
-  // DecimalValue: number;
   latitudeValue: number;
   longitudeValue: number;
   latitudeLongitudeDistanceValue: number;
-  // LatitudeLongitudeSortType: string;
-  // HierarchyIdLevel: number;
-  // ObjectIdContainValues: string[] = new Array<string>();
-  // ObjectIdValue1: string;
 }
