@@ -23,7 +23,9 @@ export class FilterModel {
   filterActionSearchLinkSiteId?: number;
   filterActionSearchLinkModuleId?: number;
   filterActionSearchRecordStatus?: RecordStatusEnum;
-  filterActionSearchFromDate?: Date;
-  filterActionSearchToDate?: Date;
+  filterActionSearchCreatedDateFromDate?: Date;
+  filterActionSearchCreatedDateToDate?: Date;
+  filterActionSearchUpdatedDateFromDate?: Date;
+  filterActionSearchUpdatedDateToDate?: Date;
   /**fase searchType */
 }
