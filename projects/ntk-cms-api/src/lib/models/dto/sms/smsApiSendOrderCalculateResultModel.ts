@@ -1,11 +1,8 @@
+import { SmsLogOutBoxDetailModel } from '../../entity/sms/smsLogOutBoxDetailModel';
 
 export class SmsApiSendOrderCalculateResultModel {
-  linkCmsUser?: number;
-  linkSiteId?: number;
-  logOutId: string;
-  toNumber: string;
+  toNumbers: SmsSendMessageTaskProcessNumberModel[];
   fromNumber: string;
-  sendId: string;
   linkApiPathId: string;
   linkApiNumberId: string;
   receiverNumberCount: number;
@@ -14,4 +11,10 @@ export class SmsApiSendOrderCalculateResultModel {
   serviceMessagePageCount: number[];
   endUserCredit: number;
   serviceCreditSum: number;
+  messageIsUnicode: boolean;
+  outBoxDetails: SmsLogOutBoxDetailModel[];
+}
+export class SmsSendMessageTaskProcessNumberModel {
+  logOutDetailId: string;
+  toNumber: string;
 }
