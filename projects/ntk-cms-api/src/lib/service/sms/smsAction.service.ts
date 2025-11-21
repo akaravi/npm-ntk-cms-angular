@@ -6,6 +6,8 @@ import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMe
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiServerBase } from '../base/apiServerBase.service';
+import { SmsApiSendMessageOrderCalculateDtoModel } from '../../models/dto/sms/smsApiSendMessageOrderCalculateDtoModel';
+import { SmsApiSendOrderCalculateResultModel } from '../../models/dto/sms/smsApiSendOrderCalculateResultModel';
 
 @Injectable()
 export class SmsActionService extends ApiServerBase {
@@ -46,6 +48,29 @@ export class SmsActionService extends ApiServerBase {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return this.errorExceptionResultCheck(ret);
+        })
+      );
+  }
+  ServiceOrderCalculate(
+    model: SmsApiSendMessageOrderCalculateDtoModel
+  ): Observable<ErrorExceptionResult<SmsApiSendOrderCalculateResultModel>> {
+    if (model == null) {
+      model = new SmsApiSendMessageOrderCalculateDtoModel();
+    }
+
+    return this.http
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate',
         model,
         {
           headers: this.getHeaders(),

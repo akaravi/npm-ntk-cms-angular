@@ -154,35 +154,6 @@ interface BlogModel {
 
 ### Token Management
 
-```typescript
-import { TokenService } from "ntk-cms-api";
-
-export class AuthService {
-  constructor(private tokenService: TokenService) {}
-
-  async login(username: string, password: string): Promise<boolean> {
-    try {
-      const result = await this.tokenService.ServiceAccessToken(username, password).toPromise();
-      if (result.isSuccess) {
-        localStorage.setItem("token", result.token);
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error("Login error:", error);
-      return false;
-    }
-  }
-
-  logout(): void {
-    localStorage.removeItem("token");
-  }
-
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem("token");
-  }
-}
-```
 
 ## 📁 File Management
 
@@ -330,11 +301,7 @@ export class GlobalErrorHandler {
     }
   }
 
-  private handleUnauthorized(): void {
-    // Redirect to login or refresh token
-    localStorage.removeItem("token");
-    // Redirect to login page
-  }
+
 
   private handleForbidden(): void {
     // Handle forbidden access
