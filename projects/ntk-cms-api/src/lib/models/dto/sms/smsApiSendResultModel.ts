@@ -1,17 +1,17 @@
+import { SmsSendMessageNumberInfoModel } from './smsApiSendOrderCalculateResultModel';
 
 export class SmsApiSendResultModel {
+  logOutId: string;
+  sendId: string;
+  toNumbers: SmsSendMessageNumberInfoModel[];
+  fromNumber: string;
+  messageIsUnicode: boolean;
   linkCmsUser?: number;
   linkSiteId?: number;
-  logOutId: string;
-  toNumber: string;
-  fromNumber: string;
-  sendId: string;
   linkApiPathId: string;
   linkApiNumberId: string;
-  receiverNumberCount:number;
-  endUserCreditSum:number;
-  endUserMessagePageCount:number[];
-  serviceMessagePageCount:number[];
-  endUserCredit:number;
-  serviceCreditSum:number; 
+  receiverNumberCount: number;
+  endUserCreditSum: number;
+  endUserCreditBefore: number;
+  serviceCreditSum: number;
 }
