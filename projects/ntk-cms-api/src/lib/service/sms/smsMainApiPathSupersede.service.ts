@@ -6,16 +6,16 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { map, retry } from 'rxjs/operators';
 import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { SmsMainApiNumberModel } from '../../models/entity/sms/smsMainApiNumberModel';
+import { SmsMainApiPathSupersedeModel } from '../../models/entity/sms/smsMainApiPathSupersedeModel';
 
 @Injectable()
-export class SmsMainApiNumberService extends ApiCmsServerBase<
-  SmsMainApiNumberModel,
+export class SmsMainApiPathSupersedeService extends ApiCmsServerBase<
+  SmsMainApiPathSupersedeModel,
   string,
   FilterModel
 > {
   getModuleControllerUrl(): string {
-    return 'SmsMainApiNumber';
+    return 'SmsMainApiPathSupersede';
   }
   ServiceEditStep(
     model: EditStepDtoModel<string>

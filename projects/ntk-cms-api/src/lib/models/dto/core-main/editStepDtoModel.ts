@@ -4,3 +4,11 @@ export class EditStepDtoModel<TKey> {
   centerId: TKey;
   actionGo: ActionGoStepEnum;
 }
+
+export class EditStepDtoNModel<TKeyOne, TKeyTwo> {
+  idOne: TKeyOne;
+  idTwo: TKeyTwo;
+  centerIdOne: TKeyOne;
+  centerId: TKeyTwo;
+  actionGo: ActionGoStepEnum;
+}

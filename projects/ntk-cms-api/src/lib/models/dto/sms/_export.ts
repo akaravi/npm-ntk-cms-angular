@@ -7,3 +7,5 @@ export * from './smsApiGetReceiveInboxManuallyResultModel';
 export * from './smsApiSendMessageOrderCalculateDtoModel';
 export * from './smsApiSendOrderCalculateResultModel';
 export * from './smsMainApiPathPriceServiceEstimateModel';
+export * from './smsClientSendMessageDtoModel';
+export * from './smsClientSendMessageResultModel';

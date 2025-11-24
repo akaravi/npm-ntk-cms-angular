@@ -5,7 +5,7 @@ import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
 import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
 import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
 import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
-import { SmsMainApiPathSuperSederModel } from './smsMainApiPathSuperSederModel';
+import { SmsMainApiPathSupersedeModel } from './smsMainApiPathSupersedeModel';
 //@@tag-Version-2305111
 export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   title: string;
@@ -31,7 +31,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiPathCompanyCounterIsOn: boolean;
   apiAbilitySendUnicodeMessage: boolean;
   apiAbilitySendNormalMessage: boolean;
-  apiAllowSuperSeder: boolean;
+  apiAllowSupersede: boolean;
   apiAbilityUseWebservice: boolean;
   apiAbilityUseInside: boolean;
   apiAbilityRegulatorAllowToSend: string;
@@ -40,8 +40,8 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiAbilityLengthMaxToSend: number;
   apiAbilitySendByQueue: boolean;
   apiAbilitySendByDirect: boolean;
-  apiPathSuperSeders: SmsMainApiPathSuperSederModel[];
-  apiPathMustSuperSeders: SmsMainApiPathSuperSederModel[];
+  apiPathSupersedes: SmsMainApiPathSupersedeModel[];
+  apiPathMustSupersedes: SmsMainApiPathSupersedeModel[];
   apiPathPermissions: SmsMainApiPathPermissionModel[];
   apiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
   apiPathPriceServices: SmsMainApiPathPriceServiceModel[];
