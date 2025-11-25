@@ -1,5 +1,6 @@
 export * from './SmsConfiguration.service';
 export * from './smsAction.service';
+export * from './smsActionClient.service';
 export * from './smsEnum.service';
 export * from './smsLogApiPath.service';
 export * from './smsLogInBox.service';
@@ -19,7 +20,6 @@ export * from './smsMainApiPathProcessFlow.service';
 export * from './smsMainApiPathProcessFlowLog.service';
 export * from './smsMainApiPathPublicConfig.service';
 export * from './smsMainApiPathSupersede.service';
+export * from './smsMainClientPermission.service';
 export * from './smsMainMessageCategory.service';
 export * from './smsMainMessageContent.service';
-export * from './smsMainClientPermission.service';
-export * from './smsActionClient.service';
