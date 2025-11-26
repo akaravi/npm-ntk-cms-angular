@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { SmsApiSendMessageDtoModel } from '../../models/dto/sms/smsApiSendMessageDtoModel';
+import { SmsApiSendMessageOrderCalculateDtoModel } from '../../models/dto/sms/smsApiSendMessageOrderCalculateDtoModel';
 import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMessageTestDtoModel';
+import { SmsApiSendOrderCalculateResultModel } from '../../models/dto/sms/smsApiSendOrderCalculateResultModel';
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiServerBase } from '../base/apiServerBase.service';
-import { SmsApiSendMessageOrderCalculateDtoModel } from '../../models/dto/sms/smsApiSendMessageOrderCalculateDtoModel';
-import { SmsApiSendOrderCalculateResultModel } from '../../models/dto/sms/smsApiSendOrderCalculateResultModel';
 
 @Injectable()
 export class SmsActionService extends ApiServerBase {
@@ -34,7 +34,7 @@ export class SmsActionService extends ApiServerBase {
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -57,7 +57,7 @@ export class SmsActionService extends ApiServerBase {
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -80,7 +80,25 @@ export class SmsActionService extends ApiServerBase {
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
+        })
+      );
+  }
+  ServiceGetMessagePlaceholders(): Observable<string[]> {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetMessagePlaceholders',
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: string[]) => {
+          return ret ?? [];
         })
       );
   }
