@@ -13,63 +13,98 @@ import { CoreSiteModel } from '../../models/entity/core-main/coreSiteModel';
 import { CoreSiteSupportModel } from '../../models/entity/core-main/coreSiteSupportModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, FilterModel> {
+export class CoreSiteService extends ApiCmsServerBase<
+  CoreSiteModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreSite';
   }
 
-  ServiceModuleDataOptimaze(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>> {
+  ServiceModuleDataOptimaze(
+    linkSiteId: number
+  ): Observable<
+    ErrorExceptionResult<ProcessModuleSiteDataOptimazeOutputModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataOptimaze/' + linkSiteId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/DataOptimaze/' +
+          linkSiteId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceModuleDataInfo(linkSiteId: number): Observable<ErrorExceptionResult<ProcessModuleSiteDataInfoOutputModel>> {
+  ServiceModuleDataInfo(
+    linkSiteId: number
+  ): Observable<ErrorExceptionResult<ProcessModuleSiteDataInfoOutputModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataInfo/' + linkSiteId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/DataInfo/' +
+          linkSiteId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceWebScreenshot(model: CoreSiteModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceWebScreenshot(
+    model: CoreSiteModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebScreenshot', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/WebScreenshot',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetRessellerChart(linkSiteId?: number): Observable<ErrorExceptionResult<RessellerChartModel>> {
+  ServiceGetRessellerChart(
+    linkSiteId?: number
+  ): Observable<ErrorExceptionResult<RessellerChartModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRessellerChart/' + linkSiteId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetRessellerChart/' +
+          linkSiteId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceCurrectSite(): Observable<ErrorExceptionResult<CoreSiteModel>> {
@@ -79,23 +114,31 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, Fil
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceMasterSiteInfo(linkSiteId: number): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceMasterSiteInfo(
+    linkSiteId: number
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MasterSiteInfo/' + linkSiteId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/MasterSiteInfo/' +
+          linkSiteId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceSupportSite(): Observable<ErrorExceptionResult<CoreSiteSupportModel>> {
@@ -105,152 +148,206 @@ export class CoreSiteService extends ApiCmsServerBase<CoreSiteModel, number, Fil
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceAddFirstSite(model: CoreSiteAddFirstSiteDtoModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceAddFirstSite(
+    model: CoreSiteAddFirstSiteDtoModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddFirstSite', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/AddFirstSite',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithAlias(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceGetAllWithAlias(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithAlias', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithAlias',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllChildWithAlias(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceGetAllChildWithAlias(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllChildWithAlias', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllChildWithAlias',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSearchNew(model: FilterModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceSearchNew(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SearchNew', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SearchNew',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSearch(model: CoreSiteSearchModel): Observable<ErrorExceptionResult<CoreSiteModel>> {
+  ServiceSearch(
+    model: CoreSiteSearchModel
+  ): Observable<ErrorExceptionResult<CoreSiteModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Search', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Search',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceGetCurrencyMaster(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrencyMaster', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetCurrencyMaster',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceGetCurrencySite(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrencySite', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrencySite',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceGetShareInfo(): Observable<ErrorExceptionResult<ShareInfoModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetShareInfo', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetShareInfo',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceGetCurrentDomain(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrentDomain', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetCurrentDomain',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetRegDomains(siteCategoryId: number): Observable<ErrorExceptionResult<string>> {
+  ServiceGetRegDomains(
+    siteCategoryId: number
+  ): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetRegDomains/' + siteCategoryId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetRegDomains/' +
+          siteCategoryId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

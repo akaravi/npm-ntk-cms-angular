@@ -9,42 +9,62 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPaymentPrivateSiteConfigModel, number, FilterModel> {
+export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<
+  BankPaymentPrivateSiteConfigModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BankPaymentPrivateSiteConfig';
   }
-  ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigAliasJsonModel>> {
+  ServiceGetOneWithJsonFormatter(
+    id: number
+  ): Observable<
+    ErrorExceptionResult<BankPaymentPrivateSiteConfigAliasJsonModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetOneWithJsonFormatter/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceTestPay(model: BankPaymentInjectOnlineTransactionDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+  ServiceTestPay(
+    model: BankPaymentInjectOnlineTransactionDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>
+  > {
     if (model == null) {
       model = new BankPaymentInjectOnlineTransactionDtoModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/TestPay', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TestPay',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
@@ -60,38 +80,50 @@ export class BankPaymentPrivateSiteConfigService extends ApiCmsServerBase<BankPa
   //     })
   //     .pipe(
   //       retry(this.configApiRetry),
-        
+
   //       map((ret: any) => {
-  //         return this.errorExceptionResultCheck(ret);
+  //         return (ret);
   //       }),
   //     );
   // }
-  ServicePaymentGatewayList():
-    Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+  ServicePaymentGatewayList(): Observable<
+    ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayList', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/PaymentGatewayList',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServicePaymentGatewayCoreList():
-    Observable<ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>> {
+  ServicePaymentGatewayCoreList(): Observable<
+    ErrorExceptionResult<BankPaymentPrivateSiteConfigModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PaymentGatewayCoreList', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/PaymentGatewayCoreList',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

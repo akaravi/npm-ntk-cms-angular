@@ -6,9 +6,12 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleEntityModel } from '../../models/entity/core-main/coreModuleEntityModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreModuleEntityService extends ApiCmsServerBase<CoreModuleEntityModel, number, FilterModel> {
+export class CoreModuleEntityService extends ApiCmsServerBase<
+  CoreModuleEntityModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreModuleEntity';
   }
@@ -19,10 +22,10 @@ export class CoreModuleEntityService extends ApiCmsServerBase<CoreModuleEntityMo
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

@@ -5,36 +5,46 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class UniversalMenuEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'UniversalMenuEnum';
   }
 
-  ServiceUniversalMenuPlatformTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceUniversalMenuPlatformTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UniversalMenuPlatformTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/UniversalMenuPlatformTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceUniversalMenuRenderTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceUniversalMenuRenderTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UniversalMenuRenderTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/UniversalMenuRenderTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

@@ -15,282 +15,400 @@ import { BiographyContentModel } from '../../models/entity/biography/biographyCo
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { BiographyContentWithSimilarLocationPeriodDtoModel } from './../../models/dto/biography/biographyContentWithSimilarLocationPeriodDtoModel';
 
-
 @Injectable()
-export class BiographyContentService extends ApiCmsServerBase<BiographyContentModel, number, FilterModel> {
+export class BiographyContentService extends ApiCmsServerBase<
+  BiographyContentModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BiographyContent';
   }
 
-  ServiceGetAllWithHierarchyCategoryId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithHierarchyCategoryId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithHierarchyCategoryId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarsId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarsId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithTagId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithTagId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithTagId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithCategoryUseInContentId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCategoryUseInContentId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceScoreClick(
+    model: ScoreClickDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ScoreClickDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteAdd/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteRemove/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceFavoriteList(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithSimilarLocationPeriodStart(model: BiographyContentWithSimilarLocationPeriodDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodStart(
+    model: BiographyContentWithSimilarLocationPeriodDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarLocationPeriodStart', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarLocationPeriodStart',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarLocationPeriodEnd(model: BiographyContentWithSimilarLocationPeriodDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarLocationPeriodEnd(
+    model: BiographyContentWithSimilarLocationPeriodDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarLocationPeriodDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarLocationPeriodEnd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarLocationPeriodEnd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartMonthOfYear(
+    model: BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
-      model = new BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel();
+      model =
+        new BiographyContentWithSimilarDatePeriodStartMonthOfYearListDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartMonthOfYear', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarDatePeriodStartMonthOfYear',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStart(model: BiographyContentWithSimilarDatePeriodStartDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStart(
+    model: BiographyContentWithSimilarDatePeriodStartDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStart', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarDatePeriodStart',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayOfYear(
+    model: BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodStartDayOfYearDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartDayOfYear', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarDatePeriodStartDayOfYear',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllWithSimilarDatePeriodStartDayAndMonthOfYear(
+    model: BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
-      model = new BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel();
+      model =
+        new BiographyContentWithSimilarDatePeriodStartDayAndMonthOfYearDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodStartDayAndMonthOfYear', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarDatePeriodStartDayAndMonthOfYear',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceGetAllGetAllWithSimilarDatePeriodEnd(model: BiographyContentWithSimilarDatePeriodEndDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithSimilarDatePeriodEnd(
+    model: BiographyContentWithSimilarDatePeriodEndDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithSimilarDatePeriodEndDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarDatePeriodEnd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarDatePeriodEnd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllGetAllWithDatePeriodEnd(model: BiographyContentWithDatePeriodEndDtoModel):
-    Observable<ErrorExceptionResult<BiographyContentModel>> {
+  ServiceGetAllGetAllWithDatePeriodEnd(
+    model: BiographyContentWithDatePeriodEndDtoModel
+  ): Observable<ErrorExceptionResult<BiographyContentModel>> {
     if (model == null) {
       model = new BiographyContentWithDatePeriodEndDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithDatePeriodEnd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithDatePeriodEnd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
-
-
-
 }

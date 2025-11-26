@@ -10,98 +10,134 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { WebDesignerMainPageModel } from '../../models/entity/web-designer/webDesignerMainPageModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class WebDesignerMainPageService extends ApiCmsServerBase<WebDesignerMainPageModel, string, FilterModel> {
+export class WebDesignerMainPageService extends ApiCmsServerBase<
+  WebDesignerMainPageModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainPage';
   }
-  ServiceAutoAdd(model: WebDesignerPageAutoAddDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceAutoAdd(
+    model: WebDesignerPageAutoAddDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceWebScreenshot(id: string): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebScreenshot/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/WebScreenshot/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceWebRoute(id: string): Observable<ErrorExceptionResult<string>> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebRoute/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/WebRoute/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllDefaultPagesBySiteCategory(model: GetAllDefaultPagesBySiteCategoryDtoModel):
-    Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
+  ServiceGetAllDefaultPagesBySiteCategory(
+    model: GetAllDefaultPagesBySiteCategoryDtoModel
+  ): Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
     if (model == null) {
       model = new GetAllDefaultPagesBySiteCategoryDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllDefaultPagesBySiteCategory', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllDefaultPagesBySiteCategory',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceSetDefaultAdminValuePage(id: string): Observable<ErrorExceptionResultBase> {
 
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetDefaultAdminValuePage/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceUtilityTools(model: CmsPageUtilityToolsDtoModel): Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
+  ServiceSetDefaultAdminValuePage(
+    id: string
+  ): Observable<ErrorExceptionResultBase> {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetDefaultAdminValuePage/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
+  ServiceUtilityTools(
+    model: CmsPageUtilityToolsDtoModel
+  ): Observable<ErrorExceptionResult<WebDesignerMainPageModel>> {
     if (model == null) {
       model = new CmsPageUtilityToolsDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UtilityTools', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/UtilityTools',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

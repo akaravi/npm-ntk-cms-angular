@@ -6,25 +6,32 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { TicketingAnswerModel } from '../../models/entity/ticketing/ticketingAnswerModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class TicketingAnswerService extends ApiCmsServerBase<TicketingAnswerModel, number, FilterModel> {
+export class TicketingAnswerService extends ApiCmsServerBase<
+  TicketingAnswerModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'TicketingAnswer';
   }
   ServiceAnswerReaded(id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AnswerReaded/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/AnswerReaded/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

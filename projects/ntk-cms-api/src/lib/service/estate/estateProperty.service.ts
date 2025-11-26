@@ -6,125 +6,171 @@ import { EstatePropertyActionSendSmsDtoModel } from '../../models/dto/estate/est
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 import { EstatePropertyModel } from '../../models/entity/estate/estatePropertyModel';
 import { EstatePropertyFilterModel } from '../../models/filters/estate/estatePropertyFilterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
-
 
 @Injectable()
-export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel, string, EstatePropertyFilterModel> {
+export class EstatePropertyService extends ApiCmsServerBase<
+  EstatePropertyModel,
+  string,
+  EstatePropertyFilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstateProperty';
   }
-  ServiceActionSendSmsToCustomerOrder(Id: string): Observable<ErrorExceptionResultBase> {
-
+  ServiceActionSendSmsToCustomerOrder(
+    Id: string
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSmsToCustomerOrder/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/ActionSendSmsToCustomerOrder/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceActionSendSms(model: EstatePropertyActionSendSmsDtoModel): Observable<ErrorExceptionResultBase> {
-
+  ServiceActionSendSms(
+    model: EstatePropertyActionSendSmsDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceFavoriteAdd(Id: string): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteAdd/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceFavoriteRemove(Id: string): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteRemove/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceFavoriteList(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceFavoriteList(
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReportAbuseAdd(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceReportAbuseAdd(
+    model: CoreModuleReportAbuseDtoModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new CoreModuleReportAbuseDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReportAbuseList(model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceReportAbuseList(
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithCoverBillboardId(BillboardId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverBillboardId(
+    BillboardId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -132,18 +178,28 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       BillboardId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverBillboardId/' + BillboardId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverBillboardId/' +
+          BillboardId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCategoryRackFolderId(RackFolderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCategoryRackFolderId(
+    RackFolderId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -151,18 +207,28 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       RackFolderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryRackFolderId/' + RackFolderId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCategoryRackFolderId/' +
+          RackFolderId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCategoryZoneId(ZoneId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCategoryZoneId(
+    ZoneId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -170,18 +236,28 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       ZoneId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryZoneId/' + ZoneId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCategoryZoneId/' +
+          ZoneId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCustomerOrderId(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderId(
+    CustomerOrderId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -189,18 +265,28 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       CustomerOrderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderId/' + CustomerOrderId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCustomerOrderId/' +
+          CustomerOrderId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCustomerOrderIdHaveHistory(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithCoverCustomerOrderIdHaveHistory(
+    CustomerOrderId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -208,54 +294,84 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       CustomerOrderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdHaveHistory/' + CustomerOrderId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCustomerOrderIdHaveHistory/' +
+          CustomerOrderId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCustomerOrderIdExportFile(CustomerOrderId: string, model: EstatePropertyFilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithCoverCustomerOrderIdExportFile(
+    CustomerOrderId: string,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCustomerOrderIdExportFile/' + CustomerOrderId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCustomerOrderIdExportFile/' +
+          CustomerOrderId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheckExportFile(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllResponsibleUserId(id: string, model: FilterModel): Observable<ErrorExceptionResult<CoreUserModel>> {
+  ServiceGetAllResponsibleUserId(
+    id: string,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreUserModel>> {
     if (model == null) {
       model = new FilterModel();
     }
-    if (!id || id.length <=0) {
+    if (!id || id.length <= 0) {
       id = '';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllResponsibleUserId/' + id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllResponsibleUserId/' +
+          id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithResponsibleUserId(userId: number, model: EstatePropertyFilterModel): Observable<ErrorExceptionResult<EstatePropertyModel>> {
+  ServiceGetAllWithResponsibleUserId(
+    userId: number,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResult<EstatePropertyModel>> {
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
@@ -263,33 +379,50 @@ export class EstatePropertyService extends ApiCmsServerBase<EstatePropertyModel,
       userId = 0;
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserId/' + userId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithResponsibleUserId/' +
+          userId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithResponsibleUserIdExportFile(userId: number, model: EstatePropertyFilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithResponsibleUserIdExportFile(
+    userId: number,
+    model: EstatePropertyFilterModel
+  ): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new EstatePropertyFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserIdExportFile/' + userId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithResponsibleUserIdExportFile/' +
+          userId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheckExportFile(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

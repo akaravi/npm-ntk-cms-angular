@@ -6,25 +6,32 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ApplicationThemeConfigService extends ApiCmsServerBase<ApplicationThemeConfigModel, number, FilterModel> {
+export class ApplicationThemeConfigService extends ApiCmsServerBase<
+  ApplicationThemeConfigModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ApplicationThemeConfig';
   }
 
-  ServiceCurrentTheme(): Observable<ErrorExceptionResult<ApplicationThemeConfigModel>> {
-
+  ServiceCurrentTheme(): Observable<
+    ErrorExceptionResult<ApplicationThemeConfigModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentTheme', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentTheme',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

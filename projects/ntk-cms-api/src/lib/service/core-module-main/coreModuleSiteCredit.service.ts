@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -38,7 +37,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -56,7 +55,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -78,7 +77,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -103,7 +102,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -128,7 +127,7 @@ export class CoreModuleSiteCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }

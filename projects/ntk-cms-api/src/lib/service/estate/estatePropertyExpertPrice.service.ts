@@ -5,47 +5,63 @@ import { EstatePriceInquiryDtoModel } from '../../models/dto/estate/estatePriceI
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { EstatePropertyExpertPriceModel } from '../../models/entity/estate/estatePropertyExpertPriceModel';
-import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { EstatePropertyExpertPriceFilterModel } from '../../models/filters/estate/estatePropertyExpertPriceFilterModel';
-
-
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstatePropertyExpertPriceService extends ApiCmsServerBase<EstatePropertyExpertPriceModel, string, EstatePropertyExpertPriceFilterModel> {
+export class EstatePropertyExpertPriceService extends ApiCmsServerBase<
+  EstatePropertyExpertPriceModel,
+  string,
+  EstatePropertyExpertPriceFilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyExpertPrice';
   }
-  ServicePriceInquiryList(model: EstatePriceInquiryDtoModel): Observable<ErrorExceptionResult<EstatePropertyExpertPriceModel>> {
+  ServicePriceInquiryList(
+    model: EstatePriceInquiryDtoModel
+  ): Observable<ErrorExceptionResult<EstatePropertyExpertPriceModel>> {
     if (model == null) {
       model = new EstatePriceInquiryDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/PriceInquiryList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/PriceInquiryList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServicePriceInquiryCalculate(model: EstatePriceInquiryDtoModel): Observable<ErrorExceptionResultBase> {
+  ServicePriceInquiryCalculate(
+    model: EstatePriceInquiryDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new EstatePriceInquiryDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/PriceInquiryCalculate', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/PriceInquiryCalculate',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

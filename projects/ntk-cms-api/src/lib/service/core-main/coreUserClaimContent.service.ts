@@ -8,40 +8,51 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreUserClaimContentModel } from '../../models/entity/core-main/coreUserClaimContentModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreUserClaimContentService extends ApiCmsServerBase<CoreUserClaimContentModel, number, FilterModel> {
-    getModuleControllerUrl(): string {
-      return 'CoreUserClaimContent';
-    }
-  ServiceClaimCheck(model: CoreUserClaimCheckDtoModel): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
+export class CoreUserClaimContentService extends ApiCmsServerBase<
+  CoreUserClaimContentModel,
+  number,
+  FilterModel
+> {
+  getModuleControllerUrl(): string {
+    return 'CoreUserClaimContent';
+  }
+  ServiceClaimCheck(
+    model: CoreUserClaimCheckDtoModel
+  ): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
     if (model == null) {
       model = new CoreUserClaimCheckDtoModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ClaimCheck', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ClaimCheck',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceClaimCheckCurrent(): Observable<ErrorExceptionResult<CoreUserClaimCheckModel>> {
+  ServiceClaimCheckCurrent(): Observable<
+    ErrorExceptionResult<CoreUserClaimCheckModel>
+  > {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ClaimCheck', {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

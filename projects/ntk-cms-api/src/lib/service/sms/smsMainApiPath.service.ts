@@ -6,13 +6,12 @@ import { SmsMainApiPathModel } from '../../models/entity/sms/smsMainApiPathModel
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 import { map, retry } from 'rxjs/operators';
+import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { SmsApiGetBalanceResultModel } from '../../models/dto/sms/smsApiGetBalanceResultModel';
 import { SmsApiGetReceiveInboxManuallyResultModel } from '../../models/dto/sms/smsApiGetReceiveInboxManuallyResultModel';
 import { SmsApiGetTokenResultModel } from '../../models/dto/sms/smsApiGetTokenResultModel';
-import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
-import { EditStepDtoModel } from '../../models/dto/core-main/editStepDtoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-
+import { SmsMainApiPathAliasJsonModel } from '../../models/entity/sms/smsMainApiPathAliasJsonModel';
 
 @Injectable()
 export class SmsMainApiPathService extends ApiCmsServerBase<
@@ -40,7 +39,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -59,7 +58,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -77,7 +76,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -100,7 +99,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -122,7 +121,7 @@ export class SmsMainApiPathService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
+          return ret;
         })
       );
   }

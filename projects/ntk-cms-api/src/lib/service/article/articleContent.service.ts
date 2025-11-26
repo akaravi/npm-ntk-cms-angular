@@ -9,170 +9,247 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ArticleContentService extends ApiCmsServerBase<ArticleContentModel, number, FilterModel> {
+export class ArticleContentService extends ApiCmsServerBase<
+  ArticleContentModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ArticleContent';
   }
-  ServiceGetAllWithHierarchyCategoryId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceGetAllWithHierarchyCategoryId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithHierarchyCategoryId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithHierarchyCategoryId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithSimilarsId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceGetAllWithSimilarsId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithSimilarsId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithSimilarsId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithTagId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceGetAllWithTagId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithTagId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithTagId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCategoryUseInContentId(Id: number, model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceGetAllWithCategoryUseInContentId(
+    Id: number,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCategoryUseInContentId/' + Id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCategoryUseInContentId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceScoreClick(model: ScoreClickDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceScoreClick(
+    model: ScoreClickDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ScoreClickDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceFavoriteAdd(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteAdd/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteAdd/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceFavoriteRemove(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteRemove/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FavoriteRemove/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceFavoriteList(model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceFavoriteList(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/FavoriteList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReportAbuseAdd(model: CoreModuleReportAbuseDtoModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceReportAbuseAdd(
+    model: CoreModuleReportAbuseDtoModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new CoreModuleReportAbuseDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReportAbuseList(model: FilterModel): Observable<ErrorExceptionResult<ArticleContentModel>> {
+  ServiceReportAbuseList(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ArticleContentModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportAbuseList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

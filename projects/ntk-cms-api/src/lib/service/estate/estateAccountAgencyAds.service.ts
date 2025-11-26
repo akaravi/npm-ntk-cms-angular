@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -12,42 +11,60 @@ import { EstateAccountAgencyAdsModel } from '../../models/entity/estate/estateAc
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstateAccountAgencyAdsService extends ApiCmsServerBase<EstateAccountAgencyAdsModel, string, FilterModel> {
+export class EstateAccountAgencyAdsService extends ApiCmsServerBase<
+  EstateAccountAgencyAdsModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstateAccountAgencyAds';
   }
-  ServiceOrderCalculate(model: EstateModuleSaleAccountAgencyAdsCalculateDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
+  ServiceOrderCalculate(
+    model: EstateModuleSaleAccountAgencyAdsCalculateDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>
+  > {
     if (!model) {
       model = new EstateModuleSaleAccountAgencyAdsCalculateDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceOrderPayment(model: EstateModuleSaleAccountAgencyAdsPaymentDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+  ServiceOrderPayment(
+    model: EstateModuleSaleAccountAgencyAdsPaymentDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>
+  > {
     if (!model) {
       model = new EstateModuleSaleAccountAgencyAdsPaymentDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

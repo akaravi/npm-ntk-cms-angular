@@ -5,48 +5,64 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class LinkManagementEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'LinkManagementEnum';
   }
 
-  ServiceSharingPriceTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceSharingPriceTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SharingPriceTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SharingPriceTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceManagementContentSettingTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceManagementContentSettingTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ManagementContentSettingTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/ManagementContentSettingTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSharingAccountingTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceSharingAccountingTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SharingAccountingTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SharingAccountingTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

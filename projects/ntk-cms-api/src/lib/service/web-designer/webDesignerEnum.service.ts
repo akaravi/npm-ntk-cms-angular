@@ -5,48 +5,64 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class WebDesignerEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'WebDesignerEnum';
   }
 
-  ServicePageAbilityTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServicePageAbilityTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PageAbilityTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/PageAbilityTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCmsSiteMenuAreaTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceCmsSiteMenuAreaTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CmsSiteMenuAreaTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CmsSiteMenuAreaTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCmsPageUtilityToolsDtoModelActionEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceCmsPageUtilityToolsDtoModelActionEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CmsPageUtilityToolsDtoModelActionEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CmsPageUtilityToolsDtoModelActionEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

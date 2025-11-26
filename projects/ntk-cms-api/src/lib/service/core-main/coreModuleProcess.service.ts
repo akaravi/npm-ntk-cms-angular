@@ -6,9 +6,12 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreModuleProcessModel } from '../../models/entity/core-main/coreModuleProcessModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcessModel, number, FilterModel> {
+export class CoreModuleProcessService extends ApiCmsServerBase<
+  CoreModuleProcessModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreModuleProcess';
   }
@@ -20,45 +23,61 @@ export class CoreModuleProcessService extends ApiCmsServerBase<CoreModuleProcess
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetOneWithJsonFormatter(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
+  ServiceGetOneWithJsonFormatter(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetOneWithJsonFormatter/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithJsonFormatter(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
+  ServiceGetAllWithJsonFormatter(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreModuleProcessModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithJsonFormatter/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithJsonFormatter/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

@@ -6,41 +6,50 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { BlogCommentModel } from '../../models/entity/blog/blogCommentModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class BlogCommentService extends ApiCmsServerBase<BlogCommentModel, number, FilterModel> {
+export class BlogCommentService extends ApiCmsServerBase<
+  BlogCommentModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BlogComment';
   }
 
-
   ServiceLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/LikeClick/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/LikeClick/' + Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceDisLikeClick(Id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DisLikeClick/' + Id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/DisLikeClick/' +
+          Id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

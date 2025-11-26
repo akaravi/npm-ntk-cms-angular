@@ -11,145 +11,182 @@ import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptio
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ApplicationAppService extends ApiCmsServerBase<ApplicationAppModel, number, FilterModel> {
+export class ApplicationAppService extends ApiCmsServerBase<
+  ApplicationAppModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'Application';
   }
 
-  ServiceScoreClick(model: ApplicationScoreDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceScoreClick(
+    model: ApplicationScoreDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new ApplicationScoreDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClick',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceScoreClickList(model: FilterModel): Observable<ErrorExceptionResult<ScoreClickInfoModel>> {
+  ServiceScoreClickList(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ScoreClickInfoModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClickList', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ScoreClickList',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceCurrentApp(): Observable<ErrorExceptionResult<ApplicationAppModel>> {
-
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CurrentApp', {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceBuild(id: number): Observable<ErrorExceptionResult<ApplicationAppModel>> {
-
+  ServiceBuild(
+    id: number
+  ): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/build/' + id, {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceBuildInfo(id: number, key: string): Observable<ErrorExceptionResult<ApplicationAppModel>> {
-
+  ServiceBuildInfo(
+    id: number,
+    key: string
+  ): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/build/' + id + '/' + key, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/build/' +
+          id +
+          '/' +
+          key,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceBuildInfoSet(model: BuilderInfoStatusDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceBuildInfoSet(
+    model: BuilderInfoStatusDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new BuilderInfoStatusDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/BuildInfo', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/BuildInfo',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceUploadUpdate(model: UploadApplictionDtoModel): Observable<ErrorExceptionResult<ApplicationAppModel>> {
+  ServiceUploadUpdate(
+    model: UploadApplictionDtoModel
+  ): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     if (model == null) {
       model = new UploadApplictionDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadUpdate', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadUpdate',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceUpload(model: UploadApplictionDtoModel): Observable<ErrorExceptionResult<ApplicationAppModel>> {
+  ServiceUpload(
+    model: UploadApplictionDtoModel
+  ): Observable<ErrorExceptionResult<ApplicationAppModel>> {
     if (model == null) {
       model = new UploadApplictionDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Upload', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Upload',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
-
 }

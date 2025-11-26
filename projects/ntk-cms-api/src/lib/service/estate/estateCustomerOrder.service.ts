@@ -5,53 +5,74 @@ import { EstateCustomerOrderActionSendSmsDtoModel } from '../../models/dto/estat
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
 import { EstateCustomerOrderModel } from '../../models/entity/estate/estateCustomerOrderModel';
 import { EstateCustomerOrderFilterModel } from '../../models/filters/estate/estateCustomerOrderFilterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
-import { FilterModel } from '../../models/entity/base/filterModel';
-import { CoreUserModel } from '../../models/entity/core-main/coreUserModel';
-
 
 @Injectable()
-export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerOrderModel, string, EstateCustomerOrderFilterModel> {
+export class EstateCustomerOrderService extends ApiCmsServerBase<
+  EstateCustomerOrderModel,
+  string,
+  EstateCustomerOrderFilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstateCustomerOrder';
   }
-  ServiceActionSendSms(model: EstateCustomerOrderActionSendSmsDtoModel): Observable<ErrorExceptionResultBase> {
-
+  ServiceActionSendSms(
+    model: EstateCustomerOrderActionSendSmsDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ActionSendSms/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllResponsibleUserId(id: string, model: FilterModel): Observable<ErrorExceptionResult<CoreUserModel>> {
+  ServiceGetAllResponsibleUserId(
+    id: string,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreUserModel>> {
     if (model == null) {
       model = new FilterModel();
     }
-    if (!id || id.length <=0) {
+    if (!id || id.length <= 0) {
       id = '';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllResponsibleUserId/' + id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllResponsibleUserId/' +
+          id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithResponsibleUserId(userId: number, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithResponsibleUserId(
+    userId: number,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
@@ -59,70 +80,110 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
       userId = 0;
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserId/' + userId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithResponsibleUserId/' +
+          userId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverPropertyId(propertyId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverPropertyId(
+    propertyId: string,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverPropertyId/' + propertyId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverPropertyId/' +
+          propertyId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverPropertyIdHaveHistory(propertyId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverPropertyIdHaveHistory(
+    propertyId: string,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverPropertyIdHaveHistory/' + propertyId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverPropertyIdHaveHistory/' +
+          propertyId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllWithResponsibleUserIdExportFile(userId: number, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceGetAllWithResponsibleUserIdExportFile(
+    userId: number,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithResponsibleUserIdExportFile/' + userId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithResponsibleUserIdExportFile/' +
+          userId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheckExportFile(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCategoryRackFolderId(RackFolderId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverCategoryRackFolderId(
+    RackFolderId: string,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
@@ -130,18 +191,28 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
       RackFolderId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryRackFolderId/' + RackFolderId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCategoryRackFolderId/' +
+          RackFolderId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllWithCoverCategoryZoneId(ZoneId: string, model: EstateCustomerOrderFilterModel): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
+  ServiceGetAllWithCoverCategoryZoneId(
+    ZoneId: string,
+    model: EstateCustomerOrderFilterModel
+  ): Observable<ErrorExceptionResult<EstateCustomerOrderModel>> {
     if (model == null) {
       model = new EstateCustomerOrderFilterModel();
     }
@@ -149,15 +220,22 @@ export class EstateCustomerOrderService extends ApiCmsServerBase<EstateCustomerO
       ZoneId = '00';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithCoverCategoryZoneId/' + ZoneId, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithCoverCategoryZoneId/' +
+          ZoneId,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

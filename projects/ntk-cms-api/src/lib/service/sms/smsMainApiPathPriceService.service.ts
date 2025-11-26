@@ -33,7 +33,7 @@ export class SmsMainApiPathPriceServiceService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }

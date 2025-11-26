@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -9,43 +8,59 @@ import { CoreTokenConnectionModel } from '../../models/entity/core-token/coreTok
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreTokenConnectionService extends ApiCmsServerBase<CoreTokenConnectionModel, string, FilterModel> {
-    getModuleControllerUrl(): string {
-      return 'CoreTokenConnection';
-    }
+export class CoreTokenConnectionService extends ApiCmsServerBase<
+  CoreTokenConnectionModel,
+  string,
+  FilterModel
+> {
+  getModuleControllerUrl(): string {
+    return 'CoreTokenConnection';
+  }
 
-  ServiceSendNotification(model: CmsNotificationSendDtoModel):
-    Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
+  ServiceSendNotification(
+    model: CmsNotificationSendDtoModel
+  ): Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
     if (!model) {
       model = new CmsNotificationSendDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotification', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotification',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllLiveConnection(model: FilterModel):
-  Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
-  if (!model) {
-    model = new FilterModel();
+  ServiceGetAllLiveConnection(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreTokenConnectionModel>> {
+    if (!model) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllLiveConnection',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
   }
-  return this.http
-    .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllLiveConnection', model, {
-      headers: this.getHeaders(),
-    })
-    .pipe(
-      retry(this.configApiRetry),
-      
-      map((ret: any) => {
-        return this.errorExceptionResultCheck(ret);
-      }),
-    );
-}
 }

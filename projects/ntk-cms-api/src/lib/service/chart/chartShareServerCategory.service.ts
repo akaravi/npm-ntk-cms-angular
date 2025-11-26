@@ -5,29 +5,37 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
-
 @Injectable()
-export class ChartShareServerCategoryService extends ApiCmsServerBase<any, number, FilterModel> {
+export class ChartShareServerCategoryService extends ApiCmsServerBase<
+  any,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ChartShareServerCategory';
   }
 
-  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExceptionResult<any>> {
+  ServiceGetAllOtherSite(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<any>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOtherSite/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOtherSite/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

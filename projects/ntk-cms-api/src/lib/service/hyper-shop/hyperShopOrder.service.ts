@@ -10,9 +10,12 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { HyperShopOrderModel } from '../../models/entity/hyper-shop/hyperShopOrderModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel, number, FilterModel> {
+export class HyperShopOrderService extends ApiCmsServerBase<
+  HyperShopOrderModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'HyperShopOrder';
   }
@@ -23,39 +26,50 @@ export class HyperShopOrderService extends ApiCmsServerBase<HyperShopOrderModel,
       })
       .pipe(
         retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceOrderCalculate(model: HyperShopOrderCalculateDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
-  ServiceOrderPayment(model: HyperShopOrderPaymentDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
-        
-        map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
-      );
-  }
 
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
+  ServiceOrderCalculate(
+    model: HyperShopOrderCalculateDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate',
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
+  ServiceOrderPayment(
+    model: HyperShopOrderPaymentDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment',
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
 }

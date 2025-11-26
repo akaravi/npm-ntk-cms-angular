@@ -21,3 +21,7 @@ export class SmsSendMessageNumberInfoModel {
   pageCount: number;
   receiverNumberHidden: boolean;
 }
+export class MessagePlaceholderModel {
+  title: string;
+  charValue: string;
+}

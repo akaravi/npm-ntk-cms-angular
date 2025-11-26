@@ -20,10 +20,11 @@ import { RecordStatusEnum } from '../../models/enums/base/recordStatusEnum';
 import { ApiServerBase } from './apiServerBase.service';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
 
-
-
 @Injectable()
-export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase implements IApiCmsServerBase {
+export class ApiCmsServerBase<TModel, TKey, TFilterModel>
+  extends ApiServerBase
+  implements IApiCmsServerBase
+{
   ServiceViewModel(): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
@@ -31,53 +32,69 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
         headers: this.getHeaders(),
       })
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReportFileGetAll(): Observable<ErrorExceptionResult<CoreModuleEntityReportFileModel>> {
+  ServiceReportFileGetAll(): Observable<
+    ErrorExceptionResult<CoreModuleEntityReportFileModel>
+  > {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportFileGetAll', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ReportFileGetAll',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceGetAll(model: TFilterModel): Observable<ErrorExceptionResult<TModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetAllEditor(model: TFilterModel): Observable<ErrorExceptionResult<TModel>> {
+  ServiceGetAllEditor(
+    model: TFilterModel
+  ): Observable<ErrorExceptionResult<TModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAllEditor', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/getAllEditor',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetOneById(id: TKey, cashApiSeconds?: number): Observable<ErrorExceptionResult<TModel>> {
+  ServiceGetOneById(
+    id: TKey,
+    cashApiSeconds?: number
+  ): Observable<ErrorExceptionResult<TModel>> {
     //! optimaze call api
     const serviceNameKay = 'ServiceGetOneById' + '_' + id;
     if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
@@ -90,7 +107,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
           //! optimaze call api
           if (cashApiSeconds > 0) {
@@ -98,82 +115,114 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
             this.cachApiResult[serviceNameKay].dateResult = new Date();
           }
           //! optimaze call api
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Count', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Count',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSetStatus(id: TKey, recordStatus: RecordStatusEnum): Observable<ErrorExceptionResult<TModel>> {
+  ServiceSetStatus(
+    id: TKey,
+    recordStatus: RecordStatusEnum
+  ): Observable<ErrorExceptionResult<TModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/SetStatus/' + id + "/" + recordStatus, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetStatus/' +
+          id +
+          '/' +
+          recordStatus,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceGetExist(model: FilterModel): Observable<ErrorExceptionResultBase> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/exist', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/exist',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceExportFile(model: FilterModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceExportFile(
+    model: FilterModel
+  ): Observable<ErrorExceptionResultExportFile> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheckExportFile(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceExportFileGetOne(id: TKey, model: ExportFileModel): Observable<ErrorExceptionResultExportFile> {
+  ServiceExportFileGetOne(
+    id: TKey,
+    model: ExportFileModel
+  ): Observable<ErrorExceptionResultExportFile> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new ExportFileModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile/' + id, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ExportFile/' + id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheckExportFile(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceAdd(model: TModel): Observable<ErrorExceptionResult<TModel>> {
@@ -184,10 +233,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
@@ -199,10 +248,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
@@ -214,70 +263,89 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceDeleteList(ids: TKey[]): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteList', ids, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteList',
+        ids,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceDeleteEntity(model: TModel): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/delete', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/delete',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   /**Memo */
-  ServiceMemoAdd(model: CoreModuleDataMemoDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceMemoAdd(
+    model: CoreModuleDataMemoDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceMemoDelete(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoDelete/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoDelete/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceMemoGetAll(): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
+  ServiceMemoGetAll(): Observable<
+    ErrorExceptionResult<CoreModuleDataMemoModel>
+  > {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/', {
@@ -285,24 +353,29 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceMemoGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
+  ServiceMemoGetAllEntity(
+    id: TKey
+  ): Observable<ErrorExceptionResult<CoreModuleDataMemoModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/MemoGetAll/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   /**Memo */
@@ -310,43 +383,52 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
   ServicePinAdd(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinAdd/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/PinAdd/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServicePinDelete(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinDelete/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/PinDelete/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServicePinCheck(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinCheck/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/PinCheck/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServicePinGetAll(): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
@@ -357,57 +439,73 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServicePinGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
+  ServicePinGetAllEntity(
+    id: TKey
+  ): Observable<ErrorExceptionResult<CoreModuleDataPinModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/PinGetAll/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/PinGetAll/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   /**Pin */
   /**Task */
-  ServiceTaskAdd(model: CoreModuleDataTaskDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceTaskAdd(
+    model: CoreModuleDataTaskDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceTaskDelete(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskDelete/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskDelete/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceTaskGetAll(): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
+  ServiceTaskGetAll(): Observable<
+    ErrorExceptionResult<CoreModuleDataTaskModel>
+  > {
     // this.loadingStatus=true;
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskGetAll/', {
@@ -415,113 +513,157 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel> extends ApiServerBase 
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceTaskGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
+  ServiceTaskGetAllEntity(
+    id: TKey
+  ): Observable<ErrorExceptionResult<CoreModuleDataTaskModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskGetAll/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskGetAll/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   /**Task */
   /**comment */
 
-  ServiceCommentAdd(model: CoreModuleDataCommentDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceCommentAdd(
+    model: CoreModuleDataCommentDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceCommentDelete(id: string): Observable<ErrorExceptionResultBase> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentDelete/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CommentDelete/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCommentGetAll(): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
+  ServiceCommentGetAll(): Observable<
+    ErrorExceptionResult<CoreModuleDataCommentModel>
+  > {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentGetAll/', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentGetAll/',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCommentGetAllEntity(id: TKey): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
+  ServiceCommentGetAllEntity(
+    id: TKey
+  ): Observable<ErrorExceptionResult<CoreModuleDataCommentModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CommentGetAll/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CommentGetAll/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   /**comment */
-  ServiceShowKeyAdd(model: CoreModuleShowKeyDtoModel): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
+  ServiceShowKeyAdd(
+    model: CoreModuleShowKeyDtoModel
+  ): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
     // this.loadingStatus=true;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyAdd', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyAdd',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceShowKeyGetAll(id: TKey): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
+  ServiceShowKeyGetAll(
+    id: TKey
+  ): Observable<ErrorExceptionResult<CoreModuleLogShowKeyModel>> {
     // this.loadingStatus=true;
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/ShowKeyGetAll/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/ShowKeyGetAll/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

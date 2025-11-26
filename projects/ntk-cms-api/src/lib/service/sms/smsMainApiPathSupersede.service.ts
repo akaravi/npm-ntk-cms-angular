@@ -35,7 +35,7 @@ export class SmsMainApiPathSupersedeService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
+          return ret;
         })
       );
   }

@@ -5,49 +5,57 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class TicketingEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'ticketingEnum';
   }
 
-  ServiceTicketingDepartemenPriorityEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceTicketingDepartemenPriorityEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketingDepartemenPriorityEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/TicketingDepartemenPriorityEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
   ServiceTicketStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketStatusEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TicketStatusEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceAnswerStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AnswerStatusEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/AnswerStatusEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

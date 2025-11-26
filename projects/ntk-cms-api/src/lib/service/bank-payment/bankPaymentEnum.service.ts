@@ -5,36 +5,46 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class BankPaymentEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'BankPaymentEnum';
   }
 
-  ServiceTransactionRecordStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceTransactionRecordStatusEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionRecordStatusEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/TransactionRecordStatusEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceTransactionBankStatusEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceTransactionBankStatusEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionBankStatusEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/TransactionBankStatusEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

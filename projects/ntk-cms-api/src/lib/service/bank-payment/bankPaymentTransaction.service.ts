@@ -6,25 +6,34 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class BankPaymentTransactionService
-  extends ApiCmsServerBase<BankPaymentTransactionModel, number, FilterModel> {
+export class BankPaymentTransactionService extends ApiCmsServerBase<
+  BankPaymentTransactionModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BankPaymentTransaction';
   }
-  ServiceTransactionCheck(id: number): Observable<ErrorExceptionResult<BankPaymentTransactionModel>> {
+  ServiceTransactionCheck(
+    id: number
+  ): Observable<ErrorExceptionResult<BankPaymentTransactionModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TransactionCheck/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/TransactionCheck/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

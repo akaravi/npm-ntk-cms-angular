@@ -37,7 +37,7 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -55,7 +55,7 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -78,7 +78,7 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -102,7 +102,7 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }
@@ -126,7 +126,7 @@ export class CoreModuleSiteUserCreditService extends ApiCmsServerBase<
         retry(this.configApiRetry),
 
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
+          return ret;
         })
       );
   }

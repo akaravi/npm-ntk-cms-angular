@@ -6,46 +6,56 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ApplicationLayoutService extends ApiCmsServerBase<ApplicationLayoutModel, number, FilterModel> {
+export class ApplicationLayoutService extends ApiCmsServerBase<
+  ApplicationLayoutModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ApplicationLayout';
   }
-  ServiceGetOneWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
+  ServiceGetOneWithJsonFormat(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormat',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetOneWithJsonFormat',
         model,
         {
           headers: this.getHeaders(),
-        },
+        }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceGetAllWithJsonFormat(model: FilterModel): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
+  ServiceGetAllWithJsonFormat(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ApplicationLayoutModel>> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllWithJsonFormat',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithJsonFormat',
         model,
         {
           headers: this.getHeaders(),
-        },
+        }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

@@ -5,23 +5,28 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
 
-
 @Injectable()
 export class DataProviderEnumService extends ApiServerBase {
   getModuleControllerUrl(): string {
     return 'DataProviderEnum';
   }
 
-  ServiceDataProviderClientConnectionTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {
+  ServiceDataProviderClientConnectionTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/DataProviderClientConnectionTypeEnum', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/DataProviderClientConnectionTypeEnum',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

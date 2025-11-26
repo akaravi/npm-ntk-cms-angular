@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -9,52 +8,82 @@ import { EstatePropertyAdsModel } from '../../models/entity/estate/estatePropert
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstateAdsTypeService extends ApiCmsServerBase<EstateAdsTypeModel, string, FilterModel> {
+export class EstateAdsTypeService extends ApiCmsServerBase<
+  EstateAdsTypeModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstateAdsType';
   }
-  ServiceGetAllSale(model: FilterModel): Observable<ErrorExceptionResult<EstateAdsTypeModel>> {
+  ServiceGetAllSale(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<EstateAdsTypeModel>> {
     if (!model) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCheckUseAdsForProperty(AdsTypeId: string, id: string):
-    Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
+  ServiceCheckUseAdsForProperty(
+    AdsTypeId: string,
+    id: string
+  ): Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseAdsForProperty/' + AdsTypeId + '/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CheckUseAdsForProperty/' +
+          AdsTypeId +
+          '/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCheckUseAdsForAccountAgency(AdsTypeId: string, id: string):
-    Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
+  ServiceCheckUseAdsForAccountAgency(
+    AdsTypeId: string,
+    id: string
+  ): Observable<ErrorExceptionResult<EstatePropertyAdsModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseAdsForAccountAgency/' + AdsTypeId + '/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CheckUseAdsForAccountAgency/' +
+          AdsTypeId +
+          '/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

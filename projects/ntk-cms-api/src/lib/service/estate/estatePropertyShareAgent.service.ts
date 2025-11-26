@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { EstatePropertyShareAgentModel } from '../../models/entity/estate/estatePropertyShareAgentModel';
@@ -8,24 +7,37 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
-
 @Injectable()
-export class EstatePropertyShareAgentService extends ApiCmsServerBase<EstatePropertyShareAgentModel, string, FilterModel> {
+export class EstatePropertyShareAgentService extends ApiCmsServerBase<
+  EstatePropertyShareAgentModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyShareAgent';
   }
-  ServiceJoin(linkEstateAgentId: string, shareKey: string): Observable<ErrorExceptionResultBase> {
+  ServiceJoin(
+    linkEstateAgentId: string,
+    shareKey: string
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/Join/' + linkEstateAgentId + "/" + shareKey, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/Join/' +
+          linkEstateAgentId +
+          '/' +
+          shareKey,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

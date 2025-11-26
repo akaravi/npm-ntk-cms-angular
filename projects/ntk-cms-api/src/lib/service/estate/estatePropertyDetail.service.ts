@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -9,24 +8,34 @@ import { EstatePropertyDetailModel } from '../../models/entity/estate/estateProp
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class EstatePropertyDetailService extends ApiCmsServerBase<EstatePropertyDetailModel, string, FilterModel> {
+export class EstatePropertyDetailService extends ApiCmsServerBase<
+  EstatePropertyDetailModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'EstatePropertyDetail';
   }
-  ServiceEditStep(model: EditStepDtoModel<string>): Observable<ErrorExceptionResultBase> {
+  ServiceEditStep(
+    model: EditStepDtoModel<string>
+  ): Observable<ErrorExceptionResultBase> {
     if (!model) {
       model = new EditStepDtoModel<string>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
-        headers: this.getHeaders(),
-      })
+      .put(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

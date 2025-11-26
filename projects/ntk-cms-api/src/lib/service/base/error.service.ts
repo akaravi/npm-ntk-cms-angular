@@ -3,7 +3,6 @@ import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiServerBase } from './apiServerBase.service';
 
-
 export class ErrorService extends ApiServerBase {
   ServiceErrorApi<TOut>(model: any): Observable<ErrorExceptionResult<any>> {
     return this.http
@@ -12,20 +11,11 @@ export class ErrorService extends ApiServerBase {
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  errorExceptionResultCheck<TOut>(model: ErrorExceptionResult<TOut>): ErrorExceptionResult<TOut> {
-    if (model) {
-      // tslint:disable-next-line: no-empty
-      if (model.isSuccess) {
-      } else {
-        // this.toastrService.error(model.errorMessage, 'خطا در دریافت از سرور');
-      }
-    }
-    return model;
-  }
+
 }

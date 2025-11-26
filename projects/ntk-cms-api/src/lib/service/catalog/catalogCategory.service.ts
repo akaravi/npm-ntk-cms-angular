@@ -7,26 +7,33 @@ import { CatalogCategoryModel } from '../../models/entity/catalog/catalogCategor
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CatalogCategoryService extends ApiCmsServerBase<CatalogCategoryModel, string, FilterModel> {
+export class CatalogCategoryService extends ApiCmsServerBase<
+  CatalogCategoryModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CatalogCategory';
   }
 
-  ServiceMove(OldId: string, NewId: string): Observable<ErrorExceptionResult<CatalogCategoryModel>> {
+  ServiceMove(
+    OldId: string,
+    NewId: string
+  ): Observable<ErrorExceptionResult<CatalogCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
         { Old: OldId, New: NewId },
         {
           headers: this.getHeaders(),
-        },
+        }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

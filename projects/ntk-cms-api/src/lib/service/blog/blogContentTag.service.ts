@@ -8,50 +8,58 @@ import { Injectable } from '@angular/core';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 
-
 @Injectable()
-export class BlogContentTagService extends ApiCmsServerBase<BlogContentTagModel, number, FilterModel> {
+export class BlogContentTagService extends ApiCmsServerBase<
+  BlogContentTagModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BlogContentTag';
   }
 
-
-  ServiceAddBatch(model: BlogContentTagModel[]): Observable<ErrorExceptionResult<BlogContentTagModel>> {
+  ServiceAddBatch(
+    model: BlogContentTagModel[]
+  ): Observable<ErrorExceptionResult<BlogContentTagModel>> {
     if (model == null) {
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceDeleteBatch(model: BlogContentTagModel[]): Observable<ErrorExceptionResultBase> {
+  ServiceDeleteBatch(
+    model: BlogContentTagModel[]
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }
-
-
-
-
-
-

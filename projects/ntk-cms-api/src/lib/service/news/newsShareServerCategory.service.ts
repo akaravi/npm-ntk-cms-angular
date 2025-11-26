@@ -6,29 +6,37 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { NewsShareServerCategoryModel } from '../../models/entity/news/newsShareServerCategoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
-
 @Injectable()
-export class NewsShareServerCategoryService extends ApiCmsServerBase<NewsShareServerCategoryModel, number, FilterModel> {
+export class NewsShareServerCategoryService extends ApiCmsServerBase<
+  NewsShareServerCategoryModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'NewsShareServerCategory';
   }
 
-  ServiceGetAllOtherSite(model: FilterModel): Observable<ErrorExceptionResult<NewsShareServerCategoryModel>> {
+  ServiceGetAllOtherSite(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<NewsShareServerCategoryModel>> {
     if (model == null) {
       model = new FilterModel();
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOtherSite/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllOtherSite/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

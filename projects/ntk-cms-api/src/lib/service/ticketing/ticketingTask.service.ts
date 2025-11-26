@@ -8,55 +8,68 @@ import { TicketingTaskModel } from '../../models/entity/ticketing/ticketingTaskM
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 import { TicketingTaskDtoModel } from './../../models/dto/ticketing/ticketingTaskDtoModel';
 
-
 @Injectable()
-export class TicketingTaskService extends ApiCmsServerBase<TicketingTaskModel, number, FilterModel> {
+export class TicketingTaskService extends ApiCmsServerBase<
+  TicketingTaskModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'TicketingTask';
   }
 
-  ServiceContactUS(model: TicketingTaskDtoModel): Observable<ErrorExceptionResult<TicketingTaskModel>> {
+  ServiceContactUS(
+    model: TicketingTaskDtoModel
+  ): Observable<ErrorExceptionResult<TicketingTaskModel>> {
     if (model == null) {
       model = new TicketingTaskDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ContactUS', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ContactUS',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceTaskReaded(id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskReaded/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/TaskReaded/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceisClosed(id: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/isClosed/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/isClosed/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

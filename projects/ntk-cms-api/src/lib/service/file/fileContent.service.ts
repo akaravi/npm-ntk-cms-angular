@@ -10,180 +10,251 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { FileContentModel } from '../../models/entity/file/fileContentModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class FileContentService extends ApiCmsServerBase<FileContentModel, number, FilterModel> {
+export class FileContentService extends ApiCmsServerBase<
+  FileContentModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'FileContent';
   }
 
-  ServiceUploadByUrl(model: FileUploadByUrlDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceUploadByUrl(
+    model: FileUploadByUrlDtoModel
+  ): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadByUrl/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/UploadByUrl/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceCopyCutFile(model: FileCopyCutDtoModel): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceCopyCutFile(
+    model: FileCopyCutDtoModel
+  ): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/CopyCutFile/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/CopyCutFile/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCopyCutFileRootToRootFolder(): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceCopyCutFileRootToRootFolder(): Observable<
+    ErrorExceptionResult<FileContentModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CopyCutFileRootToRootFolder/', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CopyCutFileRootToRootFolder/',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCopy(model: FileContentModel): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceCopy(
+    model: FileContentModel
+  ): Observable<ErrorExceptionResult<FileContentModel>> {
     if (model == null) {
       model = new FileContentModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/Copy/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/Copy/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetAllInCategoryById(categoryId: number): Observable<ErrorExceptionResult<FileContentModel>> {
-
+  ServiceGetAllInCategoryById(
+    categoryId: number
+  ): Observable<ErrorExceptionResult<FileContentModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllInCategoryById/' + categoryId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllInCategoryById/' +
+          categoryId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceSearchFilesInCategory(model: FilterModel): Observable<ErrorExceptionResultBase> {
+  ServiceSearchFilesInCategory(
+    model: FilterModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/SearchFilesInCategory', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SearchFilesInCategory',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceDownloadFile(model: FileDownloadDtoModel): Observable<ErrorExceptionResultBase> {
+  ServiceDownloadFile(
+    model: FileDownloadDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FileDownloadDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DownloadFile', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/DownloadFile',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceUpdateFileSizes(fileId: number): Observable<ErrorExceptionResultBase> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UpdateFileSizes/' + fileId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/UpdateFileSizes/' +
+          fileId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceUpdateSumSizeUpload(fileId: number): Observable<ErrorExceptionResultBase> {
-
+  ServiceUpdateSumSizeUpload(
+    fileId: number
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/UpdateSumSizeUpload/' + fileId, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/UpdateSumSizeUpload/' +
+          fileId,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-
-  ServiceImageFileEdit(model: FileDownloadDtoModel): Observable<ErrorExceptionResultBase> {
-
+  ServiceImageFileEdit(
+    model: FileDownloadDtoModel
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = new FileDownloadDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/ImageFileEdit', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/ImageFileEdit',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceReplace(model: FileContentModel): Observable<ErrorExceptionResult<FileContentModel>> {
+  ServiceReplace(
+    model: FileContentModel
+  ): Observable<ErrorExceptionResult<FileContentModel>> {
     if (model == null) {
       model = new FileContentModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/replace/', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/replace/',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

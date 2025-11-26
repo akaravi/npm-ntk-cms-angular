@@ -4,7 +4,10 @@ import { map, retry } from 'rxjs/operators';
 import { SmsApiSendMessageDtoModel } from '../../models/dto/sms/smsApiSendMessageDtoModel';
 import { SmsApiSendMessageOrderCalculateDtoModel } from '../../models/dto/sms/smsApiSendMessageOrderCalculateDtoModel';
 import { SmsApiSendMessageTestDtoModel } from '../../models/dto/sms/smsApiSendMessageTestDtoModel';
-import { SmsApiSendOrderCalculateResultModel } from '../../models/dto/sms/smsApiSendOrderCalculateResultModel';
+import {
+  MessagePlaceholderModel,
+  SmsApiSendOrderCalculateResultModel,
+} from '../../models/dto/sms/smsApiSendOrderCalculateResultModel';
 import { SmsApiSendResultModel } from '../../models/dto/sms/smsApiSendResultModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ApiServerBase } from '../base/apiServerBase.service';
@@ -84,7 +87,7 @@ export class SmsActionService extends ApiServerBase {
         })
       );
   }
-  ServiceGetMessagePlaceholders(): Observable<string[]> {
+  ServiceGetMessagePlaceholders(): Observable<MessagePlaceholderModel[]> {
     return this.http
       .get(
         this.getBaseUrl() +
@@ -97,8 +100,8 @@ export class SmsActionService extends ApiServerBase {
       .pipe(
         retry(this.configApiRetry),
 
-        map((ret: string[]) => {
-          return ret ?? [];
+        map((ret: any) => {
+          return ret as MessagePlaceholderModel[];
         })
       );
   }

@@ -8,56 +8,73 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreGuideModel } from '../../models/entity/core-main/coreGuideModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreGuideService extends ApiCmsServerBase<CoreGuideModel, number, FilterModel> {
+export class CoreGuideService extends ApiCmsServerBase<
+  CoreGuideModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreGuide';
   }
-  ServiceGetAllTree(model: FilterModel): Observable<ErrorExceptionResult<CoreGuideModel>> {
+  ServiceGetAllTree(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreGuideModel>> {
     if (model == null) {
       model = new FilterModel();
     }
     model.rowPerPage = 200;
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllTree',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceEditStep(model: EditStepDtoModel<number>): Observable<ErrorExceptionResultBase> {
+  ServiceEditStep(
+    model: EditStepDtoModel<number>
+  ): Observable<ErrorExceptionResultBase> {
     if (!model) {
       model = new EditStepDtoModel<number>();
     }
     return this.http
-      .put(this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep', model, {
-        headers: this.getHeaders(),
-      })
+      .put(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/EditStep',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<CoreGuideModel>> {
+  ServiceGetOneByKey(
+    key: string
+  ): Observable<ErrorExceptionResult<CoreGuideModel>> {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/key/' + key, {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

@@ -7,29 +7,33 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ApplicationLogNotificationService extends ApiCmsServerBase<ApplicationLogNotificationModel, string, FilterModel> {
+export class ApplicationLogNotificationService extends ApiCmsServerBase<
+  ApplicationLogNotificationModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ApplicationLogNotification';
   }
 
-  ServiceSendNotification(model: SendNotificationModel): Observable<ErrorExceptionResult<ApplicationLogNotificationModel>> {
+  ServiceSendNotification(
+    model: SendNotificationModel
+  ): Observable<ErrorExceptionResult<ApplicationLogNotificationModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/SendNotification',
         model,
         {
           headers: this.getHeaders(),
-        },
+        }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

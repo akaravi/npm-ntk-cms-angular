@@ -7,38 +7,49 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { FilterModel } from '../../models/entity/base/filterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class BankPaymentPublicConfigService
-  extends ApiCmsServerBase<BankPaymentPublicConfigModel, number, FilterModel> {
+export class BankPaymentPublicConfigService extends ApiCmsServerBase<
+  BankPaymentPublicConfigModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'BankPaymentPublicConfig';
   }
-  ServiceGetOneWithJsonFormatter(id: number): Observable<ErrorExceptionResult<BankPaymentPublicConfigAliasJsonModel>> {
+  ServiceGetOneWithJsonFormatter(
+    id: number
+  ): Observable<ErrorExceptionResult<BankPaymentPublicConfigAliasJsonModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetOneWithJsonFormatter/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceAutoAdd(): Observable<ErrorExceptionResult<BankPaymentPublicConfigModel>> {
+  ServiceAutoAdd(): Observable<
+    ErrorExceptionResult<BankPaymentPublicConfigModel>
+  > {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

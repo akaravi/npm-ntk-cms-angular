@@ -11,75 +11,104 @@ import { CoreModuleSaleHeaderModel } from '../../models/entity/core-main/coreMod
 import { CoreModuleSaleInvoiceDetailModel } from '../../models/entity/core-main/coreModuleSaleInvoiceDetailModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class CoreModuleSaleHeaderService extends ApiCmsServerBase<CoreModuleSaleHeaderModel, number, FilterModel> {
+export class CoreModuleSaleHeaderService extends ApiCmsServerBase<
+  CoreModuleSaleHeaderModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreModuleSaleHeader';
   }
-  ServiceGetAllSale(model: FilterModel): Observable<ErrorExceptionResult<CoreModuleSaleHeaderModel>> {
+  ServiceGetAllSale(
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<CoreModuleSaleHeaderModel>> {
     if (!model) {
       model = new FilterModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetAllSale',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceCheckUseHeaderForSite(id: number):
-    Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
+  ServiceCheckUseHeaderForSite(
+    id: number
+  ): Observable<ErrorExceptionResult<CoreModuleSaleInvoiceDetailModel>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/CheckUseHeaderForSite/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/CheckUseHeaderForSite/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceOrderCalculate(model: CoreModuleSaleHeaderCalculateDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>> {
+  ServiceOrderCalculate(
+    model: CoreModuleSaleHeaderCalculateDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep1CalculateModel>
+  > {
     if (!model) {
       model = new CoreModuleSaleHeaderCalculateDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderCalculate',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceOrderPayment(model: CoreModuleSaleHeaderPaymentDtoModel):
-    Observable<ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>> {
+  ServiceOrderPayment(
+    model: CoreModuleSaleHeaderPaymentDtoModel
+  ): Observable<
+    ErrorExceptionResult<BankPaymentInjectPaymentGotoBankStep2LandingSitePageModel>
+  > {
     if (!model) {
       model = new CoreModuleSaleHeaderPaymentDtoModel();
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/OrderPayment',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-
 }

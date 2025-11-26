@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -8,12 +7,19 @@ import { LinkManagementTargetBillboardLogModel } from '../../models/entity/link-
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class LinkManagementTargetBillboardLogService extends ApiCmsServerBase<LinkManagementTargetBillboardLogModel, string, FilterModel> {
+export class LinkManagementTargetBillboardLogService extends ApiCmsServerBase<
+  LinkManagementTargetBillboardLogModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'LinkManagementTargetBillboardLog';
   }
 
-  ServiceGetAllByKey(key: string, model: FilterModel): Observable<ErrorExceptionResult<LinkManagementTargetBillboardLogModel>> {
+  ServiceGetAllByKey(
+    key: string,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<LinkManagementTargetBillboardLogModel>> {
     // this.loadingStatus=true;
     if (model == null) {
       model = new FilterModel();
@@ -22,15 +28,19 @@ export class LinkManagementTargetBillboardLogService extends ApiCmsServerBase<Li
       key = '---';
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll/' + key, model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/getAll/' + key,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

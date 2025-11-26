@@ -152,35 +152,6 @@ export class ApiServerBase {
     return retOut;
   }
 
-  errorExceptionResultCheck<TModel>(model: ErrorExceptionResult<TModel>): ErrorExceptionResult<TModel> {
-    if (model) {
-      if (!model.isSuccess) {
-        const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.errorMessage;
-      }
-    }
-    return model;
-  }
-  errorExceptionResultBaseCheck(model: ErrorExceptionResultBase): ErrorExceptionResultBase {
-    if (model) {
-      if (!model.isSuccess) {
-        const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.errorMessage;
-      }
-    }
-    // this.loadingStatus=false;
-    return model;
-  }
-  errorExceptionResultCheckExportFile(model: ErrorExceptionResultExportFile): ErrorExceptionResultExportFile {
-    if (model) {
-      if (!model.isSuccess) {
-        const title = 'خطا در دریافت اطلاعات از سرور';
-        const message = model.errorMessage;
-      }
-    }
-    // this.loadingStatus=false;
-    return model;
-  }
   handleError(error: any, caught: Observable<any>): Observable<any> {
     let errorMessage = error.message;
     if (error && error.status) {

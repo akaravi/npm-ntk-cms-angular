@@ -7,36 +7,51 @@ import { SmsMainApiPathPublicConfigAliasJsonModel } from '../../models/entity/sm
 import { SmsMainApiPathPublicConfigModel } from '../../models/entity/sms/smsMainApiPathPublicConfigModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<SmsMainApiPathPublicConfigModel, string, FilterModel> {
+export class SmsMainApiPathPublicConfigService extends ApiCmsServerBase<
+  SmsMainApiPathPublicConfigModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'SmsMainApiPathPublicConfig';
   }
-  ServiceGetOneWithJsonFormatter(id: string): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigAliasJsonModel>> {
+  ServiceGetOneWithJsonFormatter(
+    id: string
+  ): Observable<
+    ErrorExceptionResult<SmsMainApiPathPublicConfigAliasJsonModel>
+  > {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneWithJsonFormatter/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetOneWithJsonFormatter/' +
+          id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceAutoAdd(): Observable<ErrorExceptionResult<SmsMainApiPathPublicConfigModel>> {
+  ServiceAutoAdd(): Observable<
+    ErrorExceptionResult<SmsMainApiPathPublicConfigModel>
+  > {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/AutoAdd/', {
         headers: this.getHeaders(),
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

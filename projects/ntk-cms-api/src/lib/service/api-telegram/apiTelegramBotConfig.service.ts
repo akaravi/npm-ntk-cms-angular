@@ -10,103 +10,142 @@ import { ApiTelegramRenderInfoModel } from '../../models/dto/api-telegram/apiTel
 import { ApiTelegramSendMessageTodoModel } from '../../models/dto/api-telegram/apiTelegramSendMessageTodoModel';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 
-
 @Injectable()
-export class ApiTelegramBotConfigService extends ApiCmsServerBase<ApiTelegramBotConfigModel, number, FilterModel> {
+export class ApiTelegramBotConfigService extends ApiCmsServerBase<
+  ApiTelegramBotConfigModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ApiTelegramBotConfig';
   }
 
-  ServiceSendMessage(model: ApiTelegramSendMessageTodoModel): Observable<ErrorExceptionResultBase> {
+  ServiceSendMessage(
+    model: ApiTelegramSendMessageTodoModel
+  ): Observable<ErrorExceptionResultBase> {
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage', model, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/SendMessage',
+        model,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 
-  ServiceGetUpdatesAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceGetUpdatesAsync(
+    id: number
+  ): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsync/' + id, { headers: this.getHeaders(), },
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetUpdatesAsync/' +
+          id,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetUpdatesAsyncLast(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceGetUpdatesAsyncLast(
+    id: number
+  ): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetUpdatesAsyncLast/' + id, { headers: this.getHeaders(), },
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetUpdatesAsyncLast/' +
+          id,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceGetMeAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceGetMeAsync(
+    id: number
+  ): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetMeAsync/' + id, { headers: this.getHeaders(), },
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetMeAsync/' + id,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSetWebhookAsync(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceSetWebhookAsync(
+    id: number
+  ): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsync/' + id, { headers: this.getHeaders(), },
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetWebhookAsync/' +
+          id,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSetWebhookAsyncEmpty(id: number): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceSetWebhookAsyncEmpty(
+    id: number
+  ): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetWebhookAsyncEmpty/' + id, { headers: this.getHeaders(), },
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetWebhookAsyncEmpty/' +
+          id,
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceSetAllWebhookUpdate(): Observable<ErrorExceptionResult<ApiTelegramRenderInfoModel>> {
+  ServiceSetAllWebhookUpdate(): Observable<
+    ErrorExceptionResult<ApiTelegramRenderInfoModel>
+  > {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/SetAllWebhookUpdate/', { headers: this.getHeaders(), },
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetAllWebhookUpdate/',
+        { headers: this.getHeaders() }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

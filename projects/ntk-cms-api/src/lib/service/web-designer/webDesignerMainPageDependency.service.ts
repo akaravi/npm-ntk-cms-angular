@@ -7,10 +7,12 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { WebDesignerMainPageDependencyModel } from '../../models/entity/web-designer/webDesignerMainPageDependencyModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
-
 @Injectable()
-export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDesignerMainPageDependencyModel, string, FilterModel> {
+export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<
+  WebDesignerMainPageDependencyModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'WebDesignerMainPageDependency';
   }
@@ -21,24 +23,26 @@ export class WebDesignerMainPageDependencyService extends ApiCmsServerBase<WebDe
       })
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultBaseCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceWebRoute(id: string): Observable<ErrorExceptionResult<string>> {
-
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/WebRoute/' + id, {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/WebRoute/' + id,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

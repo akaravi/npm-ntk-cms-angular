@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
@@ -8,25 +7,35 @@ import { LinkManagementBillboardFilterModel } from '../../models/filters/link-ma
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class LinkManagementBillboardService extends ApiCmsServerBase<LinkManagementBillboardModel, number, LinkManagementBillboardFilterModel> {
+export class LinkManagementBillboardService extends ApiCmsServerBase<
+  LinkManagementBillboardModel,
+  number,
+  LinkManagementBillboardFilterModel
+> {
   getModuleControllerUrl(): string {
     return 'LinkManagementBillboard';
   }
-  ServiceGetOneByKey(key: string): Observable<ErrorExceptionResult<LinkManagementBillboardModel>> {
+  ServiceGetOneByKey(
+    key: string
+  ): Observable<ErrorExceptionResult<LinkManagementBillboardModel>> {
     if (!key || key.length === 0) {
       key = '---';
     }
 
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneByKey/', key, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/GetOneByKey/',
+        key,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

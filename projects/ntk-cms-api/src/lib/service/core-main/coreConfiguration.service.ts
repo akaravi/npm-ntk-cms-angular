@@ -7,30 +7,34 @@ import {
   CoreModuleConfigAdminMainValuesModel,
   CoreModuleConfigSiteAccessValuesModel,
   CoreModuleConfigSiteValuesModel,
-  CoreModuleSiteStorageValuesModel
+  CoreModuleSiteStorageValuesModel,
 } from '../../models/entity/core-main/coreConfigurationModel';
 import { ApiServerConfigSiteBase } from '../base/apiServerConfigSiteBase.service';
 
-
 @Injectable()
-export class CoreConfigurationService extends
-  ApiServerConfigSiteBase<CoreModuleConfigAdminMainValuesModel,
-    CoreModuleConfigSiteValuesModel,
-    CoreModuleConfigSiteAccessValuesModel,
-    CoreModuleSiteStorageValuesModel> {
+export class CoreConfigurationService extends ApiServerConfigSiteBase<
+  CoreModuleConfigAdminMainValuesModel,
+  CoreModuleConfigSiteValuesModel,
+  CoreModuleConfigSiteAccessValuesModel,
+  CoreModuleSiteStorageValuesModel
+> {
   getModuleControllerUrl(): string {
     return 'Core';
   }
   ServiceUserMembershipRule(): Observable<ErrorExceptionResult<string>> {
     return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + 'Configuration/UserMembershipRule', {
-        headers: this.getHeaders(),
-      })
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          'Configuration/UserMembershipRule',
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
-        
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
   ServiceIp(): Observable<IpModel> {
@@ -39,10 +43,9 @@ export class CoreConfigurationService extends
         headers: this.getHeaders(),
       })
       .pipe(
-        
         map((ret: any) => {
           return ret;
-        }),
+        })
       );
   }
 }

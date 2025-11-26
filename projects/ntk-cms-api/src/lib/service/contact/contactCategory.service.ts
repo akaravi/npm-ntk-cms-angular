@@ -6,28 +6,34 @@ import { FilterModel } from '../../models/entity/base/filterModel';
 import { ContactCategoryModel } from '../../models/entity/contact/contactCategoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
-
 @Injectable()
-export class ContactCategoryService extends ApiCmsServerBase<ContactCategoryModel, string, FilterModel> {
+export class ContactCategoryService extends ApiCmsServerBase<
+  ContactCategoryModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ContactCategory';
   }
 
-  ServiceMove(OldId: string, NewId: string): Observable<ErrorExceptionResult<ContactCategoryModel>> {
+  ServiceMove(
+    OldId: string,
+    NewId: string
+  ): Observable<ErrorExceptionResult<ContactCategoryModel>> {
     return this.http
       .post(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/Move',
         { Old: OldId, New: NewId },
         {
           headers: this.getHeaders(),
-        },
+        }
       )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }

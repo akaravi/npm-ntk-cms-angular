@@ -8,45 +8,57 @@ import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionRes
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
 import { FilterModel } from '../../models/entity/base/filterModel';
 
-
 @Injectable()
-export class ArticleContentSimilarService extends ApiCmsServerBase<ArticleContentSimilarModel, number, FilterModel> {
+export class ArticleContentSimilarService extends ApiCmsServerBase<
+  ArticleContentSimilarModel,
+  number,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'ArticleContentSimilar';
   }
-  ServiceAddBatch(model: ArticleContentSimilarModel[]): Observable<ErrorExceptionResult<ArticleContentSimilarModel>> {
+  ServiceAddBatch(
+    model: ArticleContentSimilarModel[]
+  ): Observable<ErrorExceptionResult<ArticleContentSimilarModel>> {
     if (model == null) {
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/AddBatch',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
-  ServiceDeleteBatch(model: ArticleContentSimilarModel[]): Observable<ErrorExceptionResultBase> {
+  ServiceDeleteBatch(
+    model: ArticleContentSimilarModel[]
+  ): Observable<ErrorExceptionResultBase> {
     if (model == null) {
       model = [];
     }
     return this.http
-      .post(this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch', model, {
-        headers: this.getHeaders(),
-      })
+      .post(
+        this.getBaseUrl() + this.getModuleControllerUrl() + '/DeleteBatch',
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
       .pipe(
         retry(this.configApiRetry),
-        
+
         map((ret: any) => {
-          return this.errorExceptionResultCheck(ret);
-        }),
+          return ret;
+        })
       );
   }
 }
-
-
-
