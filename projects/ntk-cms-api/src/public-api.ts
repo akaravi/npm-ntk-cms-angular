@@ -103,6 +103,7 @@ export * from './lib/models/entity/polling/_export';
 // contact
 export * from './lib/service/contact/_export';
 export * from './lib/models/entity/contact/_export';
+export * from './lib/models/dto/contact/_export';
 // contact
 
 // ticketing
