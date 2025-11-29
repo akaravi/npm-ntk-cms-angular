@@ -18,6 +18,33 @@ export class ContactContentService extends ApiCmsServerBase<
   getModuleControllerUrl(): string {
     return 'ContactContent';
   }
+
+  ServiceGetAllWithHierarchyCategoryId(
+    Id: string,
+    model: FilterModel
+  ): Observable<ErrorExceptionResult<ContactContentModel>> {
+    if (model == null) {
+      model = new FilterModel();
+    }
+    return this.http
+      .post(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/GetAllWithHierarchyCategoryId/' +
+          Id,
+        model,
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
   ServiceImportPreview(
     file: File
   ): Observable<ErrorExceptionResult<ContactImportPreviewResponseModel>> {
