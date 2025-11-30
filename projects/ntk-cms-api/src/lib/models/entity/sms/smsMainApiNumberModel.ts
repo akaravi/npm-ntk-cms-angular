@@ -14,5 +14,11 @@ export class SmsMainApiNumberModel extends BaseModuleEntity<string> {
   smsRelayStatus: boolean;
   smsRelayUrl: string;
   actionMemo: string;
+  /**متغیر های ارسال */
+  apiSendMessageAddTextFirst: string;
+  apiSendMessageAddTextEnd: string;
+  sendMessageAddTextFirst: string;
+  sendMessageAddTextEnd: string;
+  /**متغیر های ارسال */
   apiPathAndApiNumbers: SmsMainApiPathAndApiNumberModel[];
 }
