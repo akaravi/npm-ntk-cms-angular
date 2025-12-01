@@ -9,3 +9,4 @@ export * from './smsApiSendOrderCalculateResultModel';
 export * from './smsMainApiPathPriceServiceEstimateModel';
 export * from './smsClientSendMessageDtoModel';
 export * from './smsClientSendMessageResultModel';
+export * from './numberReceverInfoModel';

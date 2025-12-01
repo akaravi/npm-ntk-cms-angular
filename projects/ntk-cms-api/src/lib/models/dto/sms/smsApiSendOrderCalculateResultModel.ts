@@ -1,25 +1,16 @@
-import { SmsLogOutBoxDetailModel } from '../../entity/sms/smsLogOutBoxDetailModel';
+import { NumberReceverInfoModel } from './numberReceverInfoModel';
 
 export class SmsApiSendOrderCalculateResultModel {
-  toNumbers: SmsSendMessageNumberInfoModel[];
+  toNumbers: NumberReceverInfoModel[];
   fromNumber: string;
   linkApiPathId: string;
   linkApiNumberId: string;
-  messageIsUnicode: boolean;
+
   receiverNumberCount: number;
   endUserCreditBefore: number;
 
   serviceCreditSum: number;
   endUserCreditSum: number;
-
-  outBoxDetails: SmsLogOutBoxDetailModel[];
-}
-export class SmsSendMessageNumberInfoModel {
-  toNumber: string;
-  credit: number;
-  serviceCredit: number;
-  pageCount: number;
-  receiverNumberHidden: boolean;
 }
 export class MessagePlaceholderModel {
   title: string;

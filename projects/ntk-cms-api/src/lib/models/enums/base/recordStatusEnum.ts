@@ -6,3 +6,9 @@ export enum RecordStatusEnum {
   DeniedConfirmed = 5,
   Archive = 6
 }
+export enum RecordAdminStatusEnum {
+  Pending = 0,
+  Accept = 1,
+  Denied = 2,
+  NeedToCheck = 3,
+}

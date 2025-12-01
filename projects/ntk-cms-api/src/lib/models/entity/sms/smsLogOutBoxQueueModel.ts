@@ -1,7 +1,9 @@
+import { RecordAdminStatusEnum } from '../../enums/base/_export';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { SmsLogOutBoxScheduleRunInfoModel } from './smsLogOutBoxScheduleRunInfoModel';
 //@@tag-Version-2201011
 export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
+  mainAdminRecordStatus = RecordAdminStatusEnum.Pending;
   message: string;
   isFlash: boolean;
   linkApiPathId: string;

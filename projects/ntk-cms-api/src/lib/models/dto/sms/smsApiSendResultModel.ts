@@ -1,9 +1,9 @@
-import { SmsSendMessageNumberInfoModel } from './smsApiSendOrderCalculateResultModel';
+import { NumberReceverInfoModel } from "./numberReceverInfoModel";
 
 export class SmsApiSendResultModel {
   logOutId: string;
   sendId: string;
-  toNumbers: SmsSendMessageNumberInfoModel[];
+  toNumbers: NumberReceverInfoModel[];
   fromNumber: string;
   messageIsUnicode: boolean;
   linkCmsUser?: number;
