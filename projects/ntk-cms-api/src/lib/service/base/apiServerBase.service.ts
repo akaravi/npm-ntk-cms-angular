@@ -37,7 +37,7 @@ export class ApiServerBase {
     return localStorage.getItem(this.keyBaseVer) + '_';
   }
   cachApiResult = [];
-  cashApiIsValid(serviceNameKay: string, cashApiSeconds?: number): boolean {
+  cashApiIsValid(serviceNameKay: string, cashApiSeconds: number=0): boolean {
     if (cashApiSeconds > 0) {
       if (!this.cachApiResult[serviceNameKay])
         return false;

@@ -1,5 +1,4 @@
-
-import { RecordStatusEnum } from '../../enums/base/recordStatusEnum';
+import { RecordAdminStatusEnum } from '../../enums/base/recordStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { File360TourModel } from '../core-main/file360TourModel';
 import { File360ViewModel } from '../core-main/file360ViewModel';
@@ -8,7 +7,7 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   title: string;
   linkCmsUserId?: number;
   linkPropertyCompanyId: string;
-  mainAdminRecordStatus = RecordStatusEnum.Pending;
+  mainAdminRecordStatus = RecordAdminStatusEnum.Pending;
   description: string;
   descriptionHidden: string;
   address: string;
@@ -34,13 +33,11 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   expireDate: Date;
   linkLocationCountryId: number;
 
-
   linkMainImageIdSrc: string;
   linkFilePodcastIdSrc: string;
   linkFileMovieIdSrc: string;
   linkFileIdsSrc: string[];
   linkExtraImageIdsSrc: string[];
-
 
   uploadFileGUID: string[];
   urlViewContent: string;
@@ -54,5 +51,4 @@ export class EstatePropertyProjectModel extends BaseModuleEntity<string> {
   aboutTel: string;
   aboutMobile: string;
   // * About */
-
 }

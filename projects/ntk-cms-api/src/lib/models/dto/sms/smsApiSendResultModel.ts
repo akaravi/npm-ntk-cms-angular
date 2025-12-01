@@ -5,7 +5,6 @@ export class SmsApiSendResultModel {
   sendId: string;
   toNumbers: NumberReceverInfoModel[];
   fromNumber: string;
-  messageIsUnicode: boolean;
   linkCmsUser?: number;
   linkSiteId?: number;
   linkApiPathId: string;

@@ -16,7 +16,7 @@ import { CoreModuleDataMemoModel } from '../../models/entity/core-module-data/co
 import { CoreModuleDataPinModel } from '../../models/entity/core-module-data/coreModuleDataPinModel';
 import { CoreModuleDataTaskModel } from '../../models/entity/core-module-data/coreModuleDataTaskModel';
 import { CoreModuleLogShowKeyModel } from '../../models/entity/core-module-log/coreModuleLogShowKeyModel';
-import { RecordStatusEnum } from '../../models/enums/base/recordStatusEnum';
+import { RecordAdminStatusEnum, RecordStatusEnum } from '../../models/enums/base/recordStatusEnum';
 import { ApiServerBase } from './apiServerBase.service';
 import { IApiCmsServerBase } from './iApiCmsServerBase';
 
@@ -93,10 +93,10 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel>
   }
   ServiceGetOneById(
     id: TKey,
-    cashApiSeconds?: number
+    cashApiSeconds: number = 0
   ): Observable<ErrorExceptionResult<TModel>> {
     //! optimaze call api
-    const serviceNameKay = 'ServiceGetOneById' + '_' + id;
+    const serviceNameKay = this.constructor.name + '_ServiceGetOneById_' + id;
     if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
       return of(this.cachApiResult[serviceNameKay]);
     //! optimaze call api
@@ -146,10 +146,35 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel>
       .get(
         this.getBaseUrl() +
           this.getModuleControllerUrl() +
-          '/SetStatus/' +
+          '/SetRecordStatus/' +
           id +
           '/' +
           recordStatus,
+        {
+          headers: this.getHeaders(),
+        }
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
+  ServiceSetAdminStatus(
+    id: TKey,
+    recordAdminStatus: RecordAdminStatusEnum
+  ): Observable<ErrorExceptionResult<TModel>> {
+    // this.loadingStatus=true;
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/SetRecordAdminStatus/' +
+          id +
+          '/' +
+          recordAdminStatus,
         {
           headers: this.getHeaders(),
         }
