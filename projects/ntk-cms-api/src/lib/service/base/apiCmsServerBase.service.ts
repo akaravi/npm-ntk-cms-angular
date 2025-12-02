@@ -111,8 +111,7 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel>
         map((ret: any) => {
           //! optimaze call api
           if (cashApiSeconds > 0) {
-            this.cachApiResult[serviceNameKay] = ret;
-            this.cachApiResult[serviceNameKay].dateResult = new Date();
+            this.cashApiVlaueSet(serviceNameKay, ret);
           }
           //! optimaze call api
           return ret;

@@ -1,20 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
-import { ErrorExceptionResultExportFile } from '../../models/entity/base/errorExceptionResultExportFile';
 import { TokenJWTModel } from '../../models/entity/core-token/_export';
 import { ManageUserAccessDataTypesEnum } from '../../models/enums/base/manageUserAccessDataTypesEnum';
 //import { NtkCmsApiStoreService } from '../../reducers/ntkCmsApiStore.service';
-
 
 @Injectable()
 export class ApiServerBase {
   constructor(@Inject(HttpClient) public http: HttpClient) {
     this.childConstructor();
     this.headers = new Map<string, string>();
-
   }
   public baseUrl = 'https://apicms.ir/api/v2/';
   public userToken = '';
@@ -36,17 +31,34 @@ export class ApiServerBase {
   get Ver(): string {
     return localStorage.getItem(this.keyBaseVer) + '_';
   }
+
   cachApiResult = [];
-  cashApiIsValid(serviceNameKay: string, cashApiSeconds: number=0): boolean {
+  cachApiInRunResult = [];
+  cashApiIsValid(serviceNameKay: string, cashApiSeconds: number = 0): boolean {
     if (cashApiSeconds > 0) {
-      if (!this.cachApiResult[serviceNameKay])
-        return false;
-      if (!this.cachApiResult[serviceNameKay].isSuccess)
-        return false;
-      if (this.cachApiResult[serviceNameKay].dateResult && (new Date().getTime() - this.cachApiResult[serviceNameKay].dateResult) < cashApiSeconds)
+      while (
+        this.cachApiInRunResult[serviceNameKay]?.getTime() >
+        new Date().getTime() - 10000
+      ) {
+        /*        this.delay(1000).;*/
+      }
+      if (
+        this.cachApiResult[serviceNameKay]?.isSuccess === true &&
+        this.cachApiResult[serviceNameKay]?.dateResult &&
+        new Date().getTime() - this.cachApiResult[serviceNameKay].dateResult <
+          cashApiSeconds
+      ) {
         return true;
+      }
+      this.cachApiInRunResult[serviceNameKay] = new Date();
     }
     return false;
+  }
+  cashApiVlaueSet(serviceNameKay: string, ret: any): void {
+    this.cachApiResult[serviceNameKay] = ret;
+    this.cachApiResult[serviceNameKay].dateResult = new Date();
+    this.cachApiInRunResult[serviceNameKay] = undefined;
+    delete this.cachApiInRunResult[serviceNameKay];
   }
   childConstructor(): any {
     // test
@@ -73,7 +85,9 @@ export class ApiServerBase {
   }
 
   getUserToken(): string | null {
-    if (this.userToken && this.userToken.length > 0) { return this.userToken; }
+    if (this.userToken && this.userToken.length > 0) {
+      return this.userToken;
+    }
     const token = this.getJWT();
     if (token && token.accessToken.length > 0) {
       return token.accessToken;
@@ -81,7 +95,9 @@ export class ApiServerBase {
     return '';
   }
   getDeviceToken(): string | null {
-    if (this.deviceToken && this.deviceToken.length > 0) { return this.deviceToken; }
+    if (this.deviceToken && this.deviceToken.length > 0) {
+      return this.deviceToken;
+    }
     const token = localStorage.getItem(this.Ver + this.keyDeviceToken);
     if (token && token.length > 0) {
       return token;
@@ -118,7 +134,10 @@ export class ApiServerBase {
   getHeaders(): any {
     let dateTime = new Date();
     this.headers.set('Date-Time', dateTime.toJSON());
-    this.headers.set('Date-Time-Zone', (dateTime.getTimezoneOffset() * -1).toString());
+    this.headers.set(
+      'Date-Time-Zone',
+      (dateTime.getTimezoneOffset() * -1).toString()
+    );
     /*Authorization*/
     if (this.getUserToken() && this.getUserToken().length > 1) {
       this.headers.set('Authorization', this.getUserToken());
@@ -134,15 +153,13 @@ export class ApiServerBase {
     /*AccessLoad*/
     if (this.accessLoad) {
       this.headers.set('AccessLoad', 'true');
-    }
-    else if (this.headers.has('AccessLoad')) {
+    } else if (this.headers.has('AccessLoad')) {
       this.headers.delete('AccessLoad');
     }
     /*AccessDataType*/
     if (this.accessDataType) {
       this.headers.set('AccessDataType', this.accessDataType.toString());
-    }
-    else if (this.headers.has('AccessDataType')) {
+    } else if (this.headers.has('AccessDataType')) {
       this.headers.delete('AccessDataType');
     }
     const retOut = Object.create(null);

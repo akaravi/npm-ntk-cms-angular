@@ -12,7 +12,7 @@ export class CoreEnumService extends ApiServerBase {
   }
 
   ServiceRecordStatusEnum(
-    cashApiSeconds: number=0
+    cashApiSeconds: number = 0
   ): Observable<ErrorExceptionResult<InfoEnumModel>> {
     //! optimaze call api
     const serviceNameKay = 'ServiceRecordStatusEnum';
@@ -30,8 +30,7 @@ export class CoreEnumService extends ApiServerBase {
         map((ret: any) => {
           //! optimaze call api
           if (cashApiSeconds > 0) {
-            this.cachApiResult[serviceNameKay] = ret;
-            this.cachApiResult[serviceNameKay].dateResult = new Date();
+            this.cashApiVlaueSet(serviceNameKay, ret);
           }
           //! optimaze call api
           return ret;
@@ -39,7 +38,7 @@ export class CoreEnumService extends ApiServerBase {
       );
   }
   ServiceRecordAdminStatusEnum(
-    cashApiSeconds: number=0
+    cashApiSeconds: number = 0
   ): Observable<ErrorExceptionResult<InfoEnumModel>> {
     //! optimaze call api
     const serviceNameKay = 'ServiceRecordAdminStatusEnum';
@@ -48,7 +47,9 @@ export class CoreEnumService extends ApiServerBase {
     //! optimaze call api
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/RecordAdminStatusEnum',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/RecordAdminStatusEnum',
         {
           headers: this.getHeaders(),
         }
@@ -57,8 +58,7 @@ export class CoreEnumService extends ApiServerBase {
         map((ret: any) => {
           //! optimaze call api
           if (cashApiSeconds > 0) {
-            this.cachApiResult[serviceNameKay] = ret;
-            this.cachApiResult[serviceNameKay].dateResult = new Date();
+            this.cashApiVlaueSet(serviceNameKay, ret);
           }
           //! optimaze call api
           return ret;
