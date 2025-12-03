@@ -10,6 +10,6 @@ export class SmsApiSendMessageDtoModel {
   scheduleSendExpire: Date;
   scheduleCron: string;
   optionTypes: string;
-  optionSendByQueue: boolean;
+  optionSendByQueue?: boolean;
   optionCheckProcesses: boolean;
 }
