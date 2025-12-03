@@ -5,5 +5,6 @@ export class SmsApiSendMessageOrderCalculateDtoModel {
   toContactCategories: string[];
   toContactContents: string[];
   message: string;
-  isFlash: boolean;
+  optionTypes: string;
+  optionDuplicateRemovalToNumbers: boolean = true;
 }

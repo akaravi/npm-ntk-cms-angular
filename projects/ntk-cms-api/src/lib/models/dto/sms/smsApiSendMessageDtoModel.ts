@@ -11,5 +11,6 @@ export class SmsApiSendMessageDtoModel {
   scheduleCron: string;
   optionTypes: string;
   optionSendByQueue?: boolean;
-  optionCheckProcesses: boolean;
+  optionCheckProcesses: boolean = false;
+  optionDuplicateRemovalToNumbers: boolean = true;
 }
