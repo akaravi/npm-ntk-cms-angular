@@ -13,4 +13,5 @@ export class SmsApiSendMessageDtoModel {
   optionSendByQueue?: boolean;
   optionCheckProcesses: boolean = false;
   optionDuplicateRemovalToNumbers: boolean = true;
+  clientDateTime?: Date;
 }
