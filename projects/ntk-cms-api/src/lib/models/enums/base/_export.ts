@@ -30,7 +30,6 @@ export * from './pageAbilityTypeEnum';
 export * from './cmsPageUtilityToolsActionEnum';
 export * from './sendSmsStatusTypeEnum';
 export * from './sendEmailStatusTypeEnum';
-export * from './formSubmitedStatusEnum';
 export * from './manageUserAccessDataTypesEnum';
 export * from './siteStatusEnum';
 export * from './errorTypeEnum';

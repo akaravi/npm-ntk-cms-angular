@@ -13,7 +13,6 @@ export * from './fieldInfo/fieldInputDataSourceModel';
 export * from './fieldInfo/getPropertiesInfoModel';
 export * from './filterDataModel';
 export * from './filterModel';
-export * from './formInfoModel';
 export * from './infoEnumModel';
 export * from './itemState';
 export * from './PageModel';
