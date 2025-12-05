@@ -34,24 +34,31 @@ export class ApiServerBase {
 
   cachApiResult = [];
   cachApiInRunResult = [];
-  cashApiIsValid(serviceNameKay: string, cashApiSeconds: number = 0): boolean {
-    if (cashApiSeconds > 0) {
-      while (
-        this.cachApiInRunResult[serviceNameKay]?.getTime() >
-        new Date().getTime() - 10000
-      ) {
-        /*        this.delay(1000).;*/
-      }
-      if (
-        this.cachApiResult[serviceNameKay]?.isSuccess === true &&
-        this.cachApiResult[serviceNameKay]?.dateResult &&
-        new Date().getTime() - this.cachApiResult[serviceNameKay].dateResult <
-          cashApiSeconds
-      ) {
-        return true;
-      }
-      this.cachApiInRunResult[serviceNameKay] = new Date();
+  cashApiIsValid(
+    serviceNameKay: string,
+    cashApiSeconds: number = 0,
+    runApiSeconds: number = 1000
+  ): boolean {
+    if (cashApiSeconds <= 0) return false;
+    //**cashApiSeconds */
+    while (
+      this.cachApiInRunResult[serviceNameKay] &&
+      new Date().getTime() -
+        this.cachApiInRunResult[serviceNameKay]?.getTime() <
+        runApiSeconds
+    ) {
+      /*        this.delay(1000).;*/
     }
+    if (
+      this.cachApiResult[serviceNameKay]?.isSuccess === true &&
+      this.cachApiResult[serviceNameKay]?.dateResult &&
+      new Date().getTime() - this.cachApiResult[serviceNameKay].dateResult <
+        cashApiSeconds
+    ) {
+      return true;
+    }
+    this.cachApiInRunResult[serviceNameKay] = new Date();
+    //**cashApiSeconds */
     return false;
   }
   cashApiVlaueSet(serviceNameKay: string, ret: any): void {

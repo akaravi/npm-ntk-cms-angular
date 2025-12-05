@@ -41,3 +41,4 @@ export * from './microServiceModuleTypeEnum';
 export * from './connectionTypeEnum';
 export * from './sendNotificationStatusTypeEnum';
 export * from './receiverNotificationStatusTypeEnum';
+export * from './exportFileDataRowOrientationEnum';
