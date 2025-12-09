@@ -90,4 +90,26 @@ export class ContactContentService extends ApiCmsServerBase<
         })
       );
   }
+
+  ServiceFindByNumber(
+    number: string
+  ): Observable<ErrorExceptionResult<ContactContentModel>> {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/FindByNumber/' +
+          number,
+        {
+          headers: this.getHeaders(),
+        } as any
+      )
+      .pipe(
+        retry(this.configApiRetry),
+
+        map((ret: any) => {
+          return ret;
+        })
+      );
+  }
 }
