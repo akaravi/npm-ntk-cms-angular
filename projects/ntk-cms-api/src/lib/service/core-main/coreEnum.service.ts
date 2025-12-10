@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { InfoEnumModel } from '../../models/entity/base/infoEnumModel';
 import { ApiServerBase } from '../base/apiServerBase.service';
@@ -16,54 +16,60 @@ export class CoreEnumService extends ApiServerBase {
   ): Observable<ErrorExceptionResult<InfoEnumModel>> {
     //! optimaze call api
     const serviceNameKay = 'ServiceRecordStatusEnum';
-    if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
-      return of(this.cachApiResult[serviceNameKay]);
-    //! optimaze call api
-    return this.http
-      .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/RecordStatusEnum',
-        {
-          headers: this.getHeaders(),
-        }
-      )
-      .pipe(
-        map((ret: any) => {
-          //! optimaze call api
-          if (cashApiSeconds > 0) {
-            this.cashApiVlaueSet(serviceNameKay, ret);
-          }
-          //! optimaze call api
-          return ret;
-        })
-      );
+    return from(this.cashApiIsValid(serviceNameKay, cashApiSeconds)).pipe(
+      mergeMap((isValid) => {
+        if (isValid) return of(this.cachApiResult[serviceNameKay]);
+        return this.http
+          .get(
+            this.getBaseUrl() +
+              this.getModuleControllerUrl() +
+              '/RecordStatusEnum',
+            {
+              headers: this.getHeaders(),
+            }
+          )
+          .pipe(
+            map((ret: any) => {
+              //! optimaze call api
+              if (cashApiSeconds > 0) {
+                this.cashApiVlaueSet(serviceNameKay, ret);
+              }
+              //! optimaze call api
+              return ret;
+            })
+          );
+      })
+    );
   }
   ServiceRecordAdminStatusEnum(
     cashApiSeconds: number = 0
   ): Observable<ErrorExceptionResult<InfoEnumModel>> {
     //! optimaze call api
     const serviceNameKay = 'ServiceRecordAdminStatusEnum';
-    if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
-      return of(this.cachApiResult[serviceNameKay]);
-    //! optimaze call api
-    return this.http
-      .get(
-        this.getBaseUrl() +
-          this.getModuleControllerUrl() +
-          '/RecordAdminStatusEnum',
-        {
-          headers: this.getHeaders(),
-        }
-      )
-      .pipe(
-        map((ret: any) => {
-          //! optimaze call api
-          if (cashApiSeconds > 0) {
-            this.cashApiVlaueSet(serviceNameKay, ret);
-          }
-          //! optimaze call api
-          return ret;
-        })
-      );
+    return from(this.cashApiIsValid(serviceNameKay, cashApiSeconds)).pipe(
+      mergeMap((isValid) => {
+        if (isValid) return of(this.cachApiResult[serviceNameKay]);
+        return this.http
+          .get(
+            this.getBaseUrl() +
+              this.getModuleControllerUrl() +
+              '/RecordAdminStatusEnum',
+            {
+              headers: this.getHeaders(),
+            }
+          )
+          .pipe(
+            map((ret: any) => {
+              //! optimaze call api
+              if (cashApiSeconds > 0) {
+                this.cashApiVlaueSet(serviceNameKay, ret);
+              }
+              //! optimaze call api
+              return ret;
+            })
+          );
+      })
+    );
   }
 
   ServiceLocationTypeEnum(): Observable<ErrorExceptionResult<InfoEnumModel>> {

@@ -34,20 +34,20 @@ export class ApiServerBase {
 
   cachApiResult = [];
   cachApiInRunResult = [];
-  cashApiIsValid(
+  async cashApiIsValid(
     serviceNameKay: string,
     cashApiSeconds: number = 0,
     runApiSeconds: number = 1000
-  ): boolean {
+  ): Promise<boolean> {
     if (cashApiSeconds <= 0) return false;
-    //**cashApiSeconds */
+    // wait asynchronously while another call is in-flight within the allowed window
     while (
       this.cachApiInRunResult[serviceNameKay] &&
       new Date().getTime() -
         this.cachApiInRunResult[serviceNameKay]?.getTime() <
         runApiSeconds
     ) {
-      /*        this.delay(1000).;*/
+      await this.delay(50);
     }
     if (
       this.cachApiResult[serviceNameKay]?.isSuccess === true &&
@@ -191,5 +191,9 @@ export class ApiServerBase {
     }
 
     return throwError(errorMessage);
+  }
+
+  private delay(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }

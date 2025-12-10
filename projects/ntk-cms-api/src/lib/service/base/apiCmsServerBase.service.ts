@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map, retry } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { map, mergeMap, retry } from 'rxjs/operators';
 import { CoreModuleDataCommentDtoModel } from '../../models/dto/core-module/coreModuleDataCommentDtoModel';
 import { CoreModuleDataMemoDtoModel } from '../../models/dto/core-module/coreModuleDataMemoDtoModel';
 import { CoreModuleDataTaskDtoModel } from '../../models/dto/core-module/coreModuleDataTaskDtoModel';
@@ -97,26 +97,31 @@ export class ApiCmsServerBase<TModel, TKey, TFilterModel>
   ): Observable<ErrorExceptionResult<TModel>> {
     //! optimaze call api
     const serviceNameKay = this.constructor.name + '_ServiceGetOneById_' + id;
-    if (this.cashApiIsValid(serviceNameKay, cashApiSeconds))
-      return of(this.cachApiResult[serviceNameKay]);
-    //! optimaze call api
-    // this.loadingStatus=true;
-    return this.http
-      .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
-        headers: this.getHeaders(),
-      })
-      .pipe(
-        retry(this.configApiRetry),
+    return from(
+      this.cashApiIsValid(serviceNameKay, cashApiSeconds)
+    ).pipe(
+      mergeMap((isValid) => {
+        if (isValid) return of(this.cachApiResult[serviceNameKay]);
+        //! optimaze call api
+        // this.loadingStatus=true;
+        return this.http
+          .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/' + id, {
+            headers: this.getHeaders(),
+          })
+          .pipe(
+            retry(this.configApiRetry),
 
-        map((ret: any) => {
-          //! optimaze call api
-          if (cashApiSeconds > 0) {
-            this.cashApiVlaueSet(serviceNameKay, ret);
-          }
-          //! optimaze call api
-          return ret;
-        })
-      );
+            map((ret: any) => {
+              //! optimaze call api
+              if (cashApiSeconds > 0) {
+                this.cashApiVlaueSet(serviceNameKay, ret);
+              }
+              //! optimaze call api
+              return ret;
+            })
+          );
+      })
+    );
   }
 
   ServiceGetCount(model: FilterModel): Observable<ErrorExceptionResultBase> {
