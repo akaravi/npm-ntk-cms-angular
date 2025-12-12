@@ -1,7 +1,7 @@
 /**
  * وضعیت پرداخت
  */
-export enum transactionAssistantPaymentStatusEnum {
+export enum TransactionAssistantPaymentStatusEnum {
   /** در انتظار پرداخت */
   Pending = 0,
   /** پرداخت شده */
@@ -9,7 +9,5 @@ export enum transactionAssistantPaymentStatusEnum {
   /** پرداخت ناموفق */
   Failed = 2,
   /** بازگشت وجه */
-  Refunded = 3
+  Refunded = 3,
 }
-
-

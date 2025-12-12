@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantInventoryModel
  * موجودی محصول/تامین‌کننده
  */
-export class transactionAssistantInventoryModel extends BaseModuleEntity<string> {
+export class TransactionAssistantInventoryModel extends BaseModuleEntity<string> {
   /** شناسه محصول */
   linkProductId: string;
   /** شناسه تامین‌کننده */
@@ -26,4 +26,3 @@ export class transactionAssistantInventoryModel extends BaseModuleEntity<string>
   /** آدرس URL تصویر اصلی موجودی */
   linkMainImageIdSrc?: string;
 }
-

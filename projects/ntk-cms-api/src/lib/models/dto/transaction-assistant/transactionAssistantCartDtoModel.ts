@@ -2,7 +2,7 @@
  * transactionAssistantCartDtoModel
  * DTO سبد خرید (C#) با حفظ نام فیلدها (Link*)
  */
-export class transactionAssistantCartDtoModel {
+export class TransactionAssistantCartDtoModel {
   /** شناسه سبد */
   id: string;
   /** شناسه کاربر هسته مالک سبد (اختیاری برای مهمان) */
@@ -10,5 +10,3 @@ export class transactionAssistantCartDtoModel {
   /** وضعیت سبد (رشته enum) */
   status: string;
 }
-
-

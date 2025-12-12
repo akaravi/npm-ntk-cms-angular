@@ -2,7 +2,7 @@
  * transactionAssistantOfferDtoModel
  * DTO پیشنهاد تامین‌کننده
  */
-export class transactionAssistantOfferDtoModel {
+export class TransactionAssistantOfferDtoModel {
   /** شناسه پیشنهاد */
   id: string;
   /** شناسه درخواست محصول مرتبط */
@@ -16,5 +16,3 @@ export class transactionAssistantOfferDtoModel {
   /** وضعیت پیشنهاد (رشته enum) */
   status: string;
 }
-
-

@@ -3,14 +3,14 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantPaymentModel } from '../../models/entity/transaction-assistant/transactionAssistantPaymentModel';
-import { transactionAssistantPaymentMethodEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentMethodEnum';
-import { transactionAssistantPaymentStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
+import { TransactionAssistantPaymentModel } from '../../models/entity/transaction-assistant/transactionAssistantPaymentModel';
+import { TransactionAssistantPaymentMethodEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentMethodEnum';
+import { TransactionAssistantPaymentStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class TransactionAssistantPaymentService extends ApiCmsServerBase<
-  transactionAssistantPaymentModel,
+  TransactionAssistantPaymentModel,
   string,
   FilterModel
 > {
@@ -23,7 +23,7 @@ export class TransactionAssistantPaymentService extends ApiCmsServerBase<
    */
   ServiceGetOrderPayments(
     orderId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantPaymentModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantPaymentModel>> {
     return this.http
       .get(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/order/' + orderId,
@@ -44,9 +44,9 @@ export class TransactionAssistantPaymentService extends ApiCmsServerBase<
    */
   ServiceUpdatePaymentStatus(
     paymentId: string,
-    status: transactionAssistantPaymentStatusEnum,
+    status: TransactionAssistantPaymentStatusEnum,
     gatewayReference?: string
-  ): Observable<ErrorExceptionResult<transactionAssistantPaymentModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantPaymentModel>> {
     const request = {
       Status: status,
       GatewayReference: gatewayReference || '',
@@ -77,9 +77,9 @@ export class TransactionAssistantPaymentService extends ApiCmsServerBase<
    */
   ServiceCreatePayment(
     orderId: string,
-    method: transactionAssistantPaymentMethodEnum,
+    method: TransactionAssistantPaymentMethodEnum,
     amount: number
-  ): Observable<ErrorExceptionResult<transactionAssistantPaymentModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantPaymentModel>> {
     const request = {
       OrderId: orderId,
       Method: method,

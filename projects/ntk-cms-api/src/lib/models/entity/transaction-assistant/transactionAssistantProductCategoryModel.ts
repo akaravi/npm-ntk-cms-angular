@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantProductCategoryModel
  * دسته‌بندی محصول
  */
-export class transactionAssistantProductCategoryModel extends BaseModuleEntity<string> {
+export class TransactionAssistantProductCategoryModel extends BaseModuleEntity<string> {
   /** عنوان دسته‌بندی */
   title: string;
   /** توضیحات دسته‌بندی */
@@ -16,4 +16,3 @@ export class transactionAssistantProductCategoryModel extends BaseModuleEntity<s
   /** آدرس URL تصویر اصلی دسته‌بندی */
   linkMainImageIdSrc?: string;
 }
-

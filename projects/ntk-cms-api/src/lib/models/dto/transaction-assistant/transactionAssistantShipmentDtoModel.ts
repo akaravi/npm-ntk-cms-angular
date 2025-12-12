@@ -2,7 +2,7 @@
  * transactionAssistantShipmentDtoModel
  * DTO ارسال و گمرک
  */
-export class transactionAssistantShipmentDtoModel {
+export class TransactionAssistantShipmentDtoModel {
   /** شناسه ارسال */
   id: string;
   /** شناسه سفارش مرتبط */
@@ -24,5 +24,3 @@ export class transactionAssistantShipmentDtoModel {
   /** مبلغ عوارض گمرکی */
   customsDutyAmount?: number;
 }
-
-

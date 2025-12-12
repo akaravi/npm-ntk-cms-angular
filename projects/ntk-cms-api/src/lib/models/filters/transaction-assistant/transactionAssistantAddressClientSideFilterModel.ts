@@ -1,9 +1,9 @@
-import { FilterModel } from "../../entity/base/filterModel";
+import { FilterModel } from '../../entity/base/filterModel';
 
 /**
  * فیلتر سمت کلاینت آدرس
  */
-export class transactionAssistantAddressClientSideFilterModel extends FilterModel {
+export class TransactionAssistantAddressClientSideFilterModel extends FilterModel {
   /** شناسه کاربر هسته (اختیاری) */
   linkCoreUserId?: number;
   /** شناسه استان (اختیاری) */
@@ -11,5 +11,3 @@ export class transactionAssistantAddressClientSideFilterModel extends FilterMode
   /** نام شهر (اختیاری) */
   city?: string;
 }
-
-

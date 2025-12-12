@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantOrderItemModel
  * آیتم‌های سفارش
  */
-export class transactionAssistantOrderItemModel extends BaseModuleEntity<string> {
+export class TransactionAssistantOrderItemModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** شناسه محصول */
@@ -18,4 +18,3 @@ export class transactionAssistantOrderItemModel extends BaseModuleEntity<string>
   /** قیمت واحد */
   unitPrice: number;
 }
-

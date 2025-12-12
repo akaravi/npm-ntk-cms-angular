@@ -2,7 +2,7 @@
  * transactionAssistantRatingDtoModel
  * DTO امتیاز/نظر سفارش
  */
-export class transactionAssistantRatingDtoModel {
+export class TransactionAssistantRatingDtoModel {
   /** شناسه امتیاز */
   id: string;
   /** شناسه سفارش مرتبط */
@@ -10,5 +10,3 @@ export class transactionAssistantRatingDtoModel {
   /** امتیاز (مثلاً ۱ تا ۵) */
   score: number;
 }
-
-

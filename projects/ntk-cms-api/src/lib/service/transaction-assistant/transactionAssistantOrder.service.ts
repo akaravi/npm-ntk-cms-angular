@@ -3,14 +3,14 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantOrderModel } from '../../models/entity/transaction-assistant/transactionAssistantOrderModel';
-import { transactionAssistantOrderStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantOrderStatusEnum';
-import { transactionAssistantPaymentStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { TransactionAssistantOrderModel } from '../../models/entity/transaction-assistant/transactionAssistantOrderModel';
+import { TransactionAssistantOrderStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantOrderStatusEnum';
+import { TransactionAssistantPaymentStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
 
 @Injectable()
 export class TransactionAssistantOrderService extends ApiCmsServerBase<
-  transactionAssistantOrderModel,
+  TransactionAssistantOrderModel,
   string,
   FilterModel
 > {
@@ -23,8 +23,8 @@ export class TransactionAssistantOrderService extends ApiCmsServerBase<
    */
   ServiceUpdateOrderStatus(
     orderId: string,
-    newStatus: transactionAssistantOrderStatusEnum
-  ): Observable<ErrorExceptionResult<transactionAssistantOrderModel>> {
+    newStatus: TransactionAssistantOrderStatusEnum
+  ): Observable<ErrorExceptionResult<TransactionAssistantOrderModel>> {
     return this.http
       .put(
         this.getBaseUrl() +
@@ -50,8 +50,8 @@ export class TransactionAssistantOrderService extends ApiCmsServerBase<
    */
   ServiceUpdatePaymentStatus(
     orderId: string,
-    newStatus: transactionAssistantPaymentStatusEnum
-  ): Observable<ErrorExceptionResult<transactionAssistantOrderModel>> {
+    newStatus: TransactionAssistantPaymentStatusEnum
+  ): Observable<ErrorExceptionResult<TransactionAssistantOrderModel>> {
     return this.http
       .put(
         this.getBaseUrl() +
@@ -77,7 +77,7 @@ export class TransactionAssistantOrderService extends ApiCmsServerBase<
    */
   ServiceGetOrderWithItems(
     orderId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantOrderModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantOrderModel>> {
     return this.http
       .get(
         this.getBaseUrl() +
@@ -102,7 +102,7 @@ export class TransactionAssistantOrderService extends ApiCmsServerBase<
    */
   ServiceRecalculateOrderTotal(
     orderId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantOrderModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantOrderModel>> {
     return this.http
       .post(
         this.getBaseUrl() +

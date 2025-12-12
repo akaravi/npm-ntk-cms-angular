@@ -1,12 +1,12 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantShipmentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantShipmentStatusEnum';
-import { transactionAssistantCustomsStatusEnum } from '../../enums/transaction-assistant/transactionAssistantCustomsStatusEnum';
+import { TransactionAssistantShipmentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantShipmentStatusEnum';
+import { TransactionAssistantCustomsStatusEnum } from '../../enums/transaction-assistant/transactionAssistantCustomsStatusEnum';
 
 /**
  * transactionAssistantOrderShipmentModel
  * ارسال سفارش و وضعیت گمرکی
  */
-export class transactionAssistantOrderShipmentModel extends BaseModuleEntity<string> {
+export class TransactionAssistantOrderShipmentModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** شناسه تامین‌کننده (اختیاری) */
@@ -26,10 +26,10 @@ export class transactionAssistantOrderShipmentModel extends BaseModuleEntity<str
   /** زمان تحویل واقعی */
   deliveredAt?: Date;
   /** وضعیت ارسال */
-  status: transactionAssistantShipmentStatusEnum;
+  status: TransactionAssistantShipmentStatusEnum;
 
   /** وضعیت گمرکی (اختیاری) */
-  customsStatus?: transactionAssistantCustomsStatusEnum;
+  customsStatus?: TransactionAssistantCustomsStatusEnum;
   /** شماره اظهارنامه گمرکی */
   customsDeclarationNumber?: string;
   /** تاریخ ترخیص */

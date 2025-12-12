@@ -1,7 +1,7 @@
 /**
  * وضعیت ارسال مرسوله
  */
-export enum transactionAssistantShipmentStatusEnum {
+export enum TransactionAssistantShipmentStatusEnum {
   /** در انتظار ارسال */
   Pending = 0,
   /** دریافت توسط پیک/باربری */
@@ -13,7 +13,5 @@ export enum transactionAssistantShipmentStatusEnum {
   /** ناموفق */
   Failed = 4,
   /** برگشت خورده */
-  Returned = 5
+  Returned = 5,
 }
-
-

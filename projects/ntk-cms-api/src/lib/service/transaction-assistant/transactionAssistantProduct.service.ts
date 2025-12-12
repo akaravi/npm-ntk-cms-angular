@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { transactionAssistantProductModel } from '../../models/entity/transaction-assistant/transactionAssistantProductModel';
-import { transactionAssistantProductServerSideFilterModel } from '../../models/filters/transaction-assistant/transactionAssistantProductServerSideFilterModel';
+import { FilterModel } from '../../models/entity/base/filterModel';
+import { TransactionAssistantProductModel } from '../../models/entity/transaction-assistant/transactionAssistantProductModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class TransactionAssistantProductService extends ApiCmsServerBase<
-  transactionAssistantProductModel,
+  TransactionAssistantProductModel,
   string,
-  transactionAssistantProductServerSideFilterModel
+  FilterModel
 > {
   getModuleControllerUrl(): string {
     return 'TransactionAssistantProduct';

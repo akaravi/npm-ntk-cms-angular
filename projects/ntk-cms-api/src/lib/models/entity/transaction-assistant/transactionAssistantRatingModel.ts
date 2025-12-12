@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantRatingModel
  * امتیاز/نظر سفارش
  */
-export class transactionAssistantRatingModel extends BaseModuleEntity<string> {
+export class TransactionAssistantRatingModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** امتیاز (مثلاً ۱ تا ۵) */
@@ -16,4 +16,3 @@ export class transactionAssistantRatingModel extends BaseModuleEntity<string> {
   /** آدرس URL تصویر اصلی امتیاز */
   linkMainImageIdSrc?: string;
 }
-

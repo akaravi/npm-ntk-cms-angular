@@ -1,3 +1,11 @@
+## 2025-12-12 11:46:46
+
+- اضافه کردن importهای enumهای مفقود در فایل‌های Model: اصلاح نام enumها از camelCase به PascalCase (مثل `transactionAssistantCartStatusEnum` به `TransactionAssistantCartStatusEnum`)
+- اصلاح importهای Modelها در فایل‌های service: اضافه کردن importهای مفقود و اصلاح نام Modelها و enumها
+- اصلاح فایل `transactionAssistantShipment.service.ts`: تغییر import از `TransactionAssistantShipmentModel` (که وجود نداشت) به `TransactionAssistantOrderShipmentModel`
+- اضافه کردن exportهای const در Modelها: `transactionAssistantCartModel`، `transactionAssistantOrderModel` و `transactionAssistantPaymentModel`
+- اصلاح نام‌های enumها در تمام فایل‌های Model و service از camelCase به PascalCase
+
 ## 2025-12-12 10:36:58
 
 - رفع خطای TypeScript TS2308 در `_export.ts`: حذف exportهای تکراری `transactionAssistantCartModel`، `transactionAssistantOrderModel` و `transactionAssistantOrderShipmentModel` که قبلاً از فایل‌های ViewModel صادر می‌شدند.

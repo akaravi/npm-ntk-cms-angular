@@ -1,7 +1,7 @@
 /**
  * وضعیت گمرکی محموله
  */
-export enum transactionAssistantCustomsStatusEnum {
+export enum TransactionAssistantCustomsStatusEnum {
   /** در انتظار ترخیص */
   Pending = 0,
   /** در حال ترخیص */
@@ -13,7 +13,5 @@ export enum transactionAssistantCustomsStatusEnum {
   /** رد شده */
   Rejected = 4,
   /** معاف از گمرک */
-  Exempt = 5
+  Exempt = 5,
 }
-
-

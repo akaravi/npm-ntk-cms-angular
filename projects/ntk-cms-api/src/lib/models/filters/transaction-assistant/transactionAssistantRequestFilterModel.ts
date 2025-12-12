@@ -1,9 +1,9 @@
-import { FilterModel } from "../../entity/base/filterModel";
+import { FilterModel } from '../../entity/base/filterModel';
 
 /**
  * فیلتر درخواست محصول
  */
-export class transactionAssistantRequestFilterModel extends FilterModel {
+export class TransactionAssistantRequestFilterModel extends FilterModel {
   /** شناسه محصول (اختیاری) */
   linkProductId?: string;
   /** شناسه دسته (اختیاری) */
@@ -15,5 +15,3 @@ export class transactionAssistantRequestFilterModel extends FilterModel {
   /** وضعیت درخواست (رشته enum) */
   status?: string;
 }
-
-

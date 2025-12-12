@@ -1,11 +1,9 @@
 /**
  * نوع شخص (حقیقی/حقوقی)
  */
-export enum transactionAssistantPersonTypeEnum {
+export enum TransactionAssistantPersonTypeEnum {
   /** شخص حقیقی */
   NaturalPerson = 0,
   /** شخص حقوقی */
-  LegalEntity = 1
+  LegalEntity = 1,
 }
-
-

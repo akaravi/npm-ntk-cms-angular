@@ -16,7 +16,4 @@ export * from './transactionAssistantRatingModel';
 export * from './transactionAssistantSupplierOfferModel';
 export * from './transactionAssistantSupplierModel';
 export * from './transactionAssistantTagModel';
-export * from './transactionAssistantCartModel';
-export * from './transactionAssistantOrderModel';
-export * from './transactionAssistantOrderShipmentModel';
 

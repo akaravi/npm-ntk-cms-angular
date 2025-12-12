@@ -2,7 +2,7 @@
  * transactionAssistantInvoiceDtoModel
  * DTO فاکتور رسمی با فیلد LinkOrderId
  */
-export class transactionAssistantInvoiceDtoModel {
+export class TransactionAssistantInvoiceDtoModel {
   /** شناسه فاکتور */
   id: string;
   /** شناسه سفارش مرتبط */
@@ -12,5 +12,3 @@ export class transactionAssistantInvoiceDtoModel {
   /** مبلغ کل فاکتور */
   totalAmount: number;
 }
-
-

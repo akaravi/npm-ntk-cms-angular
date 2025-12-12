@@ -1,11 +1,9 @@
 /**
  * نوع سفارش
  */
-export enum transactionAssistantOrderTypeEnum {
+export enum TransactionAssistantOrderTypeEnum {
   /** داخلی */
   Domestic = 0,
   /** صادراتی */
-  Export = 1
+  Export = 1,
 }
-
-

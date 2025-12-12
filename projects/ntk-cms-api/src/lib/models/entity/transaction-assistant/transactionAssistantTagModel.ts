@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantTagModel
  * برچسب محصول
  */
-export class transactionAssistantTagModel extends BaseModuleEntity<string> {
+export class TransactionAssistantTagModel extends BaseModuleEntity<string> {
   /** عنوان برچسب */
   title: string;
   /** شناسه برچسب والد (اختیاری) */
@@ -14,4 +14,3 @@ export class transactionAssistantTagModel extends BaseModuleEntity<string> {
   /** آدرس URL تصویر اصلی برچسب */
   linkMainImageIdSrc?: string;
 }
-

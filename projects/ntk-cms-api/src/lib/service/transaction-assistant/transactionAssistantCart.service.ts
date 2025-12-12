@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantCartModel } from '../../models/entity/transaction-assistant/transactionAssistantCartModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { TransactionAssistantCartModel } from '../../models/entity/transaction-assistant/transactionAssistantCartModel';
 
 @Injectable()
 export class TransactionAssistantCartService extends ApiCmsServerBase<
-  transactionAssistantCartModel,
+  TransactionAssistantCartModel,
   string,
   FilterModel
 > {
@@ -21,7 +21,7 @@ export class TransactionAssistantCartService extends ApiCmsServerBase<
    */
   ServiceGetOrCreateUserCart(
     userId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantCartModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantCartModel>> {
     const url =
       userId != null
         ? this.getBaseUrl() + this.getModuleControllerUrl() + '/user/' + userId
@@ -44,7 +44,7 @@ export class TransactionAssistantCartService extends ApiCmsServerBase<
    */
   ServiceCalculateCartTotal(
     cartId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantCartModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantCartModel>> {
     return this.http
       .get(
         this.getBaseUrl() +
@@ -69,7 +69,7 @@ export class TransactionAssistantCartService extends ApiCmsServerBase<
    */
   ServiceLockCart(
     cartId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantCartModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantCartModel>> {
     return this.http
       .post(
         this.getBaseUrl() +
@@ -95,7 +95,7 @@ export class TransactionAssistantCartService extends ApiCmsServerBase<
    */
   ServiceUnlockCart(
     cartId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantCartModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantCartModel>> {
     return this.http
       .post(
         this.getBaseUrl() +
@@ -121,7 +121,7 @@ export class TransactionAssistantCartService extends ApiCmsServerBase<
    */
   ServiceCloseCart(
     cartId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantCartModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantCartModel>> {
     return this.http
       .post(
         this.getBaseUrl() +

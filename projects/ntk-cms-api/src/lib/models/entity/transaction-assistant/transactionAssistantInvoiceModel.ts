@@ -1,15 +1,15 @@
+import { TransactionAssistantPersonTypeEnum } from '../../enums/transaction-assistant/transactionAssistantPersonTypeEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantPersonTypeEnum } from '../../enums/transaction-assistant/transactionAssistantPersonTypeEnum';
 
 /**
  * transactionAssistantInvoiceModel
  * فاکتور رسمی
  */
-export class transactionAssistantInvoiceModel extends BaseModuleEntity<string> {
+export class TransactionAssistantInvoiceModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** نوع شخص (حقیقی/حقوقی) */
-  personType: transactionAssistantPersonTypeEnum;
+  personType: TransactionAssistantPersonTypeEnum;
   /** نام قانونی یا نام کامل */
   legalName?: string;
   /** کد/شناسه ملی */
@@ -29,4 +29,3 @@ export class transactionAssistantInvoiceModel extends BaseModuleEntity<string> {
   /** آدرس URL تصویر اصلی فاکتور */
   linkMainImageIdSrc?: string;
 }
-

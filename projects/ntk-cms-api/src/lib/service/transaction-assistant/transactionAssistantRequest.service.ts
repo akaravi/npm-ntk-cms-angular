@@ -3,13 +3,13 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantProductRequestModel } from '../../models/entity/transaction-assistant/transactionAssistantProductRequestModel';
-import { transactionAssistantRequestStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantRequestStatusEnum';
+import { TransactionAssistantProductRequestModel } from '../../models/entity/transaction-assistant/transactionAssistantProductRequestModel';
+import { TransactionAssistantRequestStatusEnum } from '../../models/enums/transaction-assistant/transactionAssistantRequestStatusEnum';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class TransactionAssistantRequestService extends ApiCmsServerBase<
-  transactionAssistantProductRequestModel,
+  TransactionAssistantProductRequestModel,
   string,
   FilterModel
 > {
@@ -22,8 +22,8 @@ export class TransactionAssistantRequestService extends ApiCmsServerBase<
    */
   ServiceUpdateRequestStatus(
     requestId: string,
-    newStatus: transactionAssistantRequestStatusEnum
-  ): Observable<ErrorExceptionResult<transactionAssistantProductRequestModel>> {
+    newStatus: TransactionAssistantRequestStatusEnum
+  ): Observable<ErrorExceptionResult<TransactionAssistantProductRequestModel>> {
     return this.http
       .put(
         this.getBaseUrl() +
@@ -49,7 +49,7 @@ export class TransactionAssistantRequestService extends ApiCmsServerBase<
    */
   ServiceGetUserRequests(
     userId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantProductRequestModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantProductRequestModel>> {
     const url =
       userId != null
         ? this.getBaseUrl() + this.getModuleControllerUrl() + '/user/' + userId
@@ -71,7 +71,7 @@ export class TransactionAssistantRequestService extends ApiCmsServerBase<
    * دریافت درخواست‌های در انتظار بررسی
    */
   ServiceGetPendingRequests(): Observable<
-    ErrorExceptionResult<transactionAssistantProductRequestModel>
+    ErrorExceptionResult<TransactionAssistantProductRequestModel>
   > {
     return this.http
       .get(this.getBaseUrl() + this.getModuleControllerUrl() + '/pending', {
@@ -90,7 +90,7 @@ export class TransactionAssistantRequestService extends ApiCmsServerBase<
    */
   ServiceMatchWithSuppliers(
     requestId: string
-  ): Observable<ErrorExceptionResult<transactionAssistantProductRequestModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantProductRequestModel>> {
     return this.http
       .post(
         this.getBaseUrl() +

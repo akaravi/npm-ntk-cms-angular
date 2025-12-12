@@ -2,7 +2,7 @@
  * transactionAssistantSupplierDtoModel
  * DTO تامین‌کننده
  */
-export class transactionAssistantSupplierDtoModel {
+export class TransactionAssistantSupplierDtoModel {
   /** شناسه تامین‌کننده */
   id: string;
   /** نام تامین‌کننده */
@@ -12,5 +12,3 @@ export class transactionAssistantSupplierDtoModel {
   /** وضعیت فعال بودن تامین‌کننده */
   active: boolean;
 }
-
-

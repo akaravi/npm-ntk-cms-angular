@@ -1,7 +1,7 @@
 /**
  * وضعیت درخواست محصول
  */
-export enum transactionAssistantRequestStatusEnum {
+export enum TransactionAssistantRequestStatusEnum {
   /** در انتظار بررسی */
   Pending = 0,
   /** تطبیق یافته با تامین‌کننده */
@@ -11,7 +11,5 @@ export enum transactionAssistantRequestStatusEnum {
   /** تکمیل شده */
   Completed = 3,
   /** لغو شده */
-  Cancelled = 4
+  Cancelled = 4,
 }
-
-

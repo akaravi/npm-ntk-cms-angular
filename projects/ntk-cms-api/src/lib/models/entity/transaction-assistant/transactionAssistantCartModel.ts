@@ -1,11 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantCartStatusEnum } from '../../enums/transaction-assistant/transactionAssistantCartStatusEnum';
+import { TransactionAssistantCartStatusEnum } from '../../enums/transaction-assistant/transactionAssistantCartStatusEnum';
 
 /**
  * transactionAssistantCartModel
  * سبد خرید با وضعیت و کاربر
  */
-export class transactionAssistantCartModel extends BaseModuleEntity<string> {
+export class TransactionAssistantCartModel extends BaseModuleEntity<string> {
   /** شناسه کاربر هسته مالک سبد (اختیاری) */
   linkCoreUserId?: number;
   /** تاریخ بستن سبد (اختیاری) */
@@ -13,9 +13,11 @@ export class transactionAssistantCartModel extends BaseModuleEntity<string> {
   /** توضیحات سبد */
   description?: string;
   /** وضعیت سبد خرید */
-  status: transactionAssistantCartStatusEnum;
+  status: TransactionAssistantCartStatusEnum;
   /** شناسه تصویر اصلی سبد خرید */
   linkMainImageId?: number;
   /** آدرس URL تصویر اصلی سبد خرید */
   linkMainImageIdSrc?: string;
 }
+
+export const transactionAssistantCartModel = TransactionAssistantCartModel;

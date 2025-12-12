@@ -1,7 +1,7 @@
 /**
  * وضعیت سبد خرید
  */
-export enum transactionAssistantCartStatusEnum {
+export enum TransactionAssistantCartStatusEnum {
   /** باز (قابل ویرایش) */
   Open = 0,
   /** قفل شده (در حال پردازش) */
@@ -9,7 +9,5 @@ export enum transactionAssistantCartStatusEnum {
   /** تسویه/تبدیل به سفارش */
   CheckedOut = 2,
   /** لغو شده */
-  Cancelled = 3
+  Cancelled = 3,
 }
-
-

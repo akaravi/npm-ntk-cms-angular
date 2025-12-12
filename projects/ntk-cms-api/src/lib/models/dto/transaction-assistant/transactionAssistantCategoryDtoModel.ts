@@ -2,7 +2,7 @@
  * transactionAssistantCategoryDtoModel
  * DTO دسته‌بندی محصول
  */
-export class transactionAssistantCategoryDtoModel {
+export class TransactionAssistantCategoryDtoModel {
   /** شناسه دسته */
   id: string;
   /** عنوان دسته */
@@ -10,5 +10,3 @@ export class transactionAssistantCategoryDtoModel {
   /** شناسه دسته والد (اختیاری) */
   parentId?: string;
 }
-
-

@@ -1,7 +1,7 @@
 /**
  * روش پرداخت
  */
-export enum transactionAssistantPaymentMethodEnum {
+export enum TransactionAssistantPaymentMethodEnum {
   /** درگاه شاپرک */
   Shaparak = 0,
   /** رسید نقدی/واریز */
@@ -9,7 +9,5 @@ export enum transactionAssistantPaymentMethodEnum {
   /** پایا */
   Paya = 2,
   /** ساتنا */
-  Satna = 3
+  Satna = 3,
 }
-
-

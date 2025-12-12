@@ -1,28 +1,28 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantOrderStatusEnum } from '../../enums/transaction-assistant/transactionAssistantOrderStatusEnum';
-import { transactionAssistantPaymentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
-import { transactionAssistantOrderTypeEnum } from '../../enums/transaction-assistant/transactionAssistantOrderTypeEnum';
-import { transactionAssistantExportDeliveryTypeEnum } from '../../enums/transaction-assistant/transactionAssistantExportDeliveryTypeEnum';
+import { TransactionAssistantOrderStatusEnum } from '../../enums/transaction-assistant/transactionAssistantOrderStatusEnum';
+import { TransactionAssistantPaymentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
+import { TransactionAssistantOrderTypeEnum } from '../../enums/transaction-assistant/transactionAssistantOrderTypeEnum';
+import { TransactionAssistantExportDeliveryTypeEnum } from '../../enums/transaction-assistant/transactionAssistantExportDeliveryTypeEnum';
 
 /**
  * transactionAssistantOrderModel
  * سفارش با فیلدهای Link* و وضعیت‌های صادرات
  */
-export class transactionAssistantOrderModel extends BaseModuleEntity<string> {
+export class TransactionAssistantOrderModel extends BaseModuleEntity<string> {
   /** شناسه سبد خرید مرتبط */
   linkCartId: string;
   /** وضعیت سفارش */
-  status: transactionAssistantOrderStatusEnum;
+  status: TransactionAssistantOrderStatusEnum;
   /** مبلغ کل سفارش */
   totalPrice: number;
   /** وضعیت پرداخت */
-  paymentStatus: transactionAssistantPaymentStatusEnum;
+  paymentStatus: TransactionAssistantPaymentStatusEnum;
   /** توضیحات سفارش */
   description?: string;
   /** نوع سفارش (داخلی/صادراتی) */
-  orderType: transactionAssistantOrderTypeEnum;
+  orderType: TransactionAssistantOrderTypeEnum;
   /** نوع تحویل صادراتی (اختیاری) */
-  exportDeliveryType?: transactionAssistantExportDeliveryTypeEnum;
+  exportDeliveryType?: TransactionAssistantExportDeliveryTypeEnum;
   /** کشور مقصد (اختیاری) */
   destinationCountry?: string;
   /** شهر مقصد (اختیاری) */
@@ -32,3 +32,5 @@ export class transactionAssistantOrderModel extends BaseModuleEntity<string> {
   /** آدرس URL تصویر اصلی سفارش */
   linkMainImageIdSrc?: string;
 }
+
+export const transactionAssistantOrderModel = TransactionAssistantOrderModel;

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantProductCategoryModel } from '../../models/entity/transaction-assistant/transactionAssistantProductCategoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { TransactionAssistantProductCategoryModel } from '../../models/entity/transaction-assistant/transactionAssistantProductCategoryModel';
 
 @Injectable()
 export class TransactionAssistantProductCategoryService extends ApiCmsServerBase<
-  transactionAssistantProductCategoryModel,
+  TransactionAssistantProductCategoryModel,
   string,
   FilterModel
 > {

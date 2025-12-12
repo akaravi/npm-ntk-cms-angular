@@ -2,7 +2,7 @@
  * transactionAssistantRequestDtoModel
  * DTO درخواست محصول
  */
-export class transactionAssistantRequestDtoModel {
+export class TransactionAssistantRequestDtoModel {
   /** شناسه درخواست */
   id: string;
   /** شناسه محصول (اختیاری) */
@@ -18,5 +18,3 @@ export class transactionAssistantRequestDtoModel {
   /** وضعیت درخواست (رشته enum) */
   status: string;
 }
-
-

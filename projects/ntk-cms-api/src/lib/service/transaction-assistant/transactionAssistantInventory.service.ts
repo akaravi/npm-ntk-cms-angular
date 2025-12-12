@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantInventoryModel } from '../../models/entity/transaction-assistant/transactionAssistantInventoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
+import { TransactionAssistantInventoryModel } from '../../models/entity/transaction-assistant/transactionAssistantInventoryModel';
 
 @Injectable()
 export class TransactionAssistantInventoryService extends ApiCmsServerBase<
-  transactionAssistantInventoryModel,
+  TransactionAssistantInventoryModel,
   string,
   FilterModel
 > {
@@ -24,7 +24,7 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
     supplierId?: string,
     requestedQty?: number,
     originProvinceId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantInventoryModel>> {
     const request = {
       ProductId: productId,
       SupplierId: supplierId,
@@ -56,7 +56,7 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceReserveStock(
     inventoryId: string,
     qty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantInventoryModel>> {
     const request = {
       Qty: qty,
     };
@@ -87,7 +87,7 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceReleaseStock(
     inventoryId: string,
     qty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantInventoryModel>> {
     const request = {
       Qty: qty,
     };
@@ -118,7 +118,7 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceUpdateStock(
     inventoryId: string,
     newStockQty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantInventoryModel>> {
     const request = {
       NewStockQty: newStockQty,
     };
@@ -150,7 +150,7 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
     productId: string,
     supplierId?: string,
     originProvinceId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+  ): Observable<ErrorExceptionResult<TransactionAssistantInventoryModel>> {
     let url =
       this.getBaseUrl() +
       this.getModuleControllerUrl() +

@@ -2,7 +2,7 @@
  * transactionAssistantOrderDtoModel
  * DTO سفارش با فیلد LinkCartId
  */
-export class transactionAssistantOrderDtoModel {
+export class TransactionAssistantOrderDtoModel {
   /** شناسه سفارش */
   id: string;
   /** شناسه سبد خرید مرتبط */
@@ -20,5 +20,3 @@ export class transactionAssistantOrderDtoModel {
   /** شهر مقصد (اختیاری) */
   destinationCity: string;
 }
-
-

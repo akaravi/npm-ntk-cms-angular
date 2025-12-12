@@ -2,7 +2,7 @@
  * transactionAssistantInventoryDtoModel
  * DTO موجودی محصول/تامین‌کننده با فیلدهای Link*
  */
-export class transactionAssistantInventoryDtoModel {
+export class TransactionAssistantInventoryDtoModel {
   /** شناسه رکورد موجودی */
   id: string;
   /** شناسه محصول */
@@ -16,5 +16,3 @@ export class transactionAssistantInventoryDtoModel {
   /** موجودی فعلی */
   stockQty: number;
 }
-
-

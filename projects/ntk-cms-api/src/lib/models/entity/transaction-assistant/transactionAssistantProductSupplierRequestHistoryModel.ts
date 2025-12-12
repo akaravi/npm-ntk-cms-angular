@@ -1,20 +1,19 @@
-import { transactionAssistantRequestStatusEnum } from '../../enums/transaction-assistant/transactionAssistantRequestStatusEnum';
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { TransactionAssistantRequestStatusEnum } from '../../enums/transaction-assistant/transactionAssistantRequestStatusEnum';
 
 /**
  * transactionAssistantProductSupplierRequestHistoryModel
  * تاریخچه درخواست/تامین
  */
-export class transactionAssistantProductSupplierRequestHistoryModel extends BaseModuleEntity<string> {
+export class TransactionAssistantProductSupplierRequestHistoryModel extends BaseModuleEntity<string> {
   /** شناسه درخواست محصول */
   linkProductRequestId: string;
   /** شناسه تامین‌کننده (اختیاری) */
   linkSupplierId?: string;
   /** وضعیت درخواست در این رویداد */
-  requestStatus: transactionAssistantRequestStatusEnum;
+  requestStatus: TransactionAssistantRequestStatusEnum;
   /** توضیح رویداد (اختیاری) */
   message?: string;
   /** زمان وقوع */
   occurredAt: Date;
 }
-

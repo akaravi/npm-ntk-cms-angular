@@ -1,9 +1,9 @@
-import { FilterModel } from "../../entity/base/filterModel";
+import { FilterModel } from '../../entity/base/filterModel';
 
 /**
  * فیلتر سفارش
  */
-export class transactionAssistantOrderFilterModel extends FilterModel {
+export class TransactionAssistantOrderFilterModel extends FilterModel {
   /** شناسه کاربر (در صورت نیاز به فیلتر بر اساس کاربر هسته) */
   linkCoreUserId?: number;
   /** وضعیت سفارش (رشته enum) */
@@ -11,5 +11,3 @@ export class transactionAssistantOrderFilterModel extends FilterModel {
   /** وضعیت پرداخت (رشته enum) */
   paymentStatus?: string;
 }
-
-

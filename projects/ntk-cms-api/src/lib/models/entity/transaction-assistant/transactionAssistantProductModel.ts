@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantProductModel
  * محصول با جزئیات پایه
  */
-export class transactionAssistantProductModel extends BaseModuleEntity<string> {
+export class TransactionAssistantProductModel extends BaseModuleEntity<string> {
   /** کد محصول (SKU) */
   code: string;
   /** نام محصول */
@@ -20,4 +20,3 @@ export class transactionAssistantProductModel extends BaseModuleEntity<string> {
   /** آدرس URL تصویر اصلی محصول */
   linkMainImageIdSrc?: string;
 }
-

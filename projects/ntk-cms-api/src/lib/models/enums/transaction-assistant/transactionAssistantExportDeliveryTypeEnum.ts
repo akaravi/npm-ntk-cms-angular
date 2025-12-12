@@ -1,7 +1,7 @@
 /**
  * نوع تحویل صادراتی (Incoterms ساده‌شده)
  */
-export enum transactionAssistantExportDeliveryTypeEnum {
+export enum TransactionAssistantExportDeliveryTypeEnum {
   /** تحویل در گمرک مبدا (EXW مشابه) */
   CustomsOrigin = 0,
   /** تحویل در گمرک مقصد (DAP مشابه) */
@@ -13,7 +13,5 @@ export enum transactionAssistantExportDeliveryTypeEnum {
   /** FOB: تحویل روی عرشه در بندر مبدا */
   FreeOnBoard = 4,
   /** CIF: هزینه+بیمه+کرایه تا بندر مقصد */
-  CostInsuranceFreight = 5
+  CostInsuranceFreight = 5,
 }
-
-

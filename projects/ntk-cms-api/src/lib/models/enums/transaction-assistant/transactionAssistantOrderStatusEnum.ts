@@ -1,7 +1,7 @@
 /**
  * وضعیت سفارش
  */
-export enum transactionAssistantOrderStatusEnum {
+export enum TransactionAssistantOrderStatusEnum {
   /** در انتظار پرداخت */
   PendingPayment = 0,
   /** پرداخت شده */
@@ -13,7 +13,5 @@ export enum transactionAssistantOrderStatusEnum {
   /** تکمیل شده */
   Completed = 4,
   /** لغو شده */
-  Cancelled = 5
+  Cancelled = 5,
 }
-
-

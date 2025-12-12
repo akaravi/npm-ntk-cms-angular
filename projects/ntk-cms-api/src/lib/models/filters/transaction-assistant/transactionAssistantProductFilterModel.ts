@@ -1,9 +1,9 @@
-import { FilterModel } from "../../entity/base/filterModel";
+import { FilterModel } from '../../entity/base/filterModel';
 
 /**
  * فیلتر محصول (ساده)
  */
-export class transactionAssistantProductFilterModel extends FilterModel {
+export class TransactionAssistantProductFilterModel extends FilterModel {
   /** شناسه دسته (اختیاری) */
   linkCategoryId?: string;
   /** شناسه تگ (اختیاری) */
@@ -13,5 +13,3 @@ export class transactionAssistantProductFilterModel extends FilterModel {
   /** متن جستجو */
   searchText?: string;
 }
-
-

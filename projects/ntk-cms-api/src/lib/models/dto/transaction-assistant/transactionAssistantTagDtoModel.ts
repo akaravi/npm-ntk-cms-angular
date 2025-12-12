@@ -2,7 +2,7 @@
  * transactionAssistantTagDtoModel
  * DTO برچسب محصول
  */
-export class transactionAssistantTagDtoModel {
+export class TransactionAssistantTagDtoModel {
   /** شناسه برچسب */
   id: string;
   /** عنوان برچسب */
@@ -10,5 +10,3 @@ export class transactionAssistantTagDtoModel {
   /** شناسه برچسب والد (اختیاری) */
   parentId?: string;
 }
-
-

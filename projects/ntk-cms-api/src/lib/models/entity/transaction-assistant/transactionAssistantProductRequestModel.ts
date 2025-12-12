@@ -1,11 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantRequestStatusEnum } from '../../enums/transaction-assistant/transactionAssistantRequestStatusEnum';
+import { TransactionAssistantRequestStatusEnum } from '../../enums/transaction-assistant/transactionAssistantRequestStatusEnum';
 
 /**
  * transactionAssistantProductRequestModel
  * درخواست محصول
  */
-export class transactionAssistantProductRequestModel extends BaseModuleEntity<string> {
+export class TransactionAssistantProductRequestModel extends BaseModuleEntity<string> {
   /** شناسه کاربر هسته ثبت‌کننده (اختیاری) */
   linkCoreUserId?: number;
   /** شناسه محصول (اختیاری) */
@@ -23,10 +23,9 @@ export class transactionAssistantProductRequestModel extends BaseModuleEntity<st
   /** فیلترهای اعمال‌شده (JSON) */
   filtersJson?: string;
   /** وضعیت درخواست */
-  status: transactionAssistantRequestStatusEnum;
+  status: TransactionAssistantRequestStatusEnum;
   /** شناسه تصویر اصلی درخواست */
   linkMainImageId?: number;
   /** آدرس URL تصویر اصلی درخواست */
   linkMainImageIdSrc?: string;
 }
-

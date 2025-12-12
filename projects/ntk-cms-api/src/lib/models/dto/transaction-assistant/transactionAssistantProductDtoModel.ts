@@ -2,7 +2,7 @@
  * transactionAssistantProductDtoModel
  * DTO محصول
  */
-export class transactionAssistantProductDtoModel {
+export class TransactionAssistantProductDtoModel {
   /** شناسه محصول */
   id: string;
   /** کد محصول (SKU) */
@@ -14,5 +14,3 @@ export class transactionAssistantProductDtoModel {
   /** وضعیت فعال بودن محصول */
   active: boolean;
 }
-
-

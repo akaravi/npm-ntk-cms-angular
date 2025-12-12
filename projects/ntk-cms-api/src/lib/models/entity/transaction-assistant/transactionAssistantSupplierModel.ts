@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantSupplierModel
  * تامین‌کننده
  */
-export class transactionAssistantSupplierModel extends BaseModuleEntity<string> {
+export class TransactionAssistantSupplierModel extends BaseModuleEntity<string> {
   /** نام تامین‌کننده */
   name: string;
   /** نام شخص تماس (اختیاری) */
@@ -20,4 +20,3 @@ export class transactionAssistantSupplierModel extends BaseModuleEntity<string> 
   /** آدرس URL تصویر اصلی تامین‌کننده */
   linkMainImageIdSrc?: string;
 }
-

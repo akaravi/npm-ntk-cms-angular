@@ -2,7 +2,7 @@
  * transactionAssistantPaymentDtoModel
  * DTO پرداخت با فیلد LinkOrderId
  */
-export class transactionAssistantPaymentDtoModel {
+export class TransactionAssistantPaymentDtoModel {
   /** شناسه پرداخت */
   id: string;
   /** شناسه سفارش مرتبط */
@@ -16,5 +16,3 @@ export class transactionAssistantPaymentDtoModel {
   /** شماره مرجع درگاه (اختیاری) */
   gatewayReference?: string;
 }
-
-

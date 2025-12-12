@@ -4,7 +4,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * transactionAssistantCartItemModel
  * آیتم‌های سبد خرید
  */
-export class transactionAssistantCartItemModel extends BaseModuleEntity<string> {
+export class TransactionAssistantCartItemModel extends BaseModuleEntity<string> {
   /** شناسه سبد مرتبط */
   linkCartId: string;
   /** شناسه محصول */
@@ -20,4 +20,3 @@ export class transactionAssistantCartItemModel extends BaseModuleEntity<string> 
   /** فیلترهای اعمال‌شده (JSON) */
   appliedFiltersJson?: string;
 }
-

@@ -1,18 +1,18 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
-import { transactionAssistantPaymentMethodEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentMethodEnum';
-import { transactionAssistantPaymentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
+import { TransactionAssistantPaymentMethodEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentMethodEnum';
+import { TransactionAssistantPaymentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
 
 /**
  * transactionAssistantPaymentModel
  * پرداخت سفارش
  */
-export class transactionAssistantPaymentModel extends BaseModuleEntity<string> {
+export class TransactionAssistantPaymentModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** روش پرداخت */
-  method: transactionAssistantPaymentMethodEnum;
+  method: TransactionAssistantPaymentMethodEnum;
   /** وضعیت پرداخت */
-  status: transactionAssistantPaymentStatusEnum;
+  status: TransactionAssistantPaymentStatusEnum;
   /** مبلغ پرداخت */
   amount: number;
   /** مرجع درگاه (اختیاری) */
@@ -25,3 +25,4 @@ export class transactionAssistantPaymentModel extends BaseModuleEntity<string> {
   linkMainImageIdSrc?: string;
 }
 
+export const transactionAssistantPaymentModel = TransactionAssistantPaymentModel;
