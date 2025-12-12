@@ -1,10 +1,10 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantInventoryViewModel
+ * transactionAssistantInventoryModel
  * موجودی محصول/تامین‌کننده
  */
-export class transactionAssistantInventoryViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantInventoryModel extends BaseModuleEntity<string> {
   /** شناسه محصول */
   linkProductId: string;
   /** شناسه تامین‌کننده */
@@ -21,6 +21,9 @@ export class transactionAssistantInventoryViewModel extends BaseModuleEntity<str
   attributesJson?: string;
   /** وضعیت فعال بودن موجودی */
   active: boolean;
+  /** شناسه تصویر اصلی موجودی */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی موجودی */
+  linkMainImageIdSrc?: string;
 }
-
 

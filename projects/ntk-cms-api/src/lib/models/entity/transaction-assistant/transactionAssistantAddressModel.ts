@@ -1,10 +1,10 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantAddressViewModel
+ * transactionAssistantAddressModel
  * آدرس تحویل با فیلدهای Link*
  */
-export class transactionAssistantAddressViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantAddressModel extends BaseModuleEntity<string> {
   /** شناسه کاربر هسته صاحب آدرس (اختیاری برای مهمان) */
   linkCoreUserId?: number;
   /** شناسه استان */
@@ -19,6 +19,9 @@ export class transactionAssistantAddressViewModel extends BaseModuleEntity<strin
   contactName?: string;
   /** شماره تماس شخص گیرنده */
   contactPhone?: string;
+  /** شناسه تصویر اصلی آدرس */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی آدرس */
+  linkMainImageIdSrc?: string;
 }
-
 

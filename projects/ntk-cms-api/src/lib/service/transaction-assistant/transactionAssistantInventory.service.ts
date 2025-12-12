@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { FilterModel } from '../../models/entity/base/filterModel';
-import { transactionAssistantInventoryViewModel } from '../../models/entity/transaction-assistant/transactionAssistantInventoryViewModel';
+import { transactionAssistantInventoryModel } from '../../models/entity/transaction-assistant/transactionAssistantInventoryModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class TransactionAssistantInventoryService extends ApiCmsServerBase<
-  transactionAssistantInventoryViewModel,
+  transactionAssistantInventoryModel,
   string,
   FilterModel
 > {
@@ -24,17 +24,19 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
     supplierId?: string,
     requestedQty?: number,
     originProvinceId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryViewModel>> {
+  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
     const request = {
       ProductId: productId,
       SupplierId: supplierId,
       RequestedQty: requestedQty,
-      OriginProvinceId: originProvinceId
+      OriginProvinceId: originProvinceId,
     };
-    
+
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/check-availability',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/check-availability',
         request,
         {
           headers: this.getHeaders(),
@@ -54,14 +56,18 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceReserveStock(
     inventoryId: string,
     qty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryViewModel>> {
+  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
     const request = {
-      Qty: qty
+      Qty: qty,
     };
-    
+
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/' + inventoryId + '/reserve',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/' +
+          inventoryId +
+          '/reserve',
         request,
         {
           headers: this.getHeaders(),
@@ -81,14 +87,18 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceReleaseStock(
     inventoryId: string,
     qty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryViewModel>> {
+  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
     const request = {
-      Qty: qty
+      Qty: qty,
     };
-    
+
     return this.http
       .post(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/' + inventoryId + '/release',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/' +
+          inventoryId +
+          '/release',
         request,
         {
           headers: this.getHeaders(),
@@ -108,14 +118,18 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
   ServiceUpdateStock(
     inventoryId: string,
     newStockQty: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryViewModel>> {
+  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
     const request = {
-      NewStockQty: newStockQty
+      NewStockQty: newStockQty,
     };
-    
+
     return this.http
       .put(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/' + inventoryId + '/stock',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/' +
+          inventoryId +
+          '/stock',
         request,
         {
           headers: this.getHeaders(),
@@ -136,21 +150,25 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
     productId: string,
     supplierId?: string,
     originProvinceId?: number
-  ): Observable<ErrorExceptionResult<transactionAssistantInventoryViewModel>> {
-    let url = this.getBaseUrl() + this.getModuleControllerUrl() + '/product/' + productId;
+  ): Observable<ErrorExceptionResult<transactionAssistantInventoryModel>> {
+    let url =
+      this.getBaseUrl() +
+      this.getModuleControllerUrl() +
+      '/product/' +
+      productId;
     const params: string[] = [];
-    
+
     if (supplierId) {
       params.push('supplierId=' + supplierId);
     }
     if (originProvinceId != null) {
       params.push('originProvinceId=' + originProvinceId);
     }
-    
+
     if (params.length > 0) {
       url += '?' + params.join('&');
     }
-    
+
     return this.http
       .get(url, {
         headers: this.getHeaders(),
@@ -163,4 +181,3 @@ export class TransactionAssistantInventoryService extends ApiCmsServerBase<
       );
   }
 }
-

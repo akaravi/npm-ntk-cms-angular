@@ -4,16 +4,31 @@ import { transactionAssistantPaymentStatusEnum } from '../../enums/transaction-a
 import { transactionAssistantOrderTypeEnum } from '../../enums/transaction-assistant/transactionAssistantOrderTypeEnum';
 import { transactionAssistantExportDeliveryTypeEnum } from '../../enums/transaction-assistant/transactionAssistantExportDeliveryTypeEnum';
 
+/**
+ * transactionAssistantOrderModel
+ * سفارش با فیلدهای Link* و وضعیت‌های صادرات
+ */
 export class transactionAssistantOrderModel extends BaseModuleEntity<string> {
+  /** شناسه سبد خرید مرتبط */
   linkCartId: string;
+  /** وضعیت سفارش */
   status: transactionAssistantOrderStatusEnum;
+  /** مبلغ کل سفارش */
   totalPrice: number;
+  /** وضعیت پرداخت */
   paymentStatus: transactionAssistantPaymentStatusEnum;
+  /** توضیحات سفارش */
   description?: string;
+  /** نوع سفارش (داخلی/صادراتی) */
   orderType: transactionAssistantOrderTypeEnum;
+  /** نوع تحویل صادراتی (اختیاری) */
   exportDeliveryType?: transactionAssistantExportDeliveryTypeEnum;
+  /** کشور مقصد (اختیاری) */
   destinationCountry?: string;
+  /** شهر مقصد (اختیاری) */
   destinationCity?: string;
+  /** شناسه تصویر اصلی سفارش */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی سفارش */
+  linkMainImageIdSrc?: string;
 }
-
-

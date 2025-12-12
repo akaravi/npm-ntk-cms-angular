@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
-import { transactionAssistantAddressViewModel } from '../../models/entity/transaction-assistant/transactionAssistantAddressViewModel';
-import { transactionAssistantAddressClientSideFilterModel } from '../../models/filters/transaction-assistant/transactionAssistantAddressClientSideFilterModel';
+import { transactionAssistantAddressModel } from '../../models/entity/transaction-assistant/transactionAssistantAddressModel';
 import { transactionAssistantAddressServerSideFilterModel } from '../../models/filters/transaction-assistant/transactionAssistantAddressServerSideFilterModel';
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
 export class TransactionAssistantAddressService extends ApiCmsServerBase<
-  transactionAssistantAddressViewModel,
+  transactionAssistantAddressModel,
   string,
   transactionAssistantAddressServerSideFilterModel
 > {
@@ -20,7 +19,9 @@ export class TransactionAssistantAddressService extends ApiCmsServerBase<
   /**
    * دریافت آدرس‌های کاربر
    */
-  ServiceGetUserAddresses(userId: number): Observable<ErrorExceptionResult<transactionAssistantAddressViewModel>> {
+  ServiceGetUserAddresses(
+    userId: number
+  ): Observable<ErrorExceptionResult<transactionAssistantAddressModel>> {
     return this.http
       .get(
         this.getBaseUrl() + this.getModuleControllerUrl() + '/user/' + userId,
@@ -39,10 +40,16 @@ export class TransactionAssistantAddressService extends ApiCmsServerBase<
   /**
    * دریافت آدرس پیش‌فرض کاربر
    */
-  ServiceGetUserDefaultAddress(userId: number): Observable<ErrorExceptionResult<transactionAssistantAddressViewModel>> {
+  ServiceGetUserDefaultAddress(
+    userId: number
+  ): Observable<ErrorExceptionResult<transactionAssistantAddressModel>> {
     return this.http
       .get(
-        this.getBaseUrl() + this.getModuleControllerUrl() + '/user/' + userId + '/default',
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          '/user/' +
+          userId +
+          '/default',
         {
           headers: this.getHeaders(),
         }
@@ -55,4 +62,3 @@ export class TransactionAssistantAddressService extends ApiCmsServerBase<
       );
   }
 }
-

@@ -1,16 +1,19 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantRatingViewModel
+ * transactionAssistantRatingModel
  * امتیاز/نظر سفارش
  */
-export class transactionAssistantRatingViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantRatingModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** امتیاز (مثلاً ۱ تا ۵) */
   score: number;
   /** نظر کاربر (اختیاری) */
   comment?: string;
+  /** شناسه تصویر اصلی امتیاز */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی امتیاز */
+  linkMainImageIdSrc?: string;
 }
-
 

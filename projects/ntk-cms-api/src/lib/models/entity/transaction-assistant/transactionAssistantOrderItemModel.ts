@@ -1,12 +1,12 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantCartItemViewModel
- * آیتم‌های سبد خرید
+ * transactionAssistantOrderItemModel
+ * آیتم‌های سفارش
  */
-export class transactionAssistantCartItemViewModel extends BaseModuleEntity<string> {
-  /** شناسه سبد مرتبط */
-  linkCartId: string;
+export class transactionAssistantOrderItemModel extends BaseModuleEntity<string> {
+  /** شناسه سفارش مرتبط */
+  linkOrderId: string;
   /** شناسه محصول */
   linkProductId: string;
   /** شناسه تامین‌کننده (اختیاری) */
@@ -17,8 +17,5 @@ export class transactionAssistantCartItemViewModel extends BaseModuleEntity<stri
   qty: number;
   /** قیمت واحد */
   unitPrice: number;
-  /** فیلترهای اعمال‌شده (JSON) */
-  appliedFiltersJson?: string;
 }
-
 

@@ -1,10 +1,10 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantSupplierViewModel
+ * transactionAssistantSupplierModel
  * تامین‌کننده
  */
-export class transactionAssistantSupplierViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantSupplierModel extends BaseModuleEntity<string> {
   /** نام تامین‌کننده */
   name: string;
   /** نام شخص تماس (اختیاری) */
@@ -15,6 +15,9 @@ export class transactionAssistantSupplierViewModel extends BaseModuleEntity<stri
   originProvinceId?: number;
   /** وضعیت فعال بودن تامین‌کننده */
   active: boolean;
+  /** شناسه تصویر اصلی تامین‌کننده */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی تامین‌کننده */
+  linkMainImageIdSrc?: string;
 }
-
 

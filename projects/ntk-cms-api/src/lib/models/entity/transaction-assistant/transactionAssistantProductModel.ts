@@ -1,10 +1,10 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantProductViewModel
+ * transactionAssistantProductModel
  * محصول با جزئیات پایه
  */
-export class transactionAssistantProductViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantProductModel extends BaseModuleEntity<string> {
   /** کد محصول (SKU) */
   code: string;
   /** نام محصول */
@@ -15,6 +15,9 @@ export class transactionAssistantProductViewModel extends BaseModuleEntity<strin
   unit: string;
   /** وضعیت فعال بودن محصول */
   active: boolean;
+  /** شناسه تصویر اصلی محصول */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی محصول */
+  linkMainImageIdSrc?: string;
 }
-
 

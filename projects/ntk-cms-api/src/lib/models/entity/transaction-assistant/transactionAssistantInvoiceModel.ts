@@ -2,10 +2,10 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { transactionAssistantPersonTypeEnum } from '../../enums/transaction-assistant/transactionAssistantPersonTypeEnum';
 
 /**
- * transactionAssistantInvoiceViewModel
+ * transactionAssistantInvoiceModel
  * فاکتور رسمی
  */
-export class transactionAssistantInvoiceViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantInvoiceModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** نوع شخص (حقیقی/حقوقی) */
@@ -24,6 +24,9 @@ export class transactionAssistantInvoiceViewModel extends BaseModuleEntity<strin
   taxAmount: number;
   /** آدرس تحویل به صورت JSON */
   addressJson?: string;
+  /** شناسه تصویر اصلی فاکتور */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی فاکتور */
+  linkMainImageIdSrc?: string;
 }
-
 

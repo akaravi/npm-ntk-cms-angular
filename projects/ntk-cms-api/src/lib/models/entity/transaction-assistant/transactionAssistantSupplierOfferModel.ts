@@ -2,10 +2,10 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { transactionAssistantOfferStatusEnum } from '../../enums/transaction-assistant/transactionAssistantOfferStatusEnum';
 
 /**
- * transactionAssistantSupplierOfferViewModel
+ * transactionAssistantSupplierOfferModel
  * پیشنهاد تامین‌کننده
  */
-export class transactionAssistantSupplierOfferViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantSupplierOfferModel extends BaseModuleEntity<string> {
   /** شناسه درخواست محصول مرتبط */
   linkProductRequestId: string;
   /** شناسه تامین‌کننده */
@@ -20,6 +20,9 @@ export class transactionAssistantSupplierOfferViewModel extends BaseModuleEntity
   notes?: string;
   /** وضعیت پیشنهاد */
   status: transactionAssistantOfferStatusEnum;
+  /** شناسه تصویر اصلی پیشنهاد */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی پیشنهاد */
+  linkMainImageIdSrc?: string;
 }
-
 

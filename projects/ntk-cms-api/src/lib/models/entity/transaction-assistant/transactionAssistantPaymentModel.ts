@@ -3,10 +3,10 @@ import { transactionAssistantPaymentMethodEnum } from '../../enums/transaction-a
 import { transactionAssistantPaymentStatusEnum } from '../../enums/transaction-assistant/transactionAssistantPaymentStatusEnum';
 
 /**
- * transactionAssistantPaymentViewModel
+ * transactionAssistantPaymentModel
  * پرداخت سفارش
  */
-export class transactionAssistantPaymentViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantPaymentModel extends BaseModuleEntity<string> {
   /** شناسه سفارش مرتبط */
   linkOrderId: string;
   /** روش پرداخت */
@@ -19,6 +19,9 @@ export class transactionAssistantPaymentViewModel extends BaseModuleEntity<strin
   gatewayReference?: string;
   /** تاریخ پرداخت موفق (اختیاری) */
   paidAt?: Date;
+  /** شناسه تصویر اصلی پرداخت */
+  linkMainImageId?: number;
+  /** آدرس URL تصویر اصلی پرداخت */
+  linkMainImageIdSrc?: string;
 }
-
 

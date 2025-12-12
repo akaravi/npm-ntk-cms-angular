@@ -2,10 +2,10 @@ import { transactionAssistantRequestStatusEnum } from '../../enums/transaction-a
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 
 /**
- * transactionAssistantProductSupplierRequestHistoryViewModel
+ * transactionAssistantProductSupplierRequestHistoryModel
  * تاریخچه درخواست/تامین
  */
-export class transactionAssistantProductSupplierRequestHistoryViewModel extends BaseModuleEntity<string> {
+export class transactionAssistantProductSupplierRequestHistoryModel extends BaseModuleEntity<string> {
   /** شناسه درخواست محصول */
   linkProductRequestId: string;
   /** شناسه تامین‌کننده (اختیاری) */
@@ -17,3 +17,4 @@ export class transactionAssistantProductSupplierRequestHistoryViewModel extends 
   /** زمان وقوع */
   occurredAt: Date;
 }
+
