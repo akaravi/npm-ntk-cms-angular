@@ -19,5 +19,9 @@ export class SmsLogOutBoxTaskSchedulerModel extends BaseModuleEntity<string> {
   scheduleCron: string;
   scheduleCountRun: number;
   scheduleLockedRunIsSuccess: boolean;
+  /**
+   * اختلاف زمان کلاینت (فرمت HH:mm:ss، مثال: '03:30:00')
+   */
+  differenceClientDateTime: string;
   scheduleRunInfos: SmsLogOutBoxScheduleRunInfoModel[];
 }
