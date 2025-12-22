@@ -1,3 +1,7 @@
+## 2025-12-22 14:11:34
+
+- رفع مشکل dependency conflict در `ngx-ntk-icon-picker`: تغییر محدودیت نسخه `@fortawesome/angular-fontawesome` از `>=0.10.2` به `^0.10.2` برای جلوگیری از نصب نسخه 4.0.0 که نیاز به Angular 21 دارد و سازگاری با Angular 20
+
 ## 2025-12-12 11:46:46
 
 - اضافه کردن importهای enumهای مفقود در فایل‌های Model: اصلاح نام enumها از camelCase به PascalCase (مثل `transactionAssistantCartStatusEnum` به `TransactionAssistantCartStatusEnum`)

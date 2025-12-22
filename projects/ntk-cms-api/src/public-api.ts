@@ -148,6 +148,13 @@ export * from './lib/models/enums/member/_export';
 export * from './lib/service/member/_export';
 // member
 
+// crm
+export * from './lib/models/dto/crm/_export';
+export * from './lib/models/entity/crm/_export';
+export * from './lib/models/enums/crm/_export';
+export * from './lib/service/crm/_export';
+// crm
+
 // donate
 export * from './lib/models/dto/donate/_export';
 export * from './lib/models/entity/donate/_export';
