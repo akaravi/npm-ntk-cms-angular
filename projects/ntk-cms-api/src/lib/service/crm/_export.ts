@@ -9,5 +9,6 @@ export * from "./crmActivity.service";
 export * from "./crmCampaign.service";
 export * from "./crmSupplierRating.service";
 export * from "./crmSupplierPriceList.service";
+export * from "./crmEnum.service";
 
 
