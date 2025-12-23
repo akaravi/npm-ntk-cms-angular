@@ -5,8 +5,12 @@ import { BaseModuleEntity } from "../base/baseModuleEntity";
  * سرنخ CRM (Lead) شامل اطلاعات اولیه مشتری بالقوه و وضعیت تبدیل
  */
 export class CrmLeadModel extends BaseModuleEntity<string> {
+  /** شماره Lead (Lead Number) */
+  leadNo: string;
   /** عنوان سرنخ */
   title: string;
+  /** عنوان شغلی (Mr/Mrs/Dr/…) */
+  salutation: string;
   /** نام */
   firstName: string;
   /** نام خانوادگی */
@@ -27,6 +31,12 @@ export class CrmLeadModel extends BaseModuleEntity<string> {
   leadStatus: string;
   /** رتبه سرنخ (Hot/Warm/Cold) */
   rating: string;
+  /** علاقه (Interest) */
+  interest: string;
+  /** سمت (Designation) */
+  designation: string;
+  /** اولویت (Priority) */
+  priority: string;
   /** صنعت */
   industry: string;
   /** تعداد کارمندان */
@@ -43,6 +53,29 @@ export class CrmLeadModel extends BaseModuleEntity<string> {
   postalCode: string;
   /** کشور */
   country: string;
+  
+  // Lead Address
+  /** شهر آدرس Lead */
+  leadAddressCity: string;
+  /** کد پستی آدرس Lead */
+  leadAddressPostalCode: string;
+  /** استان آدرس Lead */
+  leadAddressState: string;
+  /** صندوق پستی آدرس Lead */
+  leadAddressPoBox: string;
+  /** کشور آدرس Lead */
+  leadAddressCountry: string;
+  /** شماره تماس آدرس Lead */
+  leadAddressPhone: string;
+  /** موبایل آدرس Lead */
+  leadAddressMobile: string;
+  /** فکس آدرس Lead */
+  leadAddressFax: string;
+  /** خیابان آدرس Lead */
+  leadAddressStreet: string;
+  /** نوع آدرس Lead */
+  leadAddressType: string;
+  
   /** توضیحات */
   description: string;
   /** یادداشت‌ها */
@@ -55,6 +88,32 @@ export class CrmLeadModel extends BaseModuleEntity<string> {
   linkCampaignId?: string;
   /** لینک کاربر اختصاص داده شده */
   linkAssignedUserId?: number;
+  /** ایمیل دوم (Secondary Email) */
+  secondaryEmail: string;
+  /** درخواست دمو (Demo Request) */
+  demoRequest: string;
+  /** نسخه محصول (Product Version) */
+  productVersion: string;
+  /** محصول (Product) */
+  product: string;
+  /** تاریخ ایمیل (Mail Date) */
+  mailDate?: Date;
+  /** تاریخ گام بعدی (Next Step Date) */
+  nextStepDate?: Date;
+  /** وضعیت تأمین مالی (Funding Situation) */
+  fundingSituation: string;
+  /** هدف (Purpose) */
+  purpose: string;
+  /** وضعیت ارزیابی (Evaluation Status) */
+  evaluationStatus: string;
+  /** تاریخ انتقال (Transfer Date) */
+  transferDate?: Date;
+  /** نوع درآمد (Revenue Type) */
+  revenueType: string;
+  /** بررسی اختصاص Lead (Assign Lead Check) */
+  assignLeadChk: boolean;
+  /** عدم دریافت ایمیل (Email Opt Out) */
+  emailOptOut: boolean;
   /** تاریخ تبدیل به فرصت */
   convertedDate?: Date;
   /** آیا تبدیل شده است */

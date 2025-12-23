@@ -9,4 +9,5 @@ export * from "./crmActivityModel";
 export * from "./crmCampaignModel";
 export * from "./crmSupplierRatingModel";
 export * from "./crmSupplierPriceListModel";
+export * from "./crmOpportunityStageHistoryModel";
 
