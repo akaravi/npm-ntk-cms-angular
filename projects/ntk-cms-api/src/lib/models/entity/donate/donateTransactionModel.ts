@@ -2,48 +2,49 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DonateSponsorModel } from './donateSponsorModel';
 import { DonateTargetPeriodModel } from './donateTargetPeriodModel';
 //@@tag-Version-2201011
+/**
+ * مدل تراکنش اهدا
+ */
 export class DonateTransactionModel extends BaseModuleEntity<number> {
+  /** لینک به شناسه کاربر CMS */
   linkCmsUserId?: number;
+  /** لینک به شناسه حامی */
   linkSponsorId?: number;
+  /** حامی */
   sponsor: DonateSponsorModel;
   virtual_Sponsor: DonateSponsorModel;
+  /** لینک به شناسه دوره هدف */
   linkTargetPeriodId: number;
+  /** دوره هدف */
   targetPeriod: DonateTargetPeriodModel;
   virtual_TargetPeriod: DonateTargetPeriodModel;
 
+  /** شناسه تراکنش سیستم */
   systemTransactionId: number;
+  /** وضعیت موفقیت پرداخت سیستم */
   systemPaymentIsSuccess: number;
 
+  /** نام */
   name: string;
+  /** نام خانوادگی */
   family: string;
+  /** موبایل */
   mobile: string;
 
-
-  /// <summary>
-  /// موقعیت عرض جغرافیایی
-  /// </summary>
+  /** موقعیت عرض جغرافیایی */
   geoLocationLatitude?: number;
-  /// <summary>
-  /// موقعیت طول جغرافیایی
-  /// </summary>
+  /** موقعیت طول جغرافیایی */
   geoLocationLongitude?: number;
+  /** آدرس */
   address: string;
 
-  /// <summary>
-  /// مبلغ خالص فاکتور
-  /// </summary>
+  /** مبلغ خالص فاکتور */
   amountPure: number;
-  /// <summary>
-  /// هزینه حمل و نقل
-  /// </summary>
+  /** هزینه حمل و نقل */
   feeTransport: number;
-  /// <summary>
-  /// هزینه مالیات
-  /// </summary>
+  /** هزینه مالیات */
   feeTax: number;
 
-  /// <summary>
-  /// مبلغ کل پرداختی
-  /// </summary>
+  /** مبلغ کل پرداختی */
   amount: number;
 }

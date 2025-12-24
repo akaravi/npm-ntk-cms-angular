@@ -1,30 +1,30 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
+/**
+ * مدل تراکنش ارائه‌دهنده داده
+ */
 export class DataProviderTransactionModel extends BaseModuleEntity<number> {
+  /** توضیحات */
   description: string;
+  /** لینک به شناسه کلاینت */
   linkClientId: number;
+  /** لینک به شناسه پلن */
   linkPlanId: number;
+  /** لینک به شناسه قیمت پلن */
   linkPlanPriceId: number;
 
+  /** شناسه تراکنش سیستم */
   systemTransactionId: number;
+  /** وضعیت موفقیت پرداخت سیستم */
   systemPaymentIsSuccess: number;
 
-
-  /// <summary>
-  /// مبلغ خالص فاکتور
-  /// </summary>
+  /** مبلغ خالص فاکتور */
   amountPure: number;
-  /// <summary>
-  /// هزینه حمل و نقل
-  /// </summary>
+  /** هزینه حمل و نقل */
   feeTransport: number;
-  /// <summary>
-  /// هزینه مالیات
-  /// </summary>
+  /** هزینه مالیات */
   feeTax: number;
 
-  /// <summary>
-  /// مبلغ کل پرداختی
-  /// </summary>
+  /** مبلغ کل پرداختی */
   amount: number;
 }

@@ -156,5 +156,189 @@ export class CrmEnumService extends ApiServerBase {
         }),
       );
   }
+
+  /**
+   * دریافت اطلاعات CrmAccountRatingEnum
+   * @returns Observable حاوی لیست مقادیر enum رتبه‌بندی Account
+   */
+  ServiceCrmAccountRatingEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmAccountRatingEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmAccountTypeEnum
+   * @returns Observable حاوی لیست مقادیر enum نوع Account
+   */
+  ServiceCrmAccountTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmAccountTypeEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmCampaignStatusEnum
+   * @returns Observable حاوی لیست مقادیر enum وضعیت Campaign
+   */
+  ServiceCrmCampaignStatusEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmCampaignStatusEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmCampaignTypeEnum
+   * @returns Observable حاوی لیست مقادیر enum نوع Campaign
+   */
+  ServiceCrmCampaignTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmCampaignTypeEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmLeadStatusEnum
+   * @returns Observable حاوی لیست مقادیر enum وضعیت Lead
+   */
+  ServiceCrmLeadStatusEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmLeadStatusEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmLeadSourceEnum
+   * @returns Observable حاوی لیست مقادیر enum منبع Lead
+   */
+  ServiceCrmLeadSourceEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmLeadSourceEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmOpportunityTypeEnum
+   * @returns Observable حاوی لیست مقادیر enum نوع Opportunity
+   */
+  ServiceCrmOpportunityTypeEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmOpportunityTypeEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
+
+  /**
+   * دریافت اطلاعات CrmCampaignRelStatusEnum
+   * @returns Observable حاوی لیست مقادیر enum وضعیت رابطه Campaign
+   */
+  ServiceCrmCampaignRelStatusEnum(): Observable<
+    ErrorExceptionResult<InfoEnumModel>
+  > {
+    return this.http
+      .get(
+        this.getBaseUrl() +
+          this.getModuleControllerUrl() +
+          "/CrmCampaignRelStatusEnum",
+        {
+          headers: this.getHeaders(),
+        },
+      )
+      .pipe(
+        map((ret: any) => {
+          return ret;
+        }),
+      );
+  }
 }
 
