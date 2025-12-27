@@ -1,7 +1,7 @@
 import { SmsMessageTypeEnum } from '../../enums/sms/smsMessageTypeEnum';
 import { SmsOutBoxTypeEnum } from '../../enums/sms/smsOutBoxTypeEnum';
 
-export class SmsMainApiPathPriceServiceEstimateModel {
+export class SmsMainApiPathPriceEstimateModel {
   linkApiPathId: string;
   messageType: SmsMessageTypeEnum;
   outBoxTypeList: SmsOutBoxTypeEnum[];

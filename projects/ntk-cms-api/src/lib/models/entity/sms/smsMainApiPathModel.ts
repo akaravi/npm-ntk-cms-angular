@@ -1,8 +1,8 @@
 import { BaseModuleEntity } from './../base/baseModuleEntity';
 import { SmsMainApiPathCompanyModel } from './smsMainApiCompanyModel';
 import { SmsMainApiPathAndApiNumberModel } from './smsMainApiPathAndApiNumberModel';
+import { SmsMainApiPathPaginationModel } from './smsMainApiPathPaginationModel';
 import { SmsMainApiPathPermissionModel } from './smsMainApiPathPermissionModel';
-import { SmsMainApiPathPriceServiceModel } from './smsMainApiPathPriceServiceModel';
 import { SmsMainApiPathProcessFlowModel } from './smsMainApiPathProcessFlowModel';
 import { SmsMainApiPathPublicConfigModel } from './smsMainApiPathPublicConfigModel';
 import { SmsMainApiPathSupersedeModel } from './smsMainApiPathSupersedeModel';
@@ -81,7 +81,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   /** لیست مسیرها و شماره‌های API */
   apiPathAndApiPathNumbers: SmsMainApiPathAndApiNumberModel[];
   /** لیست سرویس‌های قیمت مسیر API */
-  apiPathPriceServices: SmsMainApiPathPriceServiceModel[];
+  apiPathPagination: SmsMainApiPathPaginationModel[];
   /** ارسال پیام فعال است */
   apiSendMessageIsOn: boolean;
   /** متن اضافه شده به ابتدای پیام در API */
