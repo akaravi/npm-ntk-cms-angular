@@ -68,10 +68,7 @@ export class SmsMainApiPathModel extends BaseModuleEntity<string> {
   apiAbilityLengthMinToSend: number;
   /** حداکثر اندازه شماره گیرنده */
   apiAbilityLengthMaxToSend: number;
-  /** قابلیت ارسال از طریق صف */
-  apiAbilitySendByQueue: boolean;
-  /** قابلیت ارسال مستقیم */
-  apiAbilitySendByDirect: boolean;
+
   /** لیست مسیرهای جانشین */
   apiPathSupersedes: SmsMainApiPathSupersedeModel[];
   /** لیست مسیرهای اجباری جانشین */
