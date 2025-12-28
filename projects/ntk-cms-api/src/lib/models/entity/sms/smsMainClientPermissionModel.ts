@@ -4,6 +4,8 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
  * مدل دسترسی کلاینت پیامک
  */
 export class SmsMainClientPermissionModel extends BaseModuleEntity<string> {
+    /** عنوان */
+  title: string;
   /** لینک به شناسه کاربر اصلی */
   linkCoreUserId: number;
   /** از تاریخ */
