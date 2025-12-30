@@ -6,6 +6,5 @@ export * from './coreLogCurrencyModel';
 export * from './coreLogMemberModel';
 export * from './coreLogReportDataModel';
 export * from './coreLogNotificationModel';
-export * from './coreLogTokenUserModel';
 export * from './coreLogTokenMicroServiceModel';
 export * from './coreLogTokenConnectionModel';

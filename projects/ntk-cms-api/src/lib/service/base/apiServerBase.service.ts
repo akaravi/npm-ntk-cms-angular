@@ -24,9 +24,12 @@ export class ApiServerBase {
   private accessDataType: ManageUserAccessDataTypesEnum;
   setConfig(url: string, ver = '', apiRetry = 1): void {
     this.baseUrl = url;
-    localStorage.setItem(this.keyBaseVer, ver);
-    localStorage.setItem(this.Ver + this.keyBaseUrl, url);
     this.configApiRetry = apiRetry;
+    localStorage.setItem(this.keyBaseVer, ver);
+    if(localStorage.getItem(this.Ver + this.keyBaseUrl)?.length > 0) {
+      return;
+    }
+    localStorage.setItem(this.Ver + this.keyBaseUrl, url);
   }
   get Ver(): string {
     return localStorage.getItem(this.keyBaseVer) + '_';

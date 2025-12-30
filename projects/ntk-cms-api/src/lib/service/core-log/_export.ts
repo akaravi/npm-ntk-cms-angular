@@ -6,7 +6,5 @@ export * from './coreLogMember.service';
 export * from './coreLogNotification.service';
 export * from './coreLogReportData.service';
 export * from './coreLogSms.service';
-export * from './coreLogTokenUser.service';
-export * from './coreLogTokenMicroService.service';
 export * from './coreLogTokenConnection.service';
-
+export * from './coreLogTokenMicroService.service';
