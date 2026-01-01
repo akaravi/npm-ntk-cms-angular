@@ -6,7 +6,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 @Injectable()
 export class DataProviderClientPermissionService extends ApiCmsServerBase<
   DataProviderClientPermissionModel,
-  number,
+  string,
   FilterModel
 > {
   getModuleControllerUrl(): string {

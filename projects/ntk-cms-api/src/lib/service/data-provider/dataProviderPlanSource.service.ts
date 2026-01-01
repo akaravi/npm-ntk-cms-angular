@@ -5,7 +5,7 @@ import { DataProviderPlanSourceModel } from '../../models/entity/data-provider/d
 import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class DataProviderPlanSourceService extends ApiCmsServerBase<DataProviderPlanSourceModel, number, FilterModel> {
+export class DataProviderPlanSourceService extends ApiCmsServerBase<DataProviderPlanSourceModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'DataProviderPlanSource';
   }

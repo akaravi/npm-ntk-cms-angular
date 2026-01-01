@@ -13,7 +13,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 @Injectable()
 export class DataProviderTransactionService extends ApiCmsServerBase<
   DataProviderTransactionModel,
-  number,
+  string,
   FilterModel
 > {
   getModuleControllerUrl(): string {

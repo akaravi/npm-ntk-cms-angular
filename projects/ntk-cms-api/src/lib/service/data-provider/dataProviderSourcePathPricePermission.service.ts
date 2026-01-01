@@ -6,7 +6,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 @Injectable()
 export class DataProviderSourcePathPricePermissionService extends ApiCmsServerBase<
   DataProviderSourcePathPricePermissionModel,
-  number,
+  string,
   FilterModel
 > {
   getModuleControllerUrl(): string {

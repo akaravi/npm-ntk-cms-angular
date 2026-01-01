@@ -5,7 +5,7 @@ import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 
 @Injectable()
-export class DataProviderSourceCategoryService extends ApiCmsServerBase<DataProviderSourceCategoryModel, number, FilterModel> {
+export class DataProviderSourceCategoryService extends ApiCmsServerBase<DataProviderSourceCategoryModel, string, FilterModel> {
   getModuleControllerUrl(): string {
     return 'DataProviderSourceCategory';
   }
