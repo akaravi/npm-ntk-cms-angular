@@ -1,10 +1,11 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
+import { DataProviderSourceCompanyModel } from './dataProviderSourceCompanyModel';
 //@@tag-Version-2201011
 /**
  * مدل منبع ارائه‌دهنده داده
  */
-export class DataProviderSourceModel extends BaseModuleEntity<number> {
+export class DataProviderSourceModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** توضیحات */
@@ -18,4 +19,13 @@ export class DataProviderSourceModel extends BaseModuleEntity<number> {
 
   /** لیست پلن‌های منبع */
   planSources: DataProviderPlanSourceModel[];
+
+  /** ارتباط با جدول کمپانی */
+  linkSourceCompanyId: string;
+
+  /** اگر روشن : کانتر کمپانی اعمال میشود */
+  sourceCompanyCounterIsOn: boolean;
+
+  /** شرکت منبع */
+  virtual_SourceCompany: DataProviderSourceCompanyModel;
 }

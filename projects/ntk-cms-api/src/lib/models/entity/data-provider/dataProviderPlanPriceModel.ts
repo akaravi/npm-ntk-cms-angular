@@ -4,7 +4,7 @@ import { DataProviderPlanModel } from './dataProviderPlanModel';
 /**
  * مدل قیمت پلن ارائه‌دهنده داده
  */
-export class DataProviderPlanPriceModel extends BaseModuleEntity<number> {
+export class DataProviderPlanPriceModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** توضیحات */
@@ -18,7 +18,7 @@ export class DataProviderPlanPriceModel extends BaseModuleEntity<number> {
   /** قیمت */
   price: number;
   /** لینک به شناسه پلن */
-  linkPlanId: number;
+  linkPlanId: string;
   /** پلن */
   plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;

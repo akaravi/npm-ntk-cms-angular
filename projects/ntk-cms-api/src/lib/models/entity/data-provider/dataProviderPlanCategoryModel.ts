@@ -4,7 +4,7 @@ import { DataProviderPlanModel } from './dataProviderPlanModel';
 /**
  * مدل دسته‌بندی پلن ارائه‌دهنده داده
  */
-export class DataProviderPlanCategoryModel extends BaseModuleEntity<number> {
+export class DataProviderPlanCategoryModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** لینک به شناسه تصویر اصلی */

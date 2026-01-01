@@ -7,13 +7,13 @@ import { DataProviderPlanSourceModel } from './dataProviderPlanSourceModel';
 /**
  * مدل پلن ارائه‌دهنده داده
  */
-export class DataProviderPlanModel extends BaseModuleEntity<number> {
+export class DataProviderPlanModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** توضیحات */
   description: string;
   /** لینک به شناسه دسته‌بندی پلن */
-  linkPlanCategoryId: number;
+  linkPlanCategoryId: string;
   /** دسته‌بندی پلن */
   planCategory: DataProviderPlanCategoryModel;
   virtual_PlanCategory: DataProviderPlanCategoryModel;

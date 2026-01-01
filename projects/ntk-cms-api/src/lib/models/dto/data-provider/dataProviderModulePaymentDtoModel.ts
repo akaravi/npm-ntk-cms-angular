@@ -1,6 +1,6 @@
 export class DataProviderModulePaymentDtoModel {
-  linkClientId: number;
-  linkPlanPriceId: number;
+  linkClientId: string;
+  linkPlanPriceId: string;
   bankPaymentPrivateId: number;
   lastUrlAddressInUse: string;
 }

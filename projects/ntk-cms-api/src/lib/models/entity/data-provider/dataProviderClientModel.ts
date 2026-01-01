@@ -5,7 +5,7 @@ import { DataProviderPlanClientModel } from './dataProviderPlanClientModel';
 /**
  * مدل کلاینت ارائه‌دهنده داده
  */
-export class DataProviderClientModel extends BaseModuleEntity<number> {
+export class DataProviderClientModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** توضیحات */

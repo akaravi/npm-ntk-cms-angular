@@ -11,6 +11,15 @@ export * from './dataProviderPlan.service';
 export * from './dataProviderPlanPrice.service';
 export * from './dataProviderPlanSource.service';
 export * from './dataProviderSource.service';
+export * from './dataProviderSourceCompany.service';
+export * from './dataProviderSourcePublicConfig.service';
+export * from './dataProviderSourcePath.service';
+export * from './dataProviderSourcePathPagination.service';
+export * from './dataProviderSourcePathPermission.service';
+export * from './dataProviderSourcePathPricePermission.service';
+export * from './dataProviderSourceCategory.service';
+export * from './dataProviderSourcePathAndCategory.service';
+export * from './dataProviderClientPermission.service';
 export * from './dataProviderTransaction.service';
 
 

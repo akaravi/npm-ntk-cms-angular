@@ -3,15 +3,15 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 /**
  * مدل تراکنش ارائه‌دهنده داده
  */
-export class DataProviderTransactionModel extends BaseModuleEntity<number> {
+export class DataProviderTransactionModel extends BaseModuleEntity<string> {
   /** توضیحات */
   description: string;
   /** لینک به شناسه کلاینت */
-  linkClientId: number;
+  linkClientId: string;
   /** لینک به شناسه پلن */
-  linkPlanId: number;
+  linkPlanId: string;
   /** لینک به شناسه قیمت پلن */
-  linkPlanPriceId: number;
+  linkPlanPriceId: string;
 
   /** شناسه تراکنش سیستم */
   systemTransactionId: number;

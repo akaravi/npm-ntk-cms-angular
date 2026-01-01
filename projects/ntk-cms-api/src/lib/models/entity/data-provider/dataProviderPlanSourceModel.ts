@@ -5,11 +5,11 @@ import { DataProviderSourceModel } from './dataProviderSourceModel';
 /**
  * مدل منبع پلن ارائه‌دهنده داده
  */
-export class DataProviderPlanSourceModel extends BaseModuleEntity<number> {
+export class DataProviderPlanSourceModel extends BaseModuleEntity<string> {
   /** لینک به شناسه پلن */
-  linkPlanId: number;
+  linkPlanId: string;
   /** لینک به شناسه منبع */
-  linkSourceId: number;
+  linkSourceId: string;
   /** پلن */
   plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;
