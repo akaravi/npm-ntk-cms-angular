@@ -1,15 +1,32 @@
 {
   "name": "ngx-ntk-smart-module",
-  "version": "20.26.1",
-  "description": "Ntk Cms Modal ",
+  "version": "20.26.2",
+  "description": "Advanced Angular smart loader and modal components with enhanced functionality, animations, and accessibility",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ngx-ntk-smart-module"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "SMS",
-    "news",
-    "api"
+    "angular",
+    "angular2",
+    "angular-library",
+    "modal",
+    "dialog",
+    "loader",
+    "loading",
+    "smart-modal",
+    "smart-loader",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms"
   ],
   "exports": {
     "./loader": {
@@ -20,8 +37,8 @@
     }
   },
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0"
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

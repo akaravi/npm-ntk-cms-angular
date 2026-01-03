@@ -1,19 +1,36 @@
 {
   "name": "ngx-ntk-icon-picker",
-  "version": "20.26.1",
-  "description": "Ntk Cms Api And Model For Typscript",
+  "version": "20.26.2",
+  "description": "Advanced Angular icon picker component with support for multiple icon libraries including FontAwesome, Material Icons, and PrimeIcons",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ngx-ntk-icon-picker"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "SMS",
-    "news",
-    "api"
+    "angular",
+    "angular2",
+    "angular-library",
+    "icon-picker",
+    "icon-selector",
+    "fontawesome",
+    "material-icons",
+    "primeicons",
+    "icon-library",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms"
   ],
   "peerDependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0",
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0",
     "@fortawesome/angular-fontawesome": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": ">=6.1.1",
     "@fortawesome/free-solid-svg-icons": ">=6.1.1",

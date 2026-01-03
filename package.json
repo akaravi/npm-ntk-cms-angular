@@ -40,7 +40,6 @@
     "bootstrap": "^5.3.7",
     "mrmime": "^2.0.1",
     "ngx-bootstrap": "^20.0.2",
-    "ngx-icon-picker": "file:",
     "ngx-ntk-cron-editor": "file:",
     "ngx-ntk-file-picker": "file:",
     "ngx-ntk-icon-picker": "file:",

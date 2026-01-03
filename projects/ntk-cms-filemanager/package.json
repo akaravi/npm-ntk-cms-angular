@@ -1,15 +1,31 @@
 {
   "name": "ntk-cms-filemanager",
-  "version": "20.26.1",
-  "description": "Ntk Cms Api And Model For Typscript",
+  "version": "20.26.2",
+  "description": "Advanced file management system with tree-based navigation, drag & drop, and multi-language support for Angular",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ntk-cms-filemanager"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "file manage",
-    "file",
-    "api"
+    "angular",
+    "angular2",
+    "angular-library",
+    "file-manager",
+    "file-management",
+    "file-browser",
+    "file-tree",
+    "drag-drop",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms"
   ],
   "exports": {
     "./filemanager": {
@@ -17,8 +33,8 @@
     }
   },
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0",
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0",
     "rxjs": ">=6.6.0",
     "ngx-ntk-smart-module": ">=20.25.1",
     "ntk-cms-api": ">=20.25.1",

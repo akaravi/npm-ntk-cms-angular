@@ -1,17 +1,35 @@
 {
   "name": "ngx-ntk-cron-editor",
-  "version": "20.26.1",
-  "description": "Angular cron editor",
+  "version": "20.26.2",
+  "description": "Visual cron expression builder with time picker and multi-language support for Angular",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ngx-ntk-cron-editor"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "cron job"
+    "angular",
+    "angular2",
+    "angular-library",
+    "cron",
+    "cron-editor",
+    "cron-expression",
+    "scheduler",
+    "time-picker",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms"
   ],
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0",
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0",
     "@ngx-translate/core": ">=16.0.4",
     "@ngx-translate/http-loader": ">=16.0.1"
   },

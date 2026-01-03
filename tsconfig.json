@@ -13,7 +13,9 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "dom"],
     /*karavi add*/
     "baseUrl": "./",
     "esModuleInterop": true,
@@ -36,10 +38,7 @@
       "ngx-ntk-smart-module": ["./dist/ngx-ntk-smart-module"],
       "ntk-cms-api": ["./dist/ntk-cms-api"],
       "ntk-cms-filemanager": ["./dist/ntk-cms-filemanager"],
-      "ntk-cms-fileuploader": [
-        "./dist/ntk-cms-fileuploader"
-      ],
-
+      "ntk-cms-fileuploader": ["./dist/ntk-cms-fileuploader"]
     }
   },
   "angularCompilerOptions": {
@@ -120,7 +119,6 @@
     },
     {
       "path": "./projects/ngx-ntk-icon-picker/tsconfig.spec.json"
-    },
-
+    }
   ]
 }

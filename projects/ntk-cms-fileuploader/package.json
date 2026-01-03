@@ -1,19 +1,35 @@
 {
   "name": "ntk-cms-fileuploader",
-  "version": "20.26.1",
-  "description": "Ntk Cms Api Uploader File For Typscript",
+  "version": "20.26.2",
+  "description": "Simple and efficient file upload component with progress tracking and validation for Angular",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ntk-cms-fileuploader"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "SMS",
-    "news",
-    "api"
+    "angular",
+    "angular2",
+    "angular-library",
+    "file-upload",
+    "file-uploader",
+    "upload",
+    "file",
+    "progress",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms"
   ],
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0"
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

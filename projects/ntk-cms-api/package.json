@@ -1,19 +1,35 @@
 {
   "name": "ntk-cms-api",
-  "version": "20.25.69",
-  "description": "Ntk Cms Api And Model For Typscript",
+  "version": "20.26.1",
+  "description": "Complete API service layer and data models for CMS operations with TypeScript support",
   "author": "Alireza-Karavi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular.git",
+    "directory": "projects/ntk-cms-api"
+  },
+  "bugs": {
+    "url": "https://github.com/akaravi/npm-ntk-cms-angular/issues"
+  },
+  "homepage": "https://github.com/akaravi/npm-ntk-cms-angular#readme",
   "keywords": [
-    "NTK",
-    "KARAVI",
-    "SMS",
-    "news",
-    "api"
+    "angular",
+    "angular2",
+    "angular-library",
+    "cms",
+    "api",
+    "typescript",
+    "rest-api",
+    "http-client",
+    "ngx",
+    "ngx-ntk",
+    "ntk",
+    "cms-api"
   ],
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0",
+    "@angular/common": "^20.1.0 || ^21.0.0",
+    "@angular/core": "^20.1.0 || ^21.0.0",
     "rxjs": ">=6.6.0"
   },
   "dependencies": {

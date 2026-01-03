@@ -1,5 +1,20 @@
 # NGX NTK Smart Module
 
+<div align="center">
+
+![Angular](https://img.shields.io/badge/Angular-20%20%7C%2021-red.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.0-blue.svg)
+![License](https://img.shields.io/badge/License-ISC-green.svg)
+![npm](https://img.shields.io/npm/v/ngx-ntk-smart-module)
+
+**Advanced Angular smart loader and modal components with enhanced functionality, animations, and accessibility features**
+
+[Installation](#-installation) • [Usage](#-usage) • [API Reference](#-api-reference) • [Examples](#-examples)
+
+</div>
+
+---
+
 **ngx-ntk-smart-module** - Advanced Angular smart loader and modal components with enhanced functionality, animations, and accessibility features
 
 ## 📋 Overview
@@ -948,4 +963,44 @@ For support and questions:
 
 ---
 
-**Note**: This library is part of the NTK CMS Angular Libraries collection. For more information, see the main project README.
+## 🆘 Support
+
+For support and questions:
+
+- 📝 **Create an issue** on [GitHub](https://github.com/akaravi/npm-ntk-cms-angular/issues)
+- 📚 **Check documentation** - See [main README.md](../../README.md)
+- 💬 **Contact** - [ntk.ir](https://ntk.ir)
+
+## 📦 npm Package
+
+Install from npm:
+
+```bash
+npm install ngx-ntk-smart-module
+```
+
+**Package:** [npmjs.com/package/ngx-ntk-smart-module](https://www.npmjs.com/package/ngx-ntk-smart-module)
+
+## 🔗 Related Libraries
+
+This library is part of the **NTK CMS Angular Libraries** collection:
+
+- [ntk-cms-api](../../README.md#1-ntk-cms-api-v20261) - API services and models
+- [ntk-cms-filemanager](../../README.md#2-ntk-cms-filemanager-v20262) - File management system
+- [ngx-ntk-icon-picker](../../README.md#6-ngx-ntk-icon-picker-v20261) - Icon selection component
+- [ngx-ntk-file-picker](../../README.md#5-ngx-ntk-file-picker-v20262) - Advanced file picker
+- [ngx-ntk-mat-color-picker](../../README.md#7-ngx-ntk-mat-color-picker-v20262) - Material color picker
+- [ngx-ntk-cron-editor](../../README.md#4-ngx-ntk-cron-editor-v20262) - Cron expression editor
+- [ngx-ntk-query-builder](../../README.md#8-ngx-ntk-query-builder-v20262) - Visual query builder
+
+For more information, see the [main project README](../../README.md).
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [NTK Team](https://ntk.ir)**
+
+[⭐ Star us on GitHub](https://github.com/akaravi/npm-ntk-cms-angular) • [📦 View on npm](https://www.npmjs.com/package/ngx-ntk-smart-module)
+
+</div>

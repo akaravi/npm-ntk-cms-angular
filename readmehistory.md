@@ -1,3 +1,70 @@
+## 2026-01-03 15:30:00
+
+- به‌روزرسانی کامل package.json های تمام پروژه‌ها برای npmjs.com:
+  - اضافه کردن `repository` با لینک GitHub و directory برای تمام 9 پروژه
+  - اضافه کردن `bugs` با لینک به issues در GitHub
+  - اضافه کردن `homepage` با لینک به README اصلی
+  - بهبود `description` برای تمام پروژه‌ها (توضیحات کامل و حرفه‌ای)
+  - بهبود `keywords` برای جستجوی بهتر در npm
+  - بررسی و تأیید کپی شدن README.md در dist توسط ng-packagr
+  - تمام package.json ها حالا برای publish در npmjs.com آماده هستند
+
+## 2026-01-03 15:15:00
+
+- به‌روزرسانی کامل تمام README.md های پروژه‌ها:
+  - اضافه کردن header با badges برای تمام پروژه‌ها
+  - اضافه کردن لینک‌های مستقیم به README.md اصلی
+  - اضافه کردن بخش npm Package با دستورات نصب
+  - اضافه کردن بخش Related Libraries با لینک به سایر پروژه‌ها
+  - بهبود بخش Support با لینک‌های GitHub و npm
+  - اضافه کردن footer حرفه‌ای با لینک‌های GitHub و npm
+  - تمام README.md ها حالا کامل و حرفه‌ای هستند
+
+## 2026-01-03 15:10:00
+
+- به‌روزرسانی کامل README.md اصلی:
+  - اضافه کردن badges برای Angular, TypeScript, License, npm
+  - اضافه کردن لینک‌های مستقیم به تمام README.md های پروژه‌ها
+  - اضافه کردن جدول سازگاری Angular 20 و 21
+  - بهبود ساختار و فرمت‌بندی
+  - اضافه کردن توضیحات کامل برای npm و GitHub
+  - اضافه کردن دستورات نصب و استفاده
+  - بهبود بخش‌های Installation, Quick Start, Documentation
+  - اضافه کردن بخش‌های Support, Contributing, Statistics
+
+## 2026-01-03 15:06:00
+
+- رفع خطاهای TypeScript module resolution:
+  - تغییر `module` از `"esnext"` به `"ES2022"` در tsconfig.json
+  - اضافه کردن `moduleResolution: "bundler"` برای Angular 21
+  - اضافه کردن `lib: ["ES2022", "dom"]` برای پشتیبانی از DOM APIs
+  - خطاهای "Cannot find module '@angular/core'" برطرف شدند
+  - پروژه با موفقیت build شد
+
+## 2026-01-03 14:51:00
+
+- پشتیبانی از Angular 20 و 21 در تمام packages:
+  - به‌روزرسانی peer dependencies در تمام package.json های پروژه‌های فرعی:
+    - ntk-cms-api
+    - ngx-ntk-cron-editor
+    - ngx-ntk-mat-color-picker
+    - ngx-ntk-file-picker
+    - ngx-ntk-query-builder
+    - ntk-cms-fileuploader
+    - ntk-cms-filemanager
+    - ngx-ntk-smart-module
+    - ngx-ntk-icon-picker
+  - تغییر از `^20.1.0` به `^20.1.0 || ^21.0.0` برای `@angular/common` و `@angular/core`
+  - تمام packages حالا هم با Angular 20 و هم با Angular 21 سازگار هستند
+  - پروژه با موفقیت build شد
+
+## 2026-01-03 14:50:00
+
+- پشتیبانی از Angular 20 و 21 در ngx-ntk-icon-picker:
+  - تغییر peer dependencies از `^21.0.0` به `^20.1.0 || ^21.0.0`
+  - حالا package هم با Angular 20 و هم با Angular 21 سازگار است
+  - برای نصب در پروژه‌های Angular 20 می‌توان از `npm install --legacy-peer-deps` استفاده کرد
+
 ## 2026-01-03 14:20:00
 
 - رفع مشکل نمایش PrimeIcons در IconPicker:
