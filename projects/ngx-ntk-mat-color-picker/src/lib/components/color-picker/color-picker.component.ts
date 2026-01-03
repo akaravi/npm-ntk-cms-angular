@@ -6,8 +6,8 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ComponentRef, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, OnDestroy, OnInit, Optional, Output, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { matDatepickerAnimations } from '@angular/material/datepicker';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Subject, Subscription, merge } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 import { Color } from '../../models';
@@ -48,8 +48,32 @@ const _MatColorpickerContentBase = class {
     '[class.ngx-ntk-mat-colorpicker-content-touch]': 'picker.touchUi',
   },
   animations: [
-    matDatepickerAnimations.transformPanel,
-    matDatepickerAnimations.fadeInCalendar,
+    trigger('transformPanel', [
+      state('enter', style({
+        opacity: 1,
+        transform: 'scale(1)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'scale(0.8)'
+        }),
+        animate('200ms cubic-bezier(0.25, 0.8, 0.25, 1)')
+      ]),
+      transition('* => void', [
+        animate('150ms cubic-bezier(0.25, 0.8, 0.25, 1)', style({
+          opacity: 0,
+          transform: 'scale(0.8)'
+        }))
+      ])
+    ]),
+    trigger('fadeInCalendar', [
+      state('enter', style({ opacity: 1 })),
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)')
+      ])
+    ])
   ],
   exportAs: 'ngxMatColorPickerContent',
   encapsulation: ViewEncapsulation.None,
@@ -295,13 +319,13 @@ export class NgxMatColorPickerComponent implements OnInit, OnDestroy {
     merge(
       this._popupRef.backdropClick(),
       this._popupRef.detachments(),
-      this._popupRef.keydownEvents().pipe(filter(event => {
+      this._popupRef.keydownEvents().pipe(filter((event: KeyboardEvent) => {
         // Closing on alt + up is only valid when there's an input associated with the datepicker.
-        return event.keyCode === ESCAPE ||
-          (this._pickerInput && event.altKey && event.keyCode === UP_ARROW);
+        return event.key === 'Escape' ||
+          (this._pickerInput && event.altKey && event.key === 'ArrowUp');
       }))
-    ).subscribe(event => {
-      if (event) {
+    ).subscribe((event: void | MouseEvent | KeyboardEvent) => {
+      if (event && 'preventDefault' in event) {
         event.preventDefault();
       }
 

@@ -2,7 +2,8 @@ import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/c
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[text]'
+  selector: '[text]',
+  standalone: true
 })
 export class TextDirective {
   @Output() newValue = new EventEmitter<string>();

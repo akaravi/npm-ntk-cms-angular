@@ -1,6 +1,8 @@
 ﻿import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDefinition, findIconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import { IconPickerService } from './icon-picker.service';
 import { Icon, IconType } from './icon';
@@ -261,22 +263,48 @@ export class IconPickerComponent implements OnInit {
     console.warn('Icon not found:', event);
   }
 
-  // Check if a FontAwesome6 icon exists and return a fallback if not
-  getFontAwesome6Icon(iconName: string): any {
-    try {
-      // Try to create the icon array
-      return ['fas', iconName];
-    } catch (error) {
-      // Return a fallback icon if the original doesn't exist
-      return ['fas', 'question'];
+  // Get FontAwesome6 icon definition
+  getFontAwesome6Icon(iconName: string): IconDefinition | null {
+    if (!iconName) {
+      return null;
     }
-  }
-
-  // Check if an icon should be displayed as FontAwesome6 or fallback to text
-  shouldShowFontAwesome6Icon(icon: any): boolean {
-    // For now, we'll show all FontAwesome6 icons and let the error handler deal with missing ones
-    // This can be enhanced later with a proper icon existence check
-    return true;
+    
+    try {
+      // First try: Convert iconName from kebab-case to camelCase (e.g., "shield-cat" -> "faShieldCat")
+      const camelCaseName = 'fa' + iconName
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join('');
+      
+      // Try to access directly from fas object
+      const iconKey = camelCaseName as keyof typeof fas;
+      if (fas[iconKey]) {
+        return fas[iconKey] as IconDefinition;
+      }
+      
+      // Second try: Try with different camelCase variations
+      // Some icons might have different naming (e.g., "faCoffee" vs "faCoffe")
+      const altCamelCase = iconName
+        .split('-')
+        .map((word, index) => index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1))
+        .join('');
+      const altKey = ('fa' + altCamelCase.charAt(0).toUpperCase() + altCamelCase.slice(1)) as keyof typeof fas;
+      if (fas[altKey]) {
+        return fas[altKey] as IconDefinition;
+      }
+      
+      // Third try: Use findIconDefinition (requires icons to be registered in library)
+      const iconDef = findIconDefinition({ prefix: 'fas', iconName: iconName as any });
+      if (iconDef) {
+        return iconDef;
+      }
+      
+      // Final fallback: return null to show fallback icon
+      return null;
+    } catch (error) {
+      console.warn('Error getting FontAwesome6 icon:', iconName, error);
+      return null;
+    }
   }
 }
 

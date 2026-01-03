@@ -1,28 +1,25 @@
-﻿import { Component } from '@angular/core';
-import { RouterOutlet, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { CmsTranslateModule } from './i18n/cmsTranslation.module';
+﻿import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { CmsTranslateModule } from './i18n/cmsTranslation.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    RouterModule,
-    CmsTranslateModule
-  ]
+  imports: [CommonModule, RouterOutlet, RouterModule, CmsTranslateModule],
 })
 export class App {
-  constructor(translate: TranslateService) {
+  private translate = inject(TranslateService);
+
+  constructor() {
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
+    this.translate.setDefaultLang('en');
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('en');
+    this.translate.use('en');
   }
   title = 'npm-ntk-cms-angular';
   items = [
@@ -37,5 +34,3 @@ export class App {
     { title: 'Icon Picker Test', link: 'IconPicker' },
   ];
 }
-
-

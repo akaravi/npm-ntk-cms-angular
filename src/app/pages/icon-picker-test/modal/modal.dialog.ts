@@ -1,16 +1,21 @@
-﻿import { Component, TemplateRef, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BsModalService } from 'ngx-bootstrap/modal';
+﻿import { CommonModule } from '@angular/common';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { BsModalRef } from 'ngx-bootstrap/modal';
-import { IconPickerModule } from 'ngx-ntk-icon-picker';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { IconPickerModule, IconPickerService } from 'ngx-ntk-icon-picker';
 
 @Component({
   selector: 'app-modal-dialog',
   templateUrl: './modal.dialog.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, IconPickerModule],
-  providers: [BsModalService]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    IconPickerModule,
+  ],
+  providers: [BsModalService, IconPickerService],
 })
 export class ModalDialogComponent implements OnInit {
   modalRef: BsModalRef;
@@ -19,7 +24,7 @@ export class ModalDialogComponent implements OnInit {
   fallbackIcon = 'fas fa-igloo';
   icon: string;
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService) {}
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -32,8 +37,4 @@ export class ModalDialogComponent implements OnInit {
   onIconPickerSelect(icon: string): void {
     this.iconCss.setValue(icon);
   }
-
 }
-
-
-

@@ -12,8 +12,8 @@
     "api"
   ],
   "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
     "@fortawesome/angular-fontawesome": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": ">=6.1.1",
     "@fortawesome/free-solid-svg-icons": ">=6.1.1",

@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Icon } from './icon';
 
 @Pipe({
-  name: 'searchIcon'
+  name: 'searchIcon',
+  standalone: true
 })
 
 export class SearchIconPipe implements PipeTransform {

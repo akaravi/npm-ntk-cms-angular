@@ -14,7 +14,8 @@ import { IconPickerComponent } from './icon-picker.component';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[iconPicker]'
+  selector: '[iconPicker]',
+  standalone: true
 })
 export class IconPickerDirective implements OnInit, OnChanges {
   @Input() iconPicker: string;
