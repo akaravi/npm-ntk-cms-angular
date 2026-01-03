@@ -26,7 +26,7 @@ export class ApiServerBase {
     this.baseUrl = url;
     this.configApiRetry = apiRetry;
     localStorage.setItem(this.keyBaseVer, ver);
-    if(localStorage.getItem(this.Ver + this.keyBaseUrl)?.length > 0) {
+    if (localStorage.getItem(this.Ver + this.keyBaseUrl)?.length > 0) {
       return;
     }
     localStorage.setItem(this.Ver + this.keyBaseUrl, url);
