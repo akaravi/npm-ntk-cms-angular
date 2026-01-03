@@ -32,7 +32,7 @@ npm install ngx-ntk-icon-picker
 This library requires the following peer dependencies:
 
 ```bash
-npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons primeicons
+npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-free primeicons
 ```
 
 ## 📦 Features

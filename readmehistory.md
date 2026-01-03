@@ -1,3 +1,29 @@
+## 2026-01-03 16:45:00
+
+- اضافه کردن آدرس‌دهی خودکار فونت‌ها در ngx-ntk-icon-picker:
+  - ایجاد فایل `src/styles.scss` برای فونت‌های FontAwesome و PrimeIcons
+  - اضافه کردن import فونت‌ها در `icon-picker.component.scss`
+  - اضافه کردن `src/styles.scss` به assets در `ng-package.json`
+  - حالا فونت‌ها به صورت خودکار در build پروژه شامل می‌شوند
+  - Material Icons از طریق CDN لود می‌شوند (نیازی به import نیست)
+
+## 2026-01-03 16:40:00
+
+- اضافه کردن فونت‌های مورد نیاز به package.json هر پروژه:
+  - `ngx-ntk-icon-picker`: اضافه کردن `@fortawesome/fontawesome-free` و به‌روزرسانی `primeicons` به `>=7.0.0` در peerDependencies
+  - اطمینان از اینکه تمام فونت‌های مورد نیاز هر پروژه در package.json خودش پیش‌بینی شده است
+
+## 2026-01-03 16:35:00
+
+- به‌روزرسانی فونت‌ها و آیکون‌ها به آخرین نسخه‌ها:
+  - `@fortawesome/angular-fontawesome`: از `^0.10.2` به `^4.0.0` (نسخه major جدید با پشتیبانی از Angular 21)
+  - `@fortawesome/fontawesome-svg-core`: از `^6.7.2` به `^7.1.0` (نسخه major جدید)
+  - `@fortawesome/free-solid-svg-icons`: از `^6.7.2` به `^7.1.0` (نسخه major جدید)
+  - `@fortawesome/fontawesome-free`: از `5.15.4` به `^7.1.0` (نسخه major جدید)
+  - `primeicons`: `^7.0.0` (به‌روز است)
+  - به‌روزرسانی peer dependencies در `ngx-ntk-icon-picker/package.json`
+  - پروژه با موفقیت build شد
+
 ## 2026-01-03 15:30:00
 
 - به‌روزرسانی کامل package.json های تمام پروژه‌ها برای npmjs.com:
