@@ -1,9 +1,9 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 /**
- * مدل دسترسی کلاینت ارائه‌دهنده داده
+ * مدل اپلیکیشن کلاینت ارائه‌دهنده داده
  */
-export class DataProviderClientPermissionModel extends BaseModuleEntity<string> {
+export class DataProviderClientApplicationModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
   /** لینک به شناسه مسیر Source */
@@ -18,8 +18,8 @@ export class DataProviderClientPermissionModel extends BaseModuleEntity<string> 
   description: string;
   /** کلید API */
   apiKey: string;
-  /** آدرس IP های مجاز فایروال */
-  firewallAllowIP: string;
+  /** آدرس IP های مجاز فایروال (JSON) */
+  firewallAllowIPJson: string;
   /** لیست آدرس IP های مجاز فایروال */
   firewallAllowIPList: string[] = [];
 }

@@ -26,6 +26,8 @@ export class DataProviderSourceModel extends BaseModuleEntity<string> {
   /** اگر روشن : کانتر کمپانی اعمال میشود */
   sourceCompanyCounterIsOn: boolean;
 
-  /** شرکت منبع */
+  /** شرکت منبع (مجازی) */
   virtual_SourceCompany: DataProviderSourceCompanyModel;
+  /** شرکت منبع */
+  sourceCompany: DataProviderSourceCompanyModel;
 }

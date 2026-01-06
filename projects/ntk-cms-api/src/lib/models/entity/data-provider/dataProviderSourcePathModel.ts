@@ -78,10 +78,6 @@ export class DataProviderSourcePathModel extends BaseModuleEntity<string> {
   apiDeliveryIsOn: boolean;
   /** برگشت اعتبار فعال است */
   apiCreditBackIsOn: boolean;
-  /** کاراکترهای قابل تطبیق در زمان ارسال */
-  apiCreditBackCheckOnSend?: any;
-  /** کاراکترهای قابل تطبیق در زمان بررسی تحویل */
-  apiCreditBackCheckOnDelivery?: any;
   /** دریافت به صورت آدرس hook فعال است */
   apiReceiveHookIsOn: boolean;
   /** دریافت به صورت درخواست دستی فعال است */

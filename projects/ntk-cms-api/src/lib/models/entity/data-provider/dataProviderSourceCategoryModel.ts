@@ -11,10 +11,12 @@ export class DataProviderSourceCategoryModel extends BaseModuleEntity<string> {
   /** آیکن فونت */
   fontIcon: string;
   /** لینک به شناسه والد */
-  linkParentId?: number;
+  linkParentId?: string;
   /** دسته‌بندی والد (مجازی) */
   // tslint:disable-next-line: variable-name
   virtual_Parent: DataProviderSourceCategoryModel;
+  /** دسته‌بندی والد */
+  parent: DataProviderSourceCategoryModel;
   /** لینک به شناسه تصویر اصلی */
   linkMainImageId?: number;
   /** آدرس تصویر اصلی */

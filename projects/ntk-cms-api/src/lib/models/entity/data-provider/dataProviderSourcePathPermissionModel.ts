@@ -1,4 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
+import { DataProviderSourcePathPermissionAccessStatusEnum } from '../../enums/data-provider/dataProviderSourcePathPermissionAccessStatusEnum';
+import { DataProviderSourcePathPermissionActionEnum } from '../../enums/data-provider/dataProviderSourcePathPermissionActionEnum';
 import { DataProviderSourcePathModel } from './dataProviderSourcePathModel';
 //@@tag-Version-2201011
 /**
@@ -10,6 +12,8 @@ export class DataProviderSourcePathPermissionModel extends BaseModuleEntity<stri
   /** مسیر Source (مجازی) */
   // tslint:disable-next-line: variable-name
   virtual_SourcePath: DataProviderSourcePathModel;
+  /** مسیر Source */
+  sourcePath: DataProviderSourcePathModel;
   /** لینک به شناسه کاربر اصلی */
   linkCoreUserId?: number;
   /** لینک به شناسه سایت اصلی */
@@ -27,8 +31,8 @@ export class DataProviderSourcePathPermissionModel extends BaseModuleEntity<stri
   /** تاریخ انقضا */
   expireDate?: Date;
   /** وضعیت دسترسی */
-  accessStatus: number;
+  accessStatus: DataProviderSourcePathPermissionAccessStatusEnum;
   /** نوع عملیات */
-  action: number;
+  action: DataProviderSourcePathPermissionActionEnum;
 }
 

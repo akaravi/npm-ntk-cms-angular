@@ -21,6 +21,7 @@ export * from './smsMainApiPathProcessFlow.service';
 export * from './smsMainApiPathProcessFlowLog.service';
 export * from './smsMainApiPathPublicConfig.service';
 export * from './smsMainApiPathSupersede.service';
-export * from './smsMainClientPermission.service';
+export * from './smsMainClientApplication.service';
+export * from './smsMainClientApplicationPermission.service';
 export * from './smsMainMessageCategory.service';
 export * from './smsMainMessageContent.service';

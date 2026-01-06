@@ -11,10 +11,14 @@ export class DataProviderSourcePathAndCategoryModel extends BaseModuleEntity<str
   /** مسیر Source (مجازی) */
   // tslint:disable-next-line: variable-name
   virtual_SourcePath: DataProviderSourcePathModel;
+  /** مسیر Source */
+  sourcePath: DataProviderSourcePathModel;
   /** لینک به شناسه دسته‌بندی Source */
   linkSourceCategoryId: string;
   /** دسته‌بندی Source (مجازی) */
   // tslint:disable-next-line: variable-name
   virtual_SourceCategory: DataProviderSourceCategoryModel;
+  /** دسته‌بندی Source */
+  sourceCategory: DataProviderSourceCategoryModel;
 }
 

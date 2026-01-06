@@ -21,12 +21,8 @@ export class DataProviderSourceCompanyModel extends BaseModuleEntity<string> {
   userAvailableCredit: number;
   /** مجموع اعتبار کاربر */
   userSumCredit: number;
-  /** آخرین تاریخ ویرایش اعتبار سرویس */
-  serviceCreditLastEdit: Date;
-  /** آخرین تاریخ ویرایش اعتبار کاربر */
-  userCreditLastEdit: Date;
   /** لیست منابع داده */
-  dataProviderSources: DataProviderSourceModel[];
+  sources: DataProviderSourceModel[];
   /** لینک به شناسه تصویر اصلی */
   linkMainImageId?: number;
   /** آدرس تصویر اصلی */

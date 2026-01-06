@@ -1,5 +1,6 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 import { DataProviderPlanModel } from './dataProviderPlanModel';
+import { DataProviderTransactionModel } from './dataProviderTransactionModel';
 //@@tag-Version-2201011
 /**
  * مدل قیمت پلن ارائه‌دهنده داده
@@ -22,5 +23,6 @@ export class DataProviderPlanPriceModel extends BaseModuleEntity<string> {
   /** پلن */
   plan: DataProviderPlanModel;
   virtual_Plan: DataProviderPlanModel;
-
+  /** لیست تراکنش‌ها */
+  transactions: DataProviderTransactionModel[];
 }

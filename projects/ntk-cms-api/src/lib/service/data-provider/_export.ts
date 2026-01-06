@@ -19,7 +19,8 @@ export * from './dataProviderSourcePathPermission.service';
 export * from './dataProviderSourcePathPricePermission.service';
 export * from './dataProviderSourceCategory.service';
 export * from './dataProviderSourcePathAndCategory.service';
-export * from './dataProviderClientPermission.service';
+export * from './dataProviderClientApplication.service';
+export * from './dataProviderClientApplicationPermission.service';
 export * from './dataProviderTransaction.service';
 
 

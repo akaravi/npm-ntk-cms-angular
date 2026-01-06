@@ -12,6 +12,8 @@ export class DataProviderSourcePathPaginationModel extends BaseModuleEntity<stri
   /** مسیر Source (مجازی) */
   // tslint:disable-next-line: variable-name
   virtual_SourcePath: DataProviderSourcePathModel;
+  /** مسیر Source */
+  sourcePath: DataProviderSourcePathModel;
   /** الگوی تشخیص شماره */
   regulatorNumberJson: string;
   /** لیست الگوهای تشخیص شماره */

@@ -14,7 +14,7 @@ export class DataProviderPlanCategoryModel extends BaseModuleEntity<string> {
   /** آیکن فونت */
   fontIcon: string;
   /** لینک به شناسه والد */
-  linkParentId?: number;
+  linkParentId?: string;
   // tslint:disable-next-line: variable-name
   virtual_PlanCategory: DataProviderPlanCategoryModel;
   /** دسته‌بندی والد */

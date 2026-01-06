@@ -1,9 +1,9 @@
 import { BaseModuleEntity } from '../base/baseModuleEntity';
 //@@tag-Version-2201011
 /**
- * مدل دسترسی کلاینت پیامک
+ * مدل اپلیکیشن کلاینت پیامک
  */
-export class SmsMainClientPermissionModel extends BaseModuleEntity<string> {
+export class SmsMainClientApplicationModel extends BaseModuleEntity<string> {
     /** عنوان */
   title: string;
   /** لینک به شناسه کاربر اصلی */
@@ -21,3 +21,4 @@ export class SmsMainClientPermissionModel extends BaseModuleEntity<string> {
   /** لیست آدرس IP های مجاز فایروال */
   firewallAllowIPList: string[] = [];
 }
+
