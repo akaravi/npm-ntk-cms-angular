@@ -6,8 +6,7 @@ import { BaseModuleEntity } from '../base/baseModuleEntity';
 export class DataProviderClientApplicationModel extends BaseModuleEntity<string> {
   /** عنوان */
   title: string;
-  /** لینک به شناسه مسیر Source */
-  linkSourcePathId: string;
+
   /** لینک به شناسه کاربر اصلی */
   linkCoreUserId: number;
   /** از تاریخ */
@@ -18,9 +17,8 @@ export class DataProviderClientApplicationModel extends BaseModuleEntity<string>
   description: string;
   /** کلید API */
   apiKey: string;
-  /** آدرس IP های مجاز فایروال (JSON) */
-  firewallAllowIPJson: string;
+  /** آدرس IP های مجاز فایروال  */
+  firewallAllowIP: string;
   /** لیست آدرس IP های مجاز فایروال */
   firewallAllowIPList: string[] = [];
 }
-

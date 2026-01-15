@@ -22,9 +22,12 @@ export class CoreUserModel extends BaseEntity<number> {
   tell: string;
   isCompany: boolean;
   linkLocationId: number;
-  firewallAllowIP: string;
   linkResellerSiteId?: number;
   linkResellerUserId?: number;
   linkLocationIdTitle: string;
   linkLocationIdParentTitle: string;
+  /** آدرس IP های مجاز فایروال  */
+  firewallAllowIP: string;
+  /** لیست آدرس IP های مجاز فایروال */
+  firewallAllowIPList: string[] = [];
 }

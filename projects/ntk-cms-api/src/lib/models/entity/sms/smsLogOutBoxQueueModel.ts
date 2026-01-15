@@ -6,6 +6,7 @@ import { SmsLogOutBoxScheduleRunInfoModel } from './smsLogOutBoxScheduleRunInfoM
  * مدل صف لاگ صندوق خروجی پیامک
  */
 export class SmsLogOutBoxQueueModel extends BaseModuleEntity<string> {
+  description: string;
   /** وضعیت رکورد ادمین */
   adminRecordStatus = RecordAdminStatusEnum.Pending;
   /** پیام */
