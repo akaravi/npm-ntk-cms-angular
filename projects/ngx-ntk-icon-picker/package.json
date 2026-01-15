@@ -1,6 +1,6 @@
 {
   "name": "ngx-ntk-icon-picker",
-  "version": "20.26.4",
+  "version": "20.26.5",
   "description": "Advanced Angular icon picker component with support for multiple icon libraries including FontAwesome, Material Icons, and PrimeIcons",
   "author": "Alireza-Karavi",
   "license": "ISC",
@@ -31,7 +31,7 @@
   "peerDependencies": {
     "@angular/common": "^20.1.0 || ^21.0.0",
     "@angular/core": "^20.1.0 || ^21.0.0",
-    "@fortawesome/angular-fontawesome": "^4.0.0",
+    "@fortawesome/angular-fontawesome": ">=3.0.0",
     "@fortawesome/fontawesome-svg-core": ">=7.1.0",
     "@fortawesome/free-solid-svg-icons": ">=7.1.0",
     "@fortawesome/fontawesome-free": ">=7.1.0",
