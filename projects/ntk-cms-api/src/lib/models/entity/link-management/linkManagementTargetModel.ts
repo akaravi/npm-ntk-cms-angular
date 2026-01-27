@@ -19,6 +19,8 @@ export class LinkManagementTargetModel extends BaseModuleEntity<number> {
   currentClickCount: number;
   /** تعداد نمایش تا الان */
   currentViewCount: number;
+  lastClickDate?: Date;
+  lastViewDate?: Date;
   /** لینک به شناسه عضو مدیریت لینک */
   linkManagementMemberId?: number;
   /** لینک به شناسه الکوی بیلبرد نمایش */

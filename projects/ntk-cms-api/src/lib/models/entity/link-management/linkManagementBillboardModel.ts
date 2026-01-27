@@ -16,6 +16,8 @@ export class LinkManagementBillboardModel extends BaseModuleEntity<number> {
   currentClickCount: number;
   /** تعداد نمایش تا الان */
   currentViewCount: number;
+  lastClickDate?: Date;
+  lastViewDate?: Date;
   /** تاریخ شروع */
   fromDate?: Date;
   /** تصویر اصلی */
