@@ -18,7 +18,9 @@ export * from './lib/models/entity/core-main/_export';
 export * from './lib/models/entity/core-token/_export';
 
 export * from './lib/models/dto/core-main/_export';
+export * from './lib/models/dto/core-log/_export';
 export * from './lib/models/enums/core/_export';
+export * from './lib/models/enums/core-log/_export';
 // core Serve
 // core Module Serve
 export * from './lib/service/core-module-data/_export';

@@ -8,3 +8,5 @@ export * from './coreLogReportDataModel';
 export * from './coreLogNotificationModel';
 export * from './coreLogTokenMicroServiceModel';
 export * from './coreLogTokenConnectionModel';
+export * from './coreLogMicroServiceStatusModel';
+export * from './coreLogMicroServicePingModel';
