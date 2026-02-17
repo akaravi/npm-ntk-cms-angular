@@ -1,16 +1,21 @@
 import { MicroServiceCommandRequestDtoModel } from '../../models/dto/core-log/microServiceCommandRequestDtoModel';
 import { ErrorExceptionResult } from '../../models/entity/base/errorExceptionResult';
 import { ErrorExceptionResultBase } from '../../models/entity/base/errorExceptionResultBase';
+import { FilterModel } from '../../models/entity/base/filterModel';
 import { CoreLogMicroServicePingModel } from '../../models/entity/core-log/coreLogMicroServicePingModel';
 import { CoreLogMicroServiceStatusModel } from '../../models/entity/core-log/coreLogMicroServiceStatusModel';
-import { ApiServerBase } from '../base/apiServerBase.service';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
+import { ApiCmsServerBase } from '../base/apiCmsServerBase.service';
 
 @Injectable()
-export class CoreLogMicroServiceStatusService extends ApiServerBase {
+export class CoreLogMicroServiceStatusService extends ApiCmsServerBase<
+  CoreLogMicroServiceStatusModel,
+  string,
+  FilterModel
+> {
   getModuleControllerUrl(): string {
     return 'CoreLogMicroServiceStatus';
   }

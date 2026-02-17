@@ -9,3 +9,4 @@ export * from './coreLogSms.service';
 export * from './coreLogTokenConnection.service';
 export * from './coreLogTokenMicroService.service';
 export * from './coreLogMicroServiceStatus.service';
+export * from './coreLogMicroServicePing.service';
