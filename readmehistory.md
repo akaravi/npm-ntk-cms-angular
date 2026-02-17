@@ -1,3 +1,11 @@
+## 2026-02-16
+
+- هماهنگ‌سازی فرمت coreLogMicroServiceStatus.service.ts با سایر سرویس‌های core-log:
+  - مرتب‌سازی importها مطابق الگوی coreLogMember و coreLogError
+  - قرار دادن entity models در ابتدا، سپس base و dto
+  - افزودن خط خالی قبل از @Injectable() مطابق سایر سرویس‌ها
+  - حفظ متدهای سفارشی (ServiceGetAllStatus، ServiceGetStatusByAppInfoFilter، ServicePing، ServiceSendCommand) به دلیل endpointهای متفاوت API
+
 ## 2026-01-03 16:45:00
 
 - اضافه کردن آدرس‌دهی خودکار فونت‌ها در ngx-ntk-icon-picker:
@@ -146,7 +154,7 @@
   - به‌روزرسانی ng-packagr به نسخه 21.0.0
   - به‌روزرسانی @ngrx/store و ngx-bootstrap به نسخه 21.0.0
   - تبدیل constructor injection به inject() در app.ts
-  - تبدیل *ngFor به @for در app.html برای استفاده از control flow جدید Angular 21
+  - تبدیل \*ngFor به @for در app.html برای استفاده از control flow جدید Angular 21
   - آماده‌سازی پروژه برای استفاده از Best Practices Angular 21
   - نصب وابستگی‌ها با `npm install --legacy-peer-deps` به دلیل عدم سازگاری ngx-bootstrap@20.0.2 با Angular 21
   - توجه: ngx-bootstrap هنوز برای Angular 21 به‌روزرسانی نشده است (آخرین نسخه 20.0.2)
@@ -173,4 +181,3 @@
 
 - اصلاح `cashApiIsValid` به حالت async با انتظار غیرمسدودکننده برای جلوگیری از قفل شدن UI و در عین حال صبر تا اتمام اجرای قبلی.
 - به‌روزرسانی فراخوانی‌ها در `coreEnum.service.ts` و `apiCmsServerBase.service.ts` برای سازگاری با نسخه‌ی async و جلوگیری از اجرای هم‌زمان ناخواسته.
-

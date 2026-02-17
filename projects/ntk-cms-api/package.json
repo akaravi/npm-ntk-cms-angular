@@ -1,6 +1,6 @@
 {
   "name": "ntk-cms-api",
-  "version": "20.26.6",
+  "version": "20.26.7",
   "description": "Complete API service layer and data models for CMS operations with TypeScript support",
   "author": "Alireza-Karavi",
   "license": "ISC",
