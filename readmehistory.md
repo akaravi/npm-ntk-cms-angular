@@ -1,3 +1,11 @@
+## 2026-02-18
+
+- هماهنگی با قرارداد مسیریابی جدید Core (routeTarget):
+  - تغییر نام پارامتر `appInfoFilter` به `routeTarget` در متدهای `ServicePing` و `ServiceSendCommand`
+  - افزودن property‌های `instanceIdentifier`، `runtimeIdentity` و `routeTarget` (getter) به `CoreLogMicroServiceStatusModel`
+  - افزودن کامنت‌های توضیحی برای قرارداد مسیریابی: Core با routingKey = routeTarget پublish می‌کند
+  - هماهنگ با تغییرات Core: API حالا از routeTarget استفاده می‌کند (InstanceIdentifier_RuntimeIdentity برای نمونه خاص، InstanceIdentifier برای broadcast)
+
 ## 2026-02-16
 
 - هماهنگ‌سازی فرمت coreLogMicroServiceStatus.service.ts با سایر سرویس‌های core-log:

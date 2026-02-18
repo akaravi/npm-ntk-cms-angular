@@ -57,15 +57,19 @@ export class CoreLogMicroServiceStatusService extends ApiCmsServerBase<
       );
   }
 
+  /**
+   * Ping - routeTarget: InstanceIdentifier_RuntimeIdentity برای نمونه خاص، InstanceIdentifier برای broadcast
+   * هماهنگ با Core SendPingAndWaitForPongAsync: Core با routingKey = routeTarget پublish می‌کند
+   */
   ServicePing(
-    appInfoFilter: string,
+    routeTarget: string,
     timeoutSeconds: number = 15,
   ): Observable<ErrorExceptionResult<CoreLogMicroServicePingModel>> {
     const url =
       this.getBaseUrl() +
       this.getModuleControllerUrl() +
       '/Ping/' +
-      encodeURIComponent(appInfoFilter) +
+      encodeURIComponent(routeTarget) +
       '?timeoutSeconds=' +
       timeoutSeconds;
     return this.http.post(url, {}, { headers: this.getHeaders() }).pipe(
@@ -74,15 +78,19 @@ export class CoreLogMicroServiceStatusService extends ApiCmsServerBase<
     );
   }
 
+  /**
+   * ارسال Command - routeTarget: InstanceIdentifier_RuntimeIdentity برای نمونه خاص، InstanceIdentifier برای broadcast
+   * هماهنگ با Core SendCommand: Core با routingKey = routeTarget پublish می‌کند
+   */
   ServiceSendCommand(
-    appInfoFilter: string,
+    routeTarget: string,
     command: MicroServiceCommandRequestDtoModel,
   ): Observable<ErrorExceptionResultBase> {
     const url =
       this.getBaseUrl() +
       this.getModuleControllerUrl() +
       '/Command/' +
-      encodeURIComponent(appInfoFilter);
+      encodeURIComponent(routeTarget);
     return this.http
       .post(url, command || {}, { headers: this.getHeaders() })
       .pipe(
