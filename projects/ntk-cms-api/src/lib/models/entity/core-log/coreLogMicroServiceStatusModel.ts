@@ -21,10 +21,17 @@ export class CoreLogMicroServiceStatusModel extends BaseEntity<string> {
   /**
    * هدف مسیریابی برای Ping و Command - InstanceIdentifier_RuntimeIdentity برای نمونه خاص، InstanceIdentifier برای broadcast
    */
-  get routeTarget(): string {
-    if (this.instanceIdentifier && this.runtimeIdentity) {
-      return this.instanceIdentifier + '_' + this.runtimeIdentity;
-    }
-    return this.instanceIdentifier || '';
-  }
+  routeTarget?: string;
+  /**
+   * لیست Queueهای فعال در میکروسرویس (ذخیره به صورت JSON)
+   */
+  activeQueuesJson?: string;
+  /**
+   * نام کاربری RabbitMQ که میکروسرویس با آن متصل شده است
+   */
+  rabbitMQUserName?: string;
+  /**
+   * لیست Queueهای فعال (از JSON parse شده)
+   */
+  activeQueues?: string[];
 }
