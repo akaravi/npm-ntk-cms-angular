@@ -5,6 +5,7 @@ import { ContactContentCategoryModel } from './contactContentCategoryModel';
  * مدل محتوای مخاطب
  */
 export class ContactContentModel extends BaseModuleEntity<string> {
+  createdByIp: string;
   /** عنوان */
   title: string;
   /** نام */

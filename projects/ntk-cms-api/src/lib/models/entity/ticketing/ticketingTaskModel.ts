@@ -11,6 +11,7 @@ import { TicketingDepartemenModel } from './ticketingDepartemenModel';
  * مدل کار تیکت
  */
 export class TicketingTaskModel extends BaseModuleEntity<number> {
+  createdByIp: string;
   /** تاریخ انقضا */
   expireDate?: Date;
   /** عنوان */

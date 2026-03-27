@@ -5,6 +5,7 @@ import { FileCategoryModel } from './fileCategoryModel';
  * مدل محتوای فایل
  */
 export class FileContentModel extends BaseModuleEntity<number> {
+  createdByIp: string;
   /** لینک به شناسه دسته‌بندی */
   linkCategoryId: number;
   /** نام فایل */

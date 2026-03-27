@@ -7,6 +7,7 @@ import { LinkManagementTargetCategoryModel } from './linkManagementTargetCategor
  * لینک ثبت شده
  */
 export class LinkManagementTargetModel extends BaseModuleEntity<number> {
+  createdByIp: string;
   /** عنوان */
   title: string;
   /** توضیحات */
@@ -76,4 +77,3 @@ export class LinkManagementTargetModel extends BaseModuleEntity<number> {
   /** شناسه موجودیت ماژول */
   moduleEntityId: string;
 }
-
